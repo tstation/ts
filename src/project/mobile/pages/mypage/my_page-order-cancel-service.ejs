@@ -1,0 +1,162 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '서비스취소' }) %>
+
+<!-- 20210720 mypage.css 추가 -->
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/mypage.css" />
+<div id="container" class="mypage">
+    <!-- 01. 주문 상세 -->
+    <div class="order_detail">
+        <!-- A.order info -->
+        <div class="order_info mrgT20">
+				<span class="order_no">
+					<span class="date">주문일 : 2018-06-24</span>
+					주문번호 <i>12345689123</i>
+				</span>
+            <!-- 2.픽업&딜리버리 -->
+            <ol class="info">
+                <!-- 20210720 // -->
+                <li><span class="tit">신청 서비스</span>
+                    픽업 / 딜리버리
+                </li>
+                <!-- // 20210720 -->
+                <li><span class="tit">매장명</span>
+                    강남 논현점
+                </li>
+                <li><span class="tit">매장방문일</span>
+                    2018-10-19 / 10시 방문
+                </li>
+            </ol>
+            <!-- 20210720 // -->
+            <!-- checkbox In Case // -->
+            <ol class="pickup">
+                <li><div class="tit check-tit">
+                        <label class="check-item">
+                            <input type="checkbox" disabled />
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt">픽업위치</span>
+                            </div>
+                        </label>
+                    </div>
+                    경기도 고양시 일산동구 중앙로
+                </li>
+                <li>
+                    <div class="tit txt-primary">
+                        (주문완료)
+                    </div>
+                    이동거리 : 10km
+                </li>
+                <li>
+                    <div class="tit check-tit">
+                        <label class="check-item">
+                            <input type="checkbox" />
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt">딜리버리위치</span>
+                            </div>
+                        </label>
+                    </div>
+                    서울시 강남구 역삼동 134번지 000빌딩
+                </li>
+                <li class="point pd-b-5u">
+                    <div class="tit txt-primary">
+                        (주문완료)
+                    </div>
+                    이동거리 : 10km
+                </li>
+            </ol>   
+            
+            <!-- checkbox Out Case // -->
+            <ol class="pickup" style="display: none;">
+                <li>
+                    <div class="tit">
+                        픽업위치
+                    </div>
+                    경기도 고양시 일산동구 중앙로 1234(장항동)
+                </li>
+                <li class="point dot">
+                    <div class="tit txt-primary">
+                        (주문완료)
+                    </div>
+                    이동거리 : 10km
+                </li>
+                <li>
+                    <div class="tit">
+                        딜리버리위치
+                    </div>
+                    서울시 강남구 역삼동 134번지 000빌딩
+                </li>
+                <li class="point pd-b-5u">
+                    <div class="tit txt-primary">
+                        (주문완료)
+                    </div>
+                    이동거리 : 10km
+                </li>
+            </ol>
+            <!-- //2.픽업&딜리버리 -->
+            <!-- c.매장 결제인 경우 -->
+            <p class="txt02">픽업서비스 드라이버(기사) 매칭이 완료된 이후 서비스 취소 시, 서비스 비용은 환불되지 않습니다.</p>
+            <!-- //c.매장 결제인 경우 -->
+            <!-- // 20210720 -->
+        </div>
+        <!-- //A.order info -->
+        <!-- C.주문 취소 사유 -->
+        <div class="order_info2">
+            <ol class="form2">
+                <li>
+                    <select class="select01 w100p">
+                        <option>취소할 항목을 선택해 주세요.</option>
+                        <option>취소할 항목을 선택해 주세요.</option>
+                        <option>취소할 항목을 선택해 주세요.</option>
+                    </select>
+                </li>
+                <li>
+                    <select class="select01 w100p">
+                        <option>주문취소 사유를 선택해 주세요.</option>
+                    </select>
+                </li>
+                <li>
+                    <textarea class="ip_area01 w100p" style="height:100px" placeholder="주문취소 사유를 작성해 주세요.(최대 1,000자)"></textarea>
+                </li>
+            </ol>
+        </div>
+        <!-- //C.주문 취소 사유 -->
+
+        <!-- 환불정보 20210720 // -->
+        <div class="order_info2">
+            <h6>환불정보</h6>
+            <ol class="form">
+                <li><span class="tit">픽업 취소금액</span>
+                    +<em>16,000</em>원
+                </li>
+                <li><span class="tit">딜리버리 취소금액</span>
+                    +<em>16,000</em>원
+                </li>
+                <li class="dot"><span class="tit">환불예상금액</span>
+                    <em>32,000</em>원
+                </li>
+                <li class="total2"><span class="tit">환불 수단</span>
+                    카카오 / 신한
+                </li>
+            </ol>
+        </div>
+        <!-- // 환불정보 20210720 -->
+
+        <!-- button -->
+        <div class="btn02">
+            <ul>
+                <li><a href="#" class="btnB btnS01">취소</a></li>
+                <li><a href="#" class="btnB btnS02">서비스 취소하기</a></li>
+            </ul>
+        </div>
+        <!-- //button -->
+    </div>
+    <!-- 01. 주문 상세 -->
+</div>

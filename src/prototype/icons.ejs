@@ -1,0 +1,10 @@
+<% locals.setLayout('src/prototype/includes/components/layouts/base.ejs') -%>
+<% locals.block('title', 'Line Icons') -%>
+<% let data = locals.require('src/prototype/includes/components/icons/data.json') -%>
+
+<div class="sample-view-wrap icons">
+    <div class="inner">
+        <h4>Icons</h4>
+        <%- locals.widget('src/prototype/includes/components/icons/index.ejs', { list: data }) %>
+    </div>
+</div>

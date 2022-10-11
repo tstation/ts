@@ -1,0 +1,366 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '알아두면 쓸모있는 타이어 잡학지식' }) %>
+<div id="container">
+    <div class="tab-link">
+        <a class="" href="/tam/tstation-tv">티스테이션 TV</a>
+        <a class="on" href="/tam/tire-info">타이어 정보</a>
+        <a class="" href="/tam/tire-review">타이어 리뷰</a>
+    </div>  
+
+    <div class="tam-tire-info">
+        <section class="key-visual">
+            <!-- 211118 // -->
+            <img src="mc-static-root/images/common/tire-info-key-visual.png" alt="타이어 정보" />
+             <!-- // 211118  -->
+            <div class="link-group">
+                <a href="" class="go-link">
+                    <div class="title-wrap">
+                        <span class="icon line-icons search size-36"></span>
+                        <h4 class="title">온라인 타이어<br />쇼핑이 어렵다면!</h4>
+                    </div>
+                    <p class="link-label">
+                        <span>쉬운 타이어 쇼핑</span>
+                        <span class="icon line-icons chev-right size-16"></span>
+                    </p>
+                </a>
+                <a href="" class="go-link">
+                    <div class="title-wrap">
+                        <span class="icon line-icons mouse size-36"></span>
+                        <h4 class="title">한국타이어<br />상품군을 한눈에!</h4>
+                    </div>
+                    <p class="link-label">
+                        <span>한국타이어 라인업</span>
+                        <span class="icon line-icons chev-right size-16"></span>
+                    </p>
+                </a>
+            </div>
+        </section>
+
+        <section class="suggest-keyword">
+            <p class="label">추천 키워드</p>
+            <div class="swiper-container suggest-keyword-swiper">
+                <div class="swiper-wrapper">
+                    <!-- 20210824 // -->
+                    <div class="swiper-slide">
+                        <span class="keyword active" onclick="onHandleKeyword(this)">전체</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">현타꿀팁시즌2</span>
+                    </div>
+                    <!-- // 20210824-->
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">타이어관리</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">타이어펑크</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">타이어휠</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">타이어공기압</span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                /**
+                 * 추천 키워드
+                 */
+
+                // swiper init
+                var suggestKeywordSwiper = new Swiper('.suggest-keyword-swiper', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 4
+                })
+                suggestKeywordSwiper.init()
+
+                // window resize fire swiper init
+                $(window).on('resize', function() {
+                    suggestKeywordSwiper.init()
+                })
+
+                // mobile portrait, landscape change fire swiper init
+                window.addEventListener('orientationchange', function() {
+                    suggestKeywordSwiper.init()
+                })
+
+
+                // list filtering fire
+                function listFiltering (keyword) {
+                    alert('리스트 내부의 아이템들을 ' + keyword + '(으)로 필터링 하세요.')
+                }
+
+
+                // keyword click handling
+                function onHandleKeyword (el) {
+                    // inactive keywords
+                    $('.keyword').removeClass('on')
+
+                    // active keyword by click
+                    $(el).addClass('on')
+
+                    // slide to clicked keyword
+                    suggestKeywordSwiper.slideTo($(el).closest('.swiper-slide').index())
+
+                    // call list filtering
+                    listFiltering(el.innerText)
+                }
+            </script>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">타이어 상식 <span class="count">(16)</span></h4>
+                <p class="description">타이어 1도 모르는 당신을 위한 필수 상식</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-first">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="info-card"
+                                data-link-type="OUT"
+                                data-link-url="https://m.blog.naver.com/tstation-online/222410008007"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://blahblahblah.com')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>찬바람 부는 겨울, 추위를 이겨내기 위해 내 차에도 ‘이것’이 꼭 필요하다</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">타이어자가점검</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="info-card"
+                                data-link-type="IN"
+                                data-link-url="./tam-tstation_tv-detail.html?id=10000"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/240x240')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>찬바람 부는 겨울, 추위를 이겨내기 위해 내 차에도 ‘이것’이 꼭 필요하다</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">타이어자가점검</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    /**
+                     * 타이어 상식
+                     */
+
+                    // swiper init
+                    var infoTypeFirstSwiper = new Swiper('.type-first', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 8
+                    })
+                    infoTypeFirstSwiper.init()
+
+                    // window resize fire swiper init
+                    window.addEventListener('resize', function () {
+                        infoTypeFirstSwiper.init()
+                    })
+
+                    // mobile portrait, landscape change fire swiper init
+                    window.addEventListener('orientationchange', function() {
+                        infoTypeFirstSwiper.init()
+                    })
+
+                    // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                    // tsTvTypeFirstSwiper.update()
+                    // tsTvTypeFirstSwiper.slideTo(0)
+                </script>
+            </div>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">구매 가이드 <span class="count">(12)</span></h4>
+                <p class="description">기본적이지만 꼭 확인해야 할 구매 가이드</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-second">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="info-card"
+                                data-link-type="OUT"
+                                data-link-url="https://www.youtube.com/user/hankooktirekorea1"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/240x240')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>[타이어 추천] 제네시스, 그랜저, K9, K7의 승차감을 결정짓는 타이어 추천</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">타이어자가점검</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="info-card"
+                                data-link-type="IN"
+                                data-link-url="./tam-tstation_tv-detail.html?id=10001"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/240x240')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>[타이어 추천] 제네시스, 그랜저, K9, K7의 승차감을 결정짓는 타이어 추천</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">타이어자가점검</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <script>
+                        /**
+                         * 구매 가이드
+                         */
+
+                        // swiper init
+                        var infoTypeSecondSwiper = new Swiper('.type-second', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 8
+                        })
+                        infoTypeSecondSwiper.init()
+
+                        // window resize fire swiper init
+                        window.addEventListener('resize', function () {
+                            infoTypeSecondSwiper.init()
+                        })
+
+                        // mobile portrait, landscape change fire swiper init
+                        window.addEventListener('orientationchange', function() {
+                            infoTypeSecondSwiper.init()
+                        })
+
+                        // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                        // infoTypeSecondSwiper.update();
+                        // infoTypeSecondSwiper.slideTo(0);
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">점검 & 관리 팁 <span class="count">(12)</span></h4>
+                <p class="description">안전운전을 위한 타이어 점검 & 관리 팁</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-third">
+                    <!-- 컨텐츠가 존재 할때 -->
+                    <!--<div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="info-card"
+                                data-link-type="OUT"
+                                data-link-url="https://www.youtube.com/user/hankooktirekorea1"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/240x240')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>[MANUAL] 대기오염으로부터 내 차를 지키자! 미세먼지 관리 팁부터 자동</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">타이어자가점검</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="info-card"
+                                data-link-type="IN"
+                                data-link-url="./tam-tstation_tv-detail.html?id=10002"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/240x240')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>[MANUAL] 대기오염으로부터 내 차를 지키자! 미세먼지 관리 팁부터 자동</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">타이어자가점검</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>-->
+                    <!-- 컨텐츠가 없을때: .swiper-wrapper 내부의 빈칸이 없게 만드세요. -->
+                    <div class="swiper-wrapper"></div>
+                    <script>
+                        /**
+                         * 점검 & 관리 팁
+                         */
+
+                        // swiper init
+                        var infoTypeThirdSwiper = new Swiper('.type-third', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 8
+                        })
+                        infoTypeThirdSwiper.init()
+
+                        // window resize fire swiper init
+                        window.addEventListener('resize', function () {
+                            infoTypeThirdSwiper.init()
+                        })
+
+                        // mobile portrait, landscape change fire swiper init
+                        window.addEventListener('orientationchange', function() {
+                            infoTypeThirdSwiper.init()
+                        })
+
+                        // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                        // infoTypeThirdSwiper.update()
+                        // infoTypeThirdSwiper.slideTo(0)
+                    </script>
+                </div>
+            </div>
+        </section>
+        <script>
+            /**
+             * tstation-tv common
+             */
+
+            // info-card onclick
+            $('.info-card').click(function () {
+                // get custom attr & use data
+                // sample data { linkType: 'IN' | 'OUT', linkUrl: './tam-tstation_tv-detail.html' }
+                var data = $(this).data()
+
+                // go link type
+                switch (data.linkType) {
+                    case 'IN':
+                        location.href = data.linkUrl
+                        break
+                    case 'OUT':
+                        window.open(data.linkUrl, '_blank')
+                        break
+                    default:
+                        break
+                }
+            })
+        </script>
+    </div>
+</div>

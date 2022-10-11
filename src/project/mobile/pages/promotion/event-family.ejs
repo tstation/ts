@@ -1,0 +1,233 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        슈퍼위크 프로모션
+        <span class="date">이벤트 기간 : 20.08.05  ~ 20.10.31</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+
+    <div class="event_detail">
+        <div class="event-familysale">
+            <div class="hero-section ak-wrap-familysale">
+                <div class="keyvisual"><img src="mc-static-root/images/event/20220511/bg_hero_content.png" alt="" /></div>
+                <a href="#none" class="event-case img-map-link link-1" data-analytics-click=""><span class="blind"></span></a>
+                <a href="#none" class="event-case img-map-link link-2" data-analytics-click=""><span class="blind"></span></a>
+            </div>
+            <div class="contents-section event-coupon amt-anchor">
+                <div class="coupon-area">
+                    <div class="coupon-wrap pd-b-5u"><!-- 20220512 .pd-b-5u 추가-->
+                        <div class="coupon-dim active">
+                            <img src="mc-static-root/images/event/20220511/bg_dim_50sale.png" alt="" />
+                            <!-- 20220518 50% 쿠폰 소진시 데일리 bg_dim_50sale_end1.png : 당일 종료, bg_dim_50sale_end1.png : 쿠폰 종료,
+                            <img src="mc-static-root/images/event/20220511/bg_dim_50sale_end1.png" alt="" />
+                            <img src="mc-static-root/images/event/20220511/bg_dim_50sale_end2.png" alt="" /> 
+                            -->
+                        </div>
+                        <div class="img-coupon sales-50"><img src="mc-static-root/images/event/20220511/bg_content_50sale.png" alt="" /></div>        
+                        <div class="button-wrap">
+                            <!-- .btn-neutral 추가시 버튼 활성화 UI변경 -->
+                            <!-- button type="button" class="btn-item btn-neutral full-w round">
+                                <span class="label-txt">20% 할인 쿠폰받기</span>
+                            </button -->
+                            <!-- .btn-gray 추가시 버튼 비활성화 UI변경 -->
+                            <button type="button" class="btn-item btn-gray full-w round">
+                                <span class="label-txt">20% 할인 쿠폰받기</span>
+                            </button>
+                            <!-- .btn-gray 추가시 버튼 disabled UI변경 -->
+                            <!-- button type="button" class="btn-item btn-gray full-w round" disabled>
+                                <span class="label-txt">20% 할인 쿠폰받기</span>
+                            </button -->
+                        </div>
+                    </div>
+                    <div class="coupon-wrap pd-b-4u">
+                        <div class="img-coupon"><img src="mc-static-root/images/event/20220511/bg_content_20sale.png" alt="" /></div>
+                        <div class="button-wrap">
+                            <!-- .btn-neutral 추가시 버튼 활성화 UI변경 -->
+                            <button type="button" class="btn-item btn-neutral full-w round">
+                                <span class="label-txt">20% 할인 쿠폰받기</span>
+                            </button>
+                            <!-- .btn-gray 추가시 버튼 비활성화 UI변경 -->
+                            <!-- button type="button" class="btn-item btn-gray full-w round">
+                                <span class="label-txt">20% 할인 쿠폰받기</span>
+                            </button -->
+                            <!-- .btn-gray 추가시 버튼 disabled UI변경 -->
+                            <!-- button type="button" class="btn-item btn-gray full-w round" disabled>
+                                <span class="label-txt">20% 할인 쿠폰받기</span>
+                            </button -->
+                        </div>
+                    </div>
+
+                    <div class="lagal-check-group">
+                        <label class="check-item">
+                            <input type="checkbox">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-w400">마케팅 활용을 위한 수집 및 이용 동의</span>
+                            </div>
+                        </label>
+                        <a href="#" class="legal-button label-txt txt-12 popup-full txt-underline" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">내용보기</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="contents-section amt-anchor">
+                <div class="img-content"><img src="mc-static-root/images/event/20220511/bg_content2.png" alt="" /></div>
+            </div>
+
+            
+            <div class="contents-section event-gallery">
+                <div class="section-headcopy txt-20 txt-center mg-v-9u">패밀리세일 행사타이어 둘러보기</div>
+                <div class="swiper-container tire-gallery-swiper">
+                    <!-- 20220512 // -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_s2_as?ptrnCd=H462&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/07.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_v2_as?ptrnCd=H123&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/08.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_s1_evo3?ptrnCd=K127&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/01.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_v12_evo2?ptrnCd=K120&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/04.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_prime_3?ptrnCd=K125&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/03.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_prime2?ptrnCd=K115&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/06.png" alt="" />
+                            </a>
+                        </div>                                                               
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_rs4?ptrnCd=Z232&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/10.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_s1_evo2?ptrnCd=K117B&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/05.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/dynapro_hl3?ptrnCd=RA45&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/11.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_s2_as_x?ptrnCd=RH17&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/09.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/dynapro_hp2?ptrnCd=RA33&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/12.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/dynapro_at2?ptrnCd=RF11&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/14.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/dynapro_hp?ptrnCd=RA23&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/13.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide card card-brand-tireinfo">
+                            <a href="https://m.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern">
+                                <img src="mc-static-root/images/event/20220511/card/02.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- // 20220512 -->
+                    <script>
+                        var ventustireSwiper = new Swiper('.tire-gallery-swiper', {
+                            spaceBetween: 8,
+                            observer: true,
+                            observeParents: true,
+                            slidesPerView: 'auto'
+                        });
+    
+                        ventustireSwiper.init();
+    
+                        $(window).on('resize', function () {
+                            ventustireSwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="contents-section store-confirm-button">
+                <div class="button-half-wrap">
+                    <!-- 20220512 // -->
+                    <button type="button" class="btn-item btn-neutral round">
+                        <span class="label-txt">온라인에서 바로구매</span>
+                    </button>
+                    <!-- // 20220512 -->
+                    <button type="button" class="btn-item btn-neutral round">
+                        <span class="label-txt">매장예약/현장결제</span>
+                    </button>
+                </div>
+                <button type="button" class="btn-item btn-neutral btn-ol full-w round">
+                    <span class="label-txt">매장 예약내역 확인하기</span>
+                </button>
+                <p class="mg-t-3u txt-12 txt-neutral2">온라인 예약고객은 <a href="/mypage/tstation/reservation/shopVisitReserveList.do" class="txt-primary">마이페이지 &gt; 방문예약내역</a>에서 예약정보를 확인하실 수 있습니다.</p>
+
+            </div>
+            <div class="contents-section">
+                <div class="img-content"><img src="mc-static-root/images/event/20220511/bg_legal.png" alt="" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+<!-- //event list -->
+</div>
+
+
+<script>
+// Anchor funciton
+function amtAnchorScroll() {
+    var shoppingTippickup = $('.ak-wrap-familysale');
+    var shoppingTippickupButton = shoppingTippickup.find('.event-case');
+    var shoppingTippickupHeight = $('.navbar').outerHeight();
+    shoppingTippickupButton.each(function(i) {
+        shoppingTippickupButton.eq(i).click(function(e) {
+            e.preventDefault();
+            var scrollpickupPostion = $('.event-familysale').find('.amt-anchor').eq(i).offset().top - shoppingTippickupHeight;
+            console.log(scrollpickupPostion);
+            $('html, body').animate({
+                scrollTop: scrollpickupPostion
+            }, 300)
+        })
+    })
+}
+amtAnchorScroll()
+</script>
+
+
+
+
+

@@ -1,0 +1,51 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'MY 차량 등록' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="mycar-register-search-bx">
+                    <p class="txt-info">운행 중인 차량을 등록하면,<br><strong>디지털 이력관리 · 간편 검색 등<br>다양한 혜택</strong>을 받을 수 있습니다.</p>
+                    <ul class="pd-t-8u pd-b-5u">
+                        <li class="mg-t-2u">
+                            <div class="form-control form-control-inline inline-xs">
+                                <label>차량번호</label>
+                                <div class="input-group">
+                                    <input type="text" class="input-box" placeholder="차량번호를 입력해 주세요.  예) 12고 3456">
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mg-t-2u">
+                            <div class="form-control form-control-inline inline-xs">
+                                <label>소유주명</label>
+                                <div class="input-group">
+                                    <input type="text" class="input-box" value="홍길동">
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn-item btn-neutral full-w round mg-t-2u">
+                        <span class="label-txt">조회하기</span>
+                    </button>
+                </div>
+                <div class="question-txt">차량번호와 소유주를 잘 모르신다면?</div>
+                <button type="button" class="btn-item btn-neutral btn-ol full-w round">
+                    <span class="label-txt">직접 등록하기</span>
+                </button>
+            </div>
+        </section>
+    </div>
+</main>

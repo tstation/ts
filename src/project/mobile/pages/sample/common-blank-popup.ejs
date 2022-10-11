@@ -1,0 +1,190 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'Popup' }) %>
+<main id="main">
+    <div class="tab-item">
+        <a href="" class="on">탭버튼1</a>
+        <a href="" class="">탭버튼2</a>
+        <a href="" class="">탭버튼3</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h3>콘텐츠 섹션 헤더</h3>
+
+                <div class="extra">
+                    <a href="" class="btn-item btn-m btn-neutral btn-inv filet">
+                        <span class="label-txt txt-primary">엑스트라 버튼</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">Modal, Header Bar, Action Bar</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                title: '모달 팝업 타이틀', // 제목
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: '<p class=\'pd-v-5u txt-center\'>Modal, Header Bar, Action Bar</p>', // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close(\'modal-ref-1\')'
+                                        },
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: function () {
+                                                alert('확인')
+                                                $.Tstation.popup().close('modal-ref-1')
+                                            }
+                                        }
+                                    ]
+                                },
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                }
+                            })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">Modal</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                            ref: 'modal-ref-1',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: '<p class=\'pd-v-5u txt-center\'>Modal Message</p>', // 팝업을 바로 띄우고 싶을때
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 8,
+                                vertical: 8,
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            full: false, // Full Popup
+                            onOpen: function () {
+                                console.log('팝업이 열리면 실행합니다.')
+                            },
+                            onClose: function () {
+                                console.log('팝업이 닫히면 실행합니다.')
+                            }
+                        })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">Full Popup, Header Bar, Action Bar</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1',
+                                title: '모달 팝업 타이틀',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: '<p class=\'pd-v-5u txt-center\'>Full Popup, Header Bar, Action Bar</p>', // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: true, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close(\'modal-ref-1\')'
+                                        },
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: 'alert(\'사전에 등록한 액션을 스트링으로 추가하세요.\')' // 따옴표 주의
+                                        }
+                                    ]
+                                },
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                }
+                            })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">Full Popup</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1',
+                                title: '모달 팝업 타이틀',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: '<p class=\'pd-v-5u txt-center\'>Full Popup, full popup을 사용할 때는 팝업을 닫을 수 있는 타이틀 혹은 엑션바가 하나 이상 존재해야 합니다.</p>', // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: true, // Full Popup,
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                }
+                            })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

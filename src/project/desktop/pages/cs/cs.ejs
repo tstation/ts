@@ -1,0 +1,80 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <div class="page_tit">
+                <h4>FAQ <span>궁금하신 점 또는 필요하신 내용을 FAQ에서 찾아보세요. </span></h4>
+                <div class="btn_right"><a href="https://www.tstation.com/customer-service/qna.do" class="btnM2 btnS01">1:1 고객상담</a></div>
+            </div>
+            <div class="faq_cate">
+                <ul>
+                    <li class="r1">
+                        <a href="https://www.tstation.com/customer-service/faq.do?faqCd=10">상품 선택</a>
+                    </li>
+
+                    <li class="r2">
+                        <a href="https://www.tstation.com/customer-service/faq.do?faqCd=20">장착서비스</a>
+                    </li>
+
+                    <li class="r3">
+                        <a href="https://www.tstation.com/customer-service/faq.do?faqCd=30">주문/결제</a>
+                    </li>
+
+                    <li class="r4">
+                        <a href="https://www.tstation.com/customer-service/faq.do?faqCd=40">취소/환불/교환</a>
+                    </li>
+
+                    <li class="r5">
+                        <a href="https://www.tstation.com/customer-service/faq.do?faqCd=60">회원</a>
+                    </li>
+
+                    <li class="r6">
+                        <a href="https://www.tstation.com/customer-service/faq.do?faqCd=90">기타</a>
+                    </li>
+
+                    <!-- TODO: 멤버십 페이지 FAQ 링크 생성되면 달아주세요. -->
+                    <!--<li class="r7">
+                        <a href="#">멤버십</a>
+                    </li>-->
+
+                </ul>
+            </div>
+
+            <!-- 03. 공지사항  -->
+            <div class="csmain_01">
+                <h6>공지사항</h6>
+                <a href="https://www.tstation.com/customer-service/announcement/notice.do" class="more">더보기</a>
+                <ol class="notice_list">
+
+                    <li>
+                        <a href="https://www.tstation.com/customer-service/announcement/notice-detail.do?ntcSeq=60134">
+                            티스테이션, 두산베어스와 스포츠 마케팅 스폰서십 계약 연장 <span class="date">2020-04-29</span>
+                        </a>
+                    </li>
+
+                </ol>
+            </div>
+
+            <!-- 04. 무상보증등록  -->
+            <div class="csmain_01">
+                <h6>무상보증서비스</h6>
+                <p class="guarantee"><a href="https://www.tstation.com/customer-service/warranty/warranty-info">한국타이어 구매 고객<em>프리미엄 무상보증서비스</em></a></p>
+            </div>
+            <!-- 05. T’Station 서비스 안내  -->
+            <div class="csmain_01">
+                <h6>T’Station 서비스 안내</h6>
+                <ul class="service">
+                    <li><a href="https://www.tstation.com/customer-service/tsservice/servicetire.do">주요서비스 안내<em>자세히보기</em></a></li>
+                    <li><a href="https://www.tstation.com/customer-service/tsservice/knowhowtire.do">관리 노하우<em>자세히보기</em></a></li>
+                    <!-- 0790 // -->
+                    <li><a href="https://www.tstation.com/customer-service/tsservice/wagestime.do">표준 정비시간<em>자세히보기</em></a></li>
+                    <!-- // 0790 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

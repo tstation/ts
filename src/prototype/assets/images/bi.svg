@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bi</title>
+    <g id="bi" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M40,20 C40,31 31,40 20,40 C9,40 0,31 0,20 C0,9 9,0 20,0 C31,0 40,9 40,20 Z" id="Path" fill="#E17639" fill-rule="nonzero"></path>
+        <path d="M33.3,20 C33.3,27.4 27.3,33.3 20,33.3 C12.6,33.3 6.7,27.3 6.7,20 C6.7,12.6 12.7,6.7 20,6.7 C27.3,6.7 33.3,12.6 33.3,20 Z" id="Path" fill="#221F20" fill-rule="nonzero"></path>
+        <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="28 13.3 20 13.3 20 13.3 12 13.3 12 18.1 17 18.1 17 29.3 20 29.3 22.9 29.3 22.9 18.1 28 18.1"></polygon>
+    </g>
+</svg>

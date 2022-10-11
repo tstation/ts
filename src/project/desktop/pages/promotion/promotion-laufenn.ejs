@@ -1,0 +1,342 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="event">
+    <div id="contents">
+        <!-- 01. page title -->
+        <div class="page_tit">
+            <h4>이벤트</h4>
+        </div>
+        <!-- //01. page title -->
+        <!-- 02. 제목 -->
+        <div class="event_tit">
+            라우펜 신규런칭 이벤트
+            <span class="date">이벤트 기간 : 22.07.01  ~ 22.08.31</span>
+        </div>
+        <input type="hidden" id="evtUrlAddr" value="">
+        <input type="hidden" id="endEvtDisp" value="">
+        <input type="hidden" id="isEvtDispBf" value="">
+
+        <!-- //02. 제목  -->
+        <!-- 03. 이벤트 상세  -->
+        <div class="event_list">
+            <div id="inner">
+
+                <div class="event-detail-wrap">
+                    <div class="center-inner">
+                        <link rel="stylesheet" type="text/css" href="pc-static-root/css/event.css" />
+                    
+                        <div class="event-laufenn">
+                            <div class="hero-section ak-wrap-draw">
+                                <img src="pc-static-root/images/event/20220627/event_hero1.png" alt="" />
+                                <div class="hero-play-area">
+                                    <div class="play-wrap">
+                                        <div id="player"><iframe src="https://player.vimeo.com/video/725538675?h=1e39d2331c&background=1=0&autoplay=1&loop=1&title=0&byline=0&portrait=0" id="player1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+                                    </div>
+                                </div>
+                                <img src="pc-static-root/images/event/20220627/event_hero2.png" alt="" />
+                                <!-- 20220708 <a href="#none" class="event-case dp-block img-map-link link-1 mg-t-4u" data-analytics-click="EVENT01 OX 퀴즈 참여 자세히보기"><img src="pc-static-root/images/event/20220627/event_bookmark1.png" alt="" /></a>
+                                <a href="#none" class="event-case dp-block img-map-link link-2" data-analytics-click="EVENT02 라우펜 리뷰쓰면 최대 5만원 주유권 증정 자세히보기"><img src="pc-static-root/images/event/20220627/event_bookmark2.png" alt="" /></a> -->
+                                <!-- 20220812 // -->
+                                <div class="hero-cta-area mg-t-10u">
+                                    <img src="pc-static-root/images/event/20220627/event_detail_Ver_light.png" alt="" />
+                                    <a href="#none" class="link-more" data-analytics-click="라우펜 쇼핑 바로가기"><span class="blind">라우펜 쇼핑 바로가기</span></a>
+                                </div>
+                                <div class="fixed-button-wrap">
+                                    <div class="fixed-button-list">
+                                        <button type="button" class="btn-item btn-neutral full-w pd-h-1u" data-analytics-click="라우펜 쇼핑 바로가기">
+                                            <span class="label-txt">라우펜 쇼핑 바로가기</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- //20220812 -->
+                            </div>
+                            
+                            <div class="event-content-section event-content1 mg-t-15u button-offset-point"><!-- 20220714 -->
+                                <img src="pc-static-root/images/event/20220627/event_content1_top.png" alt="" />
+                                <h3 class="txt-center txt-30 txt-w900">라우펜(Laufenn)이 궁금해 O/X 퀴즈</h3>
+                                <div class="swiper-container event-laufenn-swiper">
+                                    <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide txt-center">
+                                            <h4 class="txt-30"><strong>Q1.</strong> 라우펜(Laufenn)은 한국타이어가 만든 타이어 브랜드이다</h4>
+                                            <div class="quize-contents">
+                                                <div class="quize-button-area">
+                                                    <button type="button" id="firstQuizButtonAnswer" class="quiz-button answer-button" data-analytics-click="Q1.O">
+                                                        <span class="label-txt blind">O</span>
+                                                    </button>
+                                                    <button type="button" id="firstQuizButtonReply" class="quiz-button reply-button" data-analytics-click="Q1.X">
+                                                        <span class="label-txt">X</span>
+                                                    </button>
+                                                </div>
+                                                <div class="quize-answer-area quize-result">
+                                                    <strong class="txt-raufenn txt-w500">정답입니다!</strong>
+                                                    <p class="txt-28 mg-t-1u">라우펜은 한국타이어가 만든 글로벌 브랜드로, 유럽, 미국 등 전세계 80개국에 출시되었으며, 21년 기준 약 740만개의 글로벌 판매량을 기록했습니다.</p><!-- 20220708 -->
+                                                    <button type="button" class="btn-item btn-xl btn-neutral round" data-analytics-click="정답">
+                                                        <span class="label-txt">다음문제</span>
+                                                        <span class="line-icons chev-right size-32"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="quize-reply-area quize-result">
+                                                    <strong class="txt-primary txt-w500">오답입니다!</strong>
+                                                    <p class="txt-28 mg-t-1u">라우펜은 한국타이어가 만든 글로벌 브랜드로, 유럽, 미국 등 전세계 80개국에 출시되었으며, 21년 기준 약 740만개의 글로벌 판매량을 기록했습니다.</p><!-- 20220708 -->
+                                                    <button type="button" class="btn-item btn-xl btn-primary round" data-analytics-click="오답">
+                                                        <span class="label-txt">다시풀기</span>
+                                                        <span class="line-icons refresh size-32"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide txt-center">
+                                            <h4 class="txt-30"><strong>Q2.</strong> 라우펜(Laufenn) 브랜드 이름의 의미는 독일어로 ‘날아가다’에서 유래했다</h4>
+                                            <div class="quize-contents">
+                                                <div class="quize-button-area">
+                                                    <button type="button" id="secondQuizButtonReply" class="quiz-button answer-button" data-analytics-click="Q2.O">
+                                                        <span class="label-txt blind">O</span>
+                                                    </button>
+                                                    <button type="button" id="secondQuizButtonAnswer" class="quiz-button reply-button" data-analytics-click="Q2.X">
+                                                        <span class="label-txt">X</span>
+                                                    </button>
+                                                </div>
+                                                <div class="quize-reply-area quize-result">
+                                                    <strong class="txt-primary txt-w500">오답입니다!</strong>
+                                                    <p class="txt-28 mg-t-1u">라우펜 브랜드 이름의 의미는 독일어로 ‘달리다(Laufen)’에서 유래했습니다.</p><!-- 20220708 -->
+                                                    <button type="button" class="btn-item btn-xl btn-primary round" data-analytics-click="오답">
+                                                        <span class="label-txt">다시풀기</span>
+                                                        <span class="line-icons refresh size-32"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="quize-answer-area quize-result">
+                                                    <strong class="txt-raufenn txt-w500">정답입니다!</strong>
+                                                    <p class="txt-28 mg-t-1u">라우펜 브랜드 이름의 의미는 독일어로 ‘달리다(Laufen)’에서 유래했습니다.</p><!-- 20220708 -->
+                                                    <button type="button" class="btn-item btn-xl btn-neutral round" data-analytics-click="정답">
+                                                        <span class="label-txt">다음문제</span>
+                                                        <span class="line-icons chev-right size-32"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide txt-center">
+                                            <h4 class="txt-30"><strong>Q3.</strong> 라우펜(Laufenn)은 모든 노면환경에서의 드라이빙을 위한 심플함, 퀄리티, 기술력을 모두 갖췄다</h4><!-- 20220708 -->
+                                            <div class="quize-contents">
+                                                <div class="quize-button-area">
+                                                    <button type="button" id="thirdQuizButtonAnswer" class="quiz-button answer-button" data-analytics-click="Q3.O">
+                                                        <span class="label-txt blind">O</span>
+                                                    </button>
+                                                    <button type="button" id="thirdQuizButtonReply" class="quiz-button reply-button" data-analytics-click="Q3.X">
+                                                        <span class="label-txt">X</span>
+                                                    </button>
+                                                </div>
+                                                <div class="quize-answer-area quize-result">
+                                                    <strong class="txt-raufenn txt-w500">정답입니다!</strong>
+                                                    <p class="txt-28 mg-t-1u">라우펜은 스마트한 라이프스타일을 추구하는 고객을 위한 최적의 상품 라인업으로 심플함, 퀄리티, 기술력을 모두 갖춘 타이어입니다.</p><!-- 20220708 -->
+                                                    <button type="button" class="btn-item btn-xl btn-neutral round" data-analytics-click="응모 확인">
+                                                        <span class="label-txt">확인</span>                                        
+                                                    </button>
+                                                    <p class="laufenn-event-join">성공적으로 응모되셨습니다!</p>
+                                                </div>
+                                                <div class="quize-reply-area quize-result">
+                                                    <strong class="txt-primary txt-w500">오답입니다!</strong>
+                                                    <p class="txt-28 mg-t-1u">라우펜은 스마트한 라이프스타일을 추구하는 고객을 위한 최적의 상품 라인업으로 심플함, 퀄리티, 기술력을 모두 갖춘 타이어입니다.</p><!-- 20220708 -->
+                                                    <button type="button" class="btn-item btn-xl btn-primary round" data-analytics-click="오답">
+                                                        <span class="label-txt">다시풀기</span>
+                                                        <span class="line-icons refresh size-32"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lagal-check-group mg-h-4u">
+                                <label class="check-item" for="eventPrivacyPolicy">
+                                    <input type="checkbox" id="eventPrivacyPolicy">
+                                    <div class="icon-holder">
+                                        <span class="line-icons square size-20"></span>
+                                    </div>
+                                    <div class="labelling">
+                                        <span class="label-txt mg-h-1u txt-16">마케팅 활용을 위한 수집 및 이용동의</span>
+                                    </div>
+                                </label>
+                                <a href="#" class="legal-button popup-full txt-primary txt-16 txt-w400 txt-underline" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">내용보기</a>
+                            </div>
+                
+                            <!-- 20220708 <div class="event-content-section event-content3 mg-t-15u">
+                                <img src="pc-static-root/images/event/20220627/event_content2.png" alt="" />
+                                <a href="#none" class="link-more laufenn-review-more" data-analytics-click="라우펜 장착후기 작성하러 가기"><span class="blind">라우펜 장착후기 작성하러 가기</span></a>
+                            </div> -->
+                            
+                            <div class="bg-light1 mg-t-15u"><!-- 20220708 -->
+                                <img src="pc-static-root/images/event/20220627/event_legal.png" alt="" />
+                            </div>
+                        </div>
+
+
+                        <!-- // korea event -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn01">
+                <a href="https://www.tstation.com/promotion/event-list" class="btnM2 btnS02">목록으로</a>
+            </div>
+        </div>
+        <!-- //03. 이벤트 상세  -->
+
+        <!-- #contents -->
+    </div>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+/* // 조건 init */
+var answer = false; //정답 
+var reply = false; //오답 
+var tgt = 0; //swiper 순서
+var target; //퀴즈 버튼 선택자
+var final = false; //마지막 퀴즈
+
+/* // 1.) 퀴즈 */
+$('#firstQuizButtonAnswer').click(function(e) {
+    answer = true;
+    target = e;
+    answerQuiz(answer);
+})
+
+$('#firstQuizButtonReply').click(function(e) {
+    reply = true;
+    target = e;
+    replyQuiz(reply);
+})
+
+$('#secondQuizButtonAnswer').click(function(e) {
+    answer = true;
+    target = e;
+    answerQuiz(answer);
+})
+
+$('#secondQuizButtonReply').click(function(e) {
+    reply = true;
+    target = e;
+    replyQuiz(reply);
+})
+$('#thirdQuizButtonAnswer').click(function(e) {
+    answer = true;
+    target = e;
+    answerQuiz(answer);
+})
+
+$('#thirdQuizButtonReply').click(function(e) {
+    reply = true;
+    target = e;
+    replyQuiz(reply);
+})
+
+function answerQuiz(answer) {
+    if(answer) {
+        answer = false; // init 조건
+        var anserPennel = $(target.currentTarget).parents('.quize-contents').find('.quize-answer-area');
+        anserPennel.addClass('active');
+        anserPennel.find('button').click(function() {
+            // 마지막 퀴즈
+            if(tgt === 2) {
+                anserPennel.find('.laufenn-event-join').addClass('active');
+                alert("모든 퀴즈에 참여해주셔서 감사합니다. 사은품에 자동 응모 되었습니다.");
+            } else {
+                eventLaufennSwiper.slideNext();  
+            }
+        })
+        $('.swiper-pagination .swiper-pagination-bullet').eq(tgt).addClass('swiper-pagination-bullet-active');
+    } 
+}
+
+function replyQuiz(reply) {
+    if(reply) {
+        reply = false; // init 조건
+        var anserPennel = $(target.currentTarget).parents('.quize-contents').find('.quize-reply-area');
+        anserPennel.addClass('active');
+        anserPennel.find('button').click(function() {
+            anserPennel.removeClass('active');
+        })
+    } 
+}
+
+/* // 2.) swiper */
+var eventLaufennSwiper = new Swiper('.event-laufenn-swiper', {
+    init: true,
+    allowTouchMove: false,
+    spaceBetween: 10,
+    centeredSlides: true
+});
+$(window).on('resize', function () {
+    eventLaufennSwiper.init();
+});
+eventLaufennSwiper.init();
+eventLaufennSwiper.on('slideChange', function(){
+    tgt = eventLaufennSwiper.realIndex;
+});
+
+
+/* 20220630 // 3.) 유튜브 => vimeo 변경*/
+// var iframe = document.querySelector('iframe');
+// var player = new Vimeo.Player(iframe);
+// var timer = "20";
+// player.on('timeupdate', function(event) {
+//     if (event.seconds > timer) {
+//         done = true;
+//     }
+// });
+/* // 20220630 */
+
+/* // 3.) 북마크 */
+var bookmarkButton = document.querySelectorAll('.ak-wrap-draw .event-case')
+Array.prototype.forEach.call(bookmarkButton, function(button, i) {
+    bookmarkButton[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        var scrollpickupPostion = document.querySelectorAll('.event-laufenn .event-content-section');
+        Array.prototype.forEach.call(scrollpickupPostion, function() {
+            var scrollpick = window.pageYOffset + scrollpickupPostion[i].getBoundingClientRect().top;
+            animateScroll(scrollpick);
+        })
+    })
+})
+    
+function animateScroll(to) {
+    function animation() {
+        var now = (performance.now() - startTime) / time,
+            progress = transition(now);
+        1 > now
+        ? (
+            window.requestAnimationFrame(animation),
+            window.scrollTo(0, from + (to - from) * progress)
+        )
+        : (
+            window.scrollTo(0, to)
+        )
+    }
+    var from = window.scrollY;
+    var time = 500,
+        transition = number => {
+            return -.5 * (Math.cos(Math.PI * number) - 1)
+        },
+        startTime = performance.now();
+    animation()
+}
+
+
+/* // 4.) Bottom button  */
+var fixedButton = $('.fixed-button-wrap');
+var vssHeight = 0;
+var vssFixed = $('.button-offset-point').offset().top;
+$(window).scroll(function() {
+    vssHeight = $(document).scrollTop();
+
+    if(vssHeight > vssFixed) {
+        $('.fixed-button-wrap').addClass('footer-fixed');
+    } else {
+        $('.fixed-button-wrap').removeClass('footer-fixed');
+    }
+})
+
+</script>

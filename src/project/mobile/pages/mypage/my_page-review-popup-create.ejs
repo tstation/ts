@@ -1,0 +1,291 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '상품평' }) %>
+<div id="container" class="mypage">
+    <!-- 상품평  top -->
+    <div class="review_top">
+        <ul class="mypage_tab01">
+            <li class="on"><a href="review.jsp">작성 가능한 상품평</a></li>
+            <li><a href="review_list.jsp">내가 작성한 상품평</a></li>
+        </ul>
+    </div>
+    <!-- //상품평  top -->
+    <!-- 상품평  list -->
+    <div class="review_list date">
+        <p class="nodata">최근 <em>작성가능</em>한<br>상품평이 없습니다.</p>
+        <ol>
+            <li>
+                <!-- 01. 주문일자 -->
+                <!-- 20220404 // -->
+                <div class="order_no clearfix">
+                    <span class="order-date">주문일자 <em>2018-06-24</em></span>
+                    <span class="review-date txt-12 txt-neutral2 float-r txt-nowrap">상품평 작성 <span class="dp-inblock pd-l-1u txt-12 txt-primary txt-w700">D-7 남음</span></span>
+                </div>
+                <!-- // 20220404 -->
+                <!-- //01. 주문일자 -->
+                <!--  unit01 : 상품리스트 -->
+                <dl class="unit01">
+                    <dt>
+                        <a href="#"><img src="mc-static-root/images/common/sample/tire.jpg" class="unitImg" alt="상품명 이미지"></a>
+                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                        <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                    </dt>
+                    <dd class="info">
+                        <a href="#">
+								<span class="flag_04">
+									<em class="c01 off">Comfort</em>
+									<em class="c02">SPORT</em>
+									<em class="c03 off">Runflat</em>
+								</span>
+                            <span class="unitT1">
+								    <span>Ventus S Sport</span>
+                                <!-- <small class="sub">Ventus S2 AS</small> -->
+								</span>
+                            <span class="unitT3">245/45R18</span>
+                            <span class="flag_05">
+								    <em>승용차</em>
+								    <em>사계절 </em>
+								    <em>BMW 공식 인증</em>
+								    <em>프리미엄</em>
+								</span>
+                        </a>
+                    </dd>
+                </dl>
+                <!--  //unit01 -->
+                <!-- 03. button -->
+                <div class="btn02">
+                    <button class="btnM3 btnS01">상품평 쓰기</button>
+                </div>
+                <!-- //03. button -->
+            </li>
+            <li>
+                <!-- 01. 주문일자 -->
+                <!-- 20220404 // -->
+                <div class="order_no clearfix">
+                    <span class="order-date">주문일자 <em>2018-06-24</em></span>
+                    <span class="review-date txt-12 txt-neutral2 float-r txt-nowrap">상품평 작성 <span class="dp-inblock pd-l-1u txt-12 txt-neutral1 txt-w700">2018-06-24</span></span>
+                </div>
+                <!-- // 20220404 -->
+                <!-- //01. 주문일자 -->
+                <!--  unit01 : 상품리스트 -->
+                <dl class="unit01">
+                    <dt>
+                        <a href="#"><img src="mc-static-root/images/common/sample/tire.jpg" class="unitImg" alt="상품명 이미지"></a>
+                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                        <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                    </dt>
+                    <dd class="info">
+                        <a href="#">
+								<span class="flag_04">
+									<em class="c01 off">Comfort</em>
+									<em class="c02">SPORT</em>
+									<em class="c03 off">Runflat</em>
+								</span>
+                            <span class="unitT1">
+								    <span>Ventus S Sport</span>
+								    <small class="sub">Ventus S2 AS</small>
+								</span>
+                            <span class="unitT3">245/45R18</span>
+                            <span class="flag_05">
+								    <em>승용차</em>
+								    <em>사계절 </em>
+								    <em>BMW 공식 인증</em>
+								    <em>프리미엄</em>
+								</span>
+                        </a>
+                    </dd>
+                </dl>
+                <!--  //unit01 -->
+                <!-- 03. button -->
+                <div class="btn02">
+                    <button class="btnM3 btnS01">상품평 쓰기</button>
+                </div>
+                <!-- //03. button -->
+            </li>
+        </ol>
+    </div>
+    <!-- //상품평  list -->
+</div>
+<div id="layerFullPopup" tabindex="0" style="display: block;">
+    <div class="layer_box">
+        <div id="full_content">
+            <!-- 상품평 쓰기  + url - full -->
+            <div class="full_review">
+                <div class="layerT"><h3>상품평 쓰기</h3></div>
+                <div class="layerC">
+                    <!-- 1:1 고객 상담 -->
+                    <div class="qna_write">
+                        <!--  unit01 : 상품리스트 -->
+                        <dl class="unit01">
+                            <dt>
+                                <a href="#"><img src="mc-static-root/images/common/sample/tire.jpg" class="unitImg" alt="상품명 이미지"></a>
+                                <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                            </dt>
+                            <dd class="info">
+                                <a href="#">
+						<span class="flag_04">
+							<em class="c01 off">Comfort</em>
+							<em class="c02">SPORT</em>
+							<em class="c03 off">Runflat</em>
+						</span>
+                                    <span class="unitT1">
+						    <span>Ventus S Sport</span>
+						    <small class="sub">Ventus S2 AS</small>
+						</span>
+                                    <span class="unitT3">245/45R18</span>
+                                    <span class="flag_05">
+						    <em>승용차</em>
+						    <em>사계절 </em>
+						    <em>프리미엄</em>
+						</span>
+                                </a>
+                            </dd>
+                        </dl>
+                        <!--  //unit01 -->
+                        <dl class="form">
+                            <!-- 1102 // -->
+                            <link type="text/css" rel="stylesheet" href="mc-static-root/css/tam.css" /><!-- 타알못 PAGE CSS include -->
+                            <dt class="clearfix pd-b-3u">현재 내 리뷰
+                                <span class="txt-mint txt-14 mg-l-1u dp-inblock">[갓 장착했어요!]</span>
+                                <span class="badge badge-inv round txt-10 float-r">2021-10-01 장착완료</span>
+                            </dt>
+                            <dd class="tire-using-wrap">
+                                <p class="txt-14 txt-narrow txt-neutral2">장착완료일로부터 7일 내 등록된 상품평은 <br />[갓 장착했어요!] 섹션에 등록되며, 이후에 등록된 상품평은 [시승 좀 해봤어요]로 자동 처리되어 게시됩니다. </p>
+                                <div class="tire-term clearfix mg-t-4u pd-b-6u ">
+                                    <span class="label-review active">
+                                        <span class="line-icons check-circle-inv size-20"></span>
+                                        <span class="label-txt txt-14">갓 장착했어요!</span>
+                                    </span>
+                                    <span class="label-review">
+                                        <span class="line-icons check-circle-inv size-20"></span>
+                                        <span class="label-txt txt-14">시승 좀 해봤어요</span>
+                                    </span>
+                                </div>
+                            </dd>
+                            <!-- // 1102 -->
+
+                            <dt class="point">별점을 클릭해주세요.</dt>
+                            <dd>
+                                <!-- 별점 -->
+                                <ol class="point">
+                                    <li>
+                                        <span class="tit">승차감</span>
+                                        <input type="radio" class="star" name="name01Point" id="name01Point1" value="1"><label class="star2" for="name01Point1">별점1</label>
+                                        <input type="radio" class="star" name="name01Point" id="name01Point2" value="2"><label class="star2" for="name01Point2">별점2</label>
+                                        <input type="radio" class="star" name="name01Point" id="name01Point3" value="3"><label class="star2" for="name01Point3">별점3</label>
+                                        <input type="radio" class="star" name="name01Point" id="name01Point4" value="4"><label class="star2" for="name01Point4">별점4</label>
+                                        <input type="radio" class="star" name="name01Point" id="name01Point5" value="5"><label class="star2" for="name01Point5">별점5</label>
+                                    </li>
+                                    <li>
+                                        <span class="tit">마일리지</span>
+                                        <input type="radio" class="star" name="name02Point" id="name02Point1" value="1"><label class="star2" for="name02Point1">별점1</label>
+                                        <input type="radio" class="star" name="name02Point" id="name02Point2" value="2"><label class="star2" for="name02Point2">별점2</label>
+                                        <input type="radio" class="star" name="name02Point" id="name02Point3" value="3"><label class="star2" for="name02Point3">별점3</label>
+                                        <input type="radio" class="star" name="name02Point" id="name02Point4" value="4"><label class="star2" for="name02Point4">별점4</label>
+                                        <input type="radio" class="star" name="name02Point" id="name02Point5" value="5"><label class="star2" for="name02Point5">별점5</label>
+                                    </li>
+                                    <li>
+                                        <span class="tit">연비</span>
+                                        <input type="radio" class="star" name="name03Point" id="name03Point1" value="1"><label class="star2" for="name03Point1">별점1</label>
+                                        <input type="radio" class="star" name="name03Point" id="name03Point2" value="2"><label class="star2" for="name03Point2">별점2</label>
+                                        <input type="radio" class="star" name="name03Point" id="name03Point3" value="3"><label class="star2" for="name03Point3">별점3</label>
+                                        <input type="radio" class="star" name="name03Point" id="name03Point4" value="4"><label class="star2" for="name03Point4">별점4</label>
+                                        <input type="radio" class="star" name="name03Point" id="name03Point5" value="5"><label class="star2" for="name03Point5">별점5</label>
+                                    </li>
+                                    <li>
+                                        <span class="tit">고속주행</span>
+                                        <input type="radio" class="star" name="name04Point" id="name04Point1" value="1"><label class="star2" for="name04Point1">별점1</label>
+                                        <input type="radio" class="star" name="name04Point" id="name04Point2" value="2"><label class="star2" for="name04Point2">별점2</label>
+                                        <input type="radio" class="star" name="name04Point" id="name04Point3" value="3"><label class="star2" for="name04Point3">별점3</label>
+                                        <input type="radio" class="star" name="name04Point" id="name04Point4" value="4"><label class="star2" for="name04Point4">별점4</label>
+                                        <input type="radio" class="star" name="name04Point" id="name04Point5" value="5"><label class="star2" for="name04Point5">별점5</label>
+                                    </li>
+
+                                </ol>
+                                <!-- //별점 -->
+                                <script>
+                                    // 별 라디오 버튼 click 하면 별 주황색 변하게 하는 스크립트
+                                    $(document).on( "click", '.star2', function() {
+                                        var starName = $(this).attr('for');
+                                        var chkName = starName.substring(starName.length -1);
+                                        var chkName2 = starName.substring(0, starName.length -1 );
+                                        for(var i=1;i<=5;i++) {
+                                            if(chkName >= i) {
+                                                $("label[for=" + chkName2 + i+"]").addClass('on');
+                                            } else {
+                                                $("label[for=" + chkName2 + i+"]").removeClass('on');
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </dd>
+                            <dt>상품리뷰를 작성해 주세요.</dt>
+                            <dd>
+                                <textarea class="ip_txt01" style="height:150px;" placeholder="상품리뷰를 작성해 주세요. (최대 1,000자)"></textarea>
+                            </dd>
+                            <dd>
+                                <ol class="notice_01">
+                                    <!-- 20220404 // -->
+                                    <li>파일 크기는 7MB이하, jpg, png 또는 gif형식의 파일만 가능합니다.</li>
+                                    <!-- // 20220404 -->
+                                </ol>
+                                <ul class="file">
+                                    <li>
+                                        <!-- file upload -->
+                                        <div class="filebox preview-image">
+                                            <input value="" disabled="disabled" placeholder="파일선택" class="upload-name">
+                                            <input id="input-file1" data-href="divClassName1" class="upload-hidden" type="file">
+                                            <label for="input-file1">파일 업로드</label>
+                                            <button class="fileClear">파일 삭제</button>
+                                            <div class="fileimg divClassName1"></div>
+                                        </div>
+                                        <!-- //file upload -->
+                                    </li>
+                                    <li>
+                                        <!-- file upload -->
+                                        <div class="filebox preview-image">
+                                            <input value="" disabled="disabled" placeholder="파일선택" class="upload-name">
+                                            <input id="input-file2" data-href="divClassName2" class="upload-hidden" type="file">
+                                            <label for="input-file2">파일 업로드</label>
+                                            <button class="fileClear">파일 삭제</button>
+                                            <div class="fileimg divClassName2"></div>
+                                        </div>
+                                        <!-- //file upload -->
+                                    </li>
+                                    <li>
+                                        <!-- file upload -->
+                                        <div class="filebox preview-image">
+                                            <input value="" disabled="disabled" placeholder="파일선택" class="upload-name">
+                                            <input id="input-file3" data-href="divClassName3" class="upload-hidden" type="file">
+                                            <label for="input-file3">파일 업로드</label>
+                                            <button class="fileClear">파일 삭제</button>
+                                            <div class="fileimg divClassName3"></div>
+                                        </div>
+                                        <!-- //file upload -->
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="btn02">
+                        <a href="#" class="btnB btnS02">작성완료</a>
+                    </div>
+                    <!-- 20220404 // -->
+                    <div class="noti-legal-area mg-t-6u">
+                        <h4 class="txt-14 txt-primary"><span class="line-icons error-circle-light size-20"></span> <span class="v-middle">이 점 꼭 유의해 주세요!</span></h4>
+                        <ul class="smarlegal-list">
+                            <li class="txt-primary txt-11">등록된 리뷰 내용과 촬영된 사진이 구매한 상품과 관계없다고 판단되거나 근거없는 비방, 욕설 또는 내용이 없는 리뷰는 전시가 제한될 수 있습니다.</li>
+                            <li class="txt-primary txt-11">작성된 리뷰는 티스테이션닷컴 및 한국타이어 패밀리 사이트 내 일정 기간 게시될 수 있습니다. </li>
+                        </ul>
+                    </div>
+                    <!-- // 20220404 -->
+                    <!-- //1:1 고객 상담 -->
+                </div>
+            </div>
+            <!-- //상품 비교 --></div>
+        <button type="button" class="layer-full-close">팝업닫기</button>
+    </div>
+</div>

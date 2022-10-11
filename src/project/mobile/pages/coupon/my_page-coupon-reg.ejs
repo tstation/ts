@@ -1,0 +1,81 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '내 쿠폰' }) %>
+<main id="main" class="">
+    <div class="tab-item">
+        <a href="" class="">사용가능한 쿠폰</a>
+        <a href="" class="on">쿠폰 등록</a>
+        <a href="" class="">지난 쿠폰</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container pd-h-5u pd-v-5u">
+        <section>
+            <h3 class="pd-v-3u txt-w500">쿠폰번호 입력</h3>
+            <p class="txt-neutral2">유효한 쿠폰번호를 입력하고 '쿠폰등록'버튼을 누르시면 등록하신 쿠폰이 '사용가능한 쿠폰'에 추가됩니다.</p>
+            <table class="mg-t-8u">
+                <colgroup>
+                    <col style="width: auto;" />
+                    <col style="width: 110px;" />
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="form-control form-control-md">
+                            <div class="input-group">
+                                <input type="text" class="input-box" placeholder="쿠폰번호를 입력해 주세요." />
+                                <div class="tools">
+                                    <button class="clear"><span class="line-icons close-circle"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="pd-l-2u">
+                        <button type="button" class="btn-item btn-neutral round full-w">
+                            <span class="label-txt">쿠폰등록</span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</main>
+<div class="modal-item instance on" data-ref="coupon-changer-modal">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>쿠폰 등록 완료</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral  round full-w" onclick="$.Tstation.popup().close()"><span class="label-txt">확인</span></button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container  pd-h-8u pd-v-8u">
+                        <p class="txt-center txt-14">
+                            <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>
+                            <em class="txt-primary">30% Family 타이어 할인쿠폰</em>이<br>등록되었습니다.
+                        </p>
+                        <p class="txt-center txt-12 txt-neutral2 mg-t-8u pd-t-4u border-t">
+                            <em class="txt-neutral1 txt-w500">'사용 가능한 쿠폰'</em> 탭에서 쿠폰을 확인하세요.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

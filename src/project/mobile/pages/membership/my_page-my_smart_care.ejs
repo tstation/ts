@@ -1,0 +1,638 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '맴버십' }) %>
+<main id="main">
+    <div class="container">
+        <div class="swiper-container menu-slide-sty-swiper menu-slide-sty-swiper-tab on-smart-care">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide on"><a href="#" class="menu-slide-child">MY 멤버십</a></div>
+                <div class="swiper-slide"><a href="#" class="menu-slide-child">멤버십 혜택</a></div>
+                <div class="swiper-slide"><a href="#" class="menu-slide-child">맞춤 서비스</a></div>
+            </div>
+            <script>
+                var menu_slide_sty_swiper = new Swiper('.menu-slide-sty-swiper', {
+                    init: false,
+                    spaceBetween: 0,
+                    slidesPerView: 'auto'
+                });
+
+                menu_slide_sty_swiper.init();
+
+                $(window).on('resize', function () {
+                    menu_slide_sty_swiper.init();
+                });
+
+                // active slider focus
+                $.each($('.menu-slide-sty-swiper.on-smart-care').find('.swiper-slide'), function (index, item) {
+                    if ($(item).hasClass('on')) {
+                        menu_slide_sty_swiper.slideTo(index);
+                    }
+                })
+            </script>
+        </div>
+
+        <section>
+            <div class="section-header border-none">
+                <h3 class="txt-w400"><span class="txt-12"><em class="txt-14 txt-w500">홍길동</em>님, 티스테이션 스마트케어중 입니다.</span></h3>
+            </div>
+
+            <div class="membership-card-wrap">
+                <div class="membership-card">
+                    <img src="mc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img">
+                    <div class="barcode-area">
+                        <div class="barcode-wrap">
+                            <div class="barcode-holder" style="background-image:url('mc-static-root/images/common/barcode-sample.png');"></div>
+                        </div>
+                        <p class="barcode-info"><span>회원번호:</span><span class="barcode-number">12600</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 스마트케어 서비스 이용툴팁 as-is -->
+        <!--<section class="pd-h-4u mg-t-3u">
+            <button type="button" class="btn-item btn-neutral full-w" style="line-height: 52px; height: 52px; border-radius: 4px;">
+                <span class="label-txt">스마트케어 서비스 이용툴팁</span>
+            </button>
+        </section>-->
+
+        <!-- 스마트케어 서비스 이용툴팁 to-be -->
+        <!-- 202012 pub fixed // -->
+        <section class="pd-h-4u mg-t-3u">
+            <a href="#none" class="dp-block image-container radius">
+                <img src="mc-static-root/images/common/tstation_membership-banner.png" alt="" class="full-w" />
+            </a>
+        </section>
+        <!-- // 202012 pub fixed -->
+        <!-- 내 차 관리: 차량 등록 전 -->
+        <section class="mg-t-15u">
+            <div class="section-header mycar-management-header clearfix">
+                <h3>내 차 관리</h3>
+
+                <div class="extra">
+                    <a href="" class="btn-item btn-m btn-neutral btn-inv filet">
+                        <span class="label-txt txt-primary">차량 등록하기</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mycar-overview">
+                <div class="mycar-info-area empty">
+                    <div class="mycar-info-img">
+                        <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_dummy.png');"></div>
+                    </div>
+
+                    <div class="mycar-info-txt">
+                        <p class="txt-16">등록된 차량이 없습니다.</p>
+                        <hr>
+                        <p class="txt-12 txt-neutral2 line-140per">주행중인 차량을 등록하시고 <br>티스테이션만의 스마트케어<br>서비스를 시작하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 내 차 관리: 차량 등록 후 -->
+        <section class="mg-t-15u">
+            <div class="section-header mycar-management-header clearfix">
+                <h3>내 차 관리</h3>
+
+                <div class="mycar-select-item">
+                    <div class="swiper-container mycar-select-swiper" dir="rtl">
+                        <div class="swiper-wrapper">
+                            <!-- 반복되는 swiper-slide는 밑으로 갈수록 최신등록 -->
+                            <div class="swiper-slide">
+                                <!-- 활성화 체크는 btn-select-car에 'on'클래스 추가 -->
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car on" style="background-image: url('mc-static-root/images/common/mycar_sample.png')"></button>
+                            </div>
+                        </div>
+
+                        <script>
+                            var totalMyCar = $('.mycar-select-swiper .swiper-slide').length;
+                            var mycar_select_swiper = new Swiper('.mycar-select-swiper', {
+                                init: false,
+                                slidesPerView: 'auto',
+                                initialSlide: totalMyCar - 1,
+                            });
+
+                            mycar_select_swiper.init();
+
+                            $(window).on('resize', function () {
+                                mycar_select_swiper.init();
+                            });
+
+                            $('.mycar-select-swiper .btn-select-car').on('click', function(){
+                                $('.mycar-select-swiper .btn-select-car').removeClass('on');
+                                $(this).addClass('on');
+                            });
+                        </script>
+                    </div>
+
+                    <div class="add-btn-wrap">
+                        <button type="button" class="btn-item btn-gray round min-w btn-add-car">
+                            <span class="line-icons add size-24"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mycar-overview">
+                <div class="mycar-info-area">
+                    <div class="mycar-info-img">
+                        <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                    </div>
+
+                    <div class="mycar-info-txt">
+                        <script>
+                            var sample = '<p class="txt-center mg-t-4u txt-16 txt-primary">\n' +
+                              '                                    <span class="line-icons caution size-48 txt-primary mg-b-2u"></span><br>\n' +
+                              '                                    인증되지 않은 차량입니다.\n' +
+                              '                                </p>\n' +
+                              '\n' +
+                              '                                <p class="txt-center txt-neutral2 txt-13 mg-t-8u pd-t-4u border-t">\n' +
+                              '                                    <span class="txt-primary">*</span> 스마트케어 서비스는 차번으로 인증된 정보를 기준으로 정보를 제공합니다. 먼저 차량인증을 하시기 바랍니다.\n' +
+                              '                                </p>'
+
+                            var callCarReg = function () {
+                                alert('MY 차량인증 후속조치 콜')
+                                $.Tstation.popup().close();
+                            }
+                        </script>
+                        <p class="car-number">
+                            <span class="v-middle txt-16">12가 1234</span>
+                            <span
+                                    class="badge badge-inv badge-neutral1 mg-l-2u"
+                                    onclick="$.Tstation.popup().open({
+                                            ref: '',
+                                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                            contents: sample, // 팝업을 바로 띄우고 싶을때
+                                            dimWhite: false,
+                                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                                horizon: 8,
+                                                vertical: 8,
+                                                top: 0,
+                                                right: 0,
+                                                bottom: 0,
+                                                left: 0
+                                            },
+                                            full: false, // Full Popup
+                                            modalAction: {
+                                                isNoBoundary: false,
+                                                buttons: [
+                                                    {
+                                                        label: 'MY 차량인증',
+                                                        negative: false,
+                                                        action: 'callCarReg()'
+                                                    }
+                                                ]
+                                            }
+                                        })"
+                            >미인증 차량</span>
+                            <span class="badge badge-inv mg-l-2u">인증 차량</span>
+                        </p>
+                        <p class="car-model">
+                            <span class="model">제네시스 G80</span>
+                            <span class="detail-model">3.3디젤</span>
+                            <span class="year">2020년</span>
+                        </p>
+                        <p class="mg-t-2u tire-size">245/45R18</p>
+
+                        <a href="" class="btn-item btn-xs btn-neutral round pd-h-2u mg-t-3u btn-modify-car">
+                            <span class="label-txt txt-11">정보 수정</span>
+                        </a>
+                    </div>
+                    <!--쇼핑버튼-->
+                    <ul class="list-size-equal shopping-lst-btns">
+                        <li>
+                            <button type="button" class="btn-item btn-neutral btn-ol round full-w">
+                                <span class="label-txt">타이어 쇼핑</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-item btn-neutral btn-ol round full-w">
+                                <span class="label-txt">경정비 쇼핑</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <!--//쇼핑버튼-->
+                </div>
+            </div>
+        </section>
+
+        <!-- 쿠폰 -->
+        <section class="mg-t-6u">
+            <div class="container">
+                <div class="section-header border-none clearfix over-visible">
+                    <h3 class="txt-w400">내 차 관리에 꼭 <em class="txt-w500">필요한 쿠폰</em></h3>
+                    <span class="tooltip-container bottom mg-l-1u">
+                                <span class="line-icons info-circle size-20"></span>
+                                <div class="tooltip">
+                                    <div class="tooltip-body">
+                                        <p>타이어/경정비 상품 구매는 물론 차량 정비 또한 더 합리적인 가격으로 이용하실 수 있도록 T'Station에서 제공해 드리는 다양한 쿠폰 정보를 확인하실 수 있습니다.</p>
+                                    </div>
+                                </div>
+                            </span>
+                </div>
+
+                <div class="swiper-container mycar-recommend-coupon-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="" class="mycar-recommend-coupon">
+                                <h5><em>5%</em></h5>
+                                <p>타이어/경정비</p>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="" class="mycar-recommend-coupon">
+                                <h5><em>2</em>만원 할인</h5>
+                                <p>휠얼라인먼트</p>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="" class="mycar-recommend-coupon">
+                                <h5><em>무료</em></h5>
+                                <p>스마트픽업</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <script>
+                        var mycar_recommend_coupon_swiper = new Swiper('.mycar-recommend-coupon-swiper', {
+                            init: false,
+                            // spaceBetween: 8,
+                            slidesPerView: 'auto',
+                        });
+
+                        mycar_recommend_coupon_swiper.init();
+
+                        $(window).on('resize', function () {
+                            mycar_recommend_coupon_swiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <!-- 스마트 점검 리스트 -->
+        <section class="mg-t-6u">
+            <div class="mycar-check-overview">
+                <div class="section-header border-none clearfix over-visible">
+                    <h3 class="txt-w400">내 차를 위한 <em class="txt-w500">스마트 점검</em></h3>
+                    <span class="tooltip-container bottom mg-l-1u">
+                                <span class="line-icons info-circle size-20"></span>
+                                <div class="tooltip">
+                                    <div class="tooltip-body">
+                                        <p>등록하신 차량의 구매/정비이력을 바탕으로, 점검/교환 시기 등 차량에 꼭 필요한 맞춤형 관리 정보를 제공해드립니다.</p>
+                                    </div>
+                                </div>
+                            </span>
+                </div>
+
+                <!-- 차량 등록 전 : inactive클래스 추가 -->
+                <ul class="list-size-full mycar-check-list inactive">
+                    <li class="list-big">
+                        <a href="#" class="btn-w">
+                            <div class="lft-conts">
+                                <span class="line-icons wrench size-24"></span>
+                                <span class="d-day">
+                                            <span>D-00</span>
+                                        </span>
+                            </div>
+                            <div class="rgt-conts">
+                                <span class="label-txt">티스테이션 5대 무상점검</span>
+                                <span class="line-icons chev-right size-16"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol btn-free filet full-w pd-h-2u">
+                            <span class="d-day">D-00</span>
+                            <span class="line-icons indoor-filter size-28"></span>
+                            <span class="label-txt">실내필터 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day">D-00</span>
+                            <span class="line-icons engine-oil size-28"></span>
+                            <span class="label-txt">엔진오일 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day">D-00</span>
+                            <span class="line-icons alignment size-28"></span>
+                            <span class="label-txt">얼라인먼트 점검</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day">D-00</span>
+                            <span class="line-icons tire-2 size-28"></span>
+                            <span class="label-txt">타이어 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day">D-00</span>
+                            <span class="line-icons battery size-28"></span>
+                            <span class="label-txt">배터리 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day">D-00</span>
+                            <span class="line-icons wiper size-28"></span>
+                            <span class="label-txt">와이퍼 교체</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="guide-desc pd-h-5u mg-t-2u"><em>*</em>내 차를 등록하면 스마트 점검 정보를 확인하실 수 있습니다.</p>
+                <!-- 차량 등록 후 : inactive클래스 제거 -->
+                <ul class="list-size-full mycar-check-list">
+                    <li class="list-big">
+                        <a href="#" class="btn-w alert">
+                            <div class="lft-conts">
+                                <span class="line-icons wrench size-24"></span>
+                                <span class="d-day">
+                                            <span>D-80</span>
+                                            <span>2019.05.11</span>
+                                        </span>
+                            </div>
+                            <div class="rgt-conts">
+                                <span class="label-txt">티스테이션 5대 무상점검</span>
+                                <span class="line-icons chev-right size-16"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- 경고 날짜:'alert' / 임박한 날짜:'near' 클래스 추가 -->
+                        <a href="" class="btn-item btn-gray btn-ol btn-free filet full-w pd-h-2u alert">
+                            <span class="d-day"><span>점검일경과</span><span>2019.05</span></span>
+                            <span class="line-icons indoor-filter size-28"></span>
+                            <span class="label-txt">실내필터 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day"><span>D-60</span><span>2020.11</span></span>
+                            <span class="line-icons engine-oil size-28"></span>
+                            <span class="label-txt">엔진오일 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day"><span>D-87</span><span>2020.11</span></span>
+                            <span class="line-icons alignment size-28"></span>
+                            <span class="label-txt">얼라인먼트 점검</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day"><span>D-100</span><span>2020.12</span></span>
+                            <span class="line-icons tire-2 size-28"></span>
+                            <span class="label-txt">타이어 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day"><span>D-87</span><span>2020.11</span></span>
+                            <span class="line-icons battery size-28"></span>
+                            <span class="label-txt">배터리 교체</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <!-- 조회 날짜를 기준으로 d-day가 **100일**(기준 일은 아직 정해지지 않았다고 함) 후면 교체예정으로 변경 -->
+                        <a href="" class="btn-item btn-gray btn-ol filet full-w pd-h-2u">
+                            <span class="d-day"><span>교체예정</span><span>2022.05</span></span>
+                            <span class="line-icons wiper size-28"></span>
+                            <span class="label-txt">와이퍼 교체</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="guide-desc pd-h-5u mg-t-2u"><em>*</em>티스테이션 매장의 정비/점검 이력을 기준으로 알려드립니다.</p>
+                <p class="pd-h-6u mg-t-1u txt-primary txt-12">(실제 이력이 없는 경우 최근 교체/점검일은 멤버십 차량등록일 기준으로 알려드립니다.)</p><!-- 2021-03-31 -->
+            </div>
+        </section>
+
+        <!-- 내 이력 -->
+        <section class="mg-t-15u">
+            <div class="section-header">
+                <h3>내 이력</h3>
+            </div>
+
+            <!-- 이력이 없는 경우 -->
+            <!-- empty-box component: 높이는 pd-v- 패딩으로 조절 -->
+            <div class="empty-box bg-light1 pd-v-10u">
+                <div class="middler">
+                    <span class="line-icons error-circle size-48"></span>
+                    <p class="empty-msg">점검/구매이력이 아직 없습니다.</p>
+                </div>
+            </div>
+            <div class="container txt-0 txt-center pd-h-5u mg-t-8u">
+                <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="">
+                    <span class="label-txt">내 차량 등록하기</span>
+                </button>
+            </div>
+
+
+
+            <!-- 이력이 있는 경우 -->
+            <p class="guide-desc pd-h-5u mg-t-3u"><em>*</em>최근 5년이내 구매/정비이력을 표시합니다.</p>
+            <ul class="list-size-full service-history-list mg-t-5u">
+                <li>
+                    <span class="date">20.06.01<br>(2건)</span>
+
+                    <a href="" class="btn-item service-detail">
+                        <h4><em class="service-cate">타이어</em>Ventus S2 AS 245/45R18 장착</h4>
+                        <div class="meta-info">
+                            <span class="badge badge-s badge-neutral3">방배점</span>
+                        </div>
+                    </a>
+
+                    <a href="" class="btn-item service-detail">
+                        <h4><em class="service-cate">서비스</em>스마트 안심 서비스 가입</h4>
+                    </a>
+                </li>
+
+                <li>
+                    <span class="date">19.11.08<br>(3건)</span>
+
+                    <a href="" class="btn-item service-detail">
+                        <h4><em class="service-cate">타이어</em>윈터 아이셉트 프리미엄 i*cept evo 2 장착</h4>
+                        <div class="meta-info">
+                            <span class="badge badge-s badge-neutral3">서초점</span>
+                        </div>
+                    </a>
+
+                    <a href="" class="btn-item service-detail">
+                        <h4><em class="service-cate">서비스</em>호텔 서비스 가입</h4>
+                    </a>
+
+                    <a href="" class="btn-item service-detail">
+                        <h4><em class="service-cate">경정비</em>윈도우 와이퍼 교체</h4>
+                        <div class="meta-info">
+                            <span class="badge badge-s badge-neutral3">서초점</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <span class="date">19.09.01<br>(1건)</span>
+
+                    <a href="" class="btn-item service-detail">
+                        <h4><em class="service-cate">경정비</em>배터리 교체(AtlasBX)</h4>
+                        <div class="meta-info">
+                            <span class="badge badge-s badge-neutral3">삼송점</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- 로드할 이력이 있는 경우만 노출 -->
+            <div class="container txt-0 txt-center pd-h-5u mg-t-6u">
+                <button type="button" class="btn-item btn-neutral btn-ol round" onclick="">
+                    <span class="label-txt">내 구매/정비이력 더보기</span>
+                </button>
+            </div>
+        </section>
+    </div>
+</main>
+<div id="bottomDrawer" class="">
+    <div class="dim" onclick="$.Tstation.bottomDrawer().close();"></div>
+    <div class="bottom-drawer-pannel">
+        <!-- contents -->
+        <div class="container choose-car">
+            <p class="">관리중인 차량을 선택하세요</p>
+
+            <button type="button" class="btn-item btn-neutral btn-ol round full-w mg-t-4u btn-reg-car">
+                <span class="label-txt txt-14">차량 등록</span>
+                <span class="line-icons add size-20"></span>
+            </button>
+
+            <div class="swiper-container choose-car-swiper mg-t-4u">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <label class="radio-item">
+                            <input type="radio" name="choose_car_radio" checked/>
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+
+                            <div class="labelling">
+                                <img src="mc-static-root/images/common/brand_emblem/brand_64.png" class="car-brand-emblem">
+                                <p class="label-txt car-number">12가 1234</p>
+                                <p class="label-txt car-model">
+                                    <span class="model">제네시스 G80</span>
+                                    <span class="detail-model">3.3 디젤</span>
+                                </p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <label class="radio-item">
+                            <input type="radio" name="choose_car_radio"/>
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+
+                            <div class="labelling">
+                                <img src="mc-static-root/images/common/brand_emblem/brand_69.png" class="car-brand-emblem">
+                                <p class="label-txt car-number">56나 6789</p>
+                                <p class="label-txt car-model">
+                                    <span class="model">K7</span>
+                                    <span class="detail-model">3.3 가솔린</span>
+                                </p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <label class="radio-item">
+                            <input type="radio" name="choose_car_radio"/>
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+
+                            <div class="labelling">
+                                <img src="mc-static-root/images/common/brand_emblem/brand_29.png" class="car-brand-emblem">
+                                <p class="label-txt car-number">120다 1597</p>
+                                <p class="label-txt car-model">
+                                    <span class="model">포르쉐 911</span>
+                                    <span class="detail-model">블랙에디션</span>
+                                </p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <label class="radio-item">
+                            <input type="radio" name="choose_car_radio"/>
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+
+                            <div class="labelling">
+                                <img src="mc-static-root/images/common/brand_emblem/brand_27.png" class="car-brand-emblem">
+                                <p class="label-txt car-number">34라 2459</p>
+                                <p class="label-txt car-model">
+                                    <span class="model">아테온</span>
+                                    <span class="detail-model">2.0 TDI</span>
+                                </p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                var choose_car_swiper = new Swiper('.choose-car-swiper', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 8,
+                    freeMode: true,
+                });
+            </script>
+        </div>
+    </div>
+</div>

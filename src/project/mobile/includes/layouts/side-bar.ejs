@@ -1,0 +1,283 @@
+<aside id="sidebar" class="">
+    <div class="dim"></div>
+    <div class="swiper-container sidebar-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide sidebar-pannel-layer">
+                <div class="btn-close-sidebar"></div>
+                <div class="sidebar-pannel">
+                    <div class="fixed-area">
+                        <header class="sidebar-header">
+                            <a href="#" class="logo-home-link">
+                                <img src="mc-static-root/images/common/bi_full.svg" alt="T'Station">
+                            </a>
+                            <!-- TODO: 로그인 상태 -->
+                            <div class="tools">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="btn-item btn-ms min-w btn-neutral round btn-inv" title="내 차 관리">
+                                            <span class="line-icons car-circle size-30"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-item btn-ms min-w btn-neutral round btn-inv mg-l-1u" title="마이페이지">
+                                            <span class="line-icons user size-30"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <!-- btn-alarm에 'has-new'클래스 추가/제거 -->
+                                        <!-- 20211112 // -->
+                                        <a href="#" class="btn-item btn-ms min-w btn-neutral round btn-inv btn-alarm mg-l-1u" title="알림">
+                                            <span class="line-icons alarm size-30"></span>
+                                            <em class="badge">9</em>
+                                        </a>
+                                        <!-- // 20211112 -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- TODO: 로그아웃 상태 -->
+                            <!--<div class="tools">
+                                <ul>
+                                    <li>
+                                        <button type="button" class="btn-item btn-gray btn-ol btn-s round "><span class="label-txt">로그인</span></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn-item btn-gray btn-ol btn-s round mg-l-1u"><span class="label-txt">회원가입</span></button>
+                                    </li>
+                                </ul>
+                            </div>-->
+                        </header>
+                        <!--로그인후 : default ,로그인전 : logout클래스 설정 -->
+                        <nav class="personal-menu">
+                            <div class="greeting-wrap">
+                                        <span class="label-txt">
+                                            <span class="dp-inblock v-middle txt-10">[임직원]</span>
+                                            <em class="txt-ellipsis user-name  v-middle">홍길동</em><span class="dp-inblock v-middle greeting-txt">님, 안녕하세요</span>
+                                        </span>
+                            </div>
+                            <ul class="list-size-equal">
+                                <ul class="list-size-equal">
+                                    <li>
+                                        <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                            <span class="line-icons t-membership size-30 badge-container"><span class="badge badge-dot"></span></span>
+                                            <span class="label-txt">MY 멤버십</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                            <span class="line-icons coupon size-30 badge-container"><span class="badge badge-dot"></span></span>
+                                            <span class="label-txt">쿠폰함</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                            <span class="line-icons receipt size-30"></span>
+                                            <span class="label-txt">주문내역</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                            <span class="line-icons calendar-check size-30"></span>
+                                            <span class="label-txt">방문예약</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <div class="btn-membership-card-wrapper">
+                                <!-- TODO: 로그인 후 'disabled' 삭제 -->
+                                <button type="button" class="btn-item btn-neutral btn-inv filet full-w btn-membership-card">
+                                    <p class="label-txt">티스테이션 회원 카드</p>
+                                    <img src="mc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img full">
+
+                                    <span class="line-icons barcode size-36"></span>
+                                    <div class="barcode-area">
+                                        <div class="barcode-wrap">
+                                            <div class="barcode-holder" style="background-image:url('mc-static-root/images/common/barcode-sample.png');"></div>
+                                        </div>
+                                        <p class="barcode-info"><span>회원번호:</span><span class="barcode-number">M200082579</span></p>
+                                    </div>
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                    <hr class="divider mg-t-2u">
+                    <div class="scroll-area">
+                        <div class="mycar-tire-search-wrap pd-h-4u">
+                            <p class="tit">내 차에 꼭 맞는 타이어 찾기</p>
+                            <ul class="cs_menu01">
+                                <li>
+                                    <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                        <div class="img-car-num">
+                                            <img src="mc-static-root/images/common/graphics_tire_search_car_number.svg" alt="T'Station" class="bi-img">
+                                        </div>
+                                        <span class="label-txt">차량번호로 찾기</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                        <div class="img-car-model">
+                                            <img src="mc-static-root/images/common/graphics_tire_search_car_kinds.svg" alt="T'Station" class="bi-img">
+                                        </div>
+                                        <span class="label-txt">차종으로 찾기</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                        <div class="img-car-tire">
+                                            <img src="mc-static-root/images/common/graphics_tire_search_size.svg" alt="T'Station" class="bi-img">
+                                        </div>
+                                        <span class="label-txt">사이즈로 찾기</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <nav class="global-menu">
+                            <!--쇼핑메뉴 항상노출-->
+                            <div class="open-menu">
+                                <p class="tit">쇼핑</p>
+                                <div class="open-menu-lst-warp">
+                                    <ul class="open-menu-lst">
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">승용차</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">SUV</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="m-txt">전기차</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">VAN</br>소형트럭</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="open-menu-lst">
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">한국타이어</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">미쉐린타이어</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="m-txt">피렐리타이어</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">멕시스타이어</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="open-menu-lst">
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">엔진오일</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">배터리</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="m-txt">실내필터</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="m-txt">와이퍼</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--//쇼핑메뉴 항상노출-->
+                            <!--dl>
+                                <dt class="">
+                                    <p class="label-txt">경정비 쇼핑</p>
+                                </dt>
+
+                                <dd>
+                                    <a href="" class="">
+                                        <p class="label-txt">엔진오일</p>
+                                    </a>
+
+                                    <a href="" class="">
+                                        <p class="label-txt">배터리</p>
+                                    </a>
+
+                                    <a href="" class="">
+                                        <p class="label-txt">실내필터</p>
+                                    </a>
+
+                                    <a href="" class="">
+                                        <p class="label-txt">와이퍼</p>
+                                    </a>
+                                </dd>
+                            </dl-->
+
+                            <dl>
+                                <dt class="" onclick="window.location.href=''">
+                                    <p class="label-txt">all my <strong>T</strong> 서비스</p>
+                                </dt>
+                            </dl>
+                            <!-- 20220707 // -->
+                            <dl>
+                                <dt class="" onclick="window.location.href=''">
+                                    <p class="label-txt">기획전</p>
+                                </dt>
+                            </dl>
+                            <!-- // 20220707-->
+                            <dl>
+                                <dt class="" onclick="window.location.href=''">
+                                    <p class="label-txt">매장예약</p>
+                                </dt>
+                            </dl>
+
+                            <dl>
+                                <dt class="" onclick="window.location.href=''">
+                                    <p class="label-txt">이벤트</p>
+                                </dt>
+                            </dl>
+
+                            <!-- TAM 0817 // -->
+                            <dl>
+                                <dt class="" onclick="window.location.href=''">
+                                    <p class="label-txt">알쓸타잡</p>
+                                </dt>
+                            </dl>
+                            <!-- // TAM 0817 -->
+
+                            <dl>
+                                <dt class="" onclick="window.location.href=''">
+                                    <p class="label-txt">고객센터</p>
+                                </dt>
+                            </dl>
+                        </nav>
+                        <!-- 211021 // -->
+                        <hr class="divider">
+                        <div class="appsetting-wrap">
+                            <a href="#" class="appsetting-button">
+                                <span class="label-txt">앱 설정</span>
+                                <span class="line-icons setting size-16"></span>
+                            </a>
+                        </div>
+                        <!-- // 211021 -->
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide dummy swiper-no-swiping"></div>
+        </div>
+    </div>
+</aside>

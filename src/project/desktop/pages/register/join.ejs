@@ -1,0 +1,75 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <div id="contents" class="member">
+        <section class="mg-b-6u">
+            <div class="section-header mg-b-3u">
+                <h3>간단한 회원가입</h3>
+            </div>
+
+            <div class="section-contents-area">
+                <ul>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w btn-sign-up" onclick="window.location.href='/member/register/form.do'">
+                            <span class="line-icons mail size-24"></span>
+                            <span class="label-txt">이메일로 간편 회원가입</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="divider mg-v-5u"></div>
+
+                <ul style="margin-bottom: 200px;">
+                    <li class="mg-b-1u">
+                        <button type="button" data-rel="kakaoTalklayer" data-height="614" class="btn-item btn-kakao round full-w btn-sign-up layer-scarce">
+                            <span class="line-icons social-kakao size-24"></span>
+                            <span class="label-txt">카카오로 간편 회원가입</span>
+                        </button>
+                    </li>
+                    <li class="mg-b-1u">
+                        <button type="button" class="btn-item btn-naver round full-w btn-sign-up" onclick="window.location.href='/member/register/form.do'">
+                            <span class="line-icons social-naver size-24"></span>
+                            <span class="label-txt">네이버로 간편 회원가입</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-facebook round full-w btn-sign-up" onclick="window.location.href='/member/register/form.do'">
+                            <span class="line-icons social-fb size-24"></span>
+                            <span class="label-txt">Facebook으로 간편 회원가입</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+<div class="full_kakao" style="display:none;" id="kakaoTalklayer">
+    <div class="layerT"><h3>카카오 회원가입 안내</h3></div>
+    <div class="layerC">
+        <!--  -->
+        <ol class="notice_01">
+            <li>티스테이션 온라인몰에 카카오 <span class="col02">회원가입을 원하신다면</span> <span class="col01">카카오 아이디가 이메일 형식</span>이여야 합니다.
+                <p class="sp01">카카오 아이디가 이메일이 아닌 휴대폰 번호인 경우 카카오 회원가입이 불가능합니다.</p>
+            </li>
+
+            <li>회원가입 시 개인정보 제3자 제공 동의페이지에서 <span class="col01">카카오계정(이메일) 항목에 반드시 체크 후</span> 동의하셔야 회원가입이 가능합니다.
+                <p class="sp01">카카오 계정(이메일) 항목에 체크하지 않으시면 카카오 회원가입이 불가능합니다.</p>
+            </li>
+        </ol>
+        <div class="kakao_notice"><img src="https://www.tstation.com/pc-static-root/images/common/kakao_notice.gif" alt=""></div>
+        <ol class="notice_01">
+            <li>카카오 계정으로 회원에 가입하려는데 이메일이 누락되었다는 알람 메세지가 계속 뜹니다.</li>
+
+            <li>카카오 계정 홈페이지(<a href="https://accounts.kakao.com/login?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo">여기를 클릭</a>)에서 카카오 계정(이메일)으로 로그인 후 '연결된 서비스 관리'를 클릭, '그 외 카카오 계정으로 로그인' 항목에서 T'Station 연결을 끊은 후 다시 가입을 시도해주세요.
+            </li>
+        </ol>
+        <!--  -->
+        <!-- btn -->
+        <div class="btn01">
+            <a href="https://www.tstation.com/member/snslogin/kakaologin.do?loginYn=N" class="btnM2 btnS02 layer-full-close">확인</a>
+        </div>
+        <!-- //btn -->
+    </div>
+</div>

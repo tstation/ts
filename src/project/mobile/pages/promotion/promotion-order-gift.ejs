@@ -1,0 +1,215 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '카카오굿즈 사은품 신청' }) %>
+<div id="container" class="">
+    <!-- 사은품 신청 -->
+    <div class="gift-apply-page pd-h-4u pd-v-4u">
+        <div class="noti pd-b-5u">
+            <p class="txt-12 txt-neutral2">한국타이어앤테크놀로지 주식회사 (이하 “회사”라 합니다)는 이벤트 응모조건을 충족하는 고객님께 사은품 발송을 위해 아래 개인정보 수집 및 이용 동의, 개인정보 제 3자 제공에 관한 동의를 수집하오니 내용을 숙지하신 후 신청 부탁드립니다. </p>
+        </div>
+        <form action="" method="post">
+            <label for="confirmNumber" class="txt-16 pd-v-3u dp-block">인증번호 입력</label>
+            <ul class="list-size-flex">
+                <li class="flex-3 pd-r-2u">
+                <div class="form-control form-control-md">
+                    <div class="input-group">
+                        <input id="confirmNumber" name="confirmNumber" type="text" class="input-box" placeholder="문자로 받으신 인증번호를 입력해 주세요" value="">
+                        <div class="tools">
+                            <button class="clear" type="button" onclick="$('#confirmNumber').val('')"><span class="line-icons close-circle"></span></button>
+                        </div>
+                    </div>
+                </div>
+                </li>
+                <li class="flex-1">
+                    <button type="button" class="btn-item btn-neutral full-w filet pd-h-1u">
+                        <span class="label-txt txt-12">인증번호 확인</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="txt-16 mg-t-8u">사은품 신청하기</div>
+            <ul class="pd-b-5u">
+                <li class="mg-t-2u">
+                    <div class="form-control form-control-inline inline-xs">
+                        <label class="">상품</label>
+                        <div class="input-group">
+                            <select class="input-box">
+                                <option value="options1">사은품을 선택하세요 </option>
+                                <option value="options2">카카오 주차번호판 </option>
+                                <option value="options3" selected="">카카오 에코백</option>
+                                <option value="options4" disabled="">카카오 장우산</option>
+                            </select>
+                            <div class="tools">
+                                <button><span class="line-icons chev-down"></span></button>
+                            </div>
+                        </div>
+                        <p class="txt-12 txt-primary">※ 카카오굿즈는 신청자에 한해 선착순으로 신청되며, 일부 상품 소진 시 선택이 불가합니다. </p>
+                    </div>
+                </li>
+                <li class="mg-t-2u">
+                    <div class="form-control form-control-inline inline-xs">
+                        <label for="ownername">이름</label>
+                        <div class="input-group">
+                            <input id="ownername" name="ownername" type="text" class="input-box" placeholder="홍길동" value="">
+                            <div class="tools">
+                                <button class="clear" type="button" onclick="$('#ownername').val('')"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mg-t-2u">
+                    <div class="form-control form-control-inline inline-xs">
+                        <label for="phone-nm">전화번호</label>
+                        <ul class="list-size-flex">
+                            <li class="flex-3 pd-r-2u division-line">
+                                <div class="form-control form-control-md">
+                                    <div class="input-group">
+                                        <select class="input-box" id="phone-nm" name="phone-nm">
+                                            <option value="options1" selected="" disabled="">010</option>
+                                            <option value="options2">000</option>
+                                            <option value="options3">000</option>
+                                        </select>
+                                        <div class="tools">
+                                            <button><span class="line-icons chev-down"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex-3 pd-r-2u division-line">
+                                <div class="form-control form-control-md">
+                                    <div class="input-group">
+                                        <input id="phone-md-nm" name="phone-md-nm" type="text" class="input-box" placeholder="" value="">
+                                        <div class="tools">
+                                            <button class="clear" type="button" onclick="$('#phone-md-nm').val('')"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex-3">
+                                <div class="input-group">
+                                    <input id="phone-last-nm" name="phone-last-nm" type="text" class="input-box" placeholder="" value="">
+                                    <div class="tools">
+                                        <button class="clear" type="button" onclick="$('#phone-last-nm').val('')"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mg-t-2u">
+                    <div class="form-control form-control-inline inline-xs">
+                        <label for="giftaddress">배송지</label>
+                        <ul class="list-size-flex">
+                            <li class="flex-4 pd-r-2u">
+                                <div class="form-control form-control-md">
+                                    <div class="input-group">
+                                        <input id="giftaddress" name="giftaddress" type="text" class="input-box" placeholder="" value="" readonly>
+                                        <div class="tools">
+                                            <button class="clear" type="button" onclick="$('#giftaddress').val('')"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex-2">
+                                <button type="button" class="btn-item btn-neutral full-w filet pd-h-1u">
+                                    <span class="label-txt txt-12">우편번호</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-control form-control-inline inline-xs mg-t-1u">
+                        <div class="input-group">
+                            <input id="ownername" name="ownername" type="text" class="input-box" placeholder="우편번호를 선택해 주세요" value="" readonly>
+                            <div class="tools">
+                                <button class="clear" type="button" onclick="$('#ownername').val('')"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control form-control-inline inline-xs mg-t-1u">
+                        <div class="input-group">
+                            <input id="ownername" name="ownername" type="text" class="input-box" placeholder="상세주소를 입력해 주세요" value="">
+                            <div class="tools">
+                                <button class="clear" type="button" onclick="$('#ownername').val('')"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <div class="terms-section mg-t-3u">
+            <div class="txt-primary txt-w500 txt-14 mg-v-2u">·유의사항·</div>
+            <!-- 2021-06-23 // -->
+            <p class="txt-12 txt-neutral3 mg-t-1u"># 사은품 신청기한 : ~21년 8월 04일(수) 까지</p>
+            <p class="txt-12 txt-neutral3 mg-t-1u"># 사은품 발송일정 : 21년 8월 06일(금) 발송</p>
+            <!-- // 2021-06-23  -->
+            <p class="txt-12 txt-neutral3 mg-t-1u"># 잘못된 배송지 입력으로 인한 반품 및 재발송 택배비는 고객 부담입니다.</p>
+            <p class="txt-12 txt-neutral3 mg-t-1u"># 카카오굿즈 관련 문의 : 파인커뮤니케이션즈 (02-3442-5757)</p>
+        </div>
+        <div class="gift-terms-section mg-v-2u">
+            <div class="mg-t-4u">
+                <input type="checkbox" class="ip_c checkAll" name="allagreeChk" id="agree_all" />
+                <label for="agree_all" class="txt-12">전체동의</label>
+            </div>
+            <div class="list mg-t-4u">
+                <input type="checkbox" class="ip_c checkSingle" id="agree_1" name="agreeChk" title="(필수) 개인정보 수집 및 이용동의">
+                <label for="agree_1" class="txt-12">(필수) 개인정보 수집 및 이용동의</label>
+                <div class="table-wrap tbl table-responsive">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>항목</th>
+                                <th>수집목적</th>
+                                <th>보유기간</th>
+                            </tr>
+                            <tr>
+                                <td>이름, 전화번호, 주소</td>
+                                <td>카카오굿즈 발송</td>
+                                <!-- 2021-06-23 // -->
+                                <td>사은품 발송 완료 시까지 (2021년 6월 28일 ~ 2021년 8월 06일)<br /><br /><br /></td>
+                                <!-- // 2021-06-23 -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="list mg-t-4u">
+                <input type="checkbox" class="ip_c checkSingle" id="agree_2" name="agreeChk" title="(필수) 개인정보 제3자 제공에 관한 동의">
+                <label for="agree_2" class="txt-12">(필수) 개인정보 제3자 제공에 관한 동의</label>
+                <div class="table-wrap tbl table-responsive">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>제공 받는자</th>
+                                <th>제공 항목</th>
+                                <th>제공 목적</th>
+                                <th>보유기간</th>
+                            </tr>
+                            <tr>
+                                <td>업체명 : 파인커뮤니케이션즈<br />
+                                    주소 : 서울시 마포구 서교동 395-131 승현빌딩<br />
+                                    연락처 : 02-3442-5757</td>
+                                <td>이름, 전화번호, 주소</td>
+                                <td>카카오굿즈 발송</td>
+                                <!-- 2021-06-23 // -->
+                                <td>사은품 발송 완료 시까지 (2021년 6월 28일 ~ 2021년 8월 06일)</td>
+                                <!-- // 2021-06-23 -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="list mg-t-4u">
+                <input type="checkbox" class="ip_c checkSingle" id="agree_3" name="agreeChk" title="(필수) 개인정보의 마케팅 활용에 대한 동의">
+                <label for="agree_3" class="txt-12">(필수) 개인정보의 마케팅 활용에 대한 동의</label>
+                <p class="txt-12 txt-neutral2 mg-t-1u pd-l-6u">- SMS를 통해 사은품 발송 및 배송정보 안내에 동의합니다.</p>
+            </div>
+        </div>
+        <div class="mg-t-10u">
+            <button type="button" class="btn-item btn-neutral full-w round">
+                <span class="label-txt">사은품 신청 완료</span>
+            </button>
+        </div>
+    </div>
+    <!-- //사은품 신청 -->
+</div>

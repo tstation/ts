@@ -1,0 +1,855 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page-header border-none">
+                        <h1>내 쿠폰</h1>
+                    </div>
+
+                    <div class="tab-item no-sticky on-layer size-m">
+                        <a href="#" class="on">사용가능한 쿠폰</a>
+                        <a href="#" class="">쿠폰 등록</a>
+                        <a href="#" class="">지난 쿠폰</a>
+                    </div>
+
+                    <div class="filter-console pd-v-5u">
+                        <table class="pd-medium">
+                            <colgroup>
+                                <col style="width:80px;"/>
+                                <col/>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="txt-left">
+                                    <h5 class="line-32 txt-16">사용처</h5>
+                                </th>
+                                <td>
+                                    <label class="radio-item">
+                                        <input type="radio" name="coupon_use_in_radio" checked>
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">전체</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="radio-item">
+                                        <input type="radio" name="coupon_use_in_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">온라인 전용</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="radio-item">
+                                        <input type="radio" name="coupon_use_in_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">매장 전용</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="radio-item">
+                                        <input type="radio" name="coupon_use_in_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">온라인/매장 겸용</span>
+                                        </div>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th class="txt-left txt-0">
+                                    <h5 class="dp-inblock line-32 txt-16 v-middle">종류</h5>
+
+                                    <!-- 쿠폰 종류 안내 팝업 오픈 -->
+                                    <!--<button type="button" class="btn-item min-w btn-neutral btn-inv bg-transparent btn-xs round mg-l-1u">
+                                        <span class="line-icons info-circle size-20"></span>
+                                    </button>-->
+                                </th>
+                                <td>
+                                    <label class="radio-item btn-type mg-r-2u">
+                                        <input type="radio" name="coupon_type_radio" checked>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">전체</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="radio-item btn-type mg-r-2u">
+                                        <input type="radio" name="coupon_type_radio">
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">스마트케어</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="radio-item btn-type mg-r-2u">
+                                        <input type="radio" name="coupon_type_radio">
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">패밀리</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="radio-item btn-type mg-r-2u">
+                                        <input type="radio" name="coupon_type_radio">
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">특별기획전</span><!-- 20220707 -->
+                                        </div>
+                                    </label>
+
+                                    <label class="radio-item btn-type mg-r-2u">
+                                        <input type="radio" name="coupon_type_radio">
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">우리동네딜</span>
+                                        </div>
+                                    </label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="list-guide-bar mg-t-10u">
+                        <p class="guide-text">총 <span class="txt-primary">7</span>장</p>
+
+                        <div class="tools tab-item tab-item-no-border tab-item-light no-sticky on-layer size-s">
+                            <a href="#" class="on">최신발급순</a>
+                            <a href="#" class="">마감순</a>
+                        </div>
+                    </div>
+
+                    <div class="container pd-v-5u">
+                        <section>
+                            <!-- 쿠폰 없을 경우 -->
+                            <div class="empty-box size-l">
+                                <div class="middler">
+                                    <span class="line-icons error-circle size-60"></span>
+                                    <p class="empty-msg">발급받으신 쿠폰이 없습니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- 쿠폰 있을 경우 -->
+                            <div class="container txt-right">
+                                <span class="line-40 txt-neutral2 float-l"><span class="txt-primary">*</span> 선물하신 쿠폰의 사용완료 여부는 지난쿠폰 탭에서 확인하세요.</span>
+                                <button type="button" class="btn-item btn-neutral btn-ol round">
+                                    <span class="label-txt">쿠폰 전체 다운받기 (3장)</span>
+                                </button>
+
+                                <button type="button" class="btn-item btn-neutral btn-ol round" disabled>
+                                    <span class="label-txt">쿠폰 전체 다운받기</span>
+                                </button>
+                            </div>
+
+                            <ul class="coupon-card-list col-2">
+                                <!-- 다운로드 전 :: download-before -->
+                                <!-- 다운로드 후 :: download-after -->
+                                <!-- 다운로드 후, 선물하기 가능한 쿠폰의 경우 :: able-give -->
+                                <li>
+                                    <article class="coupon-card on-bg-light1 download-after able-give">
+                                        <div class="coupon-card-info">
+                                            <!-- 1101 온라인 전용 case // -->
+                                            <div class="coupon-card-type-bar">
+                                                <span class="haaer-label-use online">
+                                                    <span class="label-txt txt-12">온라인<br />전용</span>
+                                                </span>
+                                                <div class="haaer-label-group">
+                                                    <span class="label-txt txt-11">패밀리</span>
+                                                </div>
+                                            </div>
+                                            <!-- // 1101 온라인 전용 case -->
+                                            <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                                            <p class="txt-18 line-100per mg-b-2u">타이어 결제할인</p>
+                                            <button type="button" class="btn-detail btn-item btn-neutral btn-xs btn-ol round mg-b-2u">
+                                                <span class="label-txt">상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </button>
+                                            <p class="txt-12 txt-neutral3">타이어 상품 구매 할 때 사용</p>
+                                        </div>
+                                        <button type="button" class="coupon-card-action" onclick="alert('쿠폰선물')">
+                                            <div class="coupon-card-action-inner">
+                                                <p class="mg-b-1u"><span class="line-icons present size-24 txt-primary"></span></p>
+                                                <p class="mg-b-1u"><span class="btn-item btn-primary btn-xs round"><span class="label-txt txt-12">선물하기</span></span></p>
+                                                <p><span class="txt-12">2021.01.20<br>까지</span></p>
+                                            </div>
+                                        </button>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="coupon-card on-bg-light1 download-after">
+                                        <div class="coupon-card-info">
+                                            <!-- 1101 온라인 매장전용 case // -->
+                                            <div class="coupon-card-type-bar clearfix">
+                                                <span class="haaer-label-use online-store">
+                                                    <span class="label-txt txt-12">온라인<br />매장전용</span>
+                                                </span>
+                                                <div class="haaer-label-group">
+                                                    <div class="country-label-wrap">
+                                                        <span class="label-txt txt-11">우리동네딜</span>
+                                                        <span class="badge badge-inv round txt-11">서울</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // 1101 온라인 매장전용 case -->
+                                            <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                                            <p class="txt-18 line-100per mg-b-2u">경정비 결제할인</p>
+                                            <button type="button" class="btn-detail btn-item btn-neutral btn-xs btn-ol round mg-b-2u">
+                                                <span class="label-txt">상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </button>
+                                            <p class="txt-12 txt-neutral3">경정비 상품 구매 할 때 사용</p>
+                                        </div>
+                                        <button type="button" class="coupon-card-action" onclick="alert('쿠폰다운')">
+                                            <div class="coupon-card-action-inner">
+                                                <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>
+                                                <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt txt-12">쿠폰다운</span></span></p>
+                                                <p><span class="txt-12">2021.01.20<br>까지</span></p>
+                                            </div>
+                                        </button>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="coupon-card on-bg-light1 download-after">
+                                        <div class="coupon-card-info">
+                                            <!-- 1101 매장전용 case // -->
+                                            <div class="coupon-card-type-bar clearfix">
+                                                <span class="haaer-label-use store">
+                                                    <span class="label-txt txt-12">매장전용</span>
+                                                </span>
+                                                <div class="haaer-label-group">
+                                                    <span class="label-txt txt-11">특별기획전</span><!-- 20220707 -->
+                                                </div>
+                                            </div>
+                                            <!-- // 1101 매장전용 case -->
+                                            <p class="txt-30 line-100per">20,000<small class="txt-18">원</small></p>
+                                            <p class="txt-18 line-100per mg-b-2u">휠 얼라인먼트 정비</p>
+                                            <button type="button" class="btn-detail btn-item btn-neutral btn-xs btn-ol round mg-b-2u">
+                                                <span class="label-txt">상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </button>
+                                            <p class="txt-12 txt-neutral3">매장에서 얼라인먼트 서비스 이용 시 적용</p>
+                                        </div>
+                                        <button type="button" class="coupon-card-action" onclick="alert('쿠폰사용')">
+                                            <div class="coupon-card-action-inner">
+                                                <p><span class="line-icons barcode size-36"></span></p>
+                                                <p class="mg-b-1u"><span class="dp-inblock">사용기한</span></p>
+                                                <p><span class="txt-12">2021.01.20<br>까지</span></p>
+                                            </div>
+                                        </button>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="coupon-card on-bg-light1 download-after">
+                                        <div class="coupon-card-info">
+                                            <div class="coupon-card-type-bar clearfix">
+                                                <span class="haaer-label-use online-store">
+                                                    <span class="label-txt txt-12">온라인<br />매장전용</span>
+                                                </span>
+                                                <div class="haaer-label-group">
+                                                    <span class="label-txt txt-11"></span>
+                                                </div>
+                                            </div>
+                                            <p class="txt-30 line-100per">20,000<small class="txt-18">원</small></p>
+                                            <p class="txt-18 line-100per mg-b-2u">휠 얼라인먼트 정비</p>
+                                            <button type="button" class="btn-detail btn-item btn-neutral btn-xs btn-ol round mg-b-2u">
+                                                <span class="label-txt">상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </button>
+                                            <p class="txt-12 txt-neutral3">매장에서 얼라인먼트 서비스 이용 시 적용</p>
+                                        </div>
+                                        <button type="button" class="coupon-card-action" onclick="alert('쿠폰사용')">
+                                            <div class="coupon-card-action-inner">
+                                                <p><span class="line-icons barcode size-36 txt-primary"></span></p>
+                                                <p class="mg-b-1u"><span class="dp-inblock txt-primary">마감임박</span></p>
+                                                <p><span class="txt-12 txt-primary">2021.01.20<br>까지</span></p>
+                                            </div>
+                                        </button>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="coupon-card on-bg-light1 download-before">
+                                        <div class="coupon-card-info">
+                                            <div class="coupon-card-type-bar clearfix">
+                                                <span class="haaer-label-use store">
+                                                    <span class="label-txt txt-12">매장전용</span>
+                                                </span>
+                                                <div class="haaer-label-group">
+                                                    <span class="label-txt txt-11"></span>
+                                                </div>
+                                            </div>
+                                            <p class="txt-30 line-100per">5<small class="txt-18">%</small></p>
+                                            <p class="txt-18 line-100per mg-b-2u">휠 얼라인먼트 정비</p>
+                                            <button type="button" class="btn-detail btn-item btn-neutral btn-xs btn-ol round mg-b-2u">
+                                                <span class="label-txt">상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </button>
+                                            <p class="txt-12 txt-neutral3">매장에서 얼라인먼트 서비스 이용 시 적용</p>
+                                        </div>
+                                        <button type="button" class="coupon-card-action" onclick="alert('쿠폰다운')">
+                                            <div class="coupon-card-action-inner">
+                                                <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>
+                                                <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt txt-12">쿠폰다운</span></span></p>
+                                                <p><span class="txt-12">2021.01.20<br>까지</span></p>
+                                            </div>
+                                        </button>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="coupon-card on-bg-light1 download-before">
+                                        <div class="coupon-card-info">
+                                            <div class="coupon-card-type-bar clearfix">
+                                                <span class="haaer-label-use store">
+                                                    <span class="label-txt txt-12">매장전용</span>
+                                                </span>
+                                                <div class="haaer-label-group">
+                                                    <span class="label-txt txt-11">우리동네딜</span>
+                                                </div>
+                                            </div>
+                                            <p class="txt-30 line-100per">50<small class="txt-18">%</small></p>
+                                            <p class="txt-18 line-100per mg-b-2u">엔진오일 할인 이벤트</p>
+                                            <button type="button" class="btn-detail btn-item btn-neutral btn-xs btn-ol round mg-b-2u">
+                                                <span class="label-txt">상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </button>
+                                            <p class="txt-12 txt-neutral3">참여 매장에서 경정비 구매시 사용</p>
+                                        </div>
+                                        <button type="button" class="coupon-card-action" onclick="alert('쿠폰다운')">
+                                            <div class="coupon-card-action-inner">
+                                                <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>
+                                                <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt txt-12">쿠폰다운</span></span></p>
+                                                <p><span class="txt-12">2021.01.20<br>까지</span></p>
+                                            </div>
+                                        </button>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- 선물 받은 패밀리쿠폰 -->
+                                    <article class="coupon-card on-bg-light1 download-after">
+                                        <div class="coupon-card-info">
+                                            <div class="coupon-card-type-bar clearfix">
+                                                <span class="haaer-label-use store">
+                                                    <span class="label-txt txt-12">매장전용</span>
+                                                </span>
+                                                <div class="haaer-label-group">
+                                                    <span class="label-txt txt-11"></span>
+                                                </div>
+                                            </div>
+                                            <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                                            <p class="txt-18 line-100per mg-b-2u">경정비 결제할인</p>
+                                            <button type="button" class="btn-detail btn-item btn-neutral btn-xs btn-ol round mg-b-2u">
+                                                <span class="label-txt">상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </button>
+                                            <p class="txt-12 txt-neutral3">경정비 상품 구매 할 때 사용</p>
+                                        </div>
+                                        <button type="button" class="coupon-card-action" onclick="alert('쿠폰다운')">
+                                            <div class="coupon-card-action-inner">
+                                                <p><span class="line-icons barcode size-36"></span></p>
+                                                <p class="mg-b-1u"><span class="dp-inblock">사용기한</span></p>
+                                                <p class="mg-b-3u"><span class="txt-12">2021.01.20<br>까지</span></p>
+                                                <p><span class="badge badge-neutral3 round v-middle">FROM</span> <span class="txt-12 txt-neutral3 v-middle">홍길동</span></p>
+                                            </div>
+                                        </button>
+                                    </article>
+                                </li>
+                            </ul>
+
+                            <div class="container txt-center mg-t-8u">
+                                <div class="pagenation-wrap">
+                                    <a href="#" class="btn-prev">
+                                        <span class="line-icons chev-left size-24"></span>
+                                    </a>
+                                    <ol class="pagenation">
+                                        <li class="on"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                    </ol>
+                                    <a href="#" class="btn-next">
+                                        <span class="line-icons chev-right size-24"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- New Popup -->
+<!-- 쿠폰 선물하기 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>쿠폰선물</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor.. / ver.. 0으로 설정) -->
+                        <div class="container pd-h-8u pd-v-8u">
+                            <p class="txt-16">받는 분 정보입력</p>
+                            <p class="txt-14 txt-neutral2 mg-t-2u">쿠폰선물 받으실분의 이름/휴대폰번호를 입력하고 '쿠폰선물하기' 버튼을 눌러주세요.</p>
+                            <table class="pd-slim mg-t-5u">
+                                <colgroup>
+                                    <col style="width: 80px;" />
+                                    <col style="width: auto;" />
+                                    <col style="width: 12px;" />
+                                    <col style="width: auto;" />
+                                    <col style="width: 12px;" />
+                                    <col style="width: auto;" />
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td>이름</td>
+                                    <td colspan="5">
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" placeholder="" />
+                                                <div class="tools">
+                                                    <button class="clear"><span class="line-icons close-circle"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>휴대폰</td>
+                                    <td>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <select class="input-box">
+                                                    <option value="010">010</option>
+                                                    <option value="011">011</option>
+                                                    <option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="018">018</option>
+                                                </select>
+                                                <div class="tools">
+                                                    <button><span class="line-icons chev-down"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="txt-center">-</td>
+                                    <td>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="txt-center">-</td>
+                                    <td>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="container txt-center txt-0 mg-t-4u">
+                                <button type="button" class="btn-item btn-neutral round w-150">
+                                    <span class="label-txt">쿠폰선물하기</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="container bg-light1 border-t pd-h-8u pd-v-6u">
+                            <p class="mg-b-2u txt-left">쿠폰 선물하기 안내</p>
+                            <ul class="list-style-disc">
+                                <li><span class="txt-primary txt-12">선물한 쿠폰은 사용가능한 쿠폰함에서 지난 쿠폰함으로 옮겨집니다.</span></li>
+                                <li><span class="txt-12">선물한 쿠폰은 사용기간 잔여기간 동안 사용이 가능합니다.</span></li>
+                                <li><span class="txt-12">선물받으실 분이 비회원인 경우 카카오로 쿠폰다운로드 링크가 발송됩니다.<br />(카카오톡 없는 경우 문자발송)</span></li>
+                                <li><span class="txt-12">한번 선물하신 쿠폰은 취소가 불가능합니다.</span></li>
+                            </ul>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 쿠폰선물 컨펌 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>쿠폰선물 확인</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons present size-48 txt-primary mg-b-2u"></span><br>
+                            아래 입력하신 지인에게<br>쿠폰을 선물하시겠습니까?
+                        </p>
+
+
+                        <div class="container border-all bg-filet-4 pd-h-6u pd-v-2u mg-t-4u">
+                            <table class="pd-medium">
+                                <colgroup>
+                                    <col style="width:80px;"/>
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th class="txt-left txt-neutral2">이름</th>
+                                    <td class="txt-right">홍길동</td>
+                                </tr>
+
+                                <tr class="border-t border-light">
+                                    <th class="txt-left txt-neutral2">휴대폰번호</th>
+                                    <td class="txt-right">010-1234-9876</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="txt-center txt-neutral2 txt-12 mg-t-2u"><span class="txt-primary">*</span> 한번 선물하신 쿠폰은 취소가 불가능합니다.</p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 쿠폰선물 컨펌(2개 이상의 회원 계정으로 식별되는 경우) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>쿠폰선물 확인</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons present size-48 txt-primary mg-b-2u"></span><br>
+                            입력하신 정보와 일치하는 회원이 <em class="txt-w500">2명</em> 있습니다.<br>선물하실 회원을 선택하세요.
+                        </p>
+
+
+                        <div class="container border-all bg-filet-4 pd-h-6u pd-v-2u mg-t-4u">
+                            <table class="pd-medium">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="radio-item">
+                                            <input type="radio" name="coupon-give-target" checked />
+                                            <div class="icon-holder">
+                                                <span class="line-icons circle size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">홍길동 (user**1)</span>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+
+                                <tr class="border-t border-light">
+                                    <td>
+                                        <label class="radio-item">
+                                            <input type="radio" name="coupon-give-target" checked />
+                                            <div class="icon-holder">
+                                                <span class="line-icons circle size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">홍길동 (user***@email.com)</span>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 쿠폰선물 완료(비회원) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>쿠폰선물 완료</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>
+                            <span class="txt-w500">홍길동</span>(비회원)님에게<br>쿠폰선물 링크가 전송되었습니다.
+                        </p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 쿠폰선물 완료(회원) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>쿠폰선물 완료</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>
+                            <span class="txt-w500">홍길동</span>(회원)님에게<br>쿠폰선물 링크가 전송되었습니다.
+                        </p>
+
+                        <p class="txt-center txt-neutral2 txt-12 mg-t-2u"><span class="txt-primary">*</span> 받는 분의 쿠폰함에 선물하신 쿠폰이 발급됩니다.</p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 쿠폰 선물 도착 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>쿠폰 선물 도착</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 0으로 설정) -->
+                        <div class="container pd-h-8u pd-v-8u bg-light2">
+                            <div class="coupon-card-wrap">
+                                <article class="coupon-card coupon-card-detail coupon-card-receive download-after">
+                                    <div class="coupon-card-flag">
+                                        <div class="coupon-card-flag-inner">
+                                            <span>패밀리</span>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-card-info">
+                                        <div class="bi-img"><img src="pc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img"></div>
+                                        <p class="txt-28 line-100per">30<small class="txt-18">%</small></p>
+                                        <p class="txt-16 line-100per mg-b-2u">타이어 결제 할인</p>
+                                        <p class="txt-14 line-100per">쿠폰이 도착했습니다.</p>
+                                    </div>
+                                    <button type="button" class="coupon-card-action" onclick="$.Tstation.copyToClipboard({ message: '5439 3243 1212', completeMessage: '쿠폰번호가 클립보드에 복사되었습니다.' })">
+                                        <span class="v-middle">5439 3243 1212</span><span class="badge badge-white badge-l round mg-l-3u">쿠폰번호 복사</span>
+                                    </button>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="container pd-h-8u pd-b-6u">
+                            <div class="box box-gray box-radius mg-b-4u mg-t-4u">
+                                <p class="txt-12">선물 받으신 쿠폰은 비회원 주문/결제 페이지의 [쿠폰 등록] 팝업 또는 <span class="txt-primary">회원가입 후 마이페이지 > 내 쿠폰함에서 등록</span> 후 사용하실 수 있습니다.</p>
+                            </div>
+
+                            <div class="mg-t-2u txt-center">
+                                <a href="#" class="btn-item btn-neutral round full-w">
+                                    <span class="label-txt">3초 가입하고 쿠폰선물 받기</span>
+                                </a>
+                                <a href="#" class="btn-item btn-primary btn-inv filet mg-t-4u">
+                                    <span class="label-txt">적용 가능한 상품 보러가기</span>
+                                    <span class="line-icons chev-right size-20 v-middle"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 스마트케어 쿠폰다운 마케팅수신동의 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>쿠폰다운받기 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 0으로 설정) -->
+                        <div class="container pd-h-8u pd-v-8u">
+                            <p class="txt-center txt-16">
+                                <em class="txt-primary">스마트케어  할인 쿠폰</em>은 마케팅 수신 동의가 필요합니다. 동의하고 다운받으시겠습니까?
+                            </p>
+
+                            <a href="#" class="btn-item btn-neutral round full-w mg-t-4u">
+                                <span class="label-txt">동의하고 쿠폰다운받기</span>
+                            </a>
+                        </div>
+
+                        <div class="container bg-light1 border-t txt-center pd-h-5u pd-v-2u accordion-item">
+                            <button type="button" class="btn-item btn-s btn-gray btn-inv filet float-r bg-transparent accordion-btn" onclick="$(this).closest('.accordion-item').toggleClass('on');">
+                                <span class="label-txt">마케팅 수신동의 내용보기</span>
+                                <span class="line-icons chev-down size-20"></span>
+                            </button>
+
+                            <div class="box bg-fff txt-12 txt-neutral2 box-overflow-y mg-b-3u txt-left border-all accordion-cont">
+                                마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

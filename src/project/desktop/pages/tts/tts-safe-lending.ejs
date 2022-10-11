@@ -1,0 +1,24 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<link rel="stylesheet" type="text/css" href="pc-static-root/css/thetireshop.css" />
+
+<div id="container" class="">
+    <div class="container">
+        <div class="guardrail">
+            <div class="tts-aside-layout">
+                <%- locals.widget ('src/project/desktop/pages/tts/includes/tts-header.ejs') %> 
+                <div class="cont-area">
+                    <!-- .tts-safeservice-group // -->
+                    <div class="container tts-safeservice-group">
+                        <%- locals.widget ('src/project/desktop/pages/tts/includes/safe-lending.ejs') %> 
+                    </div>
+                    <!-- // .tts-safeservice-group -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- locals.widget ('src/project/desktop/pages/tts/includes/tts-footer.ejs') %> 

@@ -1,0 +1,256 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/thetireshop.css" />
+<%- locals.widget ('src/project/mobile/pages/tts/includes/tts-header.ejs') %> 
+<%- locals.widget('src/project/mobile/pages/tts/includes/tts-title.ejs', { pageTitle: '안심서비스 가입' }) %>
+
+<div id="container" class="tts-safeservice-group">
+    
+    <div class="subscription-page">
+        <div class="subscription-section">
+            <h2 class="section-headline underline txt-14 mg-h-5u pd-b-2u pd-t-5u">안심서비스 가입신청</h2>
+            <div class="rowgroup pd-t-1u">
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="name" class="necessary-label">이름</label>
+                        <div class="input-group">
+                            <input type="text" id="name" class="input-box" placeholder="이름" value="김한국" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber" class="necessary-label">연락처</label>
+                        <div class="input-group">
+                            <input type="text" id="phoneNumber" class="input-box" placeholder="연락처" value="010 5578 9987" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="carNumber" class="necessary-label">차량번호</label>
+                        <div class="input-group">
+                            <input type="text" id="carNumber" class="input-box half-w" placeholder="차량번호" value="01가 1234">
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tts-safe-legal">
+                <p class="mg-t-9u pd-h-5u txt-14">고객정보 수집 및 활용동의</p>                
+                <ul class="bg-light1 mg-t-3u pd-h-5u pd-v-3u">
+                    <li class="flex-between">
+                        <label class="check-item">
+                            <input type="checkbox" id="AllAgree">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12">전체선택</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="flex-between flex-align-top"><!-- 20220218 -->
+                        <label class="check-item">
+                            <input type="checkbox" id="agree10" name="agrTpArr" value="10" class="checkSingle checkMust">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12">안심서비스 가입/조회를 위한 개인정보 수집 및 이용 동의 (필수)</span>
+                            </div>
+                        </label>
+                        <!-- 20220218 // -->
+                        <button type="button" class="txt-12 line-32 txt-nowrap" style="background-color: transparent;" onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1',
+                                title: '개인정보 수집 및 이용동의 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: termsContent1,
+                                dimWhite: false,
+                                modalContentsPd: {
+                                    horizon: 5,
+                                    vertical: 3,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: true, // Full Popup
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                }
+                            })">
+                            <span class="label-txt">내용보기<span class="line-icons chev-right size-16"></span></span>
+                        </button>
+                        <!-- // 20220218 -->
+                    </li>
+                    <!-- 20220218 삭제 <li class="flex-between flex-align-top">
+                        <label class="check-item">
+                            <input type="checkbox" id="agree30" name="agrTpArr" value="30" class="checkSingle checkMust">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12">추가 서비스 제공을 위한 개인정보 수집 및 이용 동의 (선택)</span>
+                            </div>
+                        </label>
+                        <a href="#" class="txt-12 line-32 popup-full txt-nowrap" data-rel="https://mdev.tstation.com/terms/popup/singleterms.do?agrmSctCd=10">내용보기<span class="line-icons chev-right size-16"></span></a>
+                    </li> -->
+                    <li class="flex-between flex-align-top"><!-- 20220218 -->
+                        <label class="check-item">
+                            <input type="checkbox" id="agree60" name="agrTpArr" value="60" class="checkSingle">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12">개인정보의 마케팅 활용 동의 (선택)</span>
+                            </div>
+                        </label>
+                        <!-- 20220218 // -->
+                        <button type="button" class="txt-12 line-32 txt-nowrap" style="background-color: transparent;" onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1',
+                                title: '개인정보 수집 및 이용동의 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: termsContent2,
+                                dimWhite: false,
+                                modalContentsPd: {
+                                    horizon: 5,
+                                    vertical: 6,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                modalSize: 'SMALL',
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [{
+                                        label: '확인',
+                                        negative: true,
+                                        action: '$.Tstation.popup().close()'
+                                    }]
+                                },
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                }
+                            })">
+                            <span class="label-txt">내용보기<span class="line-icons chev-right size-16"></span></span>
+                        </button>
+                        <!-- // 20220218 -->
+                    </li>
+                    
+                </ul>
+                
+
+                <div class="tts-safejoin-noti mg-h-5u mg-v-2u pd-l-5u">
+                    <p class="txt-12">안심서비스 가입을 위한 고객정보 수집에 동의해 주세요.</p>
+                    <p class="txt-12 txt-primary">미동의 시 안심서비스 가입 진행이 불가합니다.</p>
+                </div>
+            </div>
+            <!-- 20220118 // -->
+            <div class="button-wrap pd-h-5u mg-t-8u mg-b-8u">
+                <button type="button" class="btn-item btn-neutral round full-w round">
+                    <span class="label-txt">휴대폰 본인인증</span>
+                </button>
+                <p class="txt-center txt-12 mg-t-2u">*본인인증 후 안심서비스 가입이 가능합니다.</p>
+            </div>
+            <!-- // 20220118 -->
+
+        </div>
+        <div class="noti-section weight-divider">
+            <h3 class="section-headline txt-16 pd-h-5u">가입 전 꼭 알아두세요!</h3>
+            <ul class="explan-list pd-v-3u pd-h-5u bg-light1">
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 가입신청은 한국타이어 벤투스, 키너지, 다이나프로, 아이셉트 대상상품 2개 이상 구매 및 장착완료일 기준 14일 까지만 가능합니다. (정비/장착일 기준 익일부터 가입 내역조회 가능)</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">가입대상은 실장착 고객 (이름, 연락처, 차량번호 기준 동일인)이며, 기간 내 보상처리 또는 신규가입 시 기존 가입 건은 자동 만료 처리되고, 신규가입일로 안심서비스 기간이 갱신됩니다.</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 가입 제한 : 렌트 차량 (허,하,호 차량번호 표기), 영업용 차량, 11인승 초과 승합차량, 경트럭 등 일부 차량의 경우 안심서비스 가입이 제한될 수 있습니다. </p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">가입관련 문의 : 더타이어샵 고객센터 (031-5178-7000)</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- 20220218 // -->
+<script>
+    var termsContent1 =
+    `<form id="termsForm" name="termsForm">
+        <div class="agree_container">
+            <ol class="legal-terms-list">
+                <li>
+                    <h4 class="txt-14 txt-narrow">1. 개인(신용)정보의 수집·이용·취급위탁 동의에 관한 사항</h4>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">수집·이용·취급위탁 동의 받은자</h5>
+                    <div class="tbl table-responsive">
+                        <table cellpadding="0" cellspacing="0" class="con-table bg-light1" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td><span class="txt-neutral2">수집·이용하는 자</span></td>
+                                    <td><span class="txt-neutral2">한국타이어앤테크놀로지㈜</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="txt-neutral2">위탁업무 처리기관</span></td>
+                                    <td><span class="txt-neutral2">더타이어샵</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">개인(신용)정보의 수집·이용·취급위탁 목적</h5>
+                    <p class="border-t bg-light1 pd-v-2u pd-h-2u txt-11 mg-t-1u">타이어교체 고객대상 AS제공 (안심서비스)</p>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">개인(신용)정보의 수집·이용·취급위탁 항목</h5>
+                    <p class="border-t bg-light1 pd-v-2u pd-h-2u txt-11 mg-t-1u">이름,연락처,차량정보(차량번호,모델명,주행거리), 타이어규격및모델명,장착수량,교체위치,교체일,장착매장</p>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">개인(신용)정보 보유 및 이용기간</h5>
+                    <p class="border-t bg-light1 pd-v-2u pd-h-2u txt-11 mg-t-1u">동의일로부터 5년 까지</p>
+                </li>
+
+                <li class="mg-t-7u">
+                    <h4 class="txt-14 txt-narrow">2. 개인(신용)정보의 제공·이용에 관한 사항  </h4>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">개인(신용)정보를 제공받는자</h5>
+                    <p class="border-t bg-light1 pd-v-2u pd-h-2u txt-11 mg-t-1u">우리손해사정㈜</p>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">개인(신용)정보의 제공목적</h5>
+                    <p class="border-t bg-light1 pd-v-2u pd-h-2u txt-11 mg-t-1u">안심서비스 보상 관리 업무 대행</p>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">개인(신용)정보의 제공·이용항목</h5>
+                    <p class="border-t bg-light1 pd-v-2u pd-h-2u txt-11 mg-t-1u">이름,연락처,차량정보(차량번호,모델명,주행거리), 타이어규격및모델명,장착수량,교체위치,교체일,장착매장</p>
+                    <h5 class="txt-12 mg-t-5u pd-h-2u">개인(신용)정보 보유 및 이용기간</h5>
+                    <p class="border-t bg-light1 pd-v-2u pd-h-2u txt-11 mg-t-1u">동의일로부터 3년 까지</p>
+                    <p class="mg-t-5u txt-11"> 본인은 개인정보보호법 및 신용정보의 이용 및 보호에 관한 법률에 따라 귀사가 본인의 개인(신용) 정보를 상기와 같이 수집,이용,취급하는 것에 동의합니다. 상기사항은 거부할 수 있으며, 거부 시 안심서비스 가입이 불가합니다.</p>
+                </li>
+            </ol>
+        </div>
+    </form>`
+
+
+    var termsContent2 = 
+    `<form id="termsForm" name="termsForm">
+        <div class="agree_container">
+            <p class="txt-14 txt-center"> 알림톡/SMS/이메일/앱푸시 등을 통해 신규 서비스 업데이트, 상품 정보 안내, 이벤트 혜택 등 정보 제공 수신에 동의합니다.</p>
+        </div>
+    </form>`
+</script>
+<!-- // 20220218 -->
+
+
+<%- locals.widget ('src/project/mobile/pages/tts/includes/tts-footer.ejs') %> 

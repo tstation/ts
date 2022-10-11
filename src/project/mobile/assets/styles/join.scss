@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/* 회원가입&개인정보변경 */
+.join_form .nowrap {white-space: nowrap;}
+.check-item .icon-holder.icon-push-default::before {border-color: rgb(217, 219, 220); background-color: rgb(217, 219, 220);}
+.check-item .icon-holder.icon-push-default.active .check {color: #fff;}
+.join-noit-list .join-noit {position: relative; padding-left:12px;}
+.join-noit-list .join-noit .icon {position: absolute; left:4px; top: 0; }
+.bg-divider {height: 8px; background-color: rgb(236, 238, 239);}

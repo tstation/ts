@@ -1,0 +1,248 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page_tit">
+                        <h4>단골매장설정</h4>
+                    </div>
+                    <div class="container">
+                        <div class="section">
+                            <!-- 20220316 // -->
+                            <h3 class="section-headcopy mg-t-5u pd-h-4u txt-20">홍길동님의 단골매장</h3>
+                            <p class="mg-t-2u pd-h-4u pd-b-4u txt-14 border-bottom-light3">최근 방문이력이 있는 매장이 자동등록되며, 또는 직접 단골매장을 설정할 수 있습니다. (광고성 정보 수신동의 시 매장소식을 받아보실 수 있습니다.)</p>
+                            <!-- // 20220316 -->
+            
+                            <!-- 등록된 단골매장이 있는 CASE -->
+                            <!-- 20220316 // -->
+                            <div class="interest-location-list-wrapper mg-t-2u">
+                                <div class="interest-location-list-item">
+                                    <div class="info-area">
+                                        <div class="thumb-position">
+                                            <div class="thumb-area ration-1x1">
+                                                <img src="pc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                                <span class="allmyt-store">
+                                                    <span class="allmyt-img"><img src="pc-static-root/images/common/icon_mainlocation_allmyt.svg" alt="all my T"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <strong class="title mg-r-1u">광교신도시점</strong>
+                                            <div class="interest-store-wrap right">
+                                                <label class="check-interest">
+                                                    <input type="checkbox" checked="checked">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons heart-fill"></span>
+                                                    </div>
+                                                    <div class="labelling">
+                                                        <span class="label-txt mg-h-1u">단골매장</span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <p class="description">경기도 수원시 영통구 월드컵로87번길 16 (원천동)</p>
+                                            <a class="txt-primary mg-t-2u dp-inblock more-shop" href="#none">
+                                                <span class="label-txt txt-14">매장상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 등록된 단골매장이 없는 CASE -->
+                            <!-- 20220316// -->
+                            <div class="interest-nodata mg-v-4u mg-h-4u">
+                                <div class="section bg-light2 pd-t-5u pd-b-8u pd-h-2u txt-center">
+                                    <span class="img-icons icon-bg-hart"></span>
+                                    <p class="mg-b-1u txt-12 mg-t-2u">
+                                        <span class="txt-neutral2 dp-block">등록된 단골매장이 없습니다!</span>
+                                        <span class="mg-t-1u">하단 추천매장에서<span class="img-icons icon-hart"></span>를 클릭하시거나 매장명 찾기에서 직접 매장을 <br />지정하실 수 있습니다.</span>
+                                    </p>
+                                    <button type="button" class="btn-item btn-neutral btn-ol round" style="margin: auto">
+                                        <span class="label-txt pd-h-6u txt-16">단골매장 등록하러 가기</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- //20220316 -->
+
+                        </div>
+                        <!-- //20220316 -->
+
+                        <!-- 20220316 // -->
+                        <div class="section interest-location-headcopy mg-t-20u pd-h-4u">
+                            <h3 class="section-headcopy txt-20">추천 단골매장
+                                <span class="tooltip-container right v-middle txt-0">
+                                    <button type="button" class="bg-fff txt-0">
+                                        <span class="line-icons info-circle size-20"></span>
+                                    </button>
+                                    <div class="tooltip">
+                                        <div class="tooltip-body">
+                                            <p class="txt-12">접속하신 위치에서 가장 가까운 매장을 단골매장으로 추천해 드립니다.</p>
+                                        </div>
+                                    </div>
+                                </span>
+                            </h3>
+                            <p class="txt-14 txt-neutral1"><span class="img-icons icon-hart"></span>를 클릭하면 단골매장으로 설정하실 수 있어요!</p>
+                        </div>
+                        <!-- // 20220316 -->
+
+                        <!-- 20220316 삭제 <div class="tab-item size-m on-layer mg-t-5u no-sticky">
+                            <a href="#" class="on" data-tab-event="localStore">방문 했던 매장</a>
+                            <a href="#" class="" data-tab-event="nearStore">가까운 매장</a>
+                        </div> -->
+
+                        <!-- 20220316 // -->
+                        <div class="interest-location-list-wrapper mg-t-1u bg-light2">
+                            <div class="interest-location-list-item">
+                                <div class="info-area">
+                                    <div class="thumb-position">
+                                        <div class="thumb-area ration-1x1">
+                                            <img src="pc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                            <span class="allmyt-store">
+                                                <span class="allmyt-img"><img src="pc-static-root/images/common/icon_mainlocation_allmyt.svg" alt="all my T"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <strong class="title mg-r-1u">수지점</strong>
+                                        <div class="interest-store-wrap middle">
+                                            <label class="check-interest">
+                                                <input type="checkbox">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons bg-hart-fill"></span>
+                                                </div>
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">단골매장</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <p class="description">경기도 수원시 영통구 월드컵로87번길 16 (원천동)</p>
+                                        <a class="txt-primary mg-t-2u dp-inblock more-shop" href="#none">
+                                            <span class="label-txt txt-14">매장상세보기</span>
+                                            <span class="line-icons chev-right size-16"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="interest-location-list-item">
+                                <div class="info-area">
+                                    <div class="thumb-position">
+                                        <div class="thumb-area ration-1x1">
+                                            <img src="pc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <strong class="title mg-r-1u">판교점B</strong>
+                                        <div class="interest-store-wrap middle">
+                                            <label class="check-interest">
+                                                <input type="checkbox">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons bg-hart-fill"></span>
+                                                </div>
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">단골매장</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <p class="description">경기도 수원시 영통구 월드컵로87번길 16 (원천동)</p>
+                                        <a class="txt-primary mg-t-2u dp-inblock more-shop" href="#none">
+                                            <span class="label-txt txt-14">매장상세보기</span>
+                                            <span class="line-icons chev-right size-16"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //20220316 -->
+
+                        <!-- 20220316 삭제 <div class="tab-contents" data-tab-contents="nearStore">
+                            <div class="interest-location-list-wrapper">
+                                <div class="interest-location-list-item">
+                                    <div class="info-area">
+                                        <div class="thumb-position">
+                                            <div class="thumb-area ration-1x1">
+                                                <img src="pc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                                <span class="allmyt-store">
+                                            <span class="allmyt-img"><img src="pc-static-root/images/common/icon_mainlocation_allmyt.svg" alt="all my T"></span>
+                                                <span class="allmyt-copy txt-w500">스토어</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <strong class="title mg-r-1u">동탄점</strong>
+                                            <div class="benefit-wrap">
+                                                <span class="benefit great-store">우수매장</span>
+                                                <span class="benefit smart-pickup">픽업서비스</span>
+                                            </div> 
+                                            <div class="interest-store-wrap right">
+                                                <label class="check-interest">
+                                                    <input type="checkbox">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons heart-fill"></span>
+                                                    </div>
+                                                    <div class="labelling">
+                                                        <span class="label-txt mg-h-1u">단골매장</span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <p class="description">타이어 경력 30년의 전문성과 신뢰를 바탕으로 고객을 최우선으로 모십니다. 모란고개 삼선전자서비스 건너편(성모윌병원 위)에 위치, 고맙습니다.</p>
+                                            <a class="txt-primary mg-t-2u dp-inblock more-shop" href="#none">
+                                                <span class="label-txt txt-14">매장상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interest-location-list-item">
+                                    <div class="info-area">
+                                        <div class="thumb-position">
+                                            <div class="thumb-area ration-1x1">
+                                                <img src="pc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                                <span class="allmyt-store">
+                                            <span class="allmyt-img"><img src="pc-static-root/images/common/icon_mainlocation_allmyt.svg" alt="all my T"></span>
+                                                <span class="allmyt-copy txt-w500">스토어</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <strong class="title mg-r-1u">광교점</strong>
+                                            <div class="benefit-wrap">
+                                                <span class="benefit great-store">우수매장</span>
+                                                <span class="benefit smart-pickup">픽업서비스</span>
+                                            </div> 
+                                            <div class="interest-store-wrap right">
+                                                <label class="check-interest">
+                                                    <input type="checkbox">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons heart-fill"></span>
+                                                    </div>
+                                                    <div class="labelling">
+                                                        <span class="label-txt mg-h-1u">단골매장</span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <p class="description">타이어 경력 30년의 전문성과 신뢰를 바탕으로 고객을 최우선으로 모십니다. 모란고개 삼선전자서비스 건너편(성모윌병원 위)에 위치, 고맙습니다.</p>
+                                            <a class="txt-primary mg-t-2u dp-inblock more-shop" href="#none">
+                                                <span class="label-txt txt-14">매장상세보기</span>
+                                                <span class="line-icons chev-right size-16"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

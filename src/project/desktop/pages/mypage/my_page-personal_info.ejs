@@ -1,0 +1,32 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page-header">
+                        <h1>개인정보</h1>
+                    </div>
+                    <div class="container">
+                        <form id="confirmForm" name="confirmForm" method="POST" novalidate="novalidate">
+                            <div class="member_info">
+                                <p class="txt01">회원님의 개인정보 안전을 위해<br><em>비밀번호</em>를 한번 더 입력해주세요.</p>
+                                <ol class="form">
+                                    <li><input type="password" name="password" class="ip_txt01 w100p" placeholder="비밀번호를 입력하세요"></li>
+                                </ol>
+                            </div>
+                            <div class="btn01">
+                                <button class="btnB btnS07" id="btn_confirm_password">확인</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

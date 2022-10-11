@@ -1,0 +1,550 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/thetireshop.css" />
+<%- locals.widget ('src/project/mobile/pages/tts/includes/tts-header.ejs') %> 
+<%- locals.widget('src/project/mobile/pages/tts/includes/tts-title.ejs', { pageTitle: '안심서비스 가입' }) %>
+
+<script src="mc-static-root/js/common/signature_pad.min.js"></script> <!-- signature_pad 라이브러리 add -->
+
+<style>
+.signpad-pad-wrap {position: relative; margin: auto; border-bottom: 1px solid rgb(217, 219, 220)}    
+.signpad-pad-wrap #signature {-ms-user-select: none; -moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;}
+.signpad-pad-wrap .sign-close-button {position: absolute; left:0; bottom: 0; background-color: transparent;}
+.signpad-pad-wrap .sign-close-button:disabled .line-icons {color: rgb(192, 198, 206);}
+</style>
+<div id="container" class="tts-safeservice-group">
+    
+    <div class="subscription-page">
+        <div class="subscription-section">
+            <h2 class="section-headline underline txt-14 mg-h-5u pd-b-2u pd-t-5u">가입고객 정보</h2>
+            <div class="rowgroup pd-t-1u pd-b-5u">
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="name">이름</label>
+                        <div class="input-group">
+                            <input type="text" id="name" class="input-box" placeholder="이름" value="김한국" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber">연락처</label>
+                        <div class="input-group">
+                            <input type="text" id="phoneNumber" class="input-box" placeholder="연락처" value="010 5578 9987" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2 class="section-headline underline txt-14 mg-h-5u pd-b-2u pd-t-5u">장착차량 정보</h2>
+            <div class="noti-rowgroup pd-t-2u pd-b-1u pd-h-5u">
+                <ul class="explan-list">
+                    <li class="mg-b-1u">
+                        <p class="txt-11 txt-neutral2">실제 차량과 정보가 상이할 경우 실제 보유한 차량정보를 기준으로 안심서비스가 적용됩니다.</p>
+                    </li>
+                </ul>
+                <div class="txt-right">
+                    <button type="button" class="btn-item btn-neutral btn-xs btn-ol round pd-r-1u" ><!-- 비활성화시 disabled 추가 -->
+                        <span class="label-txt txt-12">차번조회로 정보수정</span>
+                        <span class="line-icons chev-right size-16 txt-w700 no-mg"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="rowgroup">
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="name">차량번호</label>
+                        <div class="input-group">
+                            <input type="text" id="name" class="input-box" placeholder="차량번호" value="벤투스 프리미엄 컴포트" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber">모델명</label>
+                        <div class="input-group">
+                            <input type="text" id="phoneNumber" class="input-box" placeholder="모델명" value="소나타 뉴라이즈 2021" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="carNumber">주행거리</label>
+                        <div class="input-group">
+                            <ul class="flex-list">
+                                <li class="full-flex flex-1">
+                                    <input type="text" id="carNumber" class="input-box" placeholder="주행거리" value="125,000Km" disabled />
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="noti-rowgroup">
+                <ul class="explan-list pd-v-3u pd-h-5u">
+                    <li class="mg-b-1u">
+                        <p class="bul-icon txt-11 txt-narrow txt-neutral2">계기판 사진을 촬영 후 첨부해 주세요. <strong class="txt-primary txt-w400">(3MB이하, JPG, PNG, GIF만 가능)</strong></p>
+                    </li>
+                    <li class="mg-b-1u">
+                        <p class="bul-icon txt-11 txt-narrow txt-neutral2">사진 속 실 주행거리를 기준으로 안심서비스가 적용됩니다. <strong class="txt-primary txt-w400">(사진등록 필수)</strong></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="photo-attach-wrap pd-h-5u pd-v-3u bg-light2 mg-t-1u">
+                <ul class="photo-attach-list clearfix">
+                    <input type="file" id="photoUpload" class="blind" placeholder="사진업로드" />
+                    <label for="photoUpload">
+                        <li class="item swiper-slide">
+                            <div class="photo-addition">
+                                <span class="icon-photo"></span>
+                                <p class="label-txt txt-14"><span>사진등록</span><span class="txt-primary">(필수)</span></p>
+                            </div>
+                        </li>
+                    </label>
+                </ul>
+            </div>
+            <div class="photo-attach-wrap pd-h-5u pd-v-3u bg-light2 mg-t-1u photo-attach-swiper swiper-container">
+                <ul class="photo-attach-list clearfix swiper-wrapper">
+                    <li class="item swiper-slide">
+                        <input type="file" id="photoReUpload" class="blind" placeholder="사진업로드" />
+                        <label for="photoReUpload">
+                            <div class="photo-addition">
+                                <span class="icon-photo"></span>
+                                <p class="label-txt txt-14"><span>사진 재등록</span></p>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="item swiper-slide">
+                        <img src="mc-static-root/images/mypage/safe-service/@sample-pickupcar-1.jpg" class="img-photo" alt="" />
+                    </li>
+                    <li class="item swiper-slide">
+                        <img src="mc-static-root/images/mypage/safe-service/@sample-pickupcar-2.jpg"  class="img-photo" alt="" />
+                    </li>
+                    <li class="item swiper-slide">
+                        <img src="mc-static-root/images/mypage/safe-service/@sample-pickupcar-3.jpg"  class="img-photo" alt="" />
+                    </li>
+                </ul>
+                <script>
+                    var photoAttachWrap = new Swiper(".photo-attach-swiper", {
+                        slidesPerView: "auto",
+                        freeMode: true,
+                        watchSlidesVisibility: true,
+                        watchSlidesProgress: true,
+                    });
+
+                    photoAttachWrap.init();
+
+                    $(window).on('resize', function () {
+                        photoAttachWrap.init();
+                    });
+                </script>
+            </div>
+
+            <h2 class="section-headline underline txt-14 mg-t-5u mg-h-5u pd-b-2u pd-t-5u">장착상품 정보</h2>
+            <div class="rowgroup pd-t-1u pd-b-5u">
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="name">상품명</label>
+                        <div class="input-group">
+                            <input type="text" id="name" class="input-box" placeholder="상품명" value="벤투스 프리미엄 컴포트" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber">타이어사이즈</label>
+                        <div class="input-group">
+                            <input type="text" id="phoneNumber" class="input-box" placeholder="타이어사이즈" value="245/45R18">
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber">장착수량(위치)</label>
+                        <div class="input-group">
+                            <input type="text" id="phoneNumber" class="input-box" placeholder="장착수량(위치)" value="4개 (전륜/후륜)">
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber">장착수량(위치)</label>
+                        <div class="input-group">
+                            <select class="input-box">
+                                <option value="options1" selected="" disabled="">장착위치를 선택해 주세요</option>
+                                <option value="options1">options1</option>
+                                <option value="options2">options2</option>
+                                <option value="options3">options3</option>
+                                <option value="options4">options4</option>
+                            </select>
+                            <div class="tools">
+                                <button><span class="line-icons chev-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+                <p class="txt-11 txt-neutral2 pd-h-5u mg-t-2u">· 실제 장착위치에 따른 타이어에 대해서만 보상 처리 가능합니다.</p>        
+            </div>
+
+            <h2 class="section-headline underline txt-14 mg-h-5u pd-b-2u pd-t-5u">장착매장 정보</h2>
+            <div class="rowgroup pd-t-1u pd-b-5u">
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="name">장착매장</label>
+                        <div class="input-group">
+                            <input type="text" id="name" class="input-box" placeholder="장착매장" value="티스테이션 송파오금점" />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="legal-cheked-wrap weight-divider">
+                <div class="list-size-flex flex-between mg-t-2u pd-h-5u">
+                    <label class="check-item" for="eventPrivacyPolicy">
+                        <input type="checkbox" id="eventPrivacyPolicy" name="agrTpArr" value="60">
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">안심서비스 가입약관 동의</span>
+                        </div>
+                    </label>
+                    <button type="button" class="txt-12 pd-v-2u txt-primary" style="background-color: transparent;" onclick="$.Tstation.popup().open({
+                            ref: 'modal-ref-1',
+                            title: '안심서비스 가입약관 동의',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: termsContent,
+                            dimWhite: false,
+                            modalContentsPd: {
+                                horizon: 5,  // 20220221
+                                vertical: 5, // 20220221
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            full: 'true', // 20220221
+                            onOpen: function () {
+                                console.log('팝업이 열리면 파이어 합니다.')
+                            },
+                            onClose: function () {
+                                console.log('팝업이 닫히면 파이어 합니다.')
+                            }
+                        })">
+                        <span class="label-txt">내용보기<span class="line-icons chev-right size-16"></span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="button-wrap pd-h-5u mg-t-1u mg-b-8u">
+                <button type="button" class="btn-item btn-neutral round full-w round" onclick="signPadPopup.signPadFunction();"> 
+                    <span class="label-txt">안심서비스 가입신청 하기</span>
+                </button>
+            </div>
+
+        </div>
+        <div class="noti-section">
+            <h3 class="section-headline txt-16 pd-h-5u">가입 전 꼭 알아두세요!</h3>
+            <ul class="explan-list pd-v-3u pd-h-5u bg-light1">                
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 가입은 더타이어샵을 통해 대상상품 2개 이상 구매 및 장착완료일 기준 14일 까지만 가능합니다. (정비/장착일 기준 익일부터 가입 내역 조회가 가능합니다.)</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">가입 대상은 실장착 고객 (이름, 연락처, 차량번호 기준 동일인)이며, 신규가입 시 기존 가입 건은 자동 만료 처리되고, 신규가입일로 안심서비스 기간이 갱신됩니다.</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 가입 제한 : 렌트 차량 (허,하,호 차량번호 표기), 영업용 차량, 11인승 초과 승합차량, 경트럭 등 일부 차량의 경우 안심서비스 가입이 제한될 수 있습니다. </p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">가입관련 문의 : 더타이어샵 고객센터 (1577-0009)</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+<script>
+    
+    var signPadPopup = {
+    signPadFunction: function () {
+        $.Tstation.popup().open({
+            ref: 'signpad-popup',
+            title: '안심서비스 가입약관 동의서명',
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: signPadContent, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false,
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 4,
+                vertical: 4,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            modalSize: 'LARGE',
+            modalAction: {
+                isNoBoundary: false, // 팝업 버텀 액선 바 스타일
+                buttons: [
+                    {
+                        label: '서명 완료', // 버튼 라벨
+                        negative: false, // 버튼 중요도 - true 낮음, false 높음
+                        action: function () {
+                            if(signature.isEmpty()) {
+                                alert("내용이 없습니다.");
+                            } else {
+                                var data = signature.toDataURL("image/png");
+                                console.log(data);
+                                // window.open(data, "test", "width=600, height=200, scrollbars=no");
+                                $.Tstation.popup().close();
+                            }
+                        }
+                    }
+                ]
+            }
+        })
+        
+        var canvas = $("#signature")[0];
+        var pannerWidth = $('.modal-item[data-ref="signpad-popup"] .container').width();
+        var targetContent = $('#clear,.modal-item[data-ref="signpad-popup"] .list-size-equal .btn-item')
+        var signature = new SignaturePad(canvas, {
+            minWidth : 1,
+            maxWidth : 1,
+            penColor : "rgba(0, 0, 0, .7)"
+        });
+
+        const signatureWid = document.querySelector("#signature");
+        signatureWid.width = pannerWidth;
+        
+        $("#clear").on("click", function() {
+            signature.clear();
+            targetContent.attr('disabled', true);
+        });
+
+        targetContent.attr('disabled', true);
+
+        $("#signature").on({
+            mousedown: function() {
+                targetContent.attr('disabled', false);
+            },
+            touchstart: function() {
+                targetContent.attr('disabled', false);
+            }
+        })   
+    }
+}
+
+var signPadContent = `
+<div>
+    <div class="signpad-pad-wrap">
+        <canvas id="signature" width="300px" height="180px" style="touch-action: none;"></canvas>
+        <button id="clear" class="sign-close-button"><span class="line-icons close size-24"></span><span class="blind">Clear</span></button>
+    </div>
+</div>  
+`
+
+
+/* 20220221 // */
+var termsContent =`
+                    <form id="termsForm" name="termsForm">
+                    <div id="agreeSelect">
+                        <div class="agree_container">
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow pd-b-2u">안심서비스 안내</h4>
+                            <p class="mg-t-2u txt-11 txt-neutral2">한국타이어 판매대리점인 더타이어샵 고객을 대상으로 더타이어샵 영업장에서 구매/장착한 한국타이어가 수리 불가한 경우에 고객이 구매/장착한 타이어와 동일한 등급의 새 타이어로 무상 교체해주는 고객 안심서비스 입니다. (수리 가능한 바닥면 단순 펑크와 이상마모는 혜택에서 제외 됩니다.)<br />(안심서비스를 제공 받기 위해서는 개인정보 활용 동의를 해주셔야 하며, 동의 거부시에는 서비스 제공이 불가합니다.)<p>
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow mg-t-6u pd-b-2u">안심서비스 적용대상</h4>
+                            <ol class="mg-t-2u">                                
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(1)대상고객 : 더타이어샵 매장에서 벤투스, 키너지, 다이나프로, 아이셉트 상품군 2개 이상 구매 고객</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(2)보장조건 : 타이어 구매일로부터 1년간 16,000km 이내로 사용 중에 주행불가한 상태로 타이어 파손</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(3)보장내용 : 최초 1회에 한하여 동일한 타이어 1개 무상증정 (티스테이션/더타이어샵 매장 방문, 장착비 별도)</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(4)적용차종 : 11인승 이하의 승용/SUV/승합차에 한함(카니발,코란도투리스모,스타렉스,스타리아)</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(5)신상품 출시 및 단종에 따라 가입 가능 상품명이 추가/변동될 수 있습니다.</p></li>
+                            </ol>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">벤투스 Ventus</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table " width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="2"><span class="txt-10 txt-nowrap">Ventus Runflat</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo² HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo² SUV HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus Super Sport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S1 evoZ</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus Super All-season</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo Z AS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="2"><span class="txt-10 txt-nowrap">Ventus premium Sport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus R-S4, Ventus R-S3, Ventus S1 evo³, Ventus S1 evo²</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo³ SUV, Ventus S1 evo² SUV</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus premium comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S2 AS,Ventus S1 noble2</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus Comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S2 AS X</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">키너지 Kinergy</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table" width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="3"><span class="txt-10 txt-nowrap">Kinergy Comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Kinergy EX, Kinergy 4S 2, Kinergy GT, Kinergy Eco</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Kinergy GT</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">전기차</span></td>
+                                            <td><span class="txt-10">Kinergy AS ev</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">다이나프로 Dynapro</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table" width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Dynapro Comport</span></th>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Dynapro HL3, Dynapro HP2, Dynapro HP, Dynapro Atm2</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">아이셉트 i*cept</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table" width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="2"><span class="txt-10 txt-nowrap">Winter i*cept Comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">i*cept evo³, i*cept evo², i*cept evo, i*cept iz2 A</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">i*cept evo SUV, i*cept evo² SUV, i*cept evo SUV, Winter i*cept X</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow mg-t-6u pd-b-2u">유의사항</h4>
+                            <ol class="mg-t-2u">
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(1)안심서비스 가입 전에 서비스설명서 내용을 반드시 읽어보시기 바랍니다.  </p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(2)안심서비스 가입을 위해서는 고객의 개인정보 활용 동의 필수이며, 거부 시 서비스 제공이 불가합니다.</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(3)안심서비스 보상은 차량 1대 당 1회에 한하여 타이어 1개만 보상됩니다. (최근 가입건 기준으로 보상 가능여부를 판단)</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(4)안심서비스 적용기한은 타이어 구매일로 부터 12개월과 구매후 주행거리 16,000km 중 1개의 조건 선도래시 만료됩니다.</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(5)안심서비스 보상시 장착비는 다음과 같이 별도로 발생하며 고객님 부담입니다.</p>
+                                    <p class="txt-neutral2 txt-11 mg-t-2u">→ 14인치 이하 10,000원  /  15~17인치 15,000원  /  18인치 이상 20,000원  /  런플렛상품은 별도로 추가 10,000원</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(6)다음의 차종은 서비스 가입이 불가합니다.</p>
+                                    <ol class="mg-t-2u pd-l-2u">
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">① 12인승 이상 승합차, 픽업트럭, (경)트럭</p></li>
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">② 배송, 법인(법인리스 포함), 렌트, 택시, 경주용, 리무진, 경찰차, 구급차 등 영업 및 긴급 목적으로 사용되는 차량</p></li>
+                                    </ol>
+                                </li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(7)안심서비스는 동일한 새 타이어로 보상하며 아래의 조건에서는 보상지연 및 동급의 타이어로 대체 보상될 수 있습니다.</p>
+                                    <ol class="mg-t-2u pd-l-2u">
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">① 일부 비메인 규격의 상품</p></li>
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">② 재고 부족 및 상품 단종</p></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow mg-t-6u pd-b-2u">주요면책 사항</h4>
+                            <ol class="mg-t-2u">
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(1)수리 후 운행 가능한 단순 트래드면 펑크</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(2)내부 코드지가 보이지 않는 미세한 뜯김</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(3)휠얼라인먼트 오류 등 차량의 이유로 인한 이상마모</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(4)보상을 목적으로 한 고의 손상</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(5)포장도로 및 간선도로 외에서 운행 중 발생한 사고 </p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(6)차량 제조사의 권장 제원과 부합하지 않는 규격의 타이어 장착</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(7)더타이어샵 이외의 장소에서 타이어를 구매,교체,수리한 경우</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(8)자동차보험으로 보상처리가 가능한 대물 사고</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(9)도로 자체의 하자로 인하여 발생한 사고 (돌출 맨홀, 씽크홀, 포트홀 등)</p></li>
+                            </ol>
+                            <p class="txt-neutral2 txt-11 mg-t-5u">안심서비스 보상문의 : 010-4235-4972 (우리손해사정 담당자)</p>
+                        </div>
+                    </div>
+                </form>
+               `
+/* //20220221  */
+</script>
+
+    </div> 
+</div>
+
+<%- locals.widget ('src/project/mobile/pages/tts/includes/tts-footer.ejs') %> 

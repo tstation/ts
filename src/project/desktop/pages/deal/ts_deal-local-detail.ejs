@@ -1,0 +1,271 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <div class="item-detail">
+        <!-- .item-section start // -->
+        <div class="item-section guardrail">
+            <!-- .item-thumb-wrap start-->
+            <div class="item-thumb-wrap coupon-thumb">
+                <div class="sticky-wrap">
+                    <!-- .item-coupon start //-->
+                    <div class="item-coupon">
+                        <!-- .coupon-card-wrap start //-->
+                        <div class="coupon-card-wrap">
+                            <article class="coupon-card coupon-card-detail download-before able-give">
+                                <div class="coupon-card-flag">
+                                    <div class="coupon-card-flag-inner">
+                                        <span>우리동네딜</span>
+                                    </div>
+                                </div>
+                                <div class="coupon-card-info">
+                                    <div class="bi-img"><img src="pc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img"></div>
+                                    <p class="txt-42 line-100per mg-b-1u">20,000<small class="txt-22">원</small></p>
+                                    <p class="txt-24 line-100per">엔진오일 할인 이벤트</p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <button type="button" class="btn-item btn-neutral btn-l round btn-coupon-download" onclick="couponDownload(this, '엔진오일 할인 이벤트');">
+                        <span class="coupon-download-before">
+                            <span class="label-txt v-middle">쿠폰다운</span>
+                            <span class="line-icons download size-28 v-middle"></span>
+                        </span>
+                        </button>
+                        <p class="explan">쿠폰다운  2021.01.31 까지</p>
+                        <!-- // .coupon-card-wrap end -->
+                        <script>
+                            var isDownload = false;
+                            var callPopup = {
+                                goMyPage: function (couponName) {
+                                    var template = function (str) {
+                                        return '<p class="txt-center mg-t-4u txt-16 txt-primary">\n' +
+                                          '    <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br />\n' +
+                                          '    <span>우리동네 ' + str + '</span>\n' +
+                                          '</p>\n' +
+                                          '<p class="txt-center txt-neutral2 txt-14 mg-t-8u pd-t-4u border-t">쿠폰이 다운로드 되었습니다.<br />마이페이지 > 내쿠폰에서 확인하시겠습니까?</p>'
+                                    };
+
+                                    $.Tstation.popup().open({
+                                        ref: 'go-my-page',
+                                        requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                        contents: template(couponName), // 팝업을 바로 띄우고 싶을때
+                                        dimWhite: false,
+                                        modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                            horizon: 8,
+                                            vertical: 8,
+                                            top: 0,
+                                            right: 0,
+                                            bottom: 0,
+                                            left: 0
+                                        },
+                                        modalAction: {
+                                            isNoBoundary: false,
+                                            buttons: [
+                                                {
+                                                    label: '취소',
+                                                    negative: true,
+                                                    action: function () {
+                                                        $.Tstation.popup().close('go-my-page')
+                                                    }
+                                                },
+                                                {
+                                                    label: '확인',
+                                                    negative: false,
+                                                    action: function () {
+                                                        window.location.href = ''
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    });
+                                },
+                                deniedVisit: function () {
+                                    var template = '<p class="txt-center">우리동네딜 쿠폰을 다운받으신 후에<br />우리동네딜 참여매장 방문예약이 가능합니다.</p>';
+
+                                    $.Tstation.popup().open({
+                                        ref: 'denied-visit',
+                                        requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                        contents: template, // 팝업을 바로 띄우고 싶을때
+                                        dimWhite: false,
+                                        modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                            horizon: 8,
+                                            vertical: 8,
+                                            top: 0,
+                                            right: 0,
+                                            bottom: 0,
+                                            left: 0
+                                        },
+                                        modalAction: {
+                                            isNoBoundary: false,
+                                            buttons: [
+                                                {
+                                                    label: '확인',
+                                                    negative: false,
+                                                    action: function () {
+                                                        $.Tstation.popup().close('denied-visit')
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    });
+
+                                }
+                            };
+                            var couponDownloadDone = function (el, couponName) {
+                                isDownload = true
+                                callPopup.goMyPage(couponName)
+                            };
+                            var couponDownload = function (el, couponName) {
+                                // 1. 비동기로 쿠폰 다운로드
+                                // 2. 성공시 인터렉션
+                                couponDownloadDone(el, couponName)
+                            };
+                            var goVisitReserve = function (url) {
+                                // 1. 쿠폰을 다운받았다면 방문예약하러 가기
+                                if (isDownload) {
+                                    if (typeof url === 'undefined' || !(url.length > 0)) {
+                                        throw new Error('url not defined')
+                                    }
+                                    window.location.href = url
+                                }
+
+                                // 2. 쿠폰을 다운받지 않았다면 알림팝업 호출
+                                else {
+                                    callPopup.deniedVisit();
+                                }
+                            };
+                        </script>
+                    </div>
+                    <!-- // .item-coupon end -->
+                </div>
+            </div><!-- // .item-thumb-wrap end-->
+            <!-- .item-info-wrap start -->
+            <div class="item-info-wrap">
+                <div class="name-wrap">
+                    <h2 class="name">엔진오일 교환 50%할인 이벤트</h2>
+                    <span class="use-wrap">
+                    <span class="use">서울권</span>
+                    <span class="use">매장전용</span>
+                </span>
+                </div>
+
+                <div class="coupon-info-wrap">
+                    <div class="headline">사용기한</div>
+                    <div class="description">2020.11.01 부터 ~ 2022.01.31 까지</div>
+                </div>
+                <div class="coupon-info-wrap">
+                    <div class="headline">혜택상세</div>
+                    <div class="description">딜 참여 매장을 방문하신 후 엔진오일 상품을 구매 할 때 쿠폰가로 이용 하실 수 있는 <strong>매장전용 딜</strong> 쿠폰 입니다.</div>
+                </div>
+                <div class="coupon-info-wrap">
+                    <div class="headline">쿠폰 사용처</div>
+                    <div class="description"><strong>서울권</strong> 한정 티스테이션 멤버십 매장전용</div>
+                </div>
+                <div class="coupon-info-wrap">
+                    <div class="headline">할인금액</div>
+                    <div class="description"><strong>경차 3만원, 중형차 4만원, 대형차 5만원</strong></div>
+                </div>
+                <div class="coupon-info-wrap">
+                    <div class="headline">이용방법</div>
+                    <div class="description">
+                        <ol>
+                            <li>&lsquo;쿠폰 다운&rsquo; 버튼을 누르시고 쿠폰을 다운받아주세요. </li>
+                            <li>아래 우리동네 참여매장을 확인하고, 매장방문예약 또는 오프라인 매장방문을 해주세요.</li>
+                            <li>결제 하실 때 마이페이지 &gt; 내 쿠폰 화면에서 다운받으신 쿠폰을 제시하시면 딜 혜택을 받으실 수 있습니다.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- // .item-info-wrap end -->
+        </div><!-- // .item-section end -->
+
+        <!-- .deal-tab-section START // -->
+        <div class="deal-tab-section">
+            <div class="guardrail">
+                <!-- .list-guide-bar START // -->
+                <div class="list-guide-bar">
+                    <p class="guide-text">총 <span class="txt-primary">9</span>개의 참여매장</p><!-- 202012 pub fixed -->
+                    <div class="tools tab-item tab-item-no-border tab-item-light no-sticky on-layer size-s">
+                        <a href="#" class="on">거리 순</a>
+                        <a href="#" class="">평점 순</a>
+                        <div class="indicator" style="width: 82px; left: 0px;"></div></div>
+                </div><!-- // .list-guide-bar END  -->
+
+                <!-- .deal-store-list START // -->
+                <div class="deal-store-list">
+                    <!-- .items START // -->
+                    <div class="items">
+                        <div class="store-info-wrap">
+                            <div class="thumb-img"><img src="pc-static-root/images/common/sample/@deal_store.png" alt=""></div>
+                            <div class="store-info">
+                                <div class="info-group">
+                                    <div class="service">
+                                        <span class="smartstore"><span class="blind">멤버십 스토어</span></span>
+                                    </div>
+                                    <div class="franchisee">
+                                        <strong>판교점</strong>
+                                        <span class="opentime">08:00 ~ 20:00</span>
+                                        <div class="star-wrap">
+                                            <span class="line-icons star size-14"></span>
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                    <div class="spot">
+                                        <span class="address">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</span>
+                                        <span class="number">031-785-3345</span>
+                                    </div>
+                                    <div class="uniq">
+                                        <span class="txt">오늘서비스</span>
+                                        <span class="txt">다녀온 매장</span>
+                                        <span class="txt">수입차 정비</span>
+                                        <span class="txt">휴일지킴이</span>
+                                    </div>
+                                </div>
+                                <div class="store-label">
+                                    <span class="point winstore">우수매장</span>
+                                    <span class="point benefit smartpick">스마트픽업</span>
+                                    <span class="point dealstore">우리동네 딜</span>
+                                </div>
+                            </div>
+                            <div class="button-wrap store-more-action">
+                                <button type="button" class="btn-item btn-neutral btn-ol round">
+                                    <span class="label-txt">매장 상세보기</span>
+                                </button>
+                                <button type="button" class="btn-item btn-neutral round" onclick="goVisitReserve();">
+                                    <span class="label-txt">방문 예약하기</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div><!-- // .items END-->
+                </div><!-- // .deal-store-list END  -->
+            </div>
+        </div><!-- // .deal-tab-section END  -->
+
+
+        <script>
+            $(document).ready(function(){
+                /* keyVisual sticky scroll */
+                $(window).on({
+                    'scroll' : function() {
+                        var stickyWrap = $('.sticky-wrap')
+                        var paymentTop = $('.item-section').offset().top;
+                        var maxTop = $('.item-info-wrap').outerHeight() - stickyWrap.outerHeight() + paymentTop;
+                        var scrollThis = $(this).scrollTop();
+
+                        if ( paymentTop < scrollThis ) {
+                            if (scrollThis < maxTop) {
+                                stickyWrap.css({'top' : scrollThis-paymentTop});
+                            } else {
+                                stickyWrap.css({'top' : maxTop-paymentTop});
+                            }
+                        } else {
+                            stickyWrap.css({'top' : 0});
+                        }
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>

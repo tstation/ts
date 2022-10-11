@@ -1,0 +1,1015 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar-share.ejs', { pageTitle: '매장 상세보기' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <!-- 배너 -->
+
+        <!-- .store-hero-section // -->
+        <section class="store-hero-section">
+            <div class="swiper-container store-detail-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="mc-static-root/images/common/empty-store.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="mc-static-root/images/common/sample/store.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="mc-static-root/images/common/sample/store.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="mc-static-root/images/common/sample/store.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="mc-static-root/images/common/sample/store.png" alt="" />
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+            <script>
+                var storeHeroSlide = new Swiper('.store-detail-swiper', {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                    },
+                    autoplay: {
+                        delay: 5000,
+                    },
+                    slidesPerView: 'auto'
+                });
+
+                storeHeroSlide.init();
+
+                $(window).on('resize', function () {
+                    storeHeroSlide.init();
+                });
+            </script>
+
+            <!-- 20211213 // -->
+            <div class="hero-info">
+                <div><span class="allmyt-smartstore"><span class="blind">all my T 스토어</span></span></div>
+                <div class="mg-t-2u">
+                    <span class="txt-20 v-middle mg-r-1u">분당정자점</span>
+                    <div class="benefit-wrap">
+                        <span class="benefit benefit-superior-store">우수매장</span>
+                        <span class="benefit benefit-imported-car">수입차정비</span>
+                    </div>
+                </div>
+                <div class="interest-store-wrap right">
+                    <label class="check-interest">
+                        <input type="checkbox">
+                        <div class="icon-holder">
+                            <span class="heart-fill"></span><!-- 20220316 line-icons 삭제 -->
+
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u">단골매장</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="v-middle mg-t-2u">
+                    <span class="line-icons star size-12 txt-yellow"></span>
+                    <span class="txt-12 v-middle">4.7점</span>
+                </div>
+            </div>
+            <!-- // 20211213 -->
+
+        </section>
+        <!-- // .store-hero-section -->
+
+        <!-- .store-info-section // -->
+        <section class="store-info-section">
+            <div class="store-manager">
+                <div class="manager-photo">
+                    <div class="inner" style="background-image: url('mc-static-root/images/common/sample/manager.png')"></div>
+                </div>
+                <div class="manager-info">
+                    <p class="txt-center txt-16">판교점 <em class="txt-w500">홍길동 대표님</em></p>
+                    <p class="txt-center txt-14 mg-t-2u">안녕하세요. T’Station 판교점입니다. 저희 매장은 최신장비와 7명의 최고의 전문가들을 보유한 티스테이션 매장입니다.</p>
+                </div>
+            </div>
+            <div class="info-list">
+                <div class="items">
+                    <span class="line-icons time size-30"></span>
+                    <p class="txt-14">AM 09:00 – PM 07:00</p>
+                    <p class="txt-12">휴무 : 연중무휴 공, 일요일 9시 ~6시</p>
+                </div>
+                <div class="items">
+                    <span class="line-icons location size-30"></span>
+                    <p class="txt-14">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</p>
+                </div>
+                <div class="items">
+                    <span class="line-icons call size-30"></span>
+                    <a href="#none" class="txt-14 txt-primary" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')">031 - 713 - 6661<span class="line-icons chev-right size-20"></span></a>
+                </div>
+            </div>
+            <div class="benefit-wrap">
+                <p class="txt-12"><em class="txt-w500">고객 편의시설</em>  (무료로 이용하실 수 있습니다)</p>
+                <div class="hash-list mg-t-2u">
+                    <span class="hash txt-12">고객대기실</span>
+                    <span class="hash txt-12">고객PC </span>
+                    <span class="hash txt-12">와이파이</span>
+                    <span class="hash txt-12">골프연습</span>
+                </div>
+            </div>
+        </section>
+        <!-- // .store-info-section -->
+
+        <!-- store-deal-section // -->
+        <section class="store-deal-section">
+            <div class="headcopy-wrap">
+                <div class="headcopy txt-20"><em class="txt-primary txt-w500">‘판교점’</em>에서 진행중인 우리동네딜</div>
+                <div class="subcopy txt-14 txt-neutral2">이번 달 매장에서 받을 수 있는 특별한 혜택!</div>
+            </div>
+            <div class="ts-deal-card-list">
+                <ul>
+                    <li>
+                        <article class="card-ts-deal-local">
+                            <div class="type-icon">
+                                <span class="line-icons engine-oil"></span>
+                            </div>
+                            <div class="card-info">
+                                <p class="txt-16 txt-neutral3"><span class="txt-neutral1">서울지역</span><span>의 우리동네딜</span></p>
+                                <p class="txt-20 txt-w300"><span class="txt-primary">엔진오일</span> 교환 50% 할인이벤트</p>
+                                <p class="txt-12 mg-t-2u">~2021.01.31까지</p>
+                            </div>
+                            <div class="action">
+                                <button type="button" class="btn-item btn-neutral btn-ms btn-ol round">
+                                    <span class="label-txt">딜 상세보기</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="card-ts-deal-local">
+                            <div class="type-icon">
+                                <span class="line-icons battery"></span>
+                            </div>
+                            <div class="card-info">
+                                <p class="txt-16 txt-neutral3"><span class="txt-neutral1">경기</span><span>의 우리동네딜</span></p>
+                                <p class="txt-20 txt-w300"><span class="txt-primary">배터리</span> 교체 30% 할인이벤트</p>
+                                <p class="txt-12 mg-t-2u">~2021.01.31까지</p>
+                            </div>
+                            <div class="action">
+                                <button type="button" class="btn-item btn-neutral btn-ms btn-ol round">
+                                    <span class="label-txt">딜 상세보기</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="card-ts-deal-local">
+                            <div class="type-icon">
+                                <span class="line-icons battery"></span>
+                            </div>
+                            <div class="card-info">
+                                <p class="txt-16 txt-neutral3"><span class="txt-neutral1">경기</span><span>의 우리동네딜</span></p>
+                                <p class="txt-20 txt-w300"><span class="txt-primary">배터리</span> 교체 30% 할인이벤트</p>
+                                <p class="txt-12 mg-t-2u">~2021.01.31까지</p>
+                            </div>
+                            <div class="action">
+                                <button type="button" class="btn-item btn-neutral btn-ms btn-ol round">
+                                    <span class="label-txt">딜 상세보기</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            <div class="store-customer-button txt-center mg-t-5u mg-b-10u">
+                <button type="button" class="btn-item btn-neutral btn-ol round">
+                    <span class="line-icons add size-14"></span><span class="label-txt">더보기</span><span class="more-count txt-12">3/12</span>
+                </button>
+            </div>
+        </section>
+        <!-- // store-deal-section -->
+
+        <!-- store-service-section // -->
+        <section class="store-service-section">
+            <div class="headcopy-wrap">
+                <div class="headcopy txt-20">매장 서비스</div>
+                <div class="tab-item">
+                    <a href="" class="on" data-tab-event="offer-number">제공서비스</a>
+                    <a href="" class="" data-tab-event="special-number">특화서비스</a>
+                </div>
+            </div>
+            <div class="tab-contents" data-tab-contents="offer-number">
+                <div class="service-list">
+                    <span class="service"><span class="line-icons service-tire-offline size-32"></span>타이어</span>
+                    <span class="service"><span class="line-icons service-run-flat size-32"></span>런플렛</span>
+                    <span class="service"><span class="line-icons service-lite-maintenance size-32"></span>경정비</span>
+                    <span class="service"><span class="line-icons service-engine-oil size-32"></span>엔진오일 세트</span>
+                    <span class="service"><span class="line-icons service-brake-pad size-32"></span>브레이크 패드</span>
+                    <span class="service"><span class="line-icons service-battery size-32"></span>배터리</span>
+                    <span class="service"><span class="line-icons service-goods size-32"></span>자동차 용품</span>
+                    <span class="service"><span class="line-icons service-blackbox size-32"></span>블랙박스</span>
+                    <span class="service"><span class="line-icons service-wash-polish size-32"></span>세차/광택</span>
+                    <span class="service"><span class="line-icons service-wheel size-32"></span>타이어휠</span>
+                </div>
+            </div>
+            <div class="tab-contents" data-tab-contents="special-number">
+                <div class="service-list">
+                    <span class="service"><span class="line-icons service-maintenance size-32"></span>수입차 정비</span>
+                    <span class="service"><span class="line-icons service-always-waiting size-32"></span>휴일지킴이</span>
+                    <span class="service"><span class="line-icons service-tire-hotel size-32"></span>타이어 보관서비스</span><!-- 211029 -->
+                    <span class="service"><span class="line-icons service-as-spot size-32"></span>A/S지정점</span>
+                    <span class="service"><span class="line-icons service-business-trip size-32"></span>픽업/출장정비</span>
+                    <span class="service"><span class="line-icons service-nanum size-32"></span>나눔제단</span>
+                </div>
+            </div>
+        </section>
+        <!-- // store-service-section -->
+
+        <!-- store-customer-section // -->
+        <section class="store-customer-section">
+            <div class="headcopy-wrap">
+                <div class="headcopy txt-20">고객의 소리</div>
+                <div class="sort-wrap">
+                    <div class="sort-item">
+                        <a href="" class="on">평점순</a>
+                        <a href="" class="">최신순</a>
+                    </div>
+                    <a href="#none" class="more-review">
+                        <span class="line-icons write size-20"></span>
+                        <span class="label-txt txc-14">리뷰작성하기</span>
+                        <span class="line-icons chev-right size-20"></span>
+                    </a>
+                </div>
+                <div class="customer-card-list">
+                    <!-- 20220721 // -->
+                    <div class="item">
+                        <!-- 20220726 // -->
+                        <div class="review-break">
+                            <img
+                                src="mc-static-root/images/common/review/icon_eye_gray.png"
+                                alt="empty review thumb"
+                                class="icon"
+                                style="width: 42px;"
+                                onerror="$.Tstation.imageError({ el: this })"
+                            />
+                            <p class="txt-16">해당 리뷰는 고객님께서 차단한 리뷰입니다</p>
+                            <div class="txt-center">
+                                <img
+                                    src="mc-static-root/images/common/review/icon_lock_primary.png"
+                                    alt="empty review thumb"
+                                    class="icon"
+                                    style="width: 32px;"
+                                    onerror="$.Tstation.imageError({ el: this })"
+                                />
+                                <div class="mg-t-1u">
+                                    <button type="button" class="btn-item btn-xs btn-primary round review-block-cancle" data-analytics-click="리뷰 차단 해제">
+                                        <span class="label-txt">차단 해제</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 20220726 -->
+                        <div class="customer-card bg-light1 my-review">
+                            <div class="review-delete-area">
+                                <button type="button" class="review-delete-btn">
+                                    <span class="label">내 리뷰삭제</span>
+                                    <span class="line-icons close size-14"></span>
+                                </button>
+                            </div>
+                            <ul>
+                                <li class="float-l txt-12">
+                                    <span class="name txt-w500">박**</span>
+                                    <span>2020-03-19 09:20:14</span>
+                                </li>
+                                <li class="float-r">
+                                            <span class="rating v-middle">
+                                                <span style="width: 90%"></span>
+                                            </span>
+                                    <span class="v-middle txt-11">4.5점</span>
+                                </li>
+                            </ul>
+                            <div class="review-contents txt-12 mg-t-2u"><!-- 20220726 -->
+                                소개로 방문했는데 정말 너무 친절하시고 타이어쪽 지식이없는데 하나하나 타이어성능 소개받고 장착하고 왔습니다 추천 해드리고 싶습니다.
+                            </div>  
+                        </div>
+                        <!-- 20220721 // -->
+                        <div class="reviewer-control pd-b-2u panel-hidden">
+                            <div class="good-checkbox-wrap">
+                                <label class="good-checkbox" id="goodCheckbox" data-analytics-click="리뷰가 도움이 돼요">
+                                    <input type="checkbox" class="blind" />
+                                    <div class="icon-holder mg-r-1u">
+                                        <span class="icon-good good-count txt-12">17</span>
+                                    </div>
+                                    <div class="labelling">
+                                        <span class="label-txt mg-h-1u txt-12">이 리뷰가 도움이 돼요</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="controlbox-list-wrap">
+                                <button type="button" class="controlbox-toggle" id="controlboxToggle" data-analytics-click="차단하기/신고하기 열기">
+                                    <span class="label-txt blind">차단하기/신고하기 열기</span>
+                                </button>
+                                <ul class="controlbox-list" style="display: none;">
+                                    <li><button type="button" class="controlbox-button review-declare" id="reviewDeclare" data-analytics-click="신고하기"><span class="label-txt txt-12">신고하기</span></button></li>
+                                    <li><button type="button" class="controlbox-button review-block" id="reviewBlock" data-analytics-click="차단하기"><span class="label-txt txt-12">차단하기</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="controlbox-panel" style="display: none;">
+                            <h4 class="controlbox-headcopy pd-b-2u border-b">
+                                <p class="headcopy txt-14">신고사유를 알려주세요</p>
+                                <p class="subcopy txt-12 txt-neutral3">신고하신 내용은 관리자 검토 후 조치됩니다.</p>
+                                <button type="button" class="btn-item round btn-inv min-w controlbox-close" id="controlboxClose" data-analytics-click="신고사유 닫기">
+                                    <span class="line-icons close size-24"></span>
+                                </button>
+                            </h4>
+                            <ul class="pd-v-3u">
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">저작권 침해, 명예훼손</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio" disabled="">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">개인정보 유출</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">욕설/비방/선정성 등 미풍양속을 해치는 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">광고 및 홍보성 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">해당 상품/매장과 무관한 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">상품/매장과 무관한 사진 첨부</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">잘못된 정보가 포함된 리뷰</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">기타</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+
+                            <div class="form-control">
+                                <label>신고 상세사유를 입력해 주세요 (선택)</label>
+                                <div class="input-group">
+                                    <textarea class="input-box" rows="4" placeholder="신고하시는 상세이유를 입력해주세요 (최대글자는 1,000자 입니다)"></textarea>
+                                </div>
+                            </div>
+                            <div class="txt-center mg-t-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol round pd-h-10u" data-analytics-click="리뷰 신고하기">
+                                    <span class="label-txt txt-14">신고하기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- // 20220721 -->
+                    </div>
+                    <!-- // 20220721 -->
+                    <div class="item">
+                        <!-- 20220726 // -->
+                        <div class="review-break">
+                            <img
+                                src="mc-static-root/images/common/review/icon_eye_gray.png"
+                                alt="empty review thumb"
+                                class="icon"
+                                style="width: 42px;"
+                                onerror="$.Tstation.imageError({ el: this })"
+                            />
+                            <p class="txt-16">해당 리뷰는 고객님께서 차단한 리뷰입니다</p>
+                            <div class="txt-center">
+                                <img
+                                    src="mc-static-root/images/common/review/icon_lock_primary.png"
+                                    alt="empty review thumb"
+                                    class="icon"
+                                    style="width: 32px;"
+                                    onerror="$.Tstation.imageError({ el: this })"
+                                />
+                                <div class="mg-t-1u">
+                                    <button type="button" class="btn-item btn-xs btn-primary round review-block-cancle" data-analytics-click="리뷰 차단 해제">
+                                        <span class="label-txt">차단 해제</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 20220726 -->
+                        <div class="customer-card bg-light1">
+                            <ul>
+                                <li class="float-l txt-12">
+                                    <span class="name txt-w500">홍**</span>
+                                    <span>2020-03-07 15:07:07</span>
+                                </li>
+                                <li class="float-r">
+                                            <span class="rating v-middle">
+                                                <span style="width: 90%"></span>
+                                            </span>
+                                    <span class="v-middle txt-11">5점</span>
+                                </li>
+                            </ul>
+                            <div class="review-contents txt-12 mg-t-2u">
+                                오늘 처음방문했는데... 감사합니다.
+                            </div>
+                        </div>
+                        <!-- 20220721 // -->
+                        <div class="reviewer-control pd-b-2u panel-hidden">
+                            <div class="good-checkbox-wrap">
+                                <label class="good-checkbox" id="goodCheckbox" data-analytics-click="리뷰가 도움이 돼요">
+                                    <input type="checkbox" class="blind" />
+                                    <div class="icon-holder mg-r-1u">
+                                        <span class="icon-good good-count txt-12">17</span>
+                                    </div>
+                                    <div class="labelling">
+                                        <span class="label-txt mg-h-1u txt-12">이 리뷰가 도움이 돼요</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="controlbox-list-wrap">
+                                <button type="button" class="controlbox-toggle" id="controlboxToggle" data-analytics-click="차단하기/신고하기 열기">
+                                    <span class="label-txt blind">차단하기/신고하기 열기</span>
+                                </button>
+                                <ul class="controlbox-list" style="display: none;">
+                                    <li><button type="button" class="controlbox-button review-declare" id="reviewDeclare" data-analytics-click="신고하기"><span class="label-txt txt-12">신고하기</span></button></li>
+                                    <li><button type="button" class="controlbox-button review-block" id="reviewBlock" data-analytics-click="차단하기"><span class="label-txt txt-12">차단하기</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="controlbox-panel" style="display: none;">
+                            <h4 class="controlbox-headcopy pd-b-2u border-b">
+                                <p class="headcopy txt-14">신고사유를 알려주세요</p>
+                                <p class="subcopy txt-12 txt-neutral3">신고하신 내용은 관리자 검토 후 조치됩니다.</p>
+                                <button type="button" class="btn-item round btn-inv min-w controlbox-close" id="controlboxClose" data-analytics-click="신고사유 닫기">
+                                    <span class="line-icons close size-24"></span>
+                                </button>
+                            </h4>
+                            <ul class="pd-v-3u">
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">저작권 침해, 명예훼손</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio" disabled="">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">개인정보 유출</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">욕설/비방/선정성 등 미풍양속을 해치는 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">광고 및 홍보성 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">해당 상품/매장과 무관한 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">상품/매장과 무관한 사진 첨부</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">잘못된 정보가 포함된 리뷰</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">기타</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+
+                            <div class="form-control">
+                                <label>신고 상세사유를 입력해 주세요 (선택)</label>
+                                <div class="input-group">
+                                    <textarea class="input-box" rows="4" placeholder="신고하시는 상세이유를 입력해주세요 (최대글자는 1,000자 입니다)"></textarea>
+                                </div>
+                            </div>
+                            <div class="txt-center mg-t-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol round pd-h-10u" data-analytics-click="리뷰 신고하기">
+                                    <span class="label-txt txt-14">신고하기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- // 20220721 -->
+                    </div>
+                    <div class="item">
+                        <!-- 20220726 // -->
+                        <div class="review-break">
+                            <img
+                                src="mc-static-root/images/common/review/icon_eye_gray.png"
+                                alt="empty review thumb"
+                                class="icon"
+                                style="width: 42px;"
+                                onerror="$.Tstation.imageError({ el: this })"
+                            />
+                            <p class="txt-16">해당 리뷰는 고객님께서 차단한 리뷰입니다</p>
+                            <div class="txt-center">
+                                <img
+                                    src="mc-static-root/images/common/review/icon_lock_primary.png"
+                                    alt="empty review thumb"
+                                    class="icon"
+                                    style="width: 32px;"
+                                    onerror="$.Tstation.imageError({ el: this })"
+                                />
+                                <div class="mg-t-1u">
+                                    <button type="button" class="btn-item btn-xs btn-primary round review-block-cancle" data-analytics-click="리뷰 차단 해제">
+                                        <span class="label-txt">차단 해제</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 20220726 -->
+                        <div class="customer-card bg-light1">
+                            <ul>
+                                <li class="float-l txt-12">
+                                    <span class="name txt-w500">홍**</span>
+                                    <span>2020-03-07 15:07:07</span>
+                                </li>
+                                <li class="float-r">
+                                            <span class="rating v-middle">
+                                                <span style="width: 90%"></span>
+                                            </span>
+                                    <span class="v-middle txt-11">5점</span>
+                                </li>
+                            </ul>
+                            <div class="review-contents txt-12 mg-t-2u">
+                                너무 매장도 깔끔하고 사장님도 친절하신것 같습니다. 타이어도 전체 교체하고 휠얼라이먼트도 같이 했는데 차가 훨씬 부드럽고 승차감이 좋아진것 같습니다.
+                                너무 매장도 깔끔하고 사장님도 친절하신것 같습니다. 타이어도 전체 교체하고 휠얼라이먼트도 같이 했는데 차가 훨씬 부드럽고 승차감이 좋아진것 같습니다.
+                                너무 매장도 깔끔하고 사장님도 친절하신것 같습니다. 타이어도 전체 교체하고 휠얼라이먼트도 같이 했는데 차가 훨씬 부드럽고 승차감이 좋아진것 같습니다.
+                                너무 매장도 깔끔하고 사장님도 친절하신것 같습니다. 타이어도 전체 교체하고 휠얼라이먼트도 같이 했는데 차가 훨씬 부드럽고 승차감이 좋아진것 같습니다.
+                            </div>
+                        </div>
+                        <!-- 20220721 // -->
+                        <div class="reviewer-control pd-b-2u panel-hidden">
+                            <div class="good-checkbox-wrap">
+                                <label class="good-checkbox" id="goodCheckbox" data-analytics-click="리뷰가 도움이 돼요">
+                                    <input type="checkbox" class="blind" />
+                                    <div class="icon-holder mg-r-1u">
+                                        <span class="icon-good good-count txt-12">17</span>
+                                    </div>
+                                    <div class="labelling">
+                                        <span class="label-txt mg-h-1u txt-12">이 리뷰가 도움이 돼요</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="controlbox-list-wrap">
+                                <button type="button" class="controlbox-toggle" id="controlboxToggle" data-analytics-click="차단하기/신고하기 열기">
+                                    <span class="label-txt blind">차단하기/신고하기 열기</span>
+                                </button>
+                                <ul class="controlbox-list" style="display: none;">
+                                    <li><button type="button" class="controlbox-button review-declare" id="reviewDeclare" data-analytics-click="신고하기"><span class="label-txt txt-12">신고하기</span></button></li>
+                                    <li><button type="button" class="controlbox-button review-block" id="reviewBlock" data-analytics-click="차단하기"><span class="label-txt txt-12">차단하기</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="controlbox-panel" style="display: none;">
+                            <h4 class="controlbox-headcopy pd-b-2u border-b">
+                                <p class="headcopy txt-14">신고사유를 알려주세요</p>
+                                <p class="subcopy txt-12 txt-neutral3">신고하신 내용은 관리자 검토 후 조치됩니다.</p>
+                                <button type="button" class="btn-item round btn-inv min-w controlbox-close" id="controlboxClose" data-analytics-click="신고사유 닫기">
+                                    <span class="line-icons close size-24"></span>
+                                </button>
+                            </h4>
+                            <ul class="pd-v-3u">
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">저작권 침해, 명예훼손</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio" disabled="">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">개인정보 유출</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">욕설/비방/선정성 등 미풍양속을 해치는 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">광고 및 홍보성 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">해당 상품/매장과 무관한 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">상품/매장과 무관한 사진 첨부</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">잘못된 정보가 포함된 리뷰</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">기타</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+
+                            <div class="form-control">
+                                <label>신고 상세사유를 입력해 주세요 (선택)</label>
+                                <div class="input-group">
+                                    <textarea class="input-box" rows="4" placeholder="신고하시는 상세이유를 입력해주세요 (최대글자는 1,000자 입니다)"></textarea>
+                                </div>
+                            </div>
+                            <div class="txt-center mg-t-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol round pd-h-10u" data-analytics-click="리뷰 신고하기">
+                                    <span class="label-txt txt-14">신고하기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- // 20220721 -->
+                    </div>
+                </div>
+                <div class="store-customer-button txt-center mg-b-10u">
+                    <button type="button" class="btn-item btn-neutral btn-ol round">
+                        <span class="line-icons add size-14"></span><span class="label-txt">더보기</span><span class="more-count txt-12">3/12</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- // store-customer-section -->
+
+        <!-- deal-store-map // -->
+        <div class="deal-store-map">
+            <div class="map">
+                <div id="shopMap" style="position: relative; overflow: hidden; background: url('https://ssl.pstatic.net/static/maps/mantle/1x/auth_fail.png') center center; background-repeat: no-repeat;background-color: #f8f8f8;width: 100%; height: 210px;">
+                </div>
+            </div>
+        </div>
+        <!-- // deal-store-map -->
+
+    </div>
+</main>
+<div id="layerScarcePopup" tabindex="0" style="display:  none;">
+    <div class="layer_box" style="margin-top: -89.5px;">
+        <div id="scarce_content">
+            <!-- SNS 공유하기  + url - scarce -->
+            <div class="layer_sns">
+                <div class="layerT"><h3>공유하기</h3></div>
+                <div class="layerC">
+                    <!-- 공유하기 -->
+                    <ul class="sns_logo">
+                        <li><a href="#" class="snsface">페이스북으로 공유하기</a></li>
+                        <li><a href="#" class="snsnaver">네이버로 공유하기</a></li>
+                        <li><a href="#" class="snskakao">카카오톡로 공유하기</a></li>
+                    </ul>
+                    <!-- //공유하기 -->
+                </div>
+            </div>
+            <!-- //SNS 공유하기 -->
+            <script>
+                $(document).ready(function(){
+
+                    var snsProdSq = $("#goodsNo").val();
+                    var snsShareUrl = encodeURI(location.href);
+                    //var snsShareUrl = 'https://www.naver.com/';
+                    var snsProdNm = $("#goodsNm").val();
+                    var snsProdDesc = $("#slogan").val();
+                    var imgUrl = $("#goodsImgUrl").val();
+                    var encodedShareUrl = encodeURI(snsShareUrl);
+
+                    Kakao.Link.createDefaultButton({
+                        container: '.snskakao',
+                        objectType: 'feed',
+                        content: {
+                            title: snsProdNm,
+                            description: snsProdDesc,
+                            imageUrl: imgUrl,
+                            link: {
+                                mobileWebUrl: snsShareUrl,
+                                webUrl: snsShareUrl
+                            }
+                        },
+                        buttons: [
+                            {
+                                title: "T'Station 열기",
+                                link: {
+                                    mobileWebUrl: snsShareUrl,
+                                    webUrl: snsShareUrl
+                                }
+                            }
+                        ]
+                    });
+
+                    $('.sns_logo li a').on('click',function(){
+
+                        if($(this).hasClass("snsface")){ //페이스북
+                            prodShareSNS("facebook", snsProdSq ,snsShareUrl);
+                            //prodShareSNS2("facebook", prodNm ,'' + prodSq);
+                        }else if($(this).hasClass("snsnaver")){ //네이버
+                            prodShareSNS("naver", snsProdSq ,snsShareUrl);
+                            //prodShareSNS2("naver", prodNm ,snsShareUrl);
+                        }else if($(this).hasClass("snsgoogle")){ //구글
+                            prodShareSNS("google", snsProdSq ,snsShareUrl);
+                            //prodShareSNS2("google", prodNm ,snsShareUrl);
+                        }
+                        return false;
+                    });
+                });
+            </script>
+        </div>
+        <button type="button" class="layer-scarce-close">팝업닫기</button>
+    </div>
+</div>
+<div class="modal-item full">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>리뷰 작성하기</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+            <div class="modal-action ">
+                <ul class="list-size-equal"><li><button class="btn-item btn-neutral round full-w btn-ol"><span class="label-txt">취소하기</span></button></li><li><button class="btn-item btn-neutral round full-w"><span class="label-txt">등록하기</span></button></li></ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-v-5u pd-h-5u">
+                        <div class="review_write">
+                            <ol>
+                                <li class="select01">
+                                    <span id="pointCheck" class="star04 point10">(5.0)</span>
+                                    <div class="point_sub">
+                                        <ul>
+                                            <li><input type="radio" name="storeStar" id="storeStar10"><label for="storeStar10" class="star04 point10">(5.0)</label></li>
+                                            <li><input type="radio" name="storeStar" id="storeStar8"><label for="storeStar8" class="star04 point8">(4.0)</label></li>
+                                            <li><input type="radio" name="storeStar" id="storeStar6"><label for="storeStar6" class="star04 point6">(3.0)</label></li>
+                                            <li><input type="radio" name="storeStar" id="storeStar4"><label for="storeStar4" class="star04 point4">(2.0)</label></li>
+                                            <li><input type="radio" name="storeStar" id="storeStar2"><label for="storeStar2" class="star04 point2">(1.0)</label></li>
+                                            <li><input type="radio" name="storeStar" id="storeStar0"><label for="storeStar0" class="star04 point0">(0.0)</label></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <script>
+                                    $(document).ready(function(){
+                                        // 매장 검색 결과 정렬 관련 Layer box 토글
+                                        $("#pointCheck").click(function(){
+                                            $( this ).parents('li').toggleClass( "on" );
+                                        });
+                                        // 매장 검색 결과 정렬 하기 radio 버튼 클릭 시 기능
+                                        $( "input[name='storeStar']" ).change(function () {
+                                            $("input[type='radio']:checked").each(function() {
+                                                var idVal = $(this).attr("id");
+                                                var idTxt = $("label[for='"+idVal+"']").text();
+                                                var idClass = $("label[for='"+idVal+"']").attr('class');
+                                                console.log(idClass);
+                                                $( "#pointCheck" ).text( idTxt )
+                                                $( "#pointCheck" ).removeClass().addClass(idClass);
+                                                $(".review_write .select01").removeClass('on');//정렬 레이어 닫기
+                                            });
+                                        })
+                                    });
+                                </script>
+                                <li>
+                                    <textarea class="ip_txt01" placeholder="매장에 하고 싶은 말을 입력해 주세요."></textarea>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 20220721 // -->
+<script>
+$('.controlbox-toggle').each(function(e, i) {
+    $(i).click(function() {
+        $(this).next().toggle();
+    })
+})
+
+$('.review-declare').each(function(e, i) {
+    $(i).click(function() {
+        $(this).parents('.controlbox-list').hide();
+        $(this).parents('.reviewer-control').removeClass('panel-hidden').next().show();  
+        $(".modal-scroller").stop().animate({scrollTop:$(window).outerHeight()}, {duration:300, easing:"linear"});
+    })  
+})
+
+$('.controlbox-close').each(function(e, i) {
+    $(i).click(function() {
+        $(this).parents('.controlbox-panel').hide();
+        $(this).parents('.controlbox-panel').prev().addClass('panel-hidden');
+    })  
+})  
+
+/* 20220726 // */
+$('.review-block').each(function(e, i) {
+    var reviewBlock = false
+    $(i).click(function() {
+        reviewBlock = true
+        if(reviewBlock) {
+            $(this)
+                .parents('.reviewer-control')
+                .addClass('panel-hidden')
+                .next()
+                .hide();  
+            $(this)
+                .parents('.reviewer-control')
+                .prevAll('.review-break')
+                .addClass('active')
+                .parent()
+                .addClass("block-height-fix");
+            alert("리뷰어 차단이 완료되었습니다.");
+        }
+
+        $(this).parents('.controlbox-list').hide();
+    })  
+})  
+
+$('.review-block-cancle').each(function(e, i) {
+    $(i).click(function() {
+        $(this)
+            .parents('.review-break')
+            .removeClass('active')
+            .parent()
+            .removeClass("block-height-fix");
+        alert("리뷰어 차단이 해제되었습니다.");
+    })
+})
+/* // 20220726 */
+
+</script>
+<!-- // 20220721 -->

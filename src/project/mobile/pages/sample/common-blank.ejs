@@ -1,0 +1,37 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'Page Title' }) %>
+<main id="main">
+    <div class="tab-item">
+        <a href="" class="on">탭버튼1</a>
+        <a href="" class="">탭버튼2</a>
+        <a href="" class="">탭버튼3</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h3>콘텐츠 섹션 헤더</h3>
+
+                <div class="extra">
+                    <a href="" class="btn-item btn-m btn-neutral btn-inv filet">
+                        <span class="label-txt txt-primary">엑스트라 버튼</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                섹션 컨텐츠 들어가는 곳
+                <div>
+                    <button type="button" class="btn-item btn-neutral filet" onclick="$.Tstation.loading.start();">
+                        <span class="label-txt">Call loading indicator</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

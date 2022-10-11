@@ -1,0 +1,194 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar-share.ejs', { pageTitle: '티스테이션 TV' }) %>
+<div id="container" class="gray">
+    <div class="tam-tstation-tv">
+        <section class="section-youtube 16x9">
+            <div id="youtube-player"></div>
+            <script>
+                /**
+                 * YOU TUBE API - CREATE
+                 */
+                // create script
+                var tag = document.createElement('script')
+                tag.src = 'https://www.youtube.com/iframe_api'
+                var firstScriptTag = document.getElementsByTagName('script')[0]
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                // create player
+                var player
+                function onYouTubeIframeAPIReady() {
+                    player = new YT.Player('youtube-player', {
+                        videoId: 'kXxtFFeLQmo', // https://www.youtube.com/embed/VIDEO_ID << 어드민에서 등록한 url 에서 VIDEO_ID를 추출하세요.
+                        events: {
+                            'onReady': onPlayerReady
+                        }
+                    })
+                }
+
+                // on ready hook fire
+                function onPlayerReady(event) {
+                    // 자동 재생을 하려면 음소거 필수
+                    event.target.mute();
+                    event.target.playVideo();
+                }
+
+                // 동영상 소유자가 다른 웹사이트에서 재생할 수 없도록 설정한 경우 소유자 계정에서
+                // 'https://m.tstation.com', 'https://www.tstation.com' allow 되어야 합니다.
+            </script>
+        </section>
+
+        <section class="section-youtube-detail">
+            <div class="title-wrap">
+                <!-- 0820 // -->
+                <h4 class="title">
+                    [현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다 | [EP.1]
+                    <span class="dp-block txt-12">2021. 8. 10.</span>
+                </h4>
+                <!-- // 0820 -->
+                <button class="btn-contents-toggle" onclick="onHandleContentsToggle(this)">
+                    <span class="icon line-icons chev-down size-24"></span>
+                </button>
+            </div>
+            <div id="toggle-contents" class="contents-wrap">
+                <!-- admin html editor contents import -->
+                <p>차가 있는 곳엔 타이어가 있고,<br />타이어가 있는 곳에 티스테이션이 간다!<br />드디어 현타꿀팁 시즌 2 오픈!!</p>
+                <br />
+                <p>현명하게 타이어를 구매하는 꿀팁을 전달드렸던<br />시즌1에서 업그레이드해 시즌2에서는 시민분들이 있는<br />현장에 직접 찾아 뵐 예정인데요!</p>
+            </div>
+            <div class="keywords">
+                <span class="keyword">현타꿀팁</span>
+                <span class="keyword">타이어펑크</span>
+                <span class="keyword">타이어펑크가나다라마바사아</span>
+            </div>
+
+            <script>
+                function onHandleContentsToggle (el) {
+                    var button = el
+                    var contents = document.getElementById('toggle-contents')
+
+                    $(button).toggleClass('on')
+                    $(contents).toggleClass('on')
+                }
+            </script>
+        </section>
+
+        <section class="contents-status-bar">
+            <span class="title">다른 <span class="txt-primary">현·타·꿀·팁</span> 영상</span>
+            <div class="form-control form-control-md extra">
+                <div class="input-group">
+                    <select class="input-box" dir="rtl">
+                        <option selected="">최신순</option>
+                        <option>오래된 순</option>
+                    </select>
+
+                    <div class="tools">
+                        <button><span class="line-icons chev-down"></span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-tam-more">
+            <ul>
+                <li>
+                    <article
+                        class="ts-tv-cell"
+                        data-link-type="OUT"
+                        data-link-url="https://www.youtube.com/user/hankooktirekorea1"
+                    >
+                        <div class="thumb-area">
+                            <div class="thumb" style="background-image: url('https://blahblahblah.com')"></div>
+                        </div>
+                        <div class="description">
+                            <p>[현·타·꿀·팁 #7] 윈터타이어 바꾼다고? Winter Flex로 꿀 혜택 다 챙겨가!</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article
+                        class="ts-tv-cell"
+                        data-link-type="IN"
+                        data-link-url="/mobile/tam-tstation_tv-detail.html?id=10000"
+                    >
+                        <div class="thumb-area">
+                            <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                        </div>
+                        <div class="description">
+                            <p>[현·타·꿀·팁 #6] 너 안심 문제 있어? 더 푸짐한 혜택으로 돌아온 '티스테이션에 간다, 안심이 간다!' blah blah blah blah blah blah blah blah blah blah</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article
+                        class="ts-tv-cell"
+                        data-link-type="IN"
+                        data-link-url="/mobile/tam-tstation_tv-detail.html?id=10000"
+                    >
+                        <div class="thumb-area">
+                            <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                        </div>
+                        <div class="description">
+                            <p>[현·타·꿀·팁 #5] 벤투스와 함께하는 프리미엄 여름맞이! 벤투스 썸머 페스티벌</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article
+                        class="ts-tv-cell"
+                        data-link-type="IN"
+                        data-link-url="/mobile/tam-tstation_tv-detail.html?id=10000"
+                    >
+                        <div class="thumb-area">
+                            <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                        </div>
+                        <div class="description">
+                            <p>[현·타·꿀·팁 #4] 대한민국 독립만세! 한국타이어 8·15 Week 만만세!</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article
+                        class="ts-tv-cell"
+                        data-link-type="IN"
+                        data-link-url="/mobile/tam-tstation_tv-detail.html?id=10000"
+                    >
+                        <div class="thumb-area">
+                            <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                        </div>
+                        <div class="description">
+                            <p>[현·타·꿀·팁 #3] 매일 한 번씩 찾아오는 엄청난 혜택! 룰렛만 돌려도 티스테이션이 상품쏜다!</p>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+            <script>
+                // ts-tv-card onclick
+                $('.ts-tv-cell').click(function () {
+                    // get custom attr & use data
+                    // sample data { linkType: 'IN' | 'OUT', linkUrl: '/mobile/tam-tstation_tv-detail.html' }
+                    var data = $(this).data()
+
+                    // go link type
+                    switch (data.linkType) {
+                        case 'IN':
+                            // 히스토리 저장 하지 않음
+                            location.replace(data.linkUrl)
+                            break
+                        case 'OUT':
+                            window.open(data.linkUrl, '_blank')
+                            break
+                        default:
+                            break
+                    }
+                })
+            </script>
+
+            <button type="button" class="btn-item btn-neutral btn-ol  w-240 round">
+                <span class="label-txt">10/19 더보기</span>
+            </button>
+        </section>
+    </div>
+</div>

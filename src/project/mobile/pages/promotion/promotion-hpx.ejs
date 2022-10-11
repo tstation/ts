@@ -1,0 +1,119 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        힘내라 대한민국
+        <span class="date">이벤트 기간 : 22.03.01  ~ 22.03.31</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <!-- .event_detail // -->
+    <div class="event_detail">
+        <!-- .event-hpx-new // -->
+        <div class="event-hpx-new">
+            <div class="event-hpx-hero button-offset-point">
+                <img src="mc-static-root/images/event/20220712/hero.png" alt="" />
+            </div>
+            <div class="event-hpx-content">
+                <img src="mc-static-root/images/event/20220712/content1.png" alt="" />
+                <a href="#none" class="img-map-link link-1" data-analytics-click="다이나프로 HPX 특장점 자세히보기"><span class="blind">다이나프로 HPX 특장점 자세히보기</span></a>
+            </div>
+            <div class="event-hpx-content">
+                <img src="mc-static-root/images/event/20220712/content2.png" alt="" />
+                <!-- 20220720 // -->
+                <a href="#none" class="img-map-link link-2" id="moreGiftButton" data-analytics-click="크레모아 선풍기 제품 사양보기"><span class="blind">크레모아 선풍기 제품 사양보기</span></a>
+                <!-- //20220720 -->
+                <a href="#none" class="img-map-link link-3" data-analytics-click="사은품 신청하기"><span class="blind">사은품 신청하기</span></a>
+            </div>
+            <div class="fixed-button-area" style="">
+                <div class="fixed-button-wrap">
+                    <button type="button" class="btn-item btn-neutral full-w pd-h-1u">
+                        <span class="label-txt">온라인에서 바로구매</span>
+                    </button>
+                    <a href="/store/locals" class="btn-item btn-neutral full-w pd-h-1u">
+                        <span class="label-txt">매장예약/현장결제</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="event-hpx-content button-static-point">
+                <img src="mc-static-root/images/event/20220712/legal.png" alt="" />
+            </div>
+        </div>
+        <!-- .event-hpx-new // -->
+        
+    </div>
+    <!-- // .event_detail -->
+
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+</div>
+
+<script>
+// Clone button function
+var fixedButton = $('.fixed-button-wrap');
+var vssHeight = 0;
+var vssFixed = $('.button-offset-point').offset().top - $('.navbar').height();
+var vssStatic = $('.button-static-point').offset().top - $('.navbar').height();
+
+$(window).scroll(function() {
+    vssHeight = $(document).scrollTop();
+    if(vssHeight > vssFixed && vssHeight < vssStatic) {
+        $('.fixed-button-wrap').addClass('footer-fixed');
+    } else if(vssHeight > vssFixed && vssHeight > vssStatic) {
+        $('.fixed-button-wrap').removeClass('footer-fixed');
+    } else {
+        $('.fixed-button-wrap').removeClass('footer-fixed');
+    }
+})
+
+/* 20220720 // */
+$('#moreGiftButton').click(function() {
+    callPopup.hpxGift();
+})
+
+var callPopup = {
+    hpxGift: function () {
+        $.Tstation.popup().open({
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: hpxGiftContent, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false,
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 0,
+                vertical: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            modalSize: 'SMALL',
+            modalAction: {
+                isNoBoundary: false,
+            }
+        })
+        
+    }
+}
+
+var hpxGiftContent = `<div class="hpx-gift-panner">
+    <div class="txt-center">
+        <img src="mc-static-root/images/event/20220712/modal_spec.jpg" style="width: 100%" alt="" />
+    </div>
+    <button type="button" class="btn-item round btn-inv min-w btn-popup-close">
+        <span class="line-icons close size-28"></span>
+    </button>
+</div>`
+/* //20220720 */
+
+</script>

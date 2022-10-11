@@ -1,0 +1,52 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '1:1 상담 내역' }) %>
+<div id="container" class="mypage">
+    <!-- 상담내역 -->
+    <div class="qna_list">
+
+        <div class="nodata"><em>1:1 상담내역</em>이 없습니다.</div>
+
+        <dl class="detail toggle_box">
+            <dt class="q tit">
+                <span class="cate">기타</span>
+                <span class="date">2020-08-24</span>
+                카카오톡 계정을 페이스북 계정으로 변경 할 수 있나요?
+            </dt>
+            <dd class="question">
+                <p class="cont">
+                    카카오톡 계정으로 로그인 중인데 페이스북 계정으로 바꾸고 싶습니다.<br/><br/>답변 기다리겠습니다.
+                </p>
+                <ol class="photo">
+
+
+                    <li class="popup-full" name="PHOTO" data-rel="/mypage/imgList.do?cnslSeq=2000003589"><img src="https://via.placeholder.com/960x480" alt=""></li>
+                    <li class="popup-full" name="PHOTO" data-rel="/mypage/imgList.do?cnslSeq=2000003589"><img src="https://via.placeholder.com/960x960" alt=""></li>
+                    <li class="popup-full" name="PHOTO" data-rel="/mypage/imgList.do?cnslSeq=2000003589"><img src="https://via.placeholder.com/960x480" alt=""></li>
+
+
+                </ol>
+
+
+                <ul class="btn">
+                    <li><button class="btnM3 btnS03" type="button" data-id="2000003589">삭제</button></li>
+                    <li><button class="btnM3 btnS01" type="button" data-id="2000003589">수정</button></li>
+                </ul>
+
+
+
+
+            </dd>
+
+        </dl>
+
+
+
+
+    </div>
+    <div class="btn02">
+        <a href="https://m.tstation.com/customer-service/qna.do" class="btnB btnS02">1:1 상담하기</a>
+    </div>
+</div>

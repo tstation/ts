@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mobile-view,
+        .desktop-view {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .mobile-view.on,
+        .desktop-view.on {
+            display: block;
+        }
+
+        .mobile-view {width: 310px;}
+        .mobile-view img {width: 100%;}
+
+        .mobile-view .img-wrap,
+        .desktop-view .img-wrap {
+            display: block;
+            position: relative;
+        }
+
+        .mobile-view .info-wrap,
+        .desktop-view .info-wrap {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate( -50%, 0);
+        }
+
+        .mobile-view .info-wrap {top: 71%; min-width: 260px;}
+        .desktop-view .info-wrap {top: 75%; min-width: 260px;}
+
+        .mobile-view .info-wrap h1,
+        .desktop-view .info-wrap h1 {
+            color: #2a3138;
+            text-align: center;
+            margin: 0;
+        }
+
+        .mobile-view .info-wrap .noti,
+        .desktop-view .info-wrap .noti {
+            display: block;
+            color: #fe6a2b;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .mobile-view .info-wrap h1 {margin: 12px 0 6px;  font-size: 14px; letter-spacing: -1px;}
+        .desktop-view .info-wrap h1 {margin: 12px 0 6px; font-size: 16px; letter-spacing: -1px;}
+
+        .mobile-view .info-wrap .noti {margin-top: 6px; font-size: 12px;}
+        .desktop-view .info-wrap .noti {margin-top: 16px; font-size: 14px; letter-spacing: -.5px;}
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Mobile Device View -->
+        <!-- <div class="mobile-view">
+            <span class="img-wrap">
+                <img src="mc-static-root/images/common/bg_system_400.png" alt="" />
+                <div class="info-wrap">
+                    <h1>시스템 점검 시간</h1>
+                    <strong class="noti">2021년 7월 11일 일요일 07:00 ~ 08:30</strong>
+                </div>
+            </span>
+        </div> -->
+        <!-- Desktop View -->
+        <div class="desktop-view on">
+            <span class="img-wrap">
+                <img src="pc-static-root/images/common/bg_system_400.png" alt="" />
+                <div class="info-wrap">
+                    <h1>시스템 점검 시간</h1>
+                    <strong class="noti">2021년 7월 11일 일요일 07:00 ~ 08:30</strong>
+                </div>
+            </span>
+        </div>
+    </div>
+    <!-- <script>
+        var detectMobileDevice = {
+            android: function () {
+                return navigator.userAgent.match(/Android/i);
+            },
+            ios: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            windows: function () {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function () {
+                return (this.android() || this.ios() || this.opera() || this.windows())
+            }
+        }
+        document.querySelector(detectMobileDevice.any() ? '.mobile-view' : '.desktop-view').classList.add('on')
+    </script> -->
+</body>
+</html>

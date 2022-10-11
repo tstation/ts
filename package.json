@@ -1,0 +1,45 @@
+{
+  "name": "T'station",
+  "version": "1.0.0",
+  "description": "T'station UI Framework",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "gulp",
+    "build": "gulp",
+    "clean": "rm -rf node_modules package-lock.json yarn.lock",
+    "reinstall": "yarn clean && yarn install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbada/hankooktire.git"
+  },
+  "keywords": [],
+  "author": "Hankook Tire -  Digital Platform Team Jiwoon Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pbada/hankooktire/issues"
+  },
+  "homepage": "https://github.com/pbada/hankooktire#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.14",
+    "browser-sync": "^2.14.0",
+    "del": "^6.0.0",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ejs": "^5.1.0",
+    "gulp-ejs-monster": "^3.2.3",
+    "gulp-file-include": "^2.3.0",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-pretty-html": "^2.0.10",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {},
+  "type": "module"
+}

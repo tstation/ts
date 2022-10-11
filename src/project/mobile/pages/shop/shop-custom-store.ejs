@@ -1,0 +1,161 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '단골매장설정' }) %>
+<div id="container">
+    
+    <div class="section">
+        <!-- 20220316 // -->
+        <h3 class="section-headcopy mg-h-5u mg-t-4u txt-20">홍길동님의 단골매장</h3>        
+        <p class="mg-h-5u mg-t-3u txt-11 txt-neutral1">
+            최근 방문이력이 있는 매장이 자동등록되며, 또는 직접 단골매장을 설정할 수 있습니다. <span class="txt-neutral2 dp-block">(광고성 정보 수신동의 시 매장소식을 받아보실 수 있습니다.)</span></p>
+        <!-- //20220316 -->
+
+        <!-- 등록된 단골매장이 있는 CASE -->
+        <div class="interest-location-list-wrapper store-register mg-h-5u"><!-- 20220316 -->
+            <div class="interest-location-list-item">
+                <div class="info-area">
+                    <div class="thumb-position">                        
+                        <div class="thumb-area ration-1x1">
+                            <img src="mc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                            <span class="allmyt-store">
+                                <!-- 20220316// -->
+                                <span class="allmyt-img"><img src="mc-static-root/images/common/interest_allmyt.png" alt="all my T"></span>
+                                <!-- //20220316 -->
+                            </span>
+                        </div>                        
+                    </div>
+                    <div class="info">
+                        <strong class="title">광교신도시점</strong>
+                        <!-- 20220316// -->
+                        <div class="interest-store-wrap right">
+                            <label class="check-interest">
+                                <input type="checkbox" checked>
+                                <div class="icon-holder">
+                                    <span class="bg-hart-fill"></span>
+                                </div>
+                                <div class="labelling">
+                                    <span class="label-txt mg-h-1u">단골매장 선택</span>
+                                </div>
+                            </label>
+                        </div>             
+                        <p class="description pd-r-20u">국내 최고의 장비와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다.</p>
+                        <!-- //20220316 -->
+                        <a class="txt-primary mg-t-2u dp-inblock" href="#none">
+                            <span class="label-txt txt-12">매장상세보기</span>
+                            <span class="line-icons chev-right size-16"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 등록된 단골매장이 없는 CASE -->
+        <!-- 20220316// -->
+        <div class="interest-nodata mg-v-4u mg-h-5u">
+            <div class="section bg-light2 pd-v-2u pd-h-2u txt-center">
+                <span class="img-icons icon-bg-hart mg-t-3u"></span>
+                <p class="mg-b-3u txt-12 mg-t-2u">
+                    <span class="txt-neutral2 dp-block">등록된 단골매장이 없습니다!</span>
+                    <strong class="txt-w600 dp-block mg-t-1u">
+                        하단 추천매장에서<span class="img-icons icon-hart"></span>를 클릭하시거나 매장명 찾기에서 <br />직접 매장을 지정하실 수 있습니다.</strong>
+                </p>
+                <button type="button" class="btn-item btn-neutral full-w btn-inv filet mg-t-2u" style="margin: auto">
+                    <span class="label-txt">매장검색으로 이동</span>
+                </button>
+            </div>
+        </div>
+        <!-- //20220316 -->
+    </div>
+
+    <div class="section">
+        <!-- 20220316// -->
+        <h3 class="section-headcopy txt-20 mg-h-5u mg-t-10u">추천 단골매장
+            <span class="tooltip-container right v-middle txt-0">
+                <button type="button" class="bg-fff txt-0">
+                    <span class="line-icons info-circle size-16"></span>
+                </button>
+                <div class="tooltip">
+                    <div class="tooltip-body">
+                        <p class="txt-12 txt-w500">접속하신 위치에서 가장 가까운 매장을 단골매장으로 추천해 드립니다.</p>
+                    </div>
+                </div>
+            </span>
+        </h3>
+        <p class="txt-11 txt-neutral2 mg-h-5u mg-t-3u"><span class="img-icons icon-hart"></span>를 클릭하면 단골매장으로 설정하실 수 있어요!</p>
+        <!-- //20220316-->
+    </div>
+
+        
+    <div class="interest-location-list-wrapper mg-t-4u pd-h-5u pd-v-2u bg-light2"><!-- 20220316 -->
+        <div class="interest-location-list-item">
+            <div class="info-area">
+                <div class="thumb-position">
+                    <div class="thumb-area ration-1x1">
+                        <img src="mc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                        <span class="allmyt-store">
+                            <!-- 20220316// -->
+                            <span class="allmyt-img"><img src="mc-static-root/images/common/interest_allmyt.png" alt="all my T" /></span>
+                            <!-- 20220220 삭제 <span class="allmyt-copy txt-w500">스토어</span> -->
+                            <!-- //20220316// -->
+                        </span>
+                    </div>
+                </div>
+                <div class="info">
+                    <strong class="title">수지점</strong>
+                    <!-- 20220316// -->
+                    <div class="interest-store-wrap middle">
+                        <label class="check-interest">
+                            <input type="checkbox">
+                            <div class="icon-holder">
+                                <span class="bg-hart-fill"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u">단골매장 선택</span>
+                            </div>
+                        </label>
+                    </div>
+                    <p class="description pd-r-20u">국내 최고의 장비와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다.</p>
+                    <!-- //20220316-->
+                    <a class="txt-primary mg-t-2u dp-inblock" href="#none">
+                        <span class="label-txt txt-12">매장상세보기</span>
+                        <span class="line-icons chev-right size-16"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="interest-location-list-item">
+            <div class="info-area">
+                <div class="thumb-position">
+                    <div class="thumb-area ration-1x1">
+                        <img src="mc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                    </div>
+                </div>
+                <div class="info">
+                    <strong class="title">판교점B</strong>
+                    <div class="interest-store-wrap middle">
+                        <label class="check-interest">
+                            <input type="checkbox">
+                            <div class="icon-holder">
+                                <span class="bg-hart-fill"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u">단골매장 선택</span>
+                            </div>
+                        </label>
+                    </div>
+                    <p class="description pd-r-20u">국내 최고의 장비(3D얼라인먼트 등)와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다.</p>
+                    <a class="txt-primary mg-t-2u dp-inblock" href="#none">
+                        <span class="label-txt txt-12">매장상세보기</span>
+                        <span class="line-icons chev-right size-16"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ 
+    <!-- // .store-search end -->
+</div>

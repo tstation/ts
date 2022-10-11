@@ -1,0 +1,842 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+
+        <div class="swiper-container menu-slide-sty-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="" class="menu-slide-child">쇼핑</a></div>
+                <div class="swiper-slide"><a href="" class="menu-slide-child">TS딜</a></div>
+                <div class="swiper-slide"><a href="" class="menu-slide-child">매장예약</a></div>
+                <div class="swiper-slide"><a href="" class="menu-slide-child"><span class="menu-flag">BETA</span>멤버십</a></div>
+                <div class="swiper-slide"><a href="" class="menu-slide-child">이벤트</a></div>
+            </div>
+            <script>
+                var menu_slide_sty_swiper = new Swiper('.menu-slide-sty-swiper', {
+                    init: false,
+                    spaceBetween: 24,
+                    slidesPerView: 'auto',
+                });
+
+                menu_slide_sty_swiper.init();
+
+                $(window).on('resize', function () {
+                    menu_slide_sty_swiper.init();
+                });
+            </script>
+        </div>
+        <section class="over-hidden">
+            <div class="swiper-container banner-slide-sty-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#none" style="width: 100%; height: auto;">
+                            <img alt="" src="https://po.tstation.com/upload/display/2022/20220110084704/Mo_carousel.png" />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- 20220513 // -->
+                        <style type="text/css">
+                            .kv-tamplayer-wrap {overflow: hidden; display: block; position:relative; padding-bottom:56.5%; padding-top:0; height:0; background-color: black; }
+                            .kv-tamplayer-wrap .kv-player-img {position:absolute; top:0; left:0; width:100%; height:100%; z-index: 1; background: url(https://po.tstation.com/upload/display/2022/20220517131607/kv_tam_mo.png) left top; background-size: contain; background-repeat: no-repeat;}
+                            .kv-tamplayer-wrap .kv-player-wrap {pointer-events: none; }
+                            .kv-tamplayer-wrap a.kv-tamcta-link {position:absolute; bottom: 10%;left: 8.5%; z-index: 2; display: block;  width: 40%; height: 20%; }
+                            .kv-tamplayer-wrap .kv-tamlink-list {position:absolute; bottom: 35px; right: 10px; z-index: 2;}
+                            .kv-tamplayer-wrap .kv-tamlink-list .tam-link {display: flex; align-items: center;justify-content: flex-end;width: 145px; height: 60px; margin-top: 5px; padding: 5px; border-radius: 30px; background-color: rgba(255, 255, 255, 0.3); }
+                            .kv-tamplayer-wrap .kv-tamlink-list .label-txt {display: inline-block; margin-right: 5px; color: #fff; text-align: right; line-height: 125%;}
+                            .kv-tamplayer-wrap .kv-tamlink-list .thumb-img {overflow: hidden; display: inline-block; width: 50px; height: 50px; border: 1px solid #fff; background-color: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 25px;}
+                            .kv-tamplayer-wrap .kv-tamlink-list .thumb-img img {width: 100%;}
+                        </style>
+                        <div class="kv-tamplayer-wrap">
+                            <div class="kv-player-img"></div>
+                            <a class="kv-tamcta-link" href="/tam/tstation-tv-detail?grpCd=300&dispContsNo=27">
+                                <span class="blind">풀영상 보기</span>
+                            </a>
+                            <ul class="kv-tamlink-list">
+                                <li>
+                                    <a href="/tam/tire-info-detail?grpCd=100&dispContsNo=7" class="tam-link" >
+                                        <span class="label-txt txt-11 txt-w700">주행 중 타이어<br />펑크가 난다면?!</span>
+                                        <span class="thumb-img"><img src="https://po.tstation.com/upload/display/2022/20220603140406/mc_thumb1.png"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/tam/tire-review" class="tam-link" >
+                                        <span class="label-txt txt-11 txt-w700">찐 리뷰<br />보러가기</span>
+                                        <span class="thumb-img"><img src="https://po.tstation.com/upload/display/2022/20220520085802/kv_tam_banner2.png"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="kv-player-wrap">
+                                <div style="padding:56.25% 0 0 0;position:relative;">
+                                    <iframe src="https://player.vimeo.com/video/710614912?h=1e39d2331c&background=1=0&autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <script src="https://player.vimeo.com/api/player.js"></script>
+                            </div>
+                        </div>
+                        <!-- // 20220513 -->
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="/promotion/event/detail/00000000010256" style="width: 100%; height: auto;">
+                            <img alt="패밀리 세일" src="https://po.tstation.com/upload/display/2022/20220513165455/MC_carousel.jpg" />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- 20220513 // -->
+                        <style type="text/css">
+                            .kv-vtsplayer-link {overflow: hidden; display: block; position:relative; padding-bottom:56.5%; padding-top:0; height:0; background-color: black; }
+                            .kv-vtsplayer-link .kv-player-img {position:absolute; top:0; left:0; width:100%; height:100%; z-index: 2; background: url(https://po.tstation.com/upload/display/2022/20220513102637/MC_carousel_cover3.png) left top; background-size: contain; background-repeat: no-repeat;}
+                            .kv-vtsplayer-link .kv-player-wrap {pointer-events: none; }
+                        </style>
+                        <a class="kv-vtsplayer-link" href="/promotion/event/detail/00000000010257">
+                            <span class="blind">슈퍼 스포츠 출시</span>
+                            <div class="kv-player-img"></div>
+                            <div class="kv-player-wrap">
+                                <div style="padding:56.25% 0 0 0;position:relative;">
+                                    <iframe src="https://player.vimeo.com/video/709312728?h=1e39d2331c&background=1=0&autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index: 1;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- // 20220513 -->
+                    </div>
+                </div>
+
+                <!-- 20220608// -->
+                <div class="key-visual-button-area">
+                    <div class="key-visual-button-wrap">
+                        <div class="swiper-pagination">
+                        </div>
+
+                        <div class="swiper-controller">
+                            <button type="button" class="swiper-start"><img src="mc-static-root/images/main/button_play.png"></button>
+                            <button type="button" class="swiper-stop"><img src="mc-static-root/images/main/button_stop.png"></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //20220608 -->
+                
+                <script>
+                var banner_slide_sty_swiper = new Swiper('.banner-slide-sty-swiper', {
+                    init: false,
+                    autoplay: {
+                        delay: 8000,
+                        disableOnInteraction: false
+                    },
+                    slidesPerView: 'auto',
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                });
+
+                banner_slide_sty_swiper.init();
+
+                $(window).on('resize', function () {
+                    banner_slide_sty_swiper.init();
+                });
+
+                /* 20220608// */
+                var key_visual_play = true;
+                var key_visual_start_button = $(".swiper-start");
+                var key_visual_stop_button = $(".swiper-stop");
+
+                // 플레이어 버튼 init
+                keyVisualPlayButton();
+
+                // 버튼 클릭시 정지
+                key_visual_stop_button.on('click', function() {
+                    keyVisualStopButton();
+                })
+
+                // 버튼 클릭시 시작
+                key_visual_start_button.on('click', function() {
+                    keyVisualPlayButton();
+                })
+
+                function keyVisualPlayButton() {
+                    banner_slide_sty_swiper.autoplay.start();
+                    key_visual_start_button.hide();
+                    key_visual_stop_button.show();
+                }
+
+                function keyVisualStopButton() {
+                    banner_slide_sty_swiper.autoplay.stop();
+                    key_visual_start_button.show();
+                    key_visual_stop_button.hide();
+                }
+                /* //20220608 */
+                </script>
+            </div>
+        </section>
+
+        <!-- 차량등록 전 내 차량 정보 -->
+        <section class="pd-v-6u over-hidden">
+            <div class="container">
+                <div class="tire-self-sreach-wrp">
+                    <h3 class="pd-h-4u">내 차에 꼭 맞는 타이어 찾고 계신가요?</h3>
+                    <div class="tire-self-sreach-bx">
+                        <ul class="tire-self-sreach-tab">
+                            <li>
+                                <button type="button" class="on">
+                                    <i class="car-number"></i>
+                                    차량번호로 찾기
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <i class="car-model"></i>
+                                    차종으로 찾기
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <i class="car-size"></i>
+                                    사이즈로 찾기
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tire-self-sreach-input">
+                            <div class="form-control form-control-md">
+                                <div class="input-group">
+                                    <input type="text" class="input-box" placeholder="차량번호" />
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-control form-control-md">
+                                <div class="input-group">
+                                    <input type="text" class="input-box" placeholder="소유주명" />
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="search-btn"><span class="line-icons arrow-long size-24"></span></button>
+                            <div class="mycar-link-wrap">
+                                <a href="#none" class="mycar-link">내 차 등록하고 검색 결과 보기<span class="line-icons chev-right size-16"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pd-v-3u pd-h-4u">
+                        <a href="https://m.tstation.com/membership/dashboard/benefit" class="go-my-membership">
+                           <img src="https://m.tstation.com/mc-static-root/images/common/banner_allmyt_more_mc.png" alt="all my t 서비스 런칭!!">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 타이어 카테고리별 랭킹 -->
+        <section class="pd-v-6u over-hidden">
+            <div class="container pd-h-4u over-visible">
+                <div class="sec-header no-border no-pd">
+                    <h3 class="sec-title">
+                        <span class="v-middle"><span class="txt-w200">홍길동님이 최근 검색하신</span> '기아 K5 2.0'<span class="txt-w200">의 타이어 랭킹</span> TOP 3</span>
+                        <span class="tooltip-container bottom v-middle txt-0">
+                                    <button type="button" class="bg-fff txt-0">
+                                        <span class="line-icons info-circle size-16"></span>
+                                    </button>
+                                    <div class="tooltip">
+                                        <div class="tooltip-body">
+                                            <p>랭킹은 전월 티스테이션 온라인 & 오프라인 매장의 판매실적을 기준으로 노출됩니다.</p>
+                                        </div>
+                                    </div>
+                                </span>
+                    </h3>
+                </div>
+                <div class="sec-contents">
+
+                    <!-- 랭킹 TOP 3 -->
+                    <ul class="mg-t-4u">
+                        <li class="mg-b-2u">
+                            <div class="card">
+                                <div class="product-area" onclick="window.location.href=''">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                        <div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                        <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                        <!--<div class="model">Ventus S2 AS</div>-->
+                                        <p class="size">245/45R18</p>
+                                        <p class="description">고속 주행에서 느끼는 Comfort Technology</p>
+                                        <p class="price">193,4000<small>원</small> <small class="discount txt-throughline">226,200원</small></p>
+                                    </div>
+                                </div>
+                                <div class="review-area" onclick="window.location.href=''">
+                                    <div class="review">
+                                        <p class="meta">
+                                            <span>이**</span>
+                                            <!-- TODO: 4.7 을 백분율로 계산하여 아래 width값에 넣으세요 예) (일부값 / 전체값 * 100) = (4.7 / 5 * 100) = 94  -->
+                                            <span class="rating mg-l-2u"><span style="width: 94%"></span></span>
+                                            <span>4.7점</span>
+                                        </p>
+                                        <p class="description">HP2로 교체 후 신세계를 맛봤네요. 기존 광폭타이어에 비해 소음이 그냥 없는 수준입니다. 오죽했으면 너무 조용해서 엔진 Blah Blah Blah Blah</p>
+                                    </div>
+                                </div>
+                                <span class="badge badge-best">BEST </span>
+                            </div>
+                        </li>
+                        <li class="mg-b-2u">
+                            <div class="card">
+                                <div class="product-area" onclick="window.location.href=''">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                        <!--<div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>-->
+                                        <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                        <div class="model">MICHELIN PRIMACY A/S</div>
+                                        <p class="size">245/45R18</p>
+                                        <p class="description">승차감과 안정성이 뛰어난 프리미엄 타이어</p>
+                                        <p class="price">193,4000<small>원</small> <small class="discount txt-throughline">226,200원</small></p>
+                                    </div>
+                                </div>
+                                <div class="review-area" onclick="window.location.href=''">
+                                    <div class="review">
+                                        <p class="meta">
+                                            <span>이**</span>
+                                            <!-- TODO: 4.7 을 백분율로 계산하여 아래 width값에 넣으세요 예) (일부값 / 전체값 * 100) = (2 / 5 * 100) = 40  -->
+                                            <span class="rating mg-l-2u"><span style="width: 40%"></span></span>
+                                            <span>2점</span>
+                                        </p>
+                                        <p class="description">장착하고 주행하였는데 소음면에서 크게 올라오는 것 없었고 주행질감도 일반 사계절타이어랑 비슷한 수준이라 만족스럽습니다 눈 빗길 운전해보고 만족스러우면 지속적으로이 타이어만 이용할 생각입니다.</p>
+                                    </div>
+                                </div>
+                                <span class="badge badge-best">BEST </span>
+                            </div>
+                        </li>
+                        <li class="mg-b-2u">
+                            <div class="card">
+                                <div class="product-area" onclick="window.location.href=''">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                        <div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                        <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                        <!--<div class="model">Ventus S2 AS</div>-->
+                                        <p class="size">245/45R18</p>
+                                        <p class="description">고속 주행에서 느끼는 Comfort Technology</p>
+                                        <p class="price">193,4000<small>원</small> <small class="discount txt-throughline">226,200원</small></p>
+                                    </div>
+                                </div>
+                                <div class="review-area" onclick="window.location.href=''">
+                                    <div class="review">
+                                        <p class="meta">
+                                            <span>이**</span>
+                                            <!-- TODO: 4.7 을 백분율로 계산하여 아래 width값에 넣으세요 예) (일부값 / 전체값 * 100) = (4.7 / 5 * 100) = 94  -->
+                                            <span class="rating mg-l-2u"><span style="width: 94%"></span></span>
+                                            <span>4.7점</span>
+                                        </p>
+                                        <p class="description">HP2로 교체 후 신세계를 맛봤네요. 기존 광폭타이어에 비해 소음이 그냥 없는 수준입니다. 오죽했으면 너무 조용해서 엔진 Blah Blah Blah Blah</p>
+                                    </div>
+                                </div>
+                                <span class="badge badge-best">BEST </span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <script>
+                        var categoryTags = $('.tire-category-swiper .tag')
+                        var offCategoryTags = function () {
+                            $.each(categoryTags, function (index, tag) {
+                                if ($(tag).hasClass('on')) {
+                                    $(tag).removeClass('on');
+                                    return;
+                                }
+                            })
+                        }
+                        $.each(categoryTags, function (index, tag) {
+                            $(tag).on('click', function () {
+                                offCategoryTags();
+                                $(tag).addClass('on')
+                                tireCategoryContentsSwiper.slideTo(index);
+                            })
+                        })
+
+                        // 카테고리별 랭킹 TOP3 카테고리 버튼
+                        var tireCategorySwiper = new Swiper('.tire-category-swiper', {
+                            spaceBetween: 4,
+                            slidesPerView: 'auto',
+                            freeMode: true
+                        });
+
+                        tireCategorySwiper.init();
+
+                        $(window).on('resize', function () {
+                            tireCategorySwiper.init();
+                        });
+
+                        // 카테고리별 랭킹 TOP3 카테고리 컨텐츠
+                        var tireCategoryContentsSwiper = new Swiper('.tire-category-contents-swiper', {
+                            spaceBetween: 16,
+                            slidesPerView: 'auto',
+                        });
+
+                        tireCategoryContentsSwiper.init();
+
+                        $(window).on('resize', function () {
+                            tireCategoryContentsSwiper.init();
+                        });
+
+                        tireCategoryContentsSwiper.on('slideChangeTransitionEnd', function () {
+                            offCategoryTags();
+                            $(categoryTags[tireCategoryContentsSwiper.realIndex]).addClass('on')
+                        })
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <!-- 배너 -->
+        <section class="pd-v-6u over-hidden">
+            <div class="banner-slide-sty-second-swiper-wrapper over-visible">
+                <div class="swiper-container banner-slide-sty-second-swiper over-visible">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="banner-item">
+                                <img src="mc-static-root/images/common/main-middle-banner-01.png" alt="이벤트 제목" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="banner-item">
+                                <img src="mc-static-root/images/common/main-middle-banner-02.png" alt="이벤트 제목" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="banner-item">
+                                <img src="mc-static-root/images/common/main-middle-banner-03.png" alt="이벤트 제목" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+                <script>
+                    var bannerSlideSecond = new Swiper('.banner-slide-sty-second-swiper', {
+                        pagination: {
+                            el: '.swiper-pagination',
+                            dynamicBullets: true,
+                        },
+                        spaceBetween: 8,
+                        slidesPerView: 'auto'
+                    });
+
+                    bannerSlideSecond.init();
+
+                    $(window).on('resize', function () {
+                        bannerSlideSecond.init();
+                    });
+                </script>
+            </div>
+        </section>
+
+        <section class="pd-v-6u over-hidden">
+            <div class="container pd-h-4u">
+                <div class="sec-header">
+                    <h3 class="sec-title">
+                        <span class="txt-w500">홍길동님,</span> <span  class="txt-neutral2">한정 특가일때<br />구매하세요.</span>
+                        <div class="tools tools-bottom">
+                            <button type="button" class="btn-item no-pd">
+                                <span class="label-txt">더보기</span>
+                                <span class="line-icons chev-right"></span>
+                            </button>
+                        </div>
+                    </h3>
+                </div>
+                <div class="sec-contents">
+                    <div class="swiper-container time-deal-swiper over-visible mg-t-4u">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card card-time-deal" onclick="window.location.href=''">
+                                    <p class="time-deal-limit">
+                                        <span class="line-icons clock size-20 txt-primary"></span>
+                                        <span class="txt-w500">반짝블랙딜</span>
+                                        <span class="txt-primary">5일남음</span>
+                                    </p>
+                                    <div class="card-inner">
+                                        <div class="thumb-wrap">
+                                            <div class="thumb-holder thumb-scaled">
+                                                <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                                <div class="brands-logo hk"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="description-area">
+                                            <p class="model">벤투스 프리미엄 스포츠</p>
+                                            <p class="model-sub mg-b-2u">Ventus S2 AS</p>
+                                            <p class="size">245/45R18</p>
+                                        </div>
+
+                                        <span class="badge badge-discount"><span>30%<br />OFF</span></span>
+                                    </div>
+                                    <div class="price-wrap">
+                                        <span class="price">193,4000<small>원</small></span>
+                                        <span class="discount txt-throughline">226,200원</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card card-time-deal" onclick="window.location.href=''">
+                                    <p class="time-deal-limit">
+                                        <span class="line-icons clock size-20 txt-primary"></span>
+                                        <span class="txt-w500">반짝블랙딜</span>
+                                        <span class="txt-primary">12:32:15남음</span>
+                                    </p>
+                                    <div class="card-inner">
+                                        <div class="thumb-wrap">
+                                            <div class="thumb-holder thumb-scaled">
+                                                <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                                <div class="brands-logo hk"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="description-area">
+                                            <p class="model">벤투스 프리미엄 스포츠</p>
+                                            <p class="model-sub mg-b-2u">Ventus S2 AS</p>
+                                            <p class="size">245/45R18</p>
+                                        </div>
+
+                                        <span class="badge badge-discount"><span>25%<br />OFF</span></span>
+                                    </div>
+                                    <div class="price-wrap">
+                                        <span class="price">193,4000<small>원</small></span>
+                                        <span class="discount txt-throughline">226,200원</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card card-time-deal" onclick="window.location.href=''">
+                                    <p class="time-deal-limit">
+                                        <span class="line-icons clock size-20 txt-primary"></span>
+                                        <span class="txt-w500">반짝블랙딜</span>
+                                        <span class="txt-primary">5일남음</span>
+                                    </p>
+                                    <div class="card-inner">
+                                        <div class="thumb-wrap">
+                                            <div class="thumb-holder thumb-scaled">
+                                                <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                                <div class="brands-logo hk"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="description-area">
+                                            <p class="model">벤투스 프리미엄 스포츠</p>
+                                            <p class="model-sub mg-b-2u">Ventus S2 AS</p>
+                                            <p class="size">245/45R18</p>
+                                        </div>
+
+                                        <span class="badge badge-discount"><span>30%<br />OFF</span></span>
+                                    </div>
+                                    <div class="price-wrap">
+                                        <span class="price">193,4000<small>원</small></span>
+                                        <span class="discount txt-throughline">226,200원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        var timeDealSwiper = new Swiper('.time-deal-swiper', {
+                            spaceBetween: 8,
+                            slidesPerView: 'auto'
+                        });
+
+                        timeDealSwiper.init();
+
+                        $(window).on('resize', function () {
+                            timeDealSwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <!-- 손쉬운 타이어주문! 어렵지 않아요 -->
+        <section class="pd-v-6u">
+            <div class="container pd-h-4u">
+                <div class="sec-header no-border">
+                    <h3 class="sec-title">손쉬운 타이어주문! 어렵지 않아요</h3>
+                </div>
+                <!-- 202012 pub fixed // -->
+                <div class="sec-contents comment-accordion-wrap">
+                    <div class="accordion accordion-list guide-list">
+                        <ul>
+                            <li>
+                                <a>
+                                    <div class="type-area">
+                                        <p class="txt-primary">Step 01.</p>
+                                        <p>타이어 추천</p>
+                                    </div>
+                                    <p class="title">타이어 선택이 너무 어려워요</p>
+                                </a>
+                                <div class="accordion-body">
+                                    <p class="recommend-icon step-first bg-dotted-bottom txt-w500">타이어 선택, 티스테이션에서 제공해드리는 큐레이션 서비스를 이용하시면 어렵지 않습니다!</p>
+                                    <ol class="easy-list">
+                                        <li><p class="mg-v-1u txt-neutral2">내 차에 꼭 맞는 타이어를 <em class="txt-primary">차량번호 조회</em>로 쉽게 찾는다!</p></li>
+                                        <li><p class="mg-v-1u txt-neutral2">운전 스타일에 따라 <em class="txt-primary">필터</em>를 설정한다!</p></li>
+                                        <li><p class="mg-v-1u txt-neutral2"><em class="txt-primary">상품 비교</em>를 통해 타이어의 장점을 확인한다!</p></li>
+                                        <li><p class="mg-t-1u txt-neutral2">비교해도 선택하기 어렵다면, <em class="txt-primary">전문가상담 서비스</em>를 받는다! </p></li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li>
+                                <a>
+                                    <div class="type-area">
+                                        <p class="txt-primary">Step 02.</p>
+                                        <p>타이어 구매</p>
+                                    </div>
+                                    <p class="title">믿고 저렴하게 살 수 없나요?</p>
+                                </a>
+                                <div class="accordion-body">
+                                    <p class="recommend-icon step-second bg-dotted-bottom txt-w500">티스테이션에서만 제공해드리는 무이자 할부 결제 서비스,‘스마트페이’ 이용 혜택을 꼭  확인해보세요.</p>
+                                    <ol class="easy-list">
+                                        <li><p class="mg-v-1u txt-neutral2">렌탈과 달리 <em class="txt-primary">약정 없이 구매</em>하실 수 있습니다.</p></li>
+                                        <li><p class="mg-v-1u txt-neutral2">수수료 걱정 없이 <em class="txt-primary">12/24개월 무이자 할부</em> 이용이 가능합니다.</p></li>
+                                        <li><p class="mg-v-1u txt-neutral2"><em class="txt-primary">평균 월 만원대에 프리미엄 타이어를 구매</em>하실 수 있습니다.</p></li>
+                                        <li><p class="mg-t-1u txt-neutral2">1년 1회, <em class="txt-primary">2년간 펑크,위치교환 서비스를 무료</em>로 이용하실 수 있습니다.</p></li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li>
+                                <a>
+                                    <div class="type-area">
+                                        <p class="txt-primary">Step 03.</p>
+                                        <p>타이어 장착</p>
+                                    </div>
+                                    <p class="title">나는 바쁜 현대인... 집에서 편하게?</p>
+                                </a>
+                                <div class="accordion-body">
+                                    <p class="recommend-icon step-third bg-dotted-bottom txt-w500">매장 방문 없이 스마트픽업으로 간편하게, 티스테이션의 차별화된 픽업 & 딜리버리 서비스를 이용하실 수 있습니다.</p>
+                                    <ol class="easy-list">
+                                        <li><p class="mg-v-1u txt-neutral2">큐레이션 서비스를 통해 <em class="txt-primary">내 차에 꼭 맞는 타이어</em>를 선택한다!</p></li>
+                                        <li><p class="mg-v-1u txt-neutral2">마음에 드는 장착 매장을 찾아보고 <em class="txt-primary">장착점으로 지정</em>한다!</p></li>
+                                        <li><p class="mg-v-1u txt-neutral2">차량을 보내고 <em class="txt-primary">받을 위치 지정 후 차량을 장착점</em>으로 보낸다!</p></li>
+                                        <li><p class="mg-v-1u txt-neutral2">새 타이어가 장착된 차량을 받아 안전하게 운행한다!</p></li>
+                                    </ol>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 202012 pub fixed -->
+            </div>
+        </section>
+
+        <!-- 믿고보는 생생후기 -->
+        <%- locals.widget ('src/project/mobile/pages/main/includes/real-review.ejs') %> 
+
+        <!-- 우리동네 멤버십 스토어 -->
+        <section class="pd-v-6u over-hidden">
+            <div class="container pd-h-4u">
+                <div class="sec-header no-border">
+                    <h3 class="sec-title">우리동네 멤버십 스토어</h3>
+                </div>
+                <div class="sec-contents">
+                    <div class="store-location-list-wrapper store-location-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div>
+                                    <div class="store-location-list-item">
+                                        <div class="info-area">
+                                            <div class="thumb-position">
+                                                <!-- 20211213 // -->
+                                                <div class="thumb-area ration-1x1">
+                                                    <img src="mc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                                    <span class="allmyt-store">
+                                                        <span class="allmyt-img"><img src="mc-static-root/images/common/icon_mainlocation_allmyt.svg" alt="all my T"></span>
+                                                    </span>
+                                                </div>
+                                                <!-- 20211213 // -->
+                                            </div>
+                                            <div class="info">
+                                                <p class="title">광교신도시점</p>
+                                                <!-- 20211213 // -->
+                                                <div class="interest-store-wrap right">
+                                                    <label class="check-interest">
+                                                        <input type="checkbox">
+                                                        <div class="icon-holder">
+                                                            <span class="heart-fill"></span><!-- 20220316 line-icons 삭제 -->
+                                                        </div>
+                                                        <div class="labelling">
+                                                            <span class="label-txt mg-h-1u">단골매장</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <!-- // 20211213 -->
+                                                <ul class="meta">
+                                                    <li><span>10:00 ~ 22:00</span></li>
+                                                </ul>
+                                                <p class="description">국내 최고의 장비(3D얼라인먼트 등)와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="action-area">
+                                            <div class="left">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#none" class="btn-item btn-neutral round btn-inv min-w">
+                                                            <span class="line-icons location size-24"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="tel:02-1234-5678" class="btn-item btn-neutral round btn-inv min-w" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')">
+                                                            <span class="line-icons call size-24"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="right">
+                                                <a href="매장상세" class="btn-item btn-neutral btn-s btn-ol round">
+                                                    <span class="label-txt">매장 상세보기</span>
+                                                    <span class="line-icons chev-right size-24"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="store-location-list-item">
+                                        <div class="info-area">
+                                            <div class="thumb-position">
+                                                <div class="thumb-area ration-1x1">
+                                                    <img src="mc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <p class="title">광교점</p>
+                                                <div class="interest-store-wrap right">
+                                                    <label class="check-interest">
+                                                        <input type="checkbox">
+                                                        <div class="icon-holder">
+                                                            <span class="heart-fill"></span><!-- 20220316 line-icons 삭제 -->
+                                                        </div>
+                                                        <div class="labelling">
+                                                            <span class="label-txt mg-h-1u">단골매장</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <ul class="meta">
+                                                    <li><span>09:00 ~ 20:00</span></li>
+                                                </ul>
+                                                <p class="description">국내 최고의 장비(3D얼라인먼트 등)와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다. 국내 최고의 장비(3D얼라인먼트 등)와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="action-area">
+                                            <div class="left">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#none" class="btn-item btn-neutral round btn-inv min-w">
+                                                            <span class="line-icons location size-24"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="tel:02-1234-5678" class="btn-item btn-neutral round btn-inv min-w" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')">
+                                                            <span class="line-icons call size-24"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="right">
+                                                <a href="매장상세" class="btn-item btn-neutral btn-s btn-ol round">
+                                                    <span class="label-txt">매장 상세보기</span>
+                                                    <span class="line-icons chev-right size-24"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <div class="store-location-list-item">
+                                        <div class="info-area">
+                                            <div class="thumb-position">
+                                                <div class="thumb-area ration-1x1">
+                                                    <img src="mc-static-root/images/common/shop_default.png" alt="스토어 이름" onerror="this.style.display='none';">
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <p class="title">광교신도시점</p>
+                                                <div class="interest-store-wrap right">
+                                                    <label class="check-interest">
+                                                        <input type="checkbox">
+                                                        <div class="icon-holder">
+                                                            <span class="heart-fill"></span><!-- 20220316 line-icons 삭제 -->
+                                                        </div>
+                                                        <div class="labelling">
+                                                            <span class="label-txt mg-h-1u">단골매장</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <ul class="meta">
+                                                    <li><span>10:00 ~ 22:00</span></li>
+                                                </ul>
+                                                <p class="description">국내 최고의 장비(3D얼라인먼트 등)와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다. 국내 최고의 장비(3D얼라인먼트 등)와 최고의 기술력을 바탕으로 고객님의 안전을 책임지겠습니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="action-area">
+                                            <div class="left">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#none" class="btn-item btn-neutral round btn-inv min-w">
+                                                            <span class="line-icons location size-24"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="tel:02-1234-5678" class="btn-item btn-neutral round btn-inv min-w" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')">
+                                                            <span class="line-icons call size-24"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="right">
+                                                <a href="매장상세" class="btn-item btn-neutral btn-s btn-ol round">
+                                                    <span class="label-txt">매장 상세보기</span>
+                                                    <span class="line-icons chev-right size-24"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <script>
+                    var storeLocationSwiper = new Swiper('.store-location-swiper', {
+                        slidesPerView: 'auto',
+                        pagination: {
+                            el: '.swiper-pagination',
+                            dynamicBullets: true
+                        },
+                    });
+
+                    storeLocationSwiper.init();
+
+                    $(window).on('resize', function () {
+                        storeLocationSwiper.init();
+                    });
+                </script>
+            </div>
+        </section>
+
+    </div>
+</main>

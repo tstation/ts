@@ -1,0 +1,581 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '브랜드별 타이어 안내' }) %>
+<main id="main">
+    <div class="container">
+        <div class="brand-tireinfo-wrap">
+            <div class="brand-tireinfo-tab-wrap">
+                <ul class="brand-tireinfo-tabs center-tabs">
+                    <li><a href="#ventus" class="active" data-hash="ventus">벤투스</a></li>
+                    <li><a href="#winter-icept" data-hash="winter-icept">윈터 아이셉트</a></li>
+                    <li><a href="#kinergy" data-hash="kinergy">키너지</a></li>
+                    <li><a href="#dynapro" data-hash="dynapro">다이나 프로</a></li>
+                    <li><a href="#smart" data-hash="smart">스마트</a></li>
+                </ul>
+            </div>
+
+            <div class="brand-tireinfo-container" data-hash="ventus">
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_ventus_con01.png" alt="" />
+                </div>
+                <div class="con">
+                    <div class="brand-tirevideo-wrap">
+                        <div class="brand-tirevideo">
+                            <div class="thumb-area ration-16x9">
+                                <iframe width="427" height="240" src="https://www.youtube.com/embed/Qvlk8qLcEcI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_ventus_con02.png" alt="" />
+                </div>
+                <div class="brand-tire-swiper-wrap">
+                    <div class="swiper-container brand-tireinfo-swiper brand-ventustire-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/01_S2AS.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">벤투스 프리미엄 컴포트</p>
+                                        <p class="model-sub mg-b-2u">Ventus S2 AS</p>
+                                        <p class="size txt-neutral2">고속 주행에서 느끼는 <br />Comfort Technology</p>
+                                        <a href="https://www.tstation.com/tire/product/ventus_s2_as?ptrnCd=H462&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/02_S2ASX.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">벤투스 프리미엄 컴포트</p>
+                                        <p class="model-sub mg-b-2u">Ventus S2 AS X</p>
+                                        <p class="size txt-neutral2">고속 주행에서 느끼는 <br />Comfort Technology</p>
+                                        <a href="https://www.tstation.com/tire/product/ventus_s2_as_x?ptrnCd=RH17&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/03_V2AS.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">벤투스 컴포트</p>
+                                        <p class="model-sub mg-b-2u">Ventus V2 AS</p>
+                                        <p class="size txt-neutral2">편안한 승차감을 느낄 수 있는 최고의 Family 세단용 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/ventus_v2_as?ptrnCd=H123&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/04_S1evo3.png" alt="상품 이미지" class="goods-img">
+
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">벤투스 프리미엄 스포츠</p>
+                                        <p class="model-sub mg-b-2u">Ventus S1 evo3</p>
+                                        <p class="size txt-neutral2">유럽 명차가 선택한 고성능 <br />스포츠 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/ventus_s1_evo3?ptrnCd=K127B&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/05_S1evo3suv.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">벤투스 프리미엄 스포츠 </p>
+                                        <p class="model-sub mg-b-2u">Ventus S1 evo3 SUV</p>
+                                        <p class="size txt-neutral2">유럽 명차가 선택한 SUV용 <br />고성능 스포츠 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/06_S1evo2suv.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">벤투스 스포츠 </p>
+                                        <p class="model-sub mg-b-2u">Ventus S1 evo2 SUV</p>
+                                        <p class="size txt-neutral2">유럽 명차가 선택한 SUV용 <br />고성능 스포츠 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/ventus_s1_evo2_suv?ptrnCd=K117A&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/07_v12evo2.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">벤투스 스포츠</p>
+                                        <p class="model-sub mg-b-2u">Ventus V12 evo2</p>
+                                        <p class="size txt-neutral2">스포츠 드라이빙 매니아들이 가장 많이 선택하는 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/ventus_v12_evo2?ptrnCd=K120&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        var ventustireSwiper = new Swiper('.brand-ventustire-swiper', {
+                            spaceBetween: 8,
+                            observer: true,
+                            observeParents: true,
+                            slidesPerView: 'auto'
+                        });
+
+                        ventustireSwiper.init();
+
+                        $(window).on('resize', function () {
+                            ventustireSwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="brand-tireinfo-container" style="display: none;" data-hash="winter-icept">
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_icept_con01.png" alt="" />
+                </div>
+                <div class="con">
+                    <div class="brand-tirevideo-wrap">
+                        <div class="brand-tirevideo">
+                            <div class="thumb-area ration-16x9">
+                                <iframe width="640" height="360" src="https://www.youtube.com/embed/RcBDEsu-pC4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_icept_con02.png" alt="" />
+                </div>
+                <div class="brand-tire-swiper-wrap">
+                    <div class="swiper-container brand-tireinfo-swiper brand-icepttire-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/01_evo2.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">윈터아이셉트 프리미엄</p>
+                                        <p class="model-sub mg-b-2u">Winter i*cept evo2</p>
+                                        <p class="size txt-neutral2">유럽에서 인정한 겨울철 고성능 퍼포먼스 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/winter_i*cept_evo2?ptrnCd=W320&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/02_evo2SUV.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">윈터아이셉트 프리미엄</p>
+                                        <p class="model-sub mg-b-2u">Winter i*cept evo2 SUV</p>
+                                        <p class="size txt-neutral2">유럽에서 인정한 SUV용 겨울철 고성능 퍼포먼스 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/winter_i*cept_evo2_suv?ptrnCd=W320A&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/03_evo3.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">윈터아이셉트 프리미엄</p>
+                                        <p class="model-sub mg-b-2u">Winter i*cept evo3</p>
+                                        <p class="size txt-neutral2">유럽에서 인정받은 겨울철 고성능 퍼포먼스 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/winter_i*cept_evo3?ptrnCd=W330&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/04_evo3x.png" alt="상품 이미지" class="goods-img">
+
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">윈터아이셉트 프리미엄</p>
+                                        <p class="model-sub mg-b-2u">Winter i*cept evo3 X</p>
+                                        <p class="size txt-neutral2">유럽에서 인정받은 SUV용 겨울철 고성능 퍼포먼스 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/winter_i*cept_evo3_x?ptrnCd=W330A&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/05_iz2A.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">윈터 아이셉트 아이스</p>
+                                        <p class="model-sub mg-b-2u">Winter i*cept iZ2 A</p>
+                                        <p class="size txt-neutral2">겨울철 빙판길에서도 안전한 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/winter_i*cept_iz2_a?ptrnCd=W626&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        var brandIceptSwiper = new Swiper('.brand-icepttire-swiper', {
+                            spaceBetween: 8,
+                            observer: true,
+                            observeParents: true,
+                            slidesPerView: 'auto'
+                        });
+
+                        brandIceptSwiper.init();
+
+                        $(window).on('resize', function () {
+                            brandIceptSwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="brand-tireinfo-container" style="display: none;" data-hash="kinergy">
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_kinergy_con01.png" alt="" />
+                </div>
+                <div class="con">
+                    <div class="brand-tirevideo-wrap">
+                        <div class="brand-tirevideo">
+                            <div class="thumb-area ration-16x9">
+                                <iframe width="644" height="362" src="https://www.youtube.com/embed/sQef1Ykbs8c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_kinergy_con02.png" alt="" />
+                </div>
+                <div class="brand-tire-swiper-wrap">
+                    <div class="swiper-container brand-tireinfo-swiper brand-kinergy-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/01_4S2.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">키너지 올웨더</p>
+                                        <p class="model-sub mg-b-2u">Kinergy 4S 2</p>
+                                        <p class="size txt-neutral2">빗길, 눈길에 안정성을 확보한 All weather 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/kinergy_4s_2?ptrnCd=H750&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/02_4S2X.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">키너지 올웨더</p>
+                                        <p class="model-sub mg-b-2u">Kinergy 4S2 X</p>
+                                        <p class="size txt-neutral2">빗길, 눈길에 안정성을 확보한 SUV용 All weather 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/kinergy_4s2_x?ptrnCd=H750A&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/03_EX.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">키너지 컴포트</p>
+                                        <p class="model-sub mg-b-2u">Kinergy EX</p>
+                                        <p class="size txt-neutral2">Daily Driving을 위한 Total Balance 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/kinergy_ex?ptrnCd=H308&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/04_GT.png" alt="상품 이미지" class="goods-img">
+
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <p class="model">키너지 컴포트</p>
+                                        <p class="model-sub mg-b-2u">Kinergy GT</p>
+                                        <p class="size txt-neutral2">자동차 메이커의 성능테스트를 통과한 순정타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/kinergy_gt?ptrnCd=H436&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        var brandKinergySwiper = new Swiper('.brand-kinergy-swiper', {
+                            spaceBetween: 8,
+                            observer: true,
+                            observeParents: true,
+                            slidesPerView: 'auto'
+                        });
+
+                        brandKinergySwiper.init();
+
+                        $(window).on('resize', function () {
+                            brandKinergySwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="brand-tireinfo-container" style="display: none;" data-hash="dynapro">
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_dynapro_con01.png" alt="" />
+                </div>
+                <div class="brand-tire-swiper-wrap">
+                    <div class="swiper-container brand-tireinfo-swiper brand-dynapro-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/01_HL3.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="description-area">
+                                        <p class="model">다이나프로 컴포트</p>
+                                        <p class="model-sub mg-b-2u">Dynapro HL3</p>
+                                        <p class="size txt-neutral2">강인함과 편안함의 완벽한 밸런스를 갖춘 SUV 전용 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/dynapro_hl3?ptrnCd=RA45&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/02_HP2.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="description-area">
+                                        <p class="model">다이나프로 컴포트</p>
+                                        <p class="model-sub mg-b-2u">Dynapro HP2</p>
+                                        <p class="size txt-neutral2">자동차 메이커의 성능 테스트를 통과한 SUV 순정타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/dynapro_hp2?ptrnCd=RA33&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/03_AT2.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="description-area">
+                                        <p class="model">다이나프로 올터레인</p>
+                                        <p class="model-sub mg-b-2u">Dynapro AT2</p>
+                                        <p class="size txt-neutral2">온/오프로드 등 모든 도로에 최적화된 전천후 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/dynapro_at2?ptrnCd=RF11&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/04_MT2.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="description-area">
+                                        <p class="model">다이나프로 익스트림 터레인</p>
+                                        <p class="model-sub mg-b-2u">Dynapro MT2</p>
+                                        <p class="size txt-neutral2">극한의 주행상황을 이겨내는 오프로드 전용 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/dynapro_mt2?ptrnCd=RT05&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        var brandDynaproSwiper = new Swiper('.brand-dynapro-swiper', {
+                            spaceBetween: 8,
+                            observer: true,
+                            observeParents: true,
+                            slidesPerView: 'auto'
+                        });
+
+                        brandDynaproSwiper.init();
+
+                        $(window).on('resize', function () {
+                            brandDynaproSwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="brand-tireinfo-container" style="display: none;" data-hash="smart">
+                <div class="con">
+                    <img src="mc-static-root/images/common/brand_tire/brands_smart_con01.png" alt="" />
+                </div>
+                <div class="brand-tire-swiper-wrap">
+                    <div class="swiper-container brand-tireinfo-swiper brand-smart-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/01_plus2.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="description-area">
+                                        <p class="model">스마트 이코노미</p>
+                                        <p class="model-sub mg-b-2u">Smart Plus 2</p>
+                                        <p class="size txt-neutral2">빗길, 눈길에 안정성을 확보한 All weather 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/smart_plus_2?ptrnCd=H449&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide card card-brand-tireinfo">
+                                <div class="card-inner">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder thumb-scaled">
+                                            <img src="mc-static-root/images/common/brand_tire/01_STx.png" alt="상품 이미지" class="goods-img">
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="description-area">
+                                        <p class="model">스마트 이코노미</p>
+                                        <p class="model-sub mg-b-2u">Smart ST X</p>
+                                        <p class="size txt-neutral2">합리적인 소비자를 위한 SUV용 사계절 타이어</p>
+                                        <a href="https://www.tstation.com/tire/product/smart_st_x?ptrnCd=RH15&goodsMdclCd=01&movePath=pattern" class="more-link mg-t-4u txt-primary txt-w400">자세히 보기 <span class="line-icons chev-right size-16"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        var brandDynaproSwiper = new Swiper('.brand-smart-swiper', {
+                            spaceBetween: 8,
+                            observer: true,
+                            observeParents: true,
+                            slidesPerView: 'auto'
+                        });
+
+                        brandDynaproSwiper.init();
+
+                        $(window).on('resize', function () {
+                            brandDynaproSwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function() {
+                    var tireinfoTabWrap = $('.brand-tireinfo-wrap');
+                    var tireinfoTab = tireinfoTabWrap.find('.brand-tireinfo-tabs');
+                    var tireinfoContainer = $('.brand-tireinfo-container');
+
+                    tireinfoTab.find('li > a').each(function(i) {
+                        tireinfoTab.find('li > a').eq(i).click(function () {
+                            tireinfoContainer.hide();
+                            tireinfoContainer.eq(i).show();
+                            tireinfoTab.find('li > a').removeClass();
+                            tireinfoTab.find('li > a').eq(i).addClass('active');
+                        })
+                    });
+
+                    
+
+
+                });
+
+                // hash check - is fire once on document ready
+                var hash = window.location.hash.replace('#', '');
+                var hashList = ['ventus', 'winter-icept', 'kinergy', 'dynapro', 'smart']
+                var checkHash = function () {
+                    if (!hash || hashList.indexOf(hash) === -1) return
+                    $.each($('.brand-tireinfo-tabs').find('li > a'), function (index, item) {
+                        $(item).data().hash === hash ? $(item).addClass('active') : $(item).removeClass('active');
+                    });
+                    $.each($('.brand-tireinfo-container'), function (index, item) {
+                        $(item).css({ 'display': $(item).data().hash === hash ? 'block' : 'none' });
+                    });
+                };
+                checkHash();
+            </script>
+        </div>
+    </div>
+</main>

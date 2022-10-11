@@ -1,0 +1,109 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page_tit">
+                        <h1>회원탈퇴</h1>
+                    </div>
+
+                    <div class="container">
+
+                        <div class="member_leave">
+                            <p class="txt01">
+                                <em>그동안 T'Station</em>을 이용해 주셔서 감사합니다.
+                                <span>고객님의 회원정보는 탈퇴즉시 삭제 처리됩니다.</span>
+                            </p>
+                            <div class="inner">
+                                <h6>탈퇴전 꼭 확인해주세요!</h6>
+                                <p class="txt02">
+                                    고객님의 사이트 이용기록은 <em>전자상거래법 등 관련 법령 규정</em>에 의거하여
+                                    <br>보유 의무사항이 있는 경우, <em>당사 고객정보 보호 정책</em>에 따라 일정 기간 보관됩니다.
+                                </p>
+                                <ol>
+                                    <li>계약 또는 청약 절회 등에 관한 기록 : <em>5년 보관</em></li>
+                                    <li>대금 결재 및 재화 등의 공급에 관한 기록 : <em>3년 보관</em></li>
+                                    <li>소비자 불만 또는 분쟁 처리에 관한 기록 : <em>3년 보관</em></li>
+                                    <!-- 2021-06-23 // -->
+                                    <li>탈퇴 후 재가입 시 거래내역이 있어도 동일한 이메일 ID로는 재가입이 불가하오니, 이점 유의하시기 바랍니다.</li>
+                                    <!-- // 2021-06-23 -->
+                                </ol>
+                            </div>
+                            <div class="tbl_01">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr class="fm">
+                                        <th>가입정보</th>
+                                        <td>
+                                            <div class="membership-integrated">
+                                                <ul class="list-style-disc">
+                                                    <li>
+                                                        <p>hong.kildong@naver.com <em class="txt-mint">(네이버 간편가입)</em></p>
+                                                        <p class="txt-11 txt-neutral2">가입일: 20.08.20</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>hong.kildong@naver.com <em class="txt-mint">(네이버 간편가입)</em></p>
+                                                        <p class="txt-11 txt-neutral2">가입일: 20.08.20</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="fm">
+                                        <th>탈퇴사유</th>
+                                        <td>
+                                            <select title="탈퇴사유 선택" class="select01 w100p" name="scsnCausCd" id="scsnCausCd">
+
+                                                <option value="10">상품품질에 대한 불만으로</option>
+
+                                                <option value="20">취소/교환/환불에 대한 불만으로</option>
+
+                                                <option value="30">이용빈도가 낮아서</option>
+
+                                                <option value="40">잦은 서비스 오류 및 장애</option>
+
+                                                <option value="50">개인정보 유출이 우려되어서</option>
+
+                                                <option value="60">타서비스로 전환하기 위해</option>
+
+                                                <option value="70">고객응대/서비스에 대한 불만으로</option>
+
+                                                <option value="80">기타</option>
+
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="fm">
+                                        <th>개선사항</th>
+                                        <!-- <td><textarea class="ip_area01 w100p" style="height:150px"></textarea></td> -->
+                                        <td>
+                                            <textarea name="scsnCausCont" id="scsnCausCont" class="ip_area01 w100p" style="height:150px"></textarea>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                            <div class="txt-center mg-t-8u">
+                                <button class="btn-item btn-primary btn-ol full-w w-180 round">
+                                    <span class="label-txt">탈퇴하기</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

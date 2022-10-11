@@ -1,0 +1,428 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'T\'Station 서비스 안내' }) %>
+<div id="container" class="cscenter">
+    <!-- 서비스 안내 tab -->
+    <div class="order_01">
+        <ul>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/servicetire.do">주요서비스 안내</a></li>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/knowhowtire.do">관리 노하우</a></li>
+            <li class="on"><a href="https://m.tstation.com/customer-service/tsservice/wagestime.do">표준 정비시간</a></li>
+        </ul>
+    </div>
+    <!-- //서비스 안내 tab -->
+    <!-- 서비스 안내 tab2 -->
+    <div class="cs_top">
+        <ul>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/wagestime.do">표준 정비시간</a></li>
+            <li class="on"><a href="https://m.tstation.com/customer-service/tsservice/wagesprice.do">표준 공임비</a></li>
+        </ul>
+    </div>
+    <!-- //서비스 안내 tab2 -->
+    <!-- 03. 공임비 : 표준 -->
+    <div class="cs_tab tabScript2">
+        <p class="txt02">위 표의 표준 공임비는 T’Station 평균 금액으로 <em>매장별, 차종별로 상이</em> 할 수 있습니다.</p>
+        <div class="tab swiper-container">
+            <ul class="swiper-wrapper item">
+                <li class="swiper-slide on"><button class="icnI1" data-rel="service_cont" title="serviceI1">타이어<br />&nbsp;</button></li>
+                <li class="swiper-slide"><button class="icnI4" data-rel="service_cont" title="serviceI4">브레이크<br />패드</button></li>
+                <li class="swiper-slide"><button class="icnI3" data-rel="service_cont" title="serviceI3">배터리<br />&nbsp;</button></li>
+                <li class="swiper-slide"><button class="icnI2" data-rel="service_cont" title="serviceI2">엔진오일<br />&nbsp;</button></li>
+                <li class="swiper-slide"><button class="icnI5" data-rel="service_cont" title="serviceI5">브레이크<br />오일</button></li>
+                <li class="swiper-slide"><button class="icnI6" data-rel="service_cont" title="serviceI6">오토미션<br />오일</button></li>
+                <li class="swiper-slide"><button class="icnI7" data-rel="service_cont" title="serviceI7">부동액<br />&nbsp;</button></li>
+                <li class="swiper-slide"><button class="icnI8" data-rel="service_cont" title="serviceI8">팬벨트<br />&nbsp;</button></li>
+                <li class="swiper-slide"><button class="icnI9" data-rel="service_cont" title="serviceI9">실내필터<br />&nbsp;</button></li>
+                <li class="swiper-slide"><button class="icnI10" data-rel="service_cont" title="serviceI10">에어컨 <br />가스</button></li>
+                <li class="swiper-slide"><button class="icnI11" data-rel="service_cont" title="serviceI11">와이퍼 <br />&nbsp;</button></li>
+            </ul>
+        </div>
+        <script>
+            // 상단 매장  선택한 서비스 swiper
+            var swiper = new Swiper('.tabScript2 .swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+            // 상단 매장  선택한 서비스 swiper
+        </script>
+        <div id="serviceI1" class="service_cont">
+            <dl class="ds01">
+                <dt>타이어</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="4">장착</th>
+                                <th>16인치 이하</th>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <th>17인치 이하</th>
+                                <td>15,000</td>
+                            </tr>
+                            <tr>
+                                <th>런플랫 타이어</th>
+                                <td>추가 10,000</td>
+                            </tr>
+                            <tr>
+                                <th>공기압 센서<br>(TPMS) 타입</th>
+                                <td>추가 10,000</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray" rowspan="2">휠 밸런스</th>
+                                <th>진동 휠 밸런스<br> (타이어 교환시)</th>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <th>진동 휠 밸런스<br>(타이어 교환없이)</th>
+                                <td>10,000</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray" rowspan="2">펑크</th>
+                                <th>간이식</th>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <th>탁찰식</th>
+                                <td>20,000</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">위치 교환</th>
+                                <th>타이어 전체<br>(휠 밸런스 X)</th>
+                                <td>10,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI2" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>엔진오일</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="8">교환</th>
+                                <th>경형</th>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <th>준중형</th>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <th>중형</th>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <th>대형</th>
+                                <td>15,000</td>
+                            </tr>
+                            <tr>
+                                <th>화물형</th>
+                                <td>15,000</td>
+                            </tr>
+                            <tr>
+                                <th>승합형</th>
+                                <td>15,000</td>
+                            </tr>
+                            <tr>
+                                <th>RV, SUV</th>
+                                <td>15,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>30,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI3" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>배터리</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="2">교환</th>
+                                <th>국산차</th>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>20,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI4" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>브레이크패드</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="2">교환</th>
+                                <th>국산차</th>
+                                <td>25,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>50,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI5" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>브레이크오일</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr><th class="gray" rowspan="2">교환</th>
+                                <th>국산차</th>
+                                <td>35,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>50,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI6" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>오토미션오일</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr><th class="gray" rowspan="2">교환</th>
+                                <th>국산차</th>
+                                <td>35,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>90,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI7" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>부동액</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr><th class="gray" rowspan="2">교환</th>
+                                <th>국산차</th>
+                                <td>30,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>40,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI8" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>팬벨트</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray">교환</th>
+                                <td>매장 문의</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI9" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>실내필터</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr><th class="gray" rowspan="2">교환</th>
+                                <th>국산차</th>
+                                <td>15,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>30,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI10" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>에어컨가스</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="6">완충</th>
+                                <th>경형</th>
+                                <td>40,000</td>
+                            </tr>
+                            <tr>
+                                <th>준중형</th>
+                                <td>40,000</td>
+                            </tr>
+                            <tr>
+                                <th>중형</th>
+                                <td>50,000</td>
+                            </tr>
+                            <tr>
+                                <th>대형</th>
+                                <td>50,000</td>
+                            </tr>
+                            <tr>
+                                <th>RV, SUV</th>
+                                <td>50,000</td>
+                            </tr>
+                            <tr>
+                                <th>수입차</th>
+                                <td>100,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceI11" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt>와이퍼</dt>
+                <dd>
+                    <div class="tbl_cs2r">(단위 : 원)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray">교환</th>
+                                <th>구분없음</th>
+                                <td>5,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- 03. 공임비 : 표준 -->
+
+
+
+</div>

@@ -1,0 +1,50 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        한국타이어 X PRO-SPECS
+            <span class="date">이벤트 기간 : 99.99.99  ~ 99.99.99</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <div class="event_detail">
+        <link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+
+        <!-- Prospecs event //  -->
+
+<style>
+.prospecs-event {position:relative;}
+.prospecs-event .img-map-wrap {max-width:750px; width:100%; font-size: 0; margin: auto; position:relative;}
+.prospecs-event .img-map-link {display: block; position: absolute; z-index: 1; border-radius: 44px; } /* 20220210 */
+.prospecs-event .img-map-link.link-1 {left: 6.5%; top: 70.7%; width: 43%; height: 1.6%;}
+.prospecs-event .img-map-link.link-2 {left: 51%; top: 70.7%; width: 43%; height: 1.6%;}
+</style>
+
+        <div class="prospecs-event">
+            <div class="img-map-wrap">
+                <img src="mc-static-root/images/event/20220209/img_naverpay_details.png" alt="" />
+                <!-- 비로그인 또는 로그인하였으나 등록차량 없는 case 
+                     : tstation.com/tire/sizes?brandCd=hk
+                     로그인 및 등록차량 있는 case (사이즈 적용)
+                     :tstation.com/tire/sizes -->
+                <a href="/tire/sizes?brandCd=hk" class="img-map-link link-1"><span class="blind">타이어쇼핑 바로가기</span></a>
+                <a href="/cart" class="img-map-link link-2"><span class="blind">장바구니 바로가기</span></a>
+            </div>
+        </div>
+        <!-- // Prospecs event -->
+
+    </div>
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+    <!-- //event list -->
+
+</div>

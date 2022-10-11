@@ -1,0 +1,2113 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page-header">
+                        <h1>내 차 관리</h1>
+
+                        <button type="button" class="btn-item btn-neutral btn-ol round float-r">
+                            <span class="label-txt">차량 등록하기</span>
+                        </button>
+                    </div>
+
+                    <div class="container">
+                        <!-- 차량등록전 -->
+                        <div class="searching-car-view default txt-center">
+                            <div class="img-holder mg-t-20u" style="background-image:url('pc-static-root/images/common/mycar_dummy.png');"></div>
+                            <div class="txt-info">
+                                <p class="txt-20">등록된 차량이 없습니다.</p>
+                                <p class="txt-neutral2 mg-t-4u">내 차 정보 등록 후,<br>스마트케어 서비스를 통해 내 차를 분석하고 관리해 보세요.</p>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral round w-150 mg-t-2u">
+                                <span class="label-txt">MY 차량 등록</span>
+                            </button>
+                        </div>
+
+                        <!-- 차량등록후 -->
+                        <ul class="list-size-full mycar-list">
+                            <li>
+                                <div class="mycar-overview">
+                                    <div class="car-management">
+                                        <span class="car-number">07더 3307</span>
+
+                                        <ul class="list-size-free mg-t-1u">
+                                            <li class="pd-r-1u">
+                                                <!-- onclick 미인증 차량 수정 팝업 오픈 -->
+                                                <button type="button" class="btn-item btn-neutral btn-xs btn-inv filet pd-h-1u">
+                                                    <span class="label-txt txt-14">정보 수정</span>
+                                                </button>
+                                            </li>
+                                            <li class="pd-l-1u">
+                                                <button type="button" class="btn-item btn-neutral btn-xs btn-inv filet pd-h-1u">
+                                                    <span class="label-txt txt-14">삭제</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="car-img-holder" style="background-image:url('pc-static-root/images/common/mycar_sample01.png');"></div>
+                                </div>
+
+                                <div class="bg-light1 pd-h-6u pd-v-5u bg-filet-4 mycar-spec">
+                                    <table class="pd-medium vertical-t">
+                                        <tbody>
+                                        <tr class="txt-16">
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">자동차 브랜드</h6>
+                                                <p>기아</p>
+                                            </td>
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">차종</h6>
+                                                <p>쏘렌토</p>
+                                            </td>
+                                            <td class="border-l pd-l-4u vertical-m" rowspan="4">
+                                                <h6 class="txt-12 txt-neutral2 mg-b-1u">
+                                                    <span class="v-middle">차량번호 인증</span>
+
+                                                    <!-- onclick 차량번호 인증 안내 팝업 오픈 -->
+                                                    <button type="button" class="btn-item min-w btn-neutral btn-inv bg-transparent btn-xs round">
+                                                        <span class="line-icons info-circle size-20"></span>
+                                                    </button>
+                                                </h6>
+
+                                                <!-- 인증 미완료시 노출 -->
+                                                <button type="button" class="btn-item btn-neutral btn-s full-w filet">
+                                                    <span class="label-txt txt-14">인증하기</span>
+                                                </button>
+
+                                                <!-- 인증 완료시 노출 -->
+                                                <!-- <button type="button" class="btn-item btn-primary btn-s full-w btn-ol filet" disabled>
+                                                    <span class="label-txt txt-14">인증완료</span>
+                                                </button> -->
+
+                                                <h6 class="txt-12 txt-neutral2 mg-t-5u mg-b-1u">
+                                                    <span class="v-middle">차량 공유 회원</span>
+
+                                                    <!-- onclick 차량 공유 회원 안내 팝업 오픈 -->
+                                                    <button type="button" class="btn-item min-w btn-neutral btn-inv bg-transparent btn-xs round">
+                                                        <span class="line-icons info-circle size-20"></span>
+                                                    </button>
+                                                </h6>
+
+                                                <!-- 차량 공유 회원 0명 경우 노출. 'disabled'클래스 추가 -->
+                                                <span class="tooltip-container left full-w family-member-btn disabled">
+                                                                <button type="button" class="btn-item btn-neutral btn-s full-w btn-ol filet">
+                                                                    <span class="label-txt txt-14">0명</span>
+                                                                    <span class="line-icons search size-20"></span>
+                                                                </button>
+                                                                <div class="tooltip">
+                                                                    <div class="tooltip-header">
+                                                                        <p>차량 공유 회원 차량공유</p>
+                                                                    </div>
+                                                                    <div class="tooltip-body">
+                                                                        <p>차량을 공유 중인 차량 공유 회원이 없습니다.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+
+
+                                                <!-- 차량 공유 회원 1명 이상 경우 노출. 'disabled'클래스 제거 -->
+                                                <!-- <span class="tooltip-container left full-w family-member-btn">
+                                                    <button type="button" class="btn-item btn-neutral btn-s full-w btn-ol filet">
+                                                        <span class="label-txt txt-14">3명</span>
+                                                        <span class="line-icons search size-20"></span>
+                                                    </button>
+                                                    <div class="tooltip">
+                                                        <div class="tooltip-header">
+                                                            <p>차량 공유 회원 차량공유</p>
+                                                        </div>
+                                                        <div class="tooltip-body">
+                                                            <p>홍길동, 김김동, 이길동</p>
+                                                        </div>
+                                                    </div>
+                                                </span> -->
+
+                                                <a href="#" class="dp-block txt-14 mg-t-5u">
+                                                    <span class="dp-inblock v-middle">정비이력 보기</span>
+                                                    <span class="line-icons chev-right size-20"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="txt-16">
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">세부 차종</h6>
+                                                <p>올 뉴 쏘렌토</p>
+                                            </td>
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">연료</h6>
+                                                <p>디젤</p>
+                                            </td>
+                                        </tr>
+                                        <tr class="txt-16">
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">모델 연도</h6>
+                                                <p>2017</p>
+                                            </td>
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">세부 모델</h6>
+                                                <p>노블레스 스페셜</p>
+                                            </td>
+                                        </tr>
+                                        <tr class="txt-16">
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">타이어 사이즈</h6>
+                                                <p>235/60R18</p>
+                                            </td>
+                                            <td>
+                                                <h6 class="txt-12 txt-neutral2">총 주행거리</h6>
+                                                <p>정보없음</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="mycar-overview">
+                                    <div class="car-management">
+                                        <span class="car-number">12가 9876</span>
+
+                                        <ul class="list-size-free mg-t-1u">
+                                            <li class="pd-r-1u">
+                                                <!-- onclick 인증완료 차량 수정 팝업 오픈 -->
+                                                <button type="button" class="btn-item btn-neutral btn-xs btn-inv filet pd-h-1u">
+                                                    <span class="label-txt txt-14">정보 수정</span>
+                                                </button>
+                                            </li>
+                                            <li class="pd-l-1u">
+                                                <button type="button" class="btn-item btn-neutral btn-xs btn-inv filet pd-h-1u">
+                                                    <span class="label-txt txt-14">삭제</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="car-img-holder" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></div>
+                                </div>
+
+                                <div class="bg-light1 pd-h-6u pd-v-5u bg-filet-4 mycar-spec">
+                                    <table class="pd-medium vertical-t">
+                                        <tbody>
+                                        <tr class="txt-16">
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">자동차 브랜드</h6>
+                                                <p>제네시스</p>
+                                            </td>
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">차종</h6>
+                                                <p>G80</p>
+                                            </td>
+
+                                            <td class="border-l pd-l-4u vertical-m" rowspan="4">
+                                                <h6 class="txt-12 txt-neutral2 mg-b-1u">
+                                                    <span class="v-middle">차량번호 인증</span>
+
+                                                    <!-- onclick 차량번호 인증 안내 팝업 오픈 -->
+                                                    <button type="button" class="btn-item min-w btn-neutral btn-inv bg-transparent btn-xs round">
+                                                        <span class="line-icons info-circle size-20"></span>
+                                                    </button>
+                                                </h6>
+
+                                                <!-- 인증 미완료시 노출 -->
+                                                <!-- <button type="button" class="btn-item btn-neutral btn-s full-w filet">
+                                                    <span class="label-txt txt-14">인증하기</span>
+                                                </button> -->
+
+                                                <!-- 인증 완료시 노출 -->
+                                                <button type="button" class="btn-item btn-primary btn-s full-w btn-ol filet" disabled>
+                                                    <span class="label-txt txt-14">인증완료</span>
+                                                </button>
+
+                                                <h6 class="txt-12 txt-neutral2 mg-t-5u mg-b-1u">
+                                                    <span class="v-middle">차량 공유 회원</span>
+
+                                                    <!-- onclick 차량 공유 회원 안내 팝업 오픈 -->
+                                                    <button type="button" class="btn-item min-w btn-neutral btn-inv bg-transparent btn-xs round">
+                                                        <span class="line-icons info-circle size-20"></span>
+                                                    </button>
+                                                </h6>
+
+                                                <!-- 차량 공유 회원 0명 경우 노출. 'disabled'클래스 추가 -->
+                                                <!-- <span class="tooltip-container left full-w family-member-btn disabled">
+                                                    <button type="button" class="btn-item btn-neutral btn-s full-w btn-ol filet">
+                                                        <span class="label-txt txt-14">0명</span>
+                                                        <span class="line-icons search size-20"></span>
+                                                    </button>
+                                                    <div class="tooltip">
+                                                        <div class="tooltip-header">
+                                                            <p>차량 공유 회원 차량공유</p>
+                                                        </div>
+                                                        <div class="tooltip-body">
+                                                            <p>차량을 공유 중인 차량 공유 회원이 없습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </span> -->
+
+
+                                                <!-- 차량 공유 회원 1명 이상 경우 노출. 'disabled'클래스 제거 -->
+                                                <span class="tooltip-container left full-w family-member-btn">
+                                                                <button type="button" class="btn-item btn-neutral btn-s full-w btn-ol filet">
+                                                                    <span class="label-txt txt-14">3명</span>
+                                                                    <span class="line-icons search size-20"></span>
+                                                                </button>
+                                                                <div class="tooltip">
+                                                                    <div class="tooltip-header">
+                                                                        <p>차량 공유 회원 차량공유</p>
+                                                                    </div>
+                                                                    <div class="tooltip-body">
+                                                                        <p>홍*동, 김*동, 이*동</p>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+
+                                                <a href="#" class="dp-block txt-14 mg-t-5u">
+                                                    <span class="dp-inblock v-middle">정비이력 보기</span>
+                                                    <span class="line-icons chev-right size-20"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="txt-16">
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">세부 모델</h6>
+                                                <p>3.3 터보</p>
+                                            </td>
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">연료</h6>
+                                                <p>가솔린</p>
+                                            </td>
+                                        </tr>
+                                        <tr class="txt-16">
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">모델 연도</h6>
+                                                <p>2017</p>
+                                            </td>
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">세부 모델</h6>
+                                                <p>기본형</p>
+                                            </td>
+                                        </tr>
+                                        <tr class="txt-16">
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">타이어 사이즈</h6>
+                                                <p>전륜 235/60R18<br />후륜 235/60R18</p>
+                                            </td>
+                                            <td class="pd-r-2u">
+                                                <h6 class="txt-12 txt-neutral2">총 주행거리<br /><span class="txt-neutral3">(최종 갱신일 : 20.08.01)</span></h6>
+                                                <p>
+                                                    48,012km
+                                                    <br />
+                                                    <a href="" class="btn-item btn-xs btn-gray btn-ol filet pd-h-2u">
+                                                        <span class="label-txt txt-12">정비이력 확인</span>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- New Popup -->
+<!-- 내 차량 등록하기 1단계 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-l">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>내 차량 등록하기</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분 -->
+                        <ul class="list-size-equal modal-stepper">
+                            <!-- 현재 단계 li: 'act'클래스 추가 -->
+                            <!-- 완료후 지난 단계 li: 'done'클래스 추가 -->
+                            <!-- 아직 지나가지 않은 단계 li: 'yet'클래스 추가 -->
+                            <li class="act">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">차량번호 조회</span>
+                                </button>
+                            </li>
+
+                            <li class="yet">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">사이즈</span>
+                                </button>
+                            </li>
+
+                            <li class="yet">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">등록완료</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="container pd-h-8u pd-t-15u pd-b-20u">
+
+                            <form class="car-number-search-form">
+                                <div class="container pd-v-4u">
+                                    <p class="txt-16">운행 중인 차량을 등록하면,<br><strong>디지털 이력관리 · 간편 검색 등 다양한 혜택</strong>을 받을 수 있습니다.</p>
+                                </div>
+
+                                <table class="">
+                                    <colgroup>
+                                        <col style="width:37%;"/>
+                                        <col style="width:37%;"/>
+                                        <col style="width:26%;"/>
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <td class="pd-r-1u">
+                                            <div class="form-control form-control-lg">
+                                                <div class="input-group">
+                                                    <input type="text" class="input-box" placeholder="차량번호  ex)12가4321">
+                                                    <div class="tools">
+                                                        <button type="button" class="clear"><span class="line-icons close-circle"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="pd-l-1u">
+                                            <div class="form-control form-control-lg">
+                                                <div class="input-group">
+                                                    <input type="text" class="input-box" placeholder="소유주명  ex)홍길동">
+                                                    <div class="tools">
+                                                        <button type="button" class="clear"><span class="line-icons close-circle"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="pd-l-3u">
+                                            <button type="button" class="btn-item btn-neutral round full-w btn-l">
+                                                <span class="label-txt">조회하기</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </form>
+                        </div>
+
+                        <div class="container bg-light1 border-t pd-h-8u pd-v-4u txt-center over-hidden">
+                            <span class="txt-16 line-40 mg-r-6u">차량번호와 소유주를 잘 모르신다면?</span>
+
+                            <button type="button" class="btn-item btn-neutral btn-ol round">
+                                <span class="label-txt">직접 등록</span>
+                            </button>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 내 차량 등록하기 1단계(기등록 충돌 안내) -->
+<div class="modal-item instance on">
+    <!-- dim 디폴트는 dark. 'white'클래스 추가로 흰색처리 가능. -->
+    <div class="dim"></div>
+
+    <div class="middler">
+        <!-- 모달 패널(이분분 통째로 디자인해야함). 사이즈 옵션 size-s / size-m(default) / size-l -->
+        <div class="modal-pannel size-l">
+            <!-- modal-header - modal-action - modal-body 순서변경 금지. modal-header / modal-action 생략은 가능. -->
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>내 차량 등록하기</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 0으로 설정) -->
+                        <ul class="list-size-equal modal-stepper">
+                            <!-- 현재 단계 li: 'act'클래스 추가 -->
+                            <!-- 완료후 지난 단계 li: 'done'클래스 추가 -->
+                            <!-- 아직 지나가지 않은 단계 li: 'yet'클래스 추가 -->
+                            <li class="act">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">차량번호 조회</span>
+                                </button>
+                            </li>
+
+                            <li class="yet">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">사이즈</span>
+                                </button>
+                            </li>
+
+                            <li class="yet">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">등록완료</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="container search-result-wrap">
+                            <div class="search-result-car error">
+                                <div class="car-img-holder">
+                                    <img src="pc-static-root/images/common/mycar_dummy.png" alt="자동차 이미지" class="car-img">
+                                </div>
+
+                                <p class="info-txt">
+                                    차량번호 <em class="txt-primary">07더 3307</em> 차량은<br>
+                                    이미 다른 회원님께 등록되어 있습니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container bg-light1 border-t pd-h-8u pd-v-6u txt-center">
+                            <p class="txt-neutral2">내 차량으로 등록하시려면 기등록 회원님께 차량 공유 요청에 대한 동의를 받아야 합니다.<br><span class="txt-neutral1 txt-w500">차량 공유 요청을 보내시겠습니까?</span></p>
+
+                            <div class="container txt-center pd-t-6u txt-0">
+                                <button type="button" class="btn-item btn-neutral btn-ol round w-150">
+                                    <span class="label-txt">다시 조회</span>
+                                </button>
+
+                                <button type="button" class="btn-item btn-neutral round w-150 mg-l-3u">
+                                    <span class="label-txt">차량 공유 요청</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 내 차량 등록하기 1단계(기등록차량에 차량 공유 요청 보낸 경우 안내) -->
+<div class="modal-item instance on">
+    <!-- dim 디폴트는 dark. 'white'클래스 추가로 흰색처리 가능. -->
+    <div class="dim"></div>
+
+    <div class="middler">
+        <!-- 모달 패널(이분분 통째로 디자인해야함). 사이즈 옵션 size-s / size-m(default) / size-l -->
+        <div class="modal-pannel size-l">
+            <!-- modal-header - modal-action - modal-body 순서변경 금지. modal-header / modal-action 생략은 가능. -->
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>내 차량 등록하기</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 0으로 설정) -->
+                        <ul class="list-size-equal modal-stepper">
+                            <!-- 현재 단계 li: 'act'클래스 추가 -->
+                            <!-- 완료후 지난 단계 li: 'done'클래스 추가 -->
+                            <!-- 아직 지나가지 않은 단계 li: 'yet'클래스 추가 -->
+                            <li class="act">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">차량번호 조회</span>
+                                </button>
+                            </li>
+
+                            <li class="yet">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">사이즈</span>
+                                </button>
+                            </li>
+
+                            <li class="yet">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">등록완료</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="container search-result-wrap">
+                            <div class="search-result-car error">
+                                <div class="car-img-holder">
+                                    <img src="pc-static-root/images/common/mycar_dummy.png" alt="자동차 이미지" class="car-img">
+                                </div>
+
+                                <p class="info-txt">
+                                    차량번호 <em class="txt-primary">07더 3307</em> 차량을<br>
+                                    내 차량으로 등록하기 위해 패밀리요청을 보낸 상태입니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container bg-light1 border-t pd-h-8u pd-v-6u txt-center">
+                            <p class="txt-neutral2">패밀리요청을 보내신 회원님의 결정을 기다려주세요.</span></p>
+
+                            <div class="container txt-center pd-t-6u txt-0">
+                                <button type="button" class="btn-item btn-neutral btn-ol round w-150">
+                                    <span class="label-txt">다시 조회</span>
+                                </button>
+
+                                <button type="button" class="btn-item btn-neutral round w-150 mg-l-3u">
+                                    <span class="label-txt">내 차 관리</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 내 차량 등록하기 2단계 -->
+<div class="modal-item instance on">
+    <!-- dim 디폴트는 dark. 'white'클래스 추가로 흰색처리 가능. -->
+    <div class="dim"></div>
+
+    <div class="middler">
+        <!-- 모달 패널(이분분 통째로 디자인해야함). 사이즈 옵션 size-s / size-m(default) / size-l -->
+        <div class="modal-pannel size-l">
+            <!-- modal-header - modal-action - modal-body 순서변경 금지. modal-header / modal-action 생략은 가능. -->
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>내 차량 등록하기</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 0으로 설정) -->
+                        <ul class="list-size-equal modal-stepper">
+                            <!-- 현재 단계 li: 'act'클래스 추가 -->
+                            <!-- 완료후 지난 단계 li: 'done'클래스 추가 -->
+                            <!-- 아직 지나가지 않은 단계 li: 'yet'클래스 추가 -->
+                            <li class="done">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">차량번호 조회</span>
+                                </button>
+                            </li>
+
+                            <li class="act">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">사이즈</span>
+                                </button>
+                            </li>
+
+                            <li class="yet">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">등록완료</span>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="container search-result-wrap">
+                            <div class="search-result-car">
+                                <div class="car-img-holder">
+                                    <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">
+                                </div>
+
+                                <p class="info-txt">
+                                    검색하신 <em>07더 3307</em> 차량은<br>
+                                    기아 <em>‘쏘렌토 2.0 디젤’</em> 입니다.
+                                </p>
+                            </div>
+
+                            <div class="select-year-option-wrapper">
+                                <ul class="list-size-equal select-year-option">
+                                    <li>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <select class="input-box">
+                                                    <option value="" selected>모델 연도 - 전체</option>
+                                                    <option value="">모델 연도 - 2017</option>
+                                                </select>
+                                                <div class="tools">
+                                                    <button><span class="line-icons chev-down"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <select class="input-box">
+                                                    <option value="" selected>세부 모델 - 전체</option>
+                                                    <option value="">세부 모델 - 기본형</option>
+                                                </select>
+                                                <div class="tools">
+                                                    <button><span class="line-icons chev-down"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="guide-tip-bx top">
+                                    <div class="tooltip-bx">
+                                        <p class="msg">검색결과 확인을 위해 연식과 세부모델을 선택해 주세요.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container bg-light1 border-t pd-h-8u pd-v-6u">
+                            <div class="container">
+                                <div class="container txt-0 line-24">
+                                    <p class="float-l txt-16 txt-neutral2 line-24"><span class="txt-neutral1 txt-w500">타이어 사이즈를 선택</span>해 주세요. </p>
+
+                                    <!-- onclick 타이어 사이즈 확인 팝업 오픈 -->
+                                    <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet float-r pd-h-1u">
+                                        <span class="label-txt txt-14">타이어 사이즈 확인방법</span>
+                                        <span class="line-icons info-circle size-20"></span>
+                                    </button>
+                                </div>
+
+                                <ul class="mg-t-1u select-tire-size">
+                                    <li>
+                                        <!-- 기본 뱃지는 label에 'default'클래스 추가 -->
+                                        <label class="default">
+                                            <input type="radio" name="tire_size_radio" checked/>
+                                            <div class="labelling">
+                                                <span class="label-txt">전륜 245/45R18<span class="divider">|</span>후륜 255/40R18</span>
+                                            </div>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="tire_size_radio"/>
+                                            <div class="labelling">
+                                                <span class="label-txt">전륜·후륜 245/40R19</span>
+                                            </div>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="tire_size_radio"/>
+                                            <div class="labelling">
+                                                <span class="label-txt">전륜·후륜 250/45R18</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+
+                                <div class="caution-item mg-t-6u">
+                                    <p>검색결과가 실제 타이어의 사이즈와 다를 수 있습니다.</p>
+                                    <p class="txt-primary">애프터마켓에서 인치업을 하신 경우 사이즈 검색을 통해 적합한 상품을 확인하실 수 있습니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="container txt-center pd-t-6u mg-t-6u border-t">
+                                <button type="button" class="btn-item btn-neutral round w-150">
+                                    <span class="label-txt">내 차량 등록하기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 내 차량 등록하기 3단계 -->
+<div class="modal-item instance on">
+    <!-- dim 디폴트는 dark. 'white'클래스 추가로 흰색처리 가능. -->
+    <div class="dim"></div>
+
+    <div class="middler">
+        <!-- 모달 패널(이분분 통째로 디자인해야함). 사이즈 옵션 size-s / size-m(default) / size-l -->
+        <div class="modal-pannel size-l">
+            <!-- modal-header - modal-action - modal-body 순서변경 금지. modal-header / modal-action 생략은 가능. -->
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>내 차량 등록하기</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 0으로 설정) -->
+                        <!-- 마지막 단계까지 도달했을 경우 ul에 'all-done'클래스 추가 -->
+                        <ul class="list-size-equal modal-stepper all-done">
+                            <!-- 현재 단계 li: 'act'클래스 추가 -->
+                            <!-- 완료후 지난 단계 li: 'done'클래스 추가 -->
+                            <!-- 아직 지나가지 않은 단계 li: 'yet'클래스 추가 -->
+                            <li class="done">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">차량번호 조회</span>
+                                </button>
+                            </li>
+
+                            <li class="done">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">사이즈</span>
+                                </button>
+                            </li>
+
+                            <li class="act">
+                                <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                    <span class="line-icons check-circle-inv size-24"></span>
+                                    <span class="label-txt">등록완료</span>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="container search-result-wrap">
+                            <div class="search-result-car reg-complete">
+                                <div class="car-img-holder">
+                                    <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">
+                                </div>
+
+                                <p class="info-txt">
+                                    MY 차량으로 <em>07더 3307</em><br>
+                                    기아 <em>‘쏘렌토 2.0 디젤 기본형’</em>을 등록하셨습니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container bg-light1 border-t pd-h-8u pd-v-6u txt-center">
+                            <p>등록하신 차량의 서비스이력을 기반으로 한 디지털 이력관리는 물론<br>내 차량에 적합한 상품을 더 쉽게 확인 해보실 수 있습니다.</p>
+
+                            <div class="container txt-center pd-t-6u txt-0">
+                                <button type="button" class="btn-item btn-neutral btn-ol round w-150">
+                                    <span class="label-txt">스마트케어 서비스</span>
+                                </button>
+
+                                <button type="button" class="btn-item btn-neutral round w-150 mg-l-3u">
+                                    <span class="label-txt">추천상품</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량번호 소유주 오류 메시지 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <!-- 버튼 갯수만큼 li통째로 삽입 -->
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center pd-t-4u txt-16">
+                            <span class="line-icons error-circle size-48 txt-neutral3 mg-b-2u"></span><br />
+                            차량번호 또는 소유주명이 일치하지 않습니다.
+                        </p>
+
+                        <div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-4u mg-t-6u txt-13">
+                            <p class="txt-neutral2"><em class="txt-primary">*</em> 공동명의 차량의 경우: 대표 소유주명을 입력해 주세요.</p>
+                            <p class="txt-neutral2"><em class="txt-primary">*</em> 렌트/리스 차량의 경우: 해당 업체의 정확한 회사명을 소유주명에 입력해 주세요.<br />
+                                &nbsp;&nbsp;&nbsp;- ex) 주식회사 ABC렌터카<br />
+                                &nbsp;&nbsp;&nbsp;- ex) 주식회사 123캐피탈
+                            </p>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 직접등록 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 등록하기</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <!-- 버튼 갯수만큼 li통째로 삽입 -->
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">등록하기</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <form>
+                            <ul class="list-size-full">
+                                <li>
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">자동차 브랜드</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" selected="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">차종</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" selected="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">세부 차종</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" selected="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">연도</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" selected="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">모델 연도</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" selected="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">세부 모델</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" selected="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">타이어 사이즈</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" selected="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">차량번호</label>
+                                        <div class="input-group">
+                                            <input type="text" class="input-box" placeholder="차량번호를 입력해주세요. Ex)12가3456">
+                                            <div class="tools">
+                                                <button type="button" class="clear"><span class="line-icons close-circle"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 미인증 차량 수정 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 수정하기</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <!-- 버튼 갯수만큼 li통째로 삽입 -->
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">수정완료</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <form>
+                            <ul class="list-size-full">
+                                <li>
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">자동차 브랜드</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="" selected>기아</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">차종</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="" selected>쏘렌토</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">세부 차종</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="" selected>올 뉴 쏘렌토</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">연료</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="" selected>디젤</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">모델 연도</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="" selected>2018</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">세부 모델</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="" selected>노블레스 스페셜</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">타이어 사이즈</label>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="" selected>235/60R18</option>
+                                                <option value="">options2</option>
+                                                <option value="">options...</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mg-t-2u">
+                                    <div class="form-control form-control-inline inline-xl">
+                                        <label class="txt-16">차량번호</label>
+                                        <div class="input-group">
+                                            <input type="text" class="input-box" placeholder="차량번호를 입력해주세요. Ex)12가3456">
+                                            <div class="tools">
+                                                <button type="button" class="clear"><span class="line-icons close-circle"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 인증완료 차량 수정 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-l">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>내 차량 정보 수정</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <!-- 버튼 갯수만큼 li통째로 삽입 -->
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">수정완료</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p><span class="txt-primary">*</span> 인증이 완료된 차량의 기본 정보는 수정하실 수 없습니다.</p>
+                        <div class="bg-light1 pd-h-10u pd-v-4u bg-filet-4 mg-t-2u mycar-spec">
+                            <table class="pd-medium">
+                                <tbody>
+                                <tr class="txt-16">
+                                    <td>
+                                        <h6 class="txt-12 txt-neutral2">차량번호</h6>
+                                        <p>07더3307</p>
+                                    </td>
+
+                                    <td>
+                                        <h6 class="txt-12 txt-neutral2">자동차 브랜드</h6>
+                                        <p>기아</p>
+                                    </td>
+
+                                    <td>
+                                        <h6 class="txt-12 txt-neutral2">차종</h6>
+                                        <p>쏘렌토</p>
+                                    </td>
+                                </tr>
+                                <tr class="txt-16">
+                                    <td>
+                                        <h6 class="txt-12 txt-neutral2">세부 차종</h6>
+                                        <p>올 뉴 쏘렌토</p>
+                                    </td>
+                                    <td>
+                                        <h6 class="txt-12 txt-neutral2">연료</h6>
+                                        <p>디젤</p>
+                                    </td>
+                                    <td>
+                                        <h6 class="txt-12 txt-neutral2">모델 연도</h6>
+                                        <p>2017</p>
+                                    </td>
+                                </tr>
+                                <tr class="txt-16">
+                                    <td colspan="3">
+                                        <h6 class="txt-12 txt-neutral2">세부 모델</h6>
+                                        <p>노블레스 스페셜</p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <form>
+                            <ul class="list-size-equal pd-t-8u">
+                                <li class="pd-r-5u">
+                                    <div class="form-control inline-xl">
+                                        <div class="label txt-16">
+                                            타이어 사이즈
+
+                                            <!-- onclick 타이어 사이즈 확인방법 팝업 -->
+                                            <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet float-r pd-h-1u">
+                                                <span class="label-txt txt-12">타이어 사이즈 확인방법</span>
+                                                <span class="line-icons info-circle size-20"></span>
+                                            </button>
+                                        </div>
+                                        <div class="input-group">
+                                            <select class="input-box">
+                                                <option value="" disabled="">선택</option>
+                                                <option value="">options1</option>
+                                                <option value="">options2</option>
+                                                <option value="" selected>직접입력</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 직접입력 선택시에만 노출 -->
+                                    <ul class="list-size-equal mg-t-2u">
+                                        <li class="pd-r-2u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected disabled="">단면폭</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="pd-h-1u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected disabled="">편평비</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="pd-l-2u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected disabled="">인치</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <!-- 후륜이 다를때 체크 -->
+                                    <label class="check-item mg-t-2u mg-b-1u" onchange="$('.tire-size-rear').css({ display: $(this).children('input').is(':checked') ? 'block' : 'none' });">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons square size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">후륜이 다른 경우 선택하세요.</span>
+                                        </div>
+                                    </label>
+
+                                    <!-- 후륜 입력 -->
+                                    <ul class="list-size-equal tire-size-rear" style="display: none;">
+                                        <li class="pd-r-2u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected="" disabled="">단면폭</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="pd-h-1u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected="" disabled="">편평비</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="pd-l-2u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected="" disabled="">인치</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="pd-l-5u">
+                                    <div class="form-control inline-xl">
+                                        <label class="txt-16">총 주행거리(km)</label>
+                                        <div class="input-group">
+                                            <input type="text" class="input-box" placeholder="현재 주행거리를 입력해 주세요">
+                                            <div class="tools">
+                                                <button type="button" class="clear"><span class="line-icons close-circle"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="mg-t-2u">
+                                        <span class="txt-primary">현재 48,070km</span>
+                                        <span class="txt-neutral3">(최종 갱신일: 20.08.01)</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </form>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 타이어 사이즈 확인방법 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>내 차 타이어 사이즈 확인법</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-t-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 top: 8으로 설정) -->
+                        <div class="txt-center pd-h-4u mg-b-6u">
+                            <h3 class="txt-16 txt-w500 mg-b-2u">타이어 옆면의 숫자조합을 확인해 주세요.</h3>
+                            <p class="txt-neutral2">같은 차종이라도 등급에 따라 타이어 사이즈가 다른 경우가 있으니<br>장착할 차량의 타이어를 직접 보고 사이즈를 확인해주세요.</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="pc-static-root/images/common/how_to_check_tire_size.png" alt="타이어 사이즈 확인법">
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 1단계 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 0으로 설정) -->
+                        <div class="process-step-bx">
+                            <ul>
+                                <li class="on">
+                                    <i></i>
+                                    <span>요청하기</span>
+                                </li>
+                                <li>
+                                    <i></i>
+                                    <span>요청완료</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="container pd-h-8u pd-v-8u">
+                            <dl class="tstation-member-managing">
+                                <dt><strong>[07더 3307]</strong> 차량을 관리중인 티스테이션 회원</dt>
+                                <dd>
+                                    <div class="member-info">
+                                        <span class="txt-13 txt-neutral2">회원명</span>
+                                        <strong>홍 * *</strong>
+                                    </div>
+                                    <div class="member-info">
+                                        <span class="txt-13 txt-neutral2">전화번호</span>
+                                        <strong>010 - 11* * - * * 27</strong>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <div class="member-share-info">
+                                <p>관리를 공유하기 위해서는 <strong>대상 회원님의 동의가 필요하며</strong>,<br>차량 공유 요청 시 홍 * *님의 휴대폰으로 문자메시지가 발송됩니다.</p>
+                                <p class="txt-12 txt-neutral3 mg-t-2u"><span class="txt-primary">*</span> 패밀리요청은 1일 3회까지만 가능합니다.</p>
+                                <div class="btn">
+                                    <button type="button" class="btn-item btn-neutral btn-ol round">
+                                        <span class="label-txt">취소</span>
+                                    </button>
+                                    <button type="button" class="btn-item btn-neutral round">
+                                        <span class="label-txt">차량 공유 요청하기</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="car-share-info-bx">
+                                <img src="pc-static-root/images/common/graphics_car_care_gold.svg" alt="차량관리 픽토그램"/>
+                                <p>
+                                    <strong>가족·동료와 함께 차량을 관리하고 있다면</strong>
+                                    <span class="txt-neutral2">차량 공유 요청을 통해 이미 차량을 등록하고 계신 회원님과<br>차량의 서비스이력을 공유하여 보다 정확한 디지털 이력관리를<br>받으실 수 있습니다.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 2단계 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 0으로 설정) -->
+                        <div class="process-step-bx">
+                            <ul>
+                                <li class="check-end">
+                                    <i></i>
+                                    <span>요청하기</span>
+                                </li>
+                                <li class="on">
+                                    <i></i>
+                                    <span>요청완료</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="container pd-h-8u pd-v-8u">
+                            <div class="request-member-send-bx">
+                                <div class="member-send-masage">홍 * *님께 차량 공유 요청을 보냈습니다.</div>
+                                <img src="pc-static-root/images/common/graphics_request_family.svg" alt="차량 공유 요청 메시지 픽토그램"/>
+                                <p class="member-send-info">
+                                    <em>차량 공유 요청은 24시간동안 유효</em>하며, 유효시간 경과 후 다시<br>
+                                    요청해야 합니다. <em>홍 * *님</em>께서 차량 공유 요청에 동의하시면<br>
+                                    해당차량은 회원님의 <em>내 차량으로 자동 등록</em>되며 기존·신규<br>
+                                    서비스이력을 확인하실 수 있습니다.<br>
+                                    다만, <strong>거절 시 내 차량으로 등록되지 않습니다.</strong>
+                                </p>
+                                <button type="button" class="btn-item btn-neutral full-w round mg-t-10u">
+                                    <span class="label-txt">확인</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 안내 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">거절</span>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">동의하기</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-16"><em class="txt-w500">07더3307</em> 차량에 대한 <em class="txt-w500">‘고객명’</em>님의<br>차량 공유 요청에 동의하시겠습니까?</p>
+
+                        <div class="container border-all bg-filet-4 pd-h-6u pd-v-2u mg-t-4u">
+                            <table class="pd-medium">
+                                <colgroup>
+                                    <col style="width:80px;"/>
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th class="txt-left txt-neutral2">요청일시</th>
+                                    <td class="txt-right">2020년 8월 31일 12시 00분</td>
+                                </tr>
+
+                                <tr class="border-t border-light">
+                                    <th class="txt-left txt-neutral2">유효시간</th>
+                                    <td class="txt-right txt-primary">2020년 9월 1일 11:59분 까지</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="txt-center mg-t-6u">차량 공유 요청에 동의 하시면 <em class="txt-w500">07더3307</em> 차량의<br>기존/신규 서비스이력을 공유할 수 있습니다.</p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 안내(요청받은 유저 유효시간 만료) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-16">요청 <em class="txt-w500">유효시간이 만료</em>되었습니다.</p>
+
+                        <div class="container border-all bg-filet-4 pd-h-6u pd-v-2u mg-t-4u">
+                            <table class="pd-medium">
+                                <colgroup>
+                                    <col style="width:80px;"/>
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th class="txt-left txt-neutral2">요청일시</th>
+                                    <td class="txt-right">2020년 8월 31일 12시 00분</td>
+                                </tr>
+
+                                <tr class="border-t border-light">
+                                    <th class="txt-left txt-neutral2">유효시간</th>
+                                    <td class="txt-right txt-primary"><span class="txt-throughline">2020년 9월 1일 11:59분 까지</span>(만료)</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 안내(요청받은 유저 이미 확인) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-16"><em class="txt-w500">07더3307</em> 차량에 대한 <em class="txt-w500">‘고객명’</em>님의<br>차량 공유 요청을 이미 확인하셨습니다.</p>
+
+                        <div class="container border-all bg-filet-4 pd-h-6u pd-v-2u mg-t-4u">
+                            <table class="pd-medium">
+                                <colgroup>
+                                    <col style="width:80px;"/>
+                                    <col/>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th class="txt-left txt-neutral2">요청일시</th>
+                                    <td class="txt-right">2020년 8월 31일 12시 00분</td>
+                                </tr>
+
+                                <tr class="border-t border-light">
+                                    <th class="txt-left txt-neutral2">유효시간</th>
+                                    <td class="txt-right txt-primary"><span class="txt-throughline">2020년 9월 1일 11:59분 까지</span>(만료)</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 안내(상대 수락 알림) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">닫기</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">내 차 관리</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>
+                            홍 * * 회원님이 <em class="txt-w500">07더3307</em> 차량에 대한<br>차량 공유 요청에 동의하셨습니다.
+                        </p>
+
+                        <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t"><em class="txt-w500 txt-neutral1">07더3307</em> 차량의 기존 서비스 이력을 공유받고,<br>신규 서비스 이력 또한 서로 공유하게 됩니다.</p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 안내(상대 거절 알림) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">닫기</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">내 차 관리</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons error-circle size-48 txt-primary mg-b-2u"></span><br>
+                            홍 * * 회원님이 차량 공유 요청을 거절하셨습니다.
+                        </p>
+
+                        <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t"><em class="txt-w500 txt-neutral1">07더3307</em> 차량 등록을 원하신다면<br>다시한번 차량 공유 요청을 해주세요.</p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 요청 안내(만료 알림) -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>차량 공유 요청 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">닫기</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">내 차 관리</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons error-circle size-48 txt-primary mg-b-2u"></span><br>
+                            <em class="txt-w500">07더3307</em> 차량에 대한<br>차량 공유 요청 유효 시간이 만료되었습니다.
+                        </p>
+
+                        <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t">등록을 원하신다면<br>다시한번 차량 공유 요청을 해주세요.</p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 삭제 컨펌 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">삭제</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <p class="txt-center mg-t-4u txt-16 txt-primary">
+                            <span class="line-icons caution size-48 txt-primary mg-b-2u"></span><br>
+                            등록된 내 차량을 삭제 하시겠습니까?
+                        </p>
+
+                        <p class="txt-center txt-neutral2 txt-13 mg-t-8u pd-t-4u border-t">
+                            <span class="txt-primary">*</span> 정비/점검 이력과 함께 디지털이력관리 등<br>내차 관리를 받으실 수 없습니다.
+                        </p>
+                        <p class="txt-center txt-neutral2 txt-13 mg-t-2u">
+                            <span class="txt-primary">*</span> 삭제 후 내 차량으로 다시 등록하시면<br>이전과 동일한 혜택을 받으실 수 있습니다.
+                        </p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량번호 인증 안내 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-action -->
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-6u txt-center">
+                            <p class="txt-18">차량번호 인증이란?</p>
+                            <hr class="short dp-block center mg-v-4u">
+                            <p class="txt-neutral2"><span class="txt-neutral1">차번조회로 내 차량을 등록하신 경우</span><br>
+                                차량번호가 자동 인증되며, 기존 정비이력을 포함하여<br>
+                                신규 정비이력·디지털이력 관리 등<br>다양한 서비스를 받으실 수 있습니다.
+                            </p>
+                            <p class="txt-neutral2 mg-t-2u"><span class="txt-neutral1">직접선택을 통해 내 차량을 등록하신 경우</span><br>
+                                [인증하기] 버튼을 선택해주세요.
+                            </p>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Popup -->
+<!-- 차량 공유 회원 안내 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-action -->
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-6u txt-center">
+                            <p class="txt-18">차량 공유 회원이란?</p>
+                            <hr class="short dp-block center mg-v-4u">
+                            <p class="txt-neutral2">
+                                차량 공유 요청 동의 후 차량의 서비스이력을<br>
+                                공유하고 계신 회원을 말합니다.
+                            </p>
+                            <p class="txt-neutral2 mg-t-2u">
+                                차량 공유 회원이 되기 위해서는<br>
+                                먼저 차량을 등록하신 회원님의 동의가 필요합니다.
+                            </p>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

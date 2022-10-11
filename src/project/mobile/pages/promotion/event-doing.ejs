@@ -1,0 +1,42 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<div id="container" class="mypage">
+    <!-- 이벤트  top -->
+    <div class="review_top">
+        <ul class="mypage_tab01">
+            <li class="on"><a href="https://m.tstation.com/promotion/event-list">진행중인 이벤트</a></li>
+            <li><a href="https://m.tstation.com/promotion/past-event-list">지난 이벤트</a></li>
+        </ul>
+    </div>
+    <!-- //이벤트  top -->
+    <!-- event list -->
+    <div class="event_list ing">
+        <ol id="evtList">
+            <li>
+                <a href="https://m.tstation.com/promotion/event/detail/00000000010226" data-ap-promotion="{&#039;id&#039;:&#039;00000000010226&#039;,&#039;name&#039;:&#039;The Premium Rewards - SUV&#039;,&#039;creative&#039;:&#039;marketing/2020/20200831162021/ventusAward.png&#039;,&#039;display_type&#039;:&#039;banner&#039;,&#039;position&#039;:1}" class="more">
+                    <span class="img"><img src="https://m.tstation.com/upload/marketing/2020/20200831162021/ventusAward.png" alt="The Premium Rewards - SUV"></span>
+                    <span class="tit">The Premium Rewards - SUV</span>
+                    <span class="date">2020.08.05~2020.10.31</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://m.tstation.com/promotion/event/detail/00000000010209" data-ap-promotion="{&#039;id&#039;:&#039;00000000010209&#039;,&#039;name&#039;:&#039;The Premium Rewards - Sedan&#039;,&#039;creative&#039;:&#039;marketing/2020/20200529172350/0501_reward_list_banner.png&#039;,&#039;display_type&#039;:&#039;banner&#039;,&#039;position&#039;:2}" class="more">
+                    <span class="img"><img src="https://m.tstation.com/upload/marketing/2020/20200529172350/0501_reward_list_banner.png" alt="The Premium Rewards - Sedan"></span>
+                    <span class="tit">The Premium Rewards - Sedan</span>
+                    <span class="date">2020.05.01~2020.10.31</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://m.tstation.com/promotion/event/detail/00000000010159" data-ap-promotion="{&#039;id&#039;:&#039;00000000010159&#039;,&#039;name&#039;:&#039;스마트픽업 이벤트 &#039;,&#039;creative&#039;:&#039;marketing/2020/20200422131737/smartpickup_200401_list_banner.png&#039;,&#039;display_type&#039;:&#039;banner&#039;,&#039;position&#039;:3}" class="more">
+                    <span class="img"><img src="https://m.tstation.com/upload/marketing/2020/20200422131737/smartpickup_200401_list_banner.png" alt="스마트픽업 이벤트 "></span>
+                    <span class="tit">스마트픽업 이벤트 </span>
+                    <span class="date">2020.07.01~2020.09.30</span>
+                </a>
+            </li>
+        </ol>
+    </div>
+    <!-- //event list -->
+</div>

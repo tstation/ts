@@ -1,0 +1,105 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '설정' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+<main id="main">
+    <div class="tab-item">
+        <a href="" class="on">계정관리</a>
+        <a href="" class="">알림설정</a>
+        <a href="" class="">버전정보</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container app-settings-page">        
+        <section class="login-setting-section">
+            <!-- 20211109 // -->
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        로그인을 해주세요
+                    </div>
+                    <div class="cell">
+                        <button type="button" class="btn-item round btn-login btn-reset">
+                            <span class="label-txt txt-12">로그인</span>
+                            <span class="line-icons chev-right size-20"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        김한국 고객님
+                    </div>
+                    <div class="cell">
+                        <button type="button" class="btn-item round btn-logout btn-reset">
+                            <span class="label-txt txt-12">로그아웃</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- // 20211109 -->
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        자동로그인
+                    </div>
+                    <div class="cell">
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <div class="switch-track">
+                                <div class="switch">
+                                    <div class="switch-handle"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="native-setting-section">
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <p class="row-header-copy txt-14">위치정보 이용 수집동의</p>
+                        <p class="row-subheader-copy txt-11 txt-neutral2">현재위치 주변 스토어검색을 위해 접근이 필요합니다. </p>
+                    </div>
+                    <div class="cell">
+                        <label class="toggle-switch">
+                            <input type="checkbox" >
+                            <div class="switch-track">
+                                <div class="switch">
+                                    <div class="switch-handle"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <p class="row-header-copy txt-14">사진/카메라 이용동의</p>
+                        <p class="row-subheader-copy txt-11 txt-neutral2">포토리뷰 작성을 위한 사진첩/카메라 접근이 필요합니다..</p>
+                    </div>
+                    <div class="cell">
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <div class="switch-track">
+                                <div class="switch">
+                                    <div class="switch-handle"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+
+    </div>
+</main>

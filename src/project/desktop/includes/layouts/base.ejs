@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title><%- locals.blocks.title %></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <link rel="shortcut icon" href="pc-static-root/images/common/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="pc-static-root/images/common/favicon.ico" type="image/x-icon">
+
+    <!-- Old Styles -->
+    <link rel="stylesheet" type="text/css" href="pc-static-root/css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="pc-static-root/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="pc-static-root/css/layout.css" />
+
+    <!-- New Styles -->
+    <link type="text/css" rel="stylesheet" href="pc-static-root/css/fonts/NotoSansKR/NotoSansKR.css">
+    <link type="text/css" rel="stylesheet" href="pc-static-root/css/fonts/LineIcons/LineIcons.css">
+    <link type="text/css" rel="stylesheet" href="pc-static-root/css/reset_pc_override.css" />
+    <link type="text/css" rel="stylesheet" href="pc-static-root/css/layout_pc_override.css" />
+    <link type="text/css" rel="stylesheet" href="pc-static-root/css/style_pc.css">
+    <link type="text/css" rel="stylesheet" href="pc-static-root/css/u_pc.css">
+    <link type="text/css" rel="stylesheet" href="pc-static-root/css/tam.css"><!-- 타알못 PAGE CSS include -->
+
+    <!-- Old Scripts -->
+    <script type="text/javascript" src="pc-static-root/js/common/publish/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/common.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/publish/swiper.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/publish/datepicker.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/ajax.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/number.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/page_util.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/jquery.form.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/rsvDate.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/footer.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/title_util.js"></script>
+
+    <!-- New Scripts -->
+    <script type="text/javascript" src="pc-static-root/js/common/prefixfree.min.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/swiper.min.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/rangeslider.min.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/pointer-events-polyfill.js"></script>
+    <script type="text/javascript" src="pc-static-root/js/common/components.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+    <%- locals.widget('src/project/desktop/includes/layouts/header.ejs') %>
+
+    <div id="sky_pen" class="sky_main">
+        <%- locals.body %>
+        <%- locals.widget('src/project/desktop/includes/layouts/footer.ejs') %>
+        <%- locals.widget('src/project/desktop/includes/layouts/layer-scarce-popup.ejs') %>
+        <%- locals.widget('src/project/desktop/includes/layouts/layer-inner-popup.ejs') %>
+        <%- locals.widget('src/project/desktop/includes/layouts/loading-dim.ejs') %>
+        <%- locals.widget('src/project/desktop/includes/layouts/ui-scripts.ejs') %>
+        <%- locals.widget('src/project/desktop/includes/layouts/recent-product.ejs') %>
+        <%- locals.widget('src/project/desktop/includes/layouts/guide.ejs') %>
+    </div>
+</div>
+</body>
+</html>

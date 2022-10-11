@@ -1,0 +1,21 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page_tit">
+                        <h4>상품비교내역</h4>
+                        <div class="btn_right"><a href="https://www.tstation.com/customer-service/qna.do" class="btnM2 btnS07">1:1문의하기</a></div>
+                    </div>
+                    <p class="nodata">1:1 상담내역이 없습니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

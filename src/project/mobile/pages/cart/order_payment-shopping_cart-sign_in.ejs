@@ -1,0 +1,649 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '장바구니(5)' }) %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <script>
+        $(document).ready(function () { $('body').addClass('bg-light1') });
+    </script>
+
+    <div class="container">
+        <section>
+            <!-- 장바구니 empty msg -->
+            <div class="empty-box txt-center pd-v-15u">
+                <div class="middler">
+                    <span class="line-icons error-circle size-48"></span>
+                    <p class="empty-msg">장바구니에 담긴 상품이 없습니다.</p>
+                </div>
+            </div>
+
+            <div class="container bg-fff pd-h-5u pd-t-5u pd-b-4u">
+                <div class="container border-all bg-light1 bg-filet-4 pd-h-4u pd-v-3u">
+                    <p class="txt-12">각 상품의 금액에 현재 보유한 쿠폰이 적용되어 있으며 쿠폰 사용 여부에 따라 장바구니 상품의 금액에 변동이 있을 수 있습니다.</p>
+                    <p class="txt-12 txt-primary">스마트페이 주문 시 전체 상품 무이자 할부 적용됩니다.</p>
+                    <p class="txt-12 txt-primary">스마트페이 주문 시 할인쿠폰 적용은 불가합니다.</p><!-- 2021-06-24 -->
+                </div>
+            </div>
+
+            <div class="section-header bg-fff border-light">
+                <label class="check-item">
+                    <!-- 장바구니에 상품이 없을 경우 disabled -->
+                    <input type="checkbox" checked>
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u">전체 선택(3/5)</span>
+                    </div>
+                </label>
+
+                <div class="extra pd-r-5u">
+                    <!-- 장바구니에 상품이 없을 경우 disabled -->
+                    <button type="button" class="btn-item btn-xs btn-neutral btn-ol round">
+                        <span class="label-txt txt-12">선택삭제</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- 상품 리스트 -->
+                <ul class="list-size-full cart-goods-list pd-h-5u pd-t-4u pd-b-6u">
+                    <li>
+                        <!-- 타이어 평상 -->
+                        <div class="card">
+                            <div class="container clearfix">
+                                <label class="check-item float-l">
+                                    <input type="checkbox" checked>
+                                    <div class="icon-holder">
+                                        <span class="line-icons square size-20"></span>
+                                    </div>
+                                </label>
+
+                                <button type="button" class="btn-item btn-s btn-inv btn-neutral round min-w float-r">
+                                    <span class="line-icons close size-20"></span>
+                                </button>
+                            </div>
+
+                            <div class="product-area">
+                                <div class="thumb-wrap" onclick="window.location.href=''">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                        <!-- 한국타이어:hk / 미쉐린:mc / 피렐리:pi / 맥시스:mx -->
+                                        <div class="brands-logo lf"></div>
+                                    </div>
+                                </div>
+                                <div class="description-area">
+                                    <span class="badge badge-s mg-b-1u">정숙/승차감우선</span>
+                                    <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                    <div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                    <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                    <!--<div class="model">Ventus S2 AS</div>-->
+                                    <p class="size">245/45R18</p>
+                                    <p class="extra-cost">배송비/장착비 0원</p>
+
+                                    <div class="container">
+                                        <p class="cart-price discount"><small class="txt-throughline">293,400원</small></p>
+                                        <p class="cart-price line-32 v-middle">226,200<small>원</small></p>
+
+                                        <span class="form-control-number">
+                                                    <input type="number" value="4" max="4" min="1" step="1" />
+                                                    <button class="control control-decrease disabled">
+                                                        <span class="line-icons remove-circle size-20"></span>
+                                                    </button>
+                                                    <span class="label"><span class="count">1</span></span>
+                                                    <button class="control control-increase">
+                                                        <span class="line-icons add-circle size-20"></span>
+                                                    </button>
+                                                </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 바로구매가 가능할 경우 노출 -->
+                            <div class="container pd-h-5u pd-b-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol btn-s round full-w">
+                                    <span class="label-txt txt-14">주문</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <!-- 경정비 평상 -->
+                        <div class="card">
+                            <div class="container clearfix">
+                                <label class="check-item float-l">
+                                    <input type="checkbox" checked>
+                                    <div class="icon-holder">
+                                        <span class="line-icons square size-20"></span>
+                                    </div>
+                                </label>
+
+                                <button type="button" class="btn-item btn-s btn-inv btn-neutral round min-w float-r">
+                                    <span class="line-icons close size-20"></span>
+                                </button>
+                            </div>
+
+                            <div class="product-area">
+                                <div class="thumb-wrap" onclick="window.location.href=''">
+                                    <div class="thumb-holder">
+                                        <img src="mc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                    </div>
+                                </div>
+                                <div class="description-area">
+                                    <div class="model">S-OIL 7 GOLD - 5W30</div>
+                                    <p class="description">에어필터, 오일필터 포함</p>
+
+                                    <div class="container">
+                                        <p class="cart-price discount"><small class="txt-throughline">113,400원</small></p>
+                                        <p class="cart-price line-32 v-middle">104,000<small>원</small></p>
+
+                                        <span class="form-control-number">
+                                                    <input type="number" value="1" min="1" step="1" />
+                                                    <button class="control control-decrease disabled">
+                                                        <span class="line-icons remove-circle size-20"></span>
+                                                    </button>
+                                                    <span class="label"><span class="count">1</span></span>
+                                                    <button class="control control-increase">
+                                                        <span class="line-icons add-circle size-20"></span>
+                                                    </button>
+                                                </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 바로구매가 가능할 경우 노출 -->
+                            <div class="container pd-h-5u pd-b-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol btn-s round full-w">
+                                    <span class="label-txt txt-14">주문</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <!-- 타이어 스마트 페이 적용 -->
+                        <div class="card">
+                            <div class="container clearfix">
+                                <label class="check-item float-l">
+                                    <input type="checkbox" checked>
+                                    <div class="icon-holder">
+                                        <span class="line-icons square size-20"></span>
+                                    </div>
+                                </label>
+
+                                <button type="button" class="btn-item btn-s btn-inv btn-neutral round min-w float-r">
+                                    <span class="line-icons close size-20"></span>
+                                </button>
+                            </div>
+
+                            <div class="product-area">
+                                <div class="thumb-wrap" onclick="window.location.href=''">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                        <!-- 한국타이어:hk / 미쉐린:mc / 피렐리:pi / 맥시스:mx -->
+                                        <div class="brands-logo lf"></div>
+                                    </div>
+                                </div>
+                                <div class="description-area">
+                                    <span class="badge badge-s mg-b-1u">정숙/승차감우선</span>
+                                    <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                    <div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                    <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                    <!--<div class="model">Ventus S2 AS</div>-->
+                                    <p class="size">245/45R18</p>
+                                    <p class="extra-cost">배송비/장착비 0원</p>
+
+                                    <div class="container">
+                                        <p class="cart-price discount"><small class="txt-throughline">293,400원</small></p>
+                                        <p class="cart-price line-32 v-middle">226,200<small>원</small></p>
+
+                                        <span class="form-control-number">
+                                                    <!-- 스마트페이일 경우 input disabled처리 -->
+                                                    <input type="number" value="4" max="4" min="1" step="1" disabled/>
+                                                    <button class="control control-decrease disabled">
+                                                        <span class="line-icons remove-circle size-20"></span>
+                                                    </button>
+                                                    <span class="label"><span class="count">1</span></span>
+                                                    <button class="control control-increase">
+                                                        <span class="line-icons add-circle size-20"></span>
+                                                    </button>
+                                                </span>
+                                    </div>
+                                    <!--주문하기버튼-->
+                                    <!--div class="mg-t-5u">
+                                        <button type="button" class="btn-item btn-neutral btn-ol btn-s round full-w">
+                                            <span class="label-txt txt-14">주문하기</span>
+                                        </button>
+                                    </div-->
+                                    <!--//주문하기버튼-->
+                                </div>
+                            </div>
+
+                            <!-- 바로구매가 가능할 경우 노출 -->
+                            <div class="container pd-h-5u pd-b-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol btn-s round full-w">
+                                    <span class="label-txt txt-14">주문</span>
+                                </button>
+                            </div>
+
+                            <!-- 스마트페이일 경우 노출 -->
+                            <div class="container border-t">
+                                <ul class="pd-h-4u list-size-flex">
+                                    <li class="flex-auto txt-0 line-40">
+                                                <span class="smart-pay-badge">
+                                                    <img src="mc-static-root/images/common/smart_pay_logo_w.svg" class="no-mg" title="스마트페이"/>
+                                                </span>
+
+                                        <button type="button" class="btn-item btn-neutral btn-xs round btn-inv min-w">
+                                            <span class="line-icons size-20 info-circle"></span>
+                                        </button>
+                                    </li>
+                                    <li class="flex-auto txt-0 line-40 txt-right">
+                                        <p class="dp-inblock txt-12 v-middle txt-nowrap">226,200원<em class="txt-primary">(월 18,850원 / 12개월)</em></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <!-- 예약상품 -->
+                        <div class="card">
+                            <div class="container clearfix">
+                                <label class="check-item float-l">
+                                    <input type="checkbox" checked>
+                                    <div class="icon-holder">
+                                        <span class="line-icons square size-20"></span>
+                                    </div>
+                                </label>
+
+                                <button type="button" class="btn-item btn-s btn-inv btn-neutral round min-w float-r">
+                                    <span class="line-icons close size-20"></span>
+                                </button>
+                            </div>
+
+                            <div class="product-area">
+                                <div class="thumb-wrap" onclick="window.location.href=''">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                        <!-- 한국타이어:hk / 미쉐린:mc / 피렐리:pi / 맥시스:mx -->
+                                        <div class="brands-logo hk"></div>
+                                    </div>
+                                </div>
+                                <div class="description-area">
+                                    <span class="badge badge-s mg-b-1u">정숙/승차감우선</span>
+                                    <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                    <div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                    <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                    <!--<div class="model">Ventus S2 AS</div>-->
+                                    <p class="size">245/45R18</p>
+                                    <p class="extra-cost">배송비/장착비 0원</p>
+
+                                    <div class="container">
+                                        <p class="cart-price discount"><small class="txt-throughline">293,400원</small></p>
+                                        <p class="cart-price line-32 v-middle">226,200<small>원</small></p>
+
+                                        <span class="form-control-number">
+                                                    <input type="number" value="4" max="4" min="1" step="1"/>
+                                                    <button class="control control-decrease disabled">
+                                                        <span class="line-icons remove-circle size-20"></span>
+                                                    </button>
+                                                    <span class="label"><span class="count">1</span></span>
+                                                    <button class="control control-increase">
+                                                        <span class="line-icons add-circle size-20"></span>
+                                                    </button>
+                                                </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 바로구매가 가능할 경우 노출 -->
+                            <div class="container pd-h-5u pd-b-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol btn-s round full-w">
+                                    <span class="label-txt txt-14">주문</span>
+                                </button>
+                            </div>
+
+                            <!-- 예약상품일 경우 노출 -->
+                            <div class="container border-t">
+                                <p class="txt-0 txt-center line-40">
+                                    <span class="line-icons check-circle size-20 mg-r-1u txt-neutral3"></span>
+                                    <span class="txt-12 v-middle">본 상품은 11월 24일부터 장착일 선택 가능합니다.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <!-- 일시 품절일 경우 'soldout'클래스 추가 -->
+                        <div class="card soldout">
+                            <div class="container clearfix">
+                                <label class="check-item float-l">
+                                    <input type="checkbox" disabled>
+                                    <div class="icon-holder">
+                                        <span class="line-icons square size-20"></span>
+                                    </div>
+                                </label>
+
+                                <button type="button" class="btn-item btn-s btn-inv btn-neutral round min-w float-r">
+                                    <span class="line-icons close size-20"></span>
+                                </button>
+                            </div>
+
+                            <div class="product-area">
+                                <div class="thumb-wrap" onclick="window.location.href=''">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                        <div class="brands-logo hk"></div>
+                                    </div>
+                                </div>
+                                <div class="description-area">
+                                    <span class="badge badge-s mg-b-1u">정숙/승차감우선</span>
+                                    <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                    <div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                    <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                    <!--<div class="model">Ventus S2 AS</div>-->
+                                    <p class="size">245/45R18</p>
+                                    <p class="extra-cost">배송비/장착비 0원</p>
+
+                                    <div class="container">
+                                        <p class="cart-price discount"><small class="txt-throughline">293,400원</small></p>
+                                        <p class="cart-price line-32 v-middle">226,200<small>원</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 일시 품절일 경우 재입고 알림버튼 -->
+                            <div class="container pd-h-5u pd-b-4u">
+                                <button type="button" class="btn-item btn-primary btn-ol btn-s round full-w">
+                                    <span class="label-txt txt-14">재입고 알림 신청</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="container cart-total border-t border-light">
+                    <table class="cart-price-table pd-slim txt-12">
+                        <colgroup>
+                            <col style="width:50%;"/>
+                            <col style="width:50%;"/>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>총 상품금액</th>
+                            <!-- 장바구니에 상품 없을 경우 0원 -->
+                            <td>1,525,900원</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <th>총 공임비</th>
+                            <td>0원</td>
+                        </tr>
+                        </tbody>
+                        <tbody class="payment-total">
+                        <tr>
+                            <th class="txt-14">결제예상금액</th>
+                            <!-- 장바구니에 상품 없을 경우 0원 -->
+                            <td class="txt-14"><em>1,525,900</em>원</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <ul class="list-size-equal mg-t-3u">
+                        <li class="pd-r-1u">
+                            <!-- 장바구니에 상품 없을 경우 disabled -->
+                            <button type="button" class="btn-item btn-neutral btn-ol full-w round">
+                                <span class="label-txt">선택 주문</span>
+                            </button>
+                        </li>
+
+                        <li class="pd-l-1u">
+                            <!-- 장바구니에 상품 없을 경우 disabled -->
+                            <button type="button" class="btn-item btn-neutral full-w round">
+                                <span class="label-txt">전체 주문</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="container bg-fff border-b border-light pd-h-5u pd-t-2u pd-b-4u">
+                    <ul class="list-style-disc txt-11 txt-neutral2">
+                        <li>쿠폰 및 혜택 적용은 주문 페이지에서 가능합니다.</li>
+                        <li><span class="txt-neutral1 txt-w500">스마트페이</span> 주문 시 전체 상품 무이자 할부 적용됩니다.</li>
+                        <li>장바구니의 상품은 30일동안 보관됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- 판매종료 상품 없는 경우 통째로 노출 안함 -->
+            <div class="container mg-t-8u">
+                <div class="section-header border-none">
+                    <h4 class="txt-14 line-40">판매종료 상품(2)</h4>
+
+                    <div class="extra pd-r-5u">
+                        <button type="button" class="btn-item btn-xs btn-neutral btn-ol round">
+                            <span class="label-txt txt-12">전체삭제</span>
+                        </button>
+                    </div>
+                </div>
+
+                <ul class="list-size-full cart-goods-list pd-h-5u">
+                    <li>
+                        <!-- 판매종료 상품일 경우 'invalid'클래스 추가 -->
+                        <div class="card invalid">
+                            <div class="container clearfix">
+                                <button type="button" class="btn-item btn-s btn-inv btn-neutral round min-w float-r">
+                                    <span class="line-icons close size-20"></span>
+                                </button>
+                            </div>
+
+                            <div class="product-area">
+                                <div class="thumb-wrap">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                        <!-- 한국타이어:hk / 미쉐린:mc / 피렐리:pi / 맥시스:mx -->
+                                        <div class="brands-logo hk"></div>
+                                    </div>
+                                </div>
+                                <div class="description-area">
+                                    <span class="badge badge-s mg-b-1u">정숙/승차감우선</span>
+                                    <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                    <div class="model"><img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                    <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                    <!--<div class="model">Ventus S2 AS</div>-->
+                                    <p class="size">245/45R18</p>
+                                    <p class="extra-cost">배송비/장착비 0원</p>
+                                </div>
+                            </div>
+
+                            <!-- 판매종료 아이템일 경우 노출 -->
+                            <div class="container border-t">
+                                <p class="txt-0 txt-center line-40">
+                                    <span class="line-icons error-circle size-20 mg-r-1u txt-neutral3"></span>
+                                    <span class="txt-12 v-middle">상품이 판매 종료되었습니다.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <!-- 판매종료 상품일 경우 'invalid'클래스 추가 -->
+                        <div class="card invalid">
+                            <div class="container clearfix">
+                                <button type="button" class="btn-item btn-s btn-inv btn-neutral round min-w float-r">
+                                    <span class="line-icons close size-20"></span>
+                                </button>
+                            </div>
+
+                            <div class="product-area">
+                                <div class="thumb-wrap" onclick="window.location.href=''">
+                                    <!-- 경정비 상품의 경우 'thumb-scaled'옵션 클래스 안붙음 -->
+                                    <div class="thumb-holder">
+                                        <img src="mc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                    </div>
+                                </div>
+                                <div class="description-area">
+                                    <div class="model">S-OIL 7 GOLD - 5W30</div>
+                                    <p class="description">에어필터, 오일필터 포함</p>
+
+                                    <div class="container">
+                                        <p class="cart-price discount"><small class="txt-throughline">113,400원</small></p>
+                                        <p class="cart-price line-32 v-middle">104,000<small>원</small></p>
+
+                                        <span class="form-control-number">
+                                                    <input type="number" value="1" min="1" step="1" />
+                                                    <button class="control control-decrease disabled">
+                                                        <span class="line-icons remove-circle size-20"></span>
+                                                    </button>
+                                                    <span class="label"><span class="count">1</span></span>
+                                                    <button class="control control-increase">
+                                                        <span class="line-icons add-circle size-20"></span>
+                                                    </button>
+                                                </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 판매종료 아이템일 경우 노출 -->
+                            <div class="container border-t">
+                                <p class="txt-0 txt-center line-40">
+                                    <span class="line-icons error-circle size-20 mg-r-1u txt-neutral3"></span>
+                                    <span class="txt-12 v-middle">상품이 판매 종료되었습니다.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- New Popup -->
+<!-- 스마트페이 주문 안내 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>스마트페이 주문 안내</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">주문하기</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <img src="mc-static-root/images/common/smart_pay_logo.svg" class="dp-block mg-h-auto" style="width:120px;" title="스마트페이"/>
+                        <p class="txt-center txt-14 mg-t-2u">스마트페이 주문하시겠습니까?</p>
+                        <p class="txt-center txt-neutral2 txt-12 mg-t-1u">주문 상품 중 스마트페이 적용 상품이<br>포함될 경우 동시 결제 상품 또한<br>12/24개월 무이자 할부 구매 가능 합니다.</p>
+
+                        <p class="txt-center txt-neutral2 txt-12 mg-t-4u"><span class="txt-primary">*</span> 스마트페이 주문은 할부 결제 외<br>다른 결제를 선택하실 수 없습니다.</p>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- New Popup -->
+<!-- 스마트페이 안내 -->
+<div class="modal-item full on">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>스마트페이 안내</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+            <div class="modal-action ">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral  round full-w" onclick="$.Tstation.popup().close()">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <div class="smart-pay-info-popup">
+                            <section class="txt-center pd-t-5u">
+                                <img src="mc-static-root/images/common/smart_pay_logo.svg" class="smart-pay-img" title="스마트페이" />
+
+                                <div class="container txt-16 txt-neutral2 mg-t-4u">
+                                    <span class="dp-inblock"><em class="txt-yellow txt-w700">#</em>월납입 <em class="txt-neutral1">1만7천원부터</em></span>
+                                    <span class="dp-inblock"><em class="txt-yellow txt-w700">#</em>할부수수료 <em class="txt-neutral1">0원</em></span><br>
+                                    <span class="dp-inblock"><em class="txt-yellow txt-w700">#</em><em class="txt-neutral1">서비스 쿠폰 </em>증정</span>
+                                </div>
+
+                                <h4 class="txt-18 txt-w500 mg-t-2u">타이어, 더 가볍게 구매하세요!</h4>
+                            </section>
+                            <section class="mg-t-6u">
+                                <div class="section-header">
+                                    <span class="numbering">01</span>
+                                    <h4 class="txt-16 txt-w500 mg-t-3u">4개 구매 시 12/24개월 무이자할부 혜택</h4>
+                                </div>
+                                <p class="txt-neutral2 txt-center mg-t-2u">타이어 구매 시 할부수수료 부담 없이,<br>무이자 할부로 결제하세요.</p>
+                            </section>
+                            <section class="mg-t-6u">
+                                <div class="section-header">
+                                    <span class="numbering">02</span>
+                                    <h4 class="txt-16 txt-w500 mg-t-3u">펑크/위치교환 서비스 쿠폰 증정</h4>
+                                </div>
+                                <p class="txt-neutral2 txt-center mg-t-2u">스마트페이로 결제한 회원에 한하여<br>펑크/위치교환 쿠폰을 제공해드립니다.</p>
+                            </section>
+                            <section class="border-all bg-light1 bg-filet-4 pd-v-3u pd-h-3u mg-t-10u">
+                                <ul class="list-style-disc txt-12 txt-neutral2">
+                                    <li>
+                                        스마트페이 결제 카드 : KB국민/신한/비씨/현대/삼성/씨티 카드
+                                        <p>체크/법인(기업)/선불카드는 스마트페이 결제가 불가합니다.</p>
+                                        <p>BC카드 3종(KB국민, 기업, 신한은)은 스마트페이 24개월 결제가 불가합니다.</p>
+                                    </li>
+                                    <li>사용조건 : 타이어 4개 구매 시 (할부 12/24개월 중 선택), 스마트페이 주문 시 할인쿠폰 적용은 불가</li>
+                                    <li>
+                                        펑크/위치교환 쿠폰 사용 조건
+                                        <p>- 스마트페이 구매 차량(타이어)에 한하여 적용 가능</p>
+                                        <p>- 티스테이션 멤버십 매장에서만 사용 가능</p>
+                                        <p>- 구매 후 1년 1장씩, 총 2장 지급(기간 경과 후 사용 불가)</p>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

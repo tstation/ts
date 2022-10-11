@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="theme-color" content="#fff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <title><%- locals.blocks.title %></title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="mc-static-root/images/common/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="mc-static-root/images/common/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/font/NotoSansKR/NotoSansKR.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/font/LineIcons/LineIcons.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/reset_mc_override.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/layout_mc_override.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/style_mc.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/u_mc.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/tam.css"><!-- 타알못 PAGE CSS include -->
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" ><!-- APP CSS include -->
+
+    <script type="text/javascript" src="mc-static-root/js/common/publish/jquery-1.12.4.js"></script>
+</head>
+<style>
+html, body, #wrap, .app-network-error {height: 100%;}
+.uiset::-webkit-scrollbar {
+    width: 0px;
+}
+</style>
+<body ontouchstart class="uiset">
+    <div id="wrap">
+        <div class="app-network-error">
+            <div class="thumb-img-wrap">
+                <img src="mc-static-root/images/app/img_connect_error.png" alt="" />
+            </div>
+            <div class="info-copy-wrap txt-center">
+                <p class="hero-copy txt-14 txt-neutral2 mg-t-10u">
+                    현재 사용 중인 디바이스 기기의
+                    <strong class="txt-w500 txt-neutral1">네트워크 통신상태가 불안정하여</strong>
+                    찾으시는 페이지를 열 수 없습니다
+                </p>
+                <p class="subhero-copy txt-14 txt-yellow mg-t-4u txt-w500">
+                    Wi-Fi 또는 LTE 상태를 확인 후
+                    다시 이용해 주세요
+                </p>
+            </div>
+            <div class="retry-button-wrap mg-t-8u">
+                <button type="button" class="btn-item btn-neutral full-w btn-s btn-ol round">
+                    <span class="label-txt txt-14">다시시도</span>
+                    <span class="line-icons refresh size-24"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

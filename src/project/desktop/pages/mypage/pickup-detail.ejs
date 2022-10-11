@@ -1,0 +1,743 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<!--
+    개발완료후 style_pc.css 로 이동
+    mypage.css -> style_pc.css
+-->
+<link rel="stylesheet" type="text/css" href="pc-static-root/css/mypage.css" />
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page_tit">
+                        <h4>픽업서비스 내역상세</h4>
+                    </div>
+
+                    <div class="container">
+                        
+                        <div class="pickup-detai-top mg-t-8u">
+                            <!-- .pickup-info-wrap 차량정보 START // -->
+                            <div class="pickup-info-wrap border-none">
+                                <div class="thumb-img">
+                                    <span class="mycar" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></span>
+                                </div>
+                                <div class="info">
+                                    <p class="car-name"> 레인지로버 이보크레인지로버 이보크레인지로버 이보크레인지로버 이보크레인지로버 이보크레인지로버 이보크레인지로버 이보크레인지로버 이보크레인지로버 이보크</p>
+                                    <span class="car-number">123가 3355</span>
+                                    <div class="service-type-wrap mg-t-5u">
+                                        <span class="label-txt mg-r-3u">신청 서비스</span>
+                                        <ul class="service-type-list">
+                                            <li><span class="service-type">픽업</span></li>
+                                            <li><span class="service-type">딜리버리</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- .pickup-info-wrap 차량정보 END // -->
+                            <!-- .location-progress-wrap 차량정보 START // -->
+                            <div class="location-progress-wrap">
+                                <!-- 픽업&딜리버리 모두 이용시 픽업 CASE :: .round-trip-case 추가-->
+                                <ol class="location-progress-list round-trip-case">
+                                    <!-- pointer step 진행시 .active 추가 
+                                                 setp 현재 상태 .current-location 추가-->
+                                    <li class="pointer active">
+                                        <div class="line"> 
+                                            <span class="info">고객요청</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer active current-location">
+                                        <div class="line"> 
+                                            <span class="info">접수완료</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer">
+                                        <div class="line"> 
+                                            <span class="info">픽업중</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer store-arrval-wrap">
+                                        <div class="line">
+                                            <span class="info">매장도착</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer reverse-pointer tire-mount">
+                                        <div class="line"> 
+                                            <span class="info">차량정비</span>
+                                            <span class="spot line-icons wrench size-24"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer reverse-pointer">
+                                        <div class="line"> 
+                                            <span class="info">딜리버리중</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer reverse-pointer">
+                                        <div class="line"> 
+                                            <span class="info">인계완료</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <script>
+                                    function roundTripFunc() {
+                                        var spotPostion = 3; //왕복 CASE 6단계 0, 1, 2, 3, 4, 5
+                                    
+                                        if(spotPostion === 0 ) {
+                                            spotPostionReset();
+                                            roundTripWrap.find('li').eq(0).addClass('active');
+                                            roundTripWrap.find('li').eq(0).addClass('current-location');
+                                        } else if(spotPostion >= 1 && spotPostion <= 3) {
+                                            spotPostionReset();
+                                            spotPostionNext(spotPostion)
+                                        } else if(spotPostion >= 4 && spotPostion <= 5) {
+                                            spotPostionReset();
+                                            spotPostionNext(spotPostion + 1)
+                                        } else {
+                                            return false;
+                                        }
+                                    
+                                        function spotPostionReset() {        
+                                            roundTripWrap.find('li').removeClass('active');
+                                            roundTripWrap.find('li').removeClass('current-location');
+                                        }
+                                    
+                                        function spotPostionNext(spotPostion) {
+                                            roundTripWrap.find('li:nth-child(-n' + '+' + (1 + spotPostion) + ')').addClass('active');
+                                            roundTripWrap.find('li').eq(spotPostion).addClass('current-location');
+                                        }
+                                    }
+                                    
+                                    var roundTripWrap = $('.round-trip-case');
+                                    if(roundTripWrap) {
+                                        roundTripFunc();
+                                    }    
+                                    
+                                    </script>
+                            </div><!-- .location-progress-wrap 차량정보 END // -->
+                        </div>
+
+                        <div class="pickup-detai-top mg-t-8u">
+                            <!-- .pickup-info-wrap 차량정보 START // -->
+                            <div class="pickup-info-wrap border-none">
+                                <div class="thumb-img">
+                                    <span class="mycar" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></span>
+                                </div>
+                                <div class="info">
+                                    <p class="car-name">레인지로버 이보크</p>
+                                    <span class="car-number">123가 3355</span>
+                                    <div class="service-type-wrap mg-t-5u">
+                                        <span class="label-txt mg-r-3u">신청 서비스</span>
+                                        <ul class="service-type-list">
+                                            <li><span class="service-type">픽업</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- .pickup-info-wrap 차량정보 END // -->
+                            <!-- .location-progress-wrap 차량정보 START 
+                                단일서비스시 .one-way-case-wrap 추가 // -->
+                            <div class="location-progress-wrap one-way-case">
+                                <ol class="location-progress-list">
+                                    <li class="pointer active">
+                                        <div class="line"> 
+                                            <span class="info">고객요청</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer active">
+                                        <div class="line"> 
+                                            <span class="info">접수완료</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer active">
+                                        <div class="line"> 
+                                            <span class="info">픽업중</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer active current-location">
+                                        <div class="line">
+                                            <span class="info">매장도착</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <script>
+
+                                function onewayFunc() {
+                                    var spotPostion = 1; //편도 CASE 4단계 0, 1, 2, 3 
+
+                                    if(spotPostion === 0 ) {
+                                        spotPostionReset();
+                                        onewayWrap.find('li').eq(0).addClass('active');
+                                        onewayWrap.find('li').eq(0).addClass('current-location');
+                                    } else if(spotPostion >= 1 && spotPostion <= 3) {
+                                        spotPostionReset();
+                                        spotPostionNext(spotPostion);
+                                    } else {
+                                        return false;
+                                    }
+
+                                    function spotPostionReset() {        
+                                        onewayWrap.find('li').removeClass('active');
+                                        onewayWrap.find('li').removeClass('current-location');
+                                    }
+
+                                    function spotPostionNext(spotPostion) {        
+                                        onewayWrap.find('li:nth-child(-n' + '+' + (1 + spotPostion) + ')').addClass('active');
+                                        onewayWrap.find('li').eq(spotPostion).addClass('current-location');
+                                    }
+                                }
+
+                                var onewayWrap = $('.one-way-case');
+                                if(onewayWrap) {
+                                    onewayFunc();
+                                }    
+                                </script>
+                            </div><!-- .location-progress-wrap 차량정보 END // -->
+                        </div>
+
+                        <div class="pickup-detai-top mg-t-8u">
+                            <!-- .pickup-info-wrap 차량정보 START // -->
+                            <div class="pickup-info-wrap border-none">
+                                <div class="thumb-img">
+                                    <span class="mycar" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></span>
+                                </div>
+                                <div class="info">
+                                    <p class="car-name">레인지로버 이보크</p>
+                                    <span class="car-number">123가 3355</span>
+                                    <div class="service-type-wrap mg-t-5u">
+                                        <span class="label-txt mg-r-3u">신청 서비스</span>
+                                        <ul class="service-type-list">
+                                            <li><span class="service-type">딜리버리</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- .pickup-info-wrap 차량정보 END // -->
+                            <!-- .location-progress-wrap 차량정보 START 
+                                단일서비스시 .one-way-case-wrap 추가 // -->
+                            <div class="location-progress-wrap one-way-case">
+                                <ol class="location-progress-list">
+                                    <li class="pointer active">
+                                        <div class="line"> 
+                                            <span class="info">고객요청</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer active">
+                                        <div class="line"> 
+                                            <span class="info">접수완료</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer active">
+                                        <div class="line"> 
+                                            <span class="info">딜리버리중</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                    <li class="pointer active current-location">
+                                        <div class="line">
+                                            <span class="info">인계완료</span>
+                                            <span class="spot"></span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div><!-- .location-progress-wrap 차량정보 END // -->
+                        </div>
+                        <div class="section pickup-history-section separate-top mg-t-15u"><!-- 101201 .separate-top 추가시 회색 라인 추가 -->
+                            <!-- 101201 // -->
+                            <div class="section-headcopy">
+                                <h3 class="headcopy">서비스 진행이력</h3>
+                            </div>
+                            <!-- // 101201 -->
+                
+                            <!-- 101201 
+                            .pickup-driver-connect 해당 class A, B 추가시
+                            A) .before-matching-case :: 매칭전
+                            B) .after-matching-case :: 매칭후
+                            // -->
+                            <!-- 매칭전 -->
+                            <div class="pickup-driver-connect after-matching-case">
+                                <div class="driver-viwer-wrap">
+                                    <div class="driver-name">
+                                        <span class="matching-label txt-1">배정완료</span>
+                                        <!-- 딜리버리 CASE -->
+                                        <div>
+                                            <span class="service-name">딜리버리 드라이버</span>
+                                            <span class="txt-14 pd-l-5u"><span class="line-icons call size-20 mg-r-2u"></span>010 - 8889 - 5578</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- 매칭후 -->
+                            <div class="pickup-driver-connect before-matching-case" style="display: none;">
+                                <div class="driver-viwer-wrap">
+                                    <div class="driver-name">
+                                        <span class="matching-label txt-10">배정대기</span>
+                                        <!-- 딜리버리 CASE -->
+                                        <div>
+                                            <span class="service-name">딜리버리 드라이버</span>
+                                        </div>
+                                    </div>
+                    
+                                    <button type="button" class="btn-item btn-l btn-neutral round min-w" disabled>
+                                        <span class="line-icons call size-24"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- // 101201 -->
+                
+                            <div class="driver-tracking-toggle-contents">
+                                <ul class="driver-tracking-wrap">
+                                    <li class="active"> 
+                                        <div class="driver-state">
+                                            <p class="state">인계완료</p>
+                                            <p class="date">7/8(목) 12:55</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">고객님의 차량이 안전하게 고객님께 도착했습니다.​</p>
+                                            <div class="button-wrap">
+                                                <button type="button" class="btn-item btn-primary btn-s btn-ol filet" onclick="callPopup.pickupCarPhoto();">
+                                                    <span class="label-txt txt-primary">도착 후 차량사진</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state">
+                                            <p class="state">딜리버리시작</p>
+                                            <p class="date">7/8(목) 12:52</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">매장에서 차량을 인수받아​ 고객님께 출발했습니다.</p>
+                                            <div class="button-wrap">
+                                                <button type="button" class="btn-item btn-primary btn-s btn-ol filet" onclick="callPopup.pickupCarPhoto();">
+                                                    <span class="label-txt txt-primary">출발 전 차량 사진</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state store-arrval">
+                                            <span class="line-icons wrench size-24"></span>
+                                        </div>
+                                        <div class="driver-message store-arrval">
+                                            <p class="copy">고객님의 차량을 정비중입니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state">
+                                            <p class="state">드라이버 배정</p>
+                                            <p class="date">7/8(목) 12:55</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">딜리버리 드라이버가 배정되었습니다.​</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state">
+                                            <p class="state">매장도착</p>
+                                            <p class="date">7/8(목) 12:55</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">고객님의 차량이 안전하게 매장에 도착했습니다.</p>
+                                            <div class="button-wrap">
+                                                <button type="button" class="btn-item btn-primary btn-s btn-ol filet" onclick="callPopup.pickupCarPhoto();">
+                                                    <span class="label-txt txt-primary">도착 후 차량사진</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state">
+                                            <p class="state">픽업시작</p>
+                                            <p class="date">7/8(목) 12:52</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">픽업 드라이버가 고객님께 도착 후,​ 픽업 서비스를 시작합니다.​</p>
+                                            <div class="button-wrap">
+                                                <button type="button" class="btn-item btn-primary btn-s btn-ol filet" onclick="callPopup.pickupCarPhoto();">
+                                                    <span class="label-txt txt-primary">출발 전 차량 사진</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state">
+                                            <p class="state">드라이버 배정</p>
+                                            <p class="date">7/8(목) 12:55</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">픽업 드라이버가 배정되었습니다.​</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state">
+                                            <p class="state">접수완료</p>
+                                            <p class="date">7/8(목) 12:52</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">[서비스명] 예약이 확정되었습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="driver-state">
+                                            <p class="state">고객요청</p>
+                                            <p class="date">7/8(목) 12:52</p>
+                                        </div>
+                                        <div class="driver-message">
+                                            <p class="copy">[서비스명] 신청이 완료되었습니다.</p>
+                                            <p class="copy">접수완료 이전 무료취소 가능</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="driver-tracking-toggle-button">
+                                <button class="toggle-button" onclick="onHandleContentsToggle(this);"><span class="blind">전체보기/간략히 보기</span><span class="icon line-icons chev-down size-24"></span></button>
+                            </div>
+                
+                            <script>
+                                
+                                driverTrackingToggleInit()
+                                function driverTrackingToggleInit() {
+                                    var trackinglist = $('.driver-tracking-wrap').find('li');
+                                    var trackinglistLengh = 4 //trackinglist.length;
+                
+                                    // trackinglistLengh 2 이하잃떄 아코디언 숨김 
+                                    if(trackinglistLengh <= 2) {
+                                        toggleHide();
+                                    } else {
+                                        return false
+                                    }
+                
+                                    function toggleHide() {
+                                        console.log('hide')
+                                        $('.driver-tracking-toggle-contents, .driver-tracking-toggle-button').addClass('hide');
+                                    }
+                                }
+                
+                                function onHandleContentsToggle(el) {
+                                    var button = el
+                                    var contents = $('.driver-tracking-toggle-contents')
+                
+                                    $(button).toggleClass('on')
+                                    $(contents).toggleClass('on')
+                                }
+                                    
+                
+                            </script>
+                
+                        </div>
+
+                        <div class="section pickup-confirm-section">
+                            <p class="info-copy"><span class="icon-receipt" onclick="callPopup.pickupInfoDetail();">신청정보 확인하기</span></p>
+                            <div class="button-wrap">
+                                <button type="button" class="btn-item btn-neutral btn-ol round">
+                                    <span class="label-txt">신청취소</span>
+                                </button>
+                                <button type="button" class="btn-item btn-neutral round">
+                                    <span class="label-txt">목록으로</span>
+                                </button>
+                            </div>
+                            <div class="noti-copy">
+                                <span class="line-icons error-circle-light size-26 mg-r-2u"></span>픽업 / 딜리버리 서비스 취소는 드라이버가 출발지에 도착하기 전까지만 가능합니다.
+                            </div>
+                        </div>
+
+                        
+                        
+                        
+            
+
+                        
+
+
+
+
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var callPopup = {
+        pickupCarPhoto: function () {
+            $.Tstation.popup().open({
+                ref: '',
+                title: '픽업서비스 차량사진',
+                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                contents: popupPickup.pickupCarPhoto, // 팝업을 바로 띄우고 싶을때
+                dimWhite: false,
+                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                    horizon: 0,
+                    vertical: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                full: true, // Full Popup
+            })  
+
+            // swiper js start
+            var pickupCarGallery = new Swiper(".pickup-car-indicator", {
+                spaceBetween: 12,
+                slidesPerView: "auto",
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+            });
+            var pickupCarZoom = new Swiper(".pickup-car-photo", {
+                zoom: true,
+                spaceBetween: 0,
+                thumbs: {
+                swiper: pickupCarGallery,
+                },
+            });
+            pickupCarGallery.init();
+            $(window).on('resize', function () {
+                pickupCarGallery.init();
+            });
+            // swiper js end
+        },
+        pickupInfoDetail: function () {
+            $.Tstation.popup().open({
+                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                contents: popupPickup.pickupInfoDetail, // 팝업을 바로 띄우고 싶을때
+                dimWhite: false,
+                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                    horizon: 0,
+                    vertical: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                full: false, // Full Popup
+                modalAction: {
+                    isNoBoundary: false,
+                    buttons: [
+                        {
+                            label: '확인',
+                            negative: true,
+                            action: '$.Tstation.popup().close()'
+                        }
+                    ]
+                }
+            })
+        },
+        pickupSignin: function () {
+            $.Tstation.popup().open({
+                ref: '',
+                title: '',
+                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                contents: popupPickup.pickupSignin, // 팝업을 바로 띄우고 싶을때
+                dimWhite: false,
+                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                    horizon: 4,
+                    vertical: 4,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                full: false, // Full Popup
+                modalAction: {
+                    isNoBoundary: false,
+                    buttons: [
+                        {
+                            label: '확인',
+                            negative: true,
+                            action: '$.Tstation.popup().close()'
+                        }
+                    ]
+                }
+            })
+        },
+    }
+
+    var popupPickup = {
+        pickupCarPhoto: `
+                    <!-- // ecma6를 Template literals를 사용하지 않지만 임의로 작성하였습니다.
+                            // 추후 개발시 \n 표기법으로 변경 부탁드립니다.  -->
+                    <div class="pickup-car-gallery">
+                        <p class="noti-copy mg-v-4u">드라이버 픽업출발 전 차량사진</p>
+                        <div class="swiper-container pickup-car-photo">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-zoom-container">
+                                        <img src="pc-static-root/images/mypage/@sample-pickupcar-2.jpg" alt="" />
+                                    </div>
+                                    <a href="pc-static-root/images/mypage/@sample-pickupcar-2.jpg" download class="btn-item btn-l btn-download round min-w" id="tttaa">
+                                        <span class="line-icons download size-24"></span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-zoom-container">
+                                        <img src="pc-static-root/images/mypage/@sample-pickupcar-3.jpg" alt="" />
+                                    </div>
+                                    <a href="pc-static-root/images/mypage/@sample-pickupcar-3.jpg" download class="btn-item btn-l btn-download round min-w">
+                                        <span class="line-icons download size-24"></span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-zoom-container">
+                                        <img src="pc-static-root/images/mypage/@sample-pickupcar-4.jpg" alt="" />
+                                    </div>
+                                    <a href="pc-static-root/images/mypage/@sample-pickupcar-4.jpg" download class="btn-item btn-l btn-download round min-w">
+                                        <span class="line-icons download size-24"></span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-zoom-container">
+                                        <img src="pc-static-root/images/mypage/@sample-pickupcar-5.jpg" alt="" />
+                                    </div>
+                                    <a href="pc-static-root/images/mypage/@sample-pickupcar-5.jpg" download class="btn-item btn-l btn-download round min-w">
+                                        <span class="line-icons download size-24"></span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-zoom-container">
+                                        <img src="pc-static-root/images/mypage/@sample-pickupcar-1.jpg" alt="" />
+                                    </div>
+                                    <a href="pc-static-root/images/mypage/@sample-pickupcar-1.jpg" download class="btn-item btn-l btn-download round min-w">
+                                        <span class="line-icons download size-24"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div thumbsSlider="" class="swiper-container pickup-car-indicator">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="pc-static-root/images/mypage/@sample-pickupcar-2.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="pc-static-root/images/mypage/@sample-pickupcar-3.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="pc-static-root/images/mypage/@sample-pickupcar-4.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="pc-static-root/images/mypage/@sample-pickupcar-5.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="pc-static-root/images/mypage/@sample-pickupcar-1.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mg-v-9u mg-h-5u">
+                            <button type="button" class="btn-item btn-neutral btn-ol full-w round">
+                                <span class="label-txt">차량사진 전체 다운받기</span>
+                            </button>
+                        </div>
+                    </div>`,
+        pickupInfoDetail: `
+        <div class="pickup-receipt-details">
+                            <h3>신청정보 상세</h3>
+                            <div class="receipt-info-wrap">
+                                <div class="bg-receipt bg-l"></div>
+                                <div class="bg-receipt bg-r"></div>
+                                <ul class="pickup-receipt-list receipt-info">
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">신청서비스</strong>
+                                            <!-- 20211216 // -->
+                                            <p class="receipt-copy"><del>픽업 / 딜리버리</del> 픽업</p>
+                                            <!-- // 20211216 -->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">고객요청 시간</strong>
+                                            <p class="receipt-copy">2021.04.15(목) / 11:32</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">요청 차량</strong>
+                                            <p class="receipt-copy">12가1234 /기아 올뉴쏘렌토</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">선택매장</strong>
+                                            <p class="receipt-copy">송파오금점</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">픽업 출발지</strong>
+                                            <p class="receipt-copy">경기도 의왕시 포일세거로리 123-1 포일 숲속마을 아프트 123단지 1234동 1234호</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">딜리버리 도착지</strong>
+                                            <p class="receipt-copy">서울특별시 서초구 양재동 232-1</p>
+                                        </div>
+                                    </li>                                
+                                </ul>
+
+                                <ul class="pickup-receipt-list receipt-payment">
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">픽업서비스 요금</strong>
+                                            <p class="receipt-copy">16,000<span class="unit">원</span></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">딜리버리서비스 요금</strong>
+                                            <p class="receipt-copy">16,000<span class="unit">원</span></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">(쿠폰할인)픽업쿠폰</strong>
+                                            <p class="receipt-copy">-15,500<span class="unit">원</span></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows">
+                                            <strong class="sub-header">(쿠폰할인)딜리버리쿠폰</strong>
+                                            <p class="receipt-copy">-15,500<span class="unit">원</span></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="rows payment-rows">
+                                            <strong class="sub-header">결제 금액</strong>
+                                            <!-- 20211216 취소 case // -->
+                                            <p class="receipt-copy mg-v-1u"><!-- 취소시 .mg-v-1u class 추가 -->
+                                                <del>1,000</del><span class="unit">원</span>
+                                                500<span class="unit">원</span>
+                                                <span class="txt-12 dp-block txt-primary">환불됨</span>
+                                            </p>
+                                            <!-- // 20211216 -->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+        `,
+        pickupSignin: '<div>\n' +
+            '</div>'
+    }
+</script>

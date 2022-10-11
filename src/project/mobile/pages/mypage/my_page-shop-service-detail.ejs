@@ -1,0 +1,82 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '매장서비스내역' }) %>
+<div id="container" class="mypage">
+    <!-- 매장서비스내역 -->
+    <div class="shop_list">
+        <ol class="list">
+            <li class="top">
+                <div class="order_info">
+						<span class="order_no">
+							<span class="date">주문일 : 2018-10-19</span>
+							주문번호 <i>12345689123</i>
+						</span>
+                    <!-- 1.매장직접방문 -->
+                    <ol class="info">
+                        <li><span class="tit">매장명</span>강남 논현점</li>
+                        <li><span class="tit">방문자</span>김남기</li>
+                    </ol>
+                    <!-- //1.매장직접방문 -->
+                </div>
+            </li>
+            <li>
+                <!-- detail -->
+                <dl class="dl_style02">
+                    <dt>상품정보</dt>
+                    <dd>
+                        <span class="tit">훨 얼라인먼트 조정</span>
+                        +00,000,000원
+                    </dd>
+                    <dd>
+                        <span class="tit">타이어 교체</span>
+                        0원
+                    </dd>
+                    <dd class="total01">
+                        <span class="tit">수량</span>
+                        2개
+                    </dd>
+                </dl>
+                <!-- //detail -->
+            </li>
+            <li>
+                <!-- detail -->
+                <dl class="dl_style02">
+                    <dt>결제정보</dt>
+                    <dd>
+                        <span class="tit">총 주문금액</span>
+                        +00,000,000원
+                    </dd>
+                    <dd>
+                        <span class="tit">상품가격(공임비)</span>
+                        0원
+                    </dd>
+                    <dd>
+                        <span class="tit">총 할인금액</span>
+                        0원
+                    </dd>
+                    <dd>
+                        <span class="tit">부가세(VAT)</span>
+                        0원
+                    </dd>
+                    <dd class="total02">
+                        <span class="tit">최종결제금액</span>
+                        <em>262,000</em>원
+                    </dd>
+                    <!-- 202012 pub // -->
+                    <dd>
+                            <span class="tit">
+                                <img src="mc-static-root/images/common/smart_pay_logo.svg" class="smart-pay-img" title="스마트페이">
+                                <p class="txt-11 txt-neutral1">무이자 월 납입금액</p>
+                            </span>
+                        <em class="txt-primary"><small>월</small> 11,800원 <span class="txt-12">/12개월</span></em>
+                    </dd>
+                    <!-- // 202012 pub -->
+                </dl>
+                <!-- //detail -->
+            </li>
+        </ol>
+    </div>
+    <!-- //매장서비스내역 -->
+</div>

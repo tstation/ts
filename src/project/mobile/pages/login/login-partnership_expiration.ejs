@@ -1,0 +1,49 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div style="height: 300px"></div>
+<script>
+    $(document).ready(function() {
+        var isRequirePartnership = true;
+        if (isRequirePartnership) {
+            $.Tstation.popup().open({
+                ref: 'partnership-expiration',
+                title: '계정 제휴 만료 안내',
+                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                contents: '<p class="txt-14 txt-w500 txt-center mg-b-2u">회원님의 계정 제휴가 만료 되었습니다.</p>\n' +
+                       '<p class="txt-14 txt-center">귀하의 계정에 대한 자세한 내용을 알고 싶으시다면, 고객센터(080-022-8272)로 문의 주시기 바랍니다.</p>',
+                dimWhite: false,
+                modalContentsPd: {
+                    horizon: 8,
+                    vertical: 8,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                modalSize: 'SMALL',
+                modalAction: {
+                    isNoBoundary: true,
+                    buttons: [
+                        {
+                            label: '문의하기',
+                            negative: false,
+                            // action: '',
+                            action: function () {
+                                alert('문의하기 위한 필요한 절차를 메소드로 만들어 호출 해 주세요.');
+                                $.Tstation.popup().close('partnership-expiration')
+                            }
+                        }
+                    ]
+                },
+                onOpen: function () {
+                    console.log('팝업이 열리면 파이어 합니다.');
+                },
+                onClose: function () {
+                    console.log('팝업이 닫히면 파이어 합니다.');
+                }
+            });
+        }
+    });
+</script>

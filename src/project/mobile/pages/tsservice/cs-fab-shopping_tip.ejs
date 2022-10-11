@@ -1,0 +1,179 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '쉬운 타이어 쇼핑' }) %>
+<main id="main">
+    <div class="container">
+        <div class="shopping-tip-wrap">
+            <ul class="shopping-tip-tabs">
+                <li><a href="#reserve" class="active" data-hash="reserve">직접방문</a></li>
+                <li><a href="#smart" data-hash="smart">스마트픽업</a></li>
+            </ul>
+            <div class="shopping-tip-container" data-hash="reserve">
+                <div class="shopping-tip-description">
+                    타이어 주문부터 장착까지 스마트하게 이용하세요.
+                </div>
+                <div class="shopping-tip-step-wrap tip-visit">
+                    <ul class="shopping-tip-step">
+                        <li><a href="#none" class="step active"><span class="copy">상품찾기</span></a></li>
+                        <li class="step-line"><a href="#none" class="step"><span class="copy">상품주문</span></a></li>
+                        <li><a href="#none" class="step"><span class="copy">내 차에 장착</span></a></li>
+                    </ul>
+                </div>
+                <div class="tip-visit-wrap">
+                    <div class="step"><img src="mc-static-root/images/common/shopping_tip_visit1.png" alt="" />
+                        <p class="blind">1. 상품찾기</p>
+                    </div>
+                    <div class="step"><img src="mc-static-root/images/common/shopping_tip_visit2.png" alt="" />
+                        <p class="blind">2. 상품주문</p>
+                    </div>
+                    <div class="step"><img src="mc-static-root/images/common/shopping_tip_visit3.png" alt="" />
+                        <p class="blind">3. 장착</p>
+                    </div>
+                </div>
+                <script>
+                    function visitAnchorScroll() {
+                        var shoppingTipVisit = $('.tip-visit');
+                        var shoppingTipVisitButton = shoppingTipVisit.find('li > a');
+                        var shoppingTipVisitHeight = shoppingTipVisit.outerHeight() + $('.navbar').outerHeight();
+                        var shoppingTipContainer = $('.tip-visit-wrap').find('.step');
+
+                        shoppingTipVisitButton.each(function(i, step) {
+                            shoppingTipVisitButton.eq(i).click(function(e) {
+                                e.preventDefault();
+                                shoppingTipVisitButton.removeClass('active');
+                                shoppingTipVisitButton.eq(i).addClass('active');
+                                scrollVisitPostion = shoppingTipContainer.eq(i).offset().top - shoppingTipVisitHeight;
+                                $('html, body').animate({
+                                    scrollTop: scrollVisitPostion
+                                }, 300)
+                            })
+
+                            $(window).scroll(function () {
+                                var shoppingTipScroll = $(document).scrollTop() + 1;
+                                var shoppingTipOne = shoppingTipContainer.eq(0).offset().top - shoppingTipVisitHeight
+                                var shoppingTipTwo = shoppingTipContainer.eq(1).offset().top - shoppingTipVisitHeight
+                                var shoppingTipThree = shoppingTipContainer.eq(2).offset().top - shoppingTipVisitHeight
+
+                                if(shoppingTipScroll >= shoppingTipOne && shoppingTipScroll < shoppingTipTwo) {
+                                    shoppingTipVisitButton.removeClass('active');
+                                    shoppingTipVisitButton.eq(0).addClass('active');
+                                } else if(shoppingTipScroll >= shoppingTipTwo && shoppingTipScroll < shoppingTipThree) {
+                                    shoppingTipVisitButton.removeClass('active');
+                                    shoppingTipVisitButton.eq(1).addClass('active');
+                                } else if(shoppingTipScroll >= shoppingTipThree) {
+                                    shoppingTipVisitButton.removeClass('active');
+                                    shoppingTipVisitButton.eq(2).addClass('active');
+                                }
+                            });
+                        })
+                    }
+
+                    visitAnchorScroll()
+                </script>
+            </div>
+            <div class="shopping-tip-container" style="display: none;" data-hash="smart">
+                <div class="shopping-tip-description">
+                    이제 집에서 편하게 타이어 주문부터 장착까지 이용하세요.
+                </div>
+                <div class="shopping-tip-step-wrap tip-pickup">
+                    <ul class="shopping-tip-step">
+                        <li><a href="#none" class="step active"><span class="copy">상품찾기</span></a></li>
+                        <li class="step-line"><a href="#none" class="step"><span class="copy">상품주문</span></a></li>
+                        <li><a href="#none" class="step"><span class="copy">내 차에 장착</span></a></li>
+                    </ul>
+                    <script>
+                        function pickupAnchorScroll() {
+                            var shoppingTippickup = $('.tip-pickup');
+                            var shoppingTippickupButton = shoppingTippickup.find('li > a');
+                            var shoppingTippickupHeight = shoppingTippickup.outerHeight() + $('.navbar').outerHeight();
+                            shoppingTippickupButton.each(function(i) {
+                                shoppingTippickupButton.eq(i).click(function(e) {
+                                    e.preventDefault();
+                                    shoppingTippickupButton.removeClass('active');
+                                    shoppingTippickupButton.eq(i).addClass('active');
+                                    var scrollpickupPostion = $('.tip-pickup-wrap').find('.step').eq(i).offset().top - shoppingTippickupHeight;
+                                    $('html, body').animate({
+                                        scrollTop: scrollpickupPostion
+                                    }, 300)
+                                })
+
+                                $(window).scroll(function () {
+                                    var shoppingpickScroll = $(document).scrollTop() + 1;
+                                    var shoppingpickOne = $('.tip-pickup-wrap').find('.step').eq(0).offset().top - shoppingTippickupHeight
+                                    var shoppingpickTwo = $('.tip-pickup-wrap').find('.step').eq(1).offset().top - shoppingTippickupHeight
+                                    var shoppingpickThree = $('.tip-pickup-wrap').find('.step').eq(2).offset().top - shoppingTippickupHeight
+
+                                    if(shoppingpickScroll >= shoppingpickOne && shoppingpickScroll < shoppingpickTwo) {
+                                        shoppingTippickupButton.removeClass('active');
+                                        shoppingTippickupButton.eq(0).addClass('active');
+                                    } else if(shoppingpickScroll >= shoppingpickTwo && shoppingpickScroll < shoppingpickThree) {
+                                        shoppingTippickupButton.removeClass('active');
+                                        shoppingTippickupButton.eq(1).addClass('active');
+                                    } else if(shoppingpickScroll >= shoppingpickThree) {
+                                        shoppingTippickupButton.removeClass('active');
+                                        shoppingTippickupButton.eq(2).addClass('active');
+                                    }
+                                });
+
+                            })
+                        }
+
+                        pickupAnchorScroll()
+                    </script>
+                </div>
+                <div class="tip-pickup-wrap">
+                    <div class="step-info"><img src="mc-static-root/images/common/shopping_pickup_top.png" alt="" />
+                        <p class="blind">스마트픽업 서비스란 - 매장에 직접 찾아가기 어려운 분들을 위해 드라이버가 직접 차를 픽업하고 정비 작업 후 딜리버리 해주는 티스테이션만의 차별화된 프리미엄 서비스 입니다.</p>
+                    </div>
+                    <div class="step"><img src="mc-static-root/images/common/shopping_pickup_con1.png" alt="" />
+                        <p class="blind">1. 상품찾기</p>
+                    </div>
+                    <div class="step"><img src="mc-static-root/images/common/shopping_pickup_con2.png" alt="" />
+                        <p class="blind">2. 상품주문</p>
+                    </div>
+                    <div class="step"><img src="mc-static-root/images/common/shopping_pickup_con3.png" alt="" />
+                        <p class="blind">3. 장착</p>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function() {
+                    // tab event
+                    var tireinfoTabWrap = $('.shopping-tip-wrap');
+                    var tireinfoTab = tireinfoTabWrap.find('.shopping-tip-tabs');
+                    var tireinfoButton = tireinfoTab.find('li > a');
+                    var tireinfoContainer = $('.shopping-tip-container');
+
+                    tireinfoButton.each(function(i) {
+                        tireinfoButton.eq(i).click(function (e) {
+                            // e.preventDefault();
+                            tireinfoContainer.hide();
+                            tireinfoContainer.eq(i).show();
+                            tireinfoTabWrap.find('.shopping-tip-step > li > .step').removeClass('active');
+                            tireinfoTabWrap.find('.shopping-tip-step').eq(i).find('li > .step').eq(0).addClass('active');
+                            tireinfoButton.removeClass();
+                            tireinfoButton.eq(i).addClass('active');
+                        })
+                    })
+                });
+
+                // hash check - is fire once on document ready
+                var hash = window.location.hash.replace('#', '');
+                var hashList = ['reserve', 'smart'];
+                var checkHash = function () {
+                    if (!hash || hashList.indexOf(hash) === -1) return
+                    $.each($('.shopping-tip-tabs').find('li > a'), function (index, item) {
+                        $(item).data().hash === hash ? $(item).addClass('active') : $(item).removeClass('active');
+                    });
+                    $.each($('.shopping-tip-container'), function (index, item) {
+                        $(item).css({ 'display': $(item).data().hash === hash ? 'block' : 'none' });
+                    });
+                };
+                checkHash();
+            </script>
+        </div>
+    </div>
+</main>

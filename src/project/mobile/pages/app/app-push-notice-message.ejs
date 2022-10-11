@@ -1,0 +1,170 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'PUSH 알림메세지' }) %>
+<!-- web에서 pageTitle 명 점검/교체 알림 app에서 PUSH 알림메세지 -->
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <div class="container app-notice-message-page">
+        <section class="sort-message-section">
+            <p class="info-typo txt-16">티스테이션 all my T 점검/혜택 알림으로 내 차를 스마트하게 관리하세요.</p>
+            <!-- 20211109 // -->
+            <!-- web case .divider display: block -->
+            <!-- .divider // -->
+            <p class="divider dark txt-11 pd-v-2u pd-h-5u bg-light1 txt-neutral2">점검/교체 알림을 원하지 않으시면 <strong>마이페이지 > 개인정보변경</strong>에서 <br />알림톡 수신을 해제해 주세요</p>
+            <!-- // .divider -->
+            <!-- // 20211109 -->
+
+            <!-- web case .radio-list-wrap display: none -->
+            <!-- radio-list-wrap // -->
+            <div class="radio-list-wrap">
+                <label class="radio-item mg-r-6u">
+                    <input type="radio" name="test_radio" checked="">
+                    <div class="icon-holder">
+                        <span class="line-icons circle size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt txt-12">전체</span>
+                    </div>
+                </label>
+                <label class="radio-item mg-r-6u">
+                    <input type="radio" name="test_radio">
+                    <div class="icon-holder">
+                        <span class="line-icons circle size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt txt-12">정비알림</span>
+                    </div>
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="test_radio">
+                    <div class="icon-holder">
+                        <span class="line-icons circle size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt txt-12">혜택정보</span>
+                    </div>
+                </label>
+            </div>
+            <!-- //radio-list-wrap -->
+        </section>
+
+        <!-- web case .noti-agree-wrap display: none-->
+        <!-- noti-agree-wrap // -->
+        <div class="noti-agree-wrap mg-t-3u">
+            <div class="sort-info txt-121">
+                총 <strong class="txt-primary">12</strong>개
+            </div>
+            <label class="toggle-switch">
+                <span class="label-txt mg-r-1u txt-14">알림수신여부</span>
+                <input type="checkbox" checked="">
+                <div class="switch-track">
+                    <div class="switch">
+                        <div class="switch-handle"></div>
+                    </div>
+                </div>
+            </label>
+            <script> 
+                $('.toggle-switch').find('input').on('click', toggleSwitch);
+
+                $(document).ready(function(){
+                    /* toggleSwitch init 초기화 */
+                    toggleSwitch();
+                })
+
+                function toggleSwitch() {   
+                    var switchRadio =  $('.toggle-switch').find('input');
+                    var sortResultWrap =  $('.sort-result-section');
+
+                    if(switchRadio.is(":checked")) {
+                         sortResultWrap.find('.sort-result-wrap').show()
+                         sortResultWrap.find('.empty-wrap').hide()
+                    } else {
+                        sortResultWrap.find('.sort-result-wrap').hide()
+                        sortResultWrap.find('.empty-wrap').show()
+                    };
+                }
+            </script>
+        </div>
+        <!-- // noti-agree-wrap -->
+
+        <section class="sort-result-section">
+            <div class="empty-wrap txt-center pd-v-20u" style="display: none;">
+                <span class="icon-notice-empty"></span>
+                <p class="txt-14 txt-neutral3 mg-t-2u">PUSH 알림을 설정하고<br />더 많은 혜택 정보를 받아보세요!</p><!-- 20211117 -->
+            </div>
+            <div class="sort-result-wrap">
+                <!-- 20211117 // -->
+                <div class="sort-result-empty txt-center pd-v-20u">
+                    <span class="icon-message-empty"></span>
+                    <p class="txt-14 txt-neutral3 mg-t-2u">새로운 알림이 없어요!</p>
+                </div>
+                <!-- // 20211117 -->
+                <div class="rowgroup">
+                    <a href="#none">
+                        <div class="row">
+                            <div class="rowheader">
+                                <!--
+                                    아이콘 정비일경우 .repair 추가시 컬러값 변경
+                                    아이콘 혜택일경우 .benefit 추가시 컬러값 변경
+                                -->
+                                <span class="icon-wrap repair mg-r-2u"><span class="line-icons wrench size-20"></span></span>
+                            </div>
+                            <div class="cell">
+                                <span class="d-day txt-14 txt-primary">D-1</span>
+                                <h4 class="headcopy txt-14 txt-neutral1 mg-t-1u">
+                                    <em class="car-number mg-r-1u">123거7000</em>
+                                    타이어 교환시점입니다.
+                                </h4>
+                                <p class="message txt-12 txt-neutral2 mg-t-1u">안전운행을 위해 36개월 주기 타이어 교환을 권장합니다.</p>
+                                <p class="date txt-12 txt-neutral2 mg-t-2u">2021.09.16</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#none">
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="icon-wrap benefit mg-r-2u"><span class="line-icons coupon-sale size-14"></span></span>
+                            </div>
+                            <div class="cell">
+                                <span class="d-day txt-14 txt-primary">D-1</span>
+                                <h4 class="headcopy txt-14 txt-neutral1 mg-t-1u">
+                                    스마트픽업 쿠폰알림
+                                </h4>
+                                <p class="message txt-12 txt-neutral2 mg-t-1u">홍길동님께서 사용하실 수 있는 스마트 픽업 의 유효기간이 1 후 만료될 예정입니다.<br />
+                                    - 쿠폰만료일 : #2021-08-30 유효기간 만료 전 티스테이션에서 제공해드리는 스마트 픽업 을 확인해 주세요!</p>
+                                <p class="date txt-12 txt-neutral2 mg-t-2u">2021.09.16</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#none">
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="icon-wrap benefit mg-r-2u"><span class="line-icons present size-20"></span></span>
+                            </div>
+                            <div class="cell">
+                                <span class="d-day txt-14 txt-primary">D-1</span>
+                                <h4 class="headcopy txt-14 txt-neutral1 mg-t-1u">
+                                    Summer Splash 경품추천 이벤트 오..
+                                </h4>
+                                <p class="message txt-12 txt-neutral2 mg-t-1u">행사타이어 4개 구매하고 자동응모 이벤트 참여하세요!</p>
+                                <p class="date txt-12 txt-neutral2 mg-t-2u">2021.09.16</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="container pd-h-5u mg-t-2u">
+                    <p class="txt-12 txt-neutral3 txt-right">* 발송된 알림은 12개월이후 자동 삭제됩니다.</p>
+                </div>
+                <div class="more-button-wrap txt-center mg-t-10u">
+                    <button type="button" class="btn-item btn-neutral btn-ol round more-button">
+                        <span class="label-txt">더보기</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

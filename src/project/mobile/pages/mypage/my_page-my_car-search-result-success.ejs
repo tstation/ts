@@ -1,0 +1,85 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '차량번호 조회결과' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container">
+                <div class="searching-car-view">
+                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample01.png');"></div>
+                    <div class="txt-info">
+                        <p>검색하신 <strong>12가 1234</strong> 차량은</p>
+                        <p>현대 <strong>‘쏘렌토 2.0 디젤’</strong> 입니다.</p>
+                    </div>
+                </div>
+                <div class="searching-result-select-bx">
+                    <div class="searching-result-select">
+                        <div class="form-control form-control-medium-sm">
+                            <div class="input-group">
+                                <select class="input-box txt-12">
+                                    <option value="options1">모델 연도 - 2020</option>
+                                    <option value="options2">모델 연도 - 2020</option>
+                                    <option value="options3">모델 연도 - 2020</option>
+                                    <option value="options4">모델 연도 - 2020</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control form-control-medium-sm">
+                            <div class="input-group">
+                                <select class="input-box txt-12">
+                                    <option value="options1">세부 모델 - 럭셔리</option>
+                                    <option value="options2">세부 모델 - 럭셔리</option>
+                                    <option value="options3">세부 모델 - 럭셔리</option>
+                                    <option value="options4">세부 모델 - 럭셔리</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="help-txt">
+                        <strong>잠깐!</strong>
+                        타이어 사이즈 어떻게 보는지 모르신다면?
+                        <button type="button"><span class="line-icons error-circle size-16"></span></button>
+                    </p>
+                    <ul class="tire-select-list-bx">
+                        <li>
+                            <input type="radio" id="tire_select_01" class="tire-select-design" name="tire_select">
+                            <label for="tire_select_01">
+                                <span class="line-icons check size-20"></span>
+                                <i>기본</i>
+                                <strong>245/45R18</strong>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="tire_select_02" class="tire-select-design" name="tire_select" checked="checked">
+                            <label for="tire_select_02">
+                                <span class="line-icons check size-20"></span>
+                                <strong>
+                                    <em><i>전륜</i> 245/40R19</em>
+                                    <em><i>후륜</i> 275/35R19</em>
+                                </strong>
+                            </label>
+                        </li>
+                    </ul>
+                    <p class="message-bx">
+                        <span class="txt">검색결과가 실제 타이어의 사이즈와 다를 수 있습니다.</span>
+                        애프터마켓에서 인치업을 하신 경우 사이즈 검색을 통해<br>적합한 상품을 확인하실 수 있습니다.
+                    </p>
+                    <button type="button" class="btn-item btn-neutral full-w round mg-t-2u">
+                        <span class="label-txt">내 차량 등록하기</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

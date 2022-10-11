@@ -1,0 +1,104 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '상품평' }) %>
+<div id="container" class="mypage">
+    <!-- 상품평  top -->
+    <div class="review_top">
+        <ul class="mypage_tab01">
+            <li class="on"><a href="review.jsp">작성 가능한 상품평</a></li>
+            <li><a href="review_list.jsp">내가 작성한 상품평</a></li>
+        </ul>
+    </div>
+    <!-- //상품평  top -->
+    <!-- 상품평  list -->
+    <div class="review_list date">
+        <p class="nodata">최근 <em>작성가능</em>한<br>상품평이 없습니다.</p>
+        <ol>
+            <li>
+                <!-- 01. 주문일자 -->
+                <div class="order_no">
+                    주문일자 <em>2018-06-24</em>
+                </div>
+                <!-- //01. 주문일자 -->
+                <!--  unit01 : 상품리스트 -->
+                <dl class="unit01">
+                    <dt>
+                        <a href="#"><img src="mc-static-root/images/common/sample/tire.jpg" class="unitImg" alt="상품명 이미지"></a>
+                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                        <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                    </dt>
+                    <dd class="info">
+                        <a href="#">
+								<span class="flag_04">
+									<em class="c01 off">Comfort</em>
+									<em class="c02">SPORT</em>
+									<em class="c03 off">Runflat</em>
+								</span>
+                            <span class="unitT1">
+								    <span>Ventus S Sport</span>
+                                <!-- <small class="sub">Ventus S2 AS</small> -->
+								</span>
+                            <span class="unitT3">245/45R18</span>
+                            <span class="flag_05">
+								    <em>승용차</em>
+								    <em>사계절 </em>
+								    <em>BMW 공식 인증</em>
+								    <em>프리미엄</em>
+								</span>
+                        </a>
+                    </dd>
+                </dl>
+                <!--  //unit01 -->
+                <!-- 03. button -->
+                <div class="btn02">
+                    <button class="btnM3 btnS01">상품평 쓰기</button>
+                </div>
+                <!-- //03. button -->
+            </li>
+            <li>
+                <!-- 01. 주문일자 -->
+                <div class="order_no">
+                    주문일자 <em>2018-06-24</em>
+                </div>
+                <!-- //01. 주문일자 -->
+                <!--  unit01 : 상품리스트 -->
+                <dl class="unit01">
+                    <dt>
+                        <a href="#"><img src="mc-static-root/images/common/sample/tire.jpg" class="unitImg" alt="상품명 이미지"></a>
+                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                        <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                    </dt>
+                    <dd class="info">
+                        <a href="#">
+								<span class="flag_04">
+									<em class="c01 off">Comfort</em>
+									<em class="c02">SPORT</em>
+									<em class="c03 off">Runflat</em>
+								</span>
+                            <span class="unitT1">
+								    <span>Ventus S Sport</span>
+								    <small class="sub">Ventus S2 AS</small>
+								</span>
+                            <span class="unitT3">245/45R18</span>
+                            <span class="flag_05">
+								    <em>승용차</em>
+								    <em>사계절 </em>
+								    <em>BMW 공식 인증</em>
+								    <em>프리미엄</em>
+								</span>
+                        </a>
+                    </dd>
+                </dl>
+                <!--  //unit01 -->
+                <!-- 03. button -->
+                <div class="btn02">
+                    <button class="btnM3 btnS01">상품평 쓰기</button>
+                </div>
+                <!-- //03. button -->
+            </li>
+        </ol>
+    </div>
+    <!-- //상품평  list -->
+</div>

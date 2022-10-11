@@ -1,0 +1,2684 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <!-- TODO: 팝업 템플릿 - 아래의 스크립트들은 퍼블을 위한 스크립트로 개발 하실 때는 아래 스크립트 안의 주석된 마크업을 확용 해 주세요. -->
+
+    <script>
+        var popupTemplate = {
+            alertNotMatchCarNumberOwner: 
+            `<!-- 20220504 // -->
+                <p class="txt-center pd-t-4u txt-16">
+                    <span class="line-icons error-circle size-48 txt-neutral3 mg-b-2u"></span><br>
+                    차량번호 또는 소유주명이 일치하지 않습니다.
+                </p>
+                
+                <div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-3u mg-t-6u txt-13">
+                    <p class="txt-neutral2 txt-narrow"><em class="txt-primary txt-narrow">*</em> 공동명의 차량의 경우: 대표 소유주명을 입력하거나, 차량등록증에 기입된 값을 정확히 입력해 주세요.<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 홍길동외1인(이순신)<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 홍길동 외1(이순신)<br> 
+                    &nbsp;&nbsp;&nbsp;- ex) 홍길동, 이순신<br> 
+                    </p>                                    
+                    <p class="txt-neutral2 mg-t-4u txt-narrow"><em class="txt-primary">*</em> 렌트/리스 차량의 경우: 해당 업체의 정확한 회사명(캐피탈명)을 소유주명에 입력해 주세요.<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 메르세데츠벤츠파이낸셜서비스코리아(주)<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 비엠더블유파이낸셜서비스코리아(주)<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 폭스바겐파이낸셜서비스코리아(주)<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 캐이비캐피탈(주)<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 롯데렌탈 (주), 롯데렌탈(주), 롯데렌탈주식회사,<br> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;롯데렌탈 주식회사
+                    </p>
+                    <p class="txt-primary mg-t-3u txt-narrower icon-word-copy"><span class="line-icons arrow-right bg-bullet size-16"></span> 업체 또는 소유주명의 정확한 띄어쓰기(또는 붙여쓰기)를 지켜 입력해주세요.</p>
+                </div>
+                <!-- // 20220504 -->
+            `,
+            confirmFamilyRequest: '<div class="searching-car-view not-register-bx">\n' +
+              '                                <div class="image-area">\n' +
+              '                                    <div class="img-holder" style="background-image:url(\'pc-static-root/images/common/mycar_sample01.png\');"></div>\n' +
+              '                                    <span class="line-icons error-circle size-48"></span>\n' +
+              '                                </div>\n' +
+              '                                <div class="txt-info">\n' +
+              '                                    <p class="number-alt">차량번호 <strong>\'07더3307\'</strong>은<br>이미 다른 회원님께 등록되어 있습니다.</p>\n' +
+              '                                    <p>\n' +
+              '                                        내 차량으로 등록하시려면 기등록 회원님께<br>차량 공유 요청에 대한 동의를 받아야 합니다.\n' +
+              '                                        <em>차량 공유 요청을 보내시겠습니까?</em>\n' +
+              '                                    </p>\n' +
+              '                                </div>\n' +
+              '                            </div>',
+            confirmRequireLogin: '<p class="txt-center">로그인 후, 차량번호 조회가 가능합니다.</p>',
+            confirmTireSize: '<div class="txt-center pd-h-4u mg-b-4u">\n' +
+              '    <h3 class="txt-w500 mg-b-2u">타이어 옆면의 숫자조합을 확인해 주세요.</h3>\n' +
+              '    <p>같은 차종이라도 등급에 따라 타이어 사이즈가 다른 경우가 있으니 장착할 차량의 타이어를 직접 보고 사이즈를 확인해주세요.</p>\n' +
+              '</div>\n' +
+              '<div class="image-container">\n' +
+              '    <img src="pc-static-root/images/common/how_to_check_tire_size.png" alt="타이어 사이즈 확인법">\n' +
+              '</div>',
+            searchGate: '<div class="tab-item list-size-equal no-sticky on-layer">\n' +
+              '    <a href="#" class="on" data-tab-event="tire">타이어 상품</a>\n' +
+              '    <a href="#" class="" data-tab-event="goods">경정비 상품</a>\n' +
+              '    <div class="indicator" style="width: 419px;"></div>\n' +
+              '</div>\n' +
+              '<!-- 타이어 상품 검색 -->\n' +
+              '<div class="tab-contents on find-tire-gate pd-v-10u pd-h-10u" data-tab-contents="tire">\n' +
+              '    <ul>\n' +
+              '        <li class="col_one_third">\n' +
+              '            <button type="button" class="btn-find-tire" onclick="callPopup.searchByCarNumber({ type: \'tire\', step: \'form\' });">\n' +
+              '                <img src="pc-static-root/images/common/graphics_tire_search_car_number.svg">\n' +
+              '                <span class="label">차량번호로 찾기</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '        <li class="col_one_third">\n' +
+              '            <!-- 아래의 onclick 기능은 따로 기능 구현 하세요. 템플릿으로 보여주기 위한 예시입니다. -->\n' +
+              '            <button type="button" class="btn-find-tire" onclick="callPopup.searchByCarModel({ type: \'tire\', step: \'brands\' });">\n' +
+              '                <img src="pc-static-root/images/common/graphics_tire_search_car_kinds.svg">\n' +
+              '                <span class="label">차종으로 찾기</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '        <li class="col_one_third col_last txt-center">\n' +
+              '            <!-- 아래의 onclick 기능은 따로 기능 구현 하세요. 템플릿으로 보여주기 위한 예시입니다. -->\n' +
+              '            <button type="button" class="btn-find-tire" onclick="callPopup.searchByTireSize();">\n' +
+              '                <img src="pc-static-root/images/common/graphics_tire_search_size.svg">\n' +
+              '                <span class="label">사이즈로 찾기</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '    </ul>\n' +
+              '</div>\n' +
+              '<!-- 경정비 상품 검색 -->\n' +
+              '<div class="tab-contents find-tire-gate pd-v-10u pd-h-10u" data-tab-contents="goods">\n' +
+              '    <ul>\n' +
+              '        <li class="col_half">\n' +
+              '            <button type="button" class="btn-find-tire" onclick="callPopup.searchByCarNumber({ type: \'goods\', step: \'form\' });">\n' +
+              '                <img src="pc-static-root/images/common/graphics_tire_search_car_number.svg">\n' +
+              '                <span class="label">차량번호로 찾기</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '        <li class="col_half col_last">\n' +
+              '            <!-- 아래의 onclick 기능은 따로 기능 구현 하세요. 템플릿으로 보여주기 위한 예시입니다. -->\n' +
+              '            <button type="button" class="btn-find-tire" onclick="callPopup.searchByCarModel({ type: \'goods\', step:\'brands\' });">\n' +
+              '                <img src="pc-static-root/images/common/graphics_tire_search_car_kinds.svg">\n' +
+              '                <span class="label">차종으로 찾기</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '    </ul>\n' +
+              '    <!--<div class="txt-center mg-t-6u">\n' +
+              '        <div class="caution-item dp-inblock">\n' +
+              '            <span>차종에 따라 여러 규격을 사용하는 경우가 있으니 반드시 정확한 사이즈를 확인해 주세요.</span>\n' +
+              '        </div>\n' +
+              '    </div>-->\n' +
+              '</div>',
+            searchByCarNumberTireForm: '<ul class="list-size-equal modal-stepper">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">차량번호 조회</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">조회 결과</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="container pd-h-8u pd-t-15u pd-b-25u">\n' +
+              '    <form class="car-number-search-form">\n' +
+              '        <div class="container pd-v-4u">\n' +
+              '            <p class="txt-16">운행 중인 차량을 조회하면,<br /><strong>내 차에 맞는 타이어를 손쉽게</strong>찾을 수 있어요.</p>\n' +
+              '        </div>\n' +
+              '        <table class="">\n' +
+              '            <colgroup>\n' +
+              '                <col style="width:37%;"/>\n' +
+              '                <col style="width:37%;"/>\n' +
+              '                <col style="width:26%;"/>\n' +
+              '            </colgroup>\n' +
+              '            <tbody>\n' +
+              '            <tr>\n' +
+              '                <td class="pd-r-1u">\n' +
+              '                    <div class="form-control form-control-lg">\n' +
+              '                        <div class="input-group">\n' +
+              '                            <input type="text" class="input-box" placeholder="차량번호  ex)12가4321">\n' +
+              '                            <div class="tools">\n' +
+              '                                <button type="button" class="clear"><span class="line-icons close-circle"></span></button>\n' +
+              '                            </div>\n' +
+              '                        </div>\n' +
+              '                    </div>\n' +
+              '                </td>\n' +
+              '                <td class="pd-l-1u">\n' +
+              '                    <div class="form-control form-control-lg">\n' +
+              '                        <div class="input-group">\n' +
+              '                            <input type="text" class="input-box" placeholder="소유주명  ex)홍길동">\n' +
+              '                            <div class="tools">\n' +
+              '                                <button type="button" class="clear"><span class="line-icons close-circle"></span></button>\n' +
+              '                            </div>\n' +
+              '                        </div>\n' +
+              '                    </div>\n' +
+              '                </td>\n' +
+              '                <td class="pd-l-3u">\n' +
+              '                    <button type="button" class="btn-item btn-neutral round full-w btn-l">\n' +
+              '                        <span class="label-txt">조회하기</span>\n' +
+              '                    </button>\n' +
+              '                </td>\n' +
+              '            </tr>\n' +
+              '            </tbody>\n' +
+              '        </table>\n' +
+              '    </form>\n' +
+              '</div>',
+            searchByCarNumberTireResult: '<ul class="list-size-equal modal-stepper">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">차량번호 조회</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">조회 결과</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="container search-result-wrap">\n' +
+              '    <div class="search-result-car">\n' +
+              '        <div class="car-img-holder">\n' +
+              '            <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <p class="info-txt">\n' +
+              '            검색하신 <em>07더 3307</em> 차량은<br>\n' +
+              '            기아 <em>‘쏘렌토 2.0 디젤’</em> 입니다.\n' +
+              '        </p>\n' +
+              '    </div>\n' +
+              '\n' +
+              '    <ul class="list-size-equal select-year-option">\n' +
+              '        <li>\n' +
+              '            <div class="form-control form-control-md">\n' +
+              '                <div class="input-group">\n' +
+              '                    <select class="input-box">\n' +
+              '                        <option value="" selected>모델 연도 - 전체</option>\n' +
+              '                        <option value="">모델 연도 - 2017</option>\n' +
+              '                    </select>\n' +
+              '                    <div class="tools">\n' +
+              '                        <button><span class="line-icons chev-down"></span></button>\n' +
+              '                    </div>\n' +
+              '                </div>\n' +
+              '            </div>\n' +
+              '        </li>\n' +
+              '\n' +
+              '        <li>\n' +
+              '            <div class="form-control form-control-md">\n' +
+              '                <div class="input-group">\n' +
+              '                    <select class="input-box">\n' +
+              '                        <option value="" selected>세부 모델 - 전체</option>\n' +
+              '                        <option value="">세부 모델 - 기본형</option>\n' +
+              '                    </select>\n' +
+              '                    <div class="tools">\n' +
+              '                        <button><span class="line-icons chev-down"></span></button>\n' +
+              '                    </div>\n' +
+              '                </div>\n' +
+              '            </div>\n' +
+              '        </li>\n' +
+              '    </ul>\n' +
+              '</div>\n' +
+              '<div class="container bg-light1 border-t pd-h-8u pd-v-6u">\n' +
+              '    <div class="container">\n' +
+              '        <div class="container txt-0 line-24">\n' +
+              '            <p class="float-l txt-16 txt-neutral2 line-24"><span class="txt-neutral1 txt-w500">타이어 사이즈를 선택</span>해 주세요. </p>\n' +
+              '\n' +
+              '            <!-- onclick 타이어 사이즈 확인 팝업 오픈 -->\n' +
+              '            <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet float-r pd-h-1u" onclick="callPopup.confirmTireSize()";>\n' +
+              '                <span class="label-txt txt-14">타이어 사이즈 확인방법</span>\n' +
+              '                <span class="line-icons info-circle size-20"></span>\n' +
+              '            </button>\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <ul class="mg-t-1u select-tire-size">\n' +
+              '            <li>\n' +
+              '                <!-- 기본 뱃지는 label에 \'default\'클래스 추가 -->\n' +
+              '                <label class="default">\n' +
+              '                    <input type="radio" name="tire_size_radio" checked/>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">전륜 245/45R18<span class="divider">|</span>후륜 255/40R18</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="radio" name="tire_size_radio"/>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">전륜·후륜 245/40R19</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="radio" name="tire_size_radio"/>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">전륜·후륜 250/45R18</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '        </ul>\n' +
+              '\n' +
+              '        <div class="caution-item mg-t-6u">\n' +
+              '            <p>제시해드린 타이어 사이즈는 실제와 다르거나 차종에 따라 여러 규격을 사용하는 경우가 있으니,<br />반드시 차량 타이어에서 정확한 사이즈를 확인해 주세요.</p>\n' +
+              '            <p class="txt-primary">애프터마켓에서 인치업을 하신 경우 사이즈 검색을 통해 적합한 상품을 확인하실 수 있습니다.</p>\n' +
+              '        </div>\n' +
+              '        <div class="box box-gray box-radius mg-t-6u">\n' +
+              '            <label class="check-item">\n' +
+              '                <input type="checkbox"/>\n' +
+              '                <div class="icon-holder">\n' +
+              '                    <span class="line-icons square size-20"></span>\n' +
+              '                </div>\n' +
+              '                <div class="labelling">\n' +
+              '                    <span class="label-txt mg-h-1u">차종 검색 결과를 마이페이지에 등록하시면 더 편하게 상품을 찾으실 수 있습니다.</span>\n' +
+              '                </div>\n' +
+              '            </label>\n' +
+              '        </div>' +
+              '    </div>\n' +
+              '\n' +
+              '    <div class="container txt-center pd-t-6u mg-t-6u border-t">\n' +
+              '        <button type="button" class="btn-item btn-neutral round w-150" onclick="$.Tstation.popup().close()">\n' +
+              '            <span class="label-txt">상품 조회</span>\n' +
+              '        </button>\n' +
+              '    </div>\n' +
+              '</div>',
+            //  0722 start
+            searchByCarNumberNotfound: '<p>\n' + '일부 차종 (2000년 이전 국산차, 2006 이전 수입차)의 경우 <br />차량번호 조회 서비스가 제한될 수 있습니다. </p>\n' +
+                '    <p>\n' +'(상용차/특수차/병행수입차 등은 서비스 이용 불가)\n' +
+                '</p>\n' +
+                '    <p class="mg-t-2u">\n'+'<strong>‘사이즈로 찾기’</strong>를 이용해 주세요.<br>\n' +
+                '</p>',
+            //  0722 end
+            searchByCarModelTireBrands: '<div class="">\n' +
+              '<div class="tab-item size-m list-size-equal on-layer no-sticky">\n' +
+              '     <a href="#" class="" data-tab-event="1">차량번호로 찾기</a>\n' +
+              '     <a href="#" class="on" data-tab-event="2">차종으로 찾기</a>\n' +
+              '     <a href="#" class="" data-tab-event="3">사이즈로 찾기</a>\n' +
+              '</div>\n' +
+              '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">브랜드</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">차종</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부차종</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연료</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도/세부모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-5">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">현대</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">기아</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">제네시스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">쉐보레(GM대우)</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">르노삼성</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">쌍용</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">벤츠</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">BMW</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">아우디</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">닛산</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">람보르기니</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">랜드로버</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">렉서스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">로터스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">르노</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">링컨</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">마세라티</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">마이바흐</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">미니</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">미쯔비시</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">벤틀리</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">볼보</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">시트로엥</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">애스턴마틴</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">인피니티</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">재규어</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">지프</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">캐딜락</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">크라이슬러</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">토요타</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">페라리</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">포드</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">포르쉐</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">폭스바겐</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">푸조</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">피아트</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">혼다</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">동풍소콘</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">마쯔다</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">스마트</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">알파로메오</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">테슬라</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelTireModels: '<div class="tab-item size-m list-size-equal on-layer no-sticky">\n' +
+              '     <a href="#" class="" data-tab-event="1">차량번호로 찾기</a>\n' +
+              '     <a href="#" class="on" data-tab-event="2">차종으로 찾기</a>\n' +
+              '     <a href="#" class="" data-tab-event="3">사이즈로 찾기</a>\n' +
+              '</div>\n' +
+              '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">현대</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">차종</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부차종</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연료</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도/세부모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-5">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">쏘나타​</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">i40</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">갤로퍼2​</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">그랜드 스타렉스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">그랜저​</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">그레이스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">넥쏘</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">라비타​</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">리베로</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">맥스크루즈</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">베뉴​</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">베라크루즈​</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">베르나​</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelTireDetailmodels: '<div class="tab-item size-m list-size-equal on-layer no-sticky">\n' +
+              '     <a href="#" class="" data-tab-event="1">차량번호로 찾기</a>\n' +
+              '     <a href="#" class="on" data-tab-event="2">차종으로 찾기</a>\n' +
+              '     <a href="#" class="" data-tab-event="3">사이즈로 찾기</a>\n' +
+              '</div>\n' +
+              '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">현대</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쏘나타</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부차종</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연료</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도/세부모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group bg-light1">\n' +
+              '    <ul class="sel-car-lst grid-list grid-list-column-3">\n' +
+              '         <li>\n' +
+              '             <label class="radio-item">\n' +
+              '                 <input type="radio" name="filter-coupon-category" checked>\n' +
+              '                 <div class="icon-holder">\n' +
+              '                     <span class="line-icons circle size-20"></span>\n' +
+              '                 </div>\n' +
+              '                 <div class="img-holder" style="background-image:url(\'pc-static-root/images/common/mycar_sample.png\');"></div>\n' +
+              '             </label>\n' +
+              '             <div class="labelling">\n' +
+              '                 <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)​</span>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '         <li>\n' +
+              '             <label class="radio-item">\n' +
+              '                 <input type="radio" name="filter-coupon-category">\n' +
+              '                 <div class="icon-holder">\n' +
+              '                     <span class="line-icons circle size-20"></span>\n' +
+              '                 </div>\n' +
+              '                 <div class="img-holder" style="background-image:url(\'pc-static-root/images/common/mycar_sample.png\');"></div>\n' +
+              '             </label>\n' +
+              '             <div class="labelling">\n' +
+              '                 <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)​</span>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '         <li>\n' +
+              '             <label class="radio-item">\n' +
+              '                 <input type="radio" name="filter-coupon-category">\n' +
+              '                 <div class="icon-holder">\n' +
+              '                     <span class="line-icons circle size-20"></span>\n' +
+              '                 </div>\n' +
+              '                 <div class="img-holder" style="background-image:url(\'pc-static-root/images/common/mycar_sample.png\');"></div>\n' +
+              '             </label>\n' +
+              '             <div class="labelling">\n' +
+              '                 <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)​</span>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '         <li>\n' +
+              '             <label class="radio-item">\n' +
+              '                 <input type="radio" name="filter-coupon-category">\n' +
+              '                 <div class="icon-holder">\n' +
+              '                     <span class="line-icons circle size-20"></span>\n' +
+              '                 </div>\n' +
+              '                 <div class="img-holder" style="background-image:url(\'pc-static-root/images/common/mycar_sample.png\');"></div>\n' +
+              '             </label>\n' +
+              '             <div class="labelling">\n' +
+              '                 <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)​</span>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '         <li>\n' +
+              '             <label class="radio-item">\n' +
+              '                 <input type="radio" name="filter-coupon-category">\n' +
+              '                 <div class="icon-holder">\n' +
+              '                     <span class="line-icons circle size-20"></span>\n' +
+              '                 </div>\n' +
+              '                 <div class="img-holder" style="background-image:url(\'pc-static-root/images/common/mycar_sample.png\');"></div>\n' +
+              '             </label>\n' +
+              '             <div class="labelling">\n' +
+              '                 <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)​</span>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '     </ul>\n' +
+              '</div>',
+            searchByCarModelTireEngine: '<div class="tab-item size-m list-size-equal on-layer no-sticky">\n' +
+              '     <a href="#" class="" data-tab-event="1">차량번호로 찾기</a>\n' +
+              '     <a href="#" class="on" data-tab-event="2">차종으로 찾기</a>\n' +
+              '     <a href="#" class="" data-tab-event="3">사이즈로 찾기</a>\n' +
+              '</div>\n' +
+              '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">현대</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쏘나타</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt two-lines-cut">쏘나타 더 브릴리언트(00~00Y)​</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연료</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도/세부모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-3">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">LPG</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">가솔린</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">가솔린 하이브리드</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelTireSize: '<div class="tab-item size-m list-size-equal on-layer no-sticky">\n' +
+              '     <a href="#" class="" data-tab-event="1">차량번호로 찾기</a>\n' +
+              '     <a href="#" class="on" data-tab-event="2">차종으로 찾기</a>\n' +
+              '     <a href="#" class="" data-tab-event="3">사이즈로 찾기</a>\n' +
+              '</div>\n' +
+              '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쌍용</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">티볼리</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)​</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">1.6 디젤</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도/세부모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '\n' +
+              '<div class="container search-result-wrap">\n' +
+              '    <div class="search-result-car">\n' +
+              '        <div class="car-img-holder">\n' +
+              '            <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <p class="info-txt">\n' +
+              '            검색하신 <em>07더3307</em> 차량은<br>\n' +
+              '            <em>&lsquo;현대 쏘나타 더 브릴리언트(00~00Y) 가솔린&rsquo;</em> 모델입니다\n' +
+              '        </p>\n' +
+              '    </div>\n' +
+              '\n' +
+              '    <ul class="list-size-equal select-year-option">\n' +
+              '        <li>\n' +
+              '            <div class="form-control form-control-md">\n' +
+              '                <div class="input-group">\n' +
+              '                    <select class="input-box">\n' +
+              '                        <option value="" selected>모델 연도 - 전체</option>\n' +
+              '                        <option value="">모델 연도 - 2017</option>\n' +
+              '                        <option value="">모델 연도 - 2016</option>\n' +
+              '                        <option value="">모델 연도 - 2015</option>\n' +
+              '                    </select>\n' +
+              '                    <div class="tools">\n' +
+              '                        <button><span class="line-icons chev-down"></span></button>\n' +
+              '                    </div>\n' +
+              '                </div>\n' +
+              '            </div>\n' +
+              '        </li>\n' +
+              '\n' +
+              '        <li>\n' +
+              '            <div class="form-control form-control-md">\n' +
+              '                <div class="input-group">\n' +
+              '                    <select class="input-box" disabled>\n' +
+              '                        <option value="" selected>세부 모델 - 전체</option>\n' +
+              '                        <option value="">세부 모델 - 기본형</option>\n' +
+              '                        <option value="">세부 모델 - LET TX</option>\n' +
+              '                        <option value="">세부 모델 - LET LX</option>\n' +
+              '                        <option value="">세부 모델 - TX</option>\n' +
+              '                        <option value="">세부 모델 - LET 엣지에디션</option>\n' +
+              '                    </select>\n' +
+              '                    <div class="tools">\n' +
+              '                        <button><span class="line-icons chev-down"></span></button>\n' +
+              '                    </div>\n' +
+              '                </div>\n' +
+              '            </div>\n' +
+              '        </li>\n' +
+              '    </ul>\n' +
+              '</div>\n' +
+              '\n' +
+              '<div class="container bg-light1 border-t pd-h-8u pd-v-6u">\n' +
+              '    <!-- 세부 모델 선택 drop down menu​ 선택 후 Hide -->\n' +
+              '    <div class="empty-box bg-light1 txt-center pd-v-15u">\n' +
+              '        <div class="middler">\n' +
+              '            <span class="line-icons error-circle size-48"></span>\n' +
+              '            <p class="empty-msg">세부 정보를 선택하시면 검색결과를 확인하실 수 있습니다</p>\n' +
+              '        </div>\n' +
+              '    </div>\n' +
+              '    <!-- 세부 모델 선택 drop down menu​ 선택 후 Show -->\n' +
+              '    <div class="container">\n' +
+              '        <div class="container txt-0 line-24">\n' +
+              '            <p class="float-l txt-16 txt-neutral2 line-24"><span class="txt-neutral1 txt-w500">타이어 사이즈를 선택</span>해 주세요. </p>\n' +
+              '\n' +
+              '            <!-- onclick 타이어 사이즈 확인 팝업 오픈 -->\n' +
+              '            <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet float-r pd-h-1u" onclick="callPopup.confirmTireSize()">\n' +
+              '                <span class="label-txt txt-14">타이어 사이즈 확인방법</span>\n' +
+              '                <span class="line-icons info-circle size-20"></span>\n' +
+              '            </button>\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <ul class="mg-t-1u select-tire-size">\n' +
+              '            <li>\n' +
+              '                <!-- 기본 뱃지는 label에 \'default\'클래스 추가 -->\n' +
+              '                <label class="default">\n' +
+              '                    <input type="radio" name="tire_size_radio" checked/>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">전륜 245/45R18<span class="divider">|</span>후륜 255/40R18</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="radio" name="tire_size_radio"/>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">전륜·후륜 245/40R19</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="radio" name="tire_size_radio"/>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">전륜·후륜 250/45R18</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '        </ul>\n' +
+              '\n' +
+              '        <div class="caution-item mg-t-6u">\n' +
+              '            <p>제시해드린 타이어 사이즈는 실제와 다르거나 여러 규격을 사용하는 경우가 있으니,  차량 타이어에서 정확한 사이즈를 확인해 주세요.​</p>\n' +
+              '            <p class="txt-primary">애프터 마켓에서 인치업을 하신 경우 사이즈 검색을 통해 적합한 타이어를 확인하실 수 있습니다.​</p>\n' +
+              '        </div>\n' +
+              '    </div>\n' +
+              '\n' +
+              '    <div class="container txt-center pd-t-6u mg-t-6u border-t">\n' +
+              '    <!-- 세부 모델 선택 drop down menu​ 선택 후 타이어쇼핑 버튼 활성 -->\n' +
+              '        <button type="button" class="btn-item btn-neutral round w-150" disabled="">\n' +
+              '            <span class="label-txt">타이어 쇼핑</span>\n' +
+              '        </button>\n' +
+              '        <button type="button" class="btn-item btn-neutral round w-150" disabled="">\n' +
+              '            <span class="label-txt">경정비 쇼핑</span>\n' +
+              '        </button>\n' +
+              '    </div>\n' +
+              '</div>',
+            searchByCarNumberGoodsForm: '<ul class="list-size-equal modal-stepper">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">차량번호 조회</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">조회 결과</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="container pd-h-8u pd-t-15u pd-b-25u">\n' +
+              '    <form class="car-number-search-form">\n' +
+              '        <div class="container pd-v-4u">\n' +
+              '            <p class="txt-16">운행 중인 차량을 조회하면,<br><strong>내 차에 맞는 경정비 상품을 손쉽게</strong> 찾을 수 있어요.</p>\n' +
+              '        </div>\n' +
+              '        <table class="">\n' +
+              '            <colgroup>\n' +
+              '                <col style="width:37%;">\n' +
+              '                <col style="width:37%;">\n' +
+              '                <col style="width:26%;">\n' +
+              '            </colgroup>\n' +
+              '            <tbody>\n' +
+              '            <tr>\n' +
+              '                <td class="pd-r-1u">\n' +
+              '                    <div class="form-control form-control-lg">\n' +
+              '                        <div class="input-group">\n' +
+              '                            <input type="text" class="input-box" placeholder="차량번호  ex)12가4321">\n' +
+              '                            <div class="tools">\n' +
+              '                                <button type="button" class="clear"><span class="line-icons close-circle"></span></button>\n' +
+              '                            </div>\n' +
+              '                        </div>\n' +
+              '                    </div>\n' +
+              '                </td>\n' +
+              '                <td class="pd-l-1u">\n' +
+              '                    <div class="form-control form-control-lg">\n' +
+              '                        <div class="input-group">\n' +
+              '                            <input type="text" class="input-box" placeholder="소유주명  ex)홍길동">\n' +
+              '                            <div class="tools">\n' +
+              '                                <button type="button" class="clear"><span class="line-icons close-circle"></span></button>\n' +
+              '                            </div>\n' +
+              '                        </div>\n' +
+              '                    </div>\n' +
+              '                </td>\n' +
+              '                <td class="pd-l-3u">\n' +
+              '                    <button type="button" class="btn-item btn-neutral round full-w btn-l">\n' +
+              '                        <span class="label-txt">조회하기</span>\n' +
+              '                    </button>\n' +
+              '                </td>\n' +
+              '            </tr>\n' +
+              '            </tbody>\n' +
+              '        </table>\n' +
+              '    </form>\n' +
+              '</div>',
+            searchByCarNumberGoodsResult: '<ul class="list-size-equal modal-stepper">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">차량번호 조회</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">조회 결과</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="container search-result-wrap">\n' +
+              '    <div class="search-result-car">\n' +
+              '        <div class="car-img-holder">\n' +
+              '            <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <p class="info-txt">\n' +
+              '            검색하신 <em>07더 3307</em> 차량은<br>\n' +
+              '            기아 <em>‘쏘렌토 2.0 디젤’</em> 입니다.\n' +
+              '        </p>\n' +
+              '    </div>\n' +
+              '</div>\n' +
+              '<div class="container bg-light1 border-t pd-h-8u pd-v-6u">\n' +
+              '    <div class="container">\n' +
+              '        <div class="container txt-0 line-24">\n' +
+              '            <p class="float-l txt-16 txt-neutral2 line-24"><span class="txt-neutral1 txt-w500">찾으시려는 경정비 상품의 옵션을 선택</span>해 주세요. </p>\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <ul class="mg-t-1u select-tire-size">\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox">\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">배터리</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox">\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">엔진오일</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox">\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">와이퍼</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox">\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">실내필터</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '        </ul>\n' +
+              '\n' +
+              '        <div class="caution-item mg-t-6u">\n' +
+              '            <p>경정비 상품은 반드시 차종에 맞는 옵션을 구매하셔야 안전한 드라이빙을 하실 수 있으며, 복수 선택이 가능합니다.</p>\n' +
+              '        </div>\n' +
+              '    </div>\n' +
+              '\n' +
+              '    <div class="container txt-center pd-t-6u mg-t-6u border-t">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-ol round w-150 mg-r-2u" onclick="reTry()">\n' +
+              '            <span class="label-txt">다시 선택</span>\n' +
+              '        </button>\n' +
+              '        <button type="button" class="btn-item btn-neutral round w-150" onclick="$.Tstation.popup().close()">\n' +
+              '            <span class="label-txt">확인</span>\n' +
+              '        </button>\n' +
+              '    </div>\n' +
+              '</div>',
+            searchByCarModelGoodsBrands: '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">브랜드</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">엔진</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부 모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">경정비</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-5">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">현대</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">기아</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">제네시스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">쉐보레(GM대우)</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">르노삼성</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">쌍용</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">벤츠</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">BMW</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">아우디</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">닛산</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">랜드로버</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">렉서스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">폭스바겐</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">혼다</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelGoodsModels: '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쌍용</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">엔진</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부 모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">경정비</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-5">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">G4 렉스턴</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">렉스턴</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">렉스턴 스포츠</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">렉스턴 스포츠 칸</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">로디우스</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">무쏘</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">무쏘 스포츠</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">베리 뉴 티볼리</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">액티언</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">액티언 스포츠</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">이스타나</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">체어맨</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">체어맨 H</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">체어맨 W</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">카이런</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">코란도</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">코란도 스포츠</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">코란도 투리스모</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">코란도(구)</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">코란도C</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">티볼리</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">티볼리 아머</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">티볼리 에어</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelGoodsEngine: '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쌍용</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">티볼리</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">엔진</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부 모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">경정비</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-3">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">1.6 가솔린</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">1.6 디젤</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelGoodsYear: '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쌍용</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">티볼리</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">1.6 디젤</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">연도</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부 모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">경정비</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-5">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">2017</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">2016</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">2015</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelGoodsOption: '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쌍용</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">티볼리</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">1.6 디젤</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">2017</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">세부 모델</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="yet">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">경정비</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '<div class="find-tire-button-group">\n' +
+              '    <ul class="grid-list grid-list-column-3">\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">LET 엣지에디션</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">LX</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">LET TX</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">TX</span></button></li>\n' +
+              '        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">LET LX</span></button></li>\n' +
+              '    </ul>\n' +
+              '</div>',
+            searchByCarModelGoodsCategory: '<ul class="list-size-equal modal-stepper click-able">\n' +
+              '    <!-- 현재 단계 li: \'act\'클래스 추가 -->\n' +
+              '    <!-- 완료후 지난 단계 li: \'done\'클래스 추가 -->\n' +
+              '    <!-- 아직 지나가지 않은 단계 li: \'yet\'클래스 추가 -->\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">쌍용</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">티볼리</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">1.6 디젤</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">2017</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="done">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">TX</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '\n' +
+              '    <li class="act">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">\n' +
+              '            <span class="line-icons check-circle-inv size-24"></span>\n' +
+              '            <span class="label-txt">경정비</span>\n' +
+              '        </button>\n' +
+              '    </li>\n' +
+              '</ul>\n' +
+              '\n' +
+              '<div class="container search-result-wrap">\n' +
+              '    <div class="search-result-car">\n' +
+              '        <div class="car-img-holder">\n' +
+              '            <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <p class="info-txt">\n' +
+              '            검색하신 차량은<br>\n' +
+              '            쌍용 <em>‘티볼리 1.6 디젤’</em> 입니다.\n' +
+              '        </p>\n' +
+              '    </div>\n' +
+              '</div>\n' +
+              '\n' +
+              '<div class="container bg-light1 border-t pd-h-8u pd-v-6u">\n' +
+              '    <div class="container">\n' +
+              '        <div class="container txt-0 line-24">\n' +
+              '            <p class="float-l txt-16 txt-neutral2 line-24"><span class="txt-neutral1 txt-w500">찾으시려는 경정비 상품의 옵션을 선택</span>해 주세요. </p>\n' +
+              '        </div>\n' +
+              '\n' +
+              '        <ul class="mg-t-1u select-tire-size">\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox" />\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">배터리</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox" />\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">엔진오일</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox" />\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">와이퍼</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '\n' +
+              '            <li>\n' +
+              '                <label>\n' +
+              '                    <input type="checkbox" />\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt">실내필터</span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '        </ul>\n' +
+              '\n' +
+              '        <div class="caution-item mg-t-6u">\n' +
+              '            <p>경정비 상품은 반드시 차종에 맞는 옵션을 구매하셔야 안전한 드라이빙을 하실 수 있으며, 복수 선택이 가능합니다.</p>\n' +
+              '        </div>\n' +
+              '    </div>\n' +
+              '\n' +
+              '    <div class="container txt-center pd-t-6u mg-t-6u border-t">\n' +
+              '        <button type="button" class="btn-item btn-neutral btn-ol round w-150 mg-r-2u" onclick="reTry()">\n' +
+              '            <span class="label-txt">다시 선택</span>\n' +
+              '        </button>\n' +
+              '        <button type="button" class="btn-item btn-neutral round w-150" onclick="$.Tstation.popup().close()">\n' +
+              '            <span class="label-txt">확인</span>\n' +
+              '        </button>\n' +
+              '    </div>\n' +
+              '</div>',
+            searchByTireSize: '<div class="tab-item size-m list-size-equal on-layer no-sticky">\n' +
+              '     <a href="#" class="" data-tab-event="1">차량번호로 찾기</a>\n' +
+              '     <a href="#" class="" data-tab-event="2">차종으로 찾기</a>\n' +
+              '     <a href="#" class="on" data-tab-event="3">사이즈로 찾기</a>\n' +
+              '</div>\n' +
+              '<div class="container search-size-result-wrap pd-h-5u pd-t-10u pd-b-8u">\n' +
+              '     <div class="has-tool">\n' +
+              '         <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet pd-h-1u" onclick="callPopup.confirmTireSize();">\n' +
+              '             <span class="line-icons info-circle size-20"></span>\n' +
+              '             <span class="label-txt txt-14 txt-underline">타이어 사이즈 확인방법</span>\n' +
+              '         </button>\n' +
+              '\n' +
+              '         <!-- 후륜이 다를때 체크 -->\n' +
+              '         <label\n' +
+              '           class="has-tool-item check-item"\n' +
+              '           onchange="$(\'.tire-size-rear\').css({ display: $(this).children(\'input\').is(\':checked\') ? \'block\' : \'none\' }); \n' +
+              '           $(\'.title-hr-center\').css({ display: $(this).children(\'input\').is(\':checked\') ? \'block\' : \'none\' });"\n' +
+              '         >\n' +
+              '             <input type="checkbox">\n' +
+              '             <div class="icon-holder">\n' +
+              '                 <span class="line-icons square size-20"></span>\n' +
+              '             </div>\n' +
+              '             <div class="labelling">\n' +
+              '                 <span class="label-txt mg-h-1u">후륜 타이어 사이즈가 다를 경우 선택하세요. ​</span>\n' +
+              '             </div>\n' +
+              '         </label>\n' +
+              '     </div>\n' +
+              '     <div class="container title-hr-center mg-t-5u" style="display: none;">\n' +
+              '        <span class="label-txt">전륜</span>\n' +
+              '     </div>\n' +
+              '     <ul class="list-size-equal mg-t-2u">\n' +
+              '         <li class="pd-r-2u">\n' +
+              '             <div class="form-control inline-xl">\n' +
+              '                 <div class="input-group">\n' +
+              '                     <select class="input-box">\n' +
+              '                         <option value="" selected disabled="">단면폭</option>\n' +
+              '                         <option value="">options1</option>\n' +
+              '                         <option value="">options2</option>\n' +
+              '                         <option value="">options...</option>\n' +
+              '                     </select>\n' +
+              '                     <div class="tools">\n' +
+              '                         <button><span class="line-icons chev-down"></span></button>\n' +
+              '                     </div>\n' +
+              '                 </div>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '\n' +
+              '         <li class="pd-h-1u">\n' +
+              '             <div class="form-control inline-xl">\n' +
+              '                 <div class="input-group">\n' +
+              '                     <select class="input-box">\n' +
+              '                         <option value="" selected disabled="">편평비</option>\n' +
+              '                         <option value="">options1</option>\n' +
+              '                         <option value="">options2</option>\n' +
+              '                         <option value="">options...</option>\n' +
+              '                     </select>\n' +
+              '                     <div class="tools">\n' +
+              '                         <button><span class="line-icons chev-down"></span></button>\n' +
+              '                     </div>\n' +
+              '                 </div>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '\n' +
+              '         <li class="pd-l-2u">\n' +
+              '             <div class="form-control inline-xl">\n' +
+              '                 <div class="input-group">\n' +
+              '                     <select class="input-box">\n' +
+              '                         <option value="" selected disabled="">인치</option>\n' +
+              '                         <option value="">options1</option>\n' +
+              '                         <option value="">options2</option>\n' +
+              '                         <option value="">options...</option>\n' +
+              '                     </select>\n' +
+              '                     <div class="tools">\n' +
+              '                         <button><span class="line-icons chev-down"></span></button>\n' +
+              '                     </div>\n' +
+              '                 </div>\n' +
+              '             </div>\n' +
+              '         </li>\n' +
+              '     </ul>\n' +
+              '\n' +
+              '     <!-- 후륜 입력 -->\n' +
+              '     <div class="tire-size-rear mg-t-4u" style="display: none;">\n' +
+              '         <div class="container title-hr-center" style="display: none;">\n' +
+              '             <span class="label-txt">전륜</span>\n' +
+              '         </div>\n' +
+              '         <ul class="list-size-equal mg-t-2u">\n' +
+              '             <li class="pd-r-2u">\n' +
+              '                 <div class="form-control inline-xl">\n' +
+              '                     <div class="input-group">\n' +
+              '                         <select class="input-box">\n' +
+              '                             <option value="" selected="" disabled="">단면폭</option>\n' +
+              '                             <option value="">options1</option>\n' +
+              '                             <option value="">options2</option>\n' +
+              '                             <option value="">options...</option>\n' +
+              '                         </select>\n' +
+              '                         <div class="tools">\n' +
+              '                             <button><span class="line-icons chev-down"></span></button>\n' +
+              '                         </div>\n' +
+              '                     </div>\n' +
+              '                 </div>\n' +
+              '             </li>\n' +
+              '\n' +
+              '             <li class="pd-h-1u">\n' +
+              '                 <div class="form-control inline-xl">\n' +
+              '                     <div class="input-group">\n' +
+              '                         <select class="input-box">\n' +
+              '                             <option value="" selected="" disabled="">편평비</option>\n' +
+              '                             <option value="">options1</option>\n' +
+              '                             <option value="">options2</option>\n' +
+              '                             <option value="">options...</option>\n' +
+              '                         </select>\n' +
+              '                         <div class="tools">\n' +
+              '                             <button><span class="line-icons chev-down"></span></button>\n' +
+              '                         </div>\n' +
+              '                     </div>\n' +
+              '                 </div>\n' +
+              '             </li>\n' +
+              '\n' +
+              '             <li class="pd-l-2u">\n' +
+              '                 <div class="form-control inline-xl">\n' +
+              '                     <div class="input-group">\n' +
+              '                         <select class="input-box">\n' +
+              '                             <option value="" selected="" disabled="">인치</option>\n' +
+              '                             <option value="">options1</option>\n' +
+              '                             <option value="">options2</option>\n' +
+              '                             <option value="">options...</option>\n' +
+              '                         </select>\n' +
+              '                         <div class="tools">\n' +
+              '                             <button><span class="line-icons chev-down"></span></button>\n' +
+              '                         </div>\n' +
+              '                     </div>\n' +
+              '                 </div>\n' +
+              '             </li>\n' +
+              '         </ul>\n' +
+              '     </div>\n' +
+              '\n' +
+              '     <div class="container txt-center pd-t-6u mg-t-6u border-t">\n' +
+              '         <button type="button" class="btn-item btn-neutral round w-150" onclick="$.Tstation.popup().close()">\n' +
+              '             <span class="label-txt">확인</span>\n' +
+              '         </button>\n' +
+              '     </div>\n' +
+              '</div>'
+        }
+    </script>
+    <script>
+        // 조건을 camel case로 바로 쓰기 위한 변환기
+        var capitalize = function (str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        var callPopup = {
+            confirmFamilyRequest: function () {
+                $.Tstation.popup().open({
+                    ref: 'confirm-family-request',
+                    title: '내 차량 등록 불가 안내',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.confirmFamilyRequest, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 8,
+                        vertical: 8,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    modalSize: 'SMALL',
+                    modalAction: {
+                        isNoBoundary: false,
+                        buttons: [
+                            {
+                                label: '상품조회',
+                                negative: true,
+                                action: 'alert(\'상품조회 메서드 호출\')'
+                            },
+                            {
+                                label: '차량 공유 요청',
+                                negative: false,
+                                action: 'alert(\'차량 공유 요청 메서드 호출\')' // 따옴표 주의
+                            }
+                        ]
+                    }
+                })
+            },
+            confirmRequireLogin: function () {
+                $.Tstation.popup().open({
+                    ref: 'confirm-tire-size',
+                    title: '',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.confirmRequireLogin, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 8,
+                        vertical: 8,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    full: false, // Full Popup,
+                    modalAction: {
+                        isNoBoundary: false,
+                        buttons: [
+                            {
+                                label: '취소',
+                                negative: true,
+                                action: '$.Tstation.popup().close(\'\')'
+                            },
+                            {
+                                label: '로그인',
+                                negative: false,
+                                action: 'window.location.href=\'\'' // 따옴표 주의
+                            }
+                        ]
+                    }
+                })
+            },
+            alertNotMatchCarNumberOwner: function () {
+                $.Tstation.popup().open({
+                    ref: 'alert-not-match-car-number-owner',
+                    title: '',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.alertNotMatchCarNumberOwner, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 8,
+                        vertical: 8,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    modalSize: 'SMALL',
+                    full: false, // Full Popup,
+                    modalAction: {
+                        isNoBoundary: true,
+                        buttons: [
+                            {
+                                label: '확인',
+                                negative: false,
+                                action: '$.Tstation.popup().close()'
+                            }
+                        ]
+                    }
+                })
+            },
+            confirmTireSize: function () {
+                $.Tstation.popup().open({
+                    ref: 'confirm-tire-size',
+                    title: '내 차 타이어 사이즈 확인방법',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.confirmTireSize, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 0,
+                        vertical: 0,
+                        top: 6,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    full: false, // Full Popup
+                })
+            },
+            searchGate: function () {
+                $.Tstation.popup().open({
+                    ref: 'search-gate',
+                    title: '내 차에 맞는 상품을 찾아보세요!',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.searchGate, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: {
+                        horizon: 0,
+                        vertical: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    modalSize: 'LARGE'
+                })
+            },
+            searchByCarNumber: function (condition) {
+                var popupTitle = function (type) {
+                    if (type === 'tire') {
+                        return '타이어상품 차량번호로 찾기'
+                    } else if (type === 'goods') {
+                        return '경정비상품 차량번호로 찾기'
+                    } else {
+                        throw new Error('not match type')
+                    }
+                }
+
+                $.Tstation.popup().open({
+                    ref: 'search-by-car-number-' + condition.type + '-' + condition.step,
+                    title: popupTitle(condition.type),
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate['searchByCarNumber' + capitalize(condition.type) + capitalize(condition.step)], // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: {
+                        horizon: 0,
+                        vertical: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    modalSize: 'LARGE'
+                })
+            },
+
+            // 0722 start
+            searchByCarNumberNotfound: function () {
+                $.Tstation.popup().open({
+                    ref: 'confirm-tire-size',
+                    title: '',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.searchByCarNumberNotfound, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 8,
+                        vertical: 8,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    full: false, // Full Popup,
+                    modalAction: {
+                        isNoBoundary: false,
+                        buttons: [
+                            {
+                                label: '확인',
+                                negative: false,
+                                action: '$.Tstation.popup().close()'
+                            }
+                        ]
+                    }
+                })
+            }, // 0722 end
+            searchByCarModel: function (condition) {
+                var popupTitle = function (type) {
+                    if (type === 'tire') {
+                        return '상품검색'
+                    } else if (type === 'goods') {
+                        return '경정비상품 차종으로 찾기'
+                    } else {
+                        throw new Error('not match type')
+                    }
+                }
+
+                $.Tstation.popup().open({
+                    ref: 'search-by-car-model-' + condition.type + '-' + condition.step,
+                    title: popupTitle(condition.type),
+                    tools: [
+                        {
+                            icon: 'refresh',
+                            label: '처음으로',
+                            method: 'reTry()'
+                        }
+                    ],
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate['searchByCarModel' + capitalize(condition.type) + capitalize(condition.step)], // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    minHeight: true,
+                    modalContentsPd: {
+                        horizon: 0,
+                        vertical: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    modalSize: 'LARGE'
+                })
+            },
+            searchByTireSize: function () {
+                $.Tstation.popup().open({
+                    ref: 'search-by-tire-size',
+                    title: '상품검색',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.searchByTireSize, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    minHeight: true,
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 0,
+                        vertical: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    modalSize: 'LARGE'
+                })
+            }
+        }
+
+
+        // 찾기 프로세스 초기화
+        var reTry = function () {
+            alert('처음으로')
+        }
+
+        // btn-find-tire click
+        $(document).on('click', '.find-tire-button-group .btn-find-tire', function (evt) {
+            var _this = $(evt.target)
+            var findTireButtonGroup = _this.closest('.find-tire-button-group')
+
+            // clear
+            findTireButtonGroup.find('.btn-find-tire').removeClass('on')
+
+            // on
+            _this.addClass('on')
+        })
+    </script>
+    <div style="width: 100%; padding: 100px 0;">
+        <div style="width: 1200px; margin: 0 auto;">
+            <h2 class="mg-b-4u">01. 검색 게이트</h2>
+            <ul class="grid-list grid-list-column-4 mg-b-6u">
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchGate();">
+                        <span class="label-txt">검색 게이트</span>
+                    </button>
+                </li>
+            </ul>
+
+            <h2 class="mg-b-4u">02. 타이어 검색</h2>
+            <h3 class="mg-b-4u">02-01. 차량번호 검색</h3>
+            <ul class="grid-list grid-list-column-4">
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarNumber({ type: 'tire', step: 'form' });">
+                        <span class="label-txt">차량번호검색-타이어찾기-01.입력폼</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarNumber({ type: 'tire', step: 'result' });">
+                        <span class="label-txt">차량번호검색-타이어찾기-02.조회결과</span>
+                    </button>
+                </li>
+                <!-- 0722 // -->
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarNumberNotfound();">
+                        <span class="label-txt">차량번호검색-타이어찾기-03.에러코드 5003 또는 5005 발생할 경우</span>
+                    </button>
+                </li>
+                <!-- // 0722 -->
+            </ul>
+            <h3 class="mg-b-4u">02-02. 차종 검색</h3>
+            <ul class="grid-list grid-list-column-4">
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'tire', step: 'brands' });">
+                        <span class="label-txt">차종검색-타이어찾기-01.브랜드</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'tire', step: 'models' });">
+                        <span class="label-txt">차종검색-타이어찾기-02.차종</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'tire', step: 'detailmodels' });">
+                        <span class="label-txt">차종검색-타이어찾기-03.세부차종</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'tire', step: 'engine' });">
+                        <span class="label-txt">차종검색-타이어찾기-04.연료</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'tire', step: 'size' });">
+                        <span class="label-txt">차종검색-타이어찾기-05.연도/세부모델</span>
+                    </button>
+                </li>
+            </ul>
+            <h3 class="mg-b-4u">02-03. 사이즈 검색</h3>
+            <ul class="grid-list grid-list-column-4 mg-b-6u">
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByTireSize();">
+                        <span class="label-txt">사이즈검색</span>
+                    </button>
+                </li>
+            </ul>
+
+            <h2 class="mg-b-4u">03. 경정비 검색</h2>
+            <h3 class="mg-b-4u">03-01. 차량번호 검색</h3>
+            <ul class="grid-list grid-list-column-4">
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarNumber({ type: 'goods', step: 'form' });">
+                        <span class="label-txt">차량번호검색-경정비찾기-01.입력폼</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarNumber({ type: 'goods', step: 'result' });">
+                        <span class="label-txt">차량번호검색-경정비찾기-02.조회결과</span>
+                    </button>
+                </li>
+            </ul>
+            <h3 class="mg-b-4u">03-02. 차종 검색</h3>
+            <ul class="grid-list grid-list-column-4 mg-b-6u">
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'goods', step: 'brands' });">
+                        <span class="label-txt">차종검색-경정비찾기-01.브랜드</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'goods', step: 'models' });">
+                        <span class="label-txt">차종검색-경정비찾기-02.모델</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'goods', step: 'engine' });">
+                        <span class="label-txt">차종검색-경정비찾기-03.엔진</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'goods', step: 'year' });">
+                        <span class="label-txt">차종검색-경정비찾기-04.연도</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'goods', step: 'option' });">
+                        <span class="label-txt">차종검색-경정비찾기-05.세부 모델</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.searchByCarModel({ type: 'goods', step: 'category' });">
+                        <span class="label-txt">차종검색-경정비찾기-06.경정비</span>
+                    </button>
+                </li>
+            </ul>
+
+            <h2 class="mg-b-4u">04. 기타</h2>
+            <ul class="grid-list grid-list-column-4 mg-b-6u">
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.confirmTireSize();">
+                        <span class="label-txt">타이어 사이즈 확인 방법</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.confirmRequireLogin();">
+                        <span class="label-txt">로그인 후, 차량번호 조회가 가능합니다.</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.alertNotMatchCarNumberOwner();">
+                        <span class="label-txt">차량번호 또는 소유주명이 일치하지 않습니다.</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-neutral full-w mg-b-4u" onclick="callPopup.confirmFamilyRequest();">
+                        <span class="label-txt">차량 공유 요청을 보내시겠습니까?</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal-item instances" data-ref="">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel size-l">
+            <div class="modal-header">
+                <h3>상품검색</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container h-size-m">
+                        <div class="tab-item size-m list-size-equal on-layer no-sticky">
+                            <a href="#" class="on" data-tab-event="car-number">차량번호로 찾기</a>
+                            <a href="#" class="" data-tab-event="car-type">차종으로 찾기</a>
+                            <a href="#" class="" data-tab-event="size">사이즈로 찾기</a>
+                        </div>
+                        <div class="tab-contents find-car-by-number" data-tab-contents="car-number">
+                            <!-- TODO: 차량 찾기 전 -->
+                            <div class="container find-car-by-number-before pd-t-7u pd-b-7u">
+                                <form class="car-number-search-form">
+                                    <div class="container pd-t-7u pd-b-9u">
+                                        <div class="my-car-select-bx">
+                                            <p class="info-txt">운행 중인 차량을 조회하면,<br><strong>내 차에 맞는 타이어를 손쉽게</strong>찾을 수 있어요.</p>
+                                            <div class="img-box">
+                                                <img src="pc-static-root/images/common/mycar_dummy.png" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="">
+                                        <colgroup>
+                                            <col style="width:37%;">
+                                            <col style="width:37%;">
+                                            <col style="width:26%;">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <td class="pd-r-1u">
+                                                <div class="form-control form-control-lg">
+                                                    <div class="input-group">
+                                                        <input type="text" class="input-box" placeholder="차량번호  ex)12가4321">
+                                                        <div class="tools">
+                                                            <button type="button" class="clear"><span class="line-icons close-circle"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="pd-l-1u">
+                                                <div class="form-control form-control-lg">
+                                                    <div class="input-group">
+                                                        <input type="text" class="input-box" placeholder="소유주명  ex)홍길동">
+                                                        <div class="tools">
+                                                            <button type="button" class="clear"><span class="line-icons close-circle"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="pd-l-3u">
+                                                <button type="button" class="btn-item btn-neutral round full-w btn-l" onclick="findCarByNumber(this)">
+                                                    <span class="label-txt">조회하기</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+
+                                <div class="my-search-bottom-result">
+                                    <div class="my-search-result-conts">
+                                        <!-- TODO: 내차 찾기 전 -->
+                                        <div class="btn-wrap pd-t-6u find-my-car-before">
+                                            <button type="button" class="btn-item btn-neutral btn-ol round btn-l" onclick="findMyCar(this)">
+                                                <span class="label-txt">내 차 등록하고 검색결과 보기</span>
+                                            </button>
+                                        </div>
+
+                                        <!-- TODO: 내차 찾은 후 -->
+                                        <div class="find-my-car-after">
+                                            <div class="my-car-selected">
+                                                <div class="info v-middle">
+                                                    <p class="car-number">| 12가 1234</p>
+                                                    <p class="model">제네시스 G80</p>
+                                                    <p class="car-fuel">2.2 가솔린</p>
+                                                </div>
+                                                <div class="img-box">
+                                                    <img src="pc-static-root/images/common/mycar_sample.png" alt="model">
+                                                </div>
+                                            </div>
+                                            <div class="mycar-select-item">
+                                                <div class="swiper-container mycar-select-swiper">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide">
+                                                            <!-- 활성화 체크는 btn-select-car에 'on'클래스 추가 -->
+                                                            <button type="button"
+                                                                    class="btn-item btn-gray btn-ol round min-w btn-select-car on"
+                                                                    style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <button type="button"
+                                                                    class="btn-item btn-gray btn-ol round min-w btn-select-car"
+                                                                    style="background-image:url('pc-static-root/images/common/mycar_sample01.png');"></button>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <button type="button"
+                                                                    class="btn-item btn-gray btn-ol round min-w btn-select-car"
+                                                                    style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <button type="button"
+                                                                    class="btn-item btn-gray btn-ol round min-w btn-select-car"
+                                                                    style="background-image:url('pc-static-root/images/common/mycar_sample01.png');"></button>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <button type="button"
+                                                                    class="btn-item btn-gray btn-ol round min-w btn-select-car"
+                                                                    style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('pc-static-root/images/common/mycar_sample01.png');"></button>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('pc-static-root/images/common/mycar_sample01.png');"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn-item btn-swiper-nav btn-prev">
+                                                    <i class="dark"></i>
+                                                </button>
+                                                <button type="button" class="btn-item btn-swiper-nav btn-next">
+                                                    <i class="dark"></i>
+                                                </button>
+
+                                            </div>
+                                            <div class="btn-wrap pd-t-6u">
+                                                <button type="button" class="btn-item btn-neutral btn-ol round btn-l">
+                                                    <span class="label-txt">선택된 차량 정보로 상품 검색하기</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TODO: 차량 찾기 후 -->
+                            <div class="container find-car-by-number-after">
+                                <div class="container search-result-wrap">
+                                    <div class="search-result-car">
+                                        <div class="car-img-holder">
+                                            <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">
+                                        </div>
+
+                                        <p class="info-txt">
+                                            검색하신 <em>07더 3307</em> 차량은<br>
+                                            기아 <em>‘쏘렌토 2.0 디젤’</em> 입니다.
+                                        </p>
+                                    </div>
+
+                                    <div class="select-year-option-wrapper">
+                                        <ul class="list-size-equal select-year-option">
+                                            <li>
+                                                <div class="form-control form-control-md">
+                                                    <div class="input-group">
+                                                        <select class="input-box">
+                                                            <option value="" selected="">모델 연도 - 전체</option>
+                                                            <option value="">모델 연도 - 2017</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="form-control form-control-md">
+                                                    <div class="input-group">
+                                                        <select class="input-box">
+                                                            <option value="" selected="">세부 모델 - 전체</option>
+                                                            <option value="">세부 모델 - 기본형</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="guide-tip-bx top">
+                                            <div class="tooltip-bx">
+                                                <p class="msg">검색결과 확인을 위해 연식과 세부모델을 선택해 주세요.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container bg-light1 border-t pd-h-8u pd-v-6u">
+                                    <div class="container">
+                                        <div class="container txt-0 line-24">
+                                            <p class="float-l txt-16 txt-neutral2 line-24"><span class="txt-neutral1 txt-w500">타이어 사이즈를 선택</span>해 주세요. </p>
+
+                                            <!-- onclick 타이어 사이즈 확인 팝업 오픈 -->
+                                            <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet float-r pd-h-1u" onclick="callPopup.confirmTireSize()" ;="">
+                                                <span class="label-txt txt-14">타이어 사이즈 확인방법</span>
+                                                <span class="line-icons info-circle size-20"></span>
+                                            </button>
+                                        </div>
+
+                                        <ul class="mg-t-1u select-tire-size">
+                                            <li>
+                                                <!-- 기본 뱃지는 label에 'default'클래스 추가 -->
+                                                <label class="default">
+                                                    <input type="radio" name="tire-size-by-car-number" checked />
+                                                    <div class="labelling">
+                                                        <span class="label-txt">전륜 245/45R18<span class="divider">|</span>후륜 255/40R18</span>
+                                                    </div>
+                                                </label>
+                                            </li>
+
+                                            <li>
+                                                <label>
+                                                    <input type="radio" name="tire-size-by-car-number" />
+                                                    <div class="labelling">
+                                                        <span class="label-txt">전륜·후륜 245/40R19</span>
+                                                    </div>
+                                                </label>
+                                            </li>
+
+                                            <li>
+                                                <label>
+                                                    <input type="radio" name="tire-size-by-car-number" />
+                                                    <div class="labelling">
+                                                        <span class="label-txt">전륜·후륜 250/45R18</span>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <div class="caution-item mg-t-6u">
+                                            <p>제시해드린 타이어 사이즈는 실제와 다르거나 차종에 따라 여러 규격을 사용하는 경우가 있으니,<br>반드시 차량 타이어에서 정확한 사이즈를 확인해 주세요.</p>
+                                            <p class="txt-primary">애프터마켓에서 인치업을 하신 경우 사이즈 검색을 통해 적합한 상품을 확인하실 수 있습니다.</p>
+                                        </div>
+                                        <div class="box box-gray box-radius mg-t-6u">
+                                            <label class="check-item">
+                                                <input type="checkbox">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">차종 검색 결과를 마이페이지에 등록하시면 더 편하게 상품을 찾으실 수 있습니다.</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="container txt-center pd-t-6u mg-t-6u border-t">
+                                        <button type="button" class="btn-item btn-neutral round w-150" onclick="$.Tstation.popup().close()">
+                                            <span class="label-txt">타이어 쇼핑</span>
+                                        </button>
+                                        <button type="button" class="btn-item btn-neutral round w-150 mg-l-2u" onclick="$.Tstation.popup().close()">
+                                            <span class="label-txt">경정비 쇼핑</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                // 내 차 찾기 후 엘리먼트가 다 그려진 후 스와이퍼 초기화
+                                var initFindMyCarSwiper = function () {
+                                    var total_mycar = $('.mycar-select-item .swiper-slide').length;
+
+                                    if (total_mycar < 5) {//차량이 3대 이하일 경우 스와이프 없이 수량에 따라 자동 넓이
+                                        $('.mycar-select-item').addClass('no-swipe');
+
+                                    } else {//차량이 4대 이상일 경우 스와이프 작동
+                                        var mycar_select_swiper = new Swiper('.mycar-select-swiper', {
+                                            init: false,
+                                            spaceBetween: 8,
+                                            slidesPerView: 'auto',
+                                            slidesPerGroup: 4,
+                                            navigation: {
+                                                nextEl: '.mycar-select-item .btn-swiper-nav.btn-next',
+                                                prevEl: '.mycar-select-item .btn-swiper-nav.btn-prev',
+                                            },
+                                        });
+                                        mycar_select_swiper.init();
+                                        mycar_select_swiper.update();
+
+                                        $(window).on('resize', function () {
+                                            mycar_select_swiper.init();
+                                        });
+                                    }
+                                    $('.mycar-select-swiper .btn-select-car').on('click', function () {
+                                        $('.mycar-select-swiper .btn-select-car').removeClass('on');
+                                        $(this).addClass('on');
+                                    });
+                                }
+
+                                // 차량 번호로 찾기
+                                var findCarByNumber = function (el) {
+                                    $(el).closest('.find-car-by-number').addClass('done')
+                                }
+
+                                // 내 차 찾기
+                                var findMyCar = function (el) {
+                                    $(el).closest('.my-search-bottom-result').addClass('done')
+                                    initFindMyCarSwiper();
+                                }
+                            </script>
+                        </div>
+                        <div class="tab-contents find-car-by-model" data-tab-contents="car-type">
+                            <ul class="list-size-equal modal-stepper click-able">
+                                <!-- TODO: 현재 단계 li: 'act'클래스 추가 -->
+                                <!-- TODO: 완료후 지난 단계 li: 'done'클래스 추가 -->
+                                <!-- TODO: 아직 지나가지 않은 단계 li: 'yet'클래스 추가 -->
+                                <li class="done">
+                                    <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                        <span class="line-icons check-circle-inv size-24"></span>
+                                        <span class="label-txt">브랜드</span>
+                                    </button>
+                                </li>
+                                <li class="act">
+                                    <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                        <span class="line-icons check-circle-inv size-24"></span>
+                                        <span class="label-txt">차종</span>
+                                    </button>
+                                </li>
+                                <li class="yet">
+                                    <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                        <span class="line-icons check-circle-inv size-24"></span>
+                                        <span class="label-txt">세부차종</span>
+                                    </button>
+                                </li>
+                                <li class="yet">
+                                    <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                        <span class="line-icons check-circle-inv size-24"></span>
+                                        <span class="label-txt">연료</span>
+                                    </button>
+                                </li>
+                                <li class="yet">
+                                    <button type="button" class="btn-item btn-neutral btn-inv full-w btn-l">
+                                        <span class="line-icons check-circle-inv size-24"></span>
+                                        <span class="label-txt">연도/세부모델</span>
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div class="container contents brands">
+                                <div class="find-tire-button-group">
+                                    <ul class="grid-list grid-list-column-5">
+                                        <!-- TODO: 활성화 상태일때 'on' -->
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">현대</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">기아</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">제네시스</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">쉐보레(GM대우)</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">르노삼성</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">쌍용</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">벤츠</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">BMW</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">아우디</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">닛산</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">람보르기니</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">랜드로버</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">렉서스</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">로터스</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">르노</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">링컨</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">마세라티</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">마이바흐</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">미니</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">미쯔비시</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">벤틀리</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">볼보</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">시트로엥</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">애스턴마틴</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">인피니티</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">재규어</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">지프</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">캐딜락</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">크라이슬러</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">토요타</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">페라리</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">포드</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">포르쉐</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">폭스바겐</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">푸조</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">피아트</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">혼다</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">동풍소콘</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">마쯔다</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">스마트</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">알파로메오</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">테슬라</span></button></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- TODO: 단계 활성화 시킬때 'on' 클래스 추가 -->
+                            <div class="container contents models">
+                                <div class="find-tire-button-group">
+                                    <ul class="grid-list grid-list-column-5">
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">쏘나타</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">i40</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">갤로퍼2</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">그랜드 스타렉스</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">그랜저</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">그레이스</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">넥쏘</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">라비타</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">리베로</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">맥스크루즈</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">베뉴</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">베라크루즈</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">베르나</span></button></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="container contents detailed-models on">
+                                <div class="find-tire-button-group bg-light1">
+                                    <ul class="sel-car-lst grid-list grid-list-column-3">
+                                        <li>
+                                            <label class="radio-item">
+                                                <input type="radio" name="filter-coupon-category" checked="">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons circle size-20"></span>
+                                                </div>
+                                                <div class="img-holder" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></div>
+                                            </label>
+                                            <div class="labelling">
+                                                <span class="label-txt">쏘나타 더 브릴리언트(00~00Y) blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label class="radio-item">
+                                                <input type="radio" name="filter-coupon-category">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons circle size-20"></span>
+                                                </div>
+                                                <div class="img-holder" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></div>
+                                            </label>
+                                            <div class="labelling">
+                                                <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label class="radio-item">
+                                                <input type="radio" name="filter-coupon-category">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons circle size-20"></span>
+                                                </div>
+                                                <div class="img-holder" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></div>
+                                            </label>
+                                            <div class="labelling">
+                                                <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label class="radio-item">
+                                                <input type="radio" name="filter-coupon-category">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons circle size-20"></span>
+                                                </div>
+                                                <div class="img-holder" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></div>
+                                            </label>
+                                            <div class="labelling">
+                                                <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label class="radio-item">
+                                                <input type="radio" name="filter-coupon-category">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons circle size-20"></span>
+                                                </div>
+                                                <div class="img-holder" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></div>
+                                            </label>
+                                            <div class="labelling">
+                                                <span class="label-txt">쏘나타 더 브릴리언트(00~00Y)</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="container contents fuel">
+                                <div class="find-tire-button-group">
+                                    <ul class="grid-list grid-list-column-3">
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire on"><span class="label-txt">LPG</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">가솔린</span></button></li>
+                                        <li><button type="button" class="btn-item btn-sm full-w btn-find-tire"><span class="label-txt">가솔린 하이브리드</span></button></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="container contents years">
+                                <div class="container search-result-wrap">
+                                    <div class="search-result-car">
+                                        <div class="car-img-holder">
+                                            <img src="pc-static-root/images/common/mycar_sample01.png" alt="자동차 이미지" class="car-img">
+                                        </div>
+
+                                        <p class="info-txt">
+                                            검색하신 <em>07더3307</em> 차량은<br>
+                                            <em>‘현대 쏘나타 더 브릴리언트(00~00Y) 가솔린’</em> 모델입니다
+                                        </p>
+                                    </div>
+
+                                    <div class="select-year-option-wrapper">
+                                        <ul class="list-size-equal select-year-option">
+                                            <li>
+                                                <div class="form-control form-control-md">
+                                                    <div class="input-group">
+                                                        <select class="input-box" onchange="turnOffGuide(this)">
+                                                            <option value="" selected="">모델 연도 - 전체</option>
+                                                            <option value="">모델 연도 - 2017</option>
+                                                            <option value="">모델 연도 - 2016</option>
+                                                            <option value="">모델 연도 - 2015</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-control form-control-md">
+                                                    <div class="input-group">
+                                                        <select class="input-box" disabled="" onchange="turnOffGuide(this);">
+                                                            <option value="" selected="">세부 모델 - 전체</option>
+                                                            <option value="">세부 모델 - 기본형</option>
+                                                            <option value="">세부 모델 - LET TX</option>
+                                                            <option value="">세부 모델 - LET LX</option>
+                                                            <option value="">세부 모델 - TX</option>
+                                                            <option value="">세부 모델 - LET 엣지에디션</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="guide-tip-bx top">
+                                            <div class="tooltip-bx">
+                                                <p class="msg">검색결과 확인을 위해 연식과 세부모델을 선택해 주세요.</p>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            var turnOffGuide = function (el) {
+                                                $(el).closest('.select-year-option-wrapper').find('.guide-tip-bx').addClass('off')
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="container bg-light1 border-t pd-h-8u pd-v-6u">
+                                    <!-- TODO: 세부 모델 선택 drop down menu 선택 후 Hide -->
+                                    <div class="empty-box bg-light1 txt-center pd-v-15u">
+                                        <div class="middler">
+                                            <span class="line-icons error-circle size-48"></span>
+                                            <p class="empty-msg">세부 정보를 선택하시면 검색결과를 확인하실 수 있습니다</p>
+                                        </div>
+                                    </div>
+                                    <!-- TODO: 세부 모델 선택 drop down menu 선택 후 Show -->
+                                    <div class="container">
+                                        <div class="container txt-0 line-24">
+                                            <p class="float-l txt-16 txt-neutral2 line-24"><span class="txt-neutral1 txt-w500">타이어 사이즈를 선택</span>해 주세요. </p>
+
+                                            <!-- onclick 타이어 사이즈 확인 팝업 오픈 -->
+                                            <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet float-r pd-h-1u" onclick="callPopup.confirmTireSize()">
+                                                <span class="label-txt txt-14">타이어 사이즈 확인방법</span>
+                                                <span class="line-icons info-circle size-20"></span>
+                                            </button>
+                                        </div>
+
+                                        <ul class="mg-t-1u select-tire-size">
+                                            <li>
+                                                <!-- TODO: 기본 뱃지는 label에 'default'클래스 추가 -->
+                                                <label class="default">
+                                                    <input type="radio" name="tire_size_radio" checked="">
+                                                    <div class="labelling">
+                                                        <span class="label-txt">전륜 245/45R18<span class="divider">|</span>후륜 255/40R18</span>
+                                                    </div>
+                                                </label>
+                                            </li>
+
+                                            <li>
+                                                <label>
+                                                    <input type="radio" name="tire_size_radio">
+                                                    <div class="labelling">
+                                                        <span class="label-txt">전륜·후륜 245/40R19</span>
+                                                    </div>
+                                                </label>
+                                            </li>
+
+                                            <li>
+                                                <label>
+                                                    <input type="radio" name="tire_size_radio">
+                                                    <div class="labelling">
+                                                        <span class="label-txt">전륜·후륜 250/45R18</span>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <div class="caution-item mg-t-6u">
+                                            <p>제시해드린 타이어 사이즈는 실제와 다르거나 여러 규격을 사용하는 경우가 있으니,  차량 타이어에서 정확한 사이즈를 확인해 주세요.</p>
+                                            <p class="txt-primary">애프터 마켓에서 인치업을 하신 경우 사이즈 검색을 통해 적합한 타이어를 확인하실 수 있습니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="container txt-center pd-t-6u mg-t-6u border-t">
+                                        <!-- TODO: 세부 모델 선택 drop down menu 선택 후 타이어쇼핑 버튼 활성 -->
+                                        <button type="button" class="btn-item btn-neutral round w-150" disabled>
+                                            <span class="label-txt">타이어 쇼핑</span>
+                                        </button>
+                                        <button type="button" class="btn-item btn-neutral round w-150 mg-l-2u" disabled>
+                                            <span class="label-txt">경정비 쇼핑</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-contents" data-tab-contents="size">
+                            <div class="container search-size-result-wrap pd-h-5u pd-t-10u pd-b-8u">
+                                <div class="has-tool">
+                                    <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet pd-h-1u" onclick="callPopup.confirmTireSize();">
+                                        <span class="line-icons info-circle size-20"></span>
+                                        <span class="label-txt txt-14 txt-underline">타이어 사이즈 확인방법</span>
+                                    </button>
+
+                                    <!-- 후륜이 다를때 체크 -->
+                                    <label class="has-tool-item check-item" onchange="$('.tire-size-rear').css({ display: $(this).children('input').is(':checked') ? 'block' : 'none' });
+           $('.title-hr-center').css({ display: $(this).children('input').is(':checked') ? 'block' : 'none' });">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons square size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">후륜 타이어 사이즈가 다를 경우 선택하세요.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="container title-hr-center mg-t-5u" style="display: none;">
+                                    <span class="label-txt">전륜</span>
+                                </div>
+                                <ul class="list-size-equal mg-t-2u">
+                                    <li class="pd-r-2u">
+                                        <div class="form-control inline-xl">
+                                            <div class="input-group">
+                                                <select class="input-box">
+                                                    <option value="" selected="" disabled="">단면폭</option>
+                                                    <option value="">options1</option>
+                                                    <option value="">options2</option>
+                                                    <option value="">options...</option>
+                                                </select>
+                                                <div class="tools">
+                                                    <button><span class="line-icons chev-down"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="pd-h-1u">
+                                        <div class="form-control inline-xl">
+                                            <div class="input-group">
+                                                <select class="input-box">
+                                                    <option value="" selected="" disabled="">편평비</option>
+                                                    <option value="">options1</option>
+                                                    <option value="">options2</option>
+                                                    <option value="">options...</option>
+                                                </select>
+                                                <div class="tools">
+                                                    <button><span class="line-icons chev-down"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="pd-l-2u">
+                                        <div class="form-control inline-xl">
+                                            <div class="input-group">
+                                                <select class="input-box">
+                                                    <option value="" selected="" disabled="">인치</option>
+                                                    <option value="">options1</option>
+                                                    <option value="">options2</option>
+                                                    <option value="">options...</option>
+                                                </select>
+                                                <div class="tools">
+                                                    <button><span class="line-icons chev-down"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <!-- 후륜 입력 -->
+                                <div class="tire-size-rear mg-t-4u" style="display: none;">
+                                    <div class="container title-hr-center" style="display: none;">
+                                        <span class="label-txt">후륜</span>
+                                    </div>
+                                    <ul class="list-size-equal mg-t-2u">
+                                        <li class="pd-r-2u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected="" disabled="">단면폭</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="pd-h-1u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected="" disabled="">편평비</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="pd-l-2u">
+                                            <div class="form-control inline-xl">
+                                                <div class="input-group">
+                                                    <select class="input-box">
+                                                        <option value="" selected="" disabled="">인치</option>
+                                                        <option value="">options1</option>
+                                                        <option value="">options2</option>
+                                                        <option value="">options...</option>
+                                                    </select>
+                                                    <div class="tools">
+                                                        <button><span class="line-icons chev-down"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="container txt-center pd-t-6u mg-t-6u border-t">
+                                    <!-- TODO: 타이어 사이즈 필요 정보 충족하게 되면 disabled 삭제 -->
+                                    <button type="button" class="btn-item btn-neutral round w-150" onclick="$.Tstation.popup().close()" disabled>
+                                        <span class="label-txt">확인</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // TODO: 검색 팝업 인스턴스로 쓸경우 아래의 호출 규칙을 사용 해 주세요.
+    // $.Tstation.popup().open({
+    //     ref: '',
+    //     title: '상품검색',
+    //     requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+    //     contents: '', // 팝업을 바로 띄우고 싶을때
+    //     dimWhite: false,
+    //     minHeight: true, // 최소 높이가 필요할때
+    //     modalContentsPd: {
+    //         horizon: 0,
+    //         vertical: 0,
+    //         top: 0,
+    //         right: 0,
+    //         bottom: 0,
+    //         left: 0
+    //     },
+    //     modalSize: 'LARGE'
+    // })
+</script>

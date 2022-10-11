@@ -1,0 +1,167 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- 01. page title -->
+            <div class="page_tit">
+                <h4>T'Station 관리 노하우</h4>
+            </div>
+            <!-- //01. page title -->
+            <!-- 02. 안내 TAB -->
+            <div class="cscenter_top">
+                <ul class="tab_01">
+                    <li><a href="https://www.tstation.com/customer-service/tsservice/knowhowtire.do">타이어 관리 노하우</a></li>
+                    <li class="on"><a href="https://www.tstation.com/customer-service/tsservice/knowhowitem.do">경정비 관리 노하우</a></li>
+                </ul>
+            </div>
+            <!-- //02. 안내 TAB -->
+            <!-- 03. knowhow 경정비 -->
+            <div class="knowhow_box">
+                <dl>
+                    <dt>
+                        <span>Service 1.</span>
+                        경정비 점검 및 교체주기, 그것이 알고 싶다!
+                    </dt>
+                    <dd>얼마나 자주 자동차 관리를 받아야 하는지 궁금하신가요? 신차 구매 후 1년에 20,000km를 주행한다고 가정하면?</dd>
+                    <dd class="dd_02">
+                        <span class="icnH1"><em>1개월에 한번!</em>타이어 공기압 체크</span>
+                        <span class="icnH2"><em>3개월에 한번!</em>엔진오일 교체</span>
+                        <span class="icnH3"><em>6개월에 한번!</em>휠 밸런스, 위치교환, 휠 얼라인먼트 점검</span>
+                        <span class="icnH4"><em>1년에 한번!</em>브레이크 오일 교체</span>
+                    </dd>
+                    <dd class="dd_01">
+                        <span class="txt_03">Tip! 그 외 다른 경정비의 교체주기는?</span>
+                        <br>황사철에 대비하여 실내필터 교환은 필수! 뜨거운 여름이 오기 전 에어컨 가스 보충도 잊지 않아야 합니다.
+                        <br>그리고 내 차 구매기간이 2년차가 되면, 배터리, 브레이크 패드, 타이어 교체(점검) 등을 하셔야 합니다.
+                    </dd>
+                </dl>
+
+                <dl class="none">
+                    <dt>
+                        <span>Service 2.</span>
+                        타이어 &amp; 경정비 정확한 교체주기 알아보기
+                    </dt>
+                    <dd>타이어와 경정비의 서비스 점검 항목 및 교체주기를 알기 쉽게 정리해 드립니다.</dd>
+                    <dd class="dd_03">
+                        <span>타이어 교체주기 </span>
+                        <!--  -->
+                        <div class="tbl_cs">
+                            <table>
+                                <colgroup>
+                                    <col style="width:160px">
+                                    <col style="width:*">
+                                    <col style="width:*">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>서비스 항목</th>
+                                    <th>거리 주기</th>
+                                    <th>기간 주기</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>교체</th>
+                                    <td>40,000km</td>
+                                    <td>2년</td>
+                                </tr>
+                                <tr>
+                                    <th>공기압 체크</th>
+                                    <td>-</td>
+                                    <td>1개월</td>
+                                </tr>
+                                <tr>
+                                    <th>휠 밸런스</th>
+                                    <td>10,000km</td>
+                                    <td>6개월</td>
+                                </tr>
+                                <tr>
+                                    <th>위치 교환</th>
+                                    <td>10,000km</td>
+                                    <td>6개월</td>
+                                </tr>
+                                <tr>
+                                    <th>휠 얼라인먼트</th>
+                                    <td>10,000km</td>
+                                    <td>6개월</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--  -->
+                    </dd>
+                    <dd class="dd_03">
+                        <span>경정비 점검 및 교체주기</span>
+                        <!--  -->
+                        <div class="tbl_cs">
+                            <table summary="경정비 교체주기">
+                                <colgroup>
+                                    <col style="width:160px;"><col style="width:*;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th scope="col">서비스 항목</th>
+                                    <th scope="col">거리 주기</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>엔진오일</th>
+                                    <td>
+                                        광유 5,000km, 합성유 10,000km
+                                        <div class="dcs mt10 font13">*엔진오일의 경우, 광유 (5,000km)로 권장 교체주기를<br> 설정해주시기 바랍니다.</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>실내필터</th>
+                                    <td>15,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>에어컨 가스</th>
+                                    <td>20,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>브레이크 오일</th>
+                                    <td>20,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>배터리</th>
+                                    <td>30,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>브레이크 패드</th>
+                                    <td>30,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>부동액</th>
+                                    <td>40,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>팬벨트</th>
+                                    <td>80,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>오토미션 오일</th>
+                                    <td>100,000km</td>
+                                </tr>
+                                <tr>
+                                    <th>와이퍼</th>
+                                    <td>수시</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--  -->
+                    </dd>
+                </dl>
+            </div>
+            <!-- //03. knowhow 경정비 -->
+
+
+        </div>
+    </div>
+</div>

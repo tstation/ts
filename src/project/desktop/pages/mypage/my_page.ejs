@@ -1,0 +1,496 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area mypage-index-conts-bx">
+                    <div class="breakdown-viewr-bx">
+                        <div class="tab-item no-sticky on-layer mg-b-6u">
+                            <a href="#" class="" data-tab-event="orders">주문내역 (2)</a>
+                            <a href="#" class="" data-tab-event="history">방문예약내역 (5)</a>
+                            <a href="#" class="on" data-tab-event="pickup">진행 중인 픽업서비스 (2)</a><!-- 211015 -->
+                            <div class="extra">
+                                <span class="txt-14">최근 3개월 장착완료 상품 기준으로 제공됩니다.</span>
+                            </div>
+                        </div>
+                        <div class="tab-contents on" data-tab-contents="orders">
+                            <ul class="breakdown-process order">
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>주문완료</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>배송준비중</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>배송중</span></p>
+                                    </a>
+                                </li>
+                                <li class="on">
+                                    <!-- TODO: 오늘 서비스가 아닌 경우 -->
+                                    <!--<a href="#" class="breakdown-process-item">
+                                        <strong>1</strong>
+                                        <p><span>배송완료</span></p>
+                                    </a>-->
+                                    <!-- TODO: 오늘 서비스인 경우 -->
+                                    <div class="highlight-container bottom">
+                                        <a href="#" class="breakdown-process-item">
+                                            <strong>1</strong>
+                                            <p><span>배송완료</span></p>
+                                        </a>
+                                        <span class="highlight highlight-yellow">오늘 서비스 주문상품</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>장착완료</span></p>
+                                    </a>
+                                </li>
+                                <li class="on">
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>1</strong>
+                                        <p><span>주문취소</span></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents on" data-tab-contents="history">
+                            <ul class="breakdown-process visit">
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>예약대기</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>예약완료</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>서비스완료</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>0</strong>
+                                        <p><span>예약취소</span></p>
+                                    </a>
+                                </li>
+                                <li class="on">
+                                    <a href="#" class="breakdown-process-item">
+                                        <strong>5</strong>
+                                        <p><span>정비서비스</span></p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- 20210720 // -->
+                        <!--
+                            개발완료후 style_mc.css 로 이동
+                            mypage.css -> style_mc.css
+                        -->
+                        <link rel="stylesheet" type="text/css" href="pc-static-root/css/mypage.css" />
+                        <div class="tab-contents on" data-tab-contents="pickup">
+                            <div class="pick-details-more-wrap mg-b-8u">
+                            	<span class="label-info txt-14">픽업서비스 완료일이 지나면 내역이 사라집니다. 완료된 내역은 픽업서비스 상세내역에서 확인하세요!</span>
+                                <a href="https://mqa.tstation.com/mypage/tstation/reservation/pickupList" class="btn-item btn-neutral btn-inv btn-s round more-link">
+                                    <span class="txt-primary label-txt txt-14">픽업서비스 상세내역</span>
+                                </a>
+                            </div>
+                            <div class="pickup-info-wrap">
+                                <div class="thumb-img">
+                                    <span class="mycar" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></span>
+                                </div>
+                                <div class="info">
+                                    <p class="car-name">레인지로버 이보크</p>
+                                    <span class="car-number">123가 3355</span>
+                                    <div class="service-type-wrap mg-t-5u">
+                                        <span class="label-txt mg-r-3u">신청 서비스</span>
+                                        <ul class="service-type-list">
+                                            <li><span class="service-type">픽업</span></li>
+                                            <li><span class="service-type">딜리버리</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="more-link">
+                                    <button type="button" class="btn-item btn-neutral btn-ol round">
+                                        <span class="label-txt txt-14">진행상세 확인</span><span class="line-icons chev-right size-20"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="pickup-info-wrap">
+                                <div class="thumb-img">
+                                    <span class="mycar" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></span>
+                                </div>
+                                <div class="info">
+                                    <p class="car-name">레인지로버 이보크</p>
+                                    <span class="car-number">123가 3355</span>
+                                    <div class="service-type-wrap mg-t-5u">
+                                        <span class="label-txt mg-r-3u">신청 서비스</span>
+                                        <ul class="service-type-list">
+                                            <li><span class="service-type">픽업</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="more-link">
+                                    <button type="button" class="btn-item btn-neutral btn-ol round">
+                                        <span class="label-txt txt-14">진행상세 확인</span><span class="line-icons chev-right size-20"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="pickup-info-wrap">
+                                <div class="thumb-img">
+                                    <span class="mycar" style="background-image:url('pc-static-root/images/common/mycar_sample.png');"></span>
+                                </div>
+                                <div class="info">
+                                    <p class="car-name">레인지로버 이보크</p>
+                                    <span class="car-number">123가 3355</span>
+                                    <div class="service-type-wrap mg-t-5u">
+                                        <span class="label-txt mg-r-3u">신청 서비스</span>
+                                        <ul class="service-type-list">
+                                            <li><span class="service-type">딜리버리</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="more-link">
+                                    <button type="button" class="btn-item btn-neutral btn-ol round">
+                                        <span class="label-txt txt-14">진행상세 확인</span><span class="line-icons chev-right size-20"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- // 20210720 -->
+                    </div>
+
+
+
+                    <section>
+                        <div class="section-header">
+                            <!-- 상품평 페이지로 이동 -->
+                            <a href="" class="btn-item btn-neutral btn-inv filet no-pd">
+                                <h2 class="txt-w400">나의 상품평</h2>
+                                <span class="label-txt txt-16 mg-l-3u">작성 가능한 상품 <em class="txt-primary">2</em>건</span>
+                                <span class="line-icons chev-right size-20"></span>
+                            </a>
+
+                            <div class="extra">
+                                <!-- 20220404 // -->
+                                <p class="txt-14 txt-right">
+                                    남겨 주신 상품평은 고객님께 보다 나은 서비스를 제공해 드리기 위해 이용됩니다.<br />
+                                    <span class="txt-primary"><span class="line-icons error-circle-light size-16 txt-w700 mg-r-1u"></span>상품평은 주문 완료일 기준 1년 이내에 작성하실 수 있습니다.</span>
+                                </p>
+                                <!-- // 20220404 -->
+                            </div>
+                        </div>
+
+                        <div class="container pd-v-5u pd-h-5u bg-light1">
+                            <!-- 작성가능 상품평 없을 경우 -->
+                            <div class="empty-box txt-center pd-v-25u">
+                                <div class="middler">
+                                    <span class="line-icons error-circle size-48"></span>
+                                    <p class="empty-msg">작성 가능한 상품이 없습니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- 작성가능 상품평 있을 경우(4건까지만 표시) -->
+                            <ul class="list-size-equal">
+                                <li class="pd-h-1u">
+                                    <div class="goods-item border-all bg-filet-4 over-hidden">
+                                        <a href="" class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+
+                                                <!-- 타이어 상품일 경우 노출 한국타이어='hk' / 미쉘린='mc' / 피렐리='pi' / 맥시스='mx' -->
+                                                <div class="brands-logo lf"></div>
+                                            </div>
+                                        </a>
+
+                                        <div class="container pd-h-5u pd-b-8u"><!-- 20220404 -->
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">벤투스 프리미엄 스포츠 MICHELIN PRIMACY A/S</span>
+                                                </h5>
+                                                <p class="tire-size">245/45R18</p>
+                                            </div>
+                                            <!-- 20220404 // -->
+                                            <p class="review-date txt-14 txt-primary txt-nowrap txt-center txt-w500">D-7 남음</p>
+                                            <!-- // 20220404 -->
+                                        </div>
+
+                                        <button type="button" class="btn-item btn-neutral full-w">
+                                            <span class="label-txt">상품평 작성</span>
+                                        </button>
+                                    </div>
+                                </li>
+
+                                <li class="pd-h-1u">
+                                    <div class="goods-item border-all bg-filet-4 over-hidden">
+                                        <a href="" class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/engine_oil.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <div class="container pd-h-5u pd-b-8u"><!-- 20220404 -->
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">S-OIL 7 GOLD - 5W30</span>
+                                                </h5>
+                                                <!-- 타이어가 아닌 상품은 타이어 사이즈 비워둠. 태그 삭제 금지(레이아웃 유지목적) -->
+                                                <p class="tire-size"></p>
+                                            </div>
+                                            <!-- 20220404 // -->
+                                            <p class="review-date txt-14 txt-primary txt-nowrap txt-center txt-w500 txt-neutral3">22.05.15까지</p>
+                                            <!-- // 20220404 -->
+                                        </div>
+
+                                        <button type="button" class="btn-item btn-neutral full-w">
+                                            <span class="label-txt">상품평 작성</span>
+                                        </button>
+                                    </div>
+                                </li>
+
+                                <li class="pd-h-1u">
+                                    <div class="goods-item border-all bg-filet-4 over-hidden">
+                                        <a href="" class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+
+                                                <!-- 타이어 상품일 경우 노출 한국타이어='hk' / 미쉘린='mc' / 피렐리='pi' / 맥시스='mx' -->
+                                                <div class="brands-logo mc"></div>
+                                            </div>
+                                        </a>
+
+                                        <div class="container pd-h-5u pd-b-8u"><!-- 20220404 -->
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">MICHELIN CROSS CLIMATE+</span>
+                                                </h5>
+                                                <p class="tire-size">245/45R18</p>
+                                            </div>
+                                            <!-- 20220404 // -->
+                                            <p class="review-date txt-14 txt-primary txt-nowrap txt-center txt-w500">D-7 남음</p>
+                                            <!-- // 20220404 -->
+                                        </div>
+
+                                        <button type="button" class="btn-item btn-neutral full-w">
+                                            <span class="label-txt">상품평 작성</span>
+                                        </button>
+                                    </div>
+                                </li>
+
+                                <li class="pd-h-1u">
+                                    <div class="goods-item border-all bg-filet-4 over-hidden">
+                                        <a href="" class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/engine_oil.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <div class="container pd-h-5u pd-b-8u"><!-- 20220404 -->
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">S-OIL 7 GOLD - 5W30</span>
+                                                </h5>
+                                                <!-- 타이어가 아닌 상품은 타이어 사이즈 비워둠. 태그 삭제 금지(레이아웃 유지목적) -->
+                                                <p class="tire-size"></p>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" class="btn-item btn-neutral full-w">
+                                            <span class="label-txt">상품평 작성</span>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- 작성가능한 상품평이 4건 보다 많을 경우 노출. 상품평 페이지로 이동 -->
+                            <div class="container txt-center pd-t-5u mg-t-5u border-t">
+                                <a href="" class="btn-item btn-neutral btn-ol round">
+                                    <span class="label-txt">작성 가능한 상품평 전체보기</span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                    <section class="mg-t-20u"><!-- 20210720 임시 hidden  -->
+                        <div class="section-header">
+                            <h2 class="txt-w400 line-40">최근에 보신 상품이 있어요!</h2>
+                        </div>
+
+                        <div class="container pd-v-5u pd-h-5u bg-light1">
+                            <!-- 최근본 상품 없을 경우 -->
+                            <div class="empty-box txt-center pd-v-25u">
+                                <div class="middler">
+                                    <p class="empty-msg"><span class="txt-16 txt-neutral1">원하는 상품을 못 찾으셨나요?</span></p>
+                                    <button type="button" class="btn-item btn-neutral round mg-t-4u w-150">
+                                        <span class="label-txt">타이어 찾기</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 최근본 상품 있을 경우 -->
+                            <ul class="list-size-equal mypage-recent-view-list">
+                                <li class="pd-h-1u">
+                                    <a href="" class="goods-item border-all bg-filet-4 over-hidden">
+                                        <div class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+
+                                                <!-- 타이어 상품일 경우 노출 한국타이어='hk' / 미쉘린='mc' / 피렐리='pi' / 맥시스='mx' -->
+                                                <div class="brands-logo hk"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container pd-h-5u pd-t-3u pd-b-5u">
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">벤투스 프리미엄 스포츠 MICHELIN PRIMACY A/S</span>
+                                                </h5>
+                                                <p class="tire-size">245/45R18</p>
+                                                <p class="first-cost mg-t-2u">28,8000원</p>
+                                                <p class="goods-price"><em class="txt-18">264,000</em>원</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="pd-h-1u">
+                                    <a href="" class="goods-item border-all bg-filet-4 over-hidden">
+                                        <div class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/engine_oil.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container pd-h-5u pd-t-3u pd-b-5u">
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">S-OIL 7 GOLD - 5W30</span>
+                                                </h5>
+                                                <p class="tire-size"></p>
+                                                <p class="first-cost mg-t-2u">84,300원</p>
+                                                <p class="goods-price"><em class="txt-18">64,000</em>원</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="pd-h-1u">
+                                    <a href="" class="goods-item border-all bg-filet-4 over-hidden">
+                                        <div class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+
+                                                <!-- 타이어 상품일 경우 노출 한국타이어='hk' / 미쉘린='mc' / 피렐리='pi' / 맥시스='mx' -->
+                                                <div class="brands-logo mc"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container pd-h-5u pd-t-3u pd-b-5u">
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">MICHELIN ENERGY SAVER A/S</span>
+                                                </h5>
+                                                <p class="tire-size">245/45R18</p>
+                                                <p class="first-cost mg-t-2u">28,8000원</p>
+                                                <p class="goods-price"><em class="txt-18">264,000</em>원</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="pd-h-1u">
+                                    <a href="" class="goods-item border-all bg-filet-4 over-hidden">
+                                        <div class="container pd-h-6u pd-t-4u">
+                                            <!-- 썸네일 구조유지 -->
+                                            <!-- 비율옵션 default는 1:1 / 4:3= 'ratio-4-3' / 3:2= 'ratio-3-2' / 16:9= 'ratio-16-9' / 2:1= 'ratio-2-1' 클래스 추가 -->
+                                            <div class="thumb-wrap">
+                                                <div class="thumb-holder">
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img"/>
+                                                </div>
+
+                                                <!-- 타이어 상품일 경우 노출 한국타이어='hk' / 미쉘린='mc' / 피렐리='pi' / 맥시스='mx' -->
+                                                <div class="brands-logo pi"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container pd-h-5u pd-t-3u pd-b-5u">
+                                            <div class="info-wrap">
+                                                <h5 class="goods-title">
+                                                    <span class="title-txt txt-14">SCORPION VERDE ALL SEASON</span>
+                                                </h5>
+                                                <p class="tire-size">245/45R18</p>
+                                                <p class="first-cost mg-t-2u">28,8000원</p>
+                                                <p class="goods-price"><em class="txt-18">264,000</em>원</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- 최근본 상품이 4건 보다 많을 경우 노출 -->
+                            <div class="container txt-center pd-t-5u mg-t-5u border-t">
+                                <button type="button" class="btn-item btn-neutral btn-ol round w-150">
+                                    <span class="label-txt">더보기</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '차량번호 조회결과' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="searching-car-view not-register-bx">
+                    <div class="image-area">
+                        <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample01.png');"></div>
+                        <span class="line-icons error-circle size-48"></span>
+                    </div>
+                    <div class="txt-info">
+                        <p class="number-alt">차량번호 <strong>07더3307</strong>은<br />이미 다른 회원님께 등록되어 있습니다.</p>
+                        <p>
+                            내 차량으로 등록하시려면 기등록 회원님께<br>차량 공유 요청에 대한 동의를 받아야 합니다.
+                            <em>차량 공유 요청을 보내시겠습니까?</em>
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="btn-item btn-neutral btn-ol round">
+                            <span class="label-txt">다시 검색</span>
+                        </button>
+                        <button type="button" class="btn-item btn-neutral round">
+                            <span class="label-txt">차량 공유 요청</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

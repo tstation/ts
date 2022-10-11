@@ -1,0 +1,193 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '방문예약내역 상세' }) %>
+
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/mypage.css" />
+<div id="container" class="mypage">
+    <!-- 방문예약내역 -->
+    <div class="reserve_detail">
+        <!-- 예약 정보 -->
+        <dl class="reserve_info">
+            <!-- 20210720 // -->
+            <dt>
+                <span class="status">예약대기</span>
+                <!-- <span class="status">예약완료</span>
+                <span class="status">서비스완료</span>
+                <span class="status">예약취소</span> -->
+            </dt>
+            <dd>
+                <span class="tit">방문방법</span><span>픽업 / 딜리버리
+                    <button type="button" class="btn-item btn-neutral btn-transparent btn-xs round mg-l-2u">
+                        <span class="label-txt txt-12 txt-primary">상세보기</span>
+                        <span class="line-icons chev-right size-20 txt-primary"></span>
+                    </button>
+                </span>
+            </dd>
+            <dd><span class="tit">매장명</span>티스테이션 성북점</dd>
+            <dd><span class="tit">매장방문일</span>2018-10-13(토) 13시</dd>
+            <!-- // 20210720 -->
+            <dd class="date">
+                <!-- a. 일정변경 관련 레이어 -->
+                <div id="changeDete" class="time_find off">
+                    <div class="day">
+                        <input type="text" class="ip_txt01 w100p" data-id="datepickBox3" data-rel="datepickBox" data-toggle="datepicker" readonly="" placeholder="장착일 선택">
+                    </div>
+                    <div class="datepickBox" id="datepickBox3" style="display:none">
+                        <div class="datepickBox3"></div>
+                        <div class="time">
+                            <ol>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS09"><label class="btnS2" for="TimeS09">09시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS10" disabled=""><label class="btnS2" for="TimeS10">10시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS11" disabled=""><label class="btnS2" for="TimeS11">11시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS12"><label class="btnS2" for="TimeS12">12시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS13"><label class="btnS2" for="TimeS13">13시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS14" disabled=""><label class="btnS2" for="TimeS14">14시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS15"><label class="btnS2" for="TimeS15">15시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS06"><label class="btnS2" for="TimeS06">16시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS17"><label class="btnS2" for="TimeS17">17시</label></li>
+                                <li><input type="radio" class="btnS2" name="TimeS" id="TimeS18"><label class="btnS2" for="TimeS18">18시</label></li>
+                            </ol>
+                        </div>
+                        <div class="beable">오늘 장착이<br>가능합니다. <button class="close">닫기</button></div>
+                        <div class="btn">
+                            <button class="btnM3 btnS02 changeDate">선택 완료</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //a. 일정변경 관련 레이어 -->
+                <!-- 공지사항 -->
+                <ol class="notice_01 mg-t-1u"><!-- 20211111 -->
+                    <li>예약하신 매장을 <em class="col01">타 매장으로 변경</em>하시려면, <em class="col01">[예약취소하기]</em>버튼을 클릭하여 취소 후 다시 방문예약을 하여 주시기 바랍니다.</li>
+                    <li>방문예약일 변경을 원하시면, 수정 버튼을 클릭하여 직접 변경하여 주시기 바랍니다.</li>
+                </ol>
+                <!-- //공지사항 -->
+            </dd>
+        </dl>
+        <!-- //예약 정보 -->
+        <!-- 20211111 // --> 
+        <!-- 직접 방문일때 .reserve-info-pickup: display: none -->
+        <dl class="reserve_info2 pickup reserve-info-pickup">
+            <dt>픽업서비스</dt>
+            <dd class="service-cancel"><!-- 20211125 -->
+                <div class="tit">
+                    픽업위치
+                </div>
+                경기도 고양시 일산동구 중앙로 1234(장항동)
+            </dd>
+            <dd class="point dot service-cancel"><!-- 20211125 -->
+                <div class="tit">
+                    <span class="txt-primary">(고객요청)</span>
+                </div>
+                이동거리 : 10km
+            </dd>
+            <dd class=""><!-- 20211125 -->
+                <div class="tit">
+                    딜리버리 위치
+                </div>
+                서울시 강남구 역삼동 중앙로 134번지 123빌딩
+            </dd>
+            <dd class="point "><!-- 20211125 -->
+                <div class="tit">
+                    <span class="txt-primary">(고객요청)</span>
+                </div>
+                이동거리 : 10km
+            </dd>
+            <dd class="pd-h-5u pd-v-5u">
+                <!-- 20211125 // -->
+                <button type="button" class="btn-item btn-gray btn-s btn-ol full-w filet" > <!-0
+                    <span class="label-txt">취소 완료</span>
+                </button>
+                <!-- // 20211125 -->
+            </dd>
+        </dl>
+        <!-- // 20211111 -->
+        <!-- 예약 서비스 -->
+        <dl class="reserve_info2">
+            <dt>타이어 서비스</dt>
+            <dd><span class="tit">교체</span>
+                타이어교체
+            </dd>
+            <dd><span class="tit">보관</span>
+                타이어보관
+            </dd>
+            <dd><span class="tit">점검</span>
+                공기압체크
+                <br>위치교환
+                <br>휠밸런스
+                <br>휠얼라인먼트
+                <br>기타
+            </dd>
+        </dl>
+        <dl class="reserve_info2">
+            <dt>경정비 서비스</dt>
+            <dd><span class="tit">소모품교환</span>
+                브레이크 패트(완)
+                <br>배터리
+                <br>엔진오일
+                <br>필터류
+                <br>와이퍼
+                <br>에어컨
+                <br>가스
+                <br>기타
+            </dd>
+            <dd><span class="tit">점검</span>
+                자동차 진단 &amp; 검사
+            </dd>
+            <dd><span class="tit">수리</span>
+                자동차 수리&amp;정비
+            </dd>
+        </dl>
+        <dl class="reserve_info2">
+            <dt>상품정보</dt>
+            <dd>
+                원터 이벤트 방문예약
+            </dd>
+            <dd><span class="tit">상품명</span>
+                Winter i*cept evo2
+            </dd>
+            <dd><span class="tit">사이즈</span>
+                205/55R16V XL
+            </dd>
+            <dd><span class="tit">수량</span>
+                4개
+            </dd>
+        </dl>
+        <dl class="reserve_info2">
+            <dt>예약자정보</dt>
+            <dd><span class="tit">성명</span>
+                홍길동
+            </dd>
+            <dd><span class="tit">핸드폰</span>
+                010-1234-5678
+            </dd>
+            <dd><span class="tit">요청사항</span>
+                문앞에 놔주세요.
+            </dd>
+        </dl>
+        <dl class="reserve_info2">
+            <dt>차량정보</dt>
+            <!-- 202012 pub fixed // -->
+            <dd><span class="tit">자동차 브랜드</span>기아</dd>
+            <dd><span class="tit">차종</span>쏘렌토</dd>
+            <dd><span class="tit">세부 차종</span>올 뉴 쏘렌토</dd>
+            <dd><span class="tit">연료</span>디젤</dd>
+            <dd><span class="tit">모델 연도</span>2017</dd>
+            <dd><span class="tit">세부 모델</span>노블레스 스페셜</dd>
+            <dd><span class="tit">타이어 사이즈</span>235/55R19</dd>
+            <dd><span class="tit">차량번호</span>12가1234</dd>
+            <!-- // 202012 pub fixed -->
+        </dl>
+        <!-- //예약 서비스 -->
+        <!-- 20211111 // -->
+        <div class="btn02 mg-t-4u">
+            <ul>
+                <li><button class="btnM3 btnS01">방문예약취소</button></li>
+                <li><button class="btnM3 btnS01 changeDate">방문일정변경</button></li>
+            </ul>
+        </div>
+        <!-- // 20211111 -->
+    </div>
+    <!-- //방문예약내역 -->
+</div>

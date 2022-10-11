@@ -1,0 +1,16 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '한국타이어 상품 안내' }) %>
+<main id="main" style="padding: 0;">
+    <div class="container">
+        <div class="brand-lineup-wrap bg-lineup-tire">
+            <h1 class="brand-logo"><span class="blind">HANKOOK driving emotion</span></h1>
+            <ul class="brand-lineup-link">
+                <li><a href="#none">차종별 타이어<span class="line-icons chev-right size-28"></span></a></li>
+                <li><a href="#none">브랜드별 타이어<span class="line-icons chev-right size-28"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</main>

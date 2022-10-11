@@ -1,0 +1,71 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="event">
+    <div id="contents">
+        <!-- 01. page title -->
+        <div class="page_tit">
+            <h4>이벤트</h4>
+        </div>
+        <!-- //01. page title -->
+        <!-- 02. 제목 -->
+        <div class="event_tit">
+            힘내라 대한민국
+            <span class="date">이벤트 기간 : 99.99.99  ~ 99.99.99</span>
+        </div>
+        <input type="hidden" id="evtUrlAddr" value="">
+        <input type="hidden" id="endEvtDisp" value="">
+        <input type="hidden" id="isEvtDispBf" value="">
+
+        <!-- //02. 제목  -->
+        <!-- 03. 이벤트 상세  -->
+        <div class="event_list">
+            <div id="inner">
+
+                <div class="event-detail-wrap">
+                    <div class="center-inner">
+                        <link rel="stylesheet" type="text/css" href="pc-static-root/css/event.css" />
+                    
+                        <!-- freeday-event // -->
+                        <div class="freeday-event">
+                            <div class="freeday-event-content">
+                                <!-- 20220726 // -->
+                                <img src="pc-static-root/images/event/20220725/event_detail.png" class="freeday-before" alt="" />
+                                <img src="pc-static-root/images/event/20220725/event_detail_login.png" class="freeday-after" alt="" />
+                                <!-- // 20220726 -->
+                                <a href="#none" class="img-map-link link-1" data-analytics-click="allmyT 회원가입 하러가기"><span class="blind">allmyT 회원가입 하러가기</span></a>
+                                <a href="#none" class="img-map-link link-2" data-analytics-click="휴일지킴매장 검색하고 온라인 쇼핑하기"><span class="blind">휴일지킴매장 검색하고 온라인 쇼핑하기</span></a>
+                            </div>
+                        </div>
+                        <!-- // .freeday-event -->
+
+
+                        <!-- // korea event -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn01">
+                <a href="https://www.tstation.com/promotion/event-list" class="btnM2 btnS02">목록으로</a>
+            </div>
+        </div>
+        <!-- //03. 이벤트 상세  -->
+
+        <!-- #contents -->
+    </div>
+</div>
+
+
+<!-- 20220726 // -->
+<script>
+    var login = false;
+    if(login) {
+        $('.freeday-after').show();
+        $('.freeday-before').hide();
+    } else {
+        $('.freeday-after').hide();
+        $('.freeday-before').show();
+    }
+</script>
+<!-- // 20220726 -->

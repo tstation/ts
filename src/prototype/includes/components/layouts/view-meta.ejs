@@ -1,0 +1,59 @@
+<%
+let { meta = {} } = locals.entry;
+console.log(meta)
+if (!Object.keys(meta).length) { return 'No meta yet :(('; }
+-%>
+<div class="viewer-meta-wrap">
+    <div class="viewer-meta-inner">
+        <button class="viewer-meta-toggle" onclick="$proto.viewer.toggleViewerMeta(event)">
+            <span class="icon material-icons">chevron_left</span>
+        </button>
+
+        <div class="viewer-meta">
+            <table>
+                <colgroup>
+                    <col style="width: 40%;" />
+                    <col style="width: 60%;" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>최상위 메뉴 :</th>
+                        <td data-target="groupTitle"><%- meta.groupTitle %></td>
+                    </tr>
+                    <tr>
+                        <th>최상위 메뉴 설명 :</th>
+                        <td data-target="groupDescription"><%- meta.groupDescription %></td>
+                    </tr>
+                    <tr>
+                        <th>페이지 파일명 :</th>
+                        <td data-target="pageUrl"><%- meta.listItems[0].pageUrl %></td>
+                    </tr>
+                    <tr>
+                        <th>페이지 제목 :</th>
+                        <td data-target="title"><%- meta.listItems[0].title %></td>
+                    </tr>
+                    <tr>
+                        <th>페이지 아이디 :</th>
+                        <td data-target="descriptionsPageId"><%- meta.listItems[0].descriptions.pageId %></td>
+                    </tr>
+                    <tr>
+                        <th>뷰 타입 :</th>
+                        <td data-target="descriptionsPageType"><%- meta.listItems[0].descriptions.pageType %></td>
+                    </tr>
+                    <tr>
+                        <th>권한 요구 :</th>
+                        <td data-target="accessRequired"><%- meta.listItems[0].accessRequired %></td>
+                    </tr>
+                    <tr>
+                        <th>프로젝트 범위 :</th>
+                        <td data-target="descriptionsScope"><%- meta.listItems[0].descriptions.scope %></td>
+                    </tr>
+                    <tr>
+                        <th>코멘트 :</th>
+                        <td data-target="descriptionsComment"><%- meta.listItems[0].descriptions.comment %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

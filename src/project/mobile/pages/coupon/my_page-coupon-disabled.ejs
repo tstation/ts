@@ -1,0 +1,196 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '내 쿠폰' }) %>
+<main id="main">
+    <div class="tab-item">
+        <a href="" class="">사용가능한 쿠폰</a>
+        <a href="" class="">쿠폰 등록</a>
+        <a href="" class="on">지난 쿠폰</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container pd-h-5u pd-v-5u">
+        <section>
+            <script>
+                $(document).ready(function () { $('body').addClass('bg-light1') });
+            </script>
+
+            <!-- 지난 쿠폰이 없을 경우 -->
+            <div class="empty-box txt-center pd-v-15u">
+                <div class="middler">
+                    <span class="line-icons error-circle size-48"></span>
+                    <p class="empty-msg">지난 쿠폰이 없습니다.</p>
+                </div>
+            </div>
+
+            <!-- 지난 쿠폰이 있을 경우 -->
+            <ul class="coupon-card-list">
+                <li>
+                    <article class="coupon-card on-bg-light1 used">
+                        <div class="coupon-card-info">
+                            <div class="coupon-card-type-bar mg-b-2u clearfix">
+                                <span class="float-l">패밀리</span>
+                                <span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>
+                                <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>
+                                <span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>-->
+                            </div>
+                            <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                            <p class="txt-18 line-100per mg-b-2u">타이어 결제할인</p>
+                            <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>
+                            <p class="txt-11 txt-neutral3">타이어 상품 구매 할 때 사용</p>
+                        </div>
+                        <button type="button" class="coupon-card-action">
+                            <div class="coupon-card-action-inner">
+                                <p class="mg-b-1u"><span class="line-icons check-circle size-32 txt-mint"></span></p>
+                                <p class="mg-b-3u"><span class="txt-w500">선물완료</span></p>
+                                <p class="mg-b-1u"><span class="badge badge-neutral3 round v-middle">TO</span> <span class="txt-12 txt-neutral3 txt-w500 v-middle">홍길동</span></p>
+                                <p><span class="txt-11 txt-w500">쿠폰 사용여부</span></p>
+                                <p><span class="txt-11 txt-w500 txt-primary">2020.10.01 사용</span></p>
+                            </div>
+                        </button>
+                    </article>
+                </li>
+                <li>
+                    <article class="coupon-card on-bg-light1 used">
+                        <div class="coupon-card-info">
+                            <div class="coupon-card-type-bar mg-b-2u clearfix">
+                                <span class="float-l">패밀리</span>
+                                <span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>
+                                <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>
+                                <span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>-->
+                            </div>
+                            <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                            <p class="txt-18 line-100per mg-b-2u">타이어 결제할인</p>
+                            <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>
+                            <p class="txt-11 txt-neutral3">타이어 상품 구매 할 때 사용</p>
+                        </div>
+                        <button type="button" class="coupon-card-action">
+                            <div class="coupon-card-action-inner">
+                                <p class="mg-b-1u"><span class="line-icons check-circle size-32 txt-mint"></span></p>
+                                <p class="mg-b-3u"><span class="txt-w500">선물완료</span></p>
+                                <p class="mg-b-1u"><span class="badge badge-neutral3 round v-middle">TO</span> <span class="txt-12 txt-w500 txt-neutral3 v-middle">홍길동</span></p>
+                                <p><span class="txt-11 txt-w500">쿠폰 사용여부</span></p>
+                                <p><span class="txt-11 txt-w500 txt-primary">미사용</span></p>
+                            </div>
+                        </button>
+                    </article>
+                </li>
+                <li>
+                    <article class="coupon-card on-bg-light1 used">
+                        <div class="coupon-card-info">
+                            <div class="coupon-card-type-bar mg-b-2u clearfix">
+                                <span class="float-l">스마트케어</span>
+                                <!--<span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>-->
+                                <span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>
+                                <!--<span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>-->
+                            </div>
+                            <p class="txt-30 line-100per">20,000<small class="txt-18">원</small></p>
+                            <p class="txt-18 line-100per mg-b-2u">휠 얼라인먼트 정비</p>
+                            <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>
+                            <p class="txt-11 txt-neutral3">매장에서 얼라인먼트 서비스 이용 시 적용</p>
+                        </div>
+                        <button type="button" class="coupon-card-action">
+                            <div class="coupon-card-action-inner">
+                                <p class="mg-b-1u"><span class="line-icons check-circle size-32 txt-mint"></span></p>
+                                <p class="mg-b-3u"><span class="txt-w500">사용완료</span></p>
+                                <p><span class="txt-12 txt-w500">2020.10.01<br />사용</span></p>
+                            </div>
+                        </button>
+                    </article>
+                </li>
+                <li>
+                    <article class="coupon-card on-bg-light1 used">
+                        <div class="coupon-card-info">
+                            <div class="coupon-card-type-bar mg-b-2u clearfix">
+                                <span class="float-l">패밀리</span>
+                                <span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>
+                                <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>-->
+                                <!--<span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>-->
+                            </div>
+                            <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                            <p class="txt-18 line-100per mg-b-2u">타이어 결제할인</p>
+                            <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>
+                            <p class="txt-11 txt-neutral3">타이어 상품 구매 할 때 사용</p>
+                        </div>
+                        <button type="button" class="coupon-card-action">
+                            <div class="coupon-card-action-inner">
+                                <p class="mg-b-1u"><span class="line-icons check-circle size-32 txt-mint"></span></p>
+                                <p class="mg-b-3u"><span class="txt-w500">사용완료</span></p>
+                                <p class="mg-b-1u"><span class="badge badge-neutral3 round v-middle">FROM</span> <span class="txt-12 txt-neutral3 v-middle">홍길동</span></p>
+                                <p><span class="txt-12 txt-w500">2020.01.20<br />사용</span></p>
+                            </div>
+                        </button>
+                    </article>
+                </li>
+                <li>
+                    <article class="coupon-card on-bg-light1 used">
+                        <div class="coupon-card-info">
+                            <div class="coupon-card-type-bar mg-b-2u clearfix">
+                                <span class="float-l">스마트케어</span>
+                                <!--<span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>-->
+                                <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>-->
+                                <span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>
+                            </div>
+                            <p class="txt-30 line-100per">5<small class="txt-18">%</small></p>
+                            <p class="txt-18 line-100per mg-b-2u">휠 얼라인먼트 정비</p>
+                            <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>
+                            <p class="txt-11 txt-neutral3">매장에서 얼라인먼트 서비스 이용 시 적용</p>
+                        </div>
+                        <button type="button" class="coupon-card-action">
+                            <div class="coupon-card-action-inner">
+                                <p class="mg-b-1u"><span class="line-icons error-circle size-32 txt-primary"></span></p>
+                                <p class="mg-b-3u"><span class="txt-w500">기간만료</span></p>
+                                <p><span class="txt-12 txt-w500">2020.01.20<br />까지</span></p>
+                            </div>
+                        </button>
+                    </article>
+                </li>
+                <li>
+                    <article class="coupon-card on-bg-light1 used">
+                        <div class="coupon-card-info">
+                            <div class="coupon-card-type-bar clearfix">
+                                <span class="float-l">우리동네딜</span>
+                                <!--<span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>-->
+                                <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>-->
+                                <span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>
+                            </div>
+                            <div class="coupon-card-shop-list mg-b-2u">
+                                <span class="badge badge-inv round">서울</span>
+                            </div>
+                            <p class="txt-30 line-100per">50<small class="txt-18">%</small></p>
+                            <p class="txt-18 line-100per mg-b-2u">엔진오일 할인 이벤트</p>
+                            <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>
+                            <p class="txt-11 txt-neutral3">참여 매장에서 경정비 구매시 사용</p>
+                        </div>
+                        <button type="button" class="coupon-card-action">
+                            <div class="coupon-card-action-inner">
+                                <p class="mg-b-1u"><span class="line-icons error-circle size-32 txt-primary"></span></p>
+                                <p class="mg-b-3u"><span class="txt-w500">기간만료</span></p>
+                                <p><span class="txt-12 txt-w500">2020.01.20<br />까지</span></p>
+                            </div>
+                        </button>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+
+        <div class="container mg-t-10u">
+            <p class="mg-b-2u">쿠폰 보존기간 안내</p>
+            <div class="box box-gray box-radius">
+                <ul class="list-style-disc">
+                    <li>
+                        <p class="txt-primary txt-12">기간만료</p>
+                        <p class="txt-neutral2 txt-12 pd-l-1u">- 고객 다운로드/마케팅동의 쿠폰: 만료일 기준 30일</p>
+                        <p class="txt-neutral2 txt-12 pd-l-1u">- 관리자/조건 발급 쿠폰: 만료일 기준 3년</p>
+                    </li>
+                    <li>
+                        <span class="txt-primary txt-12">사용/선물완료 쿠폰</span><span class="txt-neutral2 txt-12">: 회원탈퇴 시 까지</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>

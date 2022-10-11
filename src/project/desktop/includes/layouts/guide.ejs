@@ -1,0 +1,58 @@
+<div class="guide-item">
+    <button type="button" class="btn-item btn-guide-item-on"  id="flowGuideBtn">
+        <span class="line-icons cs-fab txt-neutral1 size-32"></span>
+    </button>
+    <ul class="guide-menus-lst">
+        <li>
+            <a href="#" class="bt-menu">
+                <p class="label-txt">
+                    <span class="txt-20 txt-neutral1">쉬운 타이어 쇼핑</span><br>
+                    <span class="txt-16 txt-neutral2">온라인 타이어 쇼핑이 어렵나요?</span>
+                </p>
+                <p class="ico-set">
+                    <span class="line-icons mouse size-32"></span>
+                    <span class="line-icons chev-right size-24"></span>
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="bt-menu">
+                <p class="label-txt">
+                    <span class="txt-20 txt-neutral1">한국타이어 라인업</span><br>
+                    <span class="txt-16 txt-neutral2">한국타이어 상품군을 한눈에</span>
+                </p>
+                <p class="ico-set">
+                    <span class="line-icons search size-32"></span>
+                    <span class="line-icons chev-right size-24"></span>
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="bt-menu">
+                <span class="bg-opacuty-white"></span>
+                <p class="label-txt">
+                    <span class="txt-20 txt-neutral1">1:1 전문상담</span><br>
+                    <span class="txt-16 txt-neutral2">메세지나 타이어 사진으로 간편하게!</span>
+                </p>
+                <p class="ico-set">
+                    <span class="line-icons headset size-32"></span>
+                    <span class="line-icons chev-right size-24"></span>
+                </p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--//guide-item-->
+<script type="text/javascript">
+    $("#flowGuideBtn").click(function () {
+        $(".guide-item").toggleClass("on");
+    });
+    $(window).scroll(function () {
+        $(".guide-item").removeClass("on");
+        $(".guide-item").addClass("hide");
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function () {
+            $(".guide-item").removeClass("hide");
+        }, 300));
+    });
+</script>

@@ -1,0 +1,460 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '쿠폰 선물하기' }) %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <div class="container pd-h-5u mg-t-15u">
+                <!-- 아래의 스크립트는 예시이며 html ajax 호출을 사용하세요 -->
+                <script>
+                    var giveCompleteTemplate = {
+                        // 선물 받을 사용자가 비회원인 경우
+                        type1: '<p class="txt-center">\n' +
+                          '    <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>\n' +
+                          '    <span class="txt-w500">홍길동</span>(비회원)님에게<br />쿠폰선물 링크가 전송되었습니다.\n' +
+                          '</p>',
+                        // 선물 받을 사용자가 회원인 경우
+                        type2: '<p class="txt-center">\n' +
+                          '    <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>\n' +
+                          '    <span class="txt-w500">홍길동</span>(회원)님에게 <br />쿠폰선물 링크가 전송되었습니다.\n' +
+                          '    <p class="txt-center txt-neutral2 txt-12 mg-t-2u"><span class="txt-primary">*</span> 받는 분의 쿠폰함에 선물하신 쿠폰이 발급됩니다.</p>\n' +
+                          '</p>',
+                        // 선물 받을 사용자가 회원이며 2개 이상의 회원 계정으로 식별되는 경우
+                        type3: '<p class="txt-center txt-14">\n' +
+                          '    <span class="line-icons present size-48 txt-primary mg-b-2u"></span><br>\n' +
+                          '    입력하신 정보와 일치하는 회원이 <em class="txt-w500">2명</em> 있습니다.<br>선물하실 회원을 선택하세요.\n' +
+                          '</p>\n' +
+                          '<div class="divider mg-v-5u"></div>\n' +
+                          '<div class="container border-all bg-filet-4 pd-h-6u pd-v-2u mg-t-4u">\n' +
+                          '<table class="pd-medium">\n' +
+                          '<tbody>\n' +
+                          '<tr>\n' +
+                          '<td>\n' +
+                          '<label class="radio-item">\n' +
+                          '<input type="radio" name="coupon-give-target" checked="">\n' +
+                          '<div class="icon-holder">\n' +
+                          '<span class="line-icons circle size-20"></span>\n' +
+                          '</div>\n' +
+                          '<div class="labelling">\n' +
+                          '<span class="label-txt mg-h-1u">홍길동 (user**1)</span>\n' +
+                          '</div>\n' +
+                          '</label>\n' +
+                          '</td>\n' +
+                          '</tr>\n' +
+                          '<tr class="border-t border-light">\n' +
+                          '<td>\n' +
+                          '<label class="radio-item">\n' +
+                          '<input type="radio" name="coupon-give-target" checked="">\n' +
+                          '<div class="icon-holder">\n' +
+                          '<span class="line-icons circle size-20"></span>\n' +
+                          '</div>\n' +
+                          '<div class="labelling">\n' +
+                          '<span class="label-txt mg-h-1u">홍길동 (user***@email.com)</span>\n' +
+                          '</div>\n' +
+                          '</label>\n' +
+                          '</td>\n' +
+                          '</tr>\n' +
+                          '</tbody>\n' +
+                          '</table>\n' +
+                          '</div>',
+                        type4: '<p class="txt-center txt-14">\n' +
+                          '       <span class="line-icons present size-48 txt-primary mg-b-2u"></span><br>\n' +
+                          '       아래 입력하신 지인에게<br>쿠폰을 선물하시겠습니까?\n' +
+                          '   </p>\n' +
+                          '<div class="container border-all bg-filet-4 pd-h-6u pd-v-2u mg-t-4u">\n' +
+                          '<table class="pd-medium">\n' +
+                          '<colgroup>\n' +
+                          '<col style="width:80px;">\n' +
+                          '<col>\n' +
+                          '</colgroup>\n' +
+                          '<tbody>\n' +
+                          '<tr>\n' +
+                          '<th class="txt-left txt-neutral2">이름</th>\n' +
+                          '<td class="txt-right">홍길동</td>\n' +
+                          '</tr>\n' +
+                          '<tr class="border-t border-light">\n' +
+                          '<th class="txt-left txt-neutral2">휴대폰번호</th>\n' +
+                          '<td class="txt-right">010-1234-9876</td>\n' +
+                          '</tr>\n' +
+                          '</tbody>\n' +
+                          '</table>\n' +
+                          '</div>\n' +
+                          '<p class="txt-center txt-neutral2 txt-12 mg-t-2u"><span class="txt-primary">*</span> 한번 선물하신 쿠폰은 취소가 불가능합니다.</p>',
+                        /* 20220609 // */
+                        giveAppTemplate: `
+                            <div class="container pd-h-5u">
+                                <h3 class="border-b pd-b-3u txt-w500">고객정보 입력</h3>
+                            </div>
+                            <div class="container pd-h-5u mg-t-2u">
+                                <p class="txt-neutral2 txt-12">쿠폰선물 받으실분의 정보를 입력/검색 후 아래의<br />‘쿠폰선물하기’ 버튼을 눌러주세요</p>
+                            </div>
+                            <div class="container pd-h-5u mg-t-5u">
+                                <table class="pd-slim">
+                                    <colgroup>
+                                        <col style="width: 60px;" />
+                                        <col style="width: auto;" />
+                                        <col style="width: auto;" />
+                                        <col style="width: auto;" />
+                                        <col style="width: auto;" />
+                                        <col style="width: auto;" />
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <td>이름</td>
+                                        <td colspan="3">
+                                            <div class="form-control form-control-md">
+                                                <div class="input-group">
+                                                    <input type="text" class="input-box" placeholder="" />
+                                                    <div class="tools">
+                                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <button type="button" class="button-phonebook" data-analytics-click="연락처 불러오기">
+                                                <span class="line-icons men"></span>
+                                                <span class="label-txt txt-12">연락처</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>휴대폰</td>
+                                        <td colspan="5">
+                                            <div class="form-control form-control-md">
+                                                <div class="input-group">
+                                                    <input type="text" class="input-box" placeholder="띄어쓰기 없이 번호만 입력해 주세요" />
+                                                    <div class="tools">
+                                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p class="txt-primary mg-t-4u icon-word-copy txt-12 line-16 pd-l-6u"><span class="line-icons caution-inv size-20"></span> 가입된 회원에게 선물하실 경우 회원명, 전화번호가 일치하지 않으면 쿠폰이 발송되지 않습니다.</p>
+                            </div>
+
+                            <div class="container pd-h-5u mg-t-10u">
+                                <p class="mg-b-2u">쿠폰 선물하기 안내</p>
+                                <div class="box box-gray box-radius">
+                                    <ul class="list-style-disc">
+                                        <li><span class="txt-primary line-16 txt-12">선물한 쿠폰은 사용가능 쿠폰함에서 지난쿠폰함으로 옮겨집니다.</span></li>
+                                        <li class="mg-t-1u"><span class="txt-12 line-16">선물한 쿠폰은 사용기간 잔여기간 동안 사용이 가능합니다.</span></li>
+                                        <li class="mg-t-1u"><span class="txt-12 line-16">선물받으실 분이 비회원인 경우 카카오로 쿠폰다운로드 링크가 발송됩니다.<br />(카카오톡 없는경우 문자발송)</span></li>
+                                        <li class="mg-t-1u"><span class="txt-12 line-16">한번 선물하신 쿠폰은 취소가 불가능합니다.</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        `,
+                        /* // 20220609*/
+                        giveWebTemplate: `
+                        <div class="container pd-h-5u">
+                            <h3 class="border-b pd-b-3u txt-w500">고객정보 입력</h3>
+                        </div>
+                        <div class="container pd-h-5u mg-t-2u">
+                            <p class="txt-neutral2">쿠폰선물 받으실분의 이름/휴대폰번호를 입력하고 아래의 '쿠폰선물하기' 버튼을 눌러주세요</p>
+                        </div>
+                        <div class="container pd-h-5u mg-t-8u">
+                            <table class="pd-slim">
+                                <colgroup>
+                                    <col style="width: 60px;" />
+                                    <col style="width: auto;" />
+                                    <col style="width: 12px;" />
+                                    <col style="width: auto;" />
+                                    <col style="width: 12px;" />
+                                    <col style="width: auto;" />
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td>이름</td>
+                                    <td colspan="5">
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" placeholder="" />
+                                                <div class="tools">
+                                                    <button class="clear"><span class="line-icons close-circle"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>휴대폰</td>
+                                    <td>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <select class="input-box">
+                                                    <option value="010">010</option>
+                                                    <option value="011">011</option>
+                                                    <option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="018">018</option>
+                                                </select>
+                                                <div class="tools">
+                                                    <button><span class="line-icons chev-down"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="txt-center">-</td>
+                                    <td>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="txt-center">-</td>
+                                    <td>
+                                        <div class="form-control form-control-md">
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="container pd-h-5u mg-t-10u">
+                            <p class="mg-b-2u">쿠폰 선물하기 안내</p>
+                            <div class="box box-gray box-radius">
+                                <ul class="list-style-disc">
+                                    <li><span class="txt-primary line-16 txt-12">선물한 쿠폰은 사용가능 쿠폰함에서 지난쿠폰함으로 옮겨집니다.</span></li>
+                                    <li class="mg-t-1u"><span class="txt-12 line-16">선물한 쿠폰은 사용기간 잔여기간 동안 사용이 가능합니다.</span></li>
+                                    <li class="mg-t-1u"><span class="txt-12 line-16">선물받으실 분이 비회원인 경우 카카오로 쿠폰다운로드 링크가 발송됩니다.<br />(카카오톡 없는경우 문자발송)</span></li>
+                                    <li class="mg-t-1u"><span class="txt-12 line-16">한번 선물하신 쿠폰은 취소가 불가능합니다.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        `
+                    }
+                </script>
+
+
+                <div class="mg-t-5u">
+                    <!-- 20220609 팝업 호출시 간격 옵션 수정// -->
+                    <button
+                        type="button"
+                        class="btn-item btn-neutral round full-w mg-t-5"
+                        onclick="$.Tstation.popup().open({
+                                ref: '', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                title: '쿠폰선물 확인', // 제목
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: giveCompleteTemplate.giveAppTemplate, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 0, //20220609
+                                    vertical: 5, //20220609
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: true,
+                                    buttons: [
+                                        {
+                                            label: '쿠폰 선물하기',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+                        >
+                        <span class="label-txt">APP 쿠폰 선물하기</span>
+                    </button>
+                    <!-- // 20220609 -->
+                </div>
+                <div class="mg-t-5u">
+                    <button
+                        type="button"
+                        class="btn-item btn-neutral round full-w mg-t-5"
+                        onclick="$.Tstation.popup().open({
+                                ref: '', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                title: '쿠폰선물 확인', // 제목
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: giveCompleteTemplate.giveWebTemplate, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 0,  //20220609
+                                    vertical: 5, //20220609
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: true,
+                                    buttons: [
+                                        {
+                                            label: '쿠폰 선물하기',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+                        >
+                        <span class="label-txt">WEB 쿠폰 선물하기</span>
+                    </button>
+                </div>
+                <div class="mg-t-5u">
+                    <button
+                        type="button"
+                        class="btn-item btn-neutral round full-w"
+                        onclick="$.Tstation.popup().open({
+                                ref: '', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                title: '쿠폰선물 완료', // 제목
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: giveCompleteTemplate.type1, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: true,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+                        >
+                        <span class="label-txt">쿠폰 선물하기</span>
+                    </button>
+                </div>
+                <div class="mg-t-5u">
+                    <button
+                        type="button"
+                        class="btn-item btn-neutral round full-w"
+                        onclick="$.Tstation.popup().open({
+                                ref: '', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                title: '쿠폰선물 완료', // 제목
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: giveCompleteTemplate.type2, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: true,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+                        >
+                        <span class="label-txt">쿠폰 선물하기</span>
+                    </button>
+                </div>
+                <div class="mg-t-5u">
+                    <button
+                        type="button"
+                        class="btn-item btn-neutral round full-w"
+                        onclick="$.Tstation.popup().open({
+                                ref: '', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                title: '쿠폰선물 확인', // 제목
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: giveCompleteTemplate.type3, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: true,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                    ]
+                                }
+                            })"
+                        >
+                        <span class="label-txt">쿠폰 선물하기</span>
+                    </button>
+                </div>
+                <div class="mg-t-5u">
+                    <button
+                        type="button"
+                        class="btn-item btn-neutral round full-w"
+                        onclick="$.Tstation.popup().open({
+                                ref: '', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                title: '쿠폰선물 확인', // 제목
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: giveCompleteTemplate.type4, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: true,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                    ]
+                                }
+                            })"
+                        >
+                        <span class="label-txt">쿠폰 선물하기</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

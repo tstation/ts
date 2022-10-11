@@ -1,0 +1,220 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'MY 차량 정보 수정' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container pd-h-5u pd-v-5u">
+        <p><span class="txt-primary">*</span> 인증이 완료된 차량의 기본 정보는 수정하실 수 없습니다.</p>
+        <div class="bg-light1 pd-h-4u pd-v-4u bg-filet-4 mg-t-2u mycar-spec">
+            <table class="pd-medium">
+                <tbody>
+                <!-- 202012 pub // -->
+                <tr class="txt-16">
+                    <td><h6 class="txt-12 txt-neutral2">차량 번호</h6></td>
+                    <td><p>07더3307</p></td>
+                </tr>
+                <tr class="txt-16">
+                    <td><h6 class="txt-12 txt-neutral2">자동차 브랜드</h6></td>
+                    <td><p>기아</p></td>
+                </tr>
+                <tr class="txt-16">
+                    <td><h6 class="txt-12 txt-neutral2">차종</h6></td>
+                    <td><p>쏘렌토</p></td>
+                </tr>
+                <tr class="txt-16">
+                    <td><h6 class="txt-12 txt-neutral2">세부 차종</h6></td>
+                    <td><p>올 뉴 쏘렌토</p></td>
+                </tr>
+                <tr class="txt-16">
+                    <td><h6 class="txt-12 txt-neutral2">연료</h6></td>
+                    <td><p>디젤</p></td>
+                </tr>
+                <tr class="txt-16">
+                    <td><h6 class="txt-12 txt-neutral2">모델 연도</h6></td>
+                    <td><p>2017년</p></td>
+                </tr>
+                <tr class="txt-16">
+                    <td><h6 class="txt-12 txt-neutral2">세부 모델</h6></td>
+                    <td><p>노블레스 스페셜</p></td>
+                </tr>
+                <!-- // 202012 pub -->
+                </tbody>
+            </table>
+        </div>
+
+        <form>
+            <ul class="pd-t-8u">
+                <li>
+                    <div class="form-control inline-xl">
+                        <label>
+                            타이어 사이즈
+                            <!-- onclick 타이어 사이즈 확인방법 팝업 -->
+                            <button type="button" class="btn-item btn-neutral btn-inv btn-xs bg-transparent filet float-r pd-h-1u">
+                                <span class="label-txt txt-12">타이어 사이즈 확인방법</span>
+                                <span class="line-icons info-circle size-20"></span>
+                            </button>
+                        </label>
+                        <div class="input-group">
+                            <select class="input-box">
+                                <option value="" disabled="">선택</option>
+                                <option value="">options1</option>
+                                <option value="">options2</option>
+                                <option value="" selected="">직접입력</option>
+                            </select>
+                            <div class="tools">
+                                <button><span class="line-icons chev-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 직접입력 선택시에만 노출 -->
+                    <ul class="list-size-equal mg-t-2u">
+                        <li class="pd-r-2u">
+                            <div class="form-control inline-xl">
+                                <div class="input-group">
+                                    <select class="input-box">
+                                        <option value="" selected="" disabled="">단면폭</option>
+                                        <option value="">options1</option>
+                                        <option value="">options2</option>
+                                        <option value="">options...</option>
+                                    </select>
+                                    <div class="tools">
+                                        <button><span class="line-icons chev-down"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="pd-h-1u">
+                            <div class="form-control inline-xl">
+                                <div class="input-group">
+                                    <select class="input-box">
+                                        <option value="" selected="" disabled="">편평비</option>
+                                        <option value="">options1</option>
+                                        <option value="">options2</option>
+                                        <option value="">options...</option>
+                                    </select>
+                                    <div class="tools">
+                                        <button><span class="line-icons chev-down"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="pd-l-2u">
+                            <div class="form-control inline-xl">
+                                <div class="input-group">
+                                    <select class="input-box">
+                                        <option value="" selected="" disabled="">인치</option>
+                                        <option value="">options1</option>
+                                        <option value="">options2</option>
+                                        <option value="">options...</option>
+                                    </select>
+                                    <div class="tools">
+                                        <button><span class="line-icons chev-down"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- 후륜이 다른 노출 -->
+                    <label class="check-item mg-t-2u mg-b-1u" onchange="$('.tire-size-rear').css({ display: $(this).children('input').is(':checked') ? 'block' : 'none' });">
+                        <input type="checkbox" />
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u">후륜이 다른 경우 선택하세요.</span>
+                        </div>
+                    </label>
+
+                    <!-- 후륜 입력 -->
+                    <ul class="list-size-equal tire-size-rear" style="display: none;">
+                        <li class="pd-r-2u">
+                            <div class="form-control inline-xl">
+                                <div class="input-group">
+                                    <select class="input-box">
+                                        <option value="" selected="" disabled="">단면폭</option>
+                                        <option value="">options1</option>
+                                        <option value="">options2</option>
+                                        <option value="">options...</option>
+                                    </select>
+                                    <div class="tools">
+                                        <button><span class="line-icons chev-down"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="pd-h-1u">
+                            <div class="form-control inline-xl">
+                                <div class="input-group">
+                                    <select class="input-box">
+                                        <option value="" selected="" disabled="">편평비</option>
+                                        <option value="">options1</option>
+                                        <option value="">options2</option>
+                                        <option value="">options...</option>
+                                    </select>
+                                    <div class="tools">
+                                        <button><span class="line-icons chev-down"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="pd-l-2u">
+                            <div class="form-control inline-xl">
+                                <div class="input-group">
+                                    <select class="input-box">
+                                        <option value="" selected="" disabled="">인치</option>
+                                        <option value="">options1</option>
+                                        <option value="">options2</option>
+                                        <option value="">options...</option>
+                                    </select>
+                                    <div class="tools">
+                                        <button><span class="line-icons chev-down"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="mg-t-4u">
+                    <div class="form-control inline-xl">
+                        <label>총 주행거리(km)</label>
+                        <div class="input-group">
+                            <input type="text" class="input-box" placeholder="현재 주행거리를 입력해 주세요">
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mg-t-2u">
+                        <span class="txt-primary">현재 48,070km</span>
+                        <span class="txt-neutral3">(최종 갱신일: 20.08.01)</span>
+                    </p>
+                </li>
+            </ul>
+        </form>
+
+        <ul class="mg-t-6u">
+            <li class="col_half">
+                <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                    <span class="label-txt">취소</span>
+                </button>
+            </li>
+
+            <li class="col_half col_last">
+                <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                    <span class="label-txt">수정완료</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</main>

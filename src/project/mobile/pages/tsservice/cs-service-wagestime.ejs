@@ -1,0 +1,634 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'T\'Station 서비스 안내' }) %>
+<div id="container" class="cscenter">
+    <!-- 서비스 안내 tab -->
+    <div class="order_01">
+        <ul>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/servicetire.do">주요서비스 안내</a></li>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/knowhowtire.do">관리 노하우</a></li>
+            <li class="on"><a href="https://m.tstation.com/customer-service/tsservice/wagestime.do">표준 정비시간</a></li>
+        </ul>
+    </div>
+    <!-- 03. 공임비 : 시간 -->
+    <div class="cs_tab tabScript2">
+        <div class="txt01">
+            <ol>
+                <li>위 표의 표준 정비시간은 작업별 평균 정비시간으로 제작사 <em>모델별로 상이</em>할 수 있습니다.</li>
+                <li>표준 정비시간은 <em>수입자동차 및 차종의 형식, 구조, 차량의 노후 상태</em>에 따라 가감 될 수 있습니다.</li>
+                <li>표준 정비시간은 <em>장비의 사용 여부와 작업의 난이도</em>에 따라 가감 될 수 있습니다.</li>
+                <li>표준 정비 시간은 자동차 정비사업자 단체인 <em>‘한국자동차 전문정비 사업조합 연합회’</em>에 따른 것입니다.</li>
+            </ol>
+        </div>
+        <div class="tab">
+            <ul class="wages">
+                <li class="on"><button class="icnW1" data-rel="service_cont" title="wegesT1">승용차</button></li>
+                <li><button class="icnW2" data-rel="service_cont" title="wegesT2">승합차</button></li>
+                <li><button class="icnW3" data-rel="service_cont" title="wegesT3">화물차</button></li>
+            </ul>
+        </div>
+        <div id="wegesT1" class="service_cont subAccordion">
+            <dl class="ds03">
+                <dt>승용차 (1,000CC 이하)</dt>
+                <dd class="dd_02">
+                    <div class="tbl_cs2r">(단위 : 시간 / 1.0 = 1시간)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준 공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="6">타이어</th>
+                                <th>장착(1개)</th>
+                                <td>0.6</td>
+                            </tr>
+                            <tr>
+                                <th>휠 밸런스(1개)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(간이식)</th>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(착탈식)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>위치 교환<br>(타이어 전체)</th>
+                                <td>0.8</td>
+                            </tr>
+                            <tr>
+                                <th>휠 얼라인먼트</th>
+                                <td>1.0</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 앞패드</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">배터리</th>
+                                <th>교환</th>
+                                <td>0.4</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray" rowspan="2">엔진 오일</th>
+                                <th>교환</th>
+                                <td>0.7</td>
+                            </tr>
+                            <tr>
+                                <th>교환(디젤)</th>
+                                <td>0.6</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 오일</th>
+                                <th>교환</th>
+                                <td>1.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">오토미션 오일</th>
+                                <th>교환</th>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">부동액</th>
+                                <th>교환</th>
+                                <td>1.9</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">팬벨트</th>
+                                <th>교환</th>
+                                <td>0.4</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">실내벨트</th>
+                                <th>교환</th>
+                                <td>0.4</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">에이컨 가스</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">와이퍼</th>
+                                <th>교환</th>
+                                <td>0.1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="ds03">
+                <dt>승용차 (2,000CC 미만)</dt>
+                <dd class="dd_02">
+                    <div class="tbl_cs2r">(단위 : 시간 / 1.0 = 1시간)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준 공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="6">타이어</th>
+                                <th>장착(1개)</th>
+                                <td>0.7</td>
+                            </tr>
+                            <tr>
+                                <th>휠 밸런스(1개)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(간이식)</th>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(착탈식)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>위치 교환<br>(타이어 전체)</th>
+                                <td>0.8</td>
+                            </tr>
+                            <tr>
+                                <th>휠 얼라인먼트</th>
+                                <td>1.0</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 앞패드</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">배터리</th>
+                                <th>교환</th>
+                                <td>0.3</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray" rowspan="2">엔진 오일</th>
+                                <th>교환</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>교환(디젤)</th>
+                                <td>0.7</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 오일</th>
+                                <th>교환</th>
+                                <td>1.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">오토미션 오일</th>
+                                <th>교환</th>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">부동액</th>
+                                <th>교환</th>
+                                <td>1.9</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">팬벨트</th>
+                                <th>교환</th>
+                                <td>0.4</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">실내벨트</th>
+                                <th>교환</th>
+                                <td>0.4</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">에이컨 가스</th>
+                                <th>교환</th>
+                                <td>1.5</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">와이퍼</th>
+                                <th>교환</th>
+                                <td>0.1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="ds03">
+                <dt>승용차 (2,000CC 이상)</dt>
+                <dd class="dd_02">
+                    <div class="tbl_cs2r">(단위 : 시간 / 1.0 = 1시간)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준 공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="6">타이어</th>
+                                <th>장착(1개)</th>
+                                <td>0.7</td>
+                            </tr>
+                            <tr>
+                                <th>휠 밸런스(1개)</th>
+                                <td>0.6</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(간이식)</th>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(착탈식)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>위치 교환<br>(타이어 전체)</th>
+                                <td>0.8</td>
+                            </tr>
+                            <tr>
+                                <th>휠 얼라인먼트</th>
+                                <td>1.0</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 앞패드</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">배터리</th>
+                                <th>교환</th>
+                                <td>0.4</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray" rowspan="2">엔진 오일</th>
+                                <th>교환</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>교환(디젤)</th>
+                                <td>0.7</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 오일</th>
+                                <th>교환</th>
+                                <td>1.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">오토미션 오일</th>
+                                <th>교환</th>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">부동액</th>
+                                <th>교환</th>
+                                <td>1.9</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">팬벨트</th>
+                                <th>교환</th>
+                                <td>0.6</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">실내벨트</th>
+                                <th>교환</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">에이컨 가스</th>
+                                <th>교환</th>
+                                <td>1.5</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">와이퍼</th>
+                                <th>교환</th>
+                                <td>0.1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="wegesT2" class="service_cont" style="display:none;">
+            <dl class="ds03 on">
+                <dt>승합차 (15인승 이하)</dt>
+                <dd class="dd_02">
+                    <div class="tbl_cs2r">(단위 : 시간 / 1.0 = 1시간)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준 공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="6">타이어</th>
+                                <th>장착(1개)</th>
+                                <td>0.7</td>
+                            </tr>
+                            <tr>
+                                <th>휠 밸런스(1개)</th>
+                                <td>0.6</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(간이식)</th>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(착탈식)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>위치 교환<br>(타이어 전체)</th>
+                                <td>0.8</td>
+                            </tr>
+                            <tr>
+                                <th>휠 얼라인먼트</th>
+                                <td>1.0</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 앞패드</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">배터리</th>
+                                <th>교환</th>
+                                <td>0.5</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray" rowspan="2">엔진 오일</th>
+                                <th>교환</th>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <th>교환(디젤)</th>
+                                <td>0.7</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 오일</th>
+                                <th>교환</th>
+                                <td>01.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">오토미션 오일</th>
+                                <th>교환</th>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">부동액</th>
+                                <th>교환</th>
+                                <td>1.9</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">팬벨트</th>
+                                <th>교환</th>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">실내벨트</th>
+                                <th>교환</th>
+                                <td>0.6</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">에이컨 가스</th>
+                                <th>교환</th>
+                                <td>1.6</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">와이퍼</th>
+                                <th>교환</th>
+                                <td>0.2</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div id="wegesT3" class="service_cont subAccordion" style="display:none;">
+            <dl class="ds03">
+                <dt>화물차 (1톤 이하)</dt>
+                <dd class="dd_02">
+                    <div class="tbl_cs2r">(단위 : 시간 / 1.0 = 1시간)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준 공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="6">타이어</th>
+                                <th>장착(1개)</th>
+                                <td>0.7</td>
+                            </tr>
+                            <tr>
+                                <th>휠 밸런스(1개)</th>
+                                <td>0.6</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(간이식)</th>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(착탈식)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>위치 교환<br>(타이어 전체)</th>
+                                <td>0.8</td>
+                            </tr>
+                            <tr>
+                                <th>휠 얼라인먼트</th>
+                                <td>1.0</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 앞패드</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">배터리</th>
+                                <th>교환</th>
+                                <td>0.5</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray" rowspan="2">엔진 오일</th>
+                                <th>교환</th>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <th>교환(디젤)</th>
+                                <td>0.7</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 오일</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">오토미션 오일</th>
+                                <th>교환</th>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">부동액</th>
+                                <th>교환</th>
+                                <td>1.9</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">팬벨트</th>
+                                <th>교환</th>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">실내벨트</th>
+                                <th>교환</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">에이컨 가스</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">와이퍼</th>
+                                <th>교환</th>
+                                <td>0.2</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="ds03">
+                <dt>화물차 (1톤 이상)</dt>
+                <dd class="dd_02">
+                    <div class="tbl_cs2r">(단위 : 시간 / 1.0 = 1시간)</div>
+                    <div class="tbl_cs2">
+                        <table summary="표준 공임비 내역">
+                            <colgroup>
+                                <col style="width:110px;"><col style="width:110px;"><col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th class="gray" rowspan="6">타이어</th>
+                                <th>장착(1개)</th>
+                                <td>1.1</td>
+                            </tr>
+                            <tr>
+                                <th>휠 밸런스(1개)</th>
+                                <td>0.7</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(간이식)</th>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <th>펑크(착탈식)</th>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <th>위치 교환<br>(타이어 전체)</th>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <th>휠 얼라인먼트</th>
+                                <td>1.0</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gray">브레이크 앞패드</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">배터리</th>
+                                <th>교환</th>
+                                <td>0.6</td>
+                            </tr>
+                            <tr>
+                                <th class="gray" rowspan="2">엔진 오일</th>
+                                <th>교환</th>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <th>교환(디젤)</th>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">브레이크 오일</th>
+                                <th>교환</th>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">오토미션 오일</th>
+                                <th>교환</th>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">부동액</th>
+                                <th>교환</th>
+                                <td>1.9</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">팬벨트</th>
+                                <th>교환</th>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">실내벨트</th>
+                                <th>교환</th>
+                                <td>0.4</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">에이컨 가스</th>
+                                <th>교환</th>
+                                <td>1.4</td>
+                            </tr>
+                            <tr>
+                                <th class="gray">와이퍼</th>
+                                <th>교환</th>
+                                <td>0.2</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- //03. 공임비 : 시간 -->
+</div>
+<script>
+    $(document).ready(function(){
+        //* 서비스 안내 : Accordion Script
+        $('.subAccordion > dl > dt').on("click", function () {
+            if( !$(this).parent().hasClass('on') ){
+                $(this).parent().addClass('on');
+                $(this).parent().children('dd').slideDown();
+            } else if( $(this).parent().hasClass('on') ) {
+                $(this).parent().removeClass('on');
+                $(this).parent().children('dd').slideUp();
+            }
+        });
+    });
+</script>

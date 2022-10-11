@@ -1,0 +1,123 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '점검항목 상세' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u over-hidden">
+                <div class="check-list-detail change-product-num02 mg-t-6u">
+                    <div class="detail-category-box require-reset">
+                        <!-- 경정비별 아이콘 -->
+                        <!-- <i><span class="line-icons indoor-filter size-24"></span></i> -->
+                        <i><span class="line-icons engine-oil size-24"></span></i>
+                        <!-- <i><span class="line-icons alignment size-24"></span></i> -->
+                        <!-- <i><span class="line-icons tire-2 size-24"></span></i> -->
+                        <!-- <i><span class="line-icons battery size-24"></span></i> -->
+                        <!-- <i><span class="line-icons wiper size-24"></span></i> -->
+                        <p class="product-state"><strong>엔진오일 교체 <em>D-60</em></strong>(교체주기 6개월)</p>
+
+                        <button type="button" class="btn-item btn-gray btn-ol btn-s round btn-reset pd-h-2u">
+                            <span class="label-txt">점검일 초기화</span>
+                            <span class="line-icons refresh size-24"></span>
+                        </button>
+                    </div>
+                    <div class="change-date-area">
+                        <div class="day">최근 점검일: 20.03.30</div>
+                        <div class="recommend-day"><em>권장 점검일</em>: 20.09.30</div>
+                        <!--<button type="button" class="reset">
+                            교체일 초기화
+                            <span class="line-icons refresh size-20"></span>
+                        </button>-->
+                        <div class="change-date-bar">
+                            <div class="change-dating" style="width: 80%;">
+                                <div class="icon_bar"></div>
+                            </div>
+                        </div>
+                        <!-- 임박하지 않은 상태는 메시지 비움 -->
+                        <div class="change-message">교체일이 얼마 남지 않았어요!</div>
+                    </div>
+                </div>
+                <div class="section-header border-none clearfix over-visible membership-coupons-tit">
+                    <h3 class="txt-w400">멤버십혜택 <em class="txt-w500">쿠폰</em></h3>
+                </div>
+
+                <!-- 다운완료 전 button  -->
+                <button type="button" class="btn-item btn-neutral btn-s btn-ol round coupon-download-btn">
+                    <span class="label-txt">멤버십쿠폰</span>
+                    <span class="line-icons download size-20 before"></span>
+                    <span class="line-icons check-circle-inv size-20 after"></span>
+                </button>
+
+                <!-- 다운완료 후 button  -->
+                <button type="button" class="btn-item btn-neutral btn-s btn-ol round coupon-download-btn downloaded" disabled="">
+                    <span class="label-txt">멤버십쿠폰</span>
+                    <span class="line-icons download size-20 before"></span>
+                    <span class="line-icons check-circle-inv size-20 after"></span>
+                </button>
+
+                <div class="section-header border-none clearfix over-visible membership-coupons-tit pd-t-10u">
+                    <h3 class="txt-w400">내 차에 꼭 맞는 <em class="txt-w500">상품추천</em></h3>
+                    <a href="" class="link-all-view">
+                        전체보기
+                        <span class="line-icons chev-right size-24"></span>
+                    </a>
+                </div>
+                <div class="swiper-container mycar-goods-recommend-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="" class="mycar-goods-recommend">
+                                <div class="goods-img"><img src="mc-static-root/images/common/mycar_sample.png"></div>
+                                <i class="flag_state">프리미엄</i>
+                                <h5>보덴 활성탄 필터</h5>
+                                <p><span class="original-price">110,100원</span></p>
+                                <p class="sale-price"><strong>83,700</strong>원</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="" class="mycar-goods-recommend">
+                                <div class="goods-img"></div>
+                                <h5>보덴 활성탄 필터</h5>
+                                <p><span class="original-price">110,100원</span></p>
+                                <p class="sale-price"><strong>83,700</strong>원</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="" class="mycar-goods-recommend">
+                                <div class="goods-img"><img src="mc-static-root/images/common/mycar_sample.png"></div>
+                                <i class="flag_state">프리미엄</i>
+                                <h5>보덴 활성탄 필터</h5>
+                                <p><span class="original-price">110,100원</span></p>
+                                <p class="sale-price"><strong>83,700</strong>원</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <script>
+                        var mycar_goods_recommend_swiper = new Swiper('.mycar-goods-recommend-swiper', {
+                            init: false,
+                            // spaceBetween: 8,
+                            slidesPerView: 'auto',
+                        });
+
+                        mycar_goods_recommend_swiper.init();
+
+                        $(window).on('resize', function () {
+                            mycar_goods_recommend_swiper.init();
+                        });
+                    </script>
+                </div>
+                <!-- 2021-03-31 // -->
+                <p class="change-date-info-txt">
+                <p class="txt-12 txt-neutral2">*고객님께 알려드리는 점검일은 티스테이션에서 권장하는 기준이며, 차량의 상태 및 주행거리에 따라 상이할 수 있습니다.</p>
+                <p class="txt-12 txt-neutral2 mg-t-1u">*실제 이력이 없는 경우 최근 교체/점검일은 멤버십 차량등록일 기준으로 알려드립니다</p>
+                </p>
+                <!-- // 2021-03-31 -->
+            </div>
+        </section>
+    </div>
+</main>

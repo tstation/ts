@@ -1,0 +1,17 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<link rel="stylesheet" type="text/css" href="pc-static-root/css/safe-service.css" /><!-- 안심서비스 전용 CSS -->
+<div id="container" class="safeservice-group">
+    
+    <div class="container">
+        <div class="guardrail">
+            <div id="contents" class="">
+                <div class="pd-v-30u">
+                    <%- locals.widget ('src/project/desktop/pages/mypage/includes/safe-lending.ejs') %> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

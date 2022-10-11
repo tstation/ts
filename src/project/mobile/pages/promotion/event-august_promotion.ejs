@@ -1,0 +1,43 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        The Premium Rewards - SUV
+        <span class="date">이벤트 기간 : 20.08.05  ~ 20.10.31</span>
+    </div>
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <div class="event_detail">
+        
+        <div style="max-width: 750px;margin: auto;">
+            <div class="event-img-wrap">
+                <img src="mc-static-root/images/event/20220106/mc_con1.png" alt="" />
+            </div>
+            <ul class="list-size-flex" style="padding: 0 5%">
+                <li style="padding-right: 1%;">
+                    <a href="#none" class="dp-block"><img src="mc-static-root/images/event/20220106/mc_con2.png" alt="더 많은 리뷰보러 가기" /></a>
+                </li>
+                <li style="padding-left: 1%;">
+                    <a href="#none" class="dp-block"><img src="mc-static-root/images/event/20220106/mc_con3.png" alt="리뷰쓰러 가기" /></a>
+                </li>
+            </div>
+    
+            <div class="event-img-wrap">
+                <img src="mc-static-root/images/event/20220106/mc_con4.png" alt="" />
+            </div>
+        </div>
+
+    </div>
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+    <!-- //event list -->
+
+</div>

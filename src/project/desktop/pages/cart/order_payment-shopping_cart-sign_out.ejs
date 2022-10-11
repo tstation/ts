@@ -1,0 +1,38 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <div id="contents">
+        <div class="page-header">
+            <h1>장바구니</h1>
+            <span class="txt-24">(<span class="txt-primary">0</span>)</span>
+
+            <ul class="list-size-free float-r breadcrumb">
+                <li class="on">장바구니</li>
+                <li class="">주문/결제</li>
+                <li class="">주문완료</li>
+            </ul>
+        </div>
+
+        <!-- 장바구니 empty msg -->
+        <div class="empty-box size-l">
+            <div class="middler">
+                <span class="line-icons error-circle size-60"></span>
+                <p class="empty-msg">장바구니에 담긴 상품이 없습니다.</p>
+                <div class="container bg-light1 border-all bg-filet-4 half-w mg-h-auto mg-t-15u pd-v-10u">
+                    <p class="txt-neutral1">로그인 후, 장바구니에 보관된 상품을 확인하실 수 있습니다.</p>
+                    <button type="button" class="btn-item btn-neutral round w-150 mg-t-4u">
+                        <span class="label-txt">로그인</span>
+                    </button>
+                    <ul class="list-style-disc txt-12 txt-neutral2 mg-t-6u">
+                        <li>비회원으로 주문하실 경우 쿠폰 및 할인 혜택을 이용하실 수 없습니다.</li>
+                        <li>로그인 후 장바구니를 이용하시면 상품을 장기 보관하실 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

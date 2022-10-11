@@ -1,0 +1,26 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'MY 차량 관리' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-6u">
+                <div class="searching-car-view default">
+                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_dummy.png');"></div>
+                    <div class="txt-info">
+                        <p>내 차 정보 등록 후,<br>스마트케어 서비스를 통해<br>내 차를 분석하고 관리해 보세요.</p>
+                    </div>
+                    <button type="button" class="btn-item btn-neutral full-w round mg-t-2u">
+                        <span class="label-txt">MY 차량 등록</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

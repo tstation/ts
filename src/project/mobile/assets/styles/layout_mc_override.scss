@@ -1,0 +1,2223 @@
+@charset "UTF-8";
+/* INDEX
+ * 1. Common
+ * 2. 주문
+ * 3. 고객센터
+ */
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=1. COMMON ------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+#pageTitle { border-bottom: 1px solid #f2f2f7; }
+
+#pageTitle.fixed { border-bottom: 1px solid #f2f2f7 !important; }
+
+#pageTitle h3 {
+    color: #2a3138;
+    font-size: 17px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+
+/* .order_01 > ul {
+    padding: 0 20px;
+    border-bottom: 1px solid #d9dbdc;
+}
+
+
+.order_01 > ul li { border-bottom: 1px solid #d9dbdc;}
+
+.order_01 > ul li,
+.order_01 > ul.none li {
+    display: inline-block;
+    width: auto;
+}
+
+.order_01 > ul li.on:after {
+    height: 1px;
+    background: #fe6a2b;
+}
+
+.order_01 > ul li button, .order_01 > ul li a {
+    color: #5b6068;
+    fonts-size: 14px;
+    padding: 0 12px;
+
+}
+
+.order_01 > ul li.on button, .order_01 > ul li.on a {
+    color: #fe6a2b;
+    fonts-weight: 500;
+}
+
+#orderStepM2.fixed {
+    background: #f9f9fa;
+} */
+
+.order_01 > ul li { border-bottom: 1px solid #d9dbdc;}
+
+.order_01 > ul li.on:after {
+    height: 1px;
+    background: #fe6a2b;
+}
+
+.order_01 > ul li button, .order_01 > ul li a {
+    color: #5b6068;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+.order_01 > ul li.on button, .order_01 > ul li.on a {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=2. 주문 --------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/* .service_box .tab {
+    background: #f9f9fa;
+}
+.service_box .tab ul {
+    border-bottom: none;
+    padding: 0 20px;
+}
+
+.service_box .tab ul li {
+    display: inline-block;
+    width: auto !important;
+}
+
+.service_box .tab ul li button,
+.service_box .tab ul li a {
+    padding: 0 12px;
+} */
+
+.service_box .tab ul li button {
+    color: #5b6068;
+}
+
+.service_box .tab ul li.on button {
+    color: #fe6a2b;
+    font-weight: 500;
+    background: #fff;
+}
+
+.service_box .tab ul li + li:before {
+    display: none;
+}
+
+.service_box h6 {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.service_box h6 .dataTxt {
+    color: #fe6a2b;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.datepickBox > .txt { color: #5b6068; font-size: 12px;}
+
+.service_box .store_find {
+    border-top: 10px solid #fff;
+}
+
+.service_box .store_find > .store {
+    border-top: 1px solid #f2f2f7;
+}
+
+.service_box .store_find > .store button {
+    background: #fff;
+    border: 1px solid #d9dbdc;
+    border-radius: 4px;
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.service_box .time_find {
+    border-top: 10px solid #fff;
+}
+
+.service_box .time_find .day {
+    border-top: 1px solid #f2f2f7;
+}
+
+.service_box .time_find.firstDay .day {
+    border-top: 1px solid #f2f2f7;
+}
+
+.service_box .work_time {
+    border-top: 1px solid #f2f2f7;
+}
+
+.service_box .delivery_find {
+    border-top: 10px solid #fff;
+}
+
+.service_box .delivery_find .cont_box {
+    border-top: none;
+}
+
+.service_box .delivery_find .h6 {
+    border-bottom: 1px solid #f2f2f7;
+}
+
+.service_box .delivery_find .h6 .choice {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    color: #fe6a2b;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 49px;
+}
+
+.service_address .chk label {
+    color: #2a3138;
+}
+
+.service_box .delivery_find .cont_box ul li label {
+    background: #fff;
+    border: 1px solid #d9dbdc;
+    border-radius: 4px;
+    color: #2a3138;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    margin: 0;
+}
+
+.service_box .delivery_find .cont_box ul li label em {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.service_box .delivery_find .cont_box ul li .ip_c + label:before {
+    top: 14px;
+    left: unset;
+    right: 14px;
+}
+
+.service_address + .service_address {
+    border-top: 1px dashed #d9dbdc;
+}
+
+.service_address ol li .tit {
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.service_address .map01 {
+    border: 1px solid #d9dbdc;
+}
+
+.service_address .map01 .txt01 {
+    margin: 5px 10px;
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.service_address .map01 .txt01 em {
+    color: #fe6a2b;
+}
+
+.service_box .delivery_find .cont_box .txt02 {
+    color: #fe6a2b;
+    font-size: 12px;
+}
+
+.txt02_noti_span {
+    color: #5b6068;
+}
+
+.order_03 {
+    border-top: 10px solid #fff;
+}
+
+.order_03 ol {
+    background: #f9f9fa;
+}
+
+.order_03 ol li {
+    color: #2a3138;
+}
+
+.order_03 ol li .txt {
+    color: #a0a6af;
+}
+
+.order_03 ol li .txt.on {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+
+
+
+
+.layer_mylocation h3 {
+    border-bottom: 1px solid #d9dbdc;
+    color: #2a3138;
+    font-weight: 400;
+}
+
+.layer_mylocation .txt01 {
+    padding: 30px 20px 35px;
+    color: #2a3138;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.layer_filter .store ol li label {
+    color: #2a3138;
+    font-weight: 400;
+}
+
+#layerFullPopup .layerT {
+    border-bottom: 1px solid #f2f2f7;
+}
+
+#layerFullPopup .layerT h3 {
+    color: #2a3138;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+
+
+.store_map {
+    border-top: 10px solid #fff;
+}
+
+.map_location {
+    border: 1px solid #d9dbdc;
+    background: #f9f9fa;
+    border-radius: 4px;
+}
+.map_location .mylocation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: initial;
+  padding: 9px;
+}
+.map_location .mylocation:after { margin: initial; }
+
+.map_box {
+    border: 1px solid #d9dbdc;
+}
+
+.store_list .result {
+    border-top: 1px solid #f2f2f7;
+    border-bottom: 1px solid #f2f2f7;
+    background: #f9f9fa;
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.store_list .result em {
+    color: #fe6a2b;
+}
+
+.store_list .btnSort {
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.sort_box {
+    border: 1px solid #d9dbdc;
+}
+
+.sort_box li {
+    padding: 5px 15px 7px 8px;
+    border-top: 1px solid #d9dbdc;
+}
+
+.store_list .noData {
+    border-top: none;
+    color: #a0a6af;
+    border-bottom: 1px solid #d9dbdc;
+    font-size: 14px;
+}
+
+.customer_02 h6 {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.customer_02 > ul > li > a {
+    background: #f9f9fa;
+    border-radius: 4px;
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.customer_02 > ul > li > a em {
+    padding: 0;
+    background: #2a3138;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.store_list .list ol li {
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.store_list dl.store dt {
+    margin-bottom: 2px;
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.store_list dl.store dd {
+    color: #5b6068;
+    font-size: 14px;
+}
+
+
+.full_post .post_search .tip {
+    background: #f9f9fa;
+}
+
+.full_post .post_search .tip h6 {
+    color: #fe6a2b;
+    font-weight: 500;
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.full_post .post_search .tip li {
+    color: #5b6068;
+    font-size: 12px;
+}
+
+.full_post .post_result ol {
+    margin: 0;
+    padding: 15px 20px;
+}
+
+.full_post .post_result h6 {
+    border-top: 1px solid #f2f2f7;
+    border-bottom: 1px solid #f2f2f7;
+    background: #f9f9fa;
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.full_post .post_result h6 em {
+    color: #fe6a2b;
+}
+
+.full_post .post_result ol li > button {
+    border: 1px solid #d9dbdc;
+    border-radius: 4px;
+}
+
+.full_post .post_result .no {
+    border-bottom: 1px solid #d9dbdc;
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.full_post .post_result .add {
+    color: #2a3138;
+}
+
+.full_post .post_result .add em {
+    border: 1px solid #fe6a2b;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 2px;
+}
+
+.full_post .post_result .add em.s01 {
+    color: #fff;
+    background: #fe6a2b;
+}
+
+.full_post .post_result .tit {
+    border-top: 1px solid #d9dbdc;
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.full_post .post_result .address {
+    background: #f9f9fa;
+}
+
+
+.order_box {
+    background: #f9f9fa;
+    color: #2a3138;
+    font-size: 16px;
+    padding: 20px;
+}
+
+.order_box em {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+
+.order_step {
+    border-top: 10px solid #fff;
+}
+
+.order_step h6 {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #f2f2f7;
+}
+
+.order_step > .cont_box {
+    border-top: none;
+}
+
+.order_step ol.form01 li .tit {
+    color: #2a3138;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.order_step > .tit .choice {
+    color: #fe6a2b;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.order_step ol.order_service01 {
+    background: #f9f9fa;
+}
+
+.order_step ol.order_service01 li {
+    color: #2a3138;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.order_step ol.order_service01 li > .tit {
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.order_step > .cont_box .txt06 {
+    color: #a0a6af;
+    font-size: 11px;
+    line-height: 150%;
+}
+
+.price {
+    color: #2a3138;
+}
+
+.order_step .sel_coupon li {
+    margin-top: 6px;
+}
+
+.order_step .sel_coupon li:first-of-type {
+    margin-top: 0;
+}
+
+.order_step .sel_coupon .price {
+    color: #2a3138;
+    font-size: 16px;
+}
+
+.order_step .sel_coupon .price span.price {
+    font-weight: 500;
+}
+
+.order_step .sel_coupon .price em {
+    font-weight: 500;
+}
+
+.order_step .sel_coupon .price span.del {
+    color: #a0a6af;
+    font-size: 14px;
+}
+
+.order_step .sel_coupon .price span.del em {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.order_step .sel_coupon .price .check {
+    border: 1px solid #fe6a2b;
+    border-radius: 13px;
+    color: #fe6a2b;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.order_step .chck02 {
+    padding: 0 20% 0 20px;
+    margin-top: 4px;
+}
+
+.order_step .chck02 label > em {
+    color: #fe6a2b;
+}
+
+.order_step .cont_box .notice01 li {
+    color: #a0a6af;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+.cart_price li {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cart_price li.line {
+    margin-top: 20px;
+    padding-top: 0;
+    border-top: none;
+}
+
+.cart_price li.line:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    border-top: 1px dashed #d9dbdc;
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+
+.cart_price li .tit {
+    color: #2a3138;
+}
+
+
+.cart_price li.sale {
+    opacity: 1;
+    color: #5b6068;
+}
+
+.cart_price li.sale .tit {
+    font-size: 13px;
+    color: #5b6068;
+}
+
+.cart_price li.total {
+    border-top: 1px solid #d9dbdc;
+    border-bottom: 1px solid #d9dbdc;
+    color: #fe6a2b;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cart_price li.total .tit {
+    font-weight: 500;
+}
+
+.order_step .btnInfo {
+    padding: 0 8px;
+    border: 1px solid #2a3138;
+    border-radius: 12px;
+    color: #2a3138;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+.pay_radio[type="radio"] + label {
+    border: 0;
+    background: #f9f9fa;
+    color: #2a3138;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.pay_radio[type="radio"]:checked + label {
+    background: #fe6a2b;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.order_button .agree dl {
+    background: #f9f9fa;
+    border-top: 1px solid #d9dbdc;
+}
+
+.order_button .agree dl dd {
+    border-top: 1px solid #d9dbdc;
+}
+
+.order_button .agree dl dd .tit {
+    color: #2a3138;
+}
+
+.order_button .agree dl dd label {
+    color: #5b6068;
+}
+
+.order_button .agree dl dd.list .btn {
+    width: auto;
+    color: #fe6a2b;
+    background: none;
+    height: auto;
+    line-height: 20px;
+    padding: 0;
+    font-size: 12px;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+
+
+
+
+#layerScarcePopup .layerT h3 {
+    border-bottom: 1px solid #f2f2f7;
+    color: #2a3138;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.layer_coupon .gift > p {
+    color: #2a3138;
+}
+
+.order_box2 {
+    color: #a0a6af;
+}
+
+.order_box2 .txt01 {
+    color: #2a3138;
+}
+
+.order_box2 .txt01 em {
+    color: #fe6a2b;
+}
+
+.order_box2 .txt02 {
+    background: #f9f9fa;
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.order_box2 .txt02 span:before {
+    background: #d9dbdc;
+}
+
+.order_box2 .txt02 span {
+    color: #fe6a2b;
+}
+
+.order_box2 .txt03 {
+    color: #a0a6af;
+}
+
+.order_box2 .txt03 .none {
+    color: #2a3138;
+}
+
+.order_step > .cont_box .txt04 {
+    padding: 0 0 8px;
+    color: #2a3138;
+    font-size: 14px;
+}
+
+.cont_box ol.prod_list02 > li {
+    border-top: 1px dashed #d9dbdc;
+}
+
+.order_step ol.order_service02 {
+    background: #f9f9fa;
+}
+
+.order_step ol.order_service02 li {
+    color: #2a3138;
+}
+
+.order_step ol.order_service02 li > em {
+    font-weight: 500;
+}
+
+.unitT1 span + .sub {
+    color: #5b6068;
+}
+
+.cart_price li.pay {
+    border-top: 1px solid #d9dbdc;
+    color: #2a3138;
+}
+
+.order_step ol.form02 li {
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.order_step ol.form02 li .tit {
+    color: #2a3138;
+    font-weight: 400;
+}
+
+.agree_container .tbl {
+    border-top: 1px solid #d9dbdc;
+}
+
+.agree_container .tbl > table th {
+    background: #f9f9fa;
+    border-right: 1px solid #d9dbdc;
+    border-bottom: 1px solid #d9dbdc;
+    color: #2a3138;
+}
+
+.agree_container .tbl > table td {
+    border-right: 1px solid #d9dbdc;
+    border-bottom: 1px solid #d9dbdc;
+    color: #2a3138;
+}
+
+.agree_container h2 {
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.agree_container h3 {
+    color: #2a3138;
+}
+
+.agree_container .txt01 {
+    color: #2a3138;
+}
+
+.agree_container .no01 > li {
+    color: #2a3138;
+}
+
+.agree_container .no01 > li > ol > li {
+    color: #2a3138;
+}
+
+
+
+
+
+#pageTitle2 h3 {
+    color: #2a3138;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#pageTitle2 .copy {
+    color: #5b6068;
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=로그인---- -----------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+#container.member {
+    z-index: 100;
+    padding-bottom: 0;
+    /* background: #fff; */
+}
+
+#container.member:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#container.member:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background: #f9f9fa; */
+    z-index: -1;
+}
+
+.login_01 .txt01 {
+    color: #2a3138;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.login_01 li .point {
+    color: #fe6a2b;
+}
+
+.login_01 li.r2 a {
+    color: #2a3138;
+}
+
+.login_01 li.r2 a + a:before {
+    background: #d9dbdc;
+}
+
+
+.login_01 .ip_c + label {
+    font-size: 12px;
+}
+
+.login_02 .login {
+    position: relative;
+    height: auto;
+    text-align: center;
+    color: #5b6068;
+}
+
+.login_02 .login em {
+    font-size: 12px;
+    font-weight: 400;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+}
+
+.login_02 .login:before {
+    display: none;
+}
+
+.recent_login {
+    background: #a0a6af;
+}
+
+.login_03 {
+    padding: 32px 20px;
+    position: relative;
+}
+
+.login_03 .txt01 {
+    color: #2a3138;
+    font-size: 12px;
+}
+
+.login_03 .txt02 {
+    color: #a0a6af;
+    font-size: 12px;
+}
+
+.login_03.more ul > li.sub {
+    width: 50%;
+    float: left;
+    position: relative;
+    text-align: right;
+}
+
+.login_03.more ul > li.sub a {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 0 12px;
+    border: none;
+    border-radius: 0;
+    line-height: 30px;
+    background: transparent;
+    font-size: 12px;
+}
+.login_03.more ul > li.sub.last {
+    text-align: left !important;
+}
+.login_03.more ul > li.sub.last:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 1px;
+    height: 12px;
+    background: #d9dbdc;
+}
+
+/*.login_03 > ul > li:nth-of-type(2),
+.login_03 > ul > li:nth-of-type(3) {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+.login_03 > ul > li:nth-of-type(2) { text-align: right; }
+.login_03 > ul > li:nth-of-type(3) { text-align: left; }
+
+.login_03 ul > li:nth-of-type(2) a,
+.login_03 ul > li:nth-of-type(3) a {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 0 12px;
+    border: none;
+    border-radius: 0;
+    line-height: 30px;
+    background: transparent;
+    font-size: 12px;
+
+}
+
+.login_03 ul > li:nth-of-type(3):after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 1px;
+    height: 12px;
+    background: #d9dbdc;
+}*/
+
+.login_info_wrap {
+    color: #a0a6af;
+    text-align: center;
+}
+
+.customer_01 {
+    padding: 15px 10px 15px 20px;
+    margin: 32px 20px;
+    border: 1px solid #d9dbdc;
+    background: #f9f9fa;
+    position: relative;
+    border-radius: 4px;
+}
+
+/* .customer_01:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f00;
+} */
+
+.customer_01 .txt01 {
+    color: #2a3138;
+}
+
+.customer_01 .txt02 {
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.customer_01 .txt03 {
+    color: #5b6068;
+}
+
+
+.join_01 > ul.menu li a {
+    position: relative;
+    display: block;
+    height: 40px;
+    border: 1px solid #2a3138;
+    color: #2a3138;
+    font-size: 14px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 20px;
+}
+
+.join_01 > ul.menu li a.member {
+    color: #fff;
+    background: #2a3138;
+    border-color: transparent;
+}
+
+ol.notice_01 li {
+    color: #a0a6af;
+}
+
+ol.notice_01 li:before {
+    background: #5b6068;
+    position: absolute;
+}
+
+ol.notice_01 .txtS4 {
+    font-size: 12px;
+}
+
+
+
+ol.user_info li .tit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #2a3138;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+ol.user_info li .point {
+    color: #fe6a2b;
+    font-size: 11px;
+}
+
+.join_form {
+    border-top: 10px solid #fff;
+}
+
+.join_form .inner {
+    padding: 10px 20px 32px;
+}
+
+.join_form h6.tit {
+    color: #2a3138;
+    font-size: 16px;
+}
+
+.join_form .inner .txt01 {
+    padding-top: 0;
+    color: #5b6068;
+    font-size: 11px;
+}
+
+.join_form .inner .txt02 {
+    color: #fe6a2b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.join_form .inner .check li {
+    color: #2a3138;
+}
+
+.join_form .inner .check li button {
+    color: #a0a6af;
+}
+
+.join_form .inner .txt03 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.join_form .inner .txt03 em, .join_form .inner .txt03 span, .join_form .inner .txt03 button {
+    font-weight: 400;
+    color: #a0a6af;
+}
+
+.join_form .inner .txt03 em:after, .join_form .inner .txt03 span:after, .join_form .inner .txt03 button:after {
+    background: #d9dbdc;
+}
+
+
+
+
+ol.user_info .btn {
+    padding: 0 0 5px 90px !important;
+}
+
+.time_limit { color: #fe6a2b;}
+
+
+.join_02 .txt01, .join_02 .sns_confirm {
+    color: #2a3138;
+    font-size: 18px;
+}
+
+.join_02 .txt01 em, .join_02 .sns_confirm em {
+    color: #fe6a2b;
+}
+
+.findid_01 .txt01 {
+    border-bottom: 1px solid #d9dbdc;
+    color: #2a3138;
+    font-size: 21px;
+}
+
+.findid_01 .txt02 {
+    color: #2a3138;
+}
+
+.id_list li i {
+    font-weight: 400;
+    color: #a0a6af;
+}
+
+
+
+.agree_sort {
+    background: #f9f9fa;
+    border-bottom: 1px solid #f2f2f7;
+}
+
+.agree_sort2 {
+    border-bottom: 1px solid #d9dbdc;
+}
+
+
+.certify_01 > ul > li > button {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    border: 1px solid #d9dbdc;
+    color: #2a3138;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 4px;
+}
+
+
+.member_leave .txt01 {
+    color: #2a3138;
+}
+
+.member_leave .txt01 em {
+    color: #fe6a2b;
+}
+
+.member_leave .txt01 span {
+    color: #5b6068;
+}
+
+.member_leave .inner {
+    background: #f9f9fa;
+    color: #2a3138;
+}
+
+.member_leave .form dt {
+    color: #2a3138;
+}
+
+
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=이벤트---- -----------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.mypage_tab01 li {
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.mypage_tab01 li.on:after {
+    height: 1px;
+    background: #fe6a2b;
+}
+
+.mypage_tab01 li a {
+    color: #5b6068;
+    font-size: 14px;
+}
+
+.mypage_tab01 li.on a {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+
+.event_list.ing li {
+    border-top: 10px solid #f9f9fa;
+    padding: 0 0 15px;
+}
+
+.event_list.ing li:first-of-type {
+    border-top: 10px solid #f9f9fa;
+}
+
+.event_list li .tit {
+    color: #2a3138;
+    font-weight: 400;
+}
+
+.event_list li .date {
+    color: #a0a6af;
+    font-weight: 400;
+}
+
+
+.event_tit {
+    border-bottom: 1px solid #d9dbdc;
+    border-top: 10px solid #f9f9fa;
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.event_detail {
+    margin: 0;
+    border-bottom: none;
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=3. 고객센터 -----------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/* TST-SI-CS
+ * 고객센터 스타일 변경
+ * https://www.tstation.com/customer-service/main.do
+ */
+.customer_03 {
+    background-color: #f9f9fa;
+    border-bottom: 1px solid #f2f2f7;
+}
+.customer_03 .txt01 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.customer_03 .btn02 { margin: initial; }
+
+.customer_03 .btn02 .btnS01:before {
+    content: initial;
+}
+.cscenter_main { border-bottom: 10px solid #ffffff; }
+.cscenter_main > h6.tit {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #f2f2f7;
+}
+.cscenter_main > .search_box > button.btn {
+    display: block;
+    background-color: initial;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    right: 20px;
+    text-align: center;
+    padding: initial;
+}
+.cscenter_main > .search_box > button.btn:before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: initial;
+    padding: initial;
+}
+.cscenter_main > .notice_list > li > a > .part {
+    position: relative;
+    display: block;
+    border: initial;
+    width: 100%;
+    text-align: initial;
+    margin-bottom: 8px;
+}
+.cscenter_main > .notice_list > li > a > .part > .c04 {
+    display: inline-block;
+    font-size: 12px;
+    width: auto;
+    padding: 0 8px;
+    border-radius: 2px;
+    line-height: 18px;
+    border: initial;
+    background-color: #fe6a2b;
+    color: #ffffff;
+}
+.cscenter_main > .notice_list > li > a > .tit {
+    color: #2a3138;
+    font-size: 12px;
+}
+.cscenter_main > .cs_menu01 {
+  padding: 15px 20px;
+  margin: 0;
+}
+.cscenter_main > .cs_menu01 > li {
+    width: calc(100% / 3);
+    padding: 0 2px;
+    margin-bottom: 4px;
+}
+.cscenter_main > .cs_menu01 > li > a {
+    padding: 10px 0;
+    height: auto;
+    line-height: initial;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    color: #2a3138;
+}
+.cscenter_main > .guarantee {
+    border-top: 1px solid #d9dbdc;
+    border-bottom: 1px solid #d9dbdc;
+}
+.cscenter_main > .guarantee > a { color: #2a3138; }
+.cscenter_main > .guarantee > a:before { margin-top: -17px; }
+.cscenter_main > .guarantee > a > span {
+    font-weight: 500;
+    color: #2a3138;
+}
+.cscenter_main > .cs_menu02 > li { border-right: initial; }
+
+
+/* TST-SI-NOTICE
+ * 공지사항 스타일 변경
+ * https://m.tstation.com/customer-service/announcement/notice.do
+ */
+.cscenter > .cs_sort > .search_box > button.btn {
+    display: block;
+    background-color: initial;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+    padding: initial;
+}
+.cscenter > .cs_sort > .search_box > button.btn:before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: initial;
+    padding: initial;
+}
+.cscenter > .cs_notice > .notice_list > li > a > .part { width: auto; }
+.cscenter > .cs_notice > .notice_list > li > a > .part > .c04 {
+    display: inline-block;
+    font-size: 12px;
+    width: auto;
+    padding: 0 8px;
+    border-radius: 2px;
+    line-height: 18px;
+    border: initial;
+    background-color: #fe6a2b;
+    color: #ffffff;
+}
+.cscenter > .cs_notice > .notice_list > li > a > .tit {
+    color: #2a3138;
+    font-size: 12px;
+}
+
+.cscenter > .cs_notice > .more > button.btnMore {
+    font-size: 14px;
+    color: #2a3138;
+    border: 1px solid #2a3138;
+    height: 40px;
+    border-radius: 20px;
+}
+
+
+/* TST-SI-NOTICE_DETAIL
+ * 고객센터 > 공지사항 > 상세 스타일 변경
+ * https://m.tstation.com/customer-service/announcement/notice-detail.do?ntcSeq=60134
+ */
+.cscenter > .notice_detail > .top > .part { width: auto; }
+.cscenter > .notice_detail > .top > .part > .c04 {
+    display: inline-block;
+    font-size: 12px;
+    width: auto;
+    padding: 0 8px;
+    border-radius: 2px;
+    line-height: 18px;
+    border: initial;
+    background-color: #fe6a2b;
+    color: #ffffff;
+}
+.cscenter > .notice_detail > .top > .tit {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* TST-SI-QNA
+ * 고객센터 > 1:1 고객 상담
+ * https://m.tstation.com/customer-service/qna.do
+ */
+.qna_write > h6 {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 20px;
+    line-height: 48px;
+    border-bottom: 1px solid #f2f2f7;
+}
+.qna_write dl.form dt {
+    color: #2a3138;
+    font-size: 12px;
+}
+.filebox {
+    border-radius: 4px;
+    border: 1px solid #d9dbdc;
+    overflow: hidden;
+}
+ol.notice_01 li { color: #5b6068; }
+ol.notice_01 li .col01 { color: #fe6a2b; }
+ol.notice_01 li .col02 { color: #2a3138; }
+ol.notice_01 li a { color: #fe6a2b; text-decoration: underline; }
+
+.qna_list .detail dt { color: #2a3138; }
+.qna_list .detail dt span.cate {
+    display: inline-block;
+    font-size: 12px;
+    width: auto;
+    padding: 0 8px;
+    border-radius: 2px;
+    line-height: 18px;
+    border: initial;
+    background-color: #fe6a2b;
+    color: #ffffff !important;
+    font-weight: 400;
+}
+.qna_list .detail dt span.date { top: 14px; }
+.qna_list .detail dt.q:after { top: 14px; }
+.qna_list .detail dd.question .cont { color: #5b6068; }
+.qna_list .detail dd .photo {
+    margin-left: -2px;
+    margin-right: -2px;
+}
+.qna_list .detail dd .photo li {
+    padding: 0 2px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.qna_list .detail dd > ul.btn {
+    display: block;
+    padding: initial;
+    border: initial;
+    width: 100%;
+    height: auto;
+    cursor: default;
+}
+.qna_list .detail dd > ul.btn > li {
+    margin: initial;
+    padding: initial;
+}
+.qna_list .detail dd > ul.btn > li:nth-child(1) { padding-right: 2px; }
+.qna_list .detail dd > ul.btn > li:nth-child(2) { padding-left: 2px; }
+.qna_list .detail dd > ul.btn > li > button {
+    cursor: pointer;
+    pointer-events: all;
+
+    border: 1px solid #2a3138;
+    background: #ffffff;
+    color: #2a3138;
+    border-radius: 18px;
+}
+
+/* TST-SI-FAQ
+ * 고객센터 > FAQ
+ * https://m.tstation.com/customer-service/faq.do
+ */
+.cscenter .faq_search > .search_box > button.btn {
+    display: block;
+    background-color: initial;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+    padding: initial;
+}
+.cscenter .faq_search > .search_box > button.btn:before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: initial;
+    padding: initial;
+}
+.cscenter .faq_menu > .cs_menu01 {
+  padding: 15px 20px;
+  margin: 0;
+}
+.cscenter .faq_menu > .cs_menu01 > li {
+    width: calc(100% / 3);
+    padding: 0 2px;
+    margin-bottom: 4px;
+}
+.cscenter .faq_menu > .cs_menu01 > li > a {
+    background: #fff;
+    border: 1px solid #d9dbdc;
+    border-radius: 4px;
+    color: #2a3138;
+    font-size: 12px;
+    font-weight: 400;
+}
+.cscenter .faq_list .list > dt > a {
+    font-weight: 400;
+    color: #2a3138;
+}
+.cscenter .faq_list .list > dt.on > a {
+    color: #fe6a2b;
+}
+.cscenter .faq_list .list > dt:after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cscenter .faq_list .list > dt.on:after { transform: translateY(-50%) rotate(180deg); }
+.cscenter .faq_list .list > dd {
+    color: #5b6068;
+    background-color: #f9f9fa;
+}
+
+
+/* TST-SI-WARRANTY
+ * 고객센터 > 무상보증서비스
+ * https://m.tstation.com/customer-service/warranty/warranty-info
+ */
+.cscenter .guarantee_box { border-top: 10px solid #ffffff; }
+.cscenter .guarantee_box > .tit {
+    line-height: 48px;
+    padding: 0 20px;
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #f2f2f7;
+}
+.cscenter .guarantee_box > .tit:after {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.cscenter .guarantee_box.on > .tit:after {
+    transform: translateY(-50%) rotate(180deg);
+}
+.cscenter .guarantee_box > .cont .ol01 li {
+    color: #5b6068;
+}
+.cscenter .guarantee_box > .cont > .btn {
+    width: 100%;
+    line-height: initial;
+    cursor: initial;
+    padding: initial;
+    text-align: center;
+    height: auto;
+}
+.cscenter .guarantee_box > .cont > .btn > button {
+    pointer-events: all;
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+    padding: 0 20px;
+}
+.cscenter .guarantee_box > .cont .guarantee_box .goods dl {
+    border: 1px solid #d9dbdc;
+    border-radius: 4px;
+}
+.layer_guarantee dl.info dt img {
+    border-radius: 4px;
+    border: 1px solid #d9dbdc;
+}
+.layer_guarantee dl.info dd {
+    color: #2a3138;
+}
+
+/* TST-SI-SERVICE_INFO
+ * 고객센터 > 서비스 안내
+ * https://m.tstation.com/customer-service/tsservice/servicetire.do
+ * https://m.tstation.com/customer-service/tsservice/serviceitem.do
+ * https://m.tstation.com/customer-service/tsservice/knowhowtire.do
+ * https://m.tstation.com/customer-service/tsservice/knowhowitem.do
+ * https://m.tstation.com/customer-service/tsservice/wagestime.do
+ * https://m.tstation.com/customer-service/tsservice/wagesprice.do
+ */
+.cscenter > .cs_top {}
+.cscenter > .cs_top > ul { border-bottom: 1px solid #d9dbdc; }
+.cscenter > .cs_top > ul > li:last-of-type:before { content: initial; }
+.cscenter > .cs_top > ul > li > a { color: #5b6068; }
+.cscenter > .cs_top > ul > li.on > a {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+.cscenter > .cs_tab { border-top: initial; }
+.cscenter > .cs_tab > .txt01 {
+    background: #ffffff;
+    padding: 20px 0;
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+.cscenter > .cs_tab > .tab { border-bottom: initial; }
+.cscenter > .cs_tab > .tab > ul > li { border-left: initial; }
+.cscenter > .cs_tab > .tab > ul > li > button {
+    background-color: #f9f9fa;
+    color: #5b6068;
+}
+.cscenter > .cs_tab > .tab > ul > li.on > button {
+    background-color: #ffffff;
+    color: #fe6a2b;
+    font-weight: 500;
+}
+.cscenter > .cs_tab .ds01 .brd { border: initial; }
+.cscenter > .cs_tab .ds01 dt {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 20px;
+    line-height: 48px;
+    border-bottom: 1px solid #f2f2f7;
+}
+.cscenter > .cs_tab .ds01 dd {
+    color: #5b6068 !important;
+}
+.cscenter > .cs_tab .ds01 dd.dd_01 {
+    border-radius: 4px;
+    background-color: #f9f9fa;
+    border-color: #d9dbdc;
+}
+.cscenter > .cs_tab .ds01 dd .txt_01 {
+    color: #2a3138;
+    font-weight: 400;
+}
+.cscenter > .cs_tab .ds01 dd .txt_01 em { color: #fe6a2b; }
+.cscenter > .cs_tab .ds01 dd.img_02 span {
+    color: #2a3138;
+    font-size: 13px;
+}
+.cscenter > .cs_tab .ds01 dd.img_02 span em { color: #fe6a2b; }
+
+.cscenter > .cs_tab .ds02 { border-top: 1px solid #d9dbdc; }
+.cscenter > .cs_tab .ds02 dt {
+    color: #2a3138;
+    font-weight: 400;
+}
+.cscenter > .cs_tab .ds02 dt em { color: #fe6a2b; }
+.cscenter > .cs_tab .ds02 dd {
+    color: #5b6068;
+    background-color: #f9f9fa;
+    padding: 16px;
+}
+.cscenter > .cs_tab .txt_02 {
+    color: #fe6a2b;
+    font-weight: 500;
+    border-bottom: 1px solid #d9dbdc;
+}
+.cscenter > .cs_tab .txt_03 {
+    color: #5b6068;
+    font-size: 12px;
+}
+.cscenter > .cs_tab .dd_01 .txt_04 {
+    color: #2a3138 !important;
+    font-size: 12px !important;
+}
+.cscenter > .cs_tab .ds03 {  border-bottom: initial; }
+.cscenter > .cs_tab .ds03 dt {
+    color: #2a3138;
+    font-size: 16px;
+    font-weight: 500;
+}
+.cscenter > .cs_tab .dd_02 span {
+    color: #2a3138;
+}
+.cscenter > .cs_tab .dd_02 span em {
+    font-weight: 500;
+    color: #2a3138;
+}
+.cscenter > .cs_tab .ds03 dd {
+    color: #2a3138;
+    font-weight: 400;
+}
+.cscenter > .cs_tab .dd_01 {
+    border-radius: 4px;
+    background-color: #f9f9fa;
+    border-color: #d9dbdc;
+    color: #5b6068 !important;
+}
+.cscenter > .cs_tab .dd_03 span {
+    color: #fe6a2b;
+}
+.cscenter .tbl_cs table thead th,
+.cscenter .tbl_cs table tbody th {
+    color: #2a3138;
+}
+.cscenter .tbl_cs table tbody td {
+    color: #5b6068;
+}
+.cscenter .cs_tab > .txt01 ol li {
+    color: #5b6068;
+}
+.cscenter > .cs_tab > .txt01 ol li em {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+.cscenter .tbl_cs2 table tthead th,
+.cscenter .tbl_cs2 table tbody th {
+    color: #2a3138;
+}
+.cscenter .tbl_cs2 table tbody td {
+    color: #5b6068;
+}
+.cscenter > .cs_tab > .txt02 {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #2a3138;
+}
+.cscenter > .cs_tab > .txt02 > em {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=2. 상품----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/* TST-SI-LIST_TIRE
+ * 상품 리스트 타이어
+ * https://m.tstation.com/tire/sizes?tireSizeFr=2254518&tireSizeRe=2254518&carEncry=MY_qZnpeAqlTX8ataM9iRkIcwoIH5cZVD6h5o9KGwl0&ptrnCd=#
+ */
+.display_sort {
+    border-bottom: initial;
+}
+.display_sort .tab > li:before {
+    content: initial;
+}
+.display_sort .btnDetail {
+    border-left: initial;
+}
+#layerFull {
+    z-index: 1001;
+}
+
+
+.buy_guide {
+    padding: 0 20px;
+}
+.buy_guide .wrap_btn {
+    padding: 12px 0;
+}
+
+.buy_guide .wrap_btn .btn_guide {
+    position: relative;
+    font-weight: 400;
+}
+.buy_guide .wrap_btn .ico_arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: rotate(180deg) translateY(50%);
+    margin: initial;
+}
+.buy_guide.on .wrap_btn .ico_arrow {
+    transform: rotate(0deg) translateY(-50%);
+}
+.buy_guide .list_guide {
+    padding: 12px 0;
+    margin: initial;
+}
+.buy_guide .list_guide li {
+    padding-left: initial;
+    color: #2a3138;
+    letter-spacing: -0.54px;
+}
+.buy_guide .list_guide li:before {
+    content: initial;
+}
+
+.display_result {
+    padding: 0 20px;
+}
+.display_result .tit {
+    color: #2A3138;
+}
+.display_list {
+    margin: initial;
+    padding: 0 16px;
+}
+
+
+/* TST-SI-DETAIL_TIRE
+ * 상품 디테일 타이어
+ * https://m.tstation.com/tire/product/hk_p_a_ventus_s2_as?goodsNo=G000000318494&carEncry=KUF1LZ63J-wncJxpMynGNrJPiWmVnnyWBVqL04e3LA7rLXKP8woeEPB8xtVdMsip
+ */
+.goods_info {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f2f2f7;
+}
+.goods_info dl.unit01 {
+    position: relative;
+    padding: initial;
+}
+.goods_info dl.unit01 dt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: auto;
+}
+.goods_info dl.unit01 dt .unitImg {
+    width: 160px;
+    max-width: initial;
+    height: auto;
+    margin: 20px auto 0;
+}
+.goods_info dl.unit01 dt .flag_02 {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: initial;
+    width: 100%;
+    background-color: initial;
+}
+.goods_info dl.unit01 dt .flag_02 .brandLogo {
+    transform: scale(1.4);
+}
+.goods_info dl.unit01 dd.info {
+    padding: 16px 160px 0 0;
+}
+.goods_info dl.unit01 dd.info .unitT1 {
+    margin-top: 14px;
+}
+.goods_info dl.unit01 dd.info .unitT2 {
+    color: #333333;
+}
+.goods_info dl.unit01 dd.info .unitT3 {
+    color: #333333;
+    margin-top: 12px;
+}
+.goods_info dl.unit01 dd.info .flag05 > em {
+    color: #656565;
+    font-size: 10px;
+}
+.goods_info dl.unit01 dd.info .flag05 > em:after {
+    background-color: #d9d9d9;
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=에러페이지-------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.error_box h3 {
+    color: #2a3138;
+}
+
+.error_box .txt01 {
+    color: #5b6068;
+}
+
+.error_box .txt01 em {
+    color: #fe6a2b;
+}
+
+.error_box .txt_cs {
+    color: #5b6068;
+}
+
+.error_box .btn01 .btnM {
+    border-radius: 20px;
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=쿠폰------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.coupon_list > li:last-of-type {
+    border-bottom: none;
+}
+
+.coupon_list > li {
+    padding: 25px 0;
+
+}
+
+.coupon_list .coupon .r1 {
+    border: 1px solid #d9dbdc;
+}
+
+.coupon_list .coupon.end .r2 {
+    background: #a0a6af;
+}
+
+.coupon_list .coupon.end .r2:before {
+    border-bottom: 10px solid #5b6068;
+    border-left: 10px solid #5b6068;
+}
+
+.cpn_new .coupon.used.end em.pro {
+    color: #fe6a2b;
+    letter-spacing: -1px;
+}
+
+.coupon_list .coupon.end em.pro {
+    color: #a0a6af;
+}
+
+.coupon_list .coupon em.pro i {
+    color: #fe6a2b;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.coupon_list .coupon em.tit {
+    color: #2a3138;
+    font-weight: 500;
+}
+
+.coupon_list .coupon em.date {
+    color: #5b6068;
+}
+
+.cpn_add_noti li {
+    color: #2a3138;
+}
+
+.coupon_list .coupon.down .r2 {
+    background: #fe6a2b;
+}
+
+.goods_detail .tab li.on button {
+    color: #fe6a2b;
+}
+.goods_detail .tab.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    z-index: 100;
+}
+
+.goods_detail .tire_info h6 {
+    font-weight: 500;
+    color: #2a3138;
+}
+.goods_detail .tire_info dl dt {
+    font-weight: 500;
+    color: #2a3138;
+}
+.goods_detail .tire_info dl dd {
+    color: #5b6068;
+}
+.goods_detail .inner h6 {
+    font-weight: 500;
+    color: #2a3138;
+}
+.goods_detail .inner ol li {
+    color: #5b6068;
+}
+
+.join_form .user_info .phone2 { padding-right: 0; }
+.join_form .user_info .phone2 .r1 { width: 20%; }
+.join_form .user_info .phone2 .r3 { width: 34%; }
+.join_form .inner .check:last-of-type {
+    padding: 15px 0 10px;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 15px;
+}
+
+.member #joinForm .join_form:last-of-type {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: constant(safe-area-inset-bottom);
+}
+
+/*#layerFullPopup .full_kakao .notice_01 + .btn01 { margin }*/
+
+.mypage_top .info .name {
+  color: #2a3138;
+  font-weight: 500;
+}
+.mypage_top .info span { color: #5b6068; }
+.mypage_top .info .alram { color: #2a3138; }
+.mypage_top .personal li i {
+  color: #fe6a2b;
+  font-weight: 500;
+}
+
+.coupon_top ul.info span {
+  color: #2a3138;
+}
+.coupon_top ul.info em {
+  font-weight: 500;
+  color: #fe6a2b;
+}
+.coupon_top ul.info .r1 em {
+  color: #2a3138;
+}
+.coupon_list .coupon em.pro { color: #fe6a2b; }
+.coupon_list .coupon em.pro i { color: #fe6a2b; }
+
+.mypage_box02 h6 { color: #2a3138; }
+.mypage_box02 .notice_01 li em { color: #fe6a2b; }
+ol.notice_01 li { color: #a0a6af; }
+
+
+
+.alram_soldout ol li div > span {
+  color: #2a3138;
+}
+.alram_soldout ol li div > span.date {
+  color: #a0a6af;
+}
+.day_set > h6 {
+  position: relative;
+  color: #2a3138;
+}
+.day_set > h6 span {
+  font-weight: 500;
+}
+.day_set .more {
+  position: absolute;
+  top: 11px;
+  right: 20px;
+  border: 0;
+  background: none;
+  color: #2a3138;
+  font-size: 14px;
+  font-weight: 500;
+}
+.day_set > ul li.r3 button.on {
+  color: #fe6a2b;
+  border: 1px solid #fe6a2b;
+}
+.order_info .date {
+  color: #2A3138;
+}
+.order_info .status {
+  color: #2A3138;
+}
+.order_info .order_no {
+  position: relative;
+  color: #2A3138;
+  font-weight: 500;
+}
+.order_info .order_no .smart-pay-badge {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+.order_info ol.info > li.point {
+  color: #fe6a2b;
+  font-weight: 500;
+}
+.order_info ol.info > li {
+  color: #2A3138;
+  font-weight: 500;
+}
+
+.order_detail .order_info2 > h6 {
+  font-weight: 500;
+  color: #2A3138;
+}
+.order_detail .form li {
+  color: #2A3138;
+}
+.order_detail .form li.total .tit {
+  font-weight: 500;
+  color: #2A3138;
+}
+
+.order_detail .form li.total {
+  color: #fe6a2b;
+  font-weight: 500;
+}
+
+.order-sheet-smart-pay .smart-pay-badge img:nth-of-type(1) { display: inline-block; }
+.order-sheet-smart-pay .smart-pay-badge img:nth-of-type(2) { display: none; }
+@media (max-width: 359px) {
+  .order-sheet-smart-pay .smart-pay-badge img:nth-of-type(1) { display: none; }
+  .order-sheet-smart-pay .smart-pay-badge img:nth-of-type(2) { display: inline-block; }
+}
+.shop_pay ul li .tit {
+  font-weight: 500;
+}
+.shop_pay ul li .no {
+  font-weight: 500;
+}
+dl.dl_style01 dt {
+  color: #2A3138;
+  font-weight: 500;
+}
+dl.dl_style01 dt .view {
+  color: #2A3138;
+}
+.guarantee_list .list > li {
+  border-top: 10px solid #ffffff;
+}
+
+
+/* card view - badge */
+.flag_04 > em {
+  color: #ffffff;
+  font-size: 9px;
+  line-height: 10px;
+  padding: 3px 6px;
+  background-color: #e5e5e5;
+  /* border-radius: 8px; */
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.member_info .txt01 {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.join_01 > ul.menu li a.member:before { content: initial; }
+
+
+.terms .radio-item .label-txt { font-size: 12px; }
+
+
+dl.dl_style02 dt { font-weight: 500; }
+dl.dl_style02 dd.total01 { font-weight: 500; }
+dl.dl_style02 dd.total02 { font-weight: 500; }
+.join_form .leave > a:after { content: none; }
+
+
+/*ol.user_info li.phone2 { padding: 0 65px 5px 90px !important;}*/
+.layerC > .txt01 { color: #2A3138; }
+.layerC > .txt01 em{ font-weight: 500;}
+
+#searchSize01.search_step03 .btn {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    padding-bottom: calc(24px + constant(safe-area-inset-bottom));
+}
+
+.modal-item .display_compare.tire .flag_02 .brandLogo {
+    width: 100%;
+    max-width: 110px;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.modal-item .display_compare .flag_02 .brandLogo.logoHK { background-image: url('../images/common/tire_logo_hk.svg'); }
+.modal-item .display_compare .flag_02 .brandLogo.logoMC { background-image: url('../images/common/tire_logo_michelin.svg'); }
+.modal-item .display_compare .flag_02 .brandLogo.logoPI { background-image: url('../images/common/tire_logo_pirelli.svg'); }
+.modal-item .display_compare .flag_02 .brandLogo.logoMX { background-image: url('../images/common/tire_logo_maxxis.svg'); }
+
+
+
+.full_compare .list li .graph_box .no-graph {
+    height: auto;
+    margin-bottom: 6px;
+}
+
+#container.display.with-order-process-bar {
+    padding-bottom: 95px;
+}
+
+#container.main{ margin-top: 0; }
+
+.agree_container table { text-indent: initial !important; }

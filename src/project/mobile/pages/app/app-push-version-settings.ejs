@@ -1,0 +1,73 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '설정' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+<main id="main">
+    <div class="tab-item">
+        <a href="" class="">계정관리</a>
+        <a href="" class="">알림설정</a>
+        <a href="" class="on">버전정보</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+
+    <div class="container app-settings-page">        
+        <section class="version-setting-section">
+            <div class="icon-app-tstation">
+                
+            </div>
+            <p class="txt-16 mg-h-5u mg-t-4u" style="display: none;">최신 버전을 사용 중입니다.</p>
+            <p class="txt-16 mg-h-5u mg-t-4u">최신 버전 (1.0.2)을 사용하시려면 <br />&lsquo;업데이트&rsquo; 해주세요.</p>
+            <p class="txt-12 mg-t-6u">현재 버전 1.0.1</p>
+            <!-- 20211109 // -->
+            <button 
+                type="button" 
+                class="btn-item btn-gray btn-ol btn-s filet mg-t-2u"
+                onclick="$.Tstation.popup().open({
+                    ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: `
+                    <div>
+                        <p class='txt-14 txt-neutral1 txt-center'>최신 버전 업데이트</p>
+                        <p class='txt-12 mg-t-2u txt-neutral2 txt-center'>최신 버전 앱으로 업데이트를 위해 스토어로 이동합니다.</p>
+                    </div>
+                    `, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 8,
+                        vertical: 8,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    full: false, // Full Popup
+                    onOpen: function () {
+                        console.log('팝업이 열리면 파이어 합니다.')
+                    },
+                    onClose: function () {
+                        console.log('팝업이 닫히면 파이어 합니다.')
+                    },
+                    modalAction: {
+                        isNoBoundary: false,
+                        buttons: [
+                            {
+                                label: '확인',
+                                negative: false,
+                                action: function () {
+                                    $.Tstation.popup().close()
+                                }
+                            }
+                        ]
+                    }
+                })"
+            >
+                <span class="label-txt">업데이트</span>
+            </button>
+            <!-- // 20211109 -->
+        </section>
+
+    </div>
+</main>

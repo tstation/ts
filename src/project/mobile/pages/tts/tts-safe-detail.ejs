@@ -1,0 +1,518 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/thetireshop.css" />
+<%- locals.widget ('src/project/mobile/pages/tts/includes/tts-header.ejs') %> 
+<%- locals.widget('src/project/mobile/pages/tts/includes/tts-title.ejs', { pageTitle: '안심서비스 내역상세' }) %>
+
+<div id="container" class="tts-safeservice-group">
+    <!-- 방문예약내역 -->
+    <div class="history-detail-page">
+        <div class="progressive-section pd-v-4u pd-h-5u">
+            <div class="state-wrap">
+                <div class="thumnail"></div>
+                <div class="info">
+                    <div class="state-badge-wrap">
+                        <span class="badge-state txt-14">가입완료</span>
+                    </div>
+                    <div class="join-number mg-t-2u txt-14">
+                        가입번호<strong class="txt-primary txt-w500">20161110073814</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="progressive-bar-wrap mg-t-4u">
+                <div class="date pd-h-2u">
+                    <span class="join-date txt-12">가입일 : <strong class="txt-w500">2021.01.01</strong></span>
+                    <span class="end-date txt-12">서비스만료일 : <strong class="txt-primary txt-w500">2022.01.01</strong></span>
+                </div>
+                <div class="progressive-bar">
+                    <div class="bar">
+                        <span class="gauge" style="width: 64%"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progressive-section pd-v-4u pd-h-5u expiry"> <!-- .expiry 추가시 서비스 만료 UI 변경-->
+            <div class="state-wrap">
+                <div class="thumnail"></div>
+                <div class="info">
+                    <div class="state-badge-wrap">
+                        <span class="badge-state txt-14">서비스만료</span>
+                    </div>
+                    <div class="join-number mg-t-2u txt-14">
+                        가입번호<strong class="txt-w500">20161110073814</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="progressive-bar-wrap mg-t-4u">
+                <div class="date pd-h-2u">
+                    <span class="join-date txt-12">가입일 : <strong class="txt-w500">2021.01.01</strong></span>
+                    <span class="end-date txt-12">서비스만료일 : <strong class="txt-primary txt-w500">2022.01.01</strong></span>
+                </div>
+                <div class="progressive-bar">
+                    <div class="bar">
+                        <span class="gauge" style="width: 64%"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 서비스 만료 CASE시에만 expiry-copy 노출-->
+            <div class="expiry-copy pd-v-2u pd-h-2u">
+                안심서비스가 <strong class="txt-primary txt-w500">2021년 8월 30일</strong>에 종료되었습니다. 
+                <strong class="txt-primary txt-w500 txt-nowrap">(신규 안심서비스 가입)</strong>
+                <strong class="txt-primary txt-w500 txt-nowrap">(타이어 보상처리 완료)</strong>
+            </div>
+        </div>
+        <!-- .history-list-section // -->
+        <div class="history-detail-list-section weight-divider">
+            <div class="rowgroup mg-h-5u">
+                <div class="section-subheadcopy txt-w700 txt-14 border-b pd-v-2u">고객 정보</div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">고객명</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">김한국</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">연락처</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">12가 3456</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">차량번호</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">2021.01.01 ~ 2022.01.01</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">모델명</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">현대 쏘나타 뉴 라이즈</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">가입시점 주행거리</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">1,234 km</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup mg-h-5u">
+                <div class="section-subheadcopy txt-w700 txt-14 border-b pd-v-2u">상품 정보</div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="badge-coverage coverage-before">보상전</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">장착 타이어</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">벤투스 프리미엄 컴포트</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">타이어 사이즈</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">215/55R17</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">장착수량</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">2개</span>
+                        <span class="badge-mounting">전륜</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup mg-h-5u coverage-rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="badge-coverage coverage-after">보상후</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">장착 타이어</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">벤투스 프리미엄 컴포트</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">타이어 사이즈</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">215/55R17</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">장착수량</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">1개</span>
+                        <span class="badge-mounting">전륜</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup mg-h-5u">
+                <div class="section-subheadcopy txt-w700 txt-14 border-b pd-v-2u">장착매장 정보</div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">매장명</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">티스테이션 송파오금점</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">가입일</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">2021-01-01</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">만기일</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info txt-primary">2022-01-01</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup mg-h-5u">
+                <div class="section-subheadcopy txt-w700 txt-14 border-b pd-v-2u">안심서비스 가입 정보</div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">안심서비스 가입약관</span>
+                    </div>
+                    <div class="cell">
+                        <!-- 20220221 // -->
+                        <button type="button" class="btn-item btn-neutral btn-xs btn-inv round align-right" onclick="$.Tstation.popup().open({
+                            ref: 'modal-ref-1',
+                            title: '한국타이어 안심서비스 가입약관',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: termsContent,
+                            dimWhite: false,
+                            modalContentsPd: {
+                                horizon: 5, //20220221
+                                vertical: 5, //20220221
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            full: true, // 20220221
+                            onOpen: function () {
+                                console.log('팝업이 열리면 파이어 합니다.')
+                            },
+                            onClose: function () {
+                                console.log('팝업이 닫히면 파이어 합니다.')
+                            }
+                        })">
+                        <span class="label-txt txt-14 txt-primary">자세히 보기</span>
+                        <span class="line-icons chev-right txt-primary size-16"></span>
+                    </button>
+                    <!-- // 20220221 -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">안심서비스 가입서명</span>
+                    </div>
+                    <div class="cell">
+                        <!-- 20220221 // -->
+                        <button type="button" class="btn-item btn-neutral btn-xs btn-inv round align-right" onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1',
+                                title: '안심서비스 가입서명',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: signaturePhoto,
+                                dimWhite: false,
+                                modalContentsPd: {
+                                    horizon: 0,
+                                    vertical: 10,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                modalSize: 'MEDIUM',
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                }
+                            })">
+                            <span class="label-txt txt-14 txt-primary">자세히 보기</span>
+                            <span class="line-icons chev-right txt-primary size-16"></span>
+                        </button>
+                        <!-- // 20220221 -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">주행거리 촬영사진</span>
+                    </div>
+                    <div class="cell">
+                        <!-- 20220221 // -->
+                        <button type="button" class="btn-item btn-neutral btn-xs btn-inv round align-right" onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1',
+                                title: '주행거리 촬영사진',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: mileagePhoto,
+                                dimWhite: false,
+                                modalContentsPd: {
+                                    horizon: 0,
+                                    vertical: 0,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                modalSize: 'MEDIUM',
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                }
+                            })">
+                            <span class="label-txt txt-14 txt-primary">자세히 보기</span>
+                            <span class="line-icons chev-right txt-primary size-16"></span>
+                        </button>
+                        <!-- // 20220221 -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="txt-center mg-t-4u mg-b-10u">
+            <button type="button" class="btn-item btn-neutral round goback-button">
+                <span class="label-txt">목록보기</span>
+            </button>
+        </div>
+        <!-- // .history-list-section -->
+        <div class="noti-section bg-light1">
+            <h3 class="section-subheadcopy txt-14 pd-t-4u pd-b-3u pd-h-5u">안심서비스 관련 유의사항</h3>
+            <ul class="explan-list pd-b-5u pd-h-5u">
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 보상기간은 장착완료일로부터 1년입니다. </p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">가입 대상은 실장착 고객 (이름, 연락처, 차량번호 기준 동일인)이며, 신규가입 시 기존 가입 건은 자동 만료 처리되고, 신규가입일로 안심서비스 기간이 갱신됩니다.</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 보상은 안심서비스 내역에 기재된 장착매장에서만 가능합니다.</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">보상관련 문의 : 더타이어샵 고객센터 (1577-0009)</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+
+var signaturePhoto  = `
+    <div class="join-signature-photo"> 
+        <img src="data:image/png;base64,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">
+    </div>
+`
+var mileagePhoto = `
+    <div class="join-mileage-photo">
+        <img src="mc-static-root/images/mypage/safe-service/@sample-pickupcar-3.jpg" />
+    </div>
+`
+
+/* 20220221 // */
+var termsContent =`
+                    <form id="termsForm" name="termsForm">
+                    <div id="agreeSelect">
+                        <div class="agree_container">
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow pd-b-2u">안심서비스 안내</h4>
+                            <p class="mg-t-2u txt-11 txt-neutral2">한국타이어 판매대리점인 더타이어샵 고객을 대상으로 더타이어샵 영업장에서 구매/장착한 한국타이어가 수리 불가한 경우에 고객이 구매/장착한 타이어와 동일한 등급의 새 타이어로 무상 교체해주는 고객 안심서비스 입니다. (수리 가능한 바닥면 단순 펑크와 이상마모는 혜택에서 제외 됩니다.)<br />(안심서비스를 제공 받기 위해서는 개인정보 활용 동의를 해주셔야 하며, 동의 거부시에는 서비스 제공이 불가합니다.)<p>
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow mg-t-6u pd-b-2u">안심서비스 적용대상</h4>
+                            <ol class="mg-t-2u">                                
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(1)대상고객 : 더타이어샵 매장에서 벤투스, 키너지, 다이나프로, 아이셉트 상품군 2개 이상 구매 고객</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(2)보장조건 : 타이어 구매일로부터 1년간 16,000km 이내로 사용 중에 주행불가한 상태로 타이어 파손</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(3)보장내용 : 최초 1회에 한하여 동일한 타이어 1개 무상증정 (티스테이션/더타이어샵 매장 방문, 장착비 별도)</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(4)적용차종 : 11인승 이하의 승용/SUV/승합차에 한함(카니발,코란도투리스모,스타렉스,스타리아)</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(5)신상품 출시 및 단종에 따라 가입 가능 상품명이 추가/변동될 수 있습니다.</p></li>
+                            </ol>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">벤투스 Ventus</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table " width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="2"><span class="txt-10 txt-nowrap">Ventus Runflat</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo² HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo² SUV HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus Super Sport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S1 evoZ</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus Super All-season</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo Z AS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="2"><span class="txt-10 txt-nowrap">Ventus premium Sport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus R-S4, Ventus R-S3, Ventus S1 evo³, Ventus S1 evo²</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Ventus S1 evo³ SUV, Ventus S1 evo² SUV</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus premium comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S2 AS,Ventus S1 noble2</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Ventus Comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Ventus S2 AS X</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">키너지 Kinergy</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table" width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="3"><span class="txt-10 txt-nowrap">Kinergy Comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">Kinergy EX, Kinergy 4S 2, Kinergy GT, Kinergy Eco</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Kinergy GT</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">전기차</span></td>
+                                            <td><span class="txt-10">Kinergy AS ev</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">다이나프로 Dynapro</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table" width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th><span class="txt-10 txt-nowrap">Dynapro Comport</span></th>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">Dynapro HL3, Dynapro HP2, Dynapro HP, Dynapro Atm2</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 txt-14 txt-narrow mg-t-6u pd-b-2u">아이셉트 i*cept</h4>
+                            <div class="tbl table-responsive">
+                                <table cellpadding="0" cellspacing="0" class="con-table" width="100%">
+                                    <colgroup>
+                                        <col width="140px">
+                                        <col width="50px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="2"><span class="txt-10 txt-nowrap">Winter i*cept Comport</span></th>
+                                            <td><span class="txt-10">승용차</span></td>
+                                            <td><span class="txt-10">i*cept evo³, i*cept evo², i*cept evo, i*cept iz2 A</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="txt-10">SUV</span></td>
+                                            <td><span class="txt-10">i*cept evo SUV, i*cept evo² SUV, i*cept evo SUV, Winter i*cept X</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow mg-t-6u pd-b-2u">유의사항</h4>
+                            <ol class="mg-t-2u">
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(1)안심서비스 가입 전에 서비스설명서 내용을 반드시 읽어보시기 바랍니다.  </p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(2)안심서비스 가입을 위해서는 고객의 개인정보 활용 동의 필수이며, 거부 시 서비스 제공이 불가합니다.</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(3)안심서비스 보상은 차량 1대 당 1회에 한하여 타이어 1개만 보상됩니다. (최근 가입건 기준으로 보상 가능여부를 판단)</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(4)안심서비스 적용기한은 타이어 구매일로 부터 12개월과 구매후 주행거리 16,000km 중 1개의 조건 선도래시 만료됩니다.</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(5)안심서비스 보상시 장착비는 다음과 같이 별도로 발생하며 고객님 부담입니다.</p>
+                                    <p class="txt-neutral2 txt-11 mg-t-2u">→ 14인치 이하 10,000원  /  15~17인치 15,000원  /  18인치 이상 20,000원  /  런플렛상품은 별도로 추가 10,000원</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(6)다음의 차종은 서비스 가입이 불가합니다.</p>
+                                    <ol class="mg-t-2u pd-l-2u">
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">① 12인승 이상 승합차, 픽업트럭, (경)트럭</p></li>
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">② 배송, 법인(법인리스 포함), 렌트, 택시, 경주용, 리무진, 경찰차, 구급차 등 영업 및 긴급 목적으로 사용되는 차량</p></li>
+                                    </ol>
+                                </li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(7)안심서비스는 동일한 새 타이어로 보상하며 아래의 조건에서는 보상지연 및 동급의 타이어로 대체 보상될 수 있습니다.</p>
+                                    <ol class="mg-t-2u pd-l-2u">
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">① 일부 비메인 규격의 상품</p></li>
+                                        <li><p class="txt-neutral2 txt-11 mg-t-2u">② 재고 부족 및 상품 단종</p></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            <h4 class="txt-w700 border-b txt-14 txt-narrow mg-t-6u pd-b-2u">주요면책 사항</h4>
+                            <ol class="mg-t-2u">
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(1)수리 후 운행 가능한 단순 트래드면 펑크</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(2)내부 코드지가 보이지 않는 미세한 뜯김</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(3)휠얼라인먼트 오류 등 차량의 이유로 인한 이상마모</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(4)보상을 목적으로 한 고의 손상</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(5)포장도로 및 간선도로 외에서 운행 중 발생한 사고 </p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(6)차량 제조사의 권장 제원과 부합하지 않는 규격의 타이어 장착</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(7)더타이어샵 이외의 장소에서 타이어를 구매,교체,수리한 경우</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(8)자동차보험으로 보상처리가 가능한 대물 사고</p></li>
+                                <li><p class="txt-neutral2 txt-11 mg-t-2u">(9)도로 자체의 하자로 인하여 발생한 사고 (돌출 맨홀, 씽크홀, 포트홀 등)</p></li>
+                            </ol>
+                            <p class="txt-neutral2 txt-11 mg-t-5u">안심서비스 보상문의 : 010-4235-4972 (우리손해사정 담당자)</p>
+                        </div>
+                    </div>
+                </form>
+               `
+/* //20220221  */
+</script>
+<%- locals.widget ('src/project/mobile/pages/tts/includes/tts-footer.ejs') %> 

@@ -1,0 +1,60 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '공지사항' }) %>
+<div id="container" class="cscenter">
+    <!-- 공지사항 sort -->
+    <div class="cs_sort">
+
+        <select title="공지사항 구분 선택" name='ntcClssCd' id='ntcClssCd' class="select01">
+            <option value="">전체</option>
+
+            <option value="02">매장</option>
+
+            <option value="03">프로모션</option>
+
+            <option value="04">안내</option>
+
+        </select>
+        <div class="search_box">
+            <input title="질문 입력" type="text" class="ip_txt01 w100p" placeholder="질문을 입력해 주세요." id="searchText"/>
+            <button class="btn" id='btn_search'>검색</button>
+        </div>
+    </div>
+    <div class="cs_notice">
+
+
+
+        <ol class="notice_list">
+            <div class="nodata"><em>검색한 조건</em>의 결과가 없습니다.</div>
+
+            <li class="notice-child">
+                <a href="https://m.tstation.com/customer-service/announcement/notice-detail.do?ntcSeq=60134">
+                    <span class="part"><em class="c04">안내</em></span>
+                    <span class="date">2020-04-29</span><!-- 게시일자 -->
+                    <!-- 등록일자 -->
+                    <span class="tit">티스테이션, 두산베어스와 스포츠 마케팅 스폰서십 계약 연장</span>
+                </a>
+            </li>
+
+            <li class="notice-child">
+                <a href="https://m.tstation.com/customer-service/announcement/notice-detail.do?ntcSeq=60124">
+                    <span class="part"><em class="c04">안내</em></span>
+                    <span class="date">2019-03-26</span><!-- 게시일자 -->
+                    <!-- 등록일자 -->
+                    <span class="tit">한국타이어, 17년 연속 ‘한국산업의 브랜드파워’ 1위 선정</span>
+                </a>
+            </li>
+
+        </ol>
+        <div class="more">
+            <button class="btnMore" id="btn_select_more">더보기(
+                <em>1 </em>/
+                1)
+            </button>
+        </div>
+
+
+    </div>
+</div>

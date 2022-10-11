@@ -1,0 +1,226 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '회원탈퇴' }) %>
+<div id="container" class="mypage">
+    <!-- 01. 필수정보입력 -->
+    <form id="memberDetailForm">
+
+        <input type="hidden" id="myPgSelfAuthYn" name="myPgSelfAuthYn" value="Y">
+        <input type="hidden" id="orgNm" name="orgNm" value="박현수">
+        <input type="hidden" id="myPgJoinChnlFg" name="myPgJoinChnlFg" value="10">
+
+        <div class="join_form">
+            <div class="inner">
+                <ol class="user_info">
+
+                    <li class="phone">
+                        <span class="tit">아이디(이메일)</span>
+                        <input title="아이디(이메일) 입력" type="text" class="ip_txt01 w100p" value="demonicdior@icloud.com" disabled="">
+                    </li>
+
+
+                    <li class="mail">
+                        <span class="tit">이름</span>
+                        <span onclick="nameClick()"><input title="이름 입력" type="text" class="ip_txt01 w100p" id="mbrNm" value="박현수" disabled=""></span>
+                    </li>
+
+                    <li class="">
+                        <span class="tit">성별</span>
+                        <div class="pd-v-1u">
+                            <label class="radio-item">
+                                <input type="radio" name="gender-radio">
+                                <div class="icon-holder">
+                                    <span class="line-icons circle size-20"></span>
+                                </div>
+                                <div class="labelling">
+                                    <span class="label-txt mg-h-1u">남성</span>
+                                </div>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="gender-radio">
+                                <div class="icon-holder">
+                                    <span class="line-icons circle size-20"></span>
+                                </div>
+                                <div class="labelling">
+                                    <span class="label-txt mg-h-1u">여성</span>
+                                </div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tit">생년월일</span>
+                        <input type="text" class="ip_txt01 w100p" value="2020.10.23" disabled />
+                    </li>
+
+                    <li id="PhoneL01" class="phone2" style="padding-right: 65px !important;">
+                        <span class="tit">휴대폰</span>
+                        <span class="r1" onclick="click_fn()"><input type="tel" id="orgSct" value="010" class="ip_txt01 w100p" disabled=""></span>
+                        <span class="r2">-</span>
+                        <span class="r3" onclick="click_fn()"><input type="tel" id="orgTxno" value="5278" class="ip_txt01 w100p" disabled=""></span>
+                        <span class="r2">-</span>
+                        <span class="r3" onclick="click_fn()"><input type="tel" id="orgEnd" value="6571" class="ip_txt01 w100p" disabled=""></span>
+
+
+
+                        <button type="button" class="btnM2 btnS01 changePh" id="btnChgPhoneNumber">변경하기</button>
+
+
+
+
+
+                        <span class="certification_stat">(인증 완료)</span>
+                        <!-- 								(인증 완료) -->
+
+
+
+                    </li>
+
+
+                    <li id="PhoneL02" class="phone2 off" style="display: list-item; padding-right: 65px !important;">
+
+                        <span class="tit">변경할 휴대폰</span>
+
+
+
+                        <span class="r1"><input type="tel" name="cellSctNo" id="cellSctNo" class="ip_txt01 w100p numeric" maxlength="3"></span>
+                        <span class="r2">-</span>
+                        <span class="r3"><input type="tel" name="cellTxnoNo" id="cellTxnoNo" class="ip_txt01 w100p numeric" maxlength="4"></span>
+                        <span class="r2">-</span>
+                        <span class="r3"><input type="tel" name="cellEndNo" id="cellEndNo" class="ip_txt01 w100p numeric" maxlength="4"></span>
+                        <button class="btnM2 btnS01 changePhone2 " type="button" id="btnSendAuth">인증</button>
+                    </li>
+                    <li id="PhoneL03" class="phone off phonesign">
+                        <input title="인증번호 입력" type="number" class="ip_txt01 w100p numeric" pattern="[0-9]*" id="authVal" placeholder="인증번호를 입력해 주세요." maxlength="6">
+                        <div class="time_limit phonesign" id="timeLimit"><span id="timer" class="timer"></span></div>
+                    </li>
+                    <li id="PhoneL03a" class="btn off phonesign">
+                        <div class="btn02">
+                            <ul>
+                                <li><button type="button" class="btnM2 btnS01 changePhone3 changePhone2">재전송</button></li>
+                                <li><button type="button" id="btnCert" class="btnM2 btnS02">인증하기</button></li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    <input type="hidden" id="emailAddr" name="emailAddr">
+                    <input type="hidden" id="emailUpdAvail" name="emailUpdAvail" value="N">
+
+
+
+
+
+                    <li class="editArea snsMember">
+                        <span class="tit">새비밀번호</span>
+                        <input type="password" id="passwd" class="ip_txt01 w100p" placeholder="영문/숫자/특수문자 2개 이상 조합 6~15">
+                    </li>
+                    <li class="editArea snsMember">
+                        <span class="tit">새비밀번호 확인</span>
+                        <input type="password" id="passwdConfirm" class="ip_txt01 w100p" placeholder="영문/숫자/특수문자 2개 이상 조합 6~15">
+                    </li>
+
+
+
+
+                </ol>
+
+                <div class="tmemberArea">
+                    <p class="txt05">임직원 이신가요?
+                        <button type="button" class="btnM2 btnS01 popup-full" data-rel="/mypage/gostaffapproval.do">임직원 승인요청</button>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <!-- //01. 필수정보입력 -->
+    <!-- 02. 선택사항 -->
+    <div class="join_form">
+        <div class="container pd-h-5u">
+            <p class="txt-12 txt-primary">정보활용동의 시 다양한 혜택, 쿠폰선물등을 받아 보실 수 있습니다.</p>
+            <ul>
+                <li class="float-l">
+                    <label class="check-item">
+                        <input type="checkbox">
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12" style="font-size: 12px">마케팅 활용을 위한 수집 및 이용동의(선택)</span>
+                        </div>
+                    </label>
+                </li>
+                <li class="float-r"><a href="#" class="txt-12 txt-underline line-32 popup-full" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">내용보기</a></li>
+            </ul>
+        </div>
+        <div class="leave editArea">
+            회원 탈퇴를 원하시나요?
+            <a href="https://mlocal.tstation.com/mypage/info/memberout" class="btnM2 btnS03">회원탈퇴</a>
+        </div>
+        <div class="btn02">
+            <ul>
+                <li><button type="button" id="btnCancel" class="btnB btnS01">취소</button></li>
+                <li><button type="button" id="memberEdit" class="btnB btnS02">개인정보 수정</button></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //02. 선택사항 -->
+</div>
+<div id="layerFullPopup" tabindex="0" style="display: block;">
+    <div class="layer_box">
+        <div id="full_content">
+            <!-- T-MEMBERS 임직원 승인요청  + url - full -->
+            <div class="full_tmembers">
+                <div class="layerT"><h3>T-MEMBERS 임직원 승인요청</h3></div>
+                <div class="layerC2">
+                    <!-- 안내 -->
+                    <div class="box">
+                        <span>T-MEMBERS는 한국타이어 임직원 회원 페이지입니다.</span>
+                        임직원 확인을 위해 정확한 정보를 입력해 주세요.
+                    </div>
+                    <!-- //안내 -->
+                    <!-- 01. 필수정보입력 -->
+                    <div class="join_form">
+                        <div class="inner">
+                            <ol class="user_info">
+                                <li class="phone">
+                                    <span class="tit">사원번호</span>
+                                    <input type="text" class="ip_txt01 w100p">
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- //01. 필수정보입력 -->
+                    <!-- 02. 선택사항 -->
+                    <div class="join_form">
+                        <h6 class="tit">약관동의</h6>
+                        <div class="inner line">
+                            <ol class="check">
+                                <li>
+                                    <input type="checkbox" class="ip_c" id="tagreeChoice01"><label for="tagreeChoice01">임직원 정보 수집 및 이용동의  </label>
+                                    <button class="btnS btnS03 popup-inner" data-rel="/jsp/mc/company/popup/terms.jsp">내용보기</button>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="ip_c" id="tagreeChoice02"><label for="tagreeChoice02">청탁금지법 준수동의  </label>
+                                    <button class="btnS btnS03 popup-inner" data-rel="/jsp/mc/company/popup/terms.jsp">내용보기</button>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- //02. 선택사항 -->
+                    <!--  -->
+                    <div class="btnFix">
+                        <ul>
+                            <li><button class="btnM2 btnS01 layer-full-close">취소</button></li>
+                            <li><button class="btnM2 btnS02">요청하기</button></li>
+                        </ul>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+            <!-- //T-MEMBERS 임직원 승인요청 --></div>
+        <button type="button" class="layer-full-close">팝업닫기</button>
+    </div>
+</div>

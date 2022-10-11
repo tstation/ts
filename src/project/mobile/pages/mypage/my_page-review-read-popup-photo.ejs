@@ -1,0 +1,232 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '상품평' }) %>
+<div id="container" class="mypage">
+    <!-- 상품평  top -->
+    <div class="review_top">
+        <ul class="mypage_tab01">
+            <li><a href="review.jsp">작성 가능한 상품평</a></li>
+            <li class="on"><a href="review_list.jsp">내가 작성한 상품평</a></li>
+        </ul>
+    </div>
+    <!-- //상품평  top -->
+    <!-- 상품평  list -->
+    <div class="review_list">
+        <!-- <p class="nodata">최근 <em>작성한</em><br />상품평이 없습니다.</p>  -->
+        <ol>
+            <li class="toggle_box on">
+                <!--  unit01 : 상품리스트 -->
+                <dl class="unit01">
+                    <dt>
+                        <a href="#"><img src="http://download.t-station.co.kr/DMS/prod/main/image/P100000089/2017/0324/main_153747278.jpg" class="unitImg" alt="상품명 이미지"></a>
+                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                        <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                    </dt>
+                    <dd class="info">
+                        <a href="#">
+								<span class="flag_04">
+									<em class="c01 off">Comfort</em>
+									<em class="c02">SPORT</em>
+									<em class="c03 off">Runflat</em>
+								</span>
+                            <span class="unitT1">
+								    <span>Ventus S Sport</span>
+                                <!-- <small class="sub">Ventus S2 AS</small> -->
+								</span>
+                            <span class="unitT3">245/45R18</span>
+                            <span class="flag_05">
+								    <em>승용차</em>
+								    <em>사계절 </em>
+								    <em>BMW 공식 인증</em>
+								    <em>프리미엄</em>
+								</span>
+                        </a>
+                    </dd>
+                </dl>
+                <!--  //unit01 -->
+                <!-- 01. 내용 & 별점 -->
+                <div class="unitR2 tit on">
+                    <span class="star02 point9"><em>(4.5점)</em></span>
+                    <div class="tire">
+                        현대 그랜저
+                        <span>245/45R18</span>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="cont">
+                        동호회 추천으로 타이어 교체했습니다.<br>타보니 확실히 출고 타이어랑 차이가 느껴지네요.  좀 비싼 타이어지만 현재까진 매우 만족합니다. <br>다행히 이벤트로 저렴하게 교환할 수 있어서 좋습니다. 서비스도 너무 만족 합니다.
+                    </div>
+                    <div class="star">
+                        <ol>
+                            <li>
+                                <span class="tit">승차감</span>
+                                <span class="star01 point8"><em>4.0</em></span>
+                            </li>
+                            <li>
+                                <span class="tit">연비</span>
+                                <span class="star01 point10"><em>4.5</em></span>
+                            </li>
+                            <li>
+                                <span class="tit">마일리지</span>
+                                <span class="star01 point0"><em>0</em></span>
+                            </li>
+                            <li>
+                                <span class="tit">고속주행</span>
+                                <span class="star01 point9"><em>4.5</em></span>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- //01. 내용 & 별점 -->
+                    <!-- 02. photo & date -->
+                    <div class="photo">
+                        <ol>
+                            <li class="popup-full" name="PHOTO" data-rel="/jsp/mc/mypage/popup/full_review_photo.jsp"><img src="/mc-static-root/images/@thumb/review_04.jpg" alt="고객상품평 이미지"></li>
+                            <li class="popup-full" name="PHOTO" data-rel="/jsp/mc/mypage/popup/full_review_photo.jsp"><img src="/mc-static-root/images/@thumb/review_05.jpg" alt="고객상품평 이미지"></li>
+                        </ol>
+                    </div>
+                    <div class="date">
+                        작성일 2018-10-02
+                    </div>
+                    <!-- //02. photo & date -->
+                    <!-- 03. button -->
+                    <div class="btn02">
+                        <ul>
+                            <li><button class="btnM3 btnS03">삭제</button></li>
+                            <li><button class="btnM3 btnS01">수정</button></li>
+                        </ul>
+                    </div>
+                    <!-- //03. button -->
+                </div>
+            </li>
+            <li class="toggle_box on">
+                <!--  unit01 : 상품리스트 -->
+                <dl class="unit01">
+                    <dt>
+                        <a href="#"><img src="http://download.t-station.co.kr/DMS/prod/main/image/P100000089/2017/0324/main_153747278.jpg" class="unitImg" alt="상품명 이미지"></a>
+                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                        <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                    </dt>
+                    <dd class="info">
+                        <a href="#">
+								<span class="flag_04">
+									<em class="c01 off">Comfort</em>
+									<em class="c02">SPORT</em>
+									<em class="c03 off">Runflat</em>
+								</span>
+                            <span class="unitT1">
+								    <span>Ventus S Sport</span>
+								    <small class="sub">Ventus S2 AS</small>
+								</span>
+                            <span class="unitT3">245/45R18</span>
+                            <span class="flag_05">
+								    <em>승용차</em>
+								    <em>사계절 </em>
+								    <em>BMW 공식 인증</em>
+								    <em>프리미엄</em>
+								</span>
+                        </a>
+                    </dd>
+                </dl>
+                <!--  //unit01 -->
+                <!-- 01. 내용 & 별점 -->
+                <div class="unitR2 tit on">
+                    <span class="star02 point9"><em>(4.5점)</em></span>
+                    <div class="tire">
+                        현대 그랜저
+                        <span>245/45R18</span>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="cont">
+                        동호회 추천으로 타이어 교체했습니다.<br>타보니 확실히 출고 타이어랑 차이가 느껴지네요.  좀 비싼 타이어지만 현재까진 매우 만족합니다. <br>다행히 이벤트로 저렴하게 교환할 수 있어서 좋습니다. 서비스도 너무 만족 합니다.
+                    </div>
+                    <div class="star">
+                        <ol>
+                            <li>
+                                <span class="tit">승차감</span>
+                                <span class="star01 point8"><em>4.0</em></span>
+                            </li>
+                            <li>
+                                <span class="tit">연비</span>
+                                <span class="star01 point10"><em>4.5</em></span>
+                            </li>
+                            <li>
+                                <span class="tit">마일리지</span>
+                                <span class="star01 point0"><em>0</em></span>
+                            </li>
+                            <li>
+                                <span class="tit">고속주행</span>
+                                <span class="star01 point9"><em>4.5</em></span>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- //01. 내용 & 별점 -->
+                    <!-- 02. photo & date -->
+                    <div class="photo">
+                        <ol>
+                            <li class="popup-full" name="PHOTO" data-rel="/jsp/mc/mypage/popup/full_review_photo.jsp"><img src="/mc-static-root/images/@thumb/review_01.jpg" alt="고객상품평 이미지"></li>
+                            <li class="popup-full" name="PHOTO" data-rel="/jsp/mc/mypage/popup/full_review_photo.jsp"><img src="/mc-static-root/images/@thumb/review_02.jpg" alt="고객상품평 이미지"></li>
+                            <li class="popup-full" name="PHOTO" data-rel="/jsp/mc/mypage/popup/full_review_photo.jsp"><img src="/mc-static-root/images/@thumb/review_03.jpg" alt="고객상품평 이미지"></li>
+                        </ol>
+                    </div>
+                    <div class="date">
+                        작성일 2018-10-02
+                    </div>
+                    <!-- //02. photo & date -->
+                    <!-- 03. button -->
+                    <div class="btn02">
+                        <ul>
+                            <li><button class="btnM3 btnS03">삭제</button></li>
+                            <li><button class="btnM3 btnS01">수정</button></li>
+                        </ul>
+                    </div>
+                    <!-- //03. button -->
+                </div>
+            </li>
+        </ol>
+    </div>
+    <!-- //상품평  list -->
+</div>
+<div id="layerFullPopup" tabindex="0" style="display: block;">
+    <div class="layer_box">
+        <div id="full_content">
+            <!-- 사진보기  + url - full -->
+            <div class="full_review">
+                <div class="layerT"><h3>사진보기</h3></div>
+                <div class="layerC">
+                    <!-- 사진보기 -->
+                    <div class="photo">
+                        <div class="swiper-container photo-swiper">
+                            <ol class="swiper-wrapper">
+                                <li class="swiper-slide"><img src="mc-static-root/images/common/sample/tire.jpg" alt="고객상품평 이미지"></li>
+                                <li class="swiper-slide"><img src="mc-static-root/images/common/sample/tire.jpg" alt="고객상품평 이미지"></li>
+                                <li class="swiper-slide"><img src="mc-static-root/images/common/sample/tire.jpg" alt="고객상품평 이미지"></li>
+                            </ol>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <!-- //사진보기 -->
+
+                    <script>
+                        var photoSwiper = new Swiper('. photo-swiper', {
+                            init: false,
+                            spaceBetween: 24,
+                            slidesPerView: 'auto',
+                        });
+
+                        photoSwiper.init();
+
+                        $(window).on('resize', function () {
+                            photoSwiper.init();
+                        });
+                    </script>
+                </div>
+            </div>
+            <!-- //상품 비교 --></div>
+        <button type="button" class="layer-full-close">팝업닫기</button>
+    </div>
+</div>

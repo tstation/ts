@@ -1,0 +1,55 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div style="height: 300px"></div>
+<script>
+    $(document).ready(function() {
+        var isRequireDormantCancel = true;
+        if (isRequireDormantCancel) {
+            $.Tstation.popup().open({
+                ref: 'dormant-cancel',
+                title: '휴면 해제 안내',
+                requestUrl: '',
+                contents: '<p class="txt-14 txt-w500 txt-center mg-b-2u">회원님의 계정이 장시간 미사용으로 휴면 상태 입니다.</p>\n' +
+                  '<p class="txt-14 txt-center">휴면 회원은 T\'Station의 서비스 이용이 제한 되오니 동의 버튼을 눌러 휴면 상태를 해제해주세요.</p>',
+                dimWhite: false,
+                modalContentsPd: {
+                    horizon: 8,
+                    vertical: 8,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                modalSize: 'SMALL',
+                modalAction: {
+                    isNoBoundary: true,
+                    buttons: [
+                        {
+                            label: '미동의',
+                            negative: true,
+                            action: function () {
+                                $.Tstation.popup().close('dormant-cancel');
+                            }
+                        },
+                        {
+                            label: '휴면해제',
+                            negative: false,
+                            action: function () {
+                                alert('휴면해제 하기 위한 필요한 절차를 메소드로 만들어 호출 해 주세요.');
+                                $.Tstation.popup().close('dormant-cancel');
+                            }
+                        }
+                    ]
+                },
+                onOpen: function () {
+                    console.log('팝업이 열리면 파이어 합니다.');
+                },
+                onClose: function () {
+                    console.log('팝업이 닫히면 파이어 합니다.');
+                }
+            });
+        }
+    });
+</script>

@@ -1,0 +1,75 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        The Premium Rewards - SUV
+        <span class="date">이벤트 기간 : 20.08.05  ~ 20.10.31</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <div class="event_detail">
+
+        <link type="text/css" rel="stylesheet" href="pc-static-root/css/event.css" /><!-- NEW CSS ADD -->
+        <style>
+            .event-app-open {
+                position: relative;
+            }
+
+            .event-app-open .img-map-wrap {
+                max-width: 750px;
+                width: 100%;
+                font-size: 0;
+                margin: auto;
+                position: relative;
+            }
+
+            .event-app-open .img-map-link {
+                display: block;
+                position: absolute;
+                z-index: 1;
+                border-radius: 8px;
+            }
+
+            .event-app-open .img-map-link.link-1 {
+                left: 5.5%;
+                top: 79.1%;
+                width: 89%;
+                height: 1.5%;
+            }
+
+            .event-app-open .img-map-link.link-2 {
+                left: 5.5%;
+                top: 80.9%;
+                width: 89%;
+                height: 1.5%;
+            }
+        </style>
+
+        <div class="event-app-open">
+            <div class="img-map-wrap">
+                <img src="mc-static-root/images/event/20220325/MC_detail.png" alt="티스테이션 앱 런칭기념 웰컴혜택 증정" />
+                <a href="https://apps.apple.com/kr/app/%ED%8B%B0%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98-%EB%AA%A8%EB%91%90-%ED%95%9C%EB%B2%88%EC%97%90-%EC%95%8C%EC%95%84%EC%84%9C/id1591177719" class="img-map-link link-1" data-analytics-click="아이폰용 APP 다운로드" target="_blank"><span class="blind">아이폰용 APP 다운로드</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.hankookn.tstation" class="img-map-link link-2" data-analytics-click="안드로이드용 APP 다운로드" target="_blank"><span class="blind">안드로이드용 APP 다운로드</span></a>
+            </div>
+        </div>
+        <!-- // Prospecs event -->
+
+
+
+
+
+    </div>
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+    <!-- //event list -->
+
+</div>

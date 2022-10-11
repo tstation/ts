@@ -1,0 +1,194 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- 01. page title -->
+            <div class="page_tit">
+                <h4>T'Station 주요 서비스 안내</h4>
+            </div>
+            <!-- //01. page title -->
+            <!-- 02. 안내 TAB -->
+            <div class="cscenter_top">
+                <ul class="tab_01">
+                    <li><a href="https://www.tstation.com/customer-service/tsservice/servicetire.do">타이어 서비스</a></li>
+                    <li class="on"><a href="https://www.tstation.com/customer-service/tsservice/serviceitem.do">경정비 서비스</a></li>
+                </ul>
+            </div>
+            <!-- //02. 안내 TAB -->
+            <!-- 03. tab 경정비 -->
+            <div class="cs_tab tabScript">
+                <p class="txt01">올바른 차량 관리의 시작, T'Station <em>'10대 Maintenance'</em></p>
+                <ul class="item">
+                    <li class="on"><button class="icnI1" data-rel="service_cont" title="serviceI1">타이어 관리</button></li>
+                    <li><button class="icnI2" data-rel="service_cont" title="serviceI2">엔진오일</button></li>
+                    <li><button class="icnI3" data-rel="service_cont" title="serviceI3">배터리</button></li>
+                    <li><button class="icnI4" data-rel="service_cont" title="serviceI4">브레이크 패드</button></li>
+                    <li><button class="icnI5" data-rel="service_cont" title="serviceI5">브레이크 오일</button></li>
+                    <li><button class="icnI6" data-rel="service_cont" title="serviceI6">오토미션 오일</button></li>
+                    <li><button class="icnI7" data-rel="service_cont" title="serviceI7">부동액</button></li>
+                    <li><button class="icnI8" data-rel="service_cont" title="serviceI8">팬벨트</button></li>
+                    <li><button class="icnI9" data-rel="service_cont" title="serviceI9">실내필터</button></li>
+                    <li><button class="icnI10" data-rel="service_cont" title="serviceI10">에어컨 가스</button></li>
+                </ul>
+                <div id="serviceI1" class="service_cont">
+                    <dl class="ds01">
+                        <dt><em>Service 1.</em> 안전한 드라이빙을 위한 올바른 타이어 관리하기</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_01.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            타이어의 성능은 미처 예측하지 못한 상황에서도 완벽하게 작동해야 합니다.
+                            <br>뜨거운 열기를 가득 품은 도로를 달려야 하고, 폭우 속에서도 안정성이 유지되어야 합니다.
+                            <br>또한, 영하의 추운 날 꽁꽁 얼어붙은 눈길에서도 미끄러지지 않아야 하고, 커브가 연속되는 구간에서도 노면과의 접지력을 확보해야 합니다.
+                            <br>티스테이션은 고객님의 안전을 위해 마음까지 믿고 맡길 수 있는 타이어 점검 서비스를 제공합니다.
+                        </dd>
+                        <dd class="dd_01">
+                            <span class="txt_03">Tip! 타이어 점검 항목 알아보기!</span>
+                            고객님의 안전 운전을 위한 타이어 점검 필수 항목 5가지를 알려드립니다.
+                            <br><em class="txt_04">1. 타이어 공기압 체크</em>
+                            <em class="txt_04">2. 타이어 위치교환</em>
+                            <em class="txt_04">3. 휠 밸런스</em>
+                            <em class="txt_04">4. 휠 얼라인먼트</em>
+                            <em class="txt_04">5. 외부 손상 점검 등</em>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI2" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 2.</em> 엔진오일 관리만 잘해도 연비 UP</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_02.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            엔진오일이 골고루 전달되지 않으면, 엔진 내부 금속끼리 직접 닿아 순식간에 마모되므로 고장의 원인이 됩니다.
+                            <br>같은 거리를 주행해도 엔진오일의 종류, 운전 습관 등에 따라 달라질 수 있으니 직접 점검하여 교환 시기를 결정하는 것이 좋습니다.
+                            <br>또한, 자신의 차에 적합한 상품을 미리 확인한 뒤 교체하는 것이 자동차 수명을 연장하는 방법입니다.
+                            <br>안전한 드라이빙과 차량 관리 비용의 효율성을 위해 적당한 시기에 꼭 교체하시기 바랍니다.
+                        </dd>
+                        <dd class="dd_01">
+                            <span class="txt_03">Tip! 엔진 플러싱이란?  </span>
+                            엔진 내부를 깨끗히 씻어내고 세척하는 일. 즉, 엔진 내부의 묵은 때를 청소하는 작업을 말합니다. 왜 엔진 내부를 청소해야 할까요?
+                            <br>엔진 오일이 산화되면서 엿가락처럼 굳어지는 오일 찌거기가 끼기 때문입니다.
+                            <br>엔진오일 2회 교체마다 1회의 플러싱을 하면 항상 깨끗한 엔진 컨디션을 확보할 수 있다는 사실 기억하세요.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI3" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 3.</em> 기온이 낮아지면 성능이 저하되는 배터리 관리하기</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_03.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            배터리 방전은 실내등, 열선, 헤드라이트를 켠 상태로 오랜 시간 방치하기 때문에 발생합니다.
+                            <br>또한 블랙박스 등 배터리를 사용하는 주변기기가 늘어난 요즘, 배터리는 더욱 빨리 방전될 수 있습니다.
+                            <br>배터리가 방전되어 시동이 걸리지 않을 때는 주변 차량의 배터리와 연결해서 시동을 걸거나, 자동차 제조사/보험사의 긴급 출동 서비스를 이용하시기 바랍니다.
+                            <br>이 때 시동이 걸린 후에는 곧바로 시동을 끄지 말고, 한동안 공회전과 주행을 하여 발전기가 배터리를 충전할 수 있도록 조치해야 합니다.
+                            <br>배터리의 수명은 일반적인 사용환경에서 3년/30,000km 정도입니다.
+                            <br>점검이나 정비를 제대로 하더라도 2년 이상 사용한 후에는 수시로 배터리 전압을 점검하여 수명이 다하기 전에 교체하는 것이 좋습니다.
+                        </dd>
+                        <dd class="dd_01">
+                            <span class="txt_03">Tip! 배터리 방전이 자주 된다?</span>
+                            배터리를 충전시켜 주는 발전기가 고장 났거나 배터리 수명이 다 되어서일 수도 있으니 가까운 T'Station를 방문하여 진단을 받아 보는 것이 좋습니다.
+                            <br>배터리 이상은 곧 자동차 컨디션에 문제가 있음을 의미합니다. 미연에 문제를 방지하기 위해 자주 점검해 주세요.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI4" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 4.</em> 계절이 바뀔때마다 반드시 체크해야 하는 브레이크 패드 관리하기</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_04.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            구동축에 따라 달라질 수 있으나 브레이크 패드는 약 30,000km 정도 주행하면 상당히 닳아 없어집니다.
+                            <br>마모가 진행되면 경고등이 들어오거나 제동 시에 끼익 하는 소리로 알 수 있습니다.
+                            <br>일반적으로 3mm 이하로 남은 경우 교체해야 하며, 패드 교체 시기를 놓쳐 디스크가 손상되면 안전 뿐만 아니라 경제적으로도 큰 부담이 발생합니다.
+                            <br>또한 계절적 요인에 의한 손상/마모가 발생할 수 있으므로 계절이 바뀔 때마다 수시로 점검해 주시는 것이 좋습니다.
+                            <br>타이어 점검/교체 시 함께 정비하시면 보다 효율적입니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI5" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 5.</em> 브레이크 패드 점검만큼 중요한 브레이크 오일 점검</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_05.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            브레이크 오일은 수분을 흡수하는 성질이 강해서 시간이 지남에 따라 수분 함유량이 높아집니다.
+                            <br>브레이크 패드와 디스크에 고온의 마찰열이 발생할 때 오일에 포함된 수분이 끓어 수증기 기포가 만들어 지는데,
+                            <br>이렇게 되면 브레이크 페달을 밟아도 충분한 제동이 이루어지지 않기 때문에 위험할 수 있습니다.
+                            <br>브레이크 오일의 점검 및 교환 주기는 20,000km이며, 오염도를 점검하여 교환 시기를 결정하시면 됩니다.
+                        </dd>
+                        <dd class="dd_01">
+                            <span class="txt_03">Tip! 브레이크가 밀리면서 미끄러져요.</span>
+                            브레이크가 밀리는 것은 크게 두 가지 원인이 있는데, 가장 흔한 이유는 브레이크 패드의 면이 닳아서 제 기능을 발휘하지 못하는 경우입니다.
+                            <br>또 다른 경우는 브레이크 계통의 균열로 인해 브레이크 오일이 누유되어 페달을 밟아도 그 힘이 브레이크 패드까지 도달하지 않은 경우입니다.
+                            <br>주행 중 브레이크가 밀리면서 제동이 안 될 때는 당황하지 말고 우선 엔진 브레이크를 사용하여 서서히 속도를 줄입니다.
+                            <br>그런 다음 속도가 충분히 줄어들면 핸드 브레이크를 천천히 작동시켜 차량을 완전히 정지시켜야 합니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI6" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 6.</em> 교체 주기간 긴 오토미션 오일 관리</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_06.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            오토매틱 트랜스미션(Automatic Transmission : 자동 변속기)은 흔히 기어, 오토 미션이라고 부릅니다.
+                            <br>오토 미션은 엔진의 출력을 자동차의 주행 속도에 맞춰 타이어에 전달하는 역할을 합니다.
+                            <br>오토미션 오일은 작동유 역할을 하며 차량 제조사에서 지정한 오일을 주입하는 것이 가장 좋습니다.
+                            <br>점검 및 교환 주기는 보통 100,000km이며, 오염도를 점검하여 교환 시기를 결정하는 것이 좋습니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI7" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 7.</em> 겨울철 엔진의 동파를 막아주는 부동액 관리</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_07.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            날씨가 추워져 부동액(냉각수)을 교환할 때는 반드시 기존 종류를 확인하여 같은 계열의 부동액(냉각수)으로 주입해야 합니다.
+                            <br>다른 계열을 주입하면 기존의 것과 반응해 부유물을 발생시켜 냉각라인이 막히는 경우가 종종 발생합니다.
+                            <br>교환 주기는 일반적으로 40,000km이며, 오염도를 점검하여 교환 시기를 결정하는 것이 좋습니다.
+                        </dd>
+                        <dd class="dd_01">
+                            <span class="txt_03">Tip! 브레이크가 밀리면서 미끄러져요.</span>
+                            장시간 운행하지 않은 차의 부동액(냉각수)을 점검할 때 냉각 계통에 압력이 차 위험할 수 있습니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI8" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 8.</em> 기간이 오래되거나 기온이 낮아지면 굳고 탄력을 잃어 찢어질 수 있는 팬벨트 관리</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_08.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            팬벨트(겉벨트)는 고무 재질로 되어 있어 노후되면 갈라지고 사용량이 많아지면 벨트가 늘어나게 됩니다.
+                            <br>엔진룸 바로 앞이나 옆에 위치해 있는 팬벨트는 엔진의 동력을 이용해 에어컨, 발전기, 냉각수 펌프 등 기본 장치를 작동시키는 중요한 역할을 합니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI9" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 9.</em> 내차 내부를 항상 쾌적하게 사용하기 위한 실내필터 관리</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/service_item_09.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            자동차 에어컨을 켰을 때 나오는 냄새는 에어컨 내부의 세균과 곰팡이 때문입니다.
+                            <br>찬 공기를 계속 방출하던 에어컨을 끄게 되면 더운 공기에 의해 물방울이 맺히게 되는데, 방치하면 세균이 번식하기 딱 좋은 조건이 형성됩니다.
+                            <br>따라서, 에어컨 사용 후 바로 끄지 않고 약 3~5분 정도 송풍으로 말려주는 과정이 필요합니다.
+                            <br>되도록이면 항균 기능이 있는 필터를 선택하는 것이 좋으며 일반적으로 15,000km 혹은 6개월 마다 교체합니다.
+                            <br>그러나 더운 여름철 같은 열악한 환경일 경우 교체 시기를 짧게 조절하는 것이 좋습니다.
+
+                        </dd>
+                    </dl>
+                </div>
+                <div id="serviceI10" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 10.</em> 시원한 바람이 나오지 않을때, 에어컨 가스 관리</dt>
+                        <dd>
+                            여름철 에어컨은 주로 자동차 내부의 온도를 낮추는 역할을 하지만, 차창에 서리는 김을 없애기 위해서도 사용합니다.
+                            <br>그러므로 본격적인 여름이 되기 전 미리 에어컨 가스의 누출 여부, 에어컨 벨트의 장력 등을 점검하는 것이 좋습니다.
+                            <br>에어컨 게이지를 연결하여 가스 압력 및 잔량을 검사한 뒤, 냉매 오일 및 에어컨 가스를 주입하게 됩니다.
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- //03. service 경정비 -->
+
+
+        </div>
+    </div>
+</div>

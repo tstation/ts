@@ -1,0 +1,117 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '방문 예약하기' }) %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container">
+                <div class="complete-reserve-msg pd-t-5u pd-h-5u">
+                    <div class="calendar-ico">
+                        <span class="line-icons calendar-check size-32"></span>
+                    </div>
+                    <p class="info-txt mg-t-3u"><strong>김한국</strong> 고객님,</br><strong class="txt-primary">판교점</strong> 예약방문 신청이 완료되었습니다</p>
+                    <p class="noti-txt mg-t-2u">매장에서 예약중복 여부를 확인 후,</br>고객님께 확인 카카오 알림톡이 발송됩니다</p>
+                    <div class="border-b mg-v-4u"></div>
+                    <ul class="list-style-disc txt-12 mg-b-4u txt-neutral2 txt-left">
+                        <li>매장사정에 따라, 일부 대기시간이 발생할 수 있으니, 이 점 유의해 주시기 바랍니다.</li>
+                    </ul>
+                </div>
+
+                <div class="order-list-wrap">
+                    <div class="order-section cart-price-table-wrap">
+                        <h3 class="txt-16 pd-b-4u border-b">방문 서비스 및 일정</h3>
+                        <table class="cart-price-table">
+                            <!-- .cart-price-table/ 100.order2.html 참고 -->
+                            <colgroup>
+                                <col style="width:50%;">
+                                <col style="width:50%;">
+                            </colgroup>
+                            <!-- tbody 1개가 디바이더로 구분된 영역 1개 -->
+                            <tbody>
+                                <tr>
+                                    <th>방문 매장명</th>
+                                    <td class="txt-12">티스테이션 판교점</td>
+                                </tr>
+                                <tr>
+                                    <th>방문일정</th>
+                                    <td class="txt-12">2021-07-14(수)11시</td>
+                                </tr>
+                                <tr>
+                                    <th>픽업장소</th>
+                                    <td class="txt-12">경기도 성남시 분당구 판교동 678
+                                        아파트 1층</td>
+                                </tr>
+                                <tr>
+                                    <th>딜리버리장소</th>
+                                    <td class="txt-12">경기도 성남시 분당구 판교동 678
+                                        아파트 1층</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="cart-price-table-wrap bg-light2 pd-h-5u pd-v-3u">
+                        <table class="cart-price-table">
+                            <!-- .cart-price-table/ 100.order2.html 참고 -->
+                            <colgroup>
+                                <col style="width:50%;">
+                                <col style="width:50%;">
+                            </colgroup>
+                            <!-- tbody 1개가 디바이더로 구분된 영역 1개 -->
+                            <tbody>
+                                <tr>
+                                    <th>총 서비스 이용금액</th>
+                                    <td>40,000원</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <th>총 할인금액</th>
+                                    <td><em>39,000</em>원</td>
+                                </tr>
+                                <tr class="price-detail">
+                                    <th>픽업 쿠폰할인</th>
+                                    <td><em>19,500</em>원</td>
+                                </tr>
+                                <tr class="price-detail">
+                                    <th>딜리버리 쿠폰할인</th>
+                                    <td><em>19,500</em>원</td>
+                                </tr>
+                            </tbody>
+                            <!-- 최종결제금액은 payment-total클래스 추가 -->
+                            <tbody class="payment-total">
+                                <tr>
+                                    <th>최종 결제금액</th>
+                                    <td><em>1,000</em>원</td>
+                                </tr>
+                            </tbody>
+                            <!-- 결제수단 필요시 노출 -->
+                            <tbody>
+                                <tr>
+                                    <th>결제수단</th>
+                                    <td>
+                                        삼성카드 / 12개월 할부
+                                        <p class="txt-11">(2020.08.25 11:13)</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="complete-btns mg-h-5u pd-t-6u">
+                    <button type="button" class="btn-item btn-neutral btn-ol round">
+                        <span class="label-txt">예약내역 확인하기</span>
+                    </button>
+                    <button type="button" class="btn-item btn-neutral round btn-ol">
+                        <span class="label-txt">홈으로 가기</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

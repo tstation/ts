@@ -1,0 +1,436 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="event">
+    <div id="contents">
+        <!-- 01. page title -->
+        <div class="page_tit">
+            <h4>이벤트</h4>
+        </div>
+        <!-- //01. page title -->
+        <!-- 02. 제목 -->
+        <div class="event_tit">
+            힘내라 대한민국
+            <span class="date">이벤트 기간 : 99.99.99  ~ 99.99.99</span>
+        </div>
+        <input type="hidden" id="evtUrlAddr" value="">
+        <input type="hidden" id="endEvtDisp" value="">
+        <input type="hidden" id="isEvtDispBf" value="">
+        <link rel="stylesheet" type="text/css" href="pc-static-root/css/event.css" />
+
+        <!-- //02. 제목  -->
+        <!-- 03. 이벤트 상세  -->
+        <div class="event_list">
+            <div id="inner">
+                <div class="event-detail-wrap">
+                    <div class="center-inner">
+                        <!-- .event-ionnew // -->
+                        <div class="event-ionnew">
+                            <div class="hero-section">
+                                <div class="keyvisual"><img src="pc-static-root/images/event/20220915/img_hero.png" alt="" /></div>
+                            </div>
+                            
+                            <div class="contents-section ion-gallery-section">
+                            
+                                <h2 class="setion-headcopy txt-24 pd-t-10u pd-b-6u txt-w600 txt-italic">
+                                    국내&middot;외 카메이커가 선택한<strong class="txt-w900 txt-32 txt-italic">최초 전기차 전용 Full Lineup!</strong>
+                                <h2>
+                                <!-- 20220922// -->
+                                <h3 class="setion-subcopy"><span class="line-icons chev-left size-18 mg-r-1u"></span><img src="pc-static-root/images/event/20220915/ion_logo.png" style="width: 45px;" alt="" /><span class="txt-16 dp-inblock pd-l-1u">장착가능모델</span><span class="line-icons chev-right size-18 mg-l-1u"></span></h3>
+                                <!-- //20220922 -->
+                                <div class="swiper-container mg-h-10u ion-carinfo-gallery pd-v-10u">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="carinfon ionic-trigger" data-analytics-click="TESLA-ModelS">
+                                                <img src="pc-static-root/images/event/20220915/img_teslaS.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon ionic-trigger" data-analytics-click="현대-ionic5">
+                                                <img src="pc-static-root/images/event/20220915/img_ionic5.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon teslaS-trigger" data-analytics-click="KIA-EV6">
+                                                <img src="pc-static-root/images/event/20220915/img_ev6.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon g80-trigger" data-analytics-click="제네시스-GV60">
+                                                <img src="pc-static-root/images/event/20220915/img_gv60.png"  alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon ionic-trigger" data-analytics-click="아우디-tronGT">
+                                                <img src="pc-static-root/images/event/20220915/img_tron.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon tron-trigger" data-analytics-click="벤츠-EQC">
+                                                <img src="pc-static-root/images/event/20220915/img_eqc.png"  alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon ionic-trigger" data-analytics-click="폭스바겐-ID4">
+                                                <img src="pc-static-root/images/event/20220915/img_id4.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon ionic-trigger" data-analytics-click="Nissan-Polestar2">
+                                                <img src="pc-static-root/images/event/20220915/img_pole2.png" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="carinfon ionic-trigger" data-analytics-click="포르쉐-Taycan">
+                                                <img src="pc-static-root/images/event/20220915/img_taycan.png" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    var ionCarInfoGallery = new Swiper('.ion-carinfo-gallery', {
+                                        observer: true,
+                                        observeParents: true,
+                                        slidesPerView: 'auto',
+                                        spaceBetween: 0,
+                                        loop: true,
+                                        autoplay: {
+                                            delay: 2500,
+                                            disableOnInteraction: false,
+                                        },
+                                    });
+                                    ionCarInfoGallery.init();
+                                    $(window).on('resize', function () {
+                                        ionCarInfoGallery.init();
+                                    });
+                                </script>
+                            </div>
+
+                            <div class="contents-section event1">
+                                <div class="img-content"><img src="pc-static-root/images/event/20220915/img_event1.png" alt="" /></div>
+                                <a href="#none" class="img-map-link link-event1" data-analytics-click="EVENT1 바로가기"><span class="blind">EVENT2 바로가기</span></a>
+                            </div>
+
+                            <div class="contents-section event2">
+                                <div class="img-content"><img src="pc-static-root/images/event/20220915/img_event2.png" alt="" /></div>
+                                <a href="#none" class="img-map-link link-event2" data-analytics-click="EVENT2 바로가기"><span class="blind">EVENT2 바로가기</span></a>
+                            </div>
+
+                            <div class="contents-section event3">
+                                <div class="img-content"><img src="pc-static-root/images/event/20220915/img_event3.png" alt="" /></div>
+                                <a href="#none" class="img-map-link link-event3" data-analytics-click="EVENT3 바로가기"><span class="blind">EVENT3 바로가기</span></a>
+                            </div>
+
+                            <div class="contents-section pd-v-10u pd-h-20u txt-center" style="display: none"><!-- 20220922 -->
+                                <a href="#none" class="btn-item btn-neutral btn-xl pd-h-20u round" id="" data-analytics-click="iON 출시기념 기획전 바로가기">
+                                    <span class="label-txt">iON 출시기념 기획전 바로가기</span>
+                                </a>
+                            </div>
+
+                            <div class="contents-section mg-t-10u">
+                                <div class="img-content"><img src="pc-static-root/images/event/20220915/img_legal.png" alt="" /></div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- .event-ionnew // -->
+                    </div>
+                </div>
+            </div>
+            <div class="btn01">
+                <a href="https://www.tstation.com/promotion/event-list" class="btnM2 btnS02">목록으로</a>
+            </div>
+        </div>
+        <!-- //03. 이벤트 상세  -->
+
+        <!-- #contents -->
+    </div>
+</div>
+
+<script>
+var eventiONPoup = eventiONPoup || {};
+eventiONPoup.event1 = document.querySelectorAll('.link-event1');
+eventiONPoup.event2 = document.querySelectorAll('.link-event2');
+eventiONPoup.event3 = document.querySelectorAll('.link-event3');
+
+eventiONPoup.event1Trigger = function(){
+    Array.prototype.forEach.call(eventiONPoup.event1, function(button, i){
+        button.addEventListener('click', function() {
+            $.Tstation.popup().open({
+                ref: 'ion-event',
+                requestUrl: '', 
+                title: '이벤트 참여하기',
+                contents: eventiONPoup.eventContents1, 
+                dimWhite: false,
+                modalContentsPd: { 
+                    horizon: 0,
+                    vertical: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                modalSize: 'MEDIUM',
+                onOpen: function () {
+                    
+
+
+                },
+                onClose: function () {
+                    console.log('팝업이 닫히면 실행합니다.')
+                }
+            })
+        })
+    })
+}();
+
+eventiONPoup.event2Trigger = function(){
+    Array.prototype.forEach.call(eventiONPoup.event2, function(button, i){
+        button.addEventListener('click', function() {
+            $.Tstation.popup().open({
+                ref: 'ion-event',
+                requestUrl: '', 
+                title: '이벤트 참여하기',
+                contents: eventiONPoup.eventContents2, 
+                dimWhite: false,
+                modalContentsPd: { 
+                    horizon: 0,
+                    vertical: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                modalSize: 'MEDIUM',
+                onOpen: function () {
+                    eventiONPoup.ionGallery = new Swiper('.ion-gallery', {
+                        spaceBetween: 8,
+                        observer: true,
+                        observeParents: true,
+                        slidesPerView: 'auto'
+                    });
+                    eventiONPoup.ionGallery.init();
+                    $(window).on('resize', function () {
+                        eventiONPoup.ionGallery.init();
+                    });
+                },
+                onClose: function () {
+                    console.log('팝업이 닫히면 실행합니다.');
+                }
+            })
+        })
+    })
+}();
+
+eventiONPoup.event3Trigger = function(){
+    Array.prototype.forEach.call(eventiONPoup.event3, function(button, i){
+        button.addEventListener('click', function() {
+            $.Tstation.popup().open({
+                ref: 'ion-event',
+                requestUrl: '', 
+                title: '이벤트 참여하기',
+                contents: eventiONPoup.eventContents3, 
+                dimWhite: false,
+                modalContentsPd: { 
+                    horizon: 0,
+                    vertical: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+                modalSize: 'MEDIUM',
+                onOpen: function () {
+                    console.log('팝업이 열리면 실행합니다.')
+                },
+                onClose: function () {
+                    console.log('팝업이 닫히면 실행합니다.')
+                }
+            })
+        })
+    })
+}();
+
+eventiONPoup.eventContents1 = `
+    <div class="ion-event-contents event1">
+        <div class="contents-section">
+            <div class="img-content"><img src="pc-static-root/images/event/20220915/img_event1_details.png" alt="" /></div>
+        </div>
+        <div class="contents-section">
+            <div class="kv-player-wrap">
+                <div class="loader-before" style="padding:56.25% 0 0 0;position:relative; background-color: #eee">
+                    <iframe src="https://player.vimeo.com/video/751106852?h=1e39d2331c&background=0&autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- 20220922// -->
+        <h3 class="setion-headcopy pd-t-10u pd-b-5u txt-w600">
+            <span class="txt-w900 txt-24 txt-italic">전기차에 iON이 필요한 이유를</span><br />
+            <span class="txt-w900 txt-24 txt-italic"><em class="txt-italic">모두</em> 선택해주세요!</span>
+        </h3>
+        <!-- //20220922 -->
+            <div class="ion-gift-join-section">
+                <div class="rowgroup">
+                    <div class="row opt1">
+                        <div class="cell">
+                            <label class="check-item ion-check-wrap">
+                                <input type="checkbox">
+                                <div class="icon-holder">
+                                    <span class="line-icons"></span>
+                                </div>                                
+                            </label>
+                        </div>
+                        <div class="rowheader">
+                            <p class="row-header-copy txt-16 txt-w900">더욱 조용해진 실내</p>
+                            <p class="row-subheader-copy txt-w900 txt-18 txt-neutral1 mg-t-1u">최적화된 저소음 환경을 <br />구현해야 하니까!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowgroup">
+                    <div class="row opt2">
+                        <div class="cell">
+                            <label class="check-item ion-check-wrap">
+                                <input type="checkbox">
+                                <div class="icon-holder">
+                                    <span class="line-icons"></span>
+                                </div>                                
+                            </label>
+                        </div>
+                        <div class="rowheader">
+                            <p class="row-header-copy txt-16 txt-w900">높은 초기토크</p>
+                            <p class="row-subheader-copy txt-w900 txt-18 txt-neutral1 mg-t-1u">순간 가속을 위한 안정적인 <br />그립력과 핸들링이 중요하니까! </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowgroup">
+                    <div class="row opt3">
+                        <div class="cell">
+                            <label class="check-item ion-check-wrap">
+                                <input type="checkbox">
+                                <div class="icon-holder">
+                                    <span class="line-icons"></span>
+                                </div>                                
+                            </label>
+                        </div>
+                        <div class="rowheader">
+                            <p class="row-header-copy txt-16 txt-w900">충전이 필요한 배터리</p>
+                            <!-- 20220922// -->
+                            <p class="row-subheader-copy txt-w900 txt-18 txt-neutral1 mg-t-1u">효율적인 배터리 사용으로<br /> 이상적인 주행거리를 확보해야하니까! </p>
+                            <!-- //20220922 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="rowgroup">
+                    <div class="row opt4">
+                        <div class="cell">
+                            <label class="check-item ion-check-wrap">
+                                <input type="checkbox">
+                                <div class="icon-holder">
+                                    <span class="line-icons"></span>
+                                </div>                                
+                            </label>
+                        </div>
+                        <div class="rowheader">
+                            <p class="row-header-copy txt-16 txt-w900">배터리로 인한 무거운 중량</p>
+                            <p class="row-subheader-copy txt-w900 txt-18 txt-neutral1 mg-t-1u">전기차의 하중을 받춰 줄 <br />EV전용 타이어가 필요하니까!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20220922//  -->
+            <div class="lagal-check-group mg-h-4u">
+                <label class="check-item" for="eventPrivacyPolicy">
+                    <input type="checkbox" id="eventPrivacyPolicy">
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u txt-12">마케팅 활용을 위한 수집 및 이용동의</span>
+                    </div>
+                </label>
+                <a href="/terms/termsmain.do?agrmSctCd=60" class="legal-button popup-full txt-primary txt-12 txt-w400 txt-underline">내용보기</a>
+            </div>
+            <!-- //20220922 -->
+            <!-- 20220922// -->
+        <div class="contents-section mg-t-5u pd-b-15u mg-h-5u txt-center">
+            <a href="#none" class="btn-item btn-gray btn-xl pd-h-20u round" id="" data-analytics-click="정답 확인하고 사은품 응모하기">
+                <span class="label-txt">정답 확인하고 사은품 응모하기</span>
+            </a>
+        </div>
+        <!-- //20220922 -->
+    </div>
+`
+
+eventiONPoup.eventContents2 = `
+    <div class="ion-event-contents event2">
+        <div class="contents-section">
+            <div class="img-content"><img src="pc-static-root/images/event/20220915/img_event2_details.png" alt="" /></div>
+        </div>
+        <div class="contents-section tire-gallery pd-t-7u pd-b-5u" style="background-color: #fff;">                        
+            <h3 class="setion-subcopy mg-b-3u"><span class="line-icons chev-left size-18 mg-r-1u"></span><img src="pc-static-root/images/event/20220915/ion_logo.png" style="width: 45px;" alt="" /><span class="txt-16 dp-inblock pd-l-1u">타이어 라인업</span><span class="line-icons chev-right size-18 mg-l-1u"></span></h3>
+            <div class="tire-gallery-container">
+                <div class="swiper-container tire-gallery-wrap pd-h-5u pd-v-1u ion-gallery">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">프리미엄</strong>
+                            <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON evo AS">
+                                <div class=" ion-commng"></div>
+                                <img src="pc-static-root/images/event/20220818/card/ion_evoas.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON evo AS suv">
+                                <div class=" ion-commng"></div>
+                                <img src="pc-static-root/images/event/20220818/card/ion_evoassuv.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON winter">
+                                <div class=" ion-commng"></div>
+                                <img src="pc-static-root/images/event/20220818/card/ion_winter.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON winter suv">
+                                <div class=" ion-commng"></div>
+                                <img src="pc-static-root/images/event/20220818/card/ion_wintersuv.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+        <div class="contents-section store-cta-wrap pd-b-15u">
+            <div class="button-half-wrap">
+                <button type="button" class="btn-item btn-neutral round" id="buyOnline" data-analytics-click="온라인에서 바로구매">
+                    <span class="label-txt">온라인에서 바로구매</span>
+                </button>
+                <button type="button" class="btn-item btn-neutral round" id="buyOffline" data-analytics-click="매장예약/현장결제">
+                    <span class="label-txt">매장예약/현장결제</span>
+                </button>
+            </div>
+            <button type="button" class="btn-item btn-neutral btn-ol full-w round" id="" data-analytics-click="iON 매장예약내역 확인하기">
+                <span class="label-txt">iON 매장예약내역 확인하기</span>
+            </button>
+            <p class="mg-t-2u txt-12 txt-neutral3 noti">티스테이션닷컴 예약고객은 <a href="/mypage/tstation/reservation/shopVisitReserveList.do" class="txt-primary" data-analytics-click="마이페이지">마이페이지 &gt; 방문예약내역</a>에서 예약정보를 확인하실 수 있습니다.</p>
+        </div>    
+    </div>
+`
+
+eventiONPoup.eventContents3 = `
+    <div class="ion-event-contents event3">
+        <div class="contents-section">
+            <div class="img-content"><img src="pc-static-root/images/event/20220915/img_event3_details.png" alt="" /></div>
+        </div>
+        <div class="contents-section mg-t-5u pd-b-15u mg-h-5u txt-center"><!-- 20220922 -->
+            <a href="#none" class="btn-item btn-neutral btn-xl pd-h-20u round" id="" data-analytics-click="후기이벤트 참여하기">
+                <span class="label-txt">후기이벤트 참여하기</span>
+            </a>
+        </div>
+
+    </div>
+`
+</script>

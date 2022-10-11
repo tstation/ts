@@ -1,0 +1,416 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar-share.ejs', { pageTitle: '티스테이션 쇼핑' }) %>
+<div id="container">
+
+    <div class="ts-deal-black-floating">
+        <button type="button" class="btn-item btn-primary btn-s round full-w">
+            <span class="line-icons clock size-20"></span>
+            <span class="txt-12 txt-w500 v-middle">특별기획전</span><!-- 20220707 -->
+            <span class="txt-20 txt-w300 v-middle mg-l-3u">18:08:32</span>
+            <span class="txt-12 txt-w500 v-middle mg-l-2u">남음</span>
+        </button>
+    </div>
+
+    <div class="ts-deal-black-detail-card-wrap mg-b-10u">
+        <div class="inner">
+            <article class="card-ts-deal-black-detail">
+                <div class="image-area">
+                    <div class="thumb-wrap">
+                        <div class="thumb-holder">
+                            <img src="mc-static-root/images/common/sample/battery.png" alt="상품 이미지" class="goods-img">
+                        </div>
+                    </div>
+                    <ul class="suggest-group">
+                        <li>
+                            <span class="suggest-item new"></span>
+                        </li>
+                        <li>
+                            <span class="suggest-item best"></span>
+                        </li>
+                    </ul>
+                    <div class="overlap-status">
+                        <div class="overlap-status-inner">
+                            <span class="btn-item btn-neutral round status"><span class="label-txt">일시품절</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="type-area">
+                    <span class="badge badge-s">프리미엄</span>
+                    <div class="rating-area">
+                        <span class="line-icons star size-14 txt-yellow mg-r-1u"></span><span class="txt-12 v-middle"><span class="txt-w500">4.7점</span>(118)</span>
+                    </div>
+                </div>
+                <div class="info-area">
+                    <div class="model">
+                        <p class="name"><span>ATLAS BX Battery</span></p>
+                        <p class="description">차량용 배터리의 기준. - ATLAS BX Battery</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="meta">
+            <span class="meta-items"><span>승용차</span><span>사계절</span><span>온오프로드</span><span>런플랫</span></span>
+        </div>
+        <div class="banner-wrap gold">
+            <a href="#none">
+                <span class="txt">19년 가을에 생산된 타이어 특가딜!</span>
+                <span class="img"><img src="mc-static-root/images/common/img_deal_banner.png" alt=""></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="pay-selector-wrap">
+        <div class="pay-selector">
+            <div class="pay-selector-body">
+                <ul>
+                    <!-- TODO: 사이즈 정보가 없는 경우(패턴기준) -->
+                    <li>
+                        <label class="radio-item">
+                            <input class="pay-type-select-trigger" type="radio" checked>
+                            <div class="fill-container"></div>
+                            <div class="icon-holder">
+                                <span class="line-icons check-circle-inv size-24"></span>
+                            </div>
+                            <div class="label-group">
+                                <span>가격정보</span>
+                                <p class="guide">시작가</p>
+                                <p class="price"><span>144,900<small>원~</small></span></p>
+                            </div>
+                        </label>
+                    </li>
+                    <!-- TODO: 사이즈 정보가 있는 경우(상품기준) -->
+                    <li>
+                        <label class="radio-item">
+                            <input class="pay-type-select-trigger" type="radio" checked>
+                            <div class="fill-container"></div>
+                            <div class="icon-holder">
+                                <span class="line-icons check-circle-inv size-24"></span>
+                            </div>
+                            <div class="label-group">
+                                <span>일반구매</span>
+                                <p class="guide txt-primary">최대 혜택가</p>
+                                <p class="price"><small>169,400원</small><span>144,900<small>원</small></span></p>
+                            </div>
+                        </label>
+                        <div class="pay-calculator-wrap default on">
+                            <table class="pay-calculator vertical-t pd-medium">
+                                <tbody>
+                                <tr>
+                                    <td class="txt-12">
+                                        <button type="button" class="btn-item btn-neutral btn-download-coupon downloaded">
+                                            <div class="icon-holder">
+                                                <span class="line-icons coupon size-20 txt-white"></span>
+                                                <span class="line-icons check size-20 txt-primary"></span>
+                                            </div>
+                                            <div class="label-txt-holder">
+                                                <span class="label-txt txt-12">상품할인 쿠폰 <span class="line-icons download size-20"></span></span>
+                                                <span class="label-txt txt-12">상품할인 쿠폰</span>
+                                            </div>
+                                        </button>
+                                    </td>
+                                    <td class="txt-16 txt-neutral2">
+                                        <p><small class="txt-throughline mg-r-2u">169,400원</small>152,500<small>원</small></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-12">
+                                        <button type="button" class="btn-item btn-neutral btn-download-coupon">
+                                            <div class="icon-holder">
+                                                <span class="line-icons coupon size-20 txt-white"></span>
+                                                <span class="line-icons check size-20 txt-primary"></span>
+                                            </div>
+                                            <div class="label-txt-holder">
+                                                <span class="label-txt txt-12">멤버십 쿠폰 <span class="line-icons download size-20"></span></span>
+                                                <span class="label-txt txt-12">멤버십 쿠폰</span>
+                                            </div>
+                                        </button>
+                                    </td>
+                                    <td class="txt-16 txt-neutral2">
+                                        <p><small class="txt-throughline mg-r-2u">152,500원</small>144,900<small>원</small></p>
+                                        <p class="txt-11">티스테이션 회원은 <em class="txt-primary">5%</em>추가 결제할인</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-14 txt-neutral1">배송/장착비</td>
+                                    <td class="txt-14 txt-neutral1">무료</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td class="txt-14 txt-neutral1">총 혜택가</td>
+                                    <td class="txt-14 txt-primary">-24,500원</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 상품 내용 -->
+    <div class="goods_detail tabScript">
+
+        <ul class="tab etc sticky">
+            <li class="on"><button data-rel="tab_cont" title="goodDetail_tab1">상품정보</button></li>
+            <li><button data-rel="tab_cont" title="goodDetail_tab2">상품평<em>(7)</em></button></li>
+        </ul>
+
+        <!-- tab 1. 상품정보 -->
+        <div class="tab_cont" id="goodDetail_tab1">
+            <!-- TODO: 상품 상세 정보를 'detail-ellipsis-container'로 한번 감싸주세요. -->
+            <div class="detail-ellipsis-container">
+                <div class="inner pattern">
+                    <h6>특장점 &amp; 기술력</h6>
+                    <ol>
+                        <li>X-Frame 기판 기술 적용으로 장수명 및 강력한 시동 성능 확보</li>
+                        <li>Ultra Micro Fiber &amp; Nonwoven Tissue를 적용하여 수명을 30% 이상 연장</li>
+                        <li>미로형 구조의 특수 커버 설계로 Gas가 환원되어 전해액 보수 불필요</li>
+                        <li>국내 전 차종에 장착 가능한 다양한 규격 보유</li>
+                    </ol>
+
+                    <h6>상품 정보 제공 고시</h6>
+                    <!-- html 등록 영역  -->
+                    <ol class="list">
+                        <li class="line"><span class="tit">품질 보증</span>배터리의 보증기간은 구입일로부터 12개월 또는 누계주행거리 2만 Km 이내입니다.<br>
+                            * 보증기간은 구입일로부터 사용기간 또는 주행거리 중 먼저 도달한 것을 기준으로 합니다.</li>
+                        <li><span class="tit">A/S 문의</span> 080-022-8272 (월~금 오전 9시~오후 5시)</li>
+                        <li><span class="tit">특이사항</span> 자동차 배터리의 수명은 운행거리, 차량종류, 도로상태, 운전자의 운전습관, 사용방법 등 여러 가지 요인에 의해서 결정되므로 일률적으로 수명을 단정할 수는 없으나<br>
+                            대략 2~3년 정도를 평균 교체주기로 파악하고 있으며 2년 이상 사용한 후에는 자주 전압을 점검하여 수명이 다하기 전에 미리 교체할 것을 권장합니다.</li>
+                        <li><span class="tit">배송/장착</span> 무료 장착, 무료 배송, 폐배터리 반납조건</li>
+                        <li><span class="tit">반품/환불</span> 상품의 특성상 장착 이후 반품 및 교환은 불가능합니다.</li>
+                    </ol>
+                </div>
+
+                <!-- TODO: 상품정보 탭을 확장 축소 하는 버튼 -->
+                <div class="detail-ellipsis">
+                    <button type="button" class="btn-item btn-neutral btn-s btn-ol round" onclick="$('.detail-ellipsis-container').toggleClass('expand');">
+                            <span class="label-txt">
+                                <span class="label">상세정보 더보기</span>
+                                <span class="label">상세정보 접기</span>
+                            </span>
+                        <span class="line-icons chev-down size-12"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- //tab 1. 상품정보 -->
+        <!-- tab 2. 상품리뷰 -->
+        <div class="tab_cont" id="goodDetail_tab2" style="display:none">
+            <div class="review_top">
+                <p class="unitR2">평균별점 <span class="star02 point10"><em>5.0</em></span></p>
+                <div class="list">
+                    <h6><em>구매고객만족도</em>(7명 참여)</h6>
+                    <ol>
+                        <li>
+                            <span class="tit">시동성</span>
+                            <span class="star03 point10"><em>5.0</em></span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="review_list" id="prGdasInfoDiv">
+                <ol>
+                    <li>
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            르노삼성&nbsp;RE CVT&nbsp;SM3
+                        </div>
+                        <div class="cont">
+                            베터리는 아트라스가 최고입니다.!
+                        </div>
+                        <div class="star">
+                            <ol>
+                                <li>
+                                    <span class="tit">시동성</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="date">
+                            <span>김**</span>2020-10-20
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            현대&nbsp;
+                            쏘나타 NF 트랜스폼
+                            <span></span>
+                        </div>
+                        <div class="cont">
+                            시동성 좋습니다. 홈페이지 통해 예약하고 부모님께서 교체하러 가셨는데, 점원분께서 친절하게 잘 교체해 주셨다고 들었습니다. 서비스에 만족합니다.
+                        </div>
+
+                        <div class="star">
+                            <ol>
+                                <li>
+                                    <span class="tit">시동성</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="date">
+                            <span>김**</span>2020-04-17
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            쌍용&nbsp;
+                            건너뛰기&nbsp;
+                            티볼리
+                            <span></span>
+                        </div>
+                        <div class="cont">
+                            저렴하게 잘 교체했습니다~ 만족합니다
+                        </div>
+
+                        <div class="star">
+                            <ol>
+                                <li>
+                                    <span class="tit">시동성</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="date">
+                            <span>김**</span>2020-04-07
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            현대&nbsp;
+                            건너뛰기&nbsp;
+                            투싼 ix
+                            <span></span>
+                        </div>
+                        <div class="cont">
+                            저렴하게 잘 교체 했습니다.
+                        </div>
+
+                        <div class="star">
+                            <ol>
+                                <li>
+                                    <span class="tit">시동성</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+
+
+                        <div class="date">
+                            <span>김**</span>2020-03-21
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            기아&nbsp;
+                            건너뛰기&nbsp;
+                            모닝
+                            <span></span>
+                        </div>
+                        <div class="cont">
+                            시동성 좋고, 장착점 서비스 최고
+                        </div>
+
+                        <div class="star">
+                            <ol>
+                                <li>
+                                    <span class="tit">시동성</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="date">
+                            <span>전**</span>2020-01-30
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            현대&nbsp;
+                            더 브릴리언트 2.0 CVVL&nbsp;
+                            쏘나타
+                            <span></span>
+                        </div>
+                        <div class="cont">
+                            안정적인 성능, 최고예요 강추합니다.
+                        </div>
+
+                        <div class="star">
+                            <ol>
+                                <li>
+                                    <span class="tit">시동성</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="date">
+                            <span>전**</span>2019-12-26
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            쌍용&nbsp;
+                            2.0 디젤 4WD&nbsp;
+
+                            코란도 투리스모
+                            <span></span>
+                        </div>
+                        <div class="cont">
+                            기존 배터리가  오래되어서 겨울철 시동성이 안좋아 이번에 타이어 교체시
+                            같이 교환하였습니다.  시동잘걸립니다.
+                        </div>
+
+                        <div class="star">
+                            <ol>
+                                <li>
+                                    <span class="tit">시동성</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="date">
+                            <span>**</span>2019-03-25
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- //tab 2. 상품리뷰 -->
+
+    </div>
+    <!-- //상품 내용 -->
+</div>

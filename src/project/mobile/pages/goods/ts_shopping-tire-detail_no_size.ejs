@@ -1,0 +1,2423 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '상품 상세정보' }) %>
+<div id="container">
+    <div class="ts-deal-black-floating">
+        <button type="button" class="btn-item btn-primary btn-s round full-w">
+            <span class="line-icons clock size-20"></span>
+            <span class="txt-12 txt-w500 v-middle">특별기획전</span><!-- 20220707 -->
+            <span class="txt-20 txt-w300 v-middle mg-l-3u">18:08:32</span>
+            <span class="txt-12 txt-w500 v-middle mg-l-2u">남음</span>
+        </button>
+    </div>
+    <div class="ts-deal-black-detail-card-wrap mg-b-10u">
+        <div class="inner">
+            <article class="card-ts-deal-black-detail">
+                <div class="image-area">
+                    <div class="thumb-wrap">
+                        <div class="thumb-holder">
+                            <img src="mc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                        </div>
+                        <!-- 20220629 // -->
+                        <div class="brands-logo lf"></div>
+                        <!-- // 20220629 -->
+                    </div>
+                    <ul class="suggest-group">
+                        <li>
+                            <span class="suggest-item new"></span>
+                        </li>
+                        <li>
+                            <span class="suggest-item best"></span>
+                        </li>
+                    </ul>
+                    <div class="benefit-wrap">
+                        <div class="benefit safe tooltip-container left f-top">
+                            <span>안심 서비스</span>
+                            <div class="tooltip">
+                                <div class="tooltip-header">
+                                    <p>안심 서비스</p>
+                                </div>
+                                <div class="tooltip-body">
+                                    <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefit hotel tooltip-container left f-top">
+                            <span>호텔 서비스</span>
+                            <div class="tooltip">
+                                <div class="tooltip-header">
+                                    <p>호텔 서비스</p>
+                                </div>
+                                <div class="tooltip-body">
+                                    <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefit reservation"><span>예약 상품</span></div>
+                    </div>
+                    <div class="overlap-status">
+                        <div class="overlap-status-inner">
+                            <span class="btn-item btn-neutral round status"><span class="label-txt">일시품절</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="type-area">
+                    <span class="badge badge-s">정숙/승차감우선</span>
+                    <div class="rating-area">
+                        <span class="line-icons star size-14 txt-yellow mg-r-1u"></span><span class="txt-12 v-middle"><span class="txt-w500">4.7점</span>(118)</span>
+                    </div>
+                </div>
+                <div class="info-area">
+                    <div class="model">
+                        <div class="name">
+                            <span>라우펜 S Fit AS</span>
+                            <!-- <img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt=""> -->
+                        </div>
+                        <!-- <p class="description">고속 주행에서 느끼는 Comfort Technology</p> -->
+                    </div>
+                </div>
+            </article>
+        </div>
+        <!-- TODO: 사이즈 정보가 없을때 노출 -->
+        <div class="most-mounted mg-b-3u">
+            <div class="badge-group">
+                <span class="label">최다장착차량</span>
+                <div class="badges">
+                    <span class="badge badge-review"><strong>현대</strong> 쏘나타 DN8 (674)</span>
+                    <span class="badge badge-review"><strong>기아</strong> K5 (324)</span>
+                    <span class="badge badge-review"><strong>기아</strong> K7 (999+)</span>
+                </div>
+            </div>
+        </div>
+        <div class="meta">
+            <span class="meta-items"><span>승용차</span><span>사계절</span><span>온오프로드</span><span>런플랫</span></span>
+        </div>
+
+        <!-- 20220719 // -->
+        <div class="pd-h-5u">
+            <p class="txt-11 txt-blue mg-t-1u icon-safeprivacy-info"><span class="line-icons check-circle-inv size-16"></span>15일 해피보증 프로그램 적용상품입니다.</p>
+        </div>
+        <!-- // 20220719 -->
+            
+        <div class="banner-goods-detail-wrap mg-t-5u">
+            <!-- 20220629 // -->
+            <a href="#none" data-analytics-click="상품상세 배너 - 프로모션 바로가기"><img src="mc-static-root/images/goods/banner_goodsdetails_laufenn.png" alt=""></span></a>
+            <!-- // 20220629 -->
+        </div>
+
+        <div class="banner-wrap gold" style="display: none">
+            <a href="#none">
+                <span class="txt">19년 가을에 생산된 타이어 특가딜!</span>
+                <span class="img"><img src="mc-static-root/images/common/img_deal_banner.png" alt=""></span>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        // TODO: jsp에 붙일때는 아래의 스크립트를 쓰지 마시고 jsp로 만들어 비동기 호출하세요.
+        // 스마트 페이 안내 팝업
+        var smartPayPopup = '<div class="smart-pay-info-popup">\n' +
+          '                                <section class="txt-center pd-t-5u">\n' +
+          '                                    <img src="mc-static-root/images/common/smart_pay_logo.svg" class="smart-pay-img" title="스마트페이" />\n' +
+          '\n' +
+          '                                    <div class="container txt-16 txt-neutral2 mg-t-4u">\n' +
+          '                                        <span class="dp-inblock"><em class="txt-yellow txt-w700">#</em>월납입 <em class="txt-neutral1">1만7천원부터</em></span>\n' +
+          '                                        <span class="dp-inblock"><em class="txt-yellow txt-w700">#</em>할부수수료 <em class="txt-neutral1">0원</em></span><br>\n' +
+          '                                        <span class="dp-inblock"><em class="txt-yellow txt-w700">#</em><em class="txt-neutral1">추가쿠폰</em>증정</span>\n' +
+          '                                    </div>\n' +
+          '\n' +
+          '                                    <h4 class="txt-18 txt-w500 mg-t-2u">타이어, 더 가볍게 구매하세요!</h4>\n' +
+          '                                </section>\n' +
+          '                                <section class="mg-t-6u">\n' +
+          '                                    <div class="section-header">\n' +
+          '                                        <span class="numbering">01</span>\n' +
+          '                                        <h4 class="txt-16 txt-w500 mg-t-3u">4개 구매 시 12/24개월 무이자할부 혜택</h4>\n' +
+          '                                    </div>\n' +
+          '                                    <p class="txt-neutral2 txt-center mg-t-2u">타이어 구매 시 할부수수료 부담 없이,<br>무이자 할부로 결제하세요.</p>\n' +
+          '                                </section>\n' +
+          '                                <section class="mg-t-6u">\n' +
+          '                                    <div class="section-header">\n' +
+          '                                        <span class="numbering">02</span>\n' +
+          '                                        <h4 class="txt-16 txt-w500 mg-t-3u">펑크/위치교환 서비스 쿠폰 증정</h4>\n' +
+          '                                    </div>\n' +
+          '                                    <p class="txt-neutral2 txt-center mg-t-2u">스마트페이로 결제한 회원에 한하여<br>펑크/위치교환 쿠폰을 제공해드립니다.</p>\n' +
+          '                                </section>\n' +
+          '                                <section class="border-all bg-light1 bg-filet-4 pd-v-3u pd-h-3u mg-t-10u">\n' +
+          '                                    <ul class="list-style-disc txt-12 txt-neutral2">\n' +
+          '                                        <li>\n' +
+          '                                            스마트페이 결제 카드 : KB국민/신한/비씨/현대/삼성/씨티 카드\n' +
+          '                                            <p>체크/법인(기업)/선불카드는 스마트페이 결제가 불가합니다.</p>\n' +
+          '                                            <p>BC카드 3종(KB국민, 기업, 신한은)은 스마트페이 24개월 결제가 불가합니다.</p>\n' +
+          '                                        </li>\n' +
+          '                                        <li>사용조건 : 타이어 4개 구매 시 (할부 12/24개월 중 선택)</li>\n' +
+          '                                        <li>\n' +
+          '                                            펑크/위치교환 쿠폰 사용 조건\n' +
+          '                                            <p>- 스마트페이 구매 차량(타이어)에 한하여 적용 가능</p>\n' +
+          '                                            <p>- 티스테이션 멤버십 매장에서만 사용 가능</p>\n' +
+          '                                            <p>- 구매 후 1년 1장씩, 총 2장 지급(기간 경과 후 사용 불가)</p>\n' +
+          '                                        </li>\n' +
+          '                                    </ul>\n' +
+          '                                </section>\n' +
+          '                            </div>'
+    </script>
+
+    <div class="pay-selector-wrap">
+        <div class="pay-selector">
+            <div class="pay-selector-header mg-b-2u">
+                    <span class="smart-pay-badge" onclick="$.Tstation.popup().open({
+                        ref: '',
+                        title: '스마트페이 안내',
+                        requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                        contents: smartPayPopup, // 팝업을 바로 띄우고 싶을때
+                        dimWhite: false,
+                        modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                            horizon: 8,
+                            vertical: 8,
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            left: 0
+                        },
+                        full: true, // Full Popup
+                        modalAction: {
+                            isNoBoundary: false,
+                            buttons: [
+                                {
+                                    label: '확인',
+                                    negative: false,
+                                    action: '$.Tstation.popup().close()'
+                                }
+                            ]
+                        }
+                    })">
+                        <span class="label-txt">무이자 할부</span>
+                        <img src="mc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이">
+                    </span>
+                <div class="tooltip-container right">
+                    <button class="smart-pay-helper">?</button>
+                </div>
+            </div>
+            <div class="pay-selector-body">
+                <ul>
+                    <li>
+                        <label class="radio-item">
+                            <input class="pay-type-select-trigger" type="radio" checked="">
+                            <div class="fill-container"></div>
+                            <div class="icon-holder">
+                                <span class="line-icons check-circle-inv size-24"></span>
+                            </div>
+                            <div class="label-group">
+                           <span>가격정보</span>                                
+                                <p class="guide">시작가</p>
+                                <p class="price">
+                                    <span>
+                                        137,500<small>원</small>~
+                                    </span>
+                                </p>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 2021-06-24 // -->
+            <div class="price-noti txt-11 txt-neutral3 line-16 mg-t-3u">
+                규격별로 금액이 다를 수 있습니다.<br />
+                내 차에 맞는 타이어 검색 후 정확한 가격을 확인해 주세요.                
+            </div>
+            <!-- // 2021-06-24 -->
+        </div>
+    </div>
+
+    <!-- 상품 내용 -->
+    <div class="goods_detail tabScript">
+
+        <ul class="tab sticky">
+            <li class="on"><button data-rel="tab_cont" title="goodDetail_tab1">상품정보</button></li>
+            <li><button data-rel="tab_cont" title="goodDetail_tab2">상품평(478)</button></li>
+            <li><button data-rel="tab_cont" title="goodDetail_tab3">타이어 사이즈</button></li>
+        </ul>
+
+        <!-- tab 1. 상품정보 -->
+        <div class="tab_cont" id="goodDetail_tab1">
+            <!-- TODO: 상품 상세 정보를 'goods-detail-ellipsis-container'로 한번 감싸주세요. -->
+            <div class="detail-ellipsis-container">
+                <!-- TODO: 상품 상세 정보를 최우선으로 끌어 올리세요 -->
+                <!-- TODO: 특장점 & 기술력 > 상품 상세 정보 > 타이어 구매하기 전 확인 사항 > 상품 정보 제공 고시 -->
+
+                <!-- 특장점 & 기술력 -->
+                <div class="inner">
+                    <h6>특장점 & 기술력 </h6>
+                    <ol>
+                        <li>Silent groove Technology 적용한 정숙성 강화.</li>
+                        <li>최적화 타이어 접지기술을 통한 이상마모 방지 및 마일리지 성능 강화.</li>
+                        <li>Aqua hydro technology를 적용하여 젖은노면 주행시 안정성 강화.</li>
+                        <li>차별화된 Groove 디자인 적용을 통한 접지력 극대화.</li>
+                    </ol>
+
+                </div>
+
+                <!-- 상품 상세 정보 -->
+                <div class="inner content">
+                    <h6>상품상세 정보</h6>
+                    <!-- ckEditor HTML -->
+                    <div class="ckEditor">
+                        <div style="text-align:center"><img alt="" src="https://po.tstation.com/upload/goods/2020/20200309145552/Ventus-S2-AS.jpg" style="width: 100%" /></div>
+                    </div>
+                    <!-- //ckEditor HTML -->
+                </div>
+
+                <!-- 타이어 구매하기 전 확인 사항 -->
+                <div class="tire_info">
+                    <h6>타이어 구매하기 전에 꼭 확인하세요.</h6>
+                    <p class="img01"><img src="https://m.tstation.com/mc-static-root/images/main/tire_detail_info.jpg" alt="타이어 구매하기 전에 꼭 확인하세요. 이미지" /></p>
+                    <dl>
+                        <dt><span>타이어 사이드월에서 확인 할 수 있는 정보</span></dt>
+                        <dd>
+                            <ol>
+                                <li><span class="tit">① 패턴명</span></li>
+                                <li><span class="tit">② 하중지수 / 최대속도</span>
+                                    <span class="txt01">하중지수는 타이어가 주행 가능한 최대 하중 코드화하여 표시한 것으로 클수록 더 많은 무게를 감당할 수 있습니다.</span>
+                                    <span class="txt01">최대속도는 타이어가 버틸 수 있는 속도의 한계치를 기호화하여 표시한 것입니다. 자동차 성능에 영향을 주기 때문에 신차용  타이어의 속도 기호와 같거나 높은 상품을 선택하시면 됩니다.</span>
+                                </li>
+                                <li><span class="tit">③ 제조사</span></li>
+                                <li><span class="tit">④ DOT</span>
+                                    <span class="txt01">미국 운수성(Department Of Transportation)에 의해 공표된 모든  안전 기준에 따라 생산된 타이어를 의미하며 제조 일자 정보를  나타냅니다. 앞 두 숫자는 제조된 주, 뒤의 두 숫자는 제조 연도입니다.
+											<br />ex) 3816 = 2016년 38주차에 제조된 타이어
+										</span>
+                                </li>
+                                <li><span class="tit">⑤  사이즈</span>
+                                    <span class="txt02">※ 사이드월의 정보 표시는 제조사마다 다를 수 있습니다.</span>
+                                </li>
+                            </ol>
+                        </dd>
+                        <dt><span>그 외 확인 해야 할 정보</span></dt>
+                        <dd><span class="tit">출시년월</span>
+                            <span class="txt01">해당 상품이 시장에 처음으로 출시가 된 때를 의미하며 생산년월과는 다릅니다.</span>
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- 상품 정보 제공 고시 -->
+                <div class="inner">
+                    <h6>상품 정보 제공 고시</h6>
+                    <!-- db 항목 있을 때, 출력 되는 영역  -->
+                    <ol class="list">
+
+
+                        <li><span class="tit">패턴명</span>
+
+                            H462
+
+
+                        </li>
+
+
+
+                        <li><span class="tit">출시년월</span>
+                            2016년 1월
+                        </li>
+
+
+
+
+
+                        <li><span class="tit">안심서비스</span>
+                            O
+                        </li>
+
+
+                        <li><span class="tit">원산지</span>
+                            한국
+                        </li>
+
+
+
+
+                        <li><span class="tit">하중지수</span>
+
+                            91 /
+
+                            615KG
+                        </li>
+
+
+                        <li><span class="tit">최대속도</span>
+
+                            W /
+
+                            270KM
+                        </li>
+
+
+
+                    </ol>
+                    <!-- //db 항목 있을 때, 출력 되는 영역  -->
+                    <!-- html 등록 영역  -->
+                    <ol class="list">
+                        <li class="line"><span class="tit">제조사</span> 한국타이어앤테크놀로지</li>
+                        <li><span class="tit">품질 보증</span> 제조상의 과실에 의한 하자가 발생 시 보증 기간내에 있는 제품에 한해서 A/S 처리해드립니다. (제조일로부터 6년 이내, 흠깊이가 20%이상 남은 경우)<br />
+                            공정거래위원회 고시(소비자분쟁해결기준)에 의거하여 보상해 드립니다.</li>
+                        <li><span class="tit">A/S 문의</span> 080-022-8272 (월~금 오전 9시~오후 4시)</li>
+                        <li><span class="tit">특이사항</span> 타이어 구매시 탈부착 및 밸런스 작업은 무료이며, 위치교환, 휠 얼라인먼트, 그 외 서비스에 따른 추가 금액은 매장에서 현장 결제하시면 됩니다.</li>
+                        <li><span class="tit">안심보험</span> 적용</li>
+                        <li><span class="tit">배송/장착</span> 무료 배송, 무료 장착</li>
+                        <li><span class="tit">반품/환불</span> 상품의 특성상 장착 이후 반품 및 교환은 불가능합니다.</li>
+                    </ol>
+
+                    <!-- //html 등록 영역  -->
+                </div>
+
+                <!-- TODO: 상품정보 탭을 확장 축소 하는 버튼 -->
+                <div class="detail-ellipsis">
+                    <button type="button" class="btn-item btn-neutral btn-s btn-ol round" onclick="$('.detail-ellipsis-container').toggleClass('expand');">
+                            <span class="label-txt">
+                                <span class="label">상세정보 더보기</span>
+                                <span class="label">상세정보 접기</span>
+                            </span>
+                        <span class="line-icons chev-down size-12"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- //tab 1. 상품정보 -->
+
+        <!-- tab 2. 상품리뷰 -->
+        <div class="tab_cont" id="goodDetail_tab2" style="display:none">
+            <div class="review_top">
+                <p class="unitR2">평균별점 <span class="star02 point9"><em>4.7</em></span></p>
+                <div class="list">
+                    <h6><em>구매고객만족도</em>(478명 참여)</h6>
+                    <ol>
+                        <li>
+                            <span class="tit">승차감</span>
+                            <span class="star03 point9"><em>4.8</em></span>
+
+                        </li>
+                        <li>
+                            <span class="tit">연비</span>
+
+
+                            <span class="star03 point9"><em>4.6</em></span>
+
+                        </li>
+                        <li>
+                            <span class="tit">마일리지</span>
+
+
+                            <span class="star03 point9"><em>4.5</em></span>
+
+                        </li>
+                        <li>
+                            <span class="tit">고속주행</span>
+
+
+                            <span class="star03 point9"><em>4.7</em></span>
+
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+                    </ol>
+                </div>
+            </div>
+            <div class="review_list" id="prGdasInfoDiv">
+                <ol>
+                    <li>
+                        <!-- 20220726 // -->
+                        <div class="review-break">
+                            <img
+                                src="mc-static-root/images/common/review/icon_eye_gray.png"
+                                alt="empty review thumb"
+                                class="icon"
+                                style="width: 42px;"
+                                onerror="$.Tstation.imageError({ el: this })"
+                            />
+                            <p class="txt-16">해당 리뷰는 고객님께서 차단한 리뷰입니다</p>
+                            <div class="txt-center">
+                                <img
+                                    src="mc-static-root/images/common/review/icon_lock_primary.png"
+                                    alt="empty review thumb"
+                                    class="icon"
+                                    style="width: 32px;"
+                                    onerror="$.Tstation.imageError({ el: this })"
+                                />
+                                <div class="mg-t-1u">
+                                    <button type="button" class="btn-item btn-xs btn-primary round review-block-cancle" data-analytics-click="리뷰 차단 해제">
+                                        <span class="label-txt">차단 해제</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 20220726 -->
+
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            기아&nbsp;
+
+                            쏘울
+
+                            <span>205/55R16</span>
+                        </div>
+                        <!-- 20220721 // -->
+                        <div class="date date">
+                            <span>고**</span>2020-08-19
+                        </div>
+                        <!-- // 20220721 -->
+
+                        <div class="cont">
+                            한국타이어 벤투스 S1 노블2를 약 6년 정도 사용 후 타이어 교체 시기가 왔네요.
+                            앞으로도 타이어 구입할 일 있으면 티스테이션 쇼핑몰 적극 추천하겠습니다.
+                        </div>
+
+                        <div class="star">
+                            <ol>
+
+
+                                <li>
+                                    <span class="tit">승차감</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+
+
+                                <li>
+                                    <span class="tit">연비</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+
+
+                                <li>
+                                    <span class="tit">마일리지</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+
+
+                                <li>
+                                    <span class="tit">고속주행</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+
+
+                            </ol>
+                        </div>
+
+
+
+                        <div class="photo">
+                            <ol>
+                                <li class="popup-full" name="PHOTO" data-rel="/tire/popup/reviewImgView?gdasSeq=9553"><img src="https://www.tstation.com/upload/mypage/activity/goodsReview/9553/1/2020/0819/GoodsReview_124657896.jpg" alt="고객상품평 이미지"></li>
+                            </ol>
+                        </div>
+
+                        
+                        <!-- 20220721 // -->
+                        <div class="reviewer-control pd-b-4u panel-hidden">
+                            <div class="good-checkbox-wrap">
+                                <label class="good-checkbox" id="goodCheckbox" data-analytics-click="리뷰가 도움이 돼요">
+                                    <input type="checkbox" class="blind" />
+                                    <div class="icon-holder mg-r-1u">
+                                        <span class="icon-good good-count txt-12">17</span>
+                                    </div>
+                                    <div class="labelling">
+                                        <span class="label-txt mg-h-1u txt-12">이 리뷰가 도움이 돼요</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="controlbox-list-wrap">
+                                <button type="button" class="controlbox-toggle" id="controlboxToggle" data-analytics-click="차단하기/신고하기 열기">
+                                    <span class="label-txt blind">차단하기/신고하기 열기</span>
+                                </button>
+                                <ul class="controlbox-list" style="display: none;">
+                                    <li><button type="button" class="controlbox-button review-declare" id="reviewDeclare" data-analytics-click="신고하기"><span class="label-txt txt-12">신고하기</span></button></li>
+                                    <li><button type="button" class="controlbox-button review-block" id="reviewBlock" data-analytics-click="차단하기"><span class="label-txt txt-12">차단하기</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="controlbox-panel" style="display: none;">
+                            <h4 class="controlbox-headcopy pd-b-2u border-b">
+                                <p class="headcopy txt-14">신고사유를 알려주세요</p>
+                                <p class="subcopy txt-12 txt-neutral3">신고하신 내용은 관리자 검토 후 조치됩니다.</p>
+                                <button type="button" class="btn-item round btn-inv min-w controlbox-close" id="controlboxClose" data-analytics-click="신고사유 닫기">
+                                    <span class="line-icons close size-24"></span>
+                                </button>
+                            </h4>
+                            <ul class="pd-v-3u">
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">저작권 침해, 명예훼손</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio" disabled="">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">개인정보 유출</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">욕설/비방/선정성 등 미풍양속을 해치는 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">광고 및 홍보성 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">해당 상품/매장과 무관한 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">상품/매장과 무관한 사진 첨부</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">잘못된 정보가 포함된 리뷰</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">기타</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+
+                            <div class="form-control">
+                                <label>신고 상세사유를 입력해 주세요 (선택)</label>
+                                <div class="input-group">
+                                    <textarea class="input-box" rows="4" placeholder="신고하시는 상세이유를 입력해주세요 (최대글자는 1,000자 입니다)"></textarea>
+                                </div>
+                            </div>
+                            <div class="txt-center mg-t-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol round pd-h-10u" data-analytics-click="리뷰 신고하기">
+                                    <span class="label-txt txt-14">신고하기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- // 20220721 -->
+
+
+
+                    </li>
+
+                    <li>
+                        <!-- 20220726 // -->
+                        <div class="review-break">
+                            <img
+                                src="mc-static-root/images/common/review/icon_eye_gray.png"
+                                alt="empty review thumb"
+                                class="icon"
+                                style="width: 42px;"
+                                onerror="$.Tstation.imageError({ el: this })"
+                            />
+                            <p class="txt-16">해당 리뷰는 고객님께서 차단한 리뷰입니다</p>
+                            <div class="txt-center">
+                                <img
+                                    src="mc-static-root/images/common/review/icon_lock_primary.png"
+                                    alt="empty review thumb"
+                                    class="icon"
+                                    style="width: 32px;"
+                                    onerror="$.Tstation.imageError({ el: this })"
+                                />
+                                <div class="mg-t-1u">
+                                    <button type="button" class="btn-item btn-xs btn-primary round review-block-cancle" data-analytics-click="리뷰 차단 해제">
+                                        <span class="label-txt">차단 해제</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 20220726 -->
+                        <div class="unitR2">
+                            <span class="star02 point10"><em>5.0</em></span>
+                        </div>
+                        <div class="tire">
+                            현대&nbsp;
+
+                            쏘나타 LF
+
+                            <span>215/55R17</span>
+                        </div>
+                        <div class="date">
+                            <span>김**</span>2020-08-18
+                        </div>
+                        <div class="cont">
+                            차가 전보다 정숙성이 좋아진거같아요
+                            와이프도 코너링이 부드러워 진거같다고 좋아하네요 ^^
+                        </div>
+
+                        <div class="star">
+                            <ol>
+
+
+                                <li>
+                                    <span class="tit">승차감</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+
+
+                                <li>
+                                    <span class="tit">연비</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+
+
+                                <li>
+                                    <span class="tit">마일리지</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+
+
+                                <li>
+                                    <span class="tit">고속주행</span>
+                                    <span class="star01 point10"><em>5</em></span>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- 20220721 // -->
+                        <div class="reviewer-control pd-b-4u panel-hidden">
+                            <div class="good-checkbox-wrap">
+                                <label class="good-checkbox" id="goodCheckbox" data-analytics-click="리뷰가 도움이 돼요">
+                                    <input type="checkbox" class="blind" />
+                                    <div class="icon-holder mg-r-1u">
+                                        <span class="icon-good good-count txt-12">17</span>
+                                    </div>
+                                    <div class="labelling">
+                                        <span class="label-txt mg-h-1u txt-12">이 리뷰가 도움이 돼요</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="controlbox-list-wrap">
+                                <button type="button" class="controlbox-toggle" id="controlboxToggle" data-analytics-click="차단하기/신고하기 열기">
+                                    <span class="label-txt blind">차단하기/신고하기 열기</span>
+                                </button>
+                                <ul class="controlbox-list" style="display: none;">
+                                    <li><button type="button" class="controlbox-button review-declare" id="" data-analytics-click="신고하기"><span class="label-txt txt-12">신고하기</span></button></li>
+                                    <li><button type="button" class="controlbox-button review-block" id="reviewBlock" data-analytics-click="차단하기"><span class="label-txt txt-12">차단하기</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="controlbox-panel" style="display: none;">
+                            <h4 class="controlbox-headcopy pd-b-2u border-b">
+                                <p class="headcopy txt-14">신고사유를 알려주세요</p>
+                                <p class="subcopy txt-12 txt-neutral3">신고하신 내용은 관리자 검토 후 조치됩니다.</p>
+                                <button type="button" class="btn-item round btn-inv min-w controlbox-close" id="controlboxClose" data-analytics-click="신고사유 닫기">
+                                    <span class="line-icons close size-24"></span>
+                                </button>
+                            </h4>
+                            <ul class="pd-v-3u">
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">저작권 침해, 명예훼손</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio" disabled="">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">개인정보 유출</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">욕설/비방/선정성 등 미풍양속을 해치는 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">광고 및 홍보성 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">해당 상품/매장과 무관한 내용</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">상품/매장과 무관한 사진 첨부</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">잘못된 정보가 포함된 리뷰</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="">
+                                    <label class="radio-item">
+                                        <input type="radio" name="test_radio">
+                                        <div class="icon-holder">
+                                            <span class="line-icons circle size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12 txt-neutral2">기타</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+
+                            <div class="form-control">
+                                <label>신고 상세사유를 입력해 주세요 (선택)</label>
+                                <div class="input-group">
+                                    <textarea class="input-box" rows="4" placeholder="신고하시는 상세이유를 입력해주세요 (최대글자는 1,000자 입니다)"></textarea>
+                                </div>
+                            </div>
+                            <div class="txt-center mg-t-4u">
+                                <button type="button" class="btn-item btn-neutral btn-ol round pd-h-10u" data-analytics-click="리뷰 신고하기">
+                                    <span class="label-txt txt-14">신고하기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- // 20220721 -->
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+        <!-- //tab 2. 상품리뷰 -->
+
+        <!-- tab 3. 타이어 사이즈 -->
+        <div class="tab_cont" id="goodDetail_tab3" style="display:none">
+            <div class="inner">
+                <div class="tbl02">
+                    <table summary="타이어 사이즈별 정보 표">
+                        <colgroup>
+                            <col style="width: 50px;" />
+                            <col style="width: auto;" />
+                            <col style="width: 80px;" />
+                            <col style="width: 80px;" />
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Label-RR</th>
+                            <th scope="col">Label-Wet</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr class="first">
+                            <th rowspan="8" scope="row">16</th>
+
+
+                            <td class="left">195/55R16</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">205/55R16</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">205/60R16</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">205/65R16</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">215/55R16</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">215/60R16</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/55R16</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/60R16</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </tr>
+
+                        <tr class="first">
+                            <th rowspan="14" scope="row">17</th>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <td class="left">205/45R17</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">205/50R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">205/55R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">215/45R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">215/50R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">215/55R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/45R17</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/50R17</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/55R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/45R17</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/50R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/55R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/40R17</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/45R17</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </tr>
+
+                        <tr class="first">
+                            <th rowspan="15" scope="row">18</th>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <td class="left">215/40R18</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/40R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/45R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/50R18</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">225/60R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/40R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/45R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/50R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/40R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/45R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/50R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">255/40R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">255/45R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">275/40R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">275/45R18</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </tr>
+
+                        <tr class="first">
+                            <th rowspan="11" scope="row">19</th>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <td class="left">225/40R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/35R19</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">235/45R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/35R19</td>
+                            <td>4</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/40R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/45R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">255/35R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">255/40R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">255/45R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">275/35R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">275/40R19</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </tr>
+
+                        <tr class="first">
+                            <th rowspan="6" scope="row">20</th>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <td class="left">245/40R20</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">245/45ZR20W XL</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">255/35R20</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">265/35R20</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">275/35R20</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+
+                            <td class="left">275/40ZR20W XL</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- //tab 3. 타이어 사이즈 -->
+
+
+        <!-- TODO: 연관 상품 추가 > 등록된 차종이 없을 경우 -->
+        <div class="pd-v-5u pd-h-5u">
+            <div class="txt-center">
+                <p>티스테이션에서 경정비 상품도 함께 쇼핑하세요.</p>
+                <button type="button" class="btn-item btn-neutral btn-l full-w round mg-t-2u" onclick="window.location.href = ''">
+                    <span class="label-txt">내 차에 맞는 경정비 상품 보러가기</span>
+                    <span class="line-icons chev-right size-24"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- TODO: 연관 상품 추가 > 등록된 차종이 있을 경우 -->
+        <div class="section border-t">
+            <div class="hero-wrap">
+                <h3 class="headcopy">이 상품은 어때요?</h3>
+                <p class="subcopy">내 차에 맞는 경정비 상품을 추천합니다.</p>
+            </div>
+
+            <div class="swiper-container more-goods-area">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article class="card card-time-deal" onclick="window.location.href=''">
+                            <div class="card-inner">
+                                <div class="thumb-wrap">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                    </div>
+                                </div>
+
+                                <div class="description-area">
+                                    <p class="model">모빌 SUPER 1000 5W30</p>
+
+                                    <p class="discount txt-throughline">226,200원</p>
+                                    <p class="price">193,4000<small>원</small></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="card card-time-deal" onclick="window.location.href=''">
+                            <div class="card-inner">
+                                <div class="thumb-wrap">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                    </div>
+                                </div>
+
+                                <div class="description-area">
+                                    <p class="model">모빌 SUPER 1000 5W30</p>
+
+                                    <p class="discount txt-throughline">226,200원</p>
+                                    <p class="price">193,4000<small>원</small></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="card card-time-deal" onclick="window.location.href=''">
+                            <div class="card-inner">
+                                <div class="thumb-wrap">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                    </div>
+                                </div>
+
+                                <div class="description-area">
+                                    <p class="model">모빌 SUPER 1000 5W30</p>
+
+                                    <p class="discount txt-throughline">226,200원</p>
+                                    <p class="price">193,4000<small>원</small></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="card card-time-deal" onclick="window.location.href=''">
+                            <div class="card-inner">
+                                <div class="thumb-wrap">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                    </div>
+                                </div>
+
+                                <div class="description-area">
+                                    <p class="model">모빌 SUPER 1000 5W30</p>
+
+                                    <p class="discount txt-throughline">226,200원</p>
+                                    <p class="price">193,4000<small>원</small></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="card card-time-deal" onclick="window.location.href=''">
+                            <div class="card-inner">
+                                <div class="thumb-wrap">
+                                    <div class="thumb-holder thumb-scaled">
+                                        <img src="mc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                    </div>
+                                </div>
+
+                                <div class="description-area">
+                                    <p class="model">모빌 SUPER 1000 5W30</p>
+
+                                    <p class="discount txt-throughline">226,200원</p>
+                                    <p class="price">193,4000<small>원</small></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var moreGoodsSwiper = new Swiper('.more-goods-area', {
+                    spaceBetween: 8,
+                    slidesPerView: 'auto'
+                });
+
+                moreGoodsSwiper.init();
+
+                $(window).on('resize', function () {
+                    moreGoodsSwiper.init();
+                });
+            </script>
+        </div>
+    </div>
+    <!-- //상품 내용 -->
+</div>
+
+<!-- 팝업 > 재입고 알림 신청 -->
+<div class="modal-item instance" data-ref="restock-popup">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>재입고 알림</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+            <div class="modal-action ">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral  round full-w" onclick="$.Tstation.popup().close('restock-popup')">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- TODO: container 아래의 컨텐츠만 사용하세요. -->
+                        <p class="txt-center txt-16">
+                            <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>
+                            재입고 알림 신청 되었습니다.
+                        </p>
+                        <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t">
+                            재입고 알림은 <em class="txt-w500 txt-neutral1">마이페이지 > 재입고알림</em>에서 확인 가능합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 > 내 차에 장착 가능 여부 확인하기 -->
+<div class="modal-item instance" data-ref="confirm-my-car-able">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>내 차에 장착 가능 여부 확인</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+            <div class="modal-action ">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$.Tstation.popup().close('confirm-my-car-able')">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="window.location.href = ''">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container  pd-h-8u pd-v-8u">
+                        <p class="txt-center txt-16">
+                            <span class="line-icons error-circle size-48 txt-primary mg-b-2u"></span><br />
+                            검색하신 차량은 해당 상품을 장착 할 수 없습니다.
+                        </p>
+                        <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t">
+                            검색 차량에 적합한 상품을 보시겠습니까?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 > 장바구니 컨펌 -->
+<div class="modal-item instance" data-ref="shopping-cart-confirm">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-action ">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$.Tstation.popup().close('shopping-cart-confirm')">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral  round full-w" onclick="$.Tstation.popup().close('shopping-cart-confirm')">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- TODO: container 아래의 컨텐츠만 사용하세요. -->
+                        <p class="txt-center txt-neutral2">
+                            <em class="txt-w500 txt-neutral1">1개</em>의 수량을 장바구니에 담겠습니까?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 > 장바구니 컨펌 완료 -->
+<div class="modal-item instance" data-ref="shopping-cart-confirm-complete">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-action ">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral  round full-w" onclick="$.Tstation.popup().close('shopping-cart-confirm-complete')">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- TODO: container 아래의 컨텐츠만 사용하세요. -->
+                        <p class="txt-center txt-neutral2">선택한 상품이 장바구니에 담겨있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 > 바로구매 -->
+<div class="modal-item instance" data-ref="direct-buy-popup">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-action ">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$.Tstation.popup().close('direct-buy-popup')">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral  round full-w" onclick="$.Tstation.popup().close('direct-buy-popup')">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- TODO: container 아래의 컨텐츠만 사용하세요. -->
+                        <p class="txt-center txt-neutral2">
+                            <em class="txt-w500 txt-neutral1">Ventus S2 AS</em> 상품을 <em class="txt-w500 txt-neutral1">1개</em><br />
+                            구매하시겠습니까?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 팝업 > 바로구매 -->
+<div class="modal-item instance" data-ref="non-user-buy-popup">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-action ">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$.Tstation.popup().close('non-user-buy-popup')">
+                            <span class="label-txt">취소</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-item btn-neutral  round full-w" onclick="window.location.href = ''">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- TODO: container 아래의 컨텐츠만 사용하세요. -->
+                        <p class="txt-center txt-neutral2">
+                            <em class="txt-w500 txt-neutral1">스마트 페이</em> 구매는 티스테이션 회원에게 한하여 제공되는 서비스 입니다.<br />
+                            로그인 화면으로 이동하시겠습니까?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TODO: TYPE-1 > 일반, 스마트페이 구매가 가능한 경우 -->
+<div id="bottomDrawer" class="pay-type-bottom-drawer-container with-handle panel-reversal">
+    <div class="dim" onclick="$.Tstation.bottomDrawer().close();"></div>
+    <div class="bottom-drawer-pannel">
+        <!-- handle -->
+        <div class="handle-wrap" onclick="$.Tstation.bottomDrawer().toggle();">
+            <div class="handle">
+                <div class="icon-holder">
+                    <span class="line-icons chev-up size-20"></span>
+                    <span class="line-icons chev-down size-20"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TODO: TYPE-1 > Default -->
+        <!-- TODO: TYPE-1 > 이전 단계 리스트에서 일반 혹은 스마트페이 바로구매 상태에 따라 쿼리 검사 후 'pay-type-bottom-drawer' 클래스에 'on' 추가할 것 -->
+        <!-- TODO: TYPE-1 > 'pay-type-bottom-drawer' 옵션 클래스 'smart': 스마트페이 구매, 'default': 일반구매 -->
+        <div class="container pay-type-bottom-drawer default">
+            <div class="after-on">
+                <ul class="mg-b-4u">
+                    <li class="float-l">
+                        <span class="form-control-number mg-r-1u">
+                            <input type="number" value="4" max="4" min="1" step="1">
+                            <button class="control control-decrease disabled">
+                                <span class="line-icons remove-circle size-20"></span>
+                            </button>
+                            <span class="label"><span class="count">4</span>개 주문</span>
+                            <button class="control control-increase">
+                                <span class="line-icons add-circle size-20"></span>
+                            </button>
+                        </span>
+                    </li>
+                    <li class="float-r">
+                        <table class="pay-calculator dp-inblock pd-slim">
+                            <colgroup>
+                                <col style="width: auto;">
+                                <col style="width: 110px;">
+                            </colgroup>
+                            <tbody>
+                            <tr class="vertical-b">
+                                <td class="txt-12 txt-neutral1">총 상품합계</td>
+                                <td class="txt-14 txt-neutral1">677,600<small>원</small></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+
+                <div class="divider mg-v-4u"></div>
+
+                <table class="pay-calculator vertical-m pd-slim mg-b-4u">
+                    <colgroup>
+                        <col style="width: auto;">
+                        <col style="width: 110px">
+                    </colgroup>
+                    <tbody>
+                    <!-- TODO: 사용자가 적용할 수 있는 쿠폰을 모두 적용한 상태 -->
+                    <!--<tr class="vertical-b">
+                        <td class="txt-14">
+                            <div class="highlight-container left">
+                                <span>결제금액</span>
+                            </div>
+                        </td>
+                        <td class="txt-21 txt-primary">579,600<span class="txt-14">원</span></td>
+                    </tr>-->
+                    <!-- TODO: 사용자가 적용할 수 있는 쿠폰을 모두 적용하지 않은 상태 -->
+                    <tr class="vertical-b">
+                        <td class="txt-12 txt-neutral1">최대혜택가</td>
+                        <td class="txt-18 txt-neutral1">579,600<span class="txt-14">원</span></td>
+                    </tr>
+                    <tr class="vertical-b">
+                        <td class="txt-14">
+                            <div class="highlight-container left">
+                                <span>결제금액</span>
+                                <span class="highlight highlight-yellow">적용 가능한 쿠폰이 더 있어요!</span>
+                            </div>
+                        </td>
+                        <td class="txt-21 txt-primary">610,000<span class="txt-14">원</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul class="list-size-equal">
+                    <li class="pd-r-1u">
+                        <button type="button" class="btn-item btn-neutral btn-ol btn-l full-w round">
+                            <span class="label-txt">장바구니</span>
+                        </button>
+                    </li>
+                    <li class="pd-l-1u">
+                        <button type="button" class="btn-item btn-neutral btn-l full-w round" onclick="window.location.href = ''">
+                            <span class="label-txt">바로구매</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button" class="btn-item btn-neutral btn-l full-w round before-on" onclick="$.Tstation.bottomDrawer().toggle();">
+                <span class="label-txt">장바구니/구매하기</span><!-- 202012 pub fixed -->
+            </button>
+        </div>
+
+        <!-- TODO: TYPE-1 > Smart Pay -->
+        <!-- TODO: TYPE-1 > 이전 단계 리스트에서 일반 혹은 스마트페이 바로구매 상태에 따라 쿼리 검사 후 'pay-type-bottom-drawer' 클래스에 'on' 추가할 것 -->
+        <!-- TODO: TYPE-1 > 'pay-type-bottom-drawer' 옵션 클래스 'smart': 스마트페이 구매, 'default': 일반구매 -->
+        <div class="container pay-type-bottom-drawer smart on">
+            <div class="after-on">
+                <p class="mg-b-2u">
+                    <span class="line-icons coupon size-20 txt-neutral3"></span>
+                    <span class="txt-11 txt-neutral3">펑크, 위치교환</span>
+                    <span class="txt-11 txt-primary">무료쿠폰 지급! (2장)</span>
+                </p>
+                <p class="txt-12 mg-b-3u">스마트페이 할부는 <em class="txt-primary txt-14">타이어 4개 구매에 한해 적용</em>됩니다.</p>
+
+                <div class="divider mg-v-4u"></div>
+
+                <ul class="mg-b-4u">
+                    <li class="float-l">
+                        <span class="form-control-number mg-r-1u">
+                            <input type="number" value="4" max="4" min="1" step="1" disabled>
+                            <button class="control control-decrease disabled">
+                                <span class="line-icons remove-circle size-20"></span>
+                            </button>
+                            <span class="label"><span class="count">4</span>개 주문</span>
+                            <button class="control control-increase">
+                                <span class="line-icons add-circle size-20"></span>
+                            </button>
+                        </span>
+                    </li>
+                    <li class="float-r">
+                        <label class="radio-item">
+                            <input type="radio" name="monthly-pay" />
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u">12개월<span class="responsive-hidden">할부</span></span>
+                            </div>
+                        </label>
+
+                        <label class="radio-item">
+                            <input type="radio" name="monthly-pay" checked />
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u">24개월<span class="responsive-hidden">할부</span></span>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+
+                <p class="txt-right"><small class="mg-r-3u">총 상품합계</small>677,600원</p>
+
+                <div class="divider mg-v-4u"></div>
+
+                <table class="pay-calculator vertical-m pd-slim mg-b-4u">
+                    <colgroup>
+                        <col style="width: auto;">
+                        <col style="width: 120px">
+                    </colgroup>
+                    <tbody>
+                    <tr class="vertical-b">
+                        <td class="txt-14 txt-neutral1">최대혜택가</td>
+                        <td class="txt-18 txt-neutral1">579,600<span class="txt-14">원</span></td>
+                    </tr>
+                    <tr class="vertical-b">
+                        <td class="txt-14 txt-primary">무이자 월 납입금액</td>
+                        <td class="txt-21 txt-primary">
+                            <span class="txt-14">월</span> 24,150<span class="txt-14">원</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul class="list-size-equal">
+                    <li class="pd-r-1u">
+                        <button type="button" class="btn-item btn-neutral btn-ol btn-l full-w round">
+                            <span class="label-txt">장바구니</span>
+                        </button>
+                    </li>
+                    <li class="pd-l-1u">
+                        <button type="button" class="btn-item btn-neutral btn-l full-w round" onclick="window.location.href = 'order1.html'">
+                            <span class="label-txt">바로구매</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button" class="btn-item btn-neutral btn-l full-w round before-on" onclick="$.Tstation.bottomDrawer().toggle();">
+                <span class="label-txt">스마트페이로 구매하기</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- TODO: 구매가 불가능할 경우 -->
+<!--<div class="page-floating-button">
+    &lt;!&ndash; TODO: TYPE-2 > 사이즈 정보가 없는 경우 &ndash;&gt;
+    <button type="button" class="btn-item btn-neutral btn-l btn-ol btn-disabled full-w round" disabled>
+        <span class="label-txt">내 차에 장착 가능 여부 확인하기</span>
+    </button>
+
+    &lt;!&ndash; TODO: TYPE-3 > 일시품절 상태 &ndash;&gt;
+    <button type="button" class="btn-item btn-primary btn-ol btn-l full-w round">
+        <span class="label-txt">재입고 알림 신청</span>
+    </button>
+
+    &lt;!&ndash; TODO: TYPE-4 > 판매종료 &ndash;&gt;
+    <button type="button" class="btn-item btn-neutral btn-l btn-ol btn-disabled full-w round" disabled>
+        <span class="label-txt">판매종료</span>
+    </button>
+
+    &lt;!&ndash; TODO: TYPE-5 > 장착점 재고 없음 &ndash;&gt;
+    <button type="button" class="btn-item btn-neutral btn-l btn-ol btn-disabled full-w round" disabled>
+        <span class="label-txt"><span class="txt-w500">'매장명'</span>에서는 장착 예약 할 수 없습니다.</span>
+    </button>
+
+    &lt;!&ndash; TODO: TYPE-6 > 딜 종료(재고소진/딜기간 만료) &ndash;&gt;
+    <button type="button" class="btn-item btn-neutral btn-l btn-ol btn-disabled full-w round" disabled>
+        <span class="label-txt">딜이 종료되었습니다.</span>
+    </button>
+</div>-->
+
+
+
+<!-- 20220721 // -->
+<script>
+$('.controlbox-toggle').each(function(e, i) {
+    console.log(e);
+    $(i).click(function() {
+        console.log(e);
+        $(this).next().toggle();
+    })
+})
+
+$('.review-declare').each(function(e, i) {
+    $(i).click(function() {
+        $(this).parents('.controlbox-list').hide();
+        $(this).parents('.reviewer-control').removeClass('panel-hidden').next().show();  
+        $(".modal-scroller").stop().animate({scrollTop:$(window).outerHeight()}, {duration:300, easing:"linear"});
+    })  
+})
+
+$('.controlbox-close').each(function(e, i) {
+    $(i).click(function() {
+        $(this).parents('.controlbox-panel').hide();
+        $(this).parents('.controlbox-panel').prev().addClass('panel-hidden');
+    })  
+})  
+
+/* 20220726 // */
+$('.review-block').each(function(e, i) {
+    var reviewBlock = false
+    $(i).click(function() {
+        reviewBlock = true
+        if(reviewBlock) {
+            $(this)
+                .parents('.reviewer-control')
+                .addClass('panel-hidden')
+                .next()
+                .hide();  
+            $(this)
+                .parents('.reviewer-control')
+                .prevAll('.review-break')
+                .addClass('active')
+                .parent()
+                .addClass("block-height-fix");
+            alert("리뷰어 차단이 완료되었습니다.");
+        }
+
+        $(this).parents('.controlbox-list').hide();
+    })  
+})  
+
+$('.review-block-cancle').each(function(e, i) {
+    $(i).click(function() {
+        $(this)
+            .parents('.review-break')
+            .removeClass('active')
+            .parent()
+            .removeClass("block-height-fix");
+        alert("리뷰어 차단이 해제되었습니다.");
+    })
+})
+/* // 20220726 */
+
+</script>
+<!-- // 20220721 -->

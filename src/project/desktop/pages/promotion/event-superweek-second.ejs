@@ -1,0 +1,1078 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<link rel="stylesheet" type="text/css" href="pc-static-root/css/event.css" />
+<%# Include %>
+<div id="container" class="event">
+    <div id="contents">
+        <!-- 01. page title -->
+        <div class="page_tit">
+            <h4>이벤트</h4>
+        </div>
+        <!-- //01. page title -->
+        <!-- 02. 제목 -->
+        <div class="event_tit">
+            티스테이션에 간다, 안심이 간다
+            <span class="date">이벤트 기간 : 20.09.18  ~ 20.10.17</span>
+        </div>
+        <input type="hidden" id="evtUrlAddr" value="">
+        <input type="hidden" id="endEvtDisp" value="">
+        <input type="hidden" id="isEvtDispBf" value="">
+
+        <!-- //02. 제목  -->
+        <!-- 03. 이벤트 상세  -->
+        <div class="event_list">
+            <div id="inner">
+                <div class="event-detail-wrap">
+                    <div class="center-inner">                     
+                        <div class="event-spw07">                            
+                            <div class="hero-section">
+                                <img src="pc-static-root/images/event/20210728/img_kv.png" alt="" />
+                                <div class="ak-wrap">
+                                    <div class="event-case">
+                                        <strong class="txt-w900 txt-primary">Event 1.</strong>
+                                        <span class="info-copy txt-w700 txt-16">슈퍼위크 쿠폰받고<br />슈퍼딜 응모!</span>
+                                    </div>
+                                    <div class="event-case mg-h-1u">
+                                        <strong class="txt-w900 txt-primary">Event 2.</strong>
+                                        <span class="info-copy txt-w700 txt-16">제휴카드 결제<br />주유권 증정!</span>
+                                    </div>
+                                    <div class="event-case">
+                                        <strong class="txt-w900 txt-primary">Event 3.</strong>
+                                        <span class="info-copy txt-w700 txt-16">타이어구매후기<br />이벤트!</span>
+                                    </div>
+                                </div>
+                                <script>
+                                function amtAnchorScroll() {
+                                    var shoppingTippickup = $('.ak-wrap');
+                                    var shoppingTippickupButton = shoppingTippickup.find('.event-case');
+                                    var shoppingTippickupHeight = $('.navbar').outerHeight();
+                                    shoppingTippickupButton.each(function(i) {
+                                        shoppingTippickupButton.eq(i).click(function(e) {
+                                            e.preventDefault();
+                                            var scrollpickupPostion = $('.event-spw07').find('.amt-anchor').eq(i).offset().top - shoppingTippickupHeight;
+                                            console.log(scrollpickupPostion);
+                                            $('html, body').animate({
+                                                scrollTop: scrollpickupPostion
+                                            }, 300)
+                                        })
+                                    })
+                                }
+                
+                                amtAnchorScroll()
+                                </script>
+                            </div>
+                            <div class="event2-section amt-anchor">
+                                <div class="scratch-play"><!-- 0930 -->
+                                    <div class="timedeal-wrap">
+                                        <h3>
+                                            <img src="pc-static-root/images/event/20210728/event1.png" style="width: 138px;" alt="event1" />
+                                            <p class="headcopy">월~금 <strong>매일 4번씩</strong> 찾아오는<br />슈퍼딜 타임 이벤트</p>
+                                            <span class="subcopy">하루 선착순 <strong>100명</strong> 경품증정!</span>
+                                        </h3>
+                                        <div class="timedeal-clock-wrap">
+                                            <div class="timedeal-clock">
+                                                <div class="clock-pagination"></div>
+                                                <span class="visual-clock arrow-12"></span>
+                                                <span class="visual-clock arrow-4"></span>
+                                                <span class="visual-clock arrow-8"></span>
+                                            </div>
+                                            <div class="swiper-container timedeal-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <img src="pc-static-root/images/event/20210728/rolling_01_359.png" alt="월 15시 신라호텔 숙박권" />
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <img src="pc-static-root/images/event/20210728/rolling_02_359.png" alt="월 ~ 금 13시 타이어 50% 할인권" />
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <img src="pc-static-root/images/event/20210728/rolling_03_359.png" alt="화, 목 11시 신세계 10만원 상품권" />
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <img src="pc-static-root/images/event/20210728/rolling_04_359.png" alt="화요일 15시 플레이스테이션 5" />
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <img src="pc-static-root/images/event/20210728/rolling_05_359.png" alt="수요일 9시 베스킨라벤 파인트" />
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <img src="pc-static-root/images/event/20210728/rolling_06_359.png" alt="" />
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    var timedealSwiper = new Swiper('.timedeal-swiper', {
+                                                        init: false,
+                                                        loop: true,
+                                                        autoplay: {
+                                                            delay: 2000,
+                                                        },
+                                                        pagination: {
+                                                            el: ".clock-pagination",
+                                                            clickable: true,
+                                                            renderBullet: function (index, className) {
+                                                                return '<span class="' + className + '">' + "</span>";
+                                                            },
+                                                        },
+                                                    });
+                    
+                                                    timedealSwiper.init();
+                    
+                                                    $(window).on('resize', function () {
+                                                        timedealSwiper.init();
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="timedeal-benefits">
+                                        <!-- day 별 슈퍼딜 case // -->
+                                        <h5><strong>0월 0일(월)</strong> 오늘의 슈퍼딜</h4>
+                                        <ul class="benefits-list">
+                                            <li>
+                                                <!-- 
+                                                    .benefit 3가지 CASE class 추가
+                                                    0. 오픈 30분전 전 CASE: 버튼명 오픈까지 시간 노출
+                                                    1. 마감 (종료)-비당첨 CASE: .soldout-active class 추가(경품소진 Dim 활성)
+                                                    2. 자정-오픈 30분 전 CASE: .dim-active class 추가 (오픈 시간 Dim 활성)
+                                                -->
+                                                
+                                                <!-- 마감 (종료)-당첨 -->
+                                                <div class="benefit soldout-active">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">9시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/mon_9.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">BHC 치킨+콜라 쿠폰<span class="count">(45명)</span></p><!-- 090801 -->
+                                                        <!-- 아래 버튼에 당첨 Goods 팝업 이벤트 임시 추가 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 마감 (종료)-비당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">11시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/mon_11.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">BMW 드라이빙센터 바우처<span class="count">(4명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>                     
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 자정-오픈 30분 전 -->
+                                                <div class="benefit dim-active">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">13시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/mon_13.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">타이어 50% 할인쿠폰<span class="count">(50명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <div class="benefit dim-active">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">15시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/mon_15.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">서울 신라호텔 1박 숙박권<span class="count">(1명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h5><strong>0월 0일(화)</strong> 오늘의 슈퍼딜</h4>
+                                        <ul class="benefits-list">
+                                            <li>
+                                                <!-- 
+                                                    .benefit 3가지 CASE class 추가
+                                                    0. 오픈 30분전 전 CASE: 버튼명 오픈까지 시간 노출
+                                                    1. 마감 (종료)-비당첨 CASE: .soldout-active class 추가(경품소진 Dim 활성)
+                                                    2. 자정-오픈 30분 전 CASE: .dim-active class 추가 (오픈 시간 Dim 활성)
+                                                -->
+                                                
+                                                <!-- 마감 (종료)-당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">9시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/tue_9.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">스타벅스 커피쿠폰<span class="count">(45명)</span></p><!-- 090801 -->
+                                                        <!-- 아래 버튼에 당첨 Goods 팝업 이벤트 임시 추가 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 마감 (종료)-비당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">11시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/tue_11.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">신세계 상품권 10만원<span class="count">(4명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>                     
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 자정-오픈 30분 전 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">13시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/tue_13.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">타이어 50% 할인쿠폰<span class="count">(50명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">15시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/tue_15.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">플레이 스테이션 5<span class="count">(1명)</span></p>
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h5><strong>0월 0일(수)</strong> 오늘의 슈퍼딜</h4>
+                                        <ul class="benefits-list">
+                                            <li>
+                                                <!-- 
+                                                    .benefit 3가지 CASE class 추가
+                                                    0. 오픈 30분전 전 CASE: 버튼명 오픈까지 시간 노출
+                                                    1. 마감 (종료)-비당첨 CASE: .soldout-active class 추가(경품소진 Dim 활성)
+                                                    2. 자정-오픈 30분 전 CASE: .dim-active class 추가 (오픈 시간 Dim 활성)
+                                                -->
+                                                
+                                                <!-- 마감 (종료)-당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">9시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/wed_9.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">배스킨라빈스 파인트<span class="count">(45명)</span></p><!-- 090801 -->
+                                                        <!-- 아래 버튼에 당첨 Goods 팝업 이벤트 임시 추가 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 마감 (종료)-비당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">11시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/wed_11.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">BMW 드라이빙센터 바우처<span class="count">(4명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>                     
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 자정-오픈 30분 전 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">13시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/wed_13.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">타이어 50% 할인쿠폰<span class="count">(50명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">15시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/wed_15.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">서울 신라호텔 더 파크뷰 2인 식사권<span class="count">(1명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h5><strong>0월 0일(목)</strong> 오늘의 슈퍼딜</h4>
+                                        <ul class="benefits-list">
+                                            <li>
+                                                <!-- 
+                                                    .benefit 3가지 CASE class 추가
+                                                    0. 오픈 30분전 전 CASE: 버튼명 오픈까지 시간 노출
+                                                    1. 마감 (종료)-비당첨 CASE: .soldout-active class 추가(경품소진 Dim 활성)
+                                                    2. 자정-오픈 30분 전 CASE: .dim-active class 추가 (오픈 시간 Dim 활성)
+                                                -->
+                                                
+                                                <!-- 마감 (종료)-당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">9시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/thu_9.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">스타벅스 커피쿠폰<span class="count">(45명)</span></p><!-- 090801 -->
+                                                        <!-- 아래 버튼에 당첨 Goods 팝업 이벤트 임시 추가 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 마감 (종료)-비당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">11시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/thu_11.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">신세계 상품권 10만원<span class="count">(4명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>                     
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <!-- 자정-오픈 30분 전 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">13시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/thu_13.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">타이어 50% 할인쿠폰<span class="count">(50명)</span></p><!-- 090801 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li>
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">15시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/thu_15.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">닌텐도 스위치<span class="count">(1명)</span></p>
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <h5><strong>0월 0일(금)</strong> 오늘의 슈퍼딜</h4>
+                                        <ul class="benefits-list">
+                                            <li>
+                                                <!-- 
+                                                    .benefit 3가지 CASE class 추가
+                                                    0. 오픈 30분전 전 CASE: 버튼명 오픈까지 시간 노출
+                                                    1. 마감 (종료)-비당첨 CASE: .soldout-active class 추가(경품소진 Dim 활성)
+                                                    2. 자정-오픈 30분 전 CASE: .dim-active class 추가 (오픈 시간 Dim 활성)
+                                                -->
+                                                
+                                                <!-- 마감 (종료)-당첨 -->
+                                                <div class="benefit">
+                                                    <div class="dimmed">
+                                                        <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                            <span class="line-icons close size-28"></span>
+                                                        </button>
+                                                        <span class="copy">9시 슈퍼딜</span>
+                                                    </div>
+                                                    <div class="soldout">
+                                                        <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                    </div>
+                                                    <div class="thumb-img"><img src="pc-static-root/images/event/20210728/fri_9.png" alt="" /></div>
+                                                    <div class="info">
+                                                        <p class="copy">BHC 치킨+콜라 쿠폰<span class="count">(45명)</span></p><!-- 090801 -->
+                                                        <!-- 아래 버튼에 당첨 Goods 팝업 이벤트 임시 추가 -->
+                                                        <button type="button" class="btn-item btn-neutral full-w round">
+                                                            <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                </li>
+                        
+                                                <li>
+                                                    <!-- 마감 (종료)-비당첨 -->
+                                                    <div class="benefit">
+                                                        <div class="dimmed">
+                                                            <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                                <span class="line-icons close size-28"></span>
+                                                            </button>
+                                                            <span class="copy">11시 슈퍼딜</span>
+                                                        </div>
+                                                        <div class="soldout">
+                                                            <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                        </div>
+                                                        <div class="thumb-img"><img src="pc-static-root/images/event/20210728/fri_11.png" alt="" /></div>
+                                                        <div class="info">
+                                                            <p class="copy">BMW 드라이빙센터 바우처<span class="count">(4명)</span></p><!-- 090801 -->
+                                                            <button type="button" class="btn-item btn-neutral full-w round">
+                                                                <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                            </button>
+                                                        </div>                     
+                                                    </div>
+                                                </li>
+                        
+                                                <li>
+                                                    <!-- 자정-오픈 30분 전 -->
+                                                    <div class="benefit">
+                                                        <div class="dimmed">
+                                                            <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                                <span class="line-icons close size-28"></span>
+                                                            </button>
+                                                            <span class="copy">13시 슈퍼딜</span>
+                                                        </div>
+                                                        <div class="soldout">
+                                                            <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                        </div>
+                                                        <div class="thumb-img"><img src="pc-static-root/images/event/20210728/fri_13.png" alt="" /></div>
+                                                        <div class="info">
+                                                            <p class="copy">타이어 50% 할인쿠폰<span class="count">(50명)</span></p><!-- 090801 -->
+                                                            <button type="button" class="btn-item btn-neutral full-w round">
+                                                                <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                        
+                                                <li>
+                                                    <div class="benefit">
+                                                        <div class="dimmed">
+                                                            <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-dimmed-close">
+                                                                <span class="line-icons close size-28"></span>
+                                                            </button>
+                                                            <span class="copy">15시 슈퍼딜</span>
+                                                        </div>
+                                                        <div class="soldout">
+                                                            <img src="pc-static-root/images/event/20210728/icon_soldout.png" style="width: 117px;" alt="" />
+                                                        </div>
+                                                        <div class="thumb-img"><img src="pc-static-root/images/event/20210728/fri_15.png" alt="" /></div>
+                                                        <div class="info">
+                                                            <p class="copy">에어팟 프로<span class="count">(1명)</span></p>
+                                                            <button type="button" class="btn-item btn-neutral full-w round">
+                                                                <p class="trigger-label"><span class="label-txt">경품받기 CLICK</span></p>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                        
+                                        <script>
+                                            $('.btn-dimmed-close').click(function() {
+                                                $(this).parents('.benefit').removeClass('dim-active');
+                                            })
+                                        </script>
+                                        <div class="lagal-check-group">
+                                            <label class="check-item" for="eventPrivacyPolicy">
+                                                <input type="checkbox" id="eventPrivacyPolicy">
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u txt-12">마케팅활용을 위한 수집 및 이용동의</span>
+                                                </div>
+                                            </label>
+                                            <a href="#" class="popup-full txt-14 pd-v-2u txt-primary" data-rel="https://www.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">내용보기</a>
+                                        </div>
+                                        <div class="timedeal-info">
+                                            <ul>
+                                                <!-- 090801 // -->
+                                                <li><strong>· 경품안내 :</strong><p>타이어 50% 할인쿠폰 / BMW 드라이빙센터 바우처 / 서울 신라호텔 1박 숙박권 / 서울 신라호텔 더 파크뷰 2인 식사권 / 신세계 상품권 10만원 / 플레이스테이션 5 / 닌텐도스위치 / 에어팟 프로 / BHC치킨+콜라세트 / 베스킨라빈스 파인트 / 스타벅스 커피쿠폰
+                                                    <em class="txt-primary dp-block">- 매일 자정, 다음 슈퍼딜 라인업 공개! 매일 달라지는 경품을 확인하세요!</em></p>
+                                                </li>
+                                                <!-- // 090801 -->
+
+                                                <li><strong>· 참여방법 :</strong><p>
+                                                    1. 본 이벤트 페이지에서 슈퍼위크 할인쿠폰+슈퍼딜 응모권을 받는다!<br />
+                                                    2. 평일기준 매일 4번씩 진행되는 슈퍼딜에 응모한다! <br />
+                                                    3. 당첨의 기회를 잡는다! (일별 선착순 100명 경품 당첨)<br />
+                                                    <em class="txt-primary dp-block">- 슈퍼위크 스크래치를 통해 쿠폰과 응모권을 받은 후 슈퍼딜에 참여 가능합니다.</em></p></li>
+                                                <li><strong>· 당첨안내 :</strong><p>매주 화요일 이전 주 당첨자 공지사항 발표 (자세한 내용은 하단 유의사항 확인)</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><!-- 0930 -->
+                                <!-- 0930 // -->
+                                <div class="scratch-off pd-h-2u"><img src="pc-static-root/images/event/20210728/img_event1_after.png" alt="" /></div>
+                                <!-- // 0930 -->
+
+
+                            </div>
+                            <div class="event3-section amt-anchor">
+                                
+                                <h3>
+                                    <img src="pc-static-root/images/event/20210728/event2.png" style="width: 138px;" alt="event1">
+                                    <p class="headcopy">슈퍼위크 쿠폰쓰고 제휴카드로 결제하면</p>
+                                    <strong class="subcopy">주유권 4만원 증정!</strong>
+                                    <p class="txt-20 txt-primary mg-t-1u">(벤투스 4개 구매시에만 해당)</p>
+                                </h3>
+                                <div class="event-scratch-wrap">
+                                    <p class="copy">아직 쿠폰을 못받으셨다면 지금 바로 받으세요!</p>
+                                    <div class="event-scratch">
+                                        <img src="pc-static-root/images/event/20210728/bg_scratch_outter.png" alt="" />
+                                    </div>
+                                    <div class="scratch-button">
+                                        <button type="button" class="btn-item btn-neutral round" onclick="callPopup.hktLottery();" >
+                                            <span class="label-txt"><span class="line-icons arrow-right size-22"></span>슈퍼위크 할인쿠폰 받기</span>
+                                        </button>
+                                    </div>
+                                </div>
+                
+                
+                
+                                <div class="cta-link-wrap">
+                                    <h4 class="headcopy txt-24 txt-center">
+                                        슈퍼위크 행사상품
+                                    </h4>
+                                    <div class="benefit-tire-wrap">
+                                        <div class="event-benefit-case">
+                                            <div class="tire-benefit">
+                                                <p class="txt-16">행사타이어 <span class="txt-primary">18인치 이상</span> / <span class="txt-primary">4개 구매시</span><span class="icon-arrow"></span></p>
+                                                <p class="txt-18"><strong>25%</strong> 쿠폰사용 가능</p>
+                                            </div>
+                                            <div class="tire-benefit mg-t-2u">
+                                                <p class="txt-16">행사타이어 <span class="txt-primary">전 사이즈</span> / <span class="txt-primary">2~4개 구매 시</span><span class="icon-arrow"></span></p>
+                                                <p class="txt-18"><strong>20%</strong> 쿠폰사용 가능</p>
+                                            </div>
+                                        </div>
+                                        <ul class="event-benefit-info">
+                                            <li>
+                                                <div class="tire-visual"><img src="pc-static-root/images/event/20210728/tire01.png" alt=""></div>
+                                                <a href="/customer-service/line-up/brand.do" class="btn-item full-w btn-neutral btn-ol round mg-v-3u"><!-- 090801 -->
+                                                    <span class="label-txt">벤투스 자세히보기</span>
+                                                </a>
+                                            </li>
+                                            <li class="mg-h-2u">
+                                                <div class="tire-visual"><img src="pc-static-root/images/event/20210728/tire02.png" alt=""></div>
+                                                <a href="/customer-service/line-up/brand.do#kinergy" class="btn-item full-w btn-neutral btn-ol round mg-v-3u"><!-- 090801 -->
+                                                    <span class="label-txt">키너지 자세히보기</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <div class="tire-visual"><img src="pc-static-root/images/event/20210728/tire03.png" alt=""></div>
+                                                <a href="/customer-service/line-up/brand.do#dynapro" class="btn-item full-w btn-neutral btn-ol round mg-v-3u"><!-- 090801 -->
+                                                    <span class="label-txt">다이나프로 자세히보기</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-benefit-info">
+                                        <img src="pc-static-root/images/event/20210728/info_card_benefit.png" alt="" />
+                                    </div>
+                                </div>
+                
+                                <div class="event-mytire">
+                                    <p class="noti">내 차에 맞는 행사상품 찾기</p>
+                                    <div class="carnumber-lookup">
+                                        <div class="form-control form-control-inline inline-s">
+                                            <label>차량번호</label>
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" placeholder="예) 12가2345" style="padding-right: 6px;">
+                                                <div class="tools">
+                                                    <button class="clear on"><span class="line-icons close-circle"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="form-control form-control-inline inline-s mg-t-2u">
+                                            <label>소유주명</label>
+                                            <div class="input-group">
+                                                <input type="text" class="input-box" placeholder="예) 김한국" style="padding-right: 6px;">
+                                                <div class="tools">
+                                                    <button class="clear on"><span class="line-icons close-circle"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-item btn-neutral round full-w mg-t-5u">
+                                            <span class="label-txt">차량번호 조회하고 행사 타이어 찾기</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mytire-result-wrap">
+                                    <p class="txt-20 line-30 mg-b-2u txt-center">내가 선택한 타이어</p>
+                                    <div class="carnumber-lookup">
+                                        <div class="tire-info">
+                                            <div class="name"><span class="label icon-tire"></span>벤투스 프리미엄 컴포트 (Ventus S2 AS)</div>
+                                            <div class="size">
+                                                <span class="label label-txt">전륜</span>245/45R18
+                                                <span class="txt-primary"><span class="line-icons close size-20"></span> 2개</span><!-- 0930 -->
+                                            </div>
+                                        </div>
+                                        <div class="tire-info">
+                                            <div class="name"><span class="label icon-tire"></span>벤투스 프리미엄 컴포트 (Ventus S2 AS)</div>
+                                            <div class="size">
+                                                <span class="label label-txt">전륜</span>245/45R18
+                                                <span class="txt-primary"><span class="line-icons close size-20"></span> 2개</span><!-- 0930 -->
+                                            </div>
+                                        </div>
+                                        <div class="re-mytire-button">
+                                            <button type="button" class="btn-item btn-neutral filet full-w btn-inv">
+                                                <span class="label-txt">재검색</span>
+                                                <span class="line-icons refresh size-24"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="reservation-button">
+                                        <button type="button" class="btn-item btn-neutral round">
+                                            <span class="label-txt">온라인에서 예약/결제</span>
+                                        </button>
+                                        <button type="button" class="btn-item btn-neutral round">
+                                            <span class="label-txt">매장예약/현장결제</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="store-confirm-button">
+                                    <button type="button" class="btn-item btn-neutral btn-ol full-w round">
+                                        <span class="label-txt">슈퍼위크 매장예약내역 확인하기</span>
+                                    </button>
+                                    <p class="noti">온라인 주문 고객은 <a href="/mypage/tstation/order-history" class="txt-primary">마이페이지 &gt; 주문내역에서</a> 예약 정보를 확인하실 수 있습니다.</p>
+                                </div>
+                            </div>
+                
+                            <div class="event4-section amt-anchor">
+                                <div class="event-reiview">
+                                    <h3>
+                                        <img src="pc-static-root/images/event/20210728/event3.png" style="width: 138px;" alt="event1">
+                                        <p class="headcopy">타이어 <strong>구매후기</strong> 이벤트</p>
+                                        <p class="subcopy">슈퍼위크 쿠폰으로 타이어 교체하셨나요?<strong class="dp-block">후기 이벤트 참여하고 선물도 챙기세요!</strong></p>
+                                    </h3>
+                                    <!-- 090801 // -->
+                                    <ul class="reiview-benefit-list">
+                                        <li>
+                                            <div class="card-review event1">
+                                                <div class="copy">
+                                                    <span class="benfint-sort dp-block">네이버 MY 플레이스</span>
+                                                    영수증 리뷰하면
+                                                    <strong>스타벅스 커피 기프티콘</strong>
+                                                    <em>100% 증정!</em>
+                                                    <p class="txt-16 joinbenefit mg-t-5u">(매장 직접구매 고객만 참여 가능)</p>
+                                                    <p class="txt-14 txt-neutral1">·장착완료 후 문자로 참여링크를 발송해 드립니다.</p>
+                                                </div>
+                                                <div class="thumb"><img src="pc-static-root/images/event/20210728/benefit_4_1.png" alt="" /></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card-review event2">
+                                                <div class="copy">
+                                                    <span class="benfint-sort dp-block">SNS 후기 포스팅</span>
+                                                    타이어 장착 후
+                                                    <strong>SNS에 리뷰 남기면</strong>
+                                                    <em>경품 추첨 증정!</em>
+                                                    <!-- 0930 삭제 
+                                                        p class="txt-12 joinbenefit mg-t-1u">(참여만해도 스타벅스 커피쿠폰 100% 지급)</p
+                                                    -->
+                                                    <!-- 0930 // -->
+                                                    <button type="button" class="btn-item btn-m btn-neutral full-w round"  onclick="window.open('http://naver.me/FJHUlzX7')">
+                                                        <span class="label-txt txt-14">자세히 보기</span>
+                                                    </button>
+                                                    <!-- // 0930 -->
+                                                </div>
+                                                <div class="thumb"><img src="pc-static-root/images/event/20210728/benefit_4_2.png" alt="" /></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="card-review event3">
+                                                <div class="copy">
+                                                    <span class="benfint-sort dp-block">장착후기 설문조사</span>
+                                                    타이어 장착 후
+                                                    <strong>설문조사 참여하면</strong>
+                                                    <em>경품 추첨 증정!</em>
+                                                    <p class="txt-14 txt-neutral1 mg-t-9u">·장착완료 후 문자로 참여링크를 발송해 드립니다.</p>
+                                                </div>
+                                                <div class="thumb"><img src="pc-static-root/images/event/20210728/benefit_4_3.png" alt="" /></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- // 090801 -->
+                                </div>
+                            </div>
+                            <div class="legal-section">
+                                <!-- 090801 // -->
+                                <div class="bg-light1 pd-h-5u pd-v-6u">
+                                    <h4 class="txt-20 txt-w500">유의사항</h4>
+                                    <h5 class="txt-14 txt-w500 mg-t-4u">#슈퍼딜 유의사항</h5>
+                                    <ul class="mg-t-2u">
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 슈퍼딜은 평일(월~금) 기준 일 4회 진행됩니다. (9시,11시, 13시, 15시)</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 슈퍼딜 참여를 위해서는 경품당첨 시 지급을 위해 필요한 마케팅활용을 위한 정보 수집 및 활용 동의가 필수이며, 본 이벤트 페이지 내 슈퍼위크 스크래치 참여를 통해 슈퍼위크 할인쿠폰 2종(25%, 20%) 및 슈퍼딜 응모권을 발급받아야 합니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 경품은 슈퍼딜 오픈 시 각 경품별 지급수량에 따라 선착순으로 당첨되며, 당첨된 경우 알림톡으로 안내문자가 발송됩니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 보다 많은 고객님들께 당첨의 기회를 드리기 위해, 경품 누적 당첨 수에 제한이 있을 수 있으며, 부정한 방법으로 응모한 사실이 확인된 경우 당첨 이후에도 취소처리될 수 있습니다. </li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 당첨경품 지급 시점에 탈퇴하거나 경품발송을 위한 마케팅정보활용 수집 및 동의 철회 시 최종 지급 대상에서 제외될 수 있습니다. </li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 당첨경품 지급 : 이전 주 당첨자(월~금)에 한해 차주 화요일 티스테이션닷컴 공지사항에 발표, 발표일로부터 최대 일주일 내에 지급됩니다. (모바일 쿠폰, 타이어 50% 할인쿠폰의 경우 수요일 오후 일괄 발송되며, 바우처 및 수령주소지 정보가 필요한 상품의 경우 개별 유선연락)</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 단, 9월 3주차 (15~17일) 당첨자의 경우 추석연휴가 지난 9월 5주차에 지급됩니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 일부 경품 지급 시 제세공과금(22%)이 부과될 수 있습니다</li>
+                                    </ul>
+
+                                    <h5 class="txt-14 txt-w500 mg-t-4u">#슈퍼위크 할인쿠폰 지급 & 사용 안내</h5>
+                                    <ul class="mg-t-2u">
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 본 이벤트 페이지 슈퍼위크 쿠폰긁기 참여를 통해 1인(1계정) 기준 1회 할인쿠폰 2종 (25%, 20%)을 발급해 드립니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 슈퍼위크 쿠폰은 발급완료 시 카카오 알림톡(문자)로 자세한 안내와 함께 마이페이지 > 쿠폰함에 자동등록됩니다. (알림톡/문자 미수신 시 수신차단여부 확인 필요)</li>
+                                        <li class="mg-t-1u txt-14 txt-w500 txt-neutral2">· [슈퍼위크 25% 할인쿠폰]</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 적용상품 : 벤투스/키너지/다이나프로 18인치 이상</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 사용조건 : 4개 구매 시 </li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 사용기한 : 발급일 ~ 2021.11.07.(일)</li>
+                                        <li class="mg-t-1u txt-14 txt-w500 txt-neutral2">· [슈퍼위크 20% 할인쿠폰]</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 적용상품 : 벤투스/키너지/다이나프로 전 사이즈</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 사용조건 : 2~4개 구매 시 </li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 사용기한 : 발급일 ~ 2021.11.07.(일)</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 사용매장 : 전국 슈퍼위크 행사매장에 한하여 사용 가능 (티스테이션, 더타이어샵, 일반대리점, 티스테이션닷컴) </li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 쿠폰 선물 가능 (재선물은 불가)</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 쿠폰사용 시 당사 공장도가 기준에서 상품할인 적용</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 기타 할인쿠폰, 할인혜택, 스마트페이 결제 시 중복 적용 불가</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">- 타이어는 무료장착이며, 정비 및 얼라인먼트 추가비용은 별도 발생</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 슈퍼위크 할인쿠폰의 제 3자 대상 재판매 행위는 엄격하게 금지되며, 재판매 목적 또는 이와 유사한 목적의 거래 행위가 확인된 경우 전자상거래법 및 개인정보 보호법에 의거, 법적 불이익을 받을 수 있습니다.</li>
+                                    </ul>
+
+                                    <h5 class="txt-14 txt-w500 mg-t-4u">#제휴카드 이벤트 유의사항</h5>
+                                    <ul class="mg-t-2u">
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 카드사 결제혜택 제외 : 페이코, 카카오페이 등 간편결제/법인(기업)카드/선불,직불,카카오카드</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 매장에서 장착완료 처리 후 이전 주 일요일까지 카드 승인된 건에 한하여, 매주 수요일 오후 개인정보 등록된 연락처로 모바일 주유권(기프티콘) 형태로 발송됩니다.</li>
+                                        <!-- 1020 // -->
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 계약을 체결하기 전에 상품설명서와 약관을 확인하시기 바랍니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2"><strong>상환능력에 비해 신용카드 사용액이 과도할 경우, 귀하의 개인신용평점이 하락할 수 있습니다. 개인신용평점 하락시 금융거래와 관련된 불이익이 발생할 수 있습니다. 일정기간 원리금을 연체할 경우, 모든 원리금을 <br />변제할 의무가 발생할 수 있습니다.</strong></li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">신용카드 발급이 부적정한 경우(개인신용평점 낮음, 연체금 보유 등) 카드발급이 제한될 수 있습니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">카드이용대금과 이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환합니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">금융소비자는 금소법 제19조제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.</li>
+                                        <li class="mg-t-3u txt-14 txt-neutral2">준법감시인심의필 제211014-03476-HPM호(2021.10.14)</li>
+                                        <!-- // 1020 -->
+                                    </ul>
+
+                                    <h5 class="txt-14 txt-w500 mg-t-4u">#구매 후기 이벤트 유의사항</h5>
+                                    <ul class="mg-t-2u">
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 이벤트 기간 내 슈퍼위크 할인쿠폰을 적용하여 타이어 구매, 장착완료 후 참여할 수 있는 이벤트입니다. </li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 설문조사의 경우 매장에서 장착완료 처리 후 24시간 내 알림톡으로 발송되는 서비스완료 알림톡에 안내된 url을 통해 참여하실 수 있습니다.  </li>
+                                    </ul>
+
+                                    <h5 class="txt-14 txt-w500 mg-t-4u">#기타 유의사항</h5>
+                                    <ul class="mg-t-2u">
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 일부 행사상품은 당사 생산계획에 따라 구매 시점에 재고가 부족할 수 있습니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 티스테이션, 더타이어샵, 일반대리점 매장에서 구매 시 자세한 사항은 매장에 직접 문의해 주세요.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 이벤트 진행일정 및 혜택은 내부 사정에 따라 별도 고지 없이 변경될 수 있습니다.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 연락처 오류로 인한 경품 미수취 시 재발송이 불가하니, 반드시 사전에 개인정보가 맞는지 확인해 주세요.</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 일부 사은품의 경우 외부업체에 위탁 발송으로 진행됩니다. (실물 사은품의 경우 수령 이후 불량품에 대해서만 교환이 가능하며, 구매 사은품 수령 이후 주문을 취소하였을 경우, 기지급된 사은품은 회수되거나 이미 사용하였을 경우 해당 금액만큼 차감 후 환불됩니다.) </li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 사은품 위탁발송을 위한 수집 정보 : 이름, 연락처, 주소 (발송 후 12개월 내 개인정보 안전하게 파기)</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 사은품 위탁발송 업체 정보 : </li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">· 인터파크 비즈마켓 (1661-8859)</li>
+                                        <li class="mg-l-1u txt-14 txt-neutral2">· 케이티알파 (1588-6474)</li>
+                                        <li class="mg-t-1u txt-14 txt-neutral2">- 이벤트 관련 자세한 내용은 티스테이션 고객센터로 문의해 주세요. (080-022-8272)</li>
+                                    </ul>
+                                </div>
+                                <!-- // 090801 -->
+                            </div>
+                
+                        
+                <script type="text/javascript" src="pc-static-root/js/common/wScratchPad.min.js"></script>
+                <script type="text/javascript">
+                var bubbleClear = 1; // 복권 참여 여부 0: 미참여, 1: 참여
+                var loginCheckLottery = true; // 로그인 체크 
+                var scratchEventEnd = false; // 0930 event1 true 종료, false 진행
+                var callPopup = {
+                    hktLottery: function () {
+                        $.Tstation.popup().open({
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: hktLotteryContent, // 팝업을 바로 띄우고 싶을때
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 0,
+                                vertical: 0,
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            modalSize: 'LARGE',
+                            modalAction: {
+                                isNoBoundary: false,
+                            }
+                        })
+                        
+                        // 비로그인
+                        if(!loginCheckLottery) {
+                            console.log('loginCheckLottery :' + loginCheckLottery);
+                            $('.hkt-lottery-content').wScratchPad({
+                                fg: 'pc-static-root/images/event/20210728/bg_scratch.png',
+                                'cursor': 'url("pc-static-root/images/event/20210728/coin2.png") 40 40, default',
+                            });
+                            $('.hkt-lottery-content').wScratchPad('enable', false);
+                            $('.hkt-lottery-content').on('mousedown', function() {
+                                alert('로그인')
+                            })
+                        }
+
+                        //로그인
+                        if(loginCheckLottery) {     
+                            console.log('loginCheckLottery :' + loginCheckLottery);       
+                            if(bubbleClear === 0) {
+                                //복권 참여
+                                /* 0930 // */
+                                var scratchPlayImg = 'pc-static-root/images/event/20210728/bg_scratch_inner.png'
+                                var scratchEndImg = 'pc-static-root/images/event/20210728/bg_scratch_inner_after.png';
+
+                                if(scratchEventEnd) {
+                                    var scratchImg = scratchEndImg;
+                                    console.log(scratchImg)
+                                } else {
+                                    var scratchImg = scratchPlayImg;
+                                }
+                                /* // 0930 */
+
+                                $('.hkt-lottery-content').wScratchPad({
+                                    size        : 60,          // The size of the brush/scratch.    
+                                    bg: scratchImg,
+                                    fg: 'pc-static-root/images/event/20210728/bg_scratch.png',
+                                    'cursor': 'url("pc-static-root/images/event/20210728/coin2.png") 40 40, default',
+                                    scratchMove: function (e, percent) {                
+                                        if (percent > 50) {
+                                            this.clear();
+                                            finalImg(); // 0930
+                                            
+                                            if( bubbleClear === 0 ) {
+                                                bubbleClear += 1;
+                                                alert('축하');
+                                                // $.Tstation.popup().close();
+                                                $('.hkt-lottery-info').find('img').remove();
+                                            }
+                                        } 
+                                    }
+                                });
+                            } else {
+                                //복권 미참여
+                                finalImg(); // 0930
+                            }
+                        }
+                        
+                        /* 0930 // */
+                        function finalImg() {
+                            if(scratchEventEnd) {
+                                $('.hkt-lottery-content').addClass('active-dim scratch-off');
+                            } else {
+                                $('.hkt-lottery-content').addClass('active-dim');
+                            }
+                        }
+                        /* // 0930 */
+
+                        $('.hkt-lottery-panner').parents('.modal-pannel').css({
+                            "border":'0'
+                        })
+                        scratchShowHide(); /* 0930 */
+                    },
+                }
+                
+                $(window).load(function() {
+                    callPopup.hktLottery();
+                })
+                
+                /* 0930 event1 show/hide// */
+                scratchShowHide();
+                function scratchShowHide() {
+                    if(scratchEventEnd) {
+                        $('.scratch-play').hide();
+                    } else {
+                        $('.scratch-off').hide();
+                    }
+                }
+                /* // 0930 */
+                
+                var hktLotteryContent = `<div class="hkt-lottery-panner">
+                    <div class="hero">
+                        <img src="pc-static-root/images/event/20210728/logo.png" style="width: 182px;" alt="event1" />
+                        <h4>
+                            대한민국 1등, 한국타이어
+                            <p><strong>슈퍼위크를 긁으면 혜택이 보여요!</strong></p>
+                        </h4>
+                    </div>
+                    <div class="hkt-lottery-copy">
+                        <!-- Event1 종료시 hide -->
+                        <!-- 0930 // -->
+                        <div class="scratch-play">
+                            <p><strong>25%, 20% 타이어 할인쿠폰</strong>과</p>
+                            <p><strong class="txt-primary">슈퍼딜 응모기회</strong> 드려요!</p>
+                        </div>
+                        <!-- // 0930 -->
+
+                        <!-- 0930 // -->
+                        <!-- Event1 종료시 show -->
+                        <div class="scratch-off">
+                            <p><strong class="txt-primary">슈퍼위크 25%, 20% 할인쿠폰</strong> 2종을 드려요!</p>
+                        </div>
+                        <!-- // 0930 -->
+                    </div>
+                    <div class="hkt-lottery-content"></div>
+                    <div class="hkt-lottery-info">
+                        <img src="pc-static-root/images/event/20210728/img_lottery_herocopy.png" style="width: 333px;" alt="슈퍼위크 쿠폰을 긁어주세요" />
+                    </div>
+                    <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                        <span class="line-icons close size-28"></span>
+                    </button>
+                </div>`
+                
+                </script>
+                <!-- // 0830 -->
+                
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="btn01">
+                <a href="https://www.tstation.com/promotion/event-list" class="btnM2 btnS02">목록으로</a>
+            </div>
+        </div>
+        <!-- //03. 이벤트 상세  -->
+
+        <!-- #contents -->
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'FAQ' }) %>
+<div id="container" class="cscenter">
+    <!-- 01.search -->
+    <form action="/customer-service/faqSearch.do" method="post" id="faqSearchForm">
+        <div class="faq_search">
+            <div class="search_box">
+                <input title="질문 입력" type="text" class="ip_txt01 w100p" id="inqTitNm" name="inqTitNm" placeholder="질문을 입력해 주세요." />
+                <button class="btn" type="button" id="faqSearch">검색</button>
+            </div>
+        </div>
+    </form>
+    <!-- 01.search -->
+    <!-- 02.menu -->
+    <div class="faq_menu">
+        <ul class="cs_menu01">
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=10">상품 선택</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=20">장착서비스</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=30">주문/결제</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=40">취소/환불/교환</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=60">회원</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=90">기타</a></li>
+            <!-- TODO: 멤버십 항목 추가 -->
+            <li class="on"><a href="#">멤버십</a></li>
+        </ul>
+    </div>
+    <!-- 02.menu -->
+    <!-- 03.list -->
+    <div class="faq_list">
+        <dl id="accordion" class="list">
+
+            <dt><a href="#">Questions</a></dt>
+            <dd style="display: none;">Answers</dd>
+
+            <dt><a href="#">Questions</a></dt>
+            <dd style="display: none;">Answers</dd>
+
+            <dt><a href="#">Questions</a></dt>
+            <dd style="display: none;">Answers</dd>
+
+        </dl>
+
+        <ol class="notice_01">
+            <li>FAQ에서 원하시는 답변을 찾으시지 못하였다면, 1:1 고객 상담을 이용해 주세요.</li>
+        </ol>
+    </div>
+    <!-- 03.list -->
+    <!-- 04.btn -->
+    <div class="btn02">
+        <a href="https://m.tstation.com/customer-service/qna.do" class="btnB btnS02">1:1 고객 상담 </a>
+    </div>
+    <!-- 04.btn -->
+</div>

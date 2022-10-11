@@ -1,0 +1,57 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        한국타이어 X PRO-SPECS
+            <span class="date">이벤트 기간 : 99.99.99  ~ 99.99.99</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <div class="event_detail">
+        <link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+
+        <!-- Prospecs event //  -->
+
+<style>
+.prospecs-event {position:relative;}
+.prospecs-event .img-map-wrap {max-width:750px; width:100%; font-size: 0; margin: auto; position:relative;}
+.prospecs-event .img-map-link {display: block; position: absolute; z-index: 1; border-radius: 44px;} /* 20220128 */
+.prospecs-event .img-map-link.link-1 {left: 31.5%;top: 34.55%;width: 59.1%;height: 0.8%;}
+.prospecs-event .img-map-link.link-2 {left: 31.5%;top: 39.65%;width: 59.1%;height: 0.8%;}
+.prospecs-event .img-map-link.link-3 {left: 36.5%;top: 43.15%;width: 51.1%;height: 0.8%;}
+.prospecs-event .img-map-link.link-4 {left: 5.3%;top: 48.58%;width: 89.3%;height: 1.42%; border-radius: 8px;}
+.prospecs-event .img-map-link.link-5 {left: 5.5%;top: 62.7%;width: 29.1%;height: 0.9%;}
+.prospecs-event .img-map-link.link-6 {left: 5.5%;top: 68.6%;width: 29.1%;height: 0.9%;}
+</style>
+
+        <div class="prospecs-event">
+            <div class="img-map-wrap">
+                <img src="mc-static-root/images/event/20220124/img_promotion_details.png" alt="" />
+                <a href="/tire/product/kinergy_4s_2?ptrnCd=H750&goodsMdclCd=01&movePath=pattern" class="img-map-link link-1"><span class="blind">승용타이어 - 키너지 올 웨더 상품 자세히보기</span></a>
+                <a href="/tire/product/kinergy_4s2_x?ptrnCd=H750A&goodsMdclCd=01&movePath=pattern" class="img-map-link link-2"><span class="blind">SUV타이어 - 키너지 올 웨더 상품 자세히보기</span></a>
+                <!-- 20220128 // -->
+                <a target="_blank" href="https://m.lsnmall.com/planning.do?cmd=getPlanningDetail&datacls=5006&utm_source=etc&utm_medium=hk_co_m&utm_term=220124&utm_campaign=paid" class="img-map-link link-3"><span class="blind">콜라보 운동화 자세히 보기</span></a>
+                <a href="" class="img-map-link link-4"><span class="blind">구매고객 프로스펙스 블레이드 HK 응모하기</span></a>
+                <a target="_blank" href="https://youtu.be/KzziGmltY3w" class="img-map-link link-5"><span class="blind">티스테이션 유튜브 이벤트 자세히보기</span></a>
+                <a target="_blank" href="https://www.facebook.com/tstation.korea/posts/1266187897206840" class="img-map-link link-6"><span class="blind">티스테이션 페이스북 이벤트 자세히보기</span></a>
+                <!-- // 20220128 -->
+
+            </div>
+        </div>
+        <!-- // Prospecs event -->
+
+    </div>
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+    <!-- //event list -->
+
+</div>

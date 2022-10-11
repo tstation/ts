@@ -1,0 +1,135 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '리마인딩 알림' }) %>
+<main id="main">
+    <div class="container">
+        <section class="pd-h-5u pd-v-4u bg-fff">
+            <p class="txt-16">티스테이션 멤버십 <span class="txt-w500">리마인딩 알림으로 내 차를 스마트하게 관리</span>하세요.</p>
+        </section>
+
+        <section class="pd-h-5u pd-v-1u bg-light1 border-b border-light">
+            <div class="container txt-right txt-0">
+                <label class="toggle-switch" style="right:-6px;">
+                    <input type="checkbox" checked>
+                    <span class="label-txt mg-h-1u">알림 수신 여부</span>
+                    <div class="switch-track">
+                        <div class="switch">
+                            <div class="switch-handle"></div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <section class="">
+            <ul class="membership-reminding-list">
+                <li>
+                    <a href="">
+                        <div class="icon-holder">
+                            <span class="line-icons coupon size-24"></span>
+                        </div>
+
+                        <div class="container">
+                            <p class="d-day"></p>
+                            <h4>멤버십 가입 축하쿠폰이 발급되었습니다.</h4>
+                            <p class="detail">멤버십 쿠폰함을 확인하세요.</p>
+                            <p class="date">2020.08.25</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <div class="icon-holder">
+                            <span class="line-icons coupon size-24"></span>
+                        </div>
+
+                        <div class="container">
+                            <p class="d-day">D-7</p>
+                            <h4>무상 정기점검 쿠폰 사용 기한이 7일 남았습니다.</h4>
+                            <p class="detail">멤버십 쿠폰함을 확인하세요.</p>
+                            <p class="date">2020.08.02</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <div class="icon-holder">
+                            <span class="line-icons wrench size-24"></span>
+                        </div>
+
+                        <div class="container">
+                            <p class="d-day">D-30</p>
+                            <h4><em class="car-number">12너 1234</em>타이어 교환 시점입니다.</h4>
+                            <p class="detail">안전운전을 위해24개월 기준 타이어 교환을 권장합니다.</p>
+                            <p class="date">2020.07.16</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <div class="icon-holder">
+                            <span class="line-icons wrench size-24"></span>
+                        </div>
+
+                        <div class="container">
+                            <p class="d-day">D-7</p>
+                            <h4><em class="car-number">89너 2345</em>엔진오일 교환 시점입니다.</h4>
+                            <p class="detail">엔진오일 교체기한이 7일 남았습니다.
+                                안전을 위하여 티스테이션 방문 후 점검/교체 하세요.</p>
+                            <p class="date">2020.06.22</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <!-- 읽은 메시지 비활성화 a태그에 'checked'클래스 추가(어트리뷰트 아님) -->
+                    <a href="" class="checked">
+                        <div class="icon-holder">
+                            <span class="line-icons wrench size-24"></span>
+                        </div>
+
+                        <div class="container">
+                            <p class="d-day">D-42</p>
+                            <h4><em class="car-number">12너 1234</em>엔진오일 교환 시점입니다.</h4>
+                            <p class="detail">엔진오일은  1년마다 교환을 권장합니다.
+                                자세한 내용은 티스테이션 상담톡으로 문의해주세요.</p>
+                            <p class="date">2020.06.13</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <div class="icon-holder">
+                            <span class="line-icons wrench size-24"></span>
+                        </div>
+
+                        <div class="container">
+                            <p class="d-day">D-2</p>
+                            <h4><em class="car-number">12너 1234</em>엔진오일 교환 시점입니다. 여러줄 엔진오일 교환 시점입니다. 여러줄</h4>
+                            <p class="detail">엔진오일은  1년마다 교환을 권장합니다.
+                                자세한 내용은 티스테이션 상담톡으로 문의해주세요.</p>
+                            <p class="date">2020.06.13</p>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="container pd-h-5u mg-t-2u">
+                <p class="txt-12 txt-neutral3 txt-right">* 발송된 알림은 12개월이후 자동 삭제됩니다.</p>
+            </div>
+        </section>
+
+        <div class="container txt-center mg-t-5u">
+            <button type="button" class="btn-item btn-neutral btn-ol round w-150 btn-more">
+                <span class="label-txt">더보기</span>
+            </button>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,282 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="deal-store">
+
+    <div class="container">
+        <div class="guardrail">
+            <h2 class="page-title">티스테이션 TV</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="guardrail">
+            <section class="section-youtube">
+                <div id="youtube-player"></div>
+                <script>
+                    /**
+                     * YOU TUBE API - CREATE
+                     */
+                        // create script
+                    var tag = document.createElement('script')
+                    tag.src = 'https://www.youtube.com/iframe_api'
+                    var firstScriptTag = document.getElementsByTagName('script')[0]
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    // create player
+                    var player
+                    function onYouTubeIframeAPIReady() {
+                        player = new YT.Player('youtube-player', {
+                            videoId: 'kXxtFFeLQmo', // https://www.youtube.com/embed/VIDEO_ID << 어드민에서 등록한 url 에서 VIDEO_ID를 추출하세요.
+                            events: {
+                                'onReady': onPlayerReady
+                            }
+                        })
+                    }
+
+                    // on ready hook fire
+                    function onPlayerReady(event) {
+                        // 자동 재생을 하려면 음소거 필수
+                        event.target.mute();
+                        event.target.playVideo();
+                    }
+
+                    // 동영상 소유자가 다른 웹사이트에서 재생할 수 없도록 설정한 경우 소유자 계정에서
+                    // 'https://m.tstation.com', 'https://www.tstation.com' allow 되어야 합니다.
+                </script>
+            </section>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="guardrail">
+            <section class="section-youtube-detail">
+                <div class="title-wrap">
+                    <!-- 0820 // -->
+                    <h4 class="title">
+                        [현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다 | [EP.1]
+                        <span class="dp-block txt-14">2021. 8. 10.</span>
+                    </h4>
+                    <button class="btn-contents-toggle" onclick="onHandleContentsToggle(this)">
+                        <span class="icon line-icons chev-down size-32"></span>
+                    </button>
+                    <script>
+                        function onHandleContentsToggle(el) {
+                            var button = el
+                            var contents = document.getElementById('toggle-contents')
+
+                            $(button).toggleClass('on')
+                            $(contents).toggleClass('on')
+                        }
+                    </script>
+                    <!-- // 0820 -->
+                </div>
+                <!-- 0820 // -->
+                <div id="toggle-contents" class="contents-wrap">
+                    <button class="btn-item btn-neutral round btn-ol youtube-share">
+                        <span class="line-icons share size-30"></span>
+                        <span class="label-txt">공유하기</span>
+                    </button>
+                    <div>
+                        <!-- admin html editor contents import -->
+                        <p>차가 있는 곳엔 타이어가 있고,<br />타이어가 있는 곳에 티스테이션이 간다!<br />드디어 현타꿀팁 시즌 2 오픈!!</p>
+                        <br />
+                        <p>현명하게 타이어를 구매하는 꿀팁을 전달드렸던<br />시즌1에서 업그레이드해 시즌2에서는 시민분들이 있는<br />현장에 직접 찾아 뵐 예정인데요!</p>
+                    </div>
+                </div>
+                <!-- // 0820 -->
+                <div class="keywords">
+                    <span class="keyword">현타꿀팁</span>
+                    <span class="keyword">타이어펑크</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section-swiper-card border-top">
+            <!-- 0820 // -->
+            <div class="title-wrap title-sort">
+                <div class="guardrail">
+                    <div class="list-guide-bar deal-headline-wrap">
+                        <h4 class="title">다른 <span class="txt-primary">현·타·꿀·팁</span> 영상</h4>
+                        <div class="tools tab-item tab-item-no-border tab-item-light no-sticky on-layer size-s sort-item">
+                            <a class="on" value="2">최신순</a>
+                            <a class="" value="1">오래된 순</a>
+                            <div class="indicator" style="width: 79px; left: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 0820 -->
+            <div class="swiper-wrap">
+                <div class="guardrail">
+                    <div class="swiper-container tam-swiper type-first">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article
+                                    class="ts-tv-card"
+                                    data-link-type="OUT"
+                                    data-link-url="https://www.youtube.com/user/hankooktirekorea1"
+                                >
+                                    <div class="thumb-area">
+                                        <div class="thumb" style="background-image: url('https://blahblahblah.co.kr')"></div>
+                                    </div>
+                                    <div class="description">
+                                        <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                    </div>
+                                    <div class="keywords">
+                                        <span class="keyword keyword-sm">현타꿀팁시즌1</span>
+                                        <span class="keyword keyword-sm">타이어펑크</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article
+                                    class="ts-tv-card"
+                                    data-link-type="IN"
+                                    data-link-url="./tam-tstation_tv-detail.html?id=10000"
+                                >
+                                    <div class="thumb-area">
+                                        <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                    </div>
+                                    <div class="description">
+                                        <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                    </div>
+                                    <div class="keywords">
+                                        <span class="keyword keyword-sm">현타꿀팁시즌1</span>
+                                        <span class="keyword keyword-sm">타이어휠</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article
+                                    class="ts-tv-card"
+                                    data-link-type="IN"
+                                    data-link-url="./tam-tstation_tv-detail.html?id=10001"
+                                >
+                                    <div class="thumb-area">
+                                        <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                    </div>
+                                    <div class="description">
+                                        <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                    </div>
+                                    <div class="keywords">
+                                        <span class="keyword keyword-sm">현타꿀팁시즌1</span>
+                                        <span class="keyword keyword-sm">타이어휠</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article
+                                    class="ts-tv-card"
+                                    data-link-type="IN"
+                                    data-link-url="./tam-tstation_tv-detail.html?id=10002"
+                                >
+                                    <div class="thumb-area">
+                                        <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                    </div>
+                                    <div class="description">
+                                        <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                    </div>
+                                    <div class="keywords">
+                                        <span class="keyword keyword-sm">현타꿀팁시즌1</span>
+                                        <span class="keyword keyword-sm">타이어휠</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article
+                                    class="ts-tv-card"
+                                    data-link-type="IN"
+                                    data-link-url="./tam-tstation_tv-detail.html?id=10003"
+                                >
+                                    <div class="thumb-area">
+                                        <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                    </div>
+                                    <div class="description">
+                                        <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                    </div>
+                                    <div class="keywords">
+                                        <span class="keyword keyword-sm">현타꿀팁시즌1</span>
+                                        <span class="keyword keyword-sm">타이어휠</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article
+                                    class="ts-tv-card"
+                                    data-link-type="IN"
+                                    data-link-url="./tam-tstation_tv-detail.html?id=10004"
+                                >
+                                    <div class="thumb-area">
+                                        <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                    </div>
+                                    <div class="description">
+                                        <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                    </div>
+                                    <div class="keywords">
+                                        <span class="keyword keyword-sm">현타꿀팁시즌1</span>
+                                        <span class="keyword keyword-sm">타이어휠</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-next type-first"></div>
+                    <div class="swiper-button-prev type-first"></div>
+
+                    <script>
+                        /**
+                         * 현·타·꿀·팁
+                         */
+
+                        // swiper init
+                        var tsTvTypeFirstSwiper = new Swiper('.tam-swiper.type-first', {
+                            slidesPerView: 3,
+                            spaceBetween: 12,
+                            slidesPerGroup: 3,
+                            navigation: {
+                                nextEl: '.swiper-button-next.type-first',
+                                prevEl: '.swiper-button-prev.type-first'
+                            }
+                        })
+                        tsTvTypeFirstSwiper.init()
+
+                        // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                        // tsTvTypeFirstSwiper.update();
+                        // tsTvTypeFirstSwiper.slideTo(0);
+                    </script>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        /**
+         * tstation-tv common
+         */
+
+        // ts-tv-card onclick
+        $('.ts-tv-card').click(function () {
+            // get custom attr & use data
+            // sample data { linkType: 'IN' | 'OUT', linkUrl: './tam-tstation_tv-detail.html' }
+            var data = $(this).data()
+
+            // go link type
+            switch (data.linkType) {
+                case 'IN':
+                    // 히스토리 저장 하지 않음
+                    location.replace(data.linkUrl)
+                    break
+                case 'OUT':
+                    window.open(data.linkUrl, '_blank')
+                    break
+                default:
+                    break
+            }
+        })
+    </script>
+</div>

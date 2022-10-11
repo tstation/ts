@@ -1,0 +1,301 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '오프라인 매장예약' }) %>
+
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+
+<!-- 콘텐츠 영역 -->
+<div class="container">                
+    <div class="superweek-offline">
+        <div class="hero-section">
+            <!-- 20220915// -->
+            <div class="keyvisual"><img src="mc-static-root/images/event/20220915/hero_offline_store.png" alt=""></div>
+            <!-- //20220915 -->
+        </div>
+
+        <div class="contents-section store-search">
+            <div class="headcopy">원하는 장착점 검색</div>
+            <div class="country-wrap">
+                <ul class="list-size-flex pd-h-5u">
+                    <li class="flex-3 pd-r-2u">
+                    <div class="form-control form-control-md">
+                        <div class="input-group">
+                            <select class="input-box">
+                                <option value="options1" selected="" disabled="">시/도 선택</option>
+                                <option value="options1">options1</option>
+                                <option value="options2">options2</option>
+                                <option value="options3">options3</option>
+                                <option value="options4">options4</option>
+                            </select>
+                            <div class="tools">
+                                <button><span class="line-icons chev-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="flex-3 pd-r-2u">
+                    <div class="form-control form-control-md">
+                        <div class="input-group">
+                        <!-- 시/도 선택후 'disabled'클래스 제거 -->
+                        <select class="input-box disabled">
+                            <option value="options1" selected="" disabled="">시/군/구 선택</option>
+                            <option value="options1">options1</option>
+                            <option value="options2">options2</option>
+                            <option value="options3">options3</option>
+                            <option value="options4">options4</option>
+                        </select>
+                        <div class="tools">
+                            <button><span class="line-icons chev-down"></span></button>
+                        </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="flex-2">
+                    <button type="button" class="btn-item btn-neutral full-w filet" onclick="scrollFix()">
+                        <span class="label-txt">찾기</span>
+                    </button>
+                    </li>
+                </ul>
+                <div class="store-search-checked">
+                    <div class="radio-wrap">
+                        <label class="check-item">
+                            <input type="checkbox" name="serviceFilter" id="serviceFilter01" value="118">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12">티스테이션</span>
+                            </div>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" name="serviceFilter" id="serviceFilter02" value="filterVisit">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12">더타이어샵</span>
+                            </div>
+                        </label>
+                        <label class="check-item">
+                            <input type="checkbox" name="serviceFilter" id="serviceFilter03" value="206">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12">일반대리점</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="noti-wrap">
+                        <div class="subcopy"><span class="line-icons info-circle size-20 txt-primary"></span>한국타이어 장착점 안내</div>
+                        <p class="noti txt-12"><strong>티스테이션:</strong><span>최적의 타이어 상담부터 구매, 차량관리까지 믿고 맡길 수 있는 대한민국 대표 타이어 전문점</span></p>
+                        <p class="noti txt-12"><strong>더타이어샵:</strong><span>합리적인 가격의 타이어와 경정비 서비스를 제공하는 전문 매장</span></p>
+                        <p class="noti txt-12"><strong>일반대리점:</strong><span>한국타이어 정품을 믿고 구매할 수 있는 공식 판매점</span></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer-content-wrap find-location-near">
+            <div class="store-sort-info">
+                <div class="sort-count">
+                    해당 지역 매장 <strong>3개</strong>
+                </div>
+                <div class="sort-button-wrap">
+                    <button class="btn-sort" id="storeMapButton"><span class="line-icons map size-24 mg-r-1u"></span>지도에서 보기</button>
+                    <button class="btn-sort" id="storeListButton" style="display: none;"><span class="line-icons list size-24 mg-r-1u"></span>리스트로 보기</button>
+                </div>
+            </div>
+            <script>
+                
+            $(document).ready(function() {
+                var sortButton  = $('.sort-button-wrap').find('.btn-sort');                            
+                var sortButtonState = "list"
+                sortButton.on("click", sortFunc);
+                function sortFunc() {
+                    if(sortButtonState === "map") {
+                        $("#storeListButton, .store-maps").hide();
+                        $("#storeMapButton, .store-list").show();
+                        sortButtonState = "list";
+                    } else if(sortButtonState === "list") {
+                        $("#storeListButton, .store-maps").show();
+                        $("#storeMapButton, .store-list").hide();
+                        sortButtonState = "map";
+                    }
+                }
+            })  
+            </script>
+
+            <div class="sort-result">
+                <div class="store-list">
+                    <div class="store-wrap">
+                        <!-- .store-info 해당 클래스에 .tstation, .hankook, .thetireshop 추가시 로고, 및 회시 명칭 표기-->
+                        <!-- .store-info 해당 클래스에 .allmyt-store 추가시 해당 badge 추가 -->
+                        <div class="store-info tstation allmyt-store"><!-- 0930 -->
+                            <div class="franchisee">
+                                <!-- 20220915 // -->
+                                <strong class="ev-store">가산점</strong>
+                                <!-- // 20220915 -->
+                            </div>
+                            <div class="distance">
+                                <div class="info">
+                                    <span class="open">08:00 ~ 20:00</span>
+                                </div>
+                                <p class="address">서울특별시 금천구 가산로 86(독산동)</p>
+                            </div>
+                        </div>
+                        <div class="store-footer">
+                            <div class="connect-wrap">
+                                <button class="location-button"><span class="line-icons location size-28"></span></button>
+                                <button class="call-button" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')"><span class="line-icons call size-28"></span></button>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral btn-ol round select-button">
+                                <span class="label-txt">방문 예약하기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="store-wrap">
+                        <!-- .store-info 해당 클래스에 .tstation, .hankook, .thetireshop 추가시 로고, 및 회시 명칭 표기-->
+                        <div class="store-info tstation">
+                            <div class="franchisee">
+                                <strong>분당정자점</strong>
+                            </div>
+                            <div class="distance">
+                                <div class="info">
+                                    <span class="open">08:00 ~ 20:00</span>
+                                </div>
+                                <p class="address">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</p>
+                            </div>
+                        </div>
+                        <div class="store-footer">
+                            <div class="connect-wrap">
+                                <button class="location-button"><span class="line-icons location size-28"></span></button>
+                                <button class="call-button" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')"><span class="line-icons call size-28"></span></button>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral btn-ol round select-button">
+                                <span class="label-txt">방문 예약하기</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="store-wrap">
+                        <!-- .store-info 해당 클래스에 .tstation, .hankook, .thetireshop 추가시 로고, 및 회시 명칭 표기-->
+                        <div class="store-info thetireshop">
+                            <div class="franchisee">
+                                <strong>분당점</strong>
+                            </div>
+                            <div class="distance">
+                                <div class="info">
+                                    <span class="open">08:00 ~ 20:00</span>
+                                </div>
+                                <p class="address">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</p>
+                            </div>
+                        </div>
+                        <div class="store-footer">
+                            <div class="connect-wrap">
+                                <button class="location-button"><span class="line-icons location size-28"></span></button>
+                                <button class="call-button" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')"><span class="line-icons call size-28"></span></button>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral btn-ol round select-button">
+                                <span class="label-txt">방문 예약하기</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="store-maps" style="display: none; height: 300px;">
+                    <!-- 20220819// -->
+                    <div class="mark-info-wrap pd-r-5u">
+                        <span class="mark-tstation">티스테이션</span>
+                        <span class="mark-hankook">더 타이어 샵, 일반대리점</span>
+                    </div>
+                    <!-- //20220819 -->
+
+                    <div class="map-wrap" style="min-height: 550px;">
+                        <img src="../mc/mc-static-root/images/common/goods/@sample_map.png" alt="">
+                    </div>
+
+                    <!-- 맵 마커 -->
+                    <img src="mc-static-root/images/event/20210316/map_marker_hk.png" class="map-marker" />
+                    <img src="mc-static-root/images/event/20210316/map_marker_tstation.png" class="map-marker" />
+
+                    <!-- 맵위에 떠있을경우 store-wrap 'on-map'클래스 추가 -->
+                    <div class="store-wrap on-map">
+                        <!-- .store-info 해당 클래스에 .tstation, .hankook, .thetireshop 추가시 로고, 및 회시 명칭 표기-->
+                        <div class="store-info tstation">
+                            <div class="franchisee">
+                                <strong>분당정자점</strong>
+                            </div>
+                            <div class="distance">
+                                <div class="info">
+                                    <span class="open">08:00 ~ 20:00</span>
+                                </div>
+                                <p class="address">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</p>
+                            </div>
+                        </div>
+                        <div class="store-footer">
+                            <div class="connect-wrap">
+                                <button class="call-button" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')"><span class="line-icons call size-28"></span></button>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral btn-ol round select-button">
+                                <span class="label-txt">방문 예약하기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 매장 결과 없을 경우 -->
+            <div class="empty-box txt-center pd-v-15u">
+                <div class="middler">
+                    <span class="line-icons error-circle size-48"></span>
+                    <p class="empty-msg">현재 기준으로 장착 가능한 매장만 검색됩니다</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+        
+    
+    
+
+<script>
+function scrollFix() {
+    if($('.contents-section').hasClass('store-search')) {
+        var shoppingTippickupHeight = $('.navbar').outerHeight();
+        var scrollpickupPostion = $('.store-search').offset().top - shoppingTippickupHeight;
+        console.log(scrollpickupPostion);
+        $('html, body').animate({
+            scrollTop: scrollpickupPostion
+        }, 300)
+    }
+}
+    
+// Anchor funciton
+// function amtAnchorScroll() {
+//     var shoppingTippickup = $('.ak-wrap-familysale');
+//     var shoppingTippickupButton = shoppingTippickup.find('.event-case');
+//     var shoppingTippickupHeight = $('.navbar').outerHeight();
+//     shoppingTippickupButton.each(function(i) {
+//         shoppingTippickupButton.eq(i).click(function(e) {
+//             e.preventDefault();
+//             var scrollpickupPostion = $('.event-familysale').find('.amt-anchor').eq(i).offset().top - shoppingTippickupHeight;
+//             console.log(scrollpickupPostion);
+//             $('html, body').animate({
+//                 scrollTop: scrollpickupPostion
+//             }, 300)
+//         })
+//     })
+// }
+// amtAnchorScroll()
+</script>
+
+
+
+
+

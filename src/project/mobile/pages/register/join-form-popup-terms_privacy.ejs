@@ -1,0 +1,35 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div style="height: 300px; text-align: center; padding: 0 20px;">
+    <button type="button" class="btn-item btn-neutral full-w mg-t-2u" onclick="callPopup()">
+        <span class="label-txt">개인정보 처리방침 팝업 호출</span>
+    </button>
+</div>
+<script>
+    function callPopup () {
+        $.Tstation.popup().open({
+            ref: 'privacy-info',
+            title: '개인정보 처리방침',
+            // requestUrl: 'https://www.tstation.com/terms/popup/singleterms.do?agrmSctCd=160',
+            contents: '\'https://www.tstation.com/terms/popup/singleterms.do?agrmSctCd=160\' 를 호출 하세요.',
+            dimWhite: false,
+            modalContentsPd: {
+                horizon: 8,
+                vertical: 8,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: true,
+            onOpen: function () {
+                console.log('팝업이 열리면 파이어 합니다.');
+            },
+            onClose: function () {
+                console.log('팝업이 닫히면 파이어 합니다.');
+            }
+        });
+    };
+</script>

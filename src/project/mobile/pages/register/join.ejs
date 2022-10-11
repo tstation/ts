@@ -1,0 +1,40 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="pageTitle2">
+    <h3>간단한 회원가입</h3>
+</div>
+<div id="container" class="pd-h-5u">
+    <ul>
+        <li>
+            <button type="button" class="btn-item btn-neutral round full-w btn-sign-up" onclick="window.location.href='/member/register/form.do'">
+                <span class="line-icons mail size-24"></span>
+                <span class="label-txt">이메일로 간편 회원가입</span>
+            </button>
+        </li>
+    </ul>
+
+    <div class="divider mg-v-5u"></div>
+
+    <ul style="margin-bottom: 200px;">
+        <li class="mg-b-1u">
+            <button type="button" class="btn-item btn-kakao round full-w btn-sign-up" onclick="window.location.href='/member/register/form.do'">
+                <span class="line-icons social-kakao size-24"></span>
+                <span class="label-txt">카카오로 간편 회원가입</span>
+            </button>
+        </li>
+        <li class="mg-b-1u">
+            <button type="button" class="btn-item btn-naver round full-w btn-sign-up" onclick="window.location.href='/member/register/form.do'">
+                <span class="line-icons social-naver size-24"></span>
+                <span class="label-txt">네이버로 간편 회원가입</span>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="btn-item btn-facebook round full-w btn-sign-up" onclick="window.location.href='/member/register/form.do'">
+                <span class="line-icons social-fb size-24"></span>
+                <span class="label-txt">Facebook으로 간편 회원가입</span>
+            </button>
+        </li>
+    </ul>
+</div>

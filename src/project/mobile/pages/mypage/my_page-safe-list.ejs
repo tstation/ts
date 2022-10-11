@@ -1,0 +1,137 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '안심서비스 내역' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/safe-service.css" />
+<div id="container" class="safeservice-group">
+    <!-- 방문예약내역 -->
+    <div class="history-page">
+        <div class="sort-section border-b">
+            <div class="sort pd-h-5u pd-v-4u">
+                <select class="select01 w100p">
+                    <option>전체</option>
+                    <option>가입완료</option>
+                    <option>서비스만료</option>
+                </select>
+            </div>
+        </div>
+        <!-- .history-list-section // -->
+        <div class="history-list-section" >
+            <div class="subscription-result-empty txt-center pd-v-15u">
+                <span class="icon-subscription-empty search size-48"></span>
+                <p class="txt-16 txt-neutral2 mg-t-1u">안심서비스 내역이 없습니다.</p>
+            </div>
+            <div class="rowgroup mg-h-5u">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="badge-state">가입완료</span><!-- .disabled 추가시 서비스만료 badge UI -->
+                    </div>
+                    <div class="cell">
+                        <button type="button" class="btn-item btn-neutral btn-xs btn-inv round align-right">
+                            <span class="label-txt txt-12 txt-primary">상세보기</span>
+                            <span class="line-icons chev-right txt-primary size-16"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">가입번호</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">20161110073814</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">가입고객이름</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">김한국</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">차량번호</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">12가 3456</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">안심서비스 적용기간</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">2021.01.01 ~ 2022.01.01</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup mg-h-5u">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="badge-state disabled">서비스만료</span><!-- .disabled 추가시 서비스만료 badge UI -->
+                    </div>
+                    <div class="cell">
+                        <button type="button" class="btn-item btn-neutral btn-xs btn-inv round align-right">
+                            <span class="label-txt txt-12 txt-primary">상세보기</span>
+                            <span class="line-icons chev-right txt-primary size-16"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">가입번호</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">20161110073814</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">가입고객이름</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">김한국</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">차량번호</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">12가 3456</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="label-txt">안심서비스 적용기간</span>
+                    </div>
+                    <div class="cell">
+                        <span class="label-info">2021.01.01 ~ 2022.01.01</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="txt-center mg-t-4u mg-b-10u">
+            <button type="button" class="btn-item btn-neutral btn-ol round more-button pd-r-2u">
+                <span class="label-txt">더보기(3/5)</span>
+                <span class="line-icons chev-down size-24"></span>
+            </button>
+        </div>
+        <!-- // .history-list-section -->
+        <div class="noti-section">
+            <ul class="explan-list pd-v-4u pd-h-5u bg-light1">
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 가입, 적용은 최근 구매한 타이어에 한해서만 가능합니다.(중복가입불가)</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">신규 안심서비스 가입 시 이전 가입, 보상 건은 서비스만료 처리됩니다.</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">최근 2년 내 이력이 있는 안심서비스 내역만 조회가 가능합니다.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,326 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page-header border-none">
+                        <h1>쿠폰 변경 팝업</h1>
+                    </div>
+
+                    <div class="container pd-v-5u">
+                        <section>
+                            쿠폰 변경 팝업
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 쿠폰 변경 -->
+<div class="modal-item instance on">
+    <div class="dim"></div>
+
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>쿠폰 변경</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <!-- modal-action -->
+            <div class="modal-action">
+                <ul class="list-size-equal">
+                    <li>
+                        <!-- 2021-03-30 // -->
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" id="copounRemoveButton">
+                            <span class="label-txt">쿠폰 적용해제</span>
+                        </button>
+                        <!-- // 2021-03-30 -->
+                    </li>
+                    <li>
+                        <!-- 쿠폰 선택 변경시 disabled 해제 -->
+                        <button type="button" class="btn-item btn-neutral round full-w" onclick="$(this).closest('.modal-item').removeClass('on');" disabled>
+                            <span class="label-txt">쿠폰 변경하기</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor.. / ver.. 0으로 설정) -->
+                        <div class="container bg-light1 border-b pd-h-8u pd-v-3u">
+
+                            <!-- 적용가능 쿠폰이 없을 경우 'on'클래스 추가한 상태(아코디언 열린 상태)로 팝업 오픈 -->
+                            <div class="accordion-item">
+                                <div class="accordion-btn" onclick="$(this).closest('.accordion-item').toggleClass('on');">
+                                    <span class="line-icons chev-down size-20"></span>
+                                    <p class="line-32 txt-16">쿠폰 등록하기</p>
+                                </div>
+
+                                <div class="accordion-cont pd-t-2u pd-b-3u">
+                                    <p class="txt-neutral2">유효한 쿠폰번호를 입력하고 '쿠폰등록' 버튼을 누르시면 입력하신 쿠폰이 아래 적용 가능한 쿠폰 리스트에 추가 됩니다.</p>
+                                    <table class="mg-t-4u">
+                                        <colgroup>
+                                            <col style="width: auto;" />
+                                            <col style="width: 140px;" />
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-control form-control-md">
+                                                    <div class="input-group">
+                                                        <input type="text" class="input-box" placeholder="쿠폰번호를 입력해 주세요." />
+                                                        <div class="tools">
+                                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="pd-l-2u">
+                                                <!-- 쿠폰번호 입력시 disabled 해제 -->
+                                                <button type="button" class="btn-item btn-neutral round full-w" disabled>
+                                                    <span class="label-txt">쿠폰등록</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!-- 에러 메시지 발생시에만 노출 -->
+                                    <!-- <p class="txt-primary mg-t-2u txt-12">에러 메시지</p> -->
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="container pd-h-8u pd-v-8u">
+                            <div class="empty-box txt-center pd-v-10u">
+                                <div class="middler">
+                                    <span class="line-icons error-circle size-48"></span>
+                                    <p class="empty-msg">적용 가능한 쿠폰이 없습니다.</p>
+                                </div>
+                            </div>
+
+                            <ul class="coupon-card-list coupon-changer mg-t-0u">
+
+                                <li>
+                                    <div class="coupon-changer-wrap" onclick="couponChanger(this)">
+                                        <input type="hidden" name="allMyTPayCpnYn" id="allMyTPayCpnYn" value="N">
+                                        <input type="radio" name="coupon-changer" class="coupon-changer-radio" checked="" cpnno="C46000954gWAd" cpnissuno="7473570">
+                                        <div class="coupon-changer-icons">
+                                            <span class="line-icons circle"></span>
+                                            <span class="line-icons check-circle-inv"></span>
+                                        </div>
+                                        <article class="coupon-card download-after">
+                                            <div class="coupon-card-info">
+                                                <div class="coupon-card-type-bar mg-b-2u clearfix">
+                                                    <span class="haaer-label-use online">
+                                                        <span class="label-txt txt-12">온라인<br>전용</span>
+                                                    </span>
+                                                    <!-- 20220707 // -->
+                                                    <div class="haaer-label-group">
+                                                        <span class="label-txt txt-11">특별기획전</span>
+                                                    </div>
+                                                    <!-- // 20220707 -->
+                                                </div>
+                                                <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                                                <p class="txt-18 line-100per mg-b-2u">[패밀리쿠폰_가족구매용 30%]타이어(22년 3분기)</p>
+                                                <hr class="dp-block center short short-2px neutral3 mg-v-3u">
+                                                <p class="txt-12 txt-neutral3">한국테크놀로지그룹 임직원 또는 선물받은 고객에 한정하여 사용 가능합니다(온라인 구매용)</p>
+                                            </div>
+                                            <div class="coupon-card-action">
+                                                <div class="coupon-card-action-inner download-before">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>
+                                                    <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt txt-12">쿠폰다운</span></span></p>
+                                                    <p><span class="txt-12"><br>까지</span></p>
+                                                </div>
+                                                <div class="coupon-card-action-inner download-after">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24 coupon-download-icon"></span></p>
+                                                    <p class="mg-b-3u"><span class="txt-w500">다운완료</span></p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </li>
+                        
+                                <li>
+                                    <div class="coupon-changer-wrap" onclick="couponChanger(this)">
+                                        <input type="hidden" name="allMyTPayCpnYn" id="allMyTPayCpnYn" value="N">
+                                        <input type="radio" name="coupon-changer" class="coupon-changer-radio" cpnno="C46000954gWAd" cpnissuno="7473568">
+                                        <div class="coupon-changer-icons">
+                                            <span class="line-icons circle"></span>
+                                            <span class="line-icons check-circle-inv"></span>
+                                        </div>
+                                        <article class="coupon-card download-after">
+                                            <div class="coupon-card-info">
+                                                <div class="coupon-card-type-bar mg-b-2u clearfix">
+                                                    <span class="haaer-label-use online">
+                                                        <span class="label-txt txt-12">온라인<br>전용</span>
+                                                    </span>
+                                                    <div class="haaer-label-group">
+                                                        <span class="label-txt txt-11">패밀리</span>
+                                                    </div>
+                                                </div>
+                                                <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>
+                                                <p class="txt-18 line-100per mg-b-2u">[패밀리쿠폰_가족구매용 30%]타이어(22년 3분기)</p>
+                                                <hr class="dp-block center short short-2px neutral3 mg-v-3u">
+                                                <p class="txt-12 txt-neutral3">한국테크놀로지그룹 임직원 또는 선물받은 고객에 한정하여 사용 가능합니다(온라인 구매용)</p>
+                                            </div>
+                                            <div class="coupon-card-action">
+                                                <div class="coupon-card-action-inner download-before">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>
+                                                    <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt txt-12">쿠폰다운</span></span></p>
+                                                    <p><span class="txt-12"><br>까지</span></p>
+                                                </div>
+                                                <div class="coupon-card-action-inner download-after">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24 coupon-download-icon"></span></p>
+                                                    <p class="mg-b-3u"><span class="txt-w500">다운완료</span></p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </li>
+                        
+                        
+                                <li>
+                                    <div class="coupon-changer-wrap" onclick="couponChanger(this)">
+                                        <input type="radio" name="coupon-changer" class="coupon-changer-radio" cpnno="C42000922oIvD" cpnkndcd="C103">
+                                        <div class="coupon-changer-icons">
+                                            <span class="line-icons circle"></span>
+                                            <span class="line-icons check-circle-inv"></span>
+                                        </div>
+                                        <article class="coupon-card download-before">
+                                            <div class="coupon-card-info">
+                                                <div class="coupon-card-type-bar mg-b-2u clearfix">        
+                                                    <span class="haaer-label-use online">
+                                                        <span class="label-txt txt-12">온라인<br>전용</span>
+                                                    </span>
+                                                </div>
+                                                <p class="txt-30 line-100per">13<small class="txt-18">%</small></p>
+                                                <p class="txt-18 line-100per mg-b-2u">티스테이션닷컴 타이어 상품할인 13% 쿠폰(신규)</p>
+                                                <hr class="dp-block center short short-2px neutral3 mg-v-3u">
+                                                <p class="txt-12 txt-neutral3">대상 상품에 한정 사용가능합니다</p>
+                        
+                                                
+                                            </div>
+                                            <div class="coupon-card-action">
+                                                <div class="coupon-card-action-inner download-before">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>
+                                                    <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt txt-12">쿠폰다운</span></span></p>
+                                                    <p><span class="txt-12">2022.07.31<br>까지</span></p>
+                                                </div>
+                                                <div class="coupon-card-action-inner download-after">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24 coupon-download-icon"></span></p>
+                                                    <p class="mg-b-3u"><span class="txt-w500">다운완료</span></p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </li>
+                        
+                                <li>
+                                    <div class="coupon-changer-wrap" onclick="couponChanger(this)">
+                                        <input type="radio" name="coupon-changer" class="coupon-changer-radio" cpnno="C42000923GNMO" cpnkndcd="C103">
+                                        <div class="coupon-changer-icons">
+                                            <span class="line-icons circle"></span>
+                                            <span class="line-icons check-circle-inv"></span>
+                                        </div>
+                                        <article class="coupon-card download-before">
+                                            <div class="coupon-card-info">
+                                                <div class="coupon-card-type-bar mg-b-2u clearfix">        
+                                                    <span class="haaer-label-use online">
+                                                        <span class="label-txt txt-12">온라인<br>전용</span>
+                                                    </span>
+                                                </div>
+                                                <p class="txt-30 line-100per">13<small class="txt-18">%</small></p>
+                                                <p class="txt-18 line-100per mg-b-2u">티스테이션닷컴 타이어 상품할인 13% 쿠폰2 (신규)</p>
+                                                <hr class="dp-block center short short-2px neutral3 mg-v-3u">
+                                                <p class="txt-12 txt-neutral3">신규 회원가입 시 발급 쿠폰입니다(대상 상품에 한정 사용 가능)</p>
+                        
+                                                
+                                            </div>
+                                            <div class="coupon-card-action">
+                                                <div class="coupon-card-action-inner download-before">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>
+                                                    <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt txt-12">쿠폰다운</span></span></p>
+                                                    <p><span class="txt-12">2022.07.31<br>까지</span></p>
+                                                </div>
+                                                <div class="coupon-card-action-inner download-after">
+                                                    <p class="mg-b-1u"><span class="line-icons download size-24 coupon-download-icon"></span></p>
+                                                    <p class="mg-b-3u"><span class="txt-w500">다운완료</span></p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </li>
+                        
+                            </ul>
+                            <script>
+                                var couponChanger = function (el) {
+                                    var selector = {
+                                        couponCard: '.coupon-card',
+                                        couponChangerRadio: '.coupon-changer-radio',
+                                        couponChangerBtn: '#coupon-changer-btn'
+                                    }
+                                    var className = {
+                                        downloadBefore: 'download-before',
+                                        downloadAfter: 'download-after'
+                                    }
+                                    var _this = $(el)
+                                    var couponCard = _this.find(selector.couponCard)
+                                    var isRequireDownload = couponCard.hasClass(className.downloadBefore)
+                                    var couponDownloadProcess = function () {
+                                        var couponDownload = function () {
+                                            couponCard.removeClass(className.downloadBefore)
+                                            couponCard.addClass(className.downloadAfter)
+                                        }
+                                        // 비동기 예시
+                                        setTimeout(function () {
+                                            Math.random() >= 0.5 ? couponDownload() : alert('쿠폰을 다운로드 할 수 없습니다. 다시 시도해 주세요.')
+                                        }, 400);
+                                    }
+                                    var couponChangerProcess = function () {
+                                        var couponChangerRadio = _this.find(selector.couponChangerRadio)
+                                        var changerName = couponChangerRadio.attr('name')
+                                        var couponChangerRadios = $('input[name*=' + changerName +']')
+                                        couponChangerRadios.prop('checked', false)
+                                        couponChangerRadio.prop('checked', true)
+                                        $(selector.couponChangerBtn).prop('disabled', false)
+                                    }
+                                    isRequireDownload ? couponDownloadProcess() : couponChangerProcess()
+                                }
+
+                                var couponChangerApply = function () {
+                                    alert('주문 프로세스에 쿠폰 적용 메서드 삽입')
+                                    $.Tstation.popup().close('coupon-changer-modal')
+                                }
+
+                                // 2021-03-30 라디오 채크 해제
+                                $('#copounRemoveButton').on("click", couponRemove )
+                                function couponRemove() {
+                                    $(this).closest('.modal-item').removeClass('on');
+                                    $('input:radio[class="coupon-changer-radio"]:checked').prop('checked', false);
+                                }
+                            </script>
+                        </div>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

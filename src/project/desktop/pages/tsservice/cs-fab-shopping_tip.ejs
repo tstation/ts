@@ -1,0 +1,53 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/components/cs-aside.ejs') %>
+        <div id="contents2">
+            <div class="mydetail_02">
+                <h6>쉬운 타이어 쇼핑</h6>
+                <div class="easyshop-tire-wrap">
+                    <ul class="easyshop-tire-tabs">
+                        <li><a href="#direct" class="active" data-hash="direct">직접방문</a></li>
+                        <li><a href="#smart" data-hash="smart">스마트픽업</a></li>
+                    </ul>
+                    <div class="easyshop-tire-container" data-hash="direct">
+                        <img src="pc-static-root/images/common/brand_tire/img_easyshop_direct.png" alt="" />
+                    </div>
+                    <div class="easyshop-tire-container" style="display: none;" data-hash="smart">
+                        <img src="pc-static-root/images/common/brand_tire/img_easyshop_smart.png" alt="" />
+                    </div>
+                    <script>
+                        var tireinfoTabWrap = $('.easyshop-tire-wrap');
+                        var tireinfoTab = tireinfoTabWrap.find('.easyshop-tire-tabs');
+
+                        tireinfoTab.find('li > a').each(function(i) {
+                            tireinfoTab.find('li > a').eq(i).click(function () {
+                                tireinfoTabWrap.find('.easyshop-tire-container').hide();
+                                tireinfoTabWrap.find('.easyshop-tire-container').eq(i).show();
+                                tireinfoTab.find('li > a').removeClass();
+                                tireinfoTab.find('li > a').eq(i).addClass('active');
+                            })
+                        });
+
+                        // hash check - is fire once on document ready
+                        var hash = window.location.hash.replace('#', '');
+                        var hashList = ['direct', 'smart']
+                        var checkHash = function () {
+                            if (!hash || hashList.indexOf(hash) === -1) return
+                            $.each(tireinfoTab.find('li > a'), function (index, item) {
+                                $(item).data().hash === hash ? $(item).addClass('active') : $(item).removeClass('active');
+                            });
+                            $.each($('.easyshop-tire-container'), function (index, item) {
+                                $(item).css({ 'display': $(item).data().hash === hash ? 'block' : 'none' });
+                            });
+                        };
+                        checkHash();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

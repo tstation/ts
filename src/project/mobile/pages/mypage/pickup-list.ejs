@@ -1,0 +1,65 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '픽업서비스내역' }) %>
+<div id="container" class="mypage">
+    <!-- 픽업서비스내역 -->
+    <div class="reserve_list">
+        <div class="sort">
+            <select class="select01 w100p">
+                <option>전체</option>
+                <option>서비스 진행중</option>
+                <option>서비스 완료</option>
+                <option>서비스 취소</option>            
+            </select>
+        </div>
+        <div class="nodata"><em>픽업서비스</em> 내역이 없습니다.</div>
+        <ol class="list">
+            <li>
+                <!-- 서비스 진행중 -->
+                <dl class="reserve_info">
+                    <dt>
+                        <span class="status">서비스 진행중</span>
+                        <a href="#" class="detail">상세보기</a>
+                    </dt>
+                    <dd><span class="tit">신청 서비스</span>픽업*딜리버리</dd>
+                    <dd><span class="tit">매장명</span>티스테이션 성북점</dd>
+                    <dd><span class="tit">매장방문일</span>2018-10-13(토) 13시</dd>
+                </dl>
+                <!-- 서비스 진행중 -->
+            </li>
+            <li>
+                <!-- 서비스 완료 -->
+                <dl class="reserve_info">
+                    <dt>
+                        <span class="status">서비스 완료</span>
+                        <a href="#" class="detail">상세보기</a>
+                    </dt>
+                    <dd><span class="tit">신청 서비스</span>픽업</dd>
+                    <dd><span class="tit">매장명</span>티스테이션 성북점</dd>
+                    <dd><span class="tit">매장방문일</span>2018-10-13(토) 13시</dd>
+                </dl>
+                <!-- 서비스 완료 -->
+            </li>
+            <li>
+                <!-- 서비스 취소 -->
+                <dl class="reserve_info">
+                    <dt>
+                        <span class="status">서비스 취소</span>
+                        <a href="#" class="detail">상세보기</a>
+                    </dt>
+                    <dd><span class="tit">신청 서비스</span>딜리버리</dd>
+                    <dd><span class="tit">매장명</span>한국타이어T스테이션 마곡점</dd>
+                    <dd><span class="tit">매장방문일</span>2018-10-13(토) 13시</dd>
+                </dl>
+                <!-- 서비스 취소 -->
+            </li>
+        </ol>
+        <div class="more mg-t-2u mg-b-10u">
+            <button class="btnMore" id="btn_select_more">더보기(<em>3 </em>/12)</button>
+        </div>
+
+    </div>
+    <!-- //픽업서비스내역 -->
+</div>

@@ -1,0 +1,424 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        힘내라 대한민국
+        <span class="date">이벤트 기간 : 22.03.01  ~ 22.03.31</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <!-- .event_detail // -->
+    <div class="event_detail">
+        <!-- .event-thankyou // -->
+        <div class="event-thankyou">
+            <div class="hero-section">
+                <div class="keyvisual"><img src="mc-static-root/images/event/20220818/img_hero.png" alt="" /></div>
+            </div>
+
+            <!-- 동영상 영역 추후 전달// -->
+            <div class="hero-player-section ak-wrap-thankyou" style="display: none">
+                <div class="player-img"></div>
+                <a class="play-link1 event-case" href="#none" data-analytics-click="">
+                    <span class="blind">-</span>
+                </a>
+                <a class="play-link2 event-case" href="#none" data-analytics-click="">
+                    <span class="blind">-</span>
+                </a>
+                <div class="player-wrap">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/733424422?h=1e39d2331c&background=1=0&autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- //동영상 영역 추후 전달 -->
+            
+            <div class="contents-section amt-anchor">
+                <div class="img-content"><img src="mc-static-root/images/event/20220818/img_content1_1.png" alt="" /></div>
+            </div>
+
+            <div class="contents-section">
+                <div class="img-content"><img src="mc-static-root/images/event/20220818/img_content1_2.png" alt="" /></div>
+            </div>
+
+            <div class="contents-section">
+                <div class="img-content"><img src="mc-static-root/images/event/20220818/img_content1_3.png" alt="" /></div>
+            </div>
+
+            <div class="contents-section">
+                <div class="sub-headcopy txt-center mg-h-5u">경품응모방법</div>
+                <div class="img-content"><img src="mc-static-root/images/event/20220818/img_content1_4.png" alt="" /></div>
+            </div>
+
+            <div class="contents-section event2 amt-anchor">
+                <div class="img-content"><img src="mc-static-root/images/event/20220818/img_content2_1.png" alt="" /></div>
+                <a href="#none" class="img-map-link link-event2" data-analytics-click="사은품 신청하기"><span class="blind">EVENT2 바로가기</span></a>
+            </div>
+ 
+            <div class="contents-section tire-gallery pd-t-7u pd-b-5u"><!-- 20220830 -->
+                <div class="sub-headcopy txt-center mg-h-5u">행사대상 타이어 보기</div>
+                <div class="tire-gallery-tabs pd-h-5u pd-t-2u pd-b-2u"><!-- 20220830 -->
+                    <div class="tab">
+                        <button type="button" class="tab-ventus pattern-name" data-analytics-click="Tab-Ventus"><span class="blind">행사 타이어 Ventus 보기 </span></button>
+                    </div>
+                    <div class="tab">
+                        <button type="button" class="tab-dynapro pattern-name" data-analytics-click="Tab-Dynapro"><span class="blind">행사 타이어 Dynapro 보기 </span></button>
+                    </div>
+                    <div class="tab">
+                        <button type="button" class="tab-kinergy pattern-name" data-analytics-click="Tab-Kinergy"><span class="blind">행사 타이어 Kinergy 보기 </span></button>
+                    </div>
+                    <div class="tab">
+                        <button type="button" class="tab-laufenn pattern-name" data-analytics-click="Tab-Laufenn"><span class="blind">행사 타이어 Laufenn 보기 </span></button>
+                    </div>
+                    <div class="tab">
+                        <button type="button" class="tab-ion pattern-name" data-analytics-click="Tab-iON"><span class="blind">행사 타이어 Ion 보기 </span></button>
+                    </div>
+                    <div class="tab"><span class="blind">empty</span></div>
+                </div>
+
+                <div class="tire-gallery-container">
+                    <div class="swiper-container thankyou-gallery-swiper pd-h-5u pd-v-1u ventus-gallery"><!-- 20220830 -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">프리미엄</strong>
+                                <a href="/tire/product/ventus_s2_as?ptrnCd=H462&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S2 AS">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s2as.png" alt="Ventus S2 AS" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_s2_as_x?ptrnCd=RH17&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S2 AS X">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s2asx.png" alt="Ventus S2 AS X" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_v2_as?ptrnCd=H123&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus V2 AS">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_v2as.png" alt="Ventus V2 AS" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_s1_evo_z_as?ptrnCd=H129&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S1 evo Z AS">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s1evozas.png" alt="Ventus S1 evo Z AS" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_s1_evo_z_as_x?ptrnCd=H129A&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S1 evo Z AS X">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s1evozasx.png" alt="Ventus S1 evo Z AS X" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_s1_noble2?ptrnCd=H452&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S1 noble2">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s1noble2.png" alt="Ventus S1 noble2" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_s1_evo_z?ptrnCd=K129&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S1 evo Z">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s1evoz.png" alt="Ventus S1 evo Z" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_s1_evo3?ptrnCd=K127&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S1 evo3">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s1evo3.png" alt="Ventus S1 evo3" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus S1 evo3 SUV">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_s1evo3suv.png" alt="Ventus S1 evo3 SUV" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/ventus_rs4?ptrnCd=Z232&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus RS4">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_rs4.png" alt="Ventus RS4" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">스탠다드</strong>
+                                <a href="/tire/product/ventus_prime2?ptrnCd=K115&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Ventus Prime2">
+                                    <img src="mc-static-root/images/event/20220818/card/vts_p2.png" alt="Ventus Prime2" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tire-gallery-container">
+                    <div class="swiper-container thankyou-gallery-swiper pd-h-5u pd-v-1u dynapro-gallery"><!-- 20220830 -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">프리미엄</strong>
+                                <a href="/tire/product/dynapro_hpx?ptrnCd=RA43&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="DynaPro HPX">
+                                    <img src="mc-static-root/images/event/20220818/card/dnp_hpx.png" alt="DynaPro HPX" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">스탠다드</strong>
+                                <a href="/tire/product/dynapro_hl3?ptrnCd=RA45&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Dynapro HL3">
+                                    <img src="mc-static-root/images/event/20220818/card/dnp_hl3.png" alt="Dynapro HL3" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/dynapro_at2?ptrnCd=RF11&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Dynapro AT2">
+                                    <img src="mc-static-root/images/event/20220818/card/dnp_at2.png" alt="Dynapro AT2" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/dynapro_hp2?ptrnCd=RA33&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Dynapro HP2">
+                                    <img src="mc-static-root/images/event/20220818/card/dnp_hp2.png" alt="Dynapro HP2" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/dynapro_hp?ptrnCd=RA23&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="DynaPro HP">
+                                    <img src="mc-static-root/images/event/20220818/card/dnp_hp.png" alt="DynaPro HP" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tire-gallery-container">
+                    <div class="swiper-container thankyou-gallery-swiper pd-h-5u pd-v-1u kinergy-gallery"><!-- 20220830 -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">스탠다드</strong>
+                                <a href="/tire/product/kinergy_ex?ptrnCd=H308&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Kinergy EX">
+                                    <img src="mc-static-root/images/event/20220818/card/kng_ex.png" alt="Kinergy EX" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/kinergy_as_ev?ptrnCd=EH01&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Kinergy AS EV">
+                                    <img src="mc-static-root/images/event/20220818/card/kng_asev.png" alt="Kinergy AS EV" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/kinergy_4s_2?ptrnCd=H750&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Kinergy 4S 2">
+                                    <img src="mc-static-root/images/event/20220818/card/kng_4s2.png" alt="Kinergy 4S 2" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/kinergy_4s2_x?ptrnCd=H750A&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Kinergy 4S2 X">
+                                    <img src="mc-static-root/images/event/20220818/card/kng_4s2x.png" alt="Kinergy 4S2 X" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/kinergy_gt?ptrnCd=H436&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="Kinergy GT">
+                                    <img src="mc-static-root/images/event/20220818/card/kng_gt.png" alt="Kinergy GT" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tire-gallery-container">
+                    <div class="swiper-container thankyou-gallery-swiper pd-h-5u pd-v-1u laufenn-gallery"><!-- 20220830 -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">스탠다드</strong>
+                                <a href="/tire/product/s_fit_as?ptrnCd=LH01&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="S FIT as">
+                                    <img src="mc-static-root/images/event/20220818/card/laf_s.png" alt="S FIT as" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/g_fit_as?ptrnCd=LH41&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="G FIT as">
+                                    <img src="mc-static-root/images/event/20220818/card/laf_g.png" alt="G FIT as" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="/tire/product/x_fit_ht?ptrnCd=LD01&goodsMdclCd=01&movePath=pattern" class="card card-brand-tireinfo" data-analytics-click="X FIT HT">
+                                    <img src="mc-static-root/images/event/20220818/card/laf_x.png" alt="X FIT HT" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tire-gallery-container">
+                    <div class="swiper-container thankyou-gallery-swiper pd-h-5u pd-v-1u ion-gallery"><!-- 20220830 -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <strong class="dp-inblock txt-14 txt-w700 pd-b-1u">프리미엄</strong>
+                                <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON evo AS">
+                                    <div class=" ion-commng"></div>
+                                    <img src="mc-static-root/images/event/20220818/card/ion_evoas.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON evo AS suv">
+                                    <div class=" ion-commng"></div>
+                                    <img src="mc-static-root/images/event/20220818/card/ion_evoassuv.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON winter">
+                                    <div class=" ion-commng"></div>
+                                    <img src="mc-static-root/images/event/20220818/card/ion_winter.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#none" class="card card-brand-tireinfo" data-analytics-click="iON winter suv">
+                                    <div class=" ion-commng"></div>
+                                    <img src="mc-static-root/images/event/20220818/card/ion_wintersuv.png" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+                <!-- contents-section store-confirm-button 20220830 위치 이동 -->
+                <!-- contents-section 20220830 위치 이동 -->
+            </div>
+
+            <!-- 20220830 이동 // -->
+            <div class="contents-section store-confirm-button">
+                <div class="button-half-wrap">
+                    <button type="button" class="btn-item btn-neutral round" id="buyOnline" data-analytics-click="온라인에서 바로구매">
+                        <span class="label-txt">온라인에서 바로구매</span>
+                    </button>
+                    <button type="button" class="btn-item btn-neutral round" id="buyOffline" data-analytics-click="매장예약/현장결제">
+                        <span class="label-txt">매장예약/현장결제</span>
+                    </button>
+                </div>
+                <button type="button" class="btn-item btn-neutral btn-ol full-w round" id="goRsvList" data-analytics-click="감사제 매장 예약내역 확인하기">
+                    <span class="label-txt">감사제 매장 예약내역 확인하기</span>
+                </button>
+                <p class="mg-t-2u txt-12 txt-neutral3 noti">티스테이션닷컴 예약고객은 <a href="/mypage/tstation/reservation/shopVisitReserveList.do" class="txt-primary" data-analytics-click="마이페이지">마이페이지 &gt; 방문예약내역</a>에서 예약정보를 확인하실 수 있습니다.</p>
+                <div class="lagal-check-group mg-t-2u">
+                    <div class="legal-check-wrap">
+                        <label class="check-item" for="eventPrivacyPolicy" data-analytics-click="마케팅 활용을 위한 수집 및 이용동의">
+                            <input type="checkbox" id="eventPrivacyPolicy">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u">마케팅 활용을 위한 수집 및 이용동의</span>
+                            </div>
+                        </label>
+                        <!-- 20220830// -->
+                        <a href="#" class="popup-full txt-11 txt-underline txt-primary" data-analytics-click="마케팅 활용 내용보기" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">내용보기</a>
+                        <!-- //20220830 -->
+                    </div>
+                    <button type="button" class="btn-item btn-neutral btn-thankyou-xs" data-analytics-click="개인정보변경">
+                        <span class="label-txt txt-11">개인정보변경</span>
+                    </button>
+                </div>
+            </div>    
+
+            <div class="contents-section">
+                <div class="img-content"><img src="mc-static-root/images/event/20220818/img_legal.png" alt="" /></div>
+            </div>
+            <!-- // 20220830 이동 -->
+            
+        </div>
+        <!-- .event-thankyou // -->
+        
+    </div>
+    <!-- // .event_detail -->
+
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+</div>
+
+<script>
+// TAB
+var mytab = mytab || {};
+mytab.galleryButton = document.querySelectorAll('.tire-gallery-tabs button');
+mytab.galleryContainer = document.querySelectorAll('.tire-gallery .tire-gallery-container');
+mytab.containerLnngth = mytab.galleryContainer.length;
+mytab.tabContainer = [];
+mytab.tabFun = function() {
+    Array.prototype.forEach.call(mytab.galleryButton, function(button, i) {
+        mytab.galleryButton[0].classList.add('active');
+        button.addEventListener('click', function(e) {    
+            console.log(mytab.galleryButton);
+            console.log(button);
+            for( var tab=0; tab < mytab.containerLnngth; tab ++ ) {
+                mytab.galleryButton[tab].classList.remove('active');
+            }
+            mytab.galleryButton[i].classList.add('active');
+            e.preventDefault();
+            mytab.galleryInit(i);
+        });
+    });
+}();
+
+mytab.galleryInit = function(tabIndex) {
+    for(var i=0; i < mytab.containerLnngth; i ++) {
+        mytab.galleryContainer[i].style.display = 'none';
+    };
+    var tabIndex = tabIndex;
+    if (tabIndex) {
+        mytab.galleryContainer[tabIndex].style.display = 'block';
+    } else {
+        mytab.galleryContainer[0].style.display = 'block';
+    }
+};
+mytab.galleryInit();
+
+
+// Ventus Gallery Swiper
+var ventusGallery = new Swiper('.ventus-gallery', {
+    spaceBetween: 8,
+    observer: true,
+    observeParents: true,
+    slidesPerView: 'auto'
+});
+ventusGallery.init();
+$(window).on('resize', function () {
+    ventusGallery.init();
+});
+
+// Dynapro Gallery Swiper
+var dynaproGallery = new Swiper('.dynapro-gallery', {
+    spaceBetween: 8,
+    observer: true,
+    observeParents: true,
+    slidesPerView: 'auto'
+});
+dynaproGallery.init();
+$(window).on('resize', function () {
+    dynaproGallery.init();
+});
+
+// Kinergy Gallery Swiper
+var kinergyGallery = new Swiper('.kinergy-gallery', {
+    spaceBetween: 8,
+    observer: true,
+    observeParents: true,
+    slidesPerView: 'auto'
+});
+kinergyGallery.init();
+$(window).on('resize', function () {
+    kinergyGallery.init();
+});
+
+// Laufenn Gallery Swiper
+var laufennGallery = new Swiper('.laufenn-gallery', {
+    spaceBetween: 8,
+    observer: true,
+    observeParents: true,
+    slidesPerView: 'auto'
+});
+laufennGallery.init();
+$(window).on('resize', function () {
+    laufennGallery.init();
+});
+
+// Ion Gallery Swiper
+var ionGallery = new Swiper('.ion-gallery', {
+    spaceBetween: 8,
+    observer: true,
+    observeParents: true,
+    slidesPerView: 'auto'
+});
+ionGallery.init();
+$(window).on('resize', function () {
+    ionGallery.init();
+});
+
+</script>
+

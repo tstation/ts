@@ -1,0 +1,519 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '매장 찾기' }) %>
+<div id="container">
+    <!-- .subnav-wrap -->
+    <ul class="subnav-wrap">
+        <!-- 20211213 // -->
+        <li class="subnav-item"><a class="subnav-link" href="#none">단골매장</a></li><!-- 20220316 -->
+        <li class="subnav-item disabled"><a class="subnav-link" href="#none">내 주변 찾기</a></li>
+        <li class="subnav-item active"><a class="subnav-link" href="#none">매장명&middot;지역찾기</a></li>
+        <!-- // 20211213 -->
+    </ul>
+    <!-- //.subnav-wrap -->
+    <div class="store-search">
+        <!-- 20211213 // -->
+        <div class="container pd-b-2u border-b">
+            <div class="local-radio-option pd-h-4u pd-v-2u bg-light1">
+                <label class="radio-item">
+                    <input type="radio" name="test_radio" class="store-search-radio" onClick="localRadioTab();" checked="checked"/>
+                    <div class="icon-holder">
+                        <span class="line-icons circle size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u txt-12">매장명으로 찾기</span>
+                    </div>
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="test_radio" class="local-search-radio" onClick="localRadioTab();" />
+                    <div class="icon-holder">
+                        <span class="line-icons circle size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u txt-12">지역으로 찾기</span>
+                    </div>
+                </label>
+            </div>
+            <div class="store-search-form pd-v-4u pd-h-4u">
+                <div class="form-control form-control-md">
+                    <div class="input-group">
+                        <input type="search" class="input-box relative-submit" placeholder="매장명을 입력해 주세요" style="padding-right: 6px;">
+                        <div class="tools">
+                            <button class="search-submit pd-h-2u"><span class="line-icons search size-24"></span></button>
+                        </div>
+                        <div id="shopLayer" class="autoLayer" style="display: none;">
+                            <ol style="cursor:pointer;">
+                                <li shopseq="F100000904" shopnm="수원권선점"><span><em>수원권선점</em>경기도 수원시 권선구</span></li>
+                                <li shopseq="F100000745" shopnm="광명점"><span><em>광명점</em>경기도 광명시</span></li>
+                                <li shopseq="F100000670" shopnm="동탄석우점"><span><em>동탄석우점</em>경기도 화성시</span></li>
+                                <li shopseq="F100000888" shopnm="동탄신도시점"><span><em>동탄신도시점</em>경기도 화성시</span></li>
+                                <li shopseq="F100001101" shopnm="수색로점"><span><em>수색로점</em>경기도 고양시 덕양구</span></li>
+                                <li shopseq="F100000826" shopnm="안산한양대점"><span><em>안산한양대점</em>경기도 안산시 상록구</span></li>
+                                <li shopseq="F100000800" shopnm="용인동백점"><span><em>용인동백점</em>경기도 용인시 기흥구</span></li>
+                                <li shopseq="F100001003" shopnm="이천점"><span><em>이천점</em>경기도 이천시</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="local-search-form pd-v-4u pd-h-4u">
+                <ul class="list-size-flex region-search-section">
+                    <li class="flex-3 pd-r-2u">
+                        <div class="form-control form-control-md">
+                            <div class="input-group">
+                                <select class="input-box">
+                                    <option value="options1" selected="" disabled="">시/도</option>
+                                    <option value="options1">options1</option>
+                                    <option value="options2">options2</option>
+                                    <option value="options3">options3</option>
+                                    <option value="options4">options4</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-3 pd-r-2u">
+                        <div class="form-control form-control-md">
+                            <div class="input-group">
+                                <!-- 시/도 선택후 'disabled'클래스 제거 -->
+                                <select class="input-box disabled">
+                                    <option value="options1" selected="" disabled="">시/군/구</option>
+                                    <option value="options1">options1</option>
+                                    <option value="options2">options2</option>
+                                    <option value="options3">options3</option>
+                                    <option value="options4">options4</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-2">
+                        <button type="button" class="btn-item btn-neutral full-w round">
+                            <span class="label-txt">찾기</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- // 20211213 -->
+
+        <!-- 20211213 // -->
+        <script>
+        var localRadio = {
+            option: {
+                storeSearch: '.store-search-radio',
+                localSearch: '.local-search-radio'
+            },
+            container: {
+                storeSearch: '.store-search-form',
+                localSearch: '.local-search-form'
+            }
+        }
+
+        localRadioTab();
+        function localRadioTab() {
+            if($(localRadio.option.storeSearch).is(":checked")) {
+                $(localRadio.container.localSearch).hide();
+                $(localRadio.container.storeSearch).show();
+            } else if($(localRadio.option.localSearch).is(":checked")) {
+                $(localRadio.container.storeSearch).hide();
+                $(localRadio.container.localSearch).show();
+            }
+        }
+        </script>
+        <!-- // 20211213 -->
+        
+
+        <div class="section store-search-checked bg-light1">
+            <div class="radio-wrap">
+                <label class="check-item">
+                    <input type="checkbox">
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u">오늘서비스</span>
+                    </div>
+                </label>
+                <label class="check-item">
+                    <input type="checkbox">
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u">방문이력</span>
+                    </div>
+                </label>
+                <label class="check-item">
+                    <input type="checkbox">
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u">수입차정비</span>
+                    </div>
+                </label>
+                <label class="check-item">
+                    <input type="checkbox">
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u">휴일지킴이</span>
+                    </div>
+                </label>
+                <label class="check-item">
+                    <input type="checkbox">
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u">스마트케어</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="store-accordian-wrap bg-light1">
+            <h3 class="headline"><span class="line-icons info-circle size-16"></span>서비스 설명보기</h3>
+            <div class="info">
+                <div class="rowgroup">
+                    <div class="rowheader">오늘서비스</div>
+                    <div class="cell">오늘로부터 3일 이내 방문예약이 가능한 매장</div>
+                </div>
+                <div class="rowgroup">
+                    <div class="rowheader">방문이력</div>
+                    <div class="cell">방문 또는 정비이력이 있는 매장</div>
+                </div>
+                <div class="rowgroup">
+                    <div class="rowheader">수입차정비</div>
+                    <div class="cell">국산차와 수입차 모두 정비 받을 수 있는 매장</div>
+                </div>
+                <div class="rowgroup">
+                    <div class="rowheader">휴일지킴이</div>
+                    <div class="cell">토요일, 일요일에도 장착 및 정비를 받을 수 있는 매장</div>
+                </div>
+                <div class="rowgroup">
+                    <div class="rowheader">스마트케어</div>
+                    <div class="cell">쿠폰, 이력관리 등 멤버십 혜택을 모두 누릴 수 있는 매장</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function storeAccordion () {
+                $('.store-accordian-wrap').each(function(i) {
+                    var $accordionWrap = $('.store-accordian-wrap');
+                    var $accordionButton = $accordionWrap.find('.headline');
+
+                    $accordionButton.click(function() {
+                        $accordionWrap.eq(i).toggleClass('active');
+                    })
+                });
+            }
+
+            storeAccordion();
+        </script>
+
+        <div class="sticky-func">
+            <div class="store-sort-wrap">
+                <div class="sort-info">
+                    <!-- 20211213 // -->
+                    검색결과 <strong>6개</strong>
+                    <!-- // 20211213 -->
+                </div>
+                <div class="sort-button-wrap">
+                    <button class="btn-sort store-list-button"><span class="line-icons map size-24 mg-r-1u"></span>지도에서 보기</button>
+                    <button class="btn-sort store-maps-button" style="display: none;"><span class="line-icons list size-24 mg-r-1u"></span>리스트로 보기</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $('.sort-button-wrap').find('.btn-sort').on('click', storeSearch)
+
+            function storeSearch (e) {
+                if($(this).hasClass('store-list-button')) {
+                    $('.store-list-button, .store-list').hide();
+                    $('.store-maps-button, .store-maps').show();
+                } else if($(this).hasClass('store-maps-button')) {
+                    $('.store-maps-button, .store-maps').hide();
+                    $('.store-list-button, .store-list').show();
+                }
+            }
+        </script>
+
+        <div class="sort-result-section">
+            <div class="store-list">
+                <!--  매장 결과 없을 경우(리스트용) -->
+                <div class="empty-box bg-light1 txt-center pd-v-15u">
+                    <div class="middler">
+                        <span class="line-icons error-circle size-48"></span>
+                        <p class="empty-msg">현재 위치 주변에<br>장착 가능한 매장이 없습니다.</p>
+                    </div>
+                </div>
+                <div class="box box-white box-radius pd-t-8u pd-b-10u pd-h-3u txt-center">
+                    <h3 class="txt-16 txt-w500 txt-neutral2">고객센터 080-022-8272</h3>
+                    <p class="txt-12 txt-neutral2">월~금 09:00 ~ 16:00 주말 및 공휴일 휴무</p>
+                    <ul class="list-size-equal mg-t-6u">
+                        <li class="pd-r-1u">
+                            <button type="button" class="btn-item btn-neutral btn-ol full-w round" style="border-color: #D9DBDC;" onclick="$.Tstation.callAndroidCheck(event, '080-022-8272')">
+                                <span class="label-txt">고객센터 전화상담</span>
+                            </button>
+                        </li>
+                        <li class="pd-l-1u">
+                            <button type="button" class="btn-item btn-neutral btn-ol full-w round" style="border-color: #D9DBDC;" onclick="$.Tstation.callCs();">
+                                <span class="label-txt">1:1 문의하기</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="store-wrap">
+                    <div class="store-info">
+                        <!-- 20211213 // -->
+                        <div class="service">
+                            <span class="smartstore"><span class="blind">all my T</span></span>
+                            <div class="interest-store-wrap right">
+                            <label class="check-interest">
+                                <input type="checkbox">
+                                <div class="icon-holder">
+                                    <span class="heart-fill"></span><!-- 20220316 line-icons 삭제 -->
+                                </div>
+                                <div class="labelling">
+                                    <span class="label-txt mg-h-1u">단골매장</span>
+                                </div>
+                            </label>
+                        </div>
+                        </div>
+                        <div class="franchisee">
+                            <h4 class="headcopy">
+                                <span class="name">성남점-1</span>
+                                <div class="benefit-wrap pd-l-2u">
+                                    <span class="benefit great-store">우수매장</span>
+                                    <span class="benefit smart-pickup">픽업서비스</span>
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="distance">
+                            <div class="info">
+                                <div class="star-wrap mg-r-4u">
+                                    <span class="count txt-w500">4.8점</span>
+                                    <span class="buying">(9999)</span>
+                                </div>
+                                <span class="open">08:00 ~ 20:00</span>
+                            </div>
+                            <p class="address">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</p>
+                        </div>
+                        <!-- // 20211213 -->
+                        <div class="store-meta">
+                            <span>오늘서비스</span>
+                            <span>다녀온 매장</span>
+                            <span>수입차 정비</span>
+                            <span>휴일지킴이</span>
+                        </div>
+                        <a class="dp-block txt-12 txt-primary mg-t-1u" href="#none">매장 상세보기<span class="line-icons chev-right size-16"></span></a>
+                    </div>
+                    <div class="store-footer">
+                        <!-- 20220210 // -->
+                        <div class="store-button-wrap">
+                            <div class="connect-wrap">
+                                <button class="location-button"><span class="line-icons location size-28"></span></button>
+                                <button class="call-button" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')"><span class="line-icons call size-28"></span></button>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral btn-ol round select-button">
+                                <span class="label-txt">매장 선택하기</span>
+                            </button>
+                        </div>
+                        <!-- // 20220210 -->
+                    </div>
+                </div>
+                <div class="store-wrap">
+                    <div class="store-info">
+                        <div class="service">
+                            <span class="smartstore"><span class="blind">all my T</span></span>
+                            <div class="interest-store-wrap right">
+                            <label class="check-interest">
+                                <input type="checkbox">
+                                <div class="icon-holder">
+                                    <span class="heart-fill"></span><!-- 20220316 line-icons 삭제 -->
+                                </div>
+                                <div class="labelling">
+                                    <span class="label-txt mg-h-1u">단골매장</span>
+                                </div>
+                            </label>
+                        </div>
+                        </div>
+                        <div class="franchisee">
+                            <h4 class="headcopy">
+                                <span class="name">가나다라마바사아차카타파타하가나다라마바사아차카타파</span>
+                                <div class="benefit-wrap pd-l-2u">
+                                    <span class="benefit great-store">우수매장</span>
+                                    <span class="benefit smart-pickup">픽업서비스</span>
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="distance">
+                            <div class="info">
+                                <div class="star-wrap mg-r-4u">
+                                    <span class="count txt-w500">4.8점</span>
+                                    <span class="buying">(9999)</span>
+                                </div>
+                                <span class="open">08:00 ~ 20:00</span>
+                            </div>
+                            <p class="address">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</p>
+                        </div>
+                        <div class="store-meta">
+                            <span>오늘서비스</span>
+                            <span>다녀온 매장</span>
+                            <span>수입차 정비</span>
+                            <span>휴일지킴이</span>
+                        </div>
+                        <a class="dp-block txt-12 txt-primary mg-t-1u" href="#none">매장 상세보기<span class="line-icons chev-right size-16"></span></a>
+                    </div>
+                    <div class="store-footer">
+                        <div class="store-button-wrap">
+                            <div class="connect-wrap">
+                                <button class="location-button"><span class="line-icons location size-28"></span></button>
+                                <button class="call-button" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')"><span class="line-icons call size-28"></span></button>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral btn-ol round select-button">
+                                <span class="label-txt">매장 선택하기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="store-maps" style="display: none;">
+                <div class="map-wrap">
+                    <img src="mc-static-root/images/common/goods/@sample_map.png" alt="">
+                </div>
+
+                <!-- 매장 결과 없을 경우(맵용) -->
+                <!-- <div class="empty-msg-on-map">
+                    <p>현재 위치 주변에 장착 가능한 매장이 없습니다.</p>
+                </div> -->
+
+                 <!-- 20220622 // -->
+                 <div class="map-pointer-fixed"></div>
+                 <div class="rescan-button-wrap active">
+                     <button type="button" class="btn-item btn-primary btn-rescan round pd-r-3u" data-analytics-click="지도에서 매장 재검색">
+                         <span class="label-txt txt-12">지도에서 매장 재검색</span>
+                         <span class="line-icons refresh size-20"></span>
+                     </button>
+                 </div>
+                 <div class="map-empty-msg-wrap active">
+                     <div class="map-empty-msg-pannel">
+                         <span class="line-icons error-circle size-40 pd-t-2u"></span>
+                         <p class="txt-16 mg-t-2u">보고계신 지역에 장착가능한<br />매장이 없습니다</p>
+                         <!-- 매장예약 <p class="txt-16 mg-t-2u">보고계신 지역에 예약가능한<br />매장이 없습니다</p> -->
+                         <p class="txt-12 mg-t-6u">지도를 이동해서 <strong class="txt-primary txt-w400">‘지도에서 매장 재검색’</strong><br />버튼을 눌러주세요</p>
+                         <button type="button" class="round button-popup-close" data-analytics-click="팝업 닫기">
+                             <span class="line-icons close size-24"></span>
+                         </button>
+                     </div>
+                     <div class="map-empty-dimmed"></div>
+                 </div>
+
+                 <div class="map-empty-msg-wrap active">
+                     <div class="map-empty-msg-pannel">
+                         <span class="line-icons error-circle size-40 pd-t-2u"></span>
+                         <p class="txt-16 mg-t-2u">검색하신 지역에 장착가능한 <br />매장이 없습니다</p>
+                         <!-- 매장예약 <p class="txt-16 mg-t-2u">검색하신 지역에 예약가능한 <br />매장이 없습니다</p> -->
+                         <p class="txt-12 txt-neutral2 mg-t-4u">현 위치에서 가장 가까운 매장을 조회하시겠습니까?</p>
+                         <button type="button" class="round around-popup-more mg-t-1u" data-analytics-click="가장 가까운 매장보기">
+                             <span class="label-txt txt-primary txt-underline txt-14">가장 가까운 매장보기</span>
+                         </button>
+                         <button type="button" class="round button-popup-close" data-analytics-click="팝업 닫기">
+                             <span class="line-icons close size-24"></span>
+                         </button>
+                     </div>
+                     <div class="map-empty-dimmed"></div>
+                 </div>
+                 <script>
+                     var mapEmptyDim = $('.map-empty-msg-wrap').find('.map-empty-dimmed');
+                     var mapCloseButton = $('.map-empty-msg-wrap').find('.button-popup-close');
+                     mapEmptyDim.on('click', mapEmptyMsg);    
+                     mapCloseButton.on('click', mapEmptyMsg);
+                     function mapEmptyMsg() {
+                         console.log('b');
+                         $(this).parents('.map-empty-msg-wrap').removeClass('active')
+                     }
+                 </script>
+                 <!-- // 20220622 -->
+
+                <!-- 맵 마커
+                <img src="mc-static-root/images/common/map_marker_orange.png" class="map-marker" style="width:24px;">
+                <img src="mc-static-root/images/common/map_marker_dark.png" class="map-marker" style="width:24px;"> -->
+
+                <!-- 맵위에 떠있을경우 store-wrap 'on-map'클래스 추가 / 비활성 상태는 'disable'클래스 추가 -->
+                <div class="store-wrap on-map" style="display: none; width: 310px; top: 50%; left: 50%;">
+                    <div class="store-info">
+                        <div class="service">
+                            <span class="smartstore"><span class="blind">all my T</span></span>
+                            <div class="interest-store-wrap right">
+                            <label class="check-interest">
+                                <input type="checkbox">
+                                <div class="icon-holder">
+                                    <span class="heart-fill"></span><!-- 20220316 line-icons 삭제 -->
+                                </div>
+                                <div class="labelling">
+                                    <span class="label-txt mg-h-1u">단골매장</span>
+                                </div>
+                            </label>
+                        </div>
+                        </div>
+                        <div class="franchisee">
+                            <h4 class="headcopy">
+                                <span class="name">동탄점-3</span>
+                                <div class="benefit-wrap pd-l-2u">
+                                    <span class="benefit great-store">우수매장</span>
+                                    <span class="benefit smart-pickup">픽업서비스</span>
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="distance">
+                            <div class="info">
+                                <div class="star-wrap mg-r-4u">
+                                    <span class="count txt-w500">4.8점</span>
+                                    <span class="buying">(9999)</span>
+                                </div>
+                                <span class="open">08:00 ~ 20:00</span>
+                            </div>
+                            <p class="address">경기도 성남시 분당구 운중로267번길 3-7 (판교동)</p>
+                        </div>
+                        <div class="store-meta">
+                            <span>오늘서비스</span>
+                            <span>다녀온 매장</span>
+                            <span>수입차 정비</span>
+                            <span>휴일지킴이</span>
+                        </div>
+                        <a class="dp-block txt-12 txt-primary mg-t-1u" href="#none">매장 상세보기<span class="line-icons chev-right size-16"></span></a>
+                    </div>
+                    <div class="store-footer">
+                        <!-- 20220210 // -->
+                        <div class="store-button-wrap">
+                            <div class="connect-wrap">
+                                <button class="location-button"><span class="line-icons location size-28"></span></button>
+                                <button class="call-button" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')"><span class="line-icons call size-28"></span></button>
+                            </div>
+                            <button type="button" class="btn-item btn-neutral btn-ol round select-button">
+                                <span class="label-txt">매장 선택하기</span>
+                            </button>
+                        </div>
+                        <!-- // 20220210 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+        </script>
+
+    </div>
+    <!-- // .store-search end -->
+</div>

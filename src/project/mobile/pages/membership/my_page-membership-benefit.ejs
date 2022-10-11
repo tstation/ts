@@ -1,0 +1,205 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '멤버십' }) %>
+<main id="main">
+    <div class="tab-item">
+        <a href="" class="">MY 멤버십</a>
+        <a href="" class="on">멤버십 혜택</a>
+        <a href="" class="">맞춤 서비스</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section class="smarthero-section thumb-kv-car">
+            <h3 class="herocopy"><strong>3단계 스마트케어</strong> 서비스로 제공되는 폭넓은 혜택!</h3>
+            <div class="copy-kv-wrap">
+                <div class="copy-kv-content">
+                    <div class="copy-kv copy-car">
+                        <em>스마트 드라이브</em>내 차를 위한 스마트한 <br />무상점검 / 점검알림
+                    </div>
+                    <div class="copy-kv copy-map">
+                        <em>스마트 서비스</em>오늘장착, 스마트픽업, 호텔서비스 T'Station만의 차별화 서비스
+                    </div>
+                    <div class="copy-kv copy-sale">
+                        <em>스마트 바이</em>쿠폰, 구매할인등 다양한 혜택부터 나만을 위한 쇼핑가이드까지!
+                    </div>
+                </div>
+            </div>
+            <div class="circle-gallery-wrap">
+                <div class="circle-gallery-animation">
+                    <div class="icon-kv arrow-car"></div>
+                    <div class="icon-kv arrow-map"></div>
+                    <div class="icon-kv arrow-sale"></div>
+                </div>
+            </div>
+        </section>
+        <section class="smartbuy-section">
+            <h4 class="headcopy">쿠폰, 결제혜택이 강화된 <strong>스마트 바이</strong><span class="icon-wrap icon-smartbuy"></span></h4>
+            <div class="swiper-container smartbuy-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">손쉬운 모바일 쇼핑</div>
+                            <img src="mc-static-root/images/common/img_smartbuy_01.png" alt="" />
+                            <div class="item-description">모바일로 필요한 타이어 가격을 비교, 검색, 예약 <span class="nowrap">할 수 있는 서비스</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">타이어 전문 상담</div>
+                            <img src="mc-static-root/images/common/img_smartbuy_02.png" alt="" />
+                            <div class="item-description">고객에게 꼭 맞는 상품/서비스를 <span class="nowrap">추천해 주는 서비스</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">구매할인</div>
+                            <img src="mc-static-root/images/common/img_smartbuy_03.png" alt="" />
+                            <div class="item-description">멤버십 회원에게 5% 결제 할인을 제공 <span class="nowrap point">(온라인에 한함)</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">손쉬운 모바일 쇼핑</div>
+                            <img src="mc-static-root/images/common/img_smartbuy_04.png" alt="" />
+                            <div class="item-description">모바일로 필요한 타이어 가격을 비교, 검색, 예약 <span class="nowrap">할 수 있는 서비스</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var bannerSlideSecond = new Swiper('.smartbuy-swiper', {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                    },
+                    spaceBetween: 12,
+                    slidesPerView: 'auto'
+                });
+
+                bannerSlideSecond.init();
+                $(window).on('resize', function () {
+                    bannerSlideSecond.init();
+                });
+            </script>
+
+        </section>
+        <section class="smartservice-section">
+            <h4 class="headcopy">회원특가로 픽업, 휴일장착까지  <strong>스마트 서비스</strong><span class="icon-wrap icon-smartservice"></span></h4>
+            <div class="swiper-container smartservice-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">오늘서비스</div>
+                            <img src="mc-static-root/images/common/img_smartservice_01.png" alt="" />
+                            <div class="item-description">오늘 구매한 타이어를 오늘 바로 장착 할 수 있는 서비스</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">스마트픽업 서비스</div>
+                            <img src="mc-static-root/images/common/img_smartservice_02.png" alt="" />
+                            <div class="item-description">매장에 안가도 알아서 픽업하고 <span class="nowrap">타이어교체와 정비 후 딜리버리까지</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">호텔서비스</div>
+                            <img src="mc-static-root/images/common/img_smartservice_03.png" alt="" />
+                            <div class="item-description">윈터 아이셉트 구매 후 기존타이어를 프리미엄 보관</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">휴일지킴이</div>
+                            <img src="mc-static-root/images/common/img_smartservice_04.png" alt="" />
+                            <div class="item-description">일요일에도 걱정 없이 타이어를 구매하고 장착할수 <span class="nowrap">있는 서비스</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var bannerSlideSecond = new Swiper('.smartservice-swiper', {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                    },
+                    spaceBetween: 12,
+                    slidesPerView: 'auto'
+                });
+
+                bannerSlideSecond.init();
+                $(window).on('resize', function () {
+                    bannerSlideSecond.init();
+                });
+            </script>
+        </section>
+        <section class="smartlive-section">
+            <h4 class="headcopy">무상점검에서 멤버십 쿠폰까지 <strong>스마트 드라이브</strong><span class="icon-wrap icon-smartlive"></span></h4>
+            <div class="swiper-container smartlive-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">스마트안심서비스</div>
+                            <img src="mc-static-root/images/common/img_smartdriver_01.png" alt="" />
+                            <div class="item-description">고객의 실수로 타이어가 파손 되어도 무상으로 <span class="nowrap">타이어를 교체해 주는 서비스</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">5가지 무상점검약속</div>
+                            <img src="mc-static-root/images/common/img_smartdriver_02.png" alt="" />
+                            <div class="item-description">부담없이 받을 수 있는 타이어마모 / 공기압 / 엔진오일 <span class="nowrap">/ 배터리 / 워셔액 점검&middot;보충 서비스</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">디지털 알림서비스</div>
+                            <img src="mc-static-root/images/common/img_smartdriver_03.png" alt="" />
+                            <div class="item-description">디지털 이력관리를 통해 정기점검 주기를 알아서 <span class="nowrap">알려주는 서비스</span></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="smart-item">
+                            <div class="item-headcopy">멤버십 쿠폰</div>
+                            <img src="mc-static-root/images/common/img_smartdriver_04.png" alt="" />
+                            <div class="item-description">재구매도 첫구매와 똑같이 5% 결제 할인 제공</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var bannerSlideSecond = new Swiper('.smartlive-swiper', {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                    },
+                    spaceBetween: 12,
+                    slidesPerView: 'auto'
+                });
+
+                bannerSlideSecond.init();
+                $(window).on('resize', function () {
+                    bannerSlideSecond.init();
+                });
+            </script>
+        </section>
+        <section class="smarlegal-section">
+            <h4 class="headcopy">티스테이션 멤버십 서비스 안내</h4>
+            <ul class="smarlegal-list">
+                <li>스마트케어의 모든 서비스는 TS.com 정식회원 가입 절차를 거친 고객에게만 제공됩니다.</li>
+                <li>무상점검/할인/무료 쿠폰의 사용기한은 각 쿠폰에 명시되어 있으며, 할인/무료 쿠폰의 경우 한국타이어에서 공급하는 특정상품의 구매수량 충족 시 제공됩니다. (쿠폰 별 기준 별도 표시)</li>
+                <li>무상점검은 타이어마모/공기압/엔진오일/배터리/워셔액 점검 및 보충에 한하여 제공됩니다.</li>
+                <li>구매/재구매 5% 할인은 TS.com을 통한 구매 시 에만 적용됩니다. </li>
+                <li>스마트페이는 제휴카드사 상황에 따라 세부 서비스 내용이 변경 될 수 있습니다. </li>
+                <li>1.4톤 초과 화물차, 수입차 등 일부차종은 멤버십 서비스에서 제외 또는 제한이 있을 수 있습니다.</li>
+                <li>고객이 사전 구매한 제품에 대한 서비스적용 불가하며, TS.com 공식적인 제휴행사 외 모든 서비스 혜택은 중복 적용 불가합니다. </li>
+                <li>온라인 구매 외 오프라인 회원 구매는 권장소매 가격 기준이며, 최종 구매 가격은 매장별 차이가 있을 수 있습니다. </li>
+                <li>스마트케어의 모든 서비스는 한국타이어가 지정한 정식 서비스 매장 (멤버십 스토어)에서만 제공되며, 일부 매장의 경우 서비스 이용의 제한이 있을 수 있습니다. </li>
+                <li>회원정책 및 서비스정책과 관련된 사항은 약관을 참조하시기 바라며, 기타 궁금한 사항 있을 시 당사 웹사이트 www.tstation.com 내 확인 또는 고객센터로 문의하시 기 바랍니다.</li>
+            </ul>
+        </section>
+    </div>
+</main>

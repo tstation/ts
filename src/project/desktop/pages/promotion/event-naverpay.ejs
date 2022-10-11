@@ -1,0 +1,62 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="event">
+    <div id="contents">
+        <!-- 01. page title -->
+        <div class="page_tit">
+            <h4>이벤트</h4>
+        </div>
+        <!-- //01. page title -->
+        <!-- 02. 제목 -->
+        <div class="event_tit">
+            한국타이어 X PRO-SPECS
+            <span class="date">이벤트 기간 : 99.99.99  ~ 99.99.99</span>
+        </div>
+        <input type="hidden" id="evtUrlAddr" value="">
+        <input type="hidden" id="endEvtDisp" value="">
+        <input type="hidden" id="isEvtDispBf" value="">
+
+        <!-- //02. 제목  -->
+        <!-- 03. 이벤트 상세  -->
+        <div class="event_list">
+            <div id="inner">
+
+                <div class="event-detail-wrap">
+                    <div class="center-inner">
+                        <link rel="stylesheet" type="text/css" href="pc-static-root/css/event.css" />
+                        <!-- Prospecs event //  -->
+                        <div class="prospecs-event">                                                        
+                            <style>
+                            .prospecs-event {position:relative;}
+                            .prospecs-event .img-map-wrap {max-width:750px; width:100%; font-size: 0; margin: auto; position:relative;}
+                            .prospecs-event .img-map-link {display: block; position: absolute; z-index: 1; border-radius: 44px; }
+                            .prospecs-event .img-map-link.link-1 {left: 1.5%; top: 76%; width: 48%; height: 1.5%;}
+                            .prospecs-event .img-map-link.link-2 {left: 51%; top: 76%; width: 48%; height: 1.5%;}
+                            </style>
+
+                            <div class="img-map-wrap">
+                                <img src="pc-static-root/images/event/20220209/img_naverpay_details.png" alt="" />
+                                <!-- 비로그인 또는 로그인하였으나 등록차량 없는 case 
+                                    : tstation.com/tire/sizes?brandCd=hk
+                                    로그인 및 등록차량 있는 case (사이즈 적용)
+                                    :tstation.com/tire/sizes -->
+                                <a href="/tire/sizes?brandCd=hk" class="img-map-link link-1"><span class="blind">타이어쇼핑 바로가기</span></a>
+                                <a href="/cart" class="img-map-link link-2"><span class="blind">장바구니 바로가기</span></a>
+                            </div>                                        
+                        </div>
+                        <!-- // Prospecs event -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn01">
+                <a href="https://www.tstation.com/promotion/event-list" class="btnM2 btnS02">목록으로</a>
+            </div>
+        </div>
+        <!-- //03. 이벤트 상세  -->
+
+        <!-- #contents -->
+    </div>
+</div>

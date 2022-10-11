@@ -1,0 +1,189 @@
+<%
+let { list = [] } = locals.entry;
+if (!list.length) { return 'No menus yet :(('; }
+-%>
+<div class="search">
+    <input id="searchInput" type="search" placeholder="Search" required="">
+    <button type="reset" class="resetButton" title="입력취소">reset</button>
+</div>
+<div class="pages">
+<ul class="menu-accordion">
+    <% list.forEach((item, index) => { -%>
+    <li data-search-level="0" class="<% if (item.listItems.length) { %>tree-view<% } %> <% if (index === 0) { %>open<% } %>">
+        <a><span class="label label-group"><%- item.groupTitle %></span></a>
+        <% if (item.listItems.length) { %>
+        <ul data-search-level="1" class="tree-view-menu" >
+            <% item.listItems.forEach((listItem, listItemIndex) => { -%>
+            <li data-search-level="2" class="<% if (listItem.status !== 'done') { %>ing<% } %> <% if (index === 0 && listItemIndex === 0) { %>active<% } %>">
+                <a
+                    onclick="$proto.viewer.viewerPage(this)"
+                    data-project="<%- item.project %>"
+                    data-status="<%- listItem.status %>"
+                    data-access-required="<%- listItem.accessRequired %>"
+                    data-group-title="<%- item.groupTitle %>"
+                    data-group-description="<%- item.groupDescription %>"
+                    data-title="<%- listItem.title %>"
+                    data-page-url="<%- listItem.pageUrl %>"
+                    data-descriptions-page-id="<%- listItem.descriptions.pageId || '' %>"
+                    data-descriptions-page-type="<%- listItem.descriptions.pageType %>"
+                    data-descriptions-scope="<%- listItem.descriptions.scope %>"
+                    data-descriptions-comment="<%- listItem.descriptions.comment %>"
+                >
+                    <span class="label"><%- listItem.title %></span>
+                    <span class="<%- listItem.status %>"><%- listItem.descriptions.srName %></span>
+                </a>
+            </li>
+            <% }); -%>
+        </ul>
+        <% } %>
+    </li>
+    <% }); -%>
+</ul>
+</div>
+
+<script>
+;(function($, undefined) {
+    $.extend($.fn, {
+      search: function(opts) {
+        var defaults = {
+          delay: 300,
+          targetWrapper: '.menu-accordion',
+          visibilityClass: 'visible',
+          ancestorClass: 'ancestor-item',
+          lastVisibleClass: 'last-visible-item',
+          searchStatusClass: 'search-result'
+        };
+  
+        var $input = this.eq(0);
+        var $reset = $input.next('.resetButton');
+  
+        opts = $.extend({}, defaults, opts);
+  
+        if (!$input.length) {
+          return;
+        }
+  
+        var $wrapper = $(opts.targetWrapper);
+        var $list = $wrapper.find('[data-search-level]');
+  
+        var $items = {
+          group: $list.filter('[data-search-level="0"]').find('.label-group'),
+          firstLv: $list.filter('[data-search-level="1"]').find('> span'),
+          secondLv: $list.filter('[data-search-level="2"]').find('> a')
+        };
+  
+        var reset = function(e) {
+          e.preventDefault();
+          $input
+            .val('')
+            .trigger('input')
+            .focus();
+        };
+  
+        var $notFound = $('<p/>', {
+          'class': 'empty',
+          text: 'No results found.'
+        });
+  
+        var searchIt = function(res) {
+          var keyword = res.trim();
+          var urlKeyword = keyword.replace(/^.*\/\/[^\/]+/, '');
+          var escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          var regexp = new RegExp(escapedKeyword, 'g');
+          var matchedResult = [];
+  
+          $notFound.remove();
+  
+          $list
+            .removeClass([
+              opts.visibilityClass,
+              opts.ancestorClass,
+              opts.lastVisibleClass
+            ].join(' '))
+            .find('mark')
+            .contents()
+            .unwrap();
+  
+          if (!keyword) {
+            $wrapper.removeClass(opts.searchStatusClass);
+            return;
+          }
+  
+          $wrapper.addClass(opts.searchStatusClass);
+  
+          var markedKeyword = '<mark>' + keyword + '</mark>';
+  
+          var loop = function($elems) {
+            var $lastItem;
+  
+            $elems.each(function() {
+              var $this = $(this);
+              var text = $this.text();
+              var href = $this.attr('href');
+  
+              if (regexp.test(text) || (href && ~href.indexOf(urlKeyword))) {
+                $this
+                  .html(text.replace(regexp, markedKeyword))
+                  .parent('[data-search-level]')
+                  .addClass(opts.visibilityClass)
+                  .parents('[data-search-level]')
+                  .addClass(opts.ancestorClass);
+  
+                matchedResult.push(true);
+                $lastItem = $this;
+              }
+            });
+  
+            if ($lastItem) {
+              $lastItem.parent().addClass('last-visible-item');
+            }
+          };
+  
+          loop($items.group);
+          loop($items.firstLv);
+          loop($items.secondLv);
+  
+          if (matchedResult.indexOf(true) < 0) {
+            $wrapper.append($notFound);
+          }
+        };
+  
+        var inputTimeout;
+        var keyInput = function() {
+          var _this = this;
+  
+          if (inputTimeout) {
+            clearTimeout(inputTimeout);
+          }
+  
+          inputTimeout = setTimeout(function() {
+            searchIt(_this.value);
+          }, opts.delay);
+        };
+  
+        var keydown = function(e) {
+          var $targetElem;
+  
+          if (e.keyCode === 40) {
+            e.preventDefault();
+            $targetElem = $items.secondLv.filter(':visible:first');
+  
+            if ($targetElem.length) {
+              $targetElem.trigger('click');
+            }
+          }
+        };
+  
+        $input.on({
+          input: keyInput,
+          keydown: keydown
+        });
+  
+        $reset.on('click', reset);
+        return $input;
+      }
+    });
+  
+    $('#searchInput').search();
+})(jQuery);
+</script>

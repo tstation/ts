@@ -1,0 +1,251 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '상품비교내역' }) %>
+<div id="container" class="mypage">
+    <div class="compare_list">
+        <p class="txt01">최근 6개월 내역만 표시합니다.</p>
+        <ol class="prod_list04">
+            <li>
+                <button class="detail popup-full" title="bgfafa" data-rel="https://m.tstation.com/mypage/activity/popup/compare-goods-list?sysDispDt=2020.07.15&amp;cprGrpSeq=1508">
+                    <span>2020.07.15 <em>(2건)</em></span>
+                    <span class="more">비교보기</span>
+                </button>
+                <button type="button" name="btnClose" onclick="delHistInfo('2020.07.15','1508');" class="btnI del">삭제</button>
+                <div class="display_compare">
+                    <ol class="mine">
+
+                        <li>
+                            <dl>
+                                <dt>
+                                    <img src="mc-static-root/images/common/sample/tire.jpg" alt="Ventus S2 AS X" class="unitImg" onerror="this.src='/mc-static-root/images/common/noimg.gif'">
+                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                </dt>
+                                <dd class="info">
+							<span class="unitT1">
+
+										<span>벤투스 프리미엄 컴포트</span>
+										<small class="sub">Ventus S2 AS X</small>
+
+							</span>
+
+                                    <span class="org_price"><em> 151,800</em>원</span>
+                                    <span class="price"><em> 129,800</em>원</span>
+
+
+                                </dd>
+                            </dl>
+                        </li>
+
+                        <li>
+                            <dl>
+                                <dt>
+                                    <img src="mc-static-root/images/common/sample/tire.jpg" alt="Dynapro HL3" class="unitImg" onerror="this.src='/mc-static-root/images/common/noimg.gif'">
+                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                </dt>
+                                <dd class="info">
+							<span class="unitT1">
+
+										<span>다이나프로 컴포트</span>
+										<small class="sub">Dynapro HL3</small>
+
+							</span>
+
+                                    <span class="org_price"><em> 132,000</em>원</span>
+                                    <span class="price"><em> 107,800</em>원</span>
+
+
+                                </dd>
+                            </dl>
+                        </li>
+
+                    </ol>
+                </div>
+            </li>
+
+
+
+        </ol>
+    </div>
+</div>
+<div id="layerFullPopup" tabindex="0" style="display: block;">
+    <div class="layer_box bgfafa">
+        <div id="full_content">
+            <!-- 상품 비교  + url - full -->
+            <div class="full_compare">
+                <div class="layerT"><h3>상품 비교</h3></div>
+                <div class="layerC">
+                    <!-- 비교하기 -->
+                    <div class="compare_box">
+                        <div class="tit">3개의 상품을 비교합니다.</div>
+                        <ol class="list">
+                            <li class="line01"><!--  line01 = 프리미엄+ */ line02 = 프리미엄   */ line03 =  스탠다드   */ line04 =  Eonom */ line05 =  퍼포먼스  */ -->
+                                <!-- unit -->
+                                <dl>
+                                    <dt>
+							<span class="flag_01">
+								<em class="icn_rating premium">프리<br>미엄</em> <!-- 프리미엄 + 만  premium 추가 -->
+                                <!-- <em class="icn_rating"><i>프리<br />미엄</i></em>
+                                <em class="icn_rating"><i>스탠<br />다드</i></em>
+                                <em class="icn_rating"><i>이코<br />노미</i></em> -->
+							</span>
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="" class="unitImg">
+                                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                    </dt>
+                                    <dd class="info">
+							<span class="unitT1">
+								<span>다이나프로 익스트림 터레인</span><!-- 20200624 수정 daesung.lee -->
+								<small class="sub">Ventus S2 AS</small>
+							</span>
+                                        <span class="unitR1">
+								<em class="star01 point9"><i>4.5</i></em>
+								<em class="review">(118)</em>
+							</span>
+                                        <span class="org_price"><em>169,400</em>원</span>
+                                        <span class="price"><em>149,100</em>원</span>
+                                    </dd>
+                                </dl>
+                                <!-- //unit -->
+                                <div class="graph_box">
+                                    <!-- 일반 -->
+                                    <span>승차감		<em class="r1 w100p"><i style="width:100%">100</i></em></span><!-- 100% 인 경우 w100 추가해주세요. -->
+                                    <span>연비		<em class="r2">		<i style="width:68%">68</i></em></span>
+                                    <span>마일리지		<em class="r3">		<i style="width:97%">97</i></em></span>
+                                    <span>고속주행		<em class="r4">		<i style="width:90%">90</i></em></span>
+                                    <span class="no-graph">속도지수<span class="float-r">200km</span></span>
+                                    <span class="no-graph">하중지수<span class="float-r">875kg</span></span>
+                                    <!-- //일반 -->
+                                    <!-- winter -->
+                                    <!-- span class="winter">* Winter 타이어는<br />  비교 기준이 다릅니다.</span>
+                                    <span>Snow			<em class="win1 w100"><i style="width:100%">100</i></em></span>
+                                    <span>Ice			<em class="win2">	<i style="width:90%">90</i></em></span>
+                                    <span>마른노면 제동력		<em class="win3">	<i style="width:90%">90</i></em></span -->
+                                    <!-- winter -->
+                                </div>
+                            </li>
+                            <li class="line02"><!--  line01 = 프리미엄+ */ line02 = 프리미엄   */ line03 =  스탠다드   */ line04 =  Eonom */ line05 =  퍼포먼스  */ -->
+                                <!-- unit -->
+                                <dl>
+                                    <dt>
+							<span class="flag_01">
+								<!-- <em class="icn_rating premium">프리<br />미엄</em> 프리미엄 + 만  premium 추가 -->
+								<em class="icn_rating"><i>프리<br>미엄</i></em>
+                                <!-- <em class="icn_rating"><i>스탠<br />다드</i></em>
+                                <em class="icn_rating"><i>이코<br />노미</i></em> -->
+							</span>
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="" class="unitImg">
+                                        <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                    </dt>
+                                    <dd class="info">
+							<span class="unitT1">
+								<span>Ventus S Sport</span>
+								<small class="sub">Ventus S2 AS</small>
+							</span>
+                                        <span class="unitR1">
+								<em class="star01 point9"><i>4.5</i></em>
+								<em class="review">(118)</em>
+							</span>
+                                        <span class="org_price"><em>169,400</em>원</span>
+                                        <span class="price"><em>117,000</em>원</span>
+                                    </dd>
+                                </dl>
+                                <!-- //unit -->
+                                <div class="graph_box">
+                                    <!-- winter -->
+                                    <span class="winter">* Winter 타이어는<br>  비교 기준이 다릅니다.</span>
+                                    <span>Snow			<em class="win1 w100p"><i style="width:100%">100</i></em></span>
+                                    <span>Ice			<em class="win2">	<i style="width:90%">90</i></em></span>
+                                    <span>마른노면 제동력		<em class="win3">	<i style="width:90%">90</i></em></span>
+                                    <span class="no-graph">속도지수<span class="float-r">200km</span></span>
+                                    <span class="no-graph">하중지수<span class="float-r">875kg</span></span>
+                                    <!-- winter -->
+                                </div>
+                            </li>
+                            <li class="line03"><!--  line01 = 프리미엄+ */ line02 = 프리미엄   */ line03 =  스탠다드   */ line04 =  Eonom */ line05 =  퍼포먼스  */ -->
+                                <!-- unit -->
+                                <dl>
+                                    <dt>
+							<span class="flag_01">
+								<!-- <em class="icn_rating premium">프리<br />미엄</em> 프리미엄 + 만  premium 추가
+								<em class="icn_rating"><i>프리<br />미엄</i></em> -->
+								<em class="icn_rating"><i>스탠<br>다드</i></em>
+                                <!-- <em class="icn_rating"><i>이코<br />노미</i></em> -->
+							</span>
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="" class="unitImg">
+                                        <span class="flag_02"><em class="brandLogo logoMC">MICHELIN</em></span>
+                                    </dt>
+                                    <dd class="info">
+							<span class="unitT1">
+								<span>Ventus S Sport</span>
+								<small class="sub">Ventus S2 AS</small>
+							</span>
+                                        <span class="unitR1">
+								<em class="star01 point9"><i>4.5</i></em>
+								<em class="review">(118)</em>
+							</span>
+                                        <span class="price"><em>117,000</em>원</span>
+                                    </dd>
+                                </dl>
+                                <!-- //unit -->
+                                <div class="graph_box">
+                                    <!-- 일반 -->
+                                    <span>승차감		<em class="r1 w100p"><i style="width:100%">100</i></em></span>
+                                    <span>연비		<em class="r2">		<i style="width:68%">68</i></em></span>
+                                    <span>마일리지		<em class="r3">		<i style="width:97%">97</i></em></span>
+                                    <span>고속주행		<em class="r4">		<i style="width:90%">90</i></em></span>
+                                    <span class="no-graph">속도지수<span class="float-r">200km</span></span>
+                                    <span class="no-graph">하중지수<span class="float-r">875kg</span></span>
+                                    <!-- //일반 -->
+                                </div>
+                            </li>
+                            <li class="line04"><!--  line01 = 프리미엄+ */ line02 = 프리미엄   */ line03 =  스탠다드   */ line04 =  Eonom */ line05 =  퍼포먼스  */ -->
+                                <!-- unit -->
+                                <dl>
+                                    <dt>
+							<span class="flag_01">
+								<!-- <em class="icn_rating premium">프리<br />미엄</em> 프리미엄 + 만  premium 추가
+								<em class="icn_rating"><i>프리<br />미엄</i></em>
+								<em class="icn_rating"><i>스탠<br />다드</i></em> -->
+								<em class="icn_rating"><i>이코<br>노미</i></em>
+							</span>
+                                        <img src="mc-static-root/images/common/sample/tire.jpg" alt="" class="unitImg">
+                                        <span class="flag_02"><em class="brandLogo logoMC">MICHELIN</em></span>
+                                    </dt>
+                                    <dd class="info">
+							<span class="unitT1">
+								<span>Ventus S Sport</span>
+								<small class="sub">Ventus S2 AS</small>
+							</span>
+                                        <span class="unitR1">
+								<em class="star01 point9"><i>4.5</i></em>
+								<em class="review">(118)</em>
+							</span>
+                                        <span class="price"><em>117,000</em>원</span>
+                                    </dd>
+                                </dl>
+                                <!-- //unit -->
+                                <div class="graph_box">
+                                    <!-- winter -->
+                                    <span class="winter">* Winter 타이어는<br>  비교 기준이 다릅니다.</span>
+                                    <span>Snow			<em class="win1 w100p"><i style="width:100%">100</i></em></span>
+                                    <span>Ice			<em class="win2">	<i style="width:90%">90</i></em></span>
+                                    <span>마른노면 제동력		<em class="win3">	<i style="width:90%">90</i></em></span>
+                                    <span class="no-graph">속도지수<span class="float-r">200km</span></span>
+                                    <span class="no-graph">하중지수<span class="float-r">875kg</span></span>
+                                    <!-- winter -->
+                                </div>
+                            </li>
+                        </ol>
+                        <p class="info">상품의 성능은 각 제조사의 주관적인 평가로 구매 시 참고용으로 제공해 드립니다.</p>
+                    </div>
+                    <div class="btnFix">
+                        <button class="btnM2 btnS02 layer-full-close">저장하기</button>
+                    </div>
+                    <!-- //비교하기 -->
+                </div>
+            </div>
+            <!-- //상품 비교 --></div>
+        <button type="button" class="layer-full-close">팝업닫기</button>
+    </div>
+</div>

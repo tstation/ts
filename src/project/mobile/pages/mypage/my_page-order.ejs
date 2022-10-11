@@ -1,0 +1,270 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '주문내역' }) %>
+<div id="container" class="mypage PickerInner">
+    <!-- 조회 조건 (기간) -->
+    <div class="day_set on">
+        <h6>
+            기간<span>2020-08-16 ~ 2020-09-15</span>
+        </h6>
+        <button class="more" id="btn_set_period">기간설정</button>
+        <!-- 기간설정 영역 -->
+        <ul class="date_pick_area">
+            <!-- start date -->
+            <li class="r1">
+                <div class="day">
+                    <input title="일 입력" type="text" class="ip_txt01 w100p" data-id="datepickBox1" id="startDate" data-rel="pick" data-toggle="datepicker" value="2018-11-23">
+                    <button class="datepic">일자선택</button>
+                </div>
+                <div id="datepickBox1" class="pick datepickBox1" style="display: none;"></div>
+            </li>
+
+            <!-- end date -->
+            <li class="r2">
+                <div class="day">
+                    <input title="일 입력" type="text" class="ip_txt01 w100p" data-id="datepickBox2" id="endDate" data-rel="pick" data-toggle="datepicker" value="2019-12-24">
+                    <button class="datepic">일자선택</button>
+                </div>
+                <div id="datepickBox2" class="pick datepickBox2" style="display: none;"></div>
+            </li>
+            <li class="r3"><button class="on" data="1">1개월</button></li>
+            <li class="r3"><button data="3" class="">3개월</button></li>
+            <li class="r3"><button data="6" class="">6개월</button></li>
+            <li class="r3"><button data="12" class="">12개월</button></li>
+        </ul>
+        <div class="btn">
+            <button class="btnM btnS02" id="btn_search">선택 완료</button>
+        </div>
+        <!-- // 기간설정 영역 -->
+        <input type="hidden" id="ordDtlSctCd" value="10">
+    </div>
+
+
+    <!-- TODO: Sorting 기능 추가 -->
+    <div class="mg-v-2u pd-h-5u">
+        <div class="form-control form-control-md">
+            <div class="input-group">
+                <select class="input-box">
+                    <option value="" selected>전체</option>
+                    <option value="">주문완료</option>
+                    <option value="">배송준비중</option>
+                    <option value="">배송중</option>
+                    <option value="">배송완료</option>
+                    <option value="">장착완료</option>
+                </select>
+                <div class="tools">
+                    <button><span class="line-icons chev-down"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- // 조회 조건 -->
+
+    <!-- 주문 내역 -->
+    <div class="order_list">
+        <!-- 주문내역 있는 경우 -->
+        <ol class="list">
+            <li>
+                <!-- detail -->
+                <div class="order_info">
+
+                    <span class="date">2020-09-14</span> <a href="https://mlocal.tstation.com/mypage/tstation/order-history/detail/O202009140077700" class="status">상세보기</a>
+                    <a href="https://mlocal.tstation.com/mypage/tstation/order-history/detail/O202009140077700" class="detail">
+                            <span class="order_no">
+                                주문번호 <i>O202009140077700</i>
+                                <span class="smart-pay-badge">
+                                    <img src="mc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이">
+                                </span>
+                            </span>
+                        <ol class="info">
+                            <!-- TODO: 장착방법 라벨 추가 -->
+                            <!-- 20210720 // -->
+                            <li><span class="tit">방문방법</span>직접방문</li>
+                            <li><span class="tit">매장명</span>방배점</li>
+                            <li><span class="tit">매장방문일</span>2020-09-15(화) / 16시</li>
+                            <!-- // 20210720 -->
+                        </ol>
+                    </a>
+                </div>
+
+                <ol class="unit">
+                    <!-- 주문 상품 단위 -->
+                    <li>
+                        <!-- TODO: 주문상태 항목 추가 주문완료 / 배송준비중 / 배송중 / 배송완료 / 장착완료-->
+                        <span class="status"><em>장착완료</em></span>
+                        <dl class="unit02">
+                            <dt>
+                                <a href="https://mlocal.tstation.com/tire/product/hk_p_s_ventus_s1_evo3?goodsNo=G000000323161" data-ap-product="{'name':'Ventus S1 evo3','id':'G000000323161','price':0,'brand':'HK','category':'여름/승용차/SPORT/프리미엄+','variant':'225/50R18','product_rating_customer':'0.0'}">
+                                    <img src="https://m.tstation.com/upload/goods/250/10/0000/0031/G00000031841701ko.jpg" id="goodsImg" class="unitImg" alt="Ventus S1 evo3">
+                                </a>
+                                <span class="flag_02">
+                                        <em class="brandLogo lf">HANKOOK</em>
+                                    </span>
+                            </dt>
+                            <dd class="info">
+                                <a href="https://mlocal.tstation.com/tire/product/hk_p_s_ventus_s1_evo3?goodsNo=G000000323161" data-ap-product="{'name':'Ventus S1 evo3','id':'G000000323161','price':0,'brand':'HK','category':'여름/승용차/SPORT/프리미엄+','variant':'225/50R18','product_rating_customer':'0.0'}">
+                                        <span class="flag_04">
+                                            <em class="c01 off">Comfort</em>
+                                            <em class="c02 ">SPORT</em>
+                                            <em class="c03 off">Runflat</em>
+                                        </span>
+                                    <!-- 일반 타이어 -->
+                                    <!--<span class="unitT1">
+                                        <span>벤투스 프리미엄 스포츠</span>
+                                        <small class="sub">Ventus S1 evo3</small>
+                                    </span>-->
+                                    <!-- 한국 타이어 -->
+                                    <span class="unitT1 image-container">
+                                            <img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png">
+                                        </span>
+                                    <span class="unitT3">225/50R18</span>
+                                    <span class="flag_05">
+                                            <em>승용차</em>
+                                            <em>여름</em>
+                                            <em>프리미엄+</em>
+                                        </span>
+                                </a>
+                                <span class="unitP2"> <em>184,400</em>원 <em class="no"><i>1</i>개</em></span>
+                            </dd>
+                        </dl>
+                        <!-- 20220719 // -->
+                        <div class="txt-center">
+                            <p class="txt-11 txt-blue pd-t-2u border-t"><span class="line-icons check-circle-inv size-16 mg-r-1u"></span>15일 해피보증 프로그램 적용상품입니다.</p>
+                        </div>
+                        <!-- // 20220719 -->
+                    </li>
+                    <!-- // 주문 상품 단위 -->
+                    <!-- 주문 상품 단위 -->
+                    <li>
+                        <!--<div class="order-process mg-b-2u">
+                            <ul>
+                                <li class="col_one_fifth on"><span>주문<br />완료</span></li>
+                                <li class="col_one_fifth"><span>배송<br />준비중</span></li>
+                                <li class="col_one_fifth"><span>배송중</span></li>
+                                <li class="col_one_fifth"><span>배송<br />완료</span></li>
+                                <li class="col_one_fifth col_last"><span>장착<br />완료</span></li>
+                            </ul>
+                        </div>-->
+                        <!-- TODO: 주문상태 항목 추가 주문완료 / 배송준비중 / 배송중 / 배송완료 / 장착완료-->
+                        <span class="status"><em>주문완료</em></span>
+                        <dl class="unit02">
+                            <dt><a href="https://mlocal.tstation.com/auto-service/product/모빌_1_esp_formula_-_5w30?ptrnCd=E0018&amp;goodsMdclCd=06&amp;movePath=pattern" data-ap-product="{'name':'모빌 1 ESP FORMULA - 5W30','id':'G000000323808','price':0,'brand':'HK','category':'엔진오일','variant':'','product_rating_customer':'0.0'}"><img src="mc-static-root/images/common/sample/oil.jpg" id="goodsImg" class="unitImg" alt="모빌 1 ESP FORMULA - 5W30"></a><span class="flag_02 item"><em class="brandLogo logoHK">HANKOOK</em></span></dt><dd class="info"><a href="https://mlocal.tstation.com/auto-service/product/모빌_1_esp_formula_-_5w30?ptrnCd=E0018&amp;goodsMdclCd=06&amp;movePath=pattern" data-ap-product="{'name':'모빌 1 ESP FORMULA - 5W30','id':'G000000323808','price':0,'brand':'HK','category':'엔진오일','variant':'','product_rating_customer':'0.0'}"><span class="unitT1">모빌 1 ESP FORMULA - 5W30</span><span class="unitT3"></span><span class="flag_05"><em></em></span></a>
+                                <span class="unitP2"> <em>126,400</em>원 <em class="no"><i>1</i>개</em></span>
+                            </dd>
+                        </dl>
+                    </li>
+                    <!-- // 주문 상품 단위 -->
+                </ol>
+            </li>
+
+            <li>
+                <!-- detail -->
+                <div class="order_info">
+
+                    <span class="date">2020-09-14</span> <a href="https://mlocal.tstation.com/mypage/tstation/order-history/detail/O202009140077699" class="status">상세보기</a>
+                    <a href="https://mlocal.tstation.com/mypage/tstation/order-history/detail/O202009140077699" class="detail">
+                        <span class="order_no">주문번호 <i>O202009140077699</i></span>
+                        <ol class="info">
+                            <!-- 20210720 // -->
+                            <li><span class="tit">방문방법</span>픽업 / 딜리버리</li>
+                            <li><span class="tit">매장명</span>방배점</li>
+                            <li><span class="tit">매장방문일</span>2020-09-15(화) / 16시</li>
+                            <!-- // 20210720 -->
+                        </ol>
+                    </a>
+                </div>
+                <ol class="unit">
+                    <!-- 주문 상품 단위 -->
+                    <li>
+                        <!-- TODO: 주문상태 항목 추가 주문완료 / 배송준비중 / 배송중 / 배송완료 / 장착완료-->
+                        <span class="status"><em>배송준비중</em></span>
+                        <dl class="unit02">
+                            <dt><a href="https://mlocal.tstation.com/tire/product/pi_s_s_scorpion_verde?goodsNo=G000000319784" data-ap-product="{'name':'SCORPION VERDE','id':'G000000319784','price':0,'brand':'PI','category':'여름/SUV/RUNFLAT/','variant':'255/50R19','product_rating_customer':'0.0'}"><img src="//mdev.tstation.com/upload/goods/250/10/0000/0031/G00000031978501ko.jpg" id="goodsImg" class="unitImg" alt="SCORPION VERDE"></a><span class="flag_02"><em class="brandLogo logoPI">Pirelli Tire</em></span></dt><dd class="info"><a href="https://mlocal.tstation.com/tire/product/pi_s_s_scorpion_verde?goodsNo=G000000319784" data-ap-product="{'name':'SCORPION VERDE','id':'G000000319784','price':0,'brand':'PI','category':'여름/SUV/RUNFLAT/','variant':'255/50R19','product_rating_customer':'0.0'}"><span class="flag_04"><em class="c01 off">Comfort</em> <em class="c02 off">SPORT</em> <em class="c03 ">Runflat</em> </span><span class="unitT1">SCORPION VERDE</span><span class="unitT3">255/50R19</span><span class="flag_05"><em>SUV</em><em>여름</em><em></em></span></a>
+                                <span class="unitP2"> <em>779,900</em>원 <em class="no"><i>1</i>개</em></span>
+                            </dd>
+                        </dl>
+                    </li>
+                    <!-- // 주문 상품 단위 -->
+                </ol>
+            </li>
+
+            <li>
+                <!-- detail -->
+                <div class="order_info">
+
+                    <span class="date">2020-09-14</span> <a href="https://mlocal.tstation.com/mypage/tstation/order-history/detail/O202009140077696" class="status">상세보기</a>
+                    <a href="https://mlocal.tstation.com/mypage/tstation/order-history/detail/O202009140077696" class="detail">
+                            <span class="order_no">
+                                주문번호 <i>O202009140077696</i>
+                                <span class="smart-pay-badge"><img src="mc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이"></span>
+                            </span>
+                        <ol class="info">
+                            <!-- TODO: 장착방법 라벨 추가 -->
+                            <li><span class="tit">방문방법</span>직접방문</li>
+                            <li><span class="tit">매장명</span>방배점</li>
+                            <li><span class="tit">매장방문일</span>2020-09-15(화) / 16시</li>
+                        </ol>
+                    </a>
+                </div>
+                <ol class="unit">
+
+                    <!-- 주문 상품 단위 -->
+                    <li>
+                        <!-- TODO: 주문상태 항목 추가 주문완료 / 배송준비중 / 배송중 / 배송완료 / 장착완료-->
+                        <span class="status"><em>배송완료</em></span>
+                        <dl class="unit02">
+                            <dt>
+                                <a href="https://mlocal.tstation.com/tire/product/hk_p_s_ventus_s1_evo3?goodsNo=G000000323161" data-ap-product="{'name':'Ventus S1 evo3','id':'G000000323161','price':0,'brand':'HK','category':'여름/승용차/SPORT/프리미엄+','variant':'225/50R18','product_rating_customer':'0.0'}">
+                                    <img src="https://m.tstation.com/upload/goods/250/10/0000/0031/G00000031841701ko.jpg" id="goodsImg" class="unitImg" alt="Ventus S1 evo3">
+                                </a>
+                                <span class="flag_02">
+                                        <em class="brandLogo logoHK">HANKOOK</em>
+                                    </span>
+                            </dt>
+                            <dd class="info">
+                                <a href="https://mlocal.tstation.com/tire/product/hk_p_s_ventus_s1_evo3?goodsNo=G000000323161" data-ap-product="{'name':'Ventus S1 evo3','id':'G000000323161','price':0,'brand':'HK','category':'여름/승용차/SPORT/프리미엄+','variant':'225/50R18','product_rating_customer':'0.0'}">
+                                        <span class="flag_04">
+                                            <em class="c01 off">Comfort</em>
+                                            <em class="c02 ">SPORT</em>
+                                            <em class="c03 off">Runflat</em>
+                                        </span>
+                                    <!-- 일반 타이어 -->
+                                    <!--<span class="unitT1">
+                                        <span>벤투스 프리미엄 스포츠</span>
+                                        <small class="sub">Ventus S1 evo3</small>
+                                    </span>-->
+                                    <!-- 한국 타이어 -->
+                                    <span class="unitT1 image-container">
+                                            <img src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png">
+                                        </span>
+                                    <span class="unitT3">225/50R18</span>
+                                    <span class="flag_05">
+                                            <em>승용차</em>
+                                            <em>여름</em>
+                                            <em>프리미엄+</em>
+                                        </span>
+                                </a>
+
+                                <span class="unitP2"> <em>184,400</em>원 <em class="no"><i>1</i>개</em>
+												</span>
+                            </dd>
+                        </dl></li>
+                    <!-- // 주문 상품 단위 -->
+
+                </ol>
+            </li>
+
+        </ol>
+        <!-- // 주문내역 있는 경우 -->
+
+
+        <!-- 주문내역 없는 경우 -->
+        <p class="nodata">
+            <em>주문/배송</em> 내역이 없습니다.
+        </p>
+        <!-- // 주문내역 없는 경우 -->
+    </div>
+</div>

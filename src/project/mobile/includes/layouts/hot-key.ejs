@@ -1,0 +1,49 @@
+<div class="guide-item">
+    <button type="button" class="btn-item btn-primary btn-xl min-w round btn-guide-item-on">
+        <span class="line-icons txt-neutral1 cs-fab size-32"></span>
+    </button>
+
+    <div class="dim"></div>
+
+    <button type="button" class="btn-item btn-white btn-ol btn-xl min-w round btn-guide-item-off">
+        <span class="line-icons close size-30"></span>
+    </button>
+
+    <div class="guide-menus">
+        <a href="https://m.tstation.com/customer-service/shopping-guide" class="btn-item btn-white btn-inv btn-free full-w">
+            <p class="label-txt">
+                <span class="txt-14 txt-w500">쉬운 타이어 쇼핑</span><br>
+                <span class="txt-13 txt-w300">온라인 타이어 쇼핑이 어렵나요?</span>
+            </p>
+            <span class="line-icons mouse size-36"></span>
+        </a>
+
+        <a href="https://m.tstation.com/customer-service/line-up/default" class="btn-item btn-white btn-inv btn-free full-w">
+            <p class="label-txt">
+                <span class="txt-14 txt-w500">한국타이어 라인업</span><br>
+                <span class="txt-13 txt-w300">한국타이어 상품군을 한눈에</span>
+            </p>
+            <span class="line-icons search size-36"></span>
+        </a>
+
+        <a class="btn-item btn-white btn-inv btn-free full-w" onclick="$.Tstation.callCs();">
+            <p class="label-txt">
+                <span class="txt-14 txt-w500">1:1 전문상담</span><br>
+                <span class="txt-13 txt-w300">메세지나 타이어 사진으로 간편하게!</span>
+            </p>
+            <span class="line-icons headset size-36"></span>
+        </a>
+    </div>
+</div>
+
+<!--//guide-item-->
+<script type="text/javascript">
+    $(window).scroll(function () {
+        $(".guide-item").removeClass("on");
+        $(".guide-item").addClass("hide");
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function () {
+            $(".guide-item").removeClass("hide");
+        }, 300));
+    });
+</script>

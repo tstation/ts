@@ -1,0 +1,242 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area mypage">
+
+                    <div class="page-header">
+                        <h1>서비스 취소</h1>
+                    </div>
+
+                    <div class="container">
+                        <!-- A.order info -->
+                        <div class="mydetail_01">
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>주문번호</th>
+                                        <td class="col01">123456789123</td>
+                                        <th>주문일자</th>
+                                        <td>2018-06-24</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- 1.매장 -->
+                            <div class="tbl_01 brd01">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                    </colgroup>
+                                    <tbody>
+                                    <!-- 2.픽업&딜리버리 -->
+                                    <!-- 20210720 // -->
+                                    <tr>
+                                        <th>신청 서비스</th>
+                                        <td colspan="3">
+                                            픽업 / 딜리버리
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>매장명</th>
+                                        <td>
+                                            강남 논현점
+                                        </td>
+                                        <th>매장방문일</th>
+                                        <td>
+                                            2018-10-19
+                                            <i class="bar2">/</i>
+                                            10시 방문
+                                        </td>
+                                    </tr>
+                                    <!-- // 20210720 -->
+                                    <tr>
+                                        <th>픽업위치</th>
+                                        <td colspan="3">
+                                            <em class="status">배정</em> <em class="col01">경기도 고양시 일산동구 중앙로 1234(장항동)</em>
+                                            <span class="bar">이동거리 : <em class="col02">10km</em></span>
+                                        </td>
+                                    </tr>
+                                    <tr><!-- 서비스 취소 된 경우 class = cancel -->
+                                        <th><span class="icon_re">추가설명</span></th>
+                                        <td colspan="3">주차장으로 와서 연락주세요.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>딜리버리위치</th>
+                                        <td colspan="3">
+                                            <em class="status">도착지지정</em> <em class="col01">서울시 강남구 역삼동 134번지 000빌딩</em>
+                                            <span class="bar">이동거리 : <em class="col02">10km</em></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="icon_re">추가설명</span></th>
+                                        <td colspan="3">주차장으로 와서 연락주세요.</td>
+                                    </tr>
+                                    <!-- //2.픽업&딜리버리 -->
+
+                                    <!-- 선택 서비스 상세 //  -->
+                                    <!-- 취소  -->
+                                    <tr class="pickup cancel">
+                                        <th>
+                                            <input type="checkbox" class="ip_c" id="svc_2" disabled="disabled">
+                                            <label for="svc_2">픽업 위치</label>
+                                        </th>
+                                        <td colspan="3"><em class="status">서비스취소</em> <em class="col01">경기도 성남시 분당구 판교동 637 ㅇㄹ</em> <span class="bar">이동거리 : <em class="col02">0.97km</em>
+                                        </span></td>
+                                        <input type="hidden" name="svcOrdPrgsStatCd" value="20">
+                                        <input type="hidden" name="svcOrdDtlSctCd" value="20">					
+                                    </tr>
+                                    <tr class="pickup ">
+                                        <th>
+                                            <input type="checkbox" class="ip_c" id="svc_3">
+                                            <label for="svc_3">딜리버리 위치</label>
+                                        </th>
+                                        <td colspan="3"><em class="status">주문완료</em> <em class="col01">경기도 성남시 분당구 판교동 637 ㅇㄹ</em> <span class="bar">이동거리 : <em class="col02">0.97km</em>
+                                        </span></td>
+                                        <input type="hidden" name="svcOrdPrgsStatCd" value="20">
+                                        <input type="hidden" name="svcOrdDtlSctCd" value="10">					
+                                    </tr>
+                                    <!-- //선택 서비스 상세 -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- //1.매장 -->
+                            <p class="notice_02"><em class="col01">픽업서비스 드라이버(기사) 매칭이 완료된 이후
+                                서비스 취소 시, 서비스 비용은 환불되지 않습니다</em></p>
+                        </div>
+                        <!-- //A.order info -->
+                        <!-- 03. 서비스 취소 사유 -->
+                        <div class="mydetail_02">
+                            <h6>서비스취소 사유</h6>
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup><col style="width:160px;"><col style="width: auto"></colgroup>
+                                    <tbody>
+                                    <tr class="fm">
+                                        <th>취소 항목</th>
+                                        <td>
+                                            <select class="select01 w100p">
+                                                <option>취소할 항목을 선택해 주세요</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="fm">
+                                        <th>취소 사유</th>
+                                        <td>
+                                            <select class="select01 w100p">
+                                                <option>취소 사유를 선택해 주세요</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="fm">
+                                        <th>내용</th>
+                                        <td><textarea class="ip_area01 w100p" style="height:100px" placeholder="서비스 취소 사유를 작성해 주세요.(최대 1,000자)"></textarea></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- //03. 서비스 취소 사유 -->
+                        <!-- 04. 환불정보 -->
+                        <div class="mydetail_02">
+                            <h6>환불정보</h6>
+                            <div class="payment_01">
+                                <ol>
+                                    <li>
+                                        <span class="tit">상품 취소금액</span>
+                                        +00,000,000원
+                                    </li>
+                                    <li>
+                                        <span class="tit">할인금액 차감</span>
+                                        0원
+                                    </li>
+                                    <li>
+                                        <span class="tit">총 공임비</span>
+                                        0원
+                                    </li>
+                                    <!-- 20210720 // -->
+                                    <li class="line"><!-- 픽업 / 딜리버리 둘중 하나 나올 때, line -->
+                                        <span class="tit">픽업 취소금액 (10Km)</span>
+                                        0원
+                                    </li>
+                                    <li>
+                                        <span class="tit">딜리버리 취소금액 (10Km)</span>
+                                        0원
+                                    </li>
+                                    <!-- // 20210720 -->
+                                </ol>
+                                <div class="total02">
+                                    <span class="tit">환불예상금액</span>
+                                    <span class="no"><em>100,000,000</em>원</span>
+                                    <span class="txt">삼성카드 / 일시불 (2018-10-17 10:46)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //04. 환불정보 -->
+                        <!-- 05. 환불계좌정보 -->
+                        <div class="mydetail_02">
+                            <h6>환불계좌정보</h6>
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup><col style="width:160px;"><col style="width: auto"></colgroup>
+                                    <tbody>
+                                    <tr class="fm">
+                                        <th>은행</th>
+                                        <td>
+                                            <select class="select01 w200">
+                                                <option>계좌 은행 선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="fm">
+                                        <th>계좌번호</th>
+                                        <td><input type="text" class="ip_txt01 w400" placeholder="- 제외하고 입력하세요"></td>
+                                    </tr>
+                                    <tr class="fm">
+                                        <th>계좌주명</th>
+                                        <td><input type="text" class="ip_txt01 w200" placeholder="예금주를 입력하세요"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <dl class="notice_01">
+                                <dt>[환불용 계좌번호 저장에 대한 개인정보 수집동의]</dt>
+                                <dd>
+                                    본 계좌정보를 티스테이션 서비스의 환불계좌 정보로 저장 및 이용하는데 동의합니다. 저장된 정보는 삭제요청이 있거나 탈퇴 시 즉시 삭제됩니다.
+                                    <div class="agree">
+                                        <input type="checkbox" class="ip_c"><label>동의합니다.</label>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- //05. 환불계좌정보 -->
+
+                        <!-- button -->
+                        <div class="btn01">
+                            <a href="#" class="btnB btnS07">취소</a>
+                            <a href="#" class="btnB btnS02">서비스 취소하기</a>
+                        </div>
+                        <!-- //button -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

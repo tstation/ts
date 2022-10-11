@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="theme-color" content="#fff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <title><%- locals.blocks.title %></title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="mc-static-root/images/common/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="mc-static-root/images/common/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/font/NotoSansKR/NotoSansKR.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/font/LineIcons/LineIcons.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/reset_mc_override.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/layout_mc_override.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/style_mc.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/u_mc.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/tam.css"><!-- 타알못 PAGE CSS include -->
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" ><!-- APP CSS include -->
+
+    <script type="text/javascript" src="mc-static-root/js/common/publish/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/publish/swiper.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/publish/datepicker.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/common.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/ajax.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/number.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/page_util.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.form.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.form.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/rsvDate.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/footer.js"></script>
+
+    <script type="text/javascript" src="mc-static-root/js/common/prefixfree.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/rangeslider.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/components.js"></script>
+</head>
+<style>
+.uiset::-webkit-scrollbar {
+    width: 0px;
+}
+</style>
+<body ontouchstart class="uiset">
+    <div id="wrap">
+        <%- locals.widget('src/project/mobile/includes/layouts/header.ejs') %>
+        <%- locals.widget('src/project/mobile/includes/layouts/side-bar.ejs') %>
+        <%- locals.body %>
+        <%- locals.widget('src/project/mobile/includes/layouts/footer.ejs') %>
+        <%- locals.widget('src/project/mobile/includes/layouts/layer-full-popup.ejs') %>
+        <%- locals.widget('src/project/mobile/includes/layouts/layer-inner-popup.ejs') %>
+        <%- locals.widget('src/project/mobile/includes/layouts/layer-scarce-popup.ejs') %>
+        <%- locals.widget('src/project/mobile/includes/layouts/loading-dim.ejs') %>
+        <%- locals.widget('src/project/mobile/includes/layouts/hot-key.ejs') %>
+        <%- locals.widget('src/project/mobile/includes/layouts/scripts.ejs') %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'FAQ' }) %>
+<div id="container" class="cscenter">
+    <!-- 01.search -->
+    <form action="/customer-service/faqSearch.do" method="post" id="faqSearchForm">
+        <div class="faq_search">
+            <div class="search_box">
+                <input title="질문 입력" type="text" class="ip_txt01 w100p" id="inqTitNm" name="inqTitNm" placeholder="질문을 입력해 주세요." />
+                <button class="btn" type="button" id="faqSearch">검색</button>
+            </div>
+        </div>
+    </form>
+    <!-- 01.search -->
+    <!-- 02.menu -->
+    <div class="faq_menu">
+        <ul class="cs_menu01">
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=10">상품 선택</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=20">장착서비스</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=30">주문/결제</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=40">취소/환불/교환</a></li>
+            <li class="on"><a href="https://m.tstation.com/customer-service/faq.do?faqCd=60">회원</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=90">기타</a></li>
+            <!-- TODO: 멤버십 항목 추가 -->
+            <li class=""><a href="#">멤버십</a></li>
+        </ul>
+    </div>
+    <!-- 02.menu -->
+    <!-- 03.list -->
+    <div class="faq_list">
+
+        <dl id="accordion" class="list">
+
+            <dt><a href="#">구매 상품의 반품 및 교환이 가능한가요?</a></dt>
+            <dd style="display: none;">품질에 문제가 있을 경우, 반품이나 교환이 모두 가능합니다. 그러나 특별한 사유가 없거나, 고객님께 책임이 있는 부분에 대해서는 불가능합니다.<br>
+                <br>
+                사이즈, 상품 사양 등을 반드시 확인 후에 주문해 주세요. 잘못 주문하실 경우 지정일 장착이 어렵거나, 배송 비용이 발생할 수 있습니다.</dd>
+
+            <dt><a href="#">신용카드로 결제했는데, 환불은 어떻게 받나요?</a></dt>
+            <dd style="display: none;">주문 취소 시 신용카드 승인 취소의 방법을 통하여 환불처리 됩니다. 카드 매출 취소는 즉시 접수되나, 카드사 사정에 따라 취소 기간이 3~7일 정도 소요될 수 있습니다.<br>
+                <br>
+                확인 문의는 소요기간 경과 후 해당 카드사로 직접 문의하시면 됩니다.</dd>
+
+            <dt><a href="#">주문 취소시 쿠폰은 돌려주나요?</a></dt>
+            <dd style="display: none;">주문 취소하신 경우, 쿠폰은 고객님께 반환됩니다.</dd>
+
+            <dt><a href="#">상품 A/S 받을 수 있나요?</a></dt>
+            <dd style="display: none;">고객센터(080-022-8272)로 문의해 주시기 바랍니다.<br>
+                단, 고객 과실로 인한 제품 손상은 A/S 불가합니다.</dd>
+
+            <dt><a href="#">상품에 문제가 있어 환불 받고 싶습니다.</a></dt>
+            <dd style="display: none;">고객센터(080-022-8272)로 문의해 주시기 바랍니다.</dd>
+
+            <dt><a href="#">카드 포인트로 결제한 경우 환불은 어떻게 받나요?</a></dt>
+            <dd style="display: none;">카드 포인트 결제 취소의 경우, 환불은 카드사마다 다른 방식으로 처리됩니다.<br>
+                <br>
+                거래 취소 시, 사용되었던 신용카드 포인트가 그대로 복구되기도 하며, 출금계좌로 현금 환불되는 경우도 있으므로 자세한 사항은 해당 카드사로 직접 문의하여 주시기 바랍니다.</dd>
+
+        </dl>
+
+        <ol class="notice_01">
+            <li>FAQ에서 원하시는 답변을 찾으시지 못하였다면, 1:1 고객 상담을 이용해 주세요.</li>
+        </ol>
+    </div>
+    <!-- 03.list -->
+    <!-- 04.btn -->
+    <div class="btn02">
+        <a href="https://m.tstation.com/customer-service/qna.do" class="btnB btnS02">1:1 고객 상담 </a>
+    </div>
+    <!-- 04.btn -->
+</div>

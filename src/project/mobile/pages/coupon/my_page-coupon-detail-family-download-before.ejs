@@ -1,0 +1,92 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '쿠폰상세' }) %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <div class="bg-light2 pd-v-10u pd-h-10u">
+                <div class="coupon-card-wrap">
+                    <!-- TODO: download-before / 쿠폰 다운로드 전 -->
+                    <!-- TODO: download-after / 쿠폰 다운로드 후 -->
+                    <article class="coupon-card coupon-card-detail download-before able-give">
+                        <div class="coupon-card-flag">
+                            <div class="coupon-card-flag-inner">
+                                <span>패밀리</span>
+                            </div>
+                        </div>
+                        <div class="coupon-card-info">
+                            <div class="bi-img"><img src="mc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img"></div>
+                            <p class="txt-30 line-100per mg-b-2u">30<small class="txt-18">%</small></p>
+                            <p class="txt-18 line-100per">타이어 결제 할인</p>
+                        </div>
+                        <button type="button" class="coupon-card-action" onclick="couponDownload(this)">
+                            <span><span class="v-middle">쿠폰다운</span> <span class="line-icons download size-24 v-middle"></span></span>
+                            <span><span class="v-middle">선물하기</span> <span class="line-icons present size-24 v-middle"></span></span>
+                        </button>
+                    </article>
+                </div>
+
+                <div id="coupon-download-after-barcode" style="display: none;">
+                    <div class="coupon-barcode-wrap mg-t-5u">
+                        <div class="coupon-barcode">
+                            <img src="mc-static-root/images/common/barcode-sample.png" alt="barcode" />
+                        </div>
+                        <div class="coupon-barcode-number">
+                            <span class="label">쿠폰번호</span>
+                            <p class="number">1234 5678 2468</p>
+                        </div>
+                    </div>
+                    <p class="txt-center txt-12 txt-neutral2 mg-t-2u">매장에서 상품 구매시 바코드를 제시해 주세요.</p>
+                </div>
+
+                <script>
+                    var couponDownload = function (el) {
+                        $(el).closest('.coupon-card').removeClass('download-before').addClass('download-after')
+                        $('#coupon-download-after-barcode').css('display', 'block')
+                    }
+                </script>
+            </div>
+
+            <div class="pd-v-6u pd-h-6u">
+                <ul>
+                    <li class="mg-b-6u">
+                        <p class="mg-b-1u">사용기한</p>
+                        <p class="txt-11">2020.10.01 부터 ~ 2021.01.05 까지</p>
+                    </li>
+                    <li class="mg-b-6u">
+                        <p class="mg-b-1u">사용조건</p>
+                        <ul class="list-style-number">
+                            <li class="txt-11 txt-neutral2">타이어 4개 구매 할때  쿠폰 1장 사용 가능하며, 앞뒤 타이어가 다를 경우 쿠폰 2개가 필요합니다.</li>
+                            <li class="txt-11 txt-neutral2">장착비는 무료입니다.</li>
+                            <li class="txt-11 txt-neutral2">선물하기는 선물받을 분의 이름과 핸드폰번호를 입력하면 쿠폰이 발송 됩니다.</li>
+                            <li class="txt-11 txt-neutral2">선물 받은 쿠폰은 타인에게 재선물이 불가능합니다.</li>
+                            <li class="txt-11 txt-neutral2">쿠폰은 발급일로부터 30일이내 사용 가능합니다.</li>
+                        </ul>
+                    </li>
+                    <li class="mg-b-6u">
+                        <p>쿠폰 사용처</p>
+                        <p class="txt-11 txt-neutral2">티스테이션 닷컴, 티스테이션 모든 매장</p>
+                    </li>
+                    <li class="mg-b-6u">
+                        <p class="mg-b-1u">최대 할인금액</p>
+                        <p class="txt-11 txt-neutral2"><span class="txt-primary">30% 정률 쿠폰</span>으로 최대할인 금액은 <span class="txt-primary">300,000원</span>입니다</p>
+                    </li>
+                    <li>
+                        <p class="mg-b-1u">적용대상</p>
+                        <ul class="list-style-disc">
+                            <li class="txt-11 txt-neutral2">타이어 항목에 적용 가능합니다.</li>
+                            <li class="txt-11 txt-neutral2">HANKOOK 브랜드에 적용 가능합니다.</li>
+                            <li class="txt-11 txt-neutral2 txt-underline" onclick="$.Tstation.toggleView('#applied-goods')">적용대상상품</li>
+                        </ul>
+                        <div id="applied-goods" class="box box-gray box-radius txt-11 txt-neutral2 box-overflow-y mg-t-4u" style="display: none;">
+                            WINTER I*CEPT EVO2(205/55R16), WINTER I*CEPT EVO2(215/55R16), WINTER I*CEPT EVO2(225/55R16), WINTER I*CEPT EVO2(225/60R16), WINTER I*CEPT EVO2(215/45R17), WINTER I*CEPT EVO2(225/45R17), WINTER I*CEPT EVO2(235/45R17), WINTER I*CEPT EVO2(245/45R17), WINTER I*CEPT EVO2(205/50R17), WINTER I*CEPT EVO2(215/50R17), WINTER I*CEPT EVO2(225/50R17), WINTER I*CEPT EVO2(215/55R17), WINTER I*CEPT EVO2(225/55R17), WINTER I*CEPT EVO2(235/55R17), WINTER I*CEPT EVO2(255/35R18), WINTER I*CEPT EVO2(225/40R18), WINTER I*CEPT EVO2(235/40R18), WINTER I*CEPT EVO2(245/40R18), VENTUS S2 AS(235/40R18), VENTUS S2 AS(205/50R17), VENTUS S2 AS(225/40R18), VENTUS S2 AS(225/50R18), VENTUS S2 AS(245/40R20), VENTUS S2 AS(245/40R19), WINTER I*CEPT EVO2 SUV(255/55R18), WINTER I*CEPT EVO2 SUV(265/60R18), WINTER I*CEPT EVO2 SUV(235/50R19), WINTER I*CEPT EVO2(225/45R18), WINTER I*CEPT EVO2(235/45R18), WINTER I*CEPT EVO2(255/45R18), WINTER I*CEPT EVO2(235/50R18), WINTER I*CEPT EVO2(255/35R19), WINTER I*CEPT EVO2(255/40R19), WINTER I*CEPT EVO2(245/45R19), WINTER I*CEPT EVO2 SUV(255/50R19), WINTER I*CEPT EVO2 SUV(275/40R20), WINTER I*CEPT EVO2(205/65R16), WINTER I*CEPT EVO2(225/60R18), WINTER I*CEPT EVO2(275/40R19), WINTER I*CEPT EVO2 SUV(235/55R18), WINTER I*CEPT EVO2 SUV(235/55R19), WINTER I*CEPT EVO2 SUV(225/55R19), WINTER I*CEPT IZ2 A(205/70R15), WINTER I*CEPT IZ2 A(195/55R15), WINTER I*CEPT IZ2 A(185/55R15), WINTER I*CEPT EVO2 SUV(205/70R16), NORDIK IS(255/65R16), VENTUS V12 EVO2(215/50R17), WINTER I*CEPT IZ2 A(175/70R14), WINTER I*CEPT IZ2 A(175/65R14), WINTER I*CEPT IZ2 A(185/65R14), WINTER I*CEPT IZ2 A(185/65R15), WINTER I*CEPT IZ2 A(195/65R15), WINTER I*CEPT IZ2 A(205/65R15), WINTER I*CEPT IZ2 A(165/60R15), WINTER I*CEPT IZ2 A(185/60R15), WINTER I*CEPT IZ2 A(205/60R16), WINTER I*CEPT IZ2 A(215/60R16), WINTER I*CEPT IZ2 A(205/55R17), DYNAPRO MT OFF ROAD(30X9.50R15), DYNAPRO MT OFF ROAD(33X12.50R15), DYNAPRO MT OFF ROAD(235/75R15), DYNAPRO MT OFF ROAD(32X11.50R15), DYNAPRO MT OFF ROAD(215/75R15), DYNAPRO MT OFF ROAD(285/75R16), DYNAPRO MT OFF ROAD(265/70R16), DYNAPRO AT M ON/OFF ROAD(235/85R16), WINTER RADIAL DW04(155R12), WINTER RADIAL DW04(145R13), RADIAL DU01(550R13), RADIAL DU01(500R12), DYNAPRO MT OFF ROAD(28X8.50R15), WINTER RADIAL DW04(195R15), DYNAPRO MT OFF ROAD(35X12.50R20), NORDIK IS(255/70R15), DYNAPRO AT M ON/OFF ROAD(31X10.50R15), DYNAPRO AT M ON/OFF ROAD(245/75R16), DYNAPRO AT M ON/OFF ROAD(285/75R16), DYNAPRO AT M ON/OFF ROAD(245/75R17), DYNAPRO AT M ON/OFF ROAD(285/55R20), RADIAL DU01(550R13), RADIAL RA08(215/70R16), WINTER I*PIKE LT(195/70R15), DYNAPRO AT M ON/OFF ROAD(215/75R15), VENTUS S2 AS(245/45R18), VENTUS S1 NOBLE2 PLUS(225/50R17), VENTUS S1 NOBLE2 PLUS(215/55R17), VENTUS S1 NOBLE2 PLUS(235/55R17), VENTUS S1 NOBLE2 PLUS(225/45R18), VENTUS S1 NOBLE2 PLUS(235/50R18), VENTUS S1 NOBLE2 PLUS(275/40R19), VENTUS S1 NOBLE2 PLUS(245/45R19), WINTER I*PIKE LT(195/75R16), WINTER I*PIKE LT(195R14), WINTER I*PIKE LT(225/65R16), WINTER I*PIKE LT(235/65R16), RADIAL RA08(195/70R15), RADIAL RA08(195/70R15), RADIAL DU01(155R12), RADIAL DU01(145R13), VANTRA LT(195R15), WINTER RADIAL DW04(195/75R16), WINTER I*PIKE LT(215/70R16), CROSS MASTER LV(500R12), WINTER I*CEPT EVO2(275/40R18), WINTER I*CEPT EVO2(205/60R15), WINTER I*CEPT EVO2(255/45R19), WINTER I*CEPT EVO2(265/35R18), WINTER I*CEPT EVO2(255/40R17), WINTER I*CEPT EVO2(275/45R18), WINTER I*CEPT EVO2(195/55R16), WINTER I*CEPT EVO2(225/40R19), WINTER I*CEPT EVO2(255/35R20), WINTER I*CEPT EVO2(265/35R20), WINTER I*CEPT EVO2(245/40R20), WINTER I*CEPT EVO2(275/35R20), WINTER I*CEPT EVO2 SUV(315/35R20), WINTER I*CEPT EVO2(235/35R19), WINTER I*CEPT EVO2 SUV(275/45R20), WINTER I*CEPT EVO2(245/45R20), WINTER I*CEPT EVO2(265/35R19), CROSS MASTER LV(550R13), WINTER I*CEPT EVO2(235/40R19), WINTER I*CEPT EVO2 SUV(225/65R17), CROSS MASTER LV(145R13), CROSS MASTER LV(155R12), CROSS MASTER LV(155R13), VANTRA LT(205/70R14), RADIAL
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>

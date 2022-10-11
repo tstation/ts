@@ -1,0 +1,211 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'Popup' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+<main id="main">
+    
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h3>콘텐츠 섹션 헤더</h3>
+
+                <div class="extra">
+                    <a href="" class="btn-item btn-m btn-neutral btn-inv filet">
+                        <span class="label-txt txt-primary">엑스트라 버튼</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                 
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">before</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="appInduceFunction.appInduce()"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">after</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="appInduceCoffeeFunction.appInduce()"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">fullBanner</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="fullBannerFunction.appInduce()"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+
+var appInduceFunction = {
+    appInduce: function () {
+        $.Tstation.popup().open({
+            ref: 'app-induce-guide',
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: appInduceContent, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false,
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 0,
+                vertical: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: false, // Full Popup
+            onOpen: function () {
+                                console.log('팝업이 열리면 실행합니다.')
+                            },
+            onClose: function () {
+                console.log('팝업이 닫히면 실행합니다.')
+            }
+        })
+    }
+}
+
+var appInduceCoffeeFunction = {
+    appInduce: function () {
+        $.Tstation.popup().open({
+            ref: 'app-induce-guide',
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: appInducecoffeeFunction, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false,
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 0,
+                vertical: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: false, // Full Popup
+            onOpen: function () {
+                                console.log('팝업이 열리면 실행합니다.')
+                            },
+            onClose: function () {
+                console.log('팝업이 닫히면 실행합니다.')
+            }
+        })
+    }
+}
+
+/* 20220520 // */
+var fullBannerFunction = {
+    appInduce: function () {
+        $.Tstation.popup().open({
+            ref: 'promotion-full-banner',
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: promotionBannerContent, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false,
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 0,
+                vertical: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: false, // Full Popup
+            onOpen: function () {
+                                console.log('팝업이 열리면 실행합니다.')
+                            },
+            onClose: function () {
+                console.log('팝업이 닫히면 실행합니다.')
+            }
+        })
+    }
+}
+/* //20220520 */
+
+var appInduceContent = `
+<div class="app-induce-wrap">    
+    <!-- 20220406 // -->
+    <div class="img-section">
+        <img src="mc-static-root/images/app/img_appstore_popup.png" alt="" />
+    </div>
+    <div class="button-section mg-t-4u">
+        <button type="button" class="btn-item btn-primary btn-l round full-w app-install-button">
+            <span class="label-txt">앱 다운로드</span>
+        </button>
+        <button type="button" class="mg-t-2u btn-popup-close" onClick="$.Tstation.popup().close()">
+            <span class="label-txt">괜찮아요, 모바일 웹으로 볼게요</span>
+        </button>
+    </div>
+    <!-- // 20220406 -->
+</div>
+`
+
+/* 20220504 // */
+var appInducecoffeeFunction = `
+<div class="app-induce-coffee-wrap">    
+    <div class="img-section">
+        <img src="mc-static-root/images/app/img_appstore_coffee_popup.png" alt="" />
+    </div>
+    <!-- 20220504 // -->
+    <div class="button-section">
+        <button type="button" class="btn-item btn-primary btn-l round full-w app-install-button">
+            <span class="label-txt">앱 다운로드</span>
+        </button>
+        <button type="button" class="mg-t-2u btn-popup-close" onClick="$.Tstation.popup().close()">
+            <span class="label-txt">오늘은 모바일 웹으로 볼게요</span>
+        </button>
+    </div>
+    <!-- // 20220504 -->
+</div>
+`
+/* //20220504 */
+
+/* 20220520 // */
+var promotionBannerContent = `
+<div class="promotion-full-banner-wrap">    
+    <div class="img-section">
+        <img src="mc-static-root/images/app/img_promotion_popup.png" alt="" />
+    </div>
+    <div class="button-section">
+        <button type="button" class="btn-item btn-family btn-l round full-w" data-analytics-click="패밀리세일 프로모션 보기">
+            <span class="label-txt">지금 쿠폰 바로받기</span>
+        </button>
+        <button type="button" class="app-install-button" data-analytics-click="앱 다운로드 가기">
+            <span class="label-txt">앱으로 쇼핑하기</span>
+        </button>
+    </div>
+    <button type="button" class="btn-popup-close" onClick="$.Tstation.popup().close()" data-analytics-click="패밀리세일 팝업 닫기">
+        <span class="line-icons close size-28"></span>
+        <span class="blind">패밀리세일 팝업 닫기</span>
+    </button>
+</div>
+`
+/* //20220520 */
+
+$(window).load(function() {
+    fullBannerFunction.appInduce();
+})
+
+
+
+</script>

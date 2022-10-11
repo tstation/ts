@@ -1,0 +1,185 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'MY 차량 관리' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container">
+                <div class="mycar-management-wrp">
+                    <div class="section-header mycar-management-header clearfix">
+                        <h3>등록 차량</h3>
+                        <div class="mycar-select-item">
+                            <div class="swiper-container mycar-select-swiper" dir="rtl">
+                                <div class="swiper-wrapper">
+                                    <!-- 반복되는 swiper-slide는 밑으로 갈수록 최신등록 -->
+                                    <div class="swiper-slide">
+                                        <!-- 활성화 체크는 btn-select-car에 'on'클래스 추가 -->
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car on" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    var totalMyCar = $('.mycar-select-swiper .swiper-slide').length;
+                                    var mycar_select_swiper = new Swiper('.mycar-select-swiper', {
+                                        init: false,
+                                        slidesPerView: 'auto',
+                                        initialSlide: totalMyCar - 1,
+                                    });
+
+                                    mycar_select_swiper.init();
+
+                                    $(window).on('resize', function () {
+                                        mycar_select_swiper.init();
+                                    });
+
+                                    $('.mycar-select-swiper .btn-select-car').on('click', function(){
+                                        $('.mycar-select-swiper .btn-select-car').removeClass('on');
+                                        $(this).addClass('on');
+                                    });
+                                </script>
+                            </div>
+
+                            <div class="add-btn-wrap">
+                                <button type="button" class="btn-item btn-gray round min-w btn-add-car">
+                                    <span class="line-icons add size-24"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mycar-overview">
+                        <div class="mycar-info-area">
+                            <div class="mycar-info-img">
+                                <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample01.png');"></div>
+                            </div>
+
+                            <div class="mycar-info-txt">
+                                <p class="car-number">
+                                    <span class="v-middle txt-20">07더 3307</span>
+                                </p>
+                                <div class="modify-btn">
+                                    <a href="">정보 수정</a>
+                                    <a href="">삭제</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tstation-mycar-managing">
+                    <div class="mycar-info-bx">
+                        <div class="mycar-info">
+                            <span>차량번호</span>
+                            <strong>07더 3307</strong>
+                        </div>
+                        <div class="mycar-info">
+                            <span>자동차 브랜드</span>
+                            <strong>기아</strong>
+                        </div>
+                        <div class="mycar-info">
+                            <span>모델</span>
+                            <strong>쏘렌토</strong>
+                        </div>
+                        <div class="mycar-info">
+                            <span>엔진</span>
+                            <strong>2.0 디젤</strong>
+                        </div>
+                        <div class="mycar-info">
+                            <span>모델 연도</span>
+                            <strong>2017년</strong>
+                        </div>
+                        <div class="mycar-info">
+                            <span>등급/옵션</span>
+                            <strong>기본형</strong>
+                        </div>
+                        <div class="mycar-info">
+                            <span>타이어 사이즈</span>
+                            <strong>235/60R18</strong>
+                        </div>
+                        <div class="mycar-info">
+                            <span>총 주행거리</span>
+                            <strong>정보 없음</strong>
+                        </div>
+                    </div>
+                    <div class="mycar-info-etc">
+                        <div class="mycar-info">
+                                    <span>
+                                        차량번호 인증
+                                        <button type="button"><span class="line-icons info-circle size-24"></span></button>
+                                    </span>
+                            <strong>
+                                <button type="button" class="confirm">인증하기</button>
+                            </strong>
+                        </div>
+                        <div class="mycar-info">
+                                    <span>
+                                        차량 공유 회원
+                                        <button type="button"><span class="line-icons info-circle size-24"></span></button>
+                                    </span>
+                            <strong>
+                                        <span class="tooltip-container left mg-l-1u">
+                                            <!-- 0명 경우: disabled 어트리뷰트 추가 -->
+                                            <button type="button" class="family-number" disabled>
+                                                0명
+                                                <span class="line-icons search size-16"></span>
+                                            </button>
+
+                                            <!-- 0명 경우 툴팁박스 제거 -->
+                                            <!-- <div class="tooltip">
+                                                <div class="tooltip-header">
+                                                    <p>차량 공유 회원 차량공유</p>
+                                                </div>
+                                                <div class="tooltip-body">
+                                                    <p>홍길동, 김길동, 이길동, 박길동, 유길동, 한길동, 최길동, 문길동, 오길동, 고길동, 한길동, 엄길동, 왕길동, 공길동, 정길동 회원님과 함께 차량을 관리하고 있습니다.</p>
+                                                </div>
+                                            </div> -->
+                                        </span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="button" class="btn-item btn-neutral btn-ol round">
+                        <span class="label-txt">MY 멤버십</span>
+                    </button>
+                    <button type="button" class="btn-item btn-neutral round">
+                        <span class="label-txt">추천 타이어 보기</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

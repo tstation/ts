@@ -1,0 +1,344 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="mypage">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+
+    <link rel="stylesheet" type="text/css" href="pc-static-root/css/mypage.css" /><!-- 20211125 -->
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page_tit">
+                        <h4>방문예약</h4>
+                    </div>
+
+                    <div class="container">
+                        <!-- 방문예약내역 -->
+                        <!-- 예약 정보 -->
+                        <div class="reserve_info2">
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                    </colgroup>
+                                    <tbody>
+                                    <!-- 20210720 // -->
+                                    <tr>
+                                        <th>예약상태</th>
+                                        <td colspan="3">
+                                            <em class="icn_status">예약대기</em>
+                                            <em class="icn_status">예약완료</em>
+                                            <em class="icn_status">서비스완료</em>
+                                            <em class="icn_status">예약취소</em>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>방문방법</th>
+                                        <td colspan="3">
+                                            픽업 / 딜리버리
+                                            <button type="button" class="btn-item btn-inv btn-transparent btn-xs round mg-l-2u">
+                                                <span class="label-txt txt-14 txt-primary">이력 보기</span>
+                                                <span class="line-icons chev-right size-20 txt-primary"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>매장명</th>
+                                        <td>티스테이션 역삼점</td>
+                                        <th>매장방문일</th>
+                                        <td>
+                                            2020-10-16
+                                            (금)
+                                            13시
+                                        </td>
+                                    </tr>    
+                                    <!-- // 20210720 -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- a. 일정변경 관련 레이어 -->
+                        <div id="changeDete" class="time_find off">
+                            <div class="btn01">
+                                <!-- 20211111// -->
+                                <button id="btn_svc_cancel" class="btnM2 btnS01">방문예약 취소</button>
+                                <button class="btnM2 btnS02 changeDate">매장방문일 변경</button>
+                                <!-- //20211111 -->
+                            </div>
+                            <div class="day">
+                                <input type="hidden" class="ip_txt01 w100p" id="vstRsvDt" data-id="datepickBox3" data-rel="datepickBox" data-toggle="datepicker" readonly="" placeholder="장착일 선택">
+                            </div>
+                            <div class="datepickBox" id="datepickBox3" style="display:block">
+                                <div class="datepickBox3"><div class="datepicker-container datepicker-inline"><div class="datepicker-panel datepicker-hide" data-view="years picker"><ul><li data-view="years prev">‹</li><li data-view="years current"></li><li data-view="years next">›</li></ul><ul data-view="years"></ul></div><div class="datepicker-panel datepicker-hide" data-view="months picker"><ul><li data-view="year prev">‹</li><li data-view="year current"></li><li data-view="year next">›</li></ul><ul data-view="months"></ul></div><div class="datepicker-panel" data-view="days picker"><ul><li data-view="month prev" class="disabled">‹</li><li data-view="month current">2020년 10월</li><li data-view="month next">›</li></ul><ul data-view="week"><li class="" data-view="">일</li><li class="" data-view="">월</li><li class="" data-view="">화</li><li class="" data-view="">수</li><li class="" data-view="">목</li><li class="" data-view="">금</li><li class="" data-view="">토</li></ul><ul class="dayslist" data-view="days"><li class="muted disabled" data-view="day prev">27</li><li class="muted disabled" data-view="day prev">28</li><li class="muted disabled" data-view="day prev">29</li><li class="muted disabled" data-view="day prev">30</li><li class="disabled" data-view="day disabled">1</li><li class="disabled" data-view="day disabled">2</li><li class="disabled" data-view="day disabled">3</li><li class="disabled" data-view="day disabled">4</li><li class="disabled" data-view="day disabled">5</li><li class="disabled" data-view="day disabled">6</li><li class="disabled" data-view="day disabled">7</li><li class="disabled" data-view="day disabled">8</li><li class="disabled" data-view="day disabled">9</li><li class="disabled" data-view="day disabled">10</li><li class="disabled" data-view="day disabled">11</li><li class="disabled" data-view="day disabled">12</li><li class="disabled" data-view="day disabled">13</li><li class="disabled" data-view="day disabled">14</li><li class="disabled" data-view="day disabled">15</li><li class="highlighted disabled" data-view="day disabled">16</li><li class="disabled" data-view="day disabled">17</li><li class="disabled" data-view="day disabled">18</li><li class="picked" data-view="day picked">19</li><li class="" data-view="day">20</li><li class="" data-view="day">21</li><li class="" data-view="day">22</li><li class="" data-view="day">23</li><li class="" data-view="day">24</li><li class="" data-view="day">25</li><li class="" data-view="day">26</li><li class="" data-view="day">27</li><li class="" data-view="day">28</li><li class="" data-view="day">29</li><li class="" data-view="day">30</li><li class="" data-view="day">31</li><li class="muted" data-view="day next">1</li><li class="muted" data-view="day next">2</li><li class="muted" data-view="day next">3</li><li class="muted" data-view="day next">4</li><li class="muted" data-view="day next">5</li><li class="muted" data-view="day next">6</li><li class="muted" data-view="day next">7</li></ul></div></div></div>
+                                <div class="time" id="areaVstRsvTime">
+                                    <ol>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS09"><label class="btnS2" for="TimeS09">09시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS10" disabled=""><label class="btnS2" for="TimeS10">10시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS11" disabled=""><label class="btnS2" for="TimeS11">11시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS12"><label class="btnS2" for="TimeS12">12시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS13"><label class="btnS2" for="TimeS13">13시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS14" disabled=""><label class="btnS2" for="TimeS14">14시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS15"><label class="btnS2" for="TimeS15">15시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS06"><label class="btnS2" for="TimeS06">16시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS17"><label class="btnS2" for="TimeS17">17시</label></li>
+                                        <li><input type="radio" class="btnS2" name="TimeS" id="TimeS18"><label class="btnS2" for="TimeS18">18시</label></li>
+                                    </ol>
+                                </div>
+                                <div class="beable" style="display: none;">오늘 장착이<br>가능합니다. <button class="close">닫기</button></div>
+                                <div class="btn">
+                                    <button class="btnM3 btnS02 changeDate selectDate" type="button" style="display: block;">선택 완료</button>
+                                </div>
+                            </div>
+                            <!-- //a. 일정변경 관련 레이어 -->
+                            <!-- 공지사항 -->
+                            <ol class="notice_01">
+                                <li>예약하신 매장을 <em class="col01">타 매장으로 변경</em>하시려면, <em class="col01">[예약취소하기]</em>버튼을 클릭하여 취소 후 다시 방문예약을 하여 주시기 바랍니다.</li>
+                                <li>방문예약일 변경을 원하시면, 수정 버튼을 클릭하여 직접 변경하여 주시기 바랍니다.</li>
+                            </ol>
+                            <!-- //공지사항 -->
+                        </div>
+                        <!-- //예약 정보 -->
+
+                        <!-- 20211111 // -->
+                        <!-- 픽업서비스 // -->
+                        <div class="mydetail_02">
+                            <h6>픽업서비스</h6>
+                            <div class="tbl_01 none">
+                                <table class="vertical-m">
+                                <colgroup>
+                                    <col style="width:160px;">
+                                    <col style="width:auto">
+                                    <col style="width:200px;">
+                                </colgroup>
+                                <tr>
+                                    <th>픽업위치</th>
+                                    <td class="clearfix service-cancel"><!-- 20211125 서비스 취소시 service-cancel 추가 -->
+                                        
+                                        <em class="status float-l">서비스 취소</em> 
+                                        <!-- <em class="status float-l">고객요청</em>  -->
+                                        
+                                        <div class="float-l" style="width:360px;">
+                                            <em class="col01">경기도 고양시 일산동구 중앙로 1234(장항동) 경기도 고양시 일산동구 중앙로 1234(장항동)</em>
+                                            <p>이동거리 : <em class="col02">10km</em></p>
+                                        </div>
+                                    </td>
+                                    <td class="bg-light1" rowspan="2">
+                                        <!-- 20211125 // -->
+                                        <button type="button" class="btn-item btn-neutral btn-l btn-ol round full-w" disabled>
+                                            <span class="label-txt">취소 완료</span>
+                                        </button>
+                                        <!--  버튼 활성화 <button type="button" class="btn-item btn-neutral btn-l btn-ol round full-w">
+                                            <span class="label-txt">픽업서비스 취소</span>
+                                        </button> -->
+                                        <!-- // 20211125 -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>딜리버리위치</th>
+                                    <td class="clearfix"><!-- 20211125 서비스 취소시 service-cancel 추가 -->
+                                        <em class="status float-l">서비스 취소</em>
+                                        <!-- <em class="status float-l">고객요청</em>  -->
+
+                                        <div class="float-l" style="width:360px;">
+                                            <em class="col01">서울시 강남구 역삼동 134번지 000빌딩</em>
+                                            <p>이동거리 : <em class="col02">10km</em></p>
+                                        </div>
+                                    </td>
+                                </tr>                                
+                                </table>
+                            </div>
+                        </div>
+                        <!-- // 픽업서비스 -->
+                        <!-- //20211111 -->
+
+                        <!-- 예약 서비스 -->
+                        <!-- 타이어 서비스  -->
+                        <div class="mydetail_02">
+                            <h6>타이어 서비스</h6>
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>교체</th><td colspan="3">
+                                            타이어 교체
+                                            <!-- 타이어 서비스  -->
+                                            <!-- 경정비 서비스  -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>보관</th><td colspan="3">
+                                            타이어 보관
+                                            <!-- 타이어 서비스  -->
+                                            <!-- 경정비 서비스  -->
+                                            <!-- 타이어 서비스  -->
+                                            <!-- 경정비 서비스  -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>소모품교환</th><td colspan="3">
+                                            와이퍼
+                                            <!-- 타이어 서비스  -->
+                                            <!-- 경정비 서비스  -->
+                                            /
+                                            에어컨가스
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- 경정비 서비스  -->
+                            <!-- 상품정보  -->
+                            <div class="mydetail_02" style="display:none">
+                                <h6>상품정보</h6>
+                                <div class="tbl_01 none">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>상품정보</th>
+                                            <td>윈터 이벤트 방문예약</td>
+                                            <th>상품명</th>
+                                            <td>Winter i*cept evo2</td>
+                                        </tr>
+                                        <tr>
+                                            <th>사이즈</th>
+                                            <td>205 / 55R16V XL</td>
+                                            <th>수량</th>
+                                            <td>4개</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- //상품정보  -->
+
+                            <!-- TODO: 쿠폰정보 추가 -->
+                            <div class="mydetail_02">
+                                <h6>쿠폰정보</h6>
+                                <div class="tbl_01 none">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>쿠폰명</th>
+                                            <td>스마트픽업 쿠폰</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 예약자정보  -->
+                            <div class="mydetail_02">
+                                <h6>예약자정보</h6>
+                                <div class="tbl_01 none">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>성명</th>
+                                            <td>박현빈</td>
+                                            <th>핸드폰</th>
+                                            <td>010-2220-0789</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>요청사항</th>
+                                            <td colspan="3">주행 시 진동이 있으니 확인 해 주세요.</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- //예약자정보  -->
+                            <!-- 차량정보  -->
+                            <div class="mydetail_02">
+                                <h6>차량정보</h6>
+                                <div class="tbl_01 none">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <!-- 202012 pub fixed // -->
+                                        <tr>
+                                            <th>자동차 브랜드</th>
+                                            <td>기아</td>
+                                            <th>차종</th>
+                                            <td>쏘렌토</td>
+                                        </tr>
+                                        <tr>
+                                            <th>세부 차종</th>
+                                            <td>올 뉴 쏘렌토</td>
+                                            <th>연료</th>
+                                            <td>디젤</td>
+                                        </tr>
+                                        <tr>
+                                            <th>모델 연도</th>
+                                            <td>2017</td>
+                                            <th>세부 모델</th>
+                                            <td>노블레스 스페셜</td>
+                                        </tr>
+                                        <tr>
+                                            <th>사이즈</th>
+                                            <td>235/55R19</td>
+                                            <th>차량번호</th>
+                                            <td>12가1234</td>
+                                        </tr>
+                                        <!-- // 202012 pub fixed -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- //차량정보  -->
+                            <!-- button -->
+                            <div class="btn01">
+                                <a href="https://wwwlocal.tstation.com/mypage/tstation/reservation/shopVisitReserveList.do" class="btnB btnS07">목록으로</a>
+                            </div>
+                            <!-- //button -->
+
+                        </div>
+                        <!-- //방문예약내역 -->
+                        <!-- #container -->
+                        <script>
+                            $(function () {
+                                reserveDetail.base.init();
+                            });
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

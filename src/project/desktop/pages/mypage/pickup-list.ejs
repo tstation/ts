@@ -1,0 +1,137 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+
+<!--
+    개발완료후 style_pc.css 로 이동
+    mypage.css -> style_pc.css
+-->
+<link rel="stylesheet" type="text/css" href="pc-static-root/css/mypage.css" />
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page_tit">
+                        <h4>픽업서비스내역</h4>
+                        <div class="btn_right">
+                            <select title="픽업서비스 상태 선택" class="select01 w200" name="" id="" selected="selected">
+                                <option value="">전체</option>
+                                <option value="1">서비스 진행중</option>
+                                <option value="2">서비스 완료</option>
+                                <option value="3">서비스 취소</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <p class="nodata">픽업서비스내역이 없습니다.</p>
+                        <ol class="mylist_01 rsv_list">
+                            <li>
+                                <div class="date">
+                                    <em class="icn_status">서비스 진행중</em>
+                                    <a href="https://wwwlocal.tstation.com/mypage/tstation/reservation/shopVisitReserveDetail.do?shopRsvSeq=20000001891040" class="more">상세내역보기</a>
+                                </div>
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>신청 서비스</th>
+                                            <td colspan="3">
+                                                <span class="txt-primary">픽업</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>매장명</th>
+                                            <td>티스테이션 평촌점</td>
+                                            <th>매장방문일</th>
+                                            <td> 2020-10-31(토)&nbsp;21시</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="date">
+                                    <em class="icn_status">서비스 완료</em>
+                                    <a href="https://wwwlocal.tstation.com/mypage/tstation/reservation/shopVisitReserveDetail.do?shopRsvSeq=20000001891039" class="more">상세내역보기</a>
+                                </div>
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>신청 서비스</th>
+                                            <td colspan="3">
+                                                <span class="txt-primary">픽업*딜리버리</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>매장명</th>
+                                            <td>티스테이션 분당정자점</td>
+                                            <th>매장방문일</th>
+                                            <td> 2020-10-16(금)&nbsp;17시</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="date">
+                                    <em class="icn_status">서비스 취소</em>
+                                    <a href="https://wwwlocal.tstation.com/mypage/tstation/reservation/shopVisitReserveDetail.do?shopRsvSeq=20000001891038" class="more">상세내역보기</a>
+                                </div>
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>신청 서비스</th>
+                                            <td colspan="3">
+                                                <span class="txt-primary">딜리버리</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>매장명</th>
+                                            <td>티스테이션 분당정자점</td>
+                                            <th>매장방문일</th>
+                                            <td> 2020-10-23(금)&nbsp;23시</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="more mg-t-10u mg-b-20u txt-center">
+                        <button class="btnMore" id="btn_select_more">더보기(<em>3 </em>/12)</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

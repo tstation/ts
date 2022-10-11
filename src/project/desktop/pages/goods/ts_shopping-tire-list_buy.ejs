@@ -1,0 +1,2082 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+
+    <!-- Tabs -->
+    <section class="border-b mg-t-2u">
+        <div class="guardrail">
+            <div class="tab-item tab-item-no-border tab-item-light no-sticky size-m">
+                <a href="#" class="on">타이어 상품</a>
+                <a href="#" class="disabled">경정비 상품</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="section-gray border-b">
+        <div class="guardrail">
+            <div class="ts-shopping-filter-bar">
+                <ul>
+                    <li class="filter-cell reset">
+                        <!-- TODO: 사이즈 정보가 없을때 -->
+                        <div>
+                            <p class="txt-18 mg-b-3u">원하는 타이어 검색</p>
+                            <div>
+                                <button type="button" class="btn-item btn-neutral btn-s btn-ol round">
+                                    <span class="label-txt">초기화</span>
+                                    <span class="line-icons refresh size-24"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="filter-cell find-driving-style">
+                        <div>
+                            <div class="title">
+                                <span class="v-middle">내 운전 스타일은?</span>
+                                <div class="tooltip-container f-top dp-inblock right v-middle txt-0 mg-l-1u">
+                                    <button type="button" class="bg-fff txt-0">
+                                        <span class="line-icons info-circle size-16"></span>
+                                    </button>
+                                    <div class="tooltip">
+                                        <div class="tooltip-header">
+                                            <p>내 운전 스타일</p>
+                                        </div>
+                                        <div class="tooltip-body">
+                                            <p>타이어 제품의 정숙성/제동력등을 기준으로 내 운전 스타일에 맞는 타이어를 추천해드립니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="description">나에게 맞는 타이어 선택을 위해 선호하는 타입을 선택하세요.</p>
+                            <div class="panel">
+                                <div class="find-driving-slider">
+                                    <input id="find-driving-style" type="range" min="0" max="100" value="0" />
+                                    <script>
+                                        // onchange event fire add event listener
+                                        document.addEventListener('myDrivingStyle', function (evt) {
+                                            // TODO: 내 운전 스타일 슬라이더 값
+                                            console.log(evt.detail)
+                                        })
+
+                                        var overlap = [
+                                            {
+                                                target: '.overlap-break-under',
+                                                template: '<div class="overlap-break-under"></div>',
+                                                isGap: true,
+                                                position: {
+                                                    start: 0,
+                                                    end: 12
+                                                }
+                                            },
+                                            {
+                                                target: '.overlap-break-first',
+                                                template: '<span class="overlap-break overlap-break-first"></span>',
+                                                isGap: false,
+                                                position: {
+                                                    start: 12,
+                                                    end: 34
+                                                }
+                                            },
+                                            {
+                                                target: '.overlap-break-second',
+                                                template: '<span class="overlap-break overlap-break-second"></span>',
+                                                isGap: false,
+                                                position: {
+                                                    start: 34,
+                                                    end: 56
+                                                }
+                                            },
+                                            {
+                                                target: '.overlap-break-third',
+                                                template: '<span class="overlap-break overlap-break-third"></span>',
+                                                isGap: false,
+                                                position: {
+                                                    start: 56,
+                                                    end: 78
+                                                }
+                                            },
+                                            {
+                                                target: '.overlap-break-fourth',
+                                                template: '<span class="overlap-break overlap-break-fourth"></span>',
+                                                isGap: false,
+                                                position: {
+                                                    start: 78,
+                                                    end: 100
+                                                }
+                                            }
+                                        ]
+
+                                        $.Tstation.myDrivingStyle.init('#find-driving-style', overlap)
+
+                                        // 슬라이더 값 초기화
+                                        // $.Tstation.myDrivingStyle.update('#find-driving-style', 0)
+                                    </script>
+                                    <div class="find-driving-slider-guide">
+                                        <span class="break-under">전체</span>
+                                        <div class="break-over clearfix">
+                                                    <span class="float-l left">
+                                                        <span>정숙/승차감 우선</span>
+                                                    </span>
+                                            <span class="float-r right">
+                                                        <span>고속/제동성 우선</span>
+                                                    </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="filter-cell find-car-type">
+                        <div>
+                            <p class="title">차종</p>
+                            <div class="panel">
+                                <ul class="grid-list grid-list-column-2">
+                                    <li>
+                                        <label class="radio-item radio-item-block">
+                                            <input type="radio" name="car-type">
+                                            <div class="icon-holder">
+                                                <span class="line-icons circle size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">승용차</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio-item radio-item-block">
+                                            <input type="radio" name="car-type">
+                                            <div class="icon-holder">
+                                                <span class="line-icons circle size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">SUV</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio-item radio-item-block">
+                                            <input type="radio" name="car-type">
+                                            <div class="icon-holder">
+                                                <span class="line-icons circle size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">VAN/트럭</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio-item radio-item-block">
+                                            <input type="radio" name="car-type">
+                                            <div class="icon-holder">
+                                                <span class="line-icons circle size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">전기차</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="filter-cell find-season">
+                        <div>
+                            <p class="title">계절</p>
+                            <div class="panel">
+                                <ul class="grid-list grid-list-column-2">
+                                    <li>
+                                        <label class="check-item check-item-block">
+                                            <input type="checkbox">
+                                            <div class="icon-holder">
+                                                <span class="line-icons square size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">사계절</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="check-item check-item-block">
+                                            <input type="checkbox">
+                                            <div class="icon-holder">
+                                                <span class="line-icons square size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">여름</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="check-item check-item-block">
+                                            <input type="checkbox">
+                                            <div class="icon-holder">
+                                                <span class="line-icons square size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">겨울</span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="mg-t-15u">
+        <div class="guardrail">
+            <div class="list-guide-bar">
+                <p class="guide-text">총 <span class="txt-primary">9</span>개의 상품 검색 결과가 있습니다.</p>
+
+                <div class="tools tab-item tab-item-no-border tab-item-light no-sticky on-layer size-s">
+                    <a href="#" class="on">추천순</a>
+                    <a href="#" class="">상품평 높은순</a>
+                    <a href="#" class="">판매량순</a>
+                    <a href="#" class="">신상품순</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TODO: 등급별 검색 결과값이 모두 없을 경우 -->
+    <section>
+        <div class="guardrail">
+            <div class="nodata-product">
+                <p>
+                    <span class="line-icons error-circle-light size-30"></span>
+                    <strong>선택하신 조건에 해당하는 상품이 없습니다.</strong>
+                    다른 필터를 선택하시거나 재검색해 주세요.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Line Up -->
+    <section>
+        <div class="">
+            <div class="guardrail">
+                <div class="section-title-bar">
+                    <h3 class="title">프리미엄 라인업 <small class="txt-neutral2">5개</small></h3>
+                    <p class="description">고성능 퍼포먼스 타이어</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-gray border-t border-b pd-v-3u">
+            <div class="guardrail">
+                <div class="ts-shopping-section-swiper">
+                    <div class="swiper-container premium-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <label class="sale-check">
+                                    <input type="radio" name="sale-check"  />
+                                    <div class="icon-circle">
+                                        <span class="card-check"></span>
+                                        <span class="blind">주문하기</span>
+                                    </div>
+                                </label>
+                                <div class="section-product">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-img"><img src="pc-static-root/images/common/sample/tire.jpg" alt=""></div>
+                                        <div class="brands-logo hk"></div>
+                                        <div class="compare">
+                                            <label class="check-item">
+                                                <input type="checkbox" onchange="callPopup.compare(this)" name="tire" />
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">비교</span>
+                                                </div>
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <ul class="suggest-group">
+                                            <li>
+                                                    <span class="suggest-item deal">
+                                                        <span><span class="txt-11">특별기획전</span><br /><span class="txt-11 txt-w500">18:08:32</span></span>
+                                                    </span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item new"></span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item best"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="out-of-stock">
+                                            <p class="txt-primary">
+                                                <span class="line-icons clock size-12"></span><span class="v-middle">품절임박</span>
+                                            </p>
+                                            <p class="txt-w500">남은수량 10개</p>
+                                        </div>
+                                        <div class="benefit-wrap">
+                                            <div class="benefit safe tooltip-container left">
+                                                <span>안심 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>안심 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit hotel tooltip-container left">
+                                                <span>호텔 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>호텔 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="benefit reservation"><span>예약 상품</span></div> -->
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title-wrap">
+                                            <div class="point-group">
+                                                <span class="point comport">정숙/승차감 우선</span>
+                                                <!-- 202012 pub fixed // -->
+                                                <span class="driving-icon front-driving">전륜</span>
+                                                <!-- <span class="driving-icon back-driving">후륜</span> -->
+                                                <!-- // 202012 pub fixed -->
+                                            </div>
+                                            <h2 aria-label="" class="name-group">
+                                                <!--<em class="name">MAXXIS M3</em>-->
+                                                <em class="name">
+                                                    <img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />
+                                                </em>
+                                                <span class="size">245/45R18</span>
+                                            </h2>
+                                        </div>
+                                        <div class="price-wrap">
+                                            <div class="sale">
+                                                    <span class="discount">
+                                                        <span class="blind">쿠폰 적용 가격</span>
+                                                        <em>193,400</em>원
+                                                    </span>
+                                                <del>
+                                                    <span class="blind">할인 전 가격</span>
+                                                    <span>355,000</span>원
+                                                </del>
+                                            </div>
+                                            <div class="smartprice-wrap">
+                                                <span class="price">월<strong>24,150</strong>원</span>
+                                                <span class="months">24개월할부</span>
+                                                <button class="info-button" onclick="callPopup.smartPay();">
+                                                    <span class="blind">스마트페이란?</span>
+                                                    <span class="line-icons info-circle size-16"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap">
+                                            <button type="button" class="btn-item btn-neutral btn-ms btn-ol round" onclick="callPopup.order();">
+                                                <span class="label-txt">바로구매</span>
+                                            </button>
+                                            <div class="unit-group">
+                                                <button class="cart-button"><span class="blind">장바구니</span><span
+                                                            class="line-icons cart size-24"></span></button>
+                                                <button class="discount-button"><span class="blind">쿠폰</span><span
+                                                            class="line-icons coupon size-24"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-foot-wrap">
+                                        <div class="description-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="filter-wrap">
+                                                        <span class="line-icons info-circle size-16" onclick="callPopup.tireGuide();"></span>
+                                                        <span class="filter">승용차</span>
+                                                        <span class="filter">사계절</span>
+                                                        <span class="filter">온오프로드</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <label class="sale-check">
+                                    <input type="radio" name="sale-check" disabled />
+                                    <div class="icon-circle">
+                                        <span class="card-check"></span>
+                                        <span class="blind">주문하기</span>
+                                    </div>
+                                </label>
+                                <div class="section-product">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-img"><img src="pc-static-root/images/common/sample/tire.jpg" alt=""></div>
+                                        <div class="brands-logo hk"></div>
+                                        <div class="compare">
+                                            <label class="check-item">
+                                                <input type="checkbox" onchange="callPopup.compare(this)" name="tire" />
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">비교</span>
+                                                </div>
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <ul class="suggest-group">
+                                            <li>
+                                                    <span class="suggest-item deal">
+                                                        <span><span class="txt-11">특별기획전</span><br /><span class="txt-11 txt-w500">18:08:32</span></span>
+                                                    </span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item new"></span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item best"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="out-of-stock">
+                                            <p class="txt-primary">
+                                                <span class="line-icons clock size-12"></span><span class="v-middle">품절임박</span>
+                                            </p>
+                                            <p class="txt-w500">남은수량 10개</p>
+                                        </div>
+                                        <div class="benefit-wrap">
+                                            <div class="benefit safe tooltip-container left">
+                                                <span>안심 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>안심 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit hotel tooltip-container left">
+                                                <span>호텔 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>호텔 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="benefit reservation"><span>예약 상품</span></div> -->
+                                        </div>
+                                        <div class="overlap-status">
+                                            <div class="overlap-status-inner">
+                                                <span class="btn-item btn-neutral round status"><span class="label-txt">딜이 종료되었습니다.</span></span>
+                                                <!--<span class="btn-item btn-neutral round status"><span class="label-txt">일시품절</span></span>
+                                                <span class="btn-item btn-neutral round status"><span class="label-txt">'매장명'에서는<br />예약할 수 없습니다.</span></span>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title-wrap">
+                                            <div class="point-group">
+                                                <span class="point comport">정숙/승차감 우선</span>
+                                                <!-- 202012 pub fixed // -->
+                                                <span class="driving-icon front-driving">전륜</span>
+                                                <!-- <span class="driving-icon back-driving">후륜</span> -->
+                                                <!-- // 202012 pub fixed -->
+                                            </div>
+                                            <h2 aria-label="" class="name-group">
+                                                <!--<em class="name">MAXXIS M3</em>-->
+                                                <em class="name">
+                                                    <img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />
+                                                </em>
+                                                <span class="size">245/45R18</span>
+                                            </h2>
+                                        </div>
+                                        <div class="price-wrap">
+                                            <div class="sale">
+                                                    <span class="discount">
+                                                        <span class="blind">쿠폰 적용 가격</span>
+                                                        <em>193,400</em>원
+                                                    </span>
+                                                <del>
+                                                    <span class="blind">할인 전 가격</span>
+                                                    <span>355,000</span>원
+                                                </del>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap disabled">
+                                            <button type="button" class="btn-item btn-neutral btn-ms btn-ol round" onclick="callPopup.order();">
+                                                <span class="label-txt">바로구매</span>
+                                            </button>
+                                            <div class="unit-group">
+                                                <button class="cart-button"><span class="blind">장바구니</span><span class="line-icons cart size-24"></span></button>
+                                                <button class="discount-button"><span class="blind">쿠폰</span><span class="line-icons coupon size-24"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-foot-wrap">
+                                        <div class="description-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="filter-wrap">
+                                                        <span class="line-icons info-circle size-16" onclick="callPopup.tireGuide();"></span>
+                                                        <span class="filter">승용차</span>
+                                                        <span class="filter">사계절</span>
+                                                        <span class="filter">온오프로드</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <label class="sale-check">
+                                    <input type="radio" name="sale-check" />
+                                    <div class="icon-circle">
+                                        <span class="card-check"></span>
+                                        <span class="blind">주문하기</span>
+                                    </div>
+                                </label>
+                                <div class="section-product">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-img"><img src="pc-static-root/images/common/sample/tire.jpg" alt=""></div>
+                                        <div class="brands-logo hk"></div>
+                                        <div class="compare">
+                                            <label class="check-item">
+                                                <input type="checkbox" onchange="callPopup.compare(this)" name="tire" />
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">비교</span>
+                                                </div>
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <ul class="suggest-group">
+                                            <li>
+                                                    <span class="suggest-item deal">
+                                                        <span><span class="txt-11">특별기획전</span><br /><span class="txt-11 txt-w500">18:08:32</span></span>
+                                                    </span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item new"></span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item best"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="out-of-stock">
+                                            <p class="txt-primary">
+                                                <span class="line-icons clock size-12"></span><span class="v-middle">품절임박</span>
+                                            </p>
+                                            <p class="txt-w500">남은수량 10개</p>
+                                        </div>
+                                        <div class="benefit-wrap">
+                                            <div class="benefit safe tooltip-container left">
+                                                <span>안심 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>안심 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit hotel tooltip-container left">
+                                                <span>호텔 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>호텔 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="benefit reservation"><span>예약 상품</span></div> -->
+                                        </div>
+                                        <div class="overlap-status">
+                                            <div class="overlap-status-inner">
+                                                <!--<span class="btn-item btn-neutral round status"><span class="label-txt">딜이 종료되었습니다.</span></span>-->
+                                                <span class="btn-item btn-neutral round status"><span class="label-txt">일시품절</span></span>
+                                                <!--<span class="btn-item btn-neutral round status"><span class="label-txt">'매장명'에서는<br />예약할 수 없습니다.</span></span>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title-wrap">
+                                            <div class="point-group">
+                                                <span class="point comport">정숙/승차감 우선</span>
+                                                <!-- 202012 pub fixed // -->
+                                                <!-- <span class="driving-icon front-driving">전륜</span> -->
+                                                <span class="driving-icon back-driving">후륜</span>
+                                                <!-- // 202012 pub fixed -->
+                                            </div>
+                                            <h2 aria-label="" class="name-group">
+                                                <!--<em class="name">MAXXIS M3</em>-->
+                                                <em class="name">
+                                                    <img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />
+                                                </em>
+                                                <span class="size">245/45R18</span>
+                                            </h2>
+                                        </div>
+                                        <div class="price-wrap">
+                                            <div class="sale">
+                                                    <span class="discount">
+                                                        <span class="blind">쿠폰 적용 가격</span>
+                                                        <em>193,400</em>원
+                                                    </span>
+                                                <del>
+                                                    <span class="blind">할인 전 가격</span>
+                                                    <span>355,000</span>원
+                                                </del>
+                                            </div>
+                                            <div class="smartprice-wrap">
+                                                <span class="price">월<strong>24,150</strong>원</span>
+                                                <span class="months">24개월할부</span>
+                                                <button class="info-button" onclick="callPopup.smartPay();">
+                                                    <span class="blind">스마트페이란?</span>
+                                                    <span class="line-icons info-circle size-16"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap">
+                                            <!-- 20220520 // -->
+                                            <button type="button" class="btn-item btn-primary btn-ms btn-ol round" onclick="callPopup.reStock();">
+                                                <span class="label-txt">재입고 알림신청</span>
+                                            </button>
+                                            <!-- // 20220520 -->
+                                            <!--<div class="unit-group">
+                                                <button class="cart-button"><span class="blind">장바구니</span><span
+                                                  class="line-icons cart size-24"></span></button>
+                                                <button class="discount-button"><span class="blind">쿠폰</span><span
+                                                  class="line-icons coupon size-24"></span></button>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <div class="info-foot-wrap">
+                                        <div class="description-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="filter-wrap">
+                                                        <span class="line-icons info-circle size-16" onclick="callPopup.tireGuide();"></span>
+                                                        <span class="filter">승용차</span>
+                                                        <span class="filter">사계절</span>
+                                                        <span class="filter">온오프로드</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <label class="sale-check">
+                                    <input type="radio" name="sale-check" />
+                                    <div class="icon-circle">
+                                        <span class="card-check"></span>
+                                        <span class="blind">주문하기</span>
+                                    </div>
+                                </label>
+                                <div class="section-product">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-img"><img src="pc-static-root/images/common/sample/tire.jpg" alt=""></div>
+                                        <div class="brands-logo hk"></div>
+                                        <div class="compare">
+                                            <label class="check-item">
+                                                <input type="checkbox" onchange="callPopup.compare(this)" name="tire" />
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">비교</span>
+                                                </div>
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <ul class="suggest-group">
+                                            <li>
+                                                    <span class="suggest-item deal">
+                                                        <span><span class="txt-11">특별기획전</span><br /><span class="txt-11 txt-w500">18:08:32</span></span>
+                                                    </span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item new"></span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item best"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="out-of-stock">
+                                            <p class="txt-primary">
+                                                <span class="line-icons clock size-12"></span><span class="v-middle">품절임박</span>
+                                            </p>
+                                            <p class="txt-w500">남은수량 10개</p>
+                                        </div>
+                                        <div class="benefit-wrap">
+                                            <div class="benefit safe tooltip-container left">
+                                                <span>안심 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>안심 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit hotel tooltip-container left">
+                                                <span>호텔 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>호텔 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="benefit reservation"><span>예약 상품</span></div> -->
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title-wrap">
+                                            <div class="point-group">
+                                                <span class="point comport">정숙/승차감 우선</span>
+                                                <!-- 202012 pub fixed // -->
+                                                <span class="driving-icon front-driving">전륜</span>
+                                                <!-- <span class="driving-icon back-driving">후륜</span> -->
+                                                <!-- // 202012 pub fixed -->
+                                            </div>
+                                            <h2 aria-label="" class="name-group">
+                                                <!--<em class="name">MAXXIS M3</em>-->
+                                                <em class="name">
+                                                    <img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />
+                                                </em>
+                                                <span class="size">245/45R18</span>
+                                            </h2>
+                                        </div>
+                                        <div class="price-wrap">
+                                            <div class="sale">
+                                                    <span class="discount">
+                                                        <span class="blind">쿠폰 적용 가격</span>
+                                                        <em>193,400</em>원
+                                                    </span>
+                                                <del>
+                                                    <span class="blind">할인 전 가격</span>
+                                                    <span>355,000</span>원
+                                                </del>
+                                            </div>
+                                            <div class="smartprice-wrap">
+                                                <span class="price">월<strong>24,150</strong>원</span>
+                                                <span class="months">24개월할부</span>
+                                                <button class="info-button" onclick="callPopup.smartPay();">
+                                                    <span class="blind">스마트페이란?</span>
+                                                    <span class="line-icons info-circle size-16"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap">
+                                            <button type="button" class="btn-item btn-primary btn-ms btn-ol round">
+                                                <span class="label-txt">예약구매</span>
+                                            </button>
+                                            <div class="unit-group">
+                                                <button class="cart-button"><span class="blind">장바구니</span><span
+                                                            class="line-icons cart size-24"></span></button>
+                                                <button class="discount-button"><span class="blind">쿠폰</span><span
+                                                            class="line-icons coupon size-24"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-foot-wrap">
+                                        <div class="description-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="filter-wrap">
+                                                        <span class="line-icons info-circle size-16" onclick="callPopup.tireGuide();"></span>
+                                                        <span class="filter">승용차</span>
+                                                        <span class="filter">사계절</span>
+                                                        <span class="filter">온오프로드</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="excla-info"><span class="line-icons info-circle-inv size-16"></span>본 상품은 예약상품으로 11월24일부터 장착 가능합니다.</p>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <label class="sale-check">
+                                    <input type="radio" name="sale-check" />
+                                    <div class="icon-circle">
+                                        <span class="card-check"></span>
+                                        <span class="blind">주문하기</span>
+                                    </div>
+                                </label>
+                                <div class="section-product">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-img"><img src="pc-static-root/images/common/sample/tire.jpg" alt=""></div>
+                                        <div class="brands-logo hk"></div>
+                                        <div class="compare">
+                                            <label class="check-item">
+                                                <input type="checkbox" onchange="callPopup.compare(this)" name="tire" />
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">비교</span>
+                                                </div>
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <ul class="suggest-group">
+                                            <li>
+                                                    <span class="suggest-item deal">
+                                                        <span><span class="txt-11">특별기획전</span><br /><span class="txt-11 txt-w500">18:08:32</span></span>
+                                                    </span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item new"></span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item best"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="out-of-stock">
+                                            <p class="txt-primary">
+                                                <span class="line-icons clock size-12"></span><span class="v-middle">품절임박</span>
+                                            </p>
+                                            <p class="txt-w500">남은수량 10개</p>
+                                        </div>
+                                        <div class="benefit-wrap">
+                                            <div class="benefit safe tooltip-container left">
+                                                <span>안심 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>안심 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit hotel tooltip-container left">
+                                                <span>호텔 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>호텔 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="benefit reservation"><span>예약 상품</span></div> -->
+                                        </div>
+                                        <div class="overlap-status">
+                                            <div class="overlap-status-inner">
+                                                <!--<span class="btn-item btn-neutral round status"><span class="label-txt">딜이 종료되었습니다.</span></span>
+                                                <span class="btn-item btn-neutral round status"><span class="label-txt">일시품절</span></span>-->
+                                                <span class="btn-item btn-neutral round status"><span class="label-txt">'매장명'에서는<br />예약할 수 없습니다.</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title-wrap">
+                                            <div class="point-group">
+                                                <span class="point comport">정숙/승차감 우선</span>
+                                                <!-- 202012 pub fixed // -->
+                                                <!-- <span class="driving-icon front-driving">전륜</span> -->
+                                                <span class="driving-icon back-driving">후륜</span>
+                                                <!-- // 202012 pub fixed -->
+                                            </div>
+                                            <h2 aria-label="" class="name-group">
+                                                <!--<em class="name">MAXXIS M3</em>-->
+                                                <em class="name">
+                                                    <img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />
+                                                </em>
+                                                <span class="size">245/45R18</span>
+                                            </h2>
+                                        </div>
+                                        <div class="price-wrap">
+                                            <div class="sale">
+                                                    <span class="discount">
+                                                        <span class="blind">쿠폰 적용 가격</span>
+                                                        <em>193,400</em>원
+                                                    </span>
+                                                <del>
+                                                    <span class="blind">할인 전 가격</span>
+                                                    <span>355,000</span>원
+                                                </del>
+                                            </div>
+                                            <div class="smartprice-wrap">
+                                                <span class="price">월<strong>24,150</strong>원</span>
+                                                <span class="months">24개월할부</span>
+                                                <button class="info-button" onclick="callPopup.smartPay();">
+                                                    <span class="blind">스마트페이란?</span>
+                                                    <span class="line-icons info-circle size-16"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap disabled">
+                                            <button type="button" class="btn-item btn-neutral btn-ms btn-ol round" onclick="callPopup.order();">
+                                                <span class="label-txt">바로구매</span>
+                                            </button>
+                                            <div class="unit-group">
+                                                <button class="cart-button"><span class="blind">장바구니</span><span
+                                                            class="line-icons cart size-24"></span></button>
+                                                <button class="discount-button"><span class="blind">쿠폰</span><span
+                                                            class="line-icons coupon size-24"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-foot-wrap">
+                                        <div class="description-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="filter-wrap">
+                                                        <span class="line-icons info-circle size-16" onclick="callPopup.tireGuide();"></span>
+                                                        <span class="filter">승용차</span>
+                                                        <span class="filter">사계절</span>
+                                                        <span class="filter">온오프로드</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ts-shopping-section-swiper-button-next premium"></div>
+                    <div class="ts-shopping-section-swiper-button-prev premium"></div>
+
+                    <script>
+                        // 프리미엄 라인업 스와이퍼
+                        var premiumSwiper = new Swiper('.premium-swiper', {
+                            slidesPerView: 3,
+                            spaceBetween: 12,
+                            slidesPerGroup: 3,
+                            // loop: true,
+                            // loopFillGroupWithBlank: true,
+                            pagination: {
+                                el: '.swiper-pagination',
+                                dynamicBullets: true
+                            },
+                            navigation: {
+                                nextEl: '.ts-shopping-section-swiper-button-next.premium',
+                                prevEl: '.ts-shopping-section-swiper-button-prev.premium'
+                            }
+                        });
+
+                        premiumSwiper.init();
+
+                        $(window).on('resize', function () {
+                            premiumSwiper.init();
+                        });
+
+                        // 비동기로 필터링 걸린 후 내용이 바뀌었다면 아래 프로세스 호출
+                        // premiumSwiper.update();
+                        // premiumSwiper.slideTo(0);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Line Up -->
+    <section>
+        <div>
+            <div class="guardrail">
+                <div class="section-title-bar">
+                    <h3 class="title">스탠다드 라인업 <small class="txt-neutral2">2개</small></h3>
+                    <p class="description">성능, 편안함의 밸런스를 갖춘 타이어</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-gray border-t border-b pd-v-3u">
+            <div class="guardrail">
+                <div class="ts-shopping-section-swiper">
+                    <div class="swiper-container standard-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <label class="sale-check">
+                                    <input type="radio" name="sale-check" value="006" />
+                                    <div class="icon-circle">
+                                        <span class="card-check"></span>
+                                        <span class="blind">주문하기</span>
+                                    </div>
+                                </label>
+                                <div class="section-product">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-img"><img src="pc-static-root/images/common/sample/tire.jpg" alt=""></div>
+                                        <div class="brands-logo hk"></div>
+                                        <div class="compare">
+                                            <label class="check-item">
+                                                <input type="checkbox" onchange="callPopup.compare(this)" name="tire" />
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">비교</span>
+                                                </div>
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <ul class="suggest-group">
+                                            <li>
+                                                    <span class="suggest-item deal">
+                                                        <span><span class="txt-11">특별기획전</span><br /><span class="txt-11 txt-w500">18:08:32</span></span>
+                                                    </span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item new"></span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item best"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="out-of-stock">
+                                            <p class="txt-primary">
+                                                <span class="line-icons clock size-12"></span><span class="v-middle">품절임박</span>
+                                            </p>
+                                            <p class="txt-w500">남은수량 10개</p>
+                                        </div>
+                                        <div class="benefit-wrap">
+                                            <div class="benefit safe tooltip-container left">
+                                                <span>안심 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>안심 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit hotel tooltip-container left">
+                                                <span>호텔 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>호텔 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="benefit reservation"><span>예약 상품</span></div> -->
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title-wrap">
+                                            <div class="point-group">
+                                                <span class="point comport">정숙/승차감 우선</span>
+                                                <!-- 202012 pub fixed // -->
+                                                <span class="driving-icon front-driving">전륜</span>
+                                                <!-- <span class="driving-icon back-driving">후륜</span> -->
+                                                <!-- // 202012 pub fixed -->
+                                            </div>
+                                            <h2 aria-label="" class="name-group">
+                                                <!--<em class="name">MAXXIS M3</em>-->
+                                                <em class="name">
+                                                    <img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />
+                                                </em>
+                                                <span class="size">245/45R18</span>
+                                            </h2>
+                                        </div>
+                                        <div class="price-wrap">
+                                            <div class="sale">
+                                                    <span class="discount">
+                                                        <span class="blind">쿠폰 적용 가격</span>
+                                                        <em>193,400</em>원
+                                                    </span>
+                                                <del>
+                                                    <span class="blind">할인 전 가격</span>
+                                                    <span>355,000</span>원
+                                                </del>
+                                            </div>
+                                            <div class="smartprice-wrap">
+                                                <span class="price">월<strong>24,150</strong>원</span>
+                                                <span class="months">24개월할부</span>
+                                                <button class="info-button" onclick="callPopup.smartPay();">
+                                                    <span class="blind">스마트페이란?</span>
+                                                    <span class="line-icons info-circle size-16"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap">
+                                            <button type="button" class="btn-item btn-neutral btn-ms btn-ol round" onclick="callPopup.order();">
+                                                <span class="label-txt">바로구매</span>
+                                            </button>
+                                            <div class="unit-group">
+                                                <button class="cart-button"><span class="blind">장바구니</span><span
+                                                            class="line-icons cart size-24"></span></button>
+                                                <button class="discount-button"><span class="blind">쿠폰</span><span
+                                                            class="line-icons coupon size-24"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-foot-wrap">
+                                        <div class="description-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="filter-wrap">
+                                                        <span class="line-icons info-circle size-16" onclick="callPopup.tireGuide();"></span>
+                                                        <span class="filter">승용차</span>
+                                                        <span class="filter">사계절</span>
+                                                        <span class="filter">온오프로드</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <label class="sale-check">
+                                    <input type="radio" name="sale-check" value="007" disabled />
+                                    <div class="icon-circle">
+                                        <span class="card-check"></span>
+                                        <span class="blind">주문하기</span>
+                                    </div>
+                                </label>
+                                <div class="section-product">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-img"><img src="pc-static-root/images/common/sample/tire.jpg" alt=""></div>
+                                        <div class="brands-logo hk"></div>
+                                        <div class="compare">
+                                            <label class="check-item">
+                                                <input type="checkbox" onchange="callPopup.compare(this)" name="tire" />
+                                                <div class="labelling">
+                                                    <span class="label-txt mg-h-1u">비교</span>
+                                                </div>
+                                                <div class="icon-holder">
+                                                    <span class="line-icons square size-20"></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <ul class="suggest-group">
+                                            <li>
+                                                    <span class="suggest-item deal">
+                                                        <span><span class="txt-11">특별기획전</span><br /><span class="txt-11 txt-w500">18:08:32</span></span>
+                                                    </span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item new"></span>
+                                            </li>
+                                            <li>
+                                                <span class="suggest-item best"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="out-of-stock">
+                                            <p class="txt-primary">
+                                                <span class="line-icons clock size-12"></span><span class="v-middle">품절임박</span>
+                                            </p>
+                                            <p class="txt-w500">남은수량 10개</p>
+                                        </div>
+                                        <div class="benefit-wrap">
+                                            <div class="benefit safe tooltip-container left">
+                                                <span>안심 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>안심 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>구매 후 1년 그리고 1만 6천킬로미터 이내 주행 중 발생한 타이어 파손 건에 대해 동일 타이어로 보상해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit hotel tooltip-container left">
+                                                <span>호텔 서비스</span>
+                                                <div class="tooltip">
+                                                    <div class="tooltip-header">
+                                                        <p>호텔 서비스</p>
+                                                    </div>
+                                                    <div class="tooltip-body">
+                                                        <p>타이어를 안심하고 보관할 수 있는 보관 서비스로 겨울용 타이어를 구매시 기존 타이어를 보관해주는 서비스입니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="benefit reservation"><span>예약 상품</span></div> -->
+                                        </div>
+                                        <div class="overlap-status">
+                                            <div class="overlap-status-inner">
+                                                <span class="btn-item btn-neutral round status"><span class="label-txt">딜이 종료되었습니다.</span></span>
+                                                <!--<span class="btn-item btn-neutral round status"><span class="label-txt">일시품절</span></span>
+                                                <span class="btn-item btn-neutral round status"><span class="label-txt">'매장명'에서는<br />예약할 수 없습니다.</span></span>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title-wrap">
+                                            <div class="point-group">
+                                                <span class="point comport">정숙/승차감 우선</span>
+                                                <!-- 202012 pub fixed // -->
+                                                <!-- <span class="driving-icon front-driving">전륜</span> -->
+                                                <!-- <span class="driving-icon back-driving">후륜</span> -->
+                                                <!-- // 202012 pub fixed -->
+                                            </div>
+                                            <h2 aria-label="" class="name-group">
+                                                <!--<em class="name">MAXXIS M3</em>-->
+                                                <em class="name">
+                                                    <img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />
+                                                </em>
+                                                <span class="size">245/45R18</span>
+                                            </h2>
+                                        </div>
+                                        <div class="price-wrap">
+                                            <div class="sale">
+                                                    <span class="discount">
+                                                        <span class="blind">쿠폰 적용 가격</span>
+                                                        <em>193,400</em>원
+                                                    </span>
+                                                <del>
+                                                    <span class="blind">할인 전 가격</span>
+                                                    <span>355,000</span>원
+                                                </del>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap disabled">
+                                            <button type="button" class="btn-item btn-neutral btn-ms btn-ol round" onclick="callPopup.order();">
+                                                <span class="label-txt">바로구매</span>
+                                            </button>
+                                            <div class="unit-group">
+                                                <button class="cart-button"><span class="blind">장바구니</span><span class="line-icons cart size-24"></span></button>
+                                                <button class="discount-button"><span class="blind">쿠폰</span><span class="line-icons coupon size-24"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info-foot-wrap">
+                                        <div class="description-wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="filter-wrap">
+                                                        <span class="line-icons info-circle size-16" onclick="callPopup.tireGuide();"></span>
+                                                        <span class="filter">승용차</span>
+                                                        <span class="filter">사계절</span>
+                                                        <span class="filter">온오프로드</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="star-wrap">
+                                            <span class="count">4.8점</span>
+                                            <span class="buying">(118)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ts-shopping-section-swiper-button-next standard"></div>
+                    <div class="ts-shopping-section-swiper-button-prev standard"></div>
+
+                    <script>
+                        // 스탠다드 라인업 스와이퍼
+                        var standardSwiper = new Swiper('.standard-swiper', {
+                            slidesPerView: 3,
+                            spaceBetween: 12,
+                            slidesPerGroup: 3,
+                            // loop: true,
+                            // loopFillGroupWithBlank: true,
+                            pagination: {
+                                el: '.swiper-pagination',
+                                dynamicBullets: true
+                            },
+                            navigation: {
+                                nextEl: '.ts-shopping-section-swiper-button-next.standard',
+                                prevEl: '.ts-shopping-section-swiper-button-prev.standard'
+                            }
+                        });
+
+                        standardSwiper.init();
+
+                        $(window).on('resize', function () {
+                            standardSwiper.init();
+                        });
+
+                        // 비동기로 필터링 걸린 후 내용이 바뀌었다면 아래 프로세스 호출
+                        // standardSwiper.update();
+                        // standardSwiper.slideTo(0);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economy Line Up -->
+    <section>
+        <div>
+            <div class="guardrail">
+                <div class="section-title-bar">
+                    <h3 class="title">이코노미 라인업 <small class="txt-neutral2">0개</small></h3>
+                    <p class="description">합리적 소비자를 위한 실속형 타이어</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-gray border-t border-b pd-v-3u">
+            <div class="guardrail">
+                <!-- TODO: 라인업에 조회된 상품이 없을때 -->
+                <div class="nodata-product">
+                    <p>
+                        <span class="line-icons error-circle-light size-30"></span>
+                        <strong>선택하신 조건에 해당하는 상품이 없습니다.</strong>
+                        다른 필터를 선택하시거나 재검색해 주세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TODO: 구매 프로세스 바 추가 -->
+    <div class="product-buy-process-bar-wrapper">
+        <section class="product-buy-process-bar">
+            <div class="guardrail">
+                <ul>
+                    <li>
+                        <!-- TODO: 차량 선택 완료 > 'done' 추가 -->
+                        <div class="product-buy-process-item car">
+                            <!-- TODO: product-buy-process-item 선택 완료 상태일때 -->
+                            <div class="confirm-done">
+                                <span class="icon"><span class="line-icons check-small"></span></span>
+                                <div class="info">
+                                    <p class="primary">현대 아반떼 하이브리드 더블릴리언트 blah blah blah blah blah blah blah blah blah</p>
+                                    <p class="secondary">
+                                        <span class="tire">전륜: 205/65R16</span>
+                                        <span class="tire">후륜: 245/45R18</span>
+                                    </p>
+                                </div>
+                                <button type="button" class="btn-item btn-neutral btn-s btn-ol round re-search">
+                                    <span class="label-txt">재검색</span>
+                                    <span class="line-icons refresh size-24"></span>
+                                </button>
+                            </div>
+
+                            <!-- TODO: product-buy-process-item 선택 미완료 상태일때 -->
+                            <button class="confirm-yet" onclick="bottomBarAction.car.call();">
+                                <p class="icon"><span class="line-icons car-side-fill size-28"></span></p>
+                                <p class="label">차량/사이즈 검색</p>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- TODO: 장착점 선택 완료 > 'done' 추가 -->
+                        <div class="product-buy-process-item shop">
+                            <!-- TODO: product-buy-process-item 선택 완료 상태일때 -->
+                            <div class="confirm-done">
+                                <span class="icon"><span class="line-icons check-small"></span></span>
+                                <div class="info">
+                                    <p class="primary">간석오거리점 / 3일 이후 장착</p>
+                                    <!--<p class="primary">간석오거리점 / 오늘서비스</p>-->
+                                    <p class="secondary">방문방법 / 픽업 & 딜리버리</p>
+                                    <!--<p class="secondary">방문방법 / 미정</p>-->
+                                </div>
+                                <button type="button" class="btn-item btn-neutral btn-s btn-ol round re-search" onclick="bottomBarAction.shop.call(true)">
+                                    <span class="label-txt">재검색</span>
+                                    <span class="line-icons refresh size-24"></span>
+                                </button>
+                            </div>
+                            <!-- TODO: product-buy-process-item 선택 미완료 상태일때 -->
+                            <button class="confirm-yet" onclick="bottomBarAction.shop.call();">
+                                <p class="icon"><span class="line-icons location-fill size-28"></span></p>
+                                <p class="label">장착점 검색</p>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- TODO:  -->
+                        <div class="product-buy-process-item order">
+                            <!-- TODO: product-buy-process-item order 선택 완료, 미완료 상태 상관 없이 항상 노출 -->
+                            <button class="confirm-yet" onclick="bottomBarAction.order.toggleOn();">
+                                <p class="icon"><span class="line-icons payment-fill size-28"></span></p>
+                                <p class="label">주문하기</p>
+                            </button>기
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- TODO: 팝업, 구매 프로세스 바 액션 -->
+    <script>
+        var popupTemplate = {
+            order: '<div class="description mg-b-1u">\n' +
+              '    구매방법을 선택하세요\n' +
+              '    <div class="tooltip-container bottom">\n' +
+              '        <span class="line-icons info-circle size-16"></span>\n' +
+              '        <div class="tooltip">\n' +
+              '            <div class="tooltip-body">\n' +
+              '                <p>스마트페이 선택 시 12/24개월 무이자 할부로 구매[신한,현대,삼성,KB국민,BC,씨티 카드 전용] 가능합니다. 다른 결제방법을 이용하시려면 일반 주문을 선택해주세요.</p>\n' +
+              '            </div>\n' +
+              '        </div>\n' +
+              '    </div>\n' +
+              '</div>\n' +
+              '<div class="tabs tabs-simple list-size-equal mg-b-5u">\n' +
+              '    <div class="tabs-inner">\n' +
+              '        <button class="tabs-item on" data-tabs-events="default">\n' +
+              '            <span class="label">일반구매</span>\n' +
+              '        </button>\n' +
+              '        <button class="tabs-item" data-tabs-events="smart">\n' +
+              '            <span class="label">스마트페이</span>\n' +
+              '        </button>\n' +
+              '    </div>\n' +
+              '</div>\n' +
+              '<div class="tabs-contents on" data-tabs-contents="default">\n' +
+              '    <p class="mg-b-2u">주문 수량을 선택해 주세요.</p>\n' +
+              '    <div>\n' +
+              '        <span class="form-control-number">\n' +
+              '            <input type="number" value="4" max="4" min="1" step="1">\n' +
+              '            <button class="control control-decrease">\n' +
+              '                <span class="line-icons remove-circle size-20"></span>\n' +
+              '            </button>\n' +
+              '            <span class="label"><span class="count">4</span>개 주문</span>\n' +
+              '            <button class="control control-increase disabled">\n' +
+              '                <span class="line-icons add-circle size-20"></span>\n' +
+              '            </button>\n' +
+              '        </span>\n' +
+              '    </div>\n' +
+              '    <div class="divider mg-v-4u"></div>\n' +
+              '    <div>\n' +
+              '        <!-- TODO: 일반 구매 선택시 사용자에게 사용 가능한 쿠폰이 남지 않은 경우 -->\n' +
+              '        <!--<table class="pd-medium">\n' +
+              '            <colgroup>\n' +
+              '                <col style="width: 80px;">\n' +
+              '                <col style="width: auto;">\n' +
+              '            </colgroup>\n' +
+              '            <tbody>\n' +
+              '            <tr class="vertical-b">\n' +
+              '                <td class="txt-16 txt-neutral1">총 상품합계</td>\n' +
+              '                <td class="txt-16 txt-neutral1 txt-right">\n' +
+              '                    <span>677,600</span><small class="txt-16">원</small>\n' +
+              '                </td>\n' +
+              '            </tr>\n' +
+              '            <tr class="vertical-b">\n' +
+              '                <td class="txt-16 txt-primary">\n' +
+              '                    <div class="highlight-container right">\n' +
+              '                        <span class="txt-16">결제 금액</span>\n' +
+              '                    </div>\n' +
+              '                </td>\n' +
+              '                <td class="txt-24 txt-primary txt-right">\n' +
+              '                    <span>579,600</span><small class="txt-16">원</small>\n' +
+              '                </td>\n' +
+              '            </tr>\n' +
+              '            </tbody>\n' +
+              '        </table>-->\n' +
+              '        <!-- TODO: 일반 구매 선택시 사용자에게 사용 가능한 쿠폰이 남아 있는경우 -->\n' +
+              '        <table class="pd-medium">\n' +
+              '            <colgroup>\n' +
+              '                <col style="width: 80px;">\n' +
+              '                <col style="width: auto;">\n' +
+              '            </colgroup>\n' +
+              '            <tbody>\n' +
+              '                <tr class="vertical-b">\n' +
+              '                    <td class="txt-16 txt-neutral1">총 상품합계</td>\n' +
+              '                    <td class="txt-16 txt-neutral1 txt-right">\n' +
+              '                        <span>677,600</span><small class="txt-16">원</small>\n' +
+              '                    </td>\n' +
+              '                </tr>\n' +
+              '                <tr class="vertical-b">\n' +
+              '                    <td class="txt-16 txt-neutral1">최대 혜택가</td>\n' +
+              '                    <td class="txt-16 txt-neutral1 txt-right">\n' +
+              '                        <span>579,600</span><small class="txt-16">원</small>\n' +
+              '                    </td>\n' +
+              '                </tr>\n' +
+              '                <tr class="vertical-b">\n' +
+              '                    <td class="txt-16 txt-primary">\n' +
+              '                        <div class="highlight-container right">\n' +
+              '                            <span class="txt-16">결제 금액</span>\n' +
+              '                            <span class="highlight highlight-yellow">적용할 수 있는 쿠폰이 더 있어요!</span>\n' +
+              '                        </div>\n' +
+              '                    </td>\n' +
+              '                    <td class="txt-24 txt-primary txt-right">\n' +
+              '                        <span>610,000</span><small class="txt-16">원</small>\n' +
+              '                    </td>\n' +
+              '                </tr>\n' +
+              '            </tbody>\n' +
+              '        </table>\n' +
+              '    </div>\n' +
+              '\n' +
+              '    <ul class="grid-list grid-list-column-2" style="margin-top: 61px;">\n' +
+              '        <li>\n' +
+              '            <button type="button" class="btn-item btn-neutral btn-ol full-w round">\n' +
+              '                <span class="label-txt">장바구니</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '        <li>\n' +
+              '            <button type="button" class="btn-item btn-neutral full-w round">\n' +
+              '                <span class="label-txt">바로구매</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '    </ul>\n' +
+              '</div>\n' +
+              '<div class="tabs-contents" data-tabs-contents="smart">\n' +
+              '    <p class="mg-b-2u">스마트페이 할부는 <em class="txt-primary">타이어 4개 구매에 한해 적용</em>됩니다.</p>\n' +
+              '    <div>\n' +
+              '        <ul class="mg-b-4u flex-between">\n' +
+              '            <li>\n' +
+              '                <span class="form-control-number disabled">\n' +
+              '                    <input type="number" value="4" max="4" min="1" step="1">\n' +
+              '                    <button class="control control-decrease">\n' +
+              '                        <span class="line-icons remove-circle size-20"></span>\n' +
+              '                    </button>\n' +
+              '                    <span class="label"><span class="count">4</span>개 주문</span>\n' +
+              '                    <button class="control control-increase disabled">\n' +
+              '                        <span class="line-icons add-circle size-20"></span>\n' +
+              '                    </button>\n' +
+              '                </span>\n' +
+              '            </li>\n' +
+              '            <li class="flex-center">\n' +
+              '                <label class="radio-item">\n' +
+              '                    <input type="radio" name="monthly-pay">\n' +
+              '                    <div class="icon-holder">\n' +
+              '                        <span class="line-icons circle size-20"></span>\n' +
+              '                    </div>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt mg-h-1u">12개월<span class="responsive-hidden">할부</span></span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '\n' +
+              '                <label class="radio-item">\n' +
+              '                    <input type="radio" name="monthly-pay" checked="">\n' +
+              '                    <div class="icon-holder">\n' +
+              '                        <span class="line-icons circle size-20"></span>\n' +
+              '                    </div>\n' +
+              '                    <div class="labelling">\n' +
+              '                        <span class="label-txt mg-h-1u">24개월<span class="responsive-hidden">할부</span></span>\n' +
+              '                    </div>\n' +
+              '                </label>\n' +
+              '            </li>\n' +
+              '        </ul>\n' +
+              '    </div>\n' +
+              '    <div class="divider mg-v-4u"></div>\n' +
+              '    <div>\n' +
+              '        <table class="pd-medium">\n' +
+              '            <colgroup>\n' +
+              '                <col style="width: 110px;">\n' +
+              '                <col style="width: auto;">\n' +
+              '            </colgroup>\n' +
+              '            <tbody>\n' +
+              '                <tr class="vertical-b">\n' +
+              '                    <td class="txt-16 txt-neutral1">총 상품합계</td>\n' +
+              '                    <td class="txt-16 txt-neutral1 txt-right">677,600<small class="txt-16">원</small></td>\n' +
+              '                </tr>\n' +
+              '                <tr class="vertical-b">\n' +
+              '                    <td class="txt-16 txt-primary">월 납입금액</td>\n' +
+              '                    <td class="txt-24 txt-primary txt-right">\n' +
+              '                        <span class="smart-pay-badge lite">\n' +
+              '                            <img src="pc-static-root/images/common/smart_pay_logo.svg" class="no-mg" title="스마트페이" />\n' +
+              '                        </span>\n' +
+              '                        <small class="txt-16">월</small>25,400<small class="txt-16">원</small>\n' +
+              '                    </td>\n' +
+              '                </tr>\n' +
+              '                <tr class="vertical-b">\n' +
+              '                    <td colspan="2" class="txt-right">\n' +
+              '                        <span class="line-icons coupon size-24 txt-neutral3 v-middle"></span>\n' +
+              '                        <span class="txt-14 txt-neutral3 v-middle">펑크, 위치교환</span>\n' +
+              '                        <span class="txt-14 txt-primary v-middle">무료쿠폰 지급! (2장)</span>\n' +
+              '                    </td>\n' +
+              '                </tr>\n' +
+              '            </tbody>\n' +
+              '        </table>\n' +
+              '    </div>\n' +
+              '    <ul class="grid-list grid-list-column-2 mg-t-6u">\n' +
+              '        <li>\n' +
+              '            <button type="button" class="btn-item btn-neutral btn-ol full-w round">\n' +
+              '                <span class="label-txt">장바구니</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '        <li>\n' +
+              '            <button type="button" class="btn-item btn-neutral full-w round">\n' +
+              '                <span class="label-txt">바로구매</span>\n' +
+              '            </button>\n' +
+              '        </li>\n' +
+              '    </ul>\n' +
+              '</div>'
+        }
+
+        // 비교하기
+        var prevCompareTarget = ''
+
+        var callPopup = {
+            // 주문하기
+            order: function () {
+                $.Tstation.popup().open({
+                    ref: 'order',
+                    title: '구매방법',
+                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    contents: popupTemplate.order, // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: {
+                        horizon: 5,
+                        vertical: 0,
+                        top: 3,
+                        right: 0,
+                        bottom: 6,
+                        left: 0
+                    },
+                    modalSize: 'MEDIUM'
+                })
+            },
+        }
+
+        // filter
+        function eqAnyOf(target, arrayOfIndexes) {
+            return target.filter(function(i) {
+                return $.inArray(i, arrayOfIndexes) > -1;
+            });
+        }
+
+        // 매장 리스트 상태 변경
+        var sortShopList = function (condition) {
+            // sample condition { el: element, type: 'TODAY / ALL' }
+            var _this = $(condition.el)
+
+            // 1. toggle button
+            _this
+              .siblings()
+              .removeClass(constants.className.btnPrimary)
+              .addClass(constants.className.btnGray)
+            _this
+              .addClass()
+              .removeClass(constants.className.btnGray)
+              .addClass(constants.className.btnPrimary)
+
+            // 2. sort list
+            switch (condition.type) {
+                case 'TODAY':
+                    eqAnyOf(_this.closest(constants.selector.tabContents).find(constants.selector.storeWrap), [0, 1, 2, 3]).addClass('disable');
+                    break
+                case 'ALL':
+                    _this
+                      .closest(constants.selector.tabContents)
+                      .find(constants.selector.storeWrap)
+                      .removeClass(constants.className.disable)
+                    break
+                default:
+                    throw new Error('sort shop require type')
+            }
+        }
+
+        var toggleShopView = function (condition) {
+            // sample condition { el: element, type: 'MAP / LIST' }
+            var _this = $(condition.el)
+            var tabContents = _this.closest(constants.selector.tabContents)
+
+            // 1. toggle button
+            _this.hide().siblings().show();
+
+            // 2. toggle shop view
+            switch (condition.type) {
+                case 'MAP':
+                    tabContents.find(constants.selector.storeMap).show()
+                    tabContents.find(constants.selector.storeList).hide()
+                    break
+                case 'LIST':
+                    tabContents.find(constants.selector.storeList).show()
+                    tabContents.find(constants.selector.storeMap).hide()
+                    break
+                default:
+                    throw new Error('toggle shop view require type')
+            }
+        }
+
+
+        /**
+         * 상품 카드 주문하기 선택
+         **/
+        $(document).on('change', '.sale-check input[type="radio"]', function (evt) {
+            var target = $(evt.target)
+            console.log(target)
+            callPopup.order();
+        })
+
+
+        /**
+         * 구매 강화 프로세스 바 기능 구현 스크립트
+         **/
+        var selector = {
+            tsShoppingSection: '.ts-shopping-section-swiper',
+            processBar: '.product-buy-process-bar',
+            processItem: '.product-buy-process-item',
+            done: '.confirm-done',
+            yet: '.confirm-done',
+            car: '.car',         // 차량/사이즈 검색
+            shop: '.shop',       // 장착점 검색
+            order: '.order',     // 주문하기
+        }
+        var className = {
+            done: 'done', // 차량,타이어 선택 및 장착점 선택을 완료
+            checkView: 'check-view'
+        }
+        // 구매 강화 프로세스
+        var bottomBarAction = {
+            car: {
+                call: function (noSelected) {
+                    if (noSelected) {
+                        callPopup.searchByCar();
+                        return
+                    }
+                    // 1. 선택된 차량정보가 있는지 확인하여 없다면 callPopup.findMyCar(), 있다면 callPopup.searchByCar()
+                    alert('선택된 차량정보가 존재하거나 존재하지 않는 상황에 대해 랜덤으로 보여줍니다.')
+                    Math.random() >= 0.5 ? callPopup.searchByCar() : callPopup.findMyCar();
+                },
+                change: function () {
+                    var car = $(selector.processBar + ' ' + selector.processItem + selector.car)
+                    // 1. product-buy-process-bar > product-buy-process-item car > confirm-done > info 바인딩
+                    // 2. product-buy-process-bar > product-buy-process-item car > confirm-done 보이기
+                    car.addClass(className.done);
+                    // 3. 팝업 닫기
+                    $.Tstation.popup().close();
+                },
+                destroy: function () {}
+            },
+            shop: {
+                call: function (noSelected) {
+                    if (noSelected) {
+                        callPopup.choiceShop();
+                        return
+                    }
+                    // 1. 장착점 선택정보가 존재하지 않는다면 callPopup.choiceShop(), 존재 한다면 callPopup.choiceShopSelected()
+                    alert('장착점 선택정보가 존재하거나 존재하지 않는 상황에 대해 랜덤으로 보여줍니다.')
+                    Math.random() >= 0.5 ? callPopup.choiceShop() : callPopup.choiceShopSelected();
+                },
+                change: function () {
+                    var shop = $(selector.processBar + ' ' + selector.processItem + selector.shop)
+                    // 1. product-buy-process-bar > product-buy-process-item shop > confirm-done > info 바인딩
+                    // 2. product-buy-process-bar > product-buy-process-item shop > confirm-done 보이기
+                    shop.addClass(className.done)
+                    // 3. 팝업 닫기
+                    $.Tstation.popup().close();
+                },
+                destroy: function () {}
+            },
+            order: {
+                toggleOn: function () {
+                    var tsShoppingSection = $(selector.tsShoppingSection)
+
+                    $.each(tsShoppingSection, function (index, item) {
+                        $(item).toggleClass(className.checkView)
+                    })
+                },
+                call: function () {
+                    callPopup.order();
+                }
+            }
+        }
+    </script>
+</div>
+
+<div class="modal-item instance on" data-ref="order">
+	<div class="dim">
+	</div>
+	<div class="middler">
+		<div class="modal-pannel size-m">
+			<div class="modal-header">
+				<h3>구매방법</h3>
+				<button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+				<span class="line-icons close size-30"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="modal-scroller">
+					<div class="container pd-h-5u pd-t-3u pd-b-6u ">
+						<div class="description mg-b-1u">
+							 구매방법을 선택하세요
+							<div class="tooltip-container bottom">
+								<span class="line-icons info-circle size-16"></span>
+								<div class="tooltip">
+									<div class="tooltip-body">
+										<p>
+											스마트페이 선택 시 12/24개월 무이자 할부로 구매[신한,현대,삼성,KB국민,BC,씨티 카드 전용] 가능합니다. 다른 결제방법을 이용하시려면 일반 주문을 선택해주세요.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tabs tabs-simple list-size-equal mg-b-5u">
+							<div class="tabs-inner">
+								<button class="tabs-item on" data-tabs-events="default">
+								<span class="label">일반구매</span>
+								</button>
+								<button class="tabs-item" data-tabs-events="smart">
+								<span class="label">스마트페이</span>
+								</button>
+								<div class="indicator" style="width: 184px; left: 0px;">
+								</div>
+							</div>
+						</div>
+						<div class="tabs-contents on" data-tabs-contents="default">
+							<p class="mg-b-2u">
+								주문 수량을 선택해 주세요.
+							</p>
+							<div>
+								<span class="form-control-number">
+								<input type="number" value="4" max="4" min="1" step="1">
+								<button class="control control-decrease">
+								<span class="line-icons remove-circle size-20"></span>
+								</button>
+								<span class="label"><span class="count">4</span>개 주문</span>
+								<button class="control control-increase disabled">
+								<span class="line-icons add-circle size-20"></span>
+								</button>
+								</span>
+							</div>
+							<div class="divider mg-v-4u">
+							</div>
+							<div>
+								<table class="pd-medium">
+								<colgroup>
+								<col style="width: 80px;">
+								<col style="width: auto;">
+								</colgroup>
+								<tbody>
+								<tr class="vertical-b">
+									<td class="txt-16 txt-neutral1">
+										총 상품합계
+									</td>
+									<td class="txt-16 txt-neutral1 txt-right">
+										<span>677,600</span><small class="txt-16">원</small>
+									</td>
+								</tr>
+								<tr class="vertical-b">
+									<td class="txt-16 txt-neutral1">
+										최대 혜택가
+									</td>
+									<td class="txt-16 txt-neutral1 txt-right">
+										<span>579,600</span><small class="txt-16">원</small>
+									</td>
+								</tr>
+								<tr class="vertical-b">
+									<td class="txt-16 txt-primary">
+										<div class="highlight-container right">
+											<span class="txt-16">결제 금액</span>
+											<span class="highlight highlight-yellow">적용할 수 있는 쿠폰이 더 있어요!</span>
+										</div>
+									</td>
+									<td class="txt-24 txt-primary txt-right">
+										<span>610,000</span><small class="txt-16">원</small>
+									</td>
+								</tr>
+								</tbody>
+								</table>
+							</div>
+							<ul class="grid-list grid-list-column-2" style="margin-top: 61px;">
+								<li>
+								<button type="button" class="btn-item btn-neutral btn-ol full-w round">
+								<span class="label-txt">장바구니</span>
+								</button>
+								</li>
+								<li>
+                                    <!-- 20220520 // -->
+                                    <button type="button" class="btn-item btn-primary btn-ol full-w round">
+                                    <span class="label-txt">재입고 알림신청</span>
+                                    </button>
+                                    <!-- // 20220520 -->
+								</li>
+							</ul>
+						</div>
+						<div class="tabs-contents" data-tabs-contents="smart">
+                            <!-- 2021-06-24 // -->
+							<p class="mg-b-2u">
+                                스마트페이 할부는 <em class="txt-primary">타이어 4개 구매 시 가능</em>하며, <em class="txt-primary">할인쿠폰은 적용이 불가</em>합니다.
+							</p>
+                            <!-- // 2021-06-24 -->
+							<div>
+								<ul class="mg-b-4u flex-between">
+									<li>
+									<span class="form-control-number disabled">
+									<input type="number" value="4" max="4" min="1" step="1">
+									<button class="control control-decrease">
+									<span class="line-icons remove-circle size-20"></span>
+									</button>
+									<span class="label"><span class="count">4</span>개 주문</span>
+									<button class="control control-increase disabled">
+									<span class="line-icons add-circle size-20"></span>
+									</button>
+									</span>
+									</li>
+									<li class="flex-center">
+									<label class="radio-item">
+									<input type="radio" name="monthly-pay">
+									<div class="icon-holder">
+										<span class="line-icons circle size-20"></span>
+									</div>
+									<div class="labelling">
+										<span class="label-txt mg-h-1u">12개월<span class="responsive-hidden">할부</span></span>
+									</div>
+									</label>
+									<label class="radio-item">
+									<input type="radio" name="monthly-pay" checked="">
+									<div class="icon-holder">
+										<span class="line-icons circle size-20"></span>
+									</div>
+									<div class="labelling">
+										<span class="label-txt mg-h-1u">24개월<span class="responsive-hidden">할부</span></span>
+									</div>
+									</label>
+									</li>
+								</ul>
+							</div>
+							<div class="divider mg-v-4u">
+							</div>
+							<div>
+								<table class="pd-medium">
+								<colgroup>
+								<col style="width: 110px;">
+								<col style="width: auto;">
+								</colgroup>
+								<tbody>
+								<tr class="vertical-b">
+									<td class="txt-16 txt-neutral1">
+										총 상품합계
+									</td>
+									<td class="txt-16 txt-neutral1 txt-right">
+										677,600<small class="txt-16">원</small>
+									</td>
+								</tr>
+								<tr class="vertical-b">
+									<td class="txt-16 txt-primary">
+										월 납입금액
+									</td>
+									<td class="txt-24 txt-primary txt-right">
+										<span class="smart-pay-badge lite">
+										<img src="pc-static-root/images/common/smart_pay_logo.svg" class="no-mg" title="스마트페이">
+										</span>
+										<small class="txt-16">월</small>25,400<small class="txt-16">원</small>
+									</td>
+								</tr>
+								<tr class="vertical-b">
+									<td colspan="2" class="txt-right">
+										<span class="line-icons coupon size-24 txt-neutral3 v-middle"></span>
+										<span class="txt-14 txt-neutral3 v-middle">펑크, 위치교환</span>
+										<span class="txt-14 txt-primary v-middle">무료쿠폰 지급! (2장)</span>
+									</td>
+								</tr>
+								</tbody>
+								</table>
+							</div>
+							<ul class="grid-list grid-list-column-2 mg-t-6u">
+								<li>
+								<button type="button" class="btn-item btn-neutral btn-ol full-w round">
+								<span class="label-txt">장바구니</span>
+								</button>
+								</li>
+								<li>
+								<button type="button" class="btn-item btn-neutral full-w round">
+								<span class="label-txt">바로구매</span>
+								</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal-item instance" data-ref="">
+	<div class="dim">
+	</div>
+	<div class="middler">
+		<div class="modal-pannel size-m">
+			<div class="modal-header">
+				<h3>스마트페이 안내</h3>
+				<button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+				<span class="line-icons close size-30"></span>
+				</button>
+			</div>
+			<div class="modal-action ">
+				<ul class="list-size-equal">
+					<li><button class="btn-item btn-neutral round full-w"><span class="label-txt">확인</span></button></li>
+				</ul>
+			</div>
+			<div class="modal-body">
+				<div class="modal-scroller">
+					<div class="container pd-h-8u pd-v-8u ">
+						<div class="smart-pay-info-popup">
+							<section class="txt-center pd-t-5u">
+							<img src="pc-static-root/images/common/smart_pay_logo.svg" class="smart-pay-img" title="스마트페이">
+							<div class="container txt-16 txt-neutral2 mg-t-4u">
+								<span class="dp-inblock"><em class="txt-yellow txt-w700">#</em>월납입 <em class="txt-neutral1">1만7천원부터</em></span>
+								<span class="dp-inblock"><em class="txt-yellow txt-w700">#</em>할부수수료 <em class="txt-neutral1">0원</em></span><br>
+								<span class="dp-inblock"><em class="txt-yellow txt-w700">#</em><em class="txt-neutral1">서비스 쿠폰 증정</em></span>
+							</div>
+							<h4 class="txt-18 txt-w500 mg-t-2u">타이어, 더 가볍게 구매하세요!</h4>
+							</section>
+							<section class="mg-t-6u">
+							<div class="section-header">
+								<span class="numbering">01</span>
+								<h4 class="txt-16 txt-w500 mg-t-3u">4개 구매 시 12/24개월 무이자할부 혜택</h4>
+							</div>
+							<p class="txt-neutral2 txt-center mg-t-2u">
+								타이어 구매 시 할부수수료 부담 없이,<br>
+								무이자 할부로 결제하세요.
+							</p>
+							</section>
+							<section class="mg-t-6u">
+							<div class="section-header">
+								<span class="numbering">02</span>
+								<h4 class="txt-16 txt-w500 mg-t-3u">펑크/위치교환 서비스 쿠폰 증정</h4>
+							</div>
+							<p class="txt-neutral2 txt-center mg-t-2u">
+								스마트페이로 결제한 회원에 한하여<br>
+								펑크/위치교환 쿠폰을 제공해드립니다.
+							</p>
+							</section>
+							<section class="border-all bg-light1 bg-filet-4 pd-v-3u pd-h-3u mg-t-10u">
+							<ul class="list-style-disc txt-12 txt-neutral2">
+                                <li>스마트페이 결제 카드 : KB국민/신한/비씨/현대/삼성/씨티 카드<p>체크/법인(기업)/선불카드는 스마트페이 결제가 불가합니다.</p><p>BC카드 3종(KB국민, 기업, 신한은)은 스마트페이 24개월 결제가 불가합니다.</p></li>
+                                <!-- 2021-06-24 // -->
+                                <li>사용조건 : 타이어 4개 구매 시 (할부 12/24개월 중 선택)</li>
+                                <!-- // 2021-06-24 -->
+                                <li>펑크/위치교환 쿠폰 사용 조건<p>- 스마트페이 구매 차량(타이어)에 한하여 적용 가능</p><p>- 티스테이션 멤버십 매장에서만 사용 가능</p><p>- 구매 후 1년 1장씩, 총 2장 지급(기간 경과 후 사용 불가)</p></li>
+							</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

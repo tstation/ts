@@ -1,0 +1,57 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="pageTitle2">
+    <h3>비회원 주문 조회</h3>
+</div>
+<div id="container" class="member">
+    <!-- 비회원 주문 조회 -->
+    <form id="orderInquire">
+        <div class="login_01">
+            <ol class="login_form">
+                <li>
+                    <input title="이름 입력" type="text" id="ordManNm" name ="ordManNm" class="ip_txt01 w100p" placeholder="주문 시 입력하신 이름을 입력해 주세요" />
+                    <p class="point ordManNmError" style="display:none;">주문 시 입력하신 이름을 입력해 주세요.</p>
+                </li>
+                <li class="phone">
+					<span class="r1">
+						<select title="휴대폰 번호 첫자리 선택" class="select01 w100p" name="ordManCellSctNo" id ="ordManCellSctNo">
+							<option value="010">010</option>
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="017">017</option>
+							<option value="018">018</option>
+							<option value="019">019</option>
+						</select>
+					</span>
+                    <span class="r2">-</span>
+                    <span class="r3"><input type="tel" class="ip_txt01 w100p numeric" name="ordManCellTxnoNo" id ="ordManCellTxnoNo" maxlength="4"/></span>
+                    <span class="r2">-</span>
+                    <span class="r3"><input type="tel" class="ip_txt01 w100p numeric" name="ordManCellEndNo" id ="ordManCellEndNo" maxlength="4"/></span>
+                    <p class="point ordManCellTxnoNoError ordManCellEndNoError" style="display:none;">주문 시 입력하신 휴대폰 번호를 입력해 주세요.</p>
+                </li>
+                <li>
+                    <input title="주문번호 입력" type="text" id="ordNo" name="ordNo" class="ip_txt01 w100p" placeholder="주문번호를 입력해 주세요" />
+                    <p class="point ordNoError" style="display:none;">주문번호를 입력해 주세요.</p>
+                </li>
+            </ol>
+            <div class="btn">
+                <button type="button" id="btnOrderInquiry" class="btnB btnS02">주문 조회</button>
+            </div>
+        </div>
+    </form>
+    <!-- //비회원 주문 조회 -->
+    <!-- link -->
+    <div class="login_03">
+        <p class="txt01">T'Station 회원이 아니신가요?</p>
+        <ul>
+            <li><a href="https://m.tstation.com/member/register/join.do" class="btnB btnS01">회원가입</a></li>
+        </ul>
+        <ol class="notice_01">
+            <li>비회원으로 구매한 이력이 있는 경우에만 주문 조회가 가능 합니다.</li>
+            <li>주문 조회 이외의 서비스는 회원가입 후 이용이 가능 합니다.</li>
+        </ol>
+    </div>
+    <!-- //link -->
+</div>

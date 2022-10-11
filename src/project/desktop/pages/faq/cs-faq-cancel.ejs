@@ -1,0 +1,115 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- #pageTitle -->
+            <div class="page_tit">
+                <h4>FAQ <span>원하시는 답변이 없으시면, <em>1:1 고객상담 이나 고객센터</em>를  이용해 주시기 바랍니다.</span></h4>
+                <div class="btn_right"><a href="https://www.tstation.com/customer-service/qna.do" class="btnM2 btnS01">1:1 고객상담</a></div>
+            </div>
+            <!-- #pageTitle -->
+            <%- locals.widget('src/project/desktop/includes/layouts/cs/faq-search-form.ejs') %>
+            <%- locals.widget('src/project/desktop/includes/layouts/cs/faq-category.ejs', { activeIndex: 3 }) %>
+            <!-- 03.list -->
+            <div class="faq_list">
+                <p class="head">
+                    <span class="no">번호</span>
+                    <span class="part">분류</span>
+                    <span class="tit">제목</span>
+                    <span class="date">등록일</span>
+                </p>
+                <dl id="accordion">
+
+                    <dt class="on">
+                        <span class="no">6</span>
+                        <span class="part">취소/환불/교환</span>
+                        <span class="tit">구매 상품의 반품 및 교환이 가능한가요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer on" style="display: block;">
+                        품질에 문제가 있을 경우, 반품이나 교환이 모두 가능합니다. 그러나 특별한 사유가 없거나, 고객님께 책임이 있는 부분에 대해서는 불가능합니다.<br>
+                        <br>
+                        사이즈, 상품 사양 등을 반드시 확인 후에 주문해 주세요. 잘못 주문하실 경우 지정일 장착이 어렵거나, 배송 비용이 발생할 수 있습니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">5</span>
+                        <span class="part">취소/환불/교환</span>
+                        <span class="tit">신용카드로 결제했는데, 환불은 어떻게 받나요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        주문 취소 시 신용카드 승인 취소의 방법을 통하여 환불처리 됩니다. 카드 매출 취소는 즉시 접수되나, 카드사 사정에 따라 취소 기간이 3~7일 정도 소요될 수 있습니다.<br>
+                        <br>
+                        확인 문의는 소요기간 경과 후 해당 카드사로 직접 문의하시면 됩니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">4</span>
+                        <span class="part">취소/환불/교환</span>
+                        <span class="tit">주문 취소시 쿠폰은 돌려주나요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        주문 취소하신 경우, 쿠폰은 고객님께 반환됩니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">3</span>
+                        <span class="part">취소/환불/교환</span>
+                        <span class="tit">상품 A/S 받을 수 있나요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        고객센터(080-022-8272)로 문의해 주시기 바랍니다.<br>
+                        단, 고객 과실로 인한 제품 손상은 A/S 불가합니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">2</span>
+                        <span class="part">취소/환불/교환</span>
+                        <span class="tit">상품에 문제가 있어 환불 받고 싶습니다.</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        고객센터(080-022-8272)로 문의해 주시기 바랍니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">1</span>
+                        <span class="part">취소/환불/교환</span>
+                        <span class="tit">카드 포인트로 결제한 경우 환불은 어떻게 받나요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        카드 포인트 결제 취소의 경우, 환불은 카드사마다 다른 방식으로 처리됩니다.<br>
+                        <br>
+                        거래 취소 시, 사용되었던 신용카드 포인트가 그대로 복구되기도 하며, 출금계좌로 현금 환불되는 경우도 있으므로 자세한 사항은 해당 카드사로 직접 문의하여 주시기 바랍니다.
+                    </dd>
+
+                </dl>
+            </div>
+
+
+
+
+            <div class="paging">
+                <button type="button" class="first" onclick="goPage('1');">처음</button>
+
+
+                <button type="button" class="on" onclick="goPage('1');">1</button>
+
+
+                <button type="button" class="end" onclick="goPage('1');">맨끝</button>
+            </div>
+            <input type="hidden" id="rowsPerPage" name="rowsPerPage" value="10">
+
+
+            <!-- 03.list -->
+        </div>
+    </div>
+</div>

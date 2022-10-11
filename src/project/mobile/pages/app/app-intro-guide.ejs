@@ -1,0 +1,147 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'Popup' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+<main id="main">
+    
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h3>콘텐츠 섹션 헤더</h3>
+
+                <div class="extra">
+                    <a href="" class="btn-item btn-m btn-neutral btn-inv filet">
+                        <span class="label-txt txt-primary">엑스트라 버튼</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                 
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">Modal</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="appIntroGuideFunction.appIntroGuide()"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+<script>
+
+var appIntroGuideFunction = {
+    appIntroGuide: function () {
+        $.Tstation.popup().open({
+            ref: 'app-intro-guide',
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: appIntroGuideContent, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false,
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 0,
+                vertical: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: true, // Full Popup
+            onOpen: function () {
+                var reviewForthSwiper = new Swiper('.app-intro-guide-swiper', {
+                    slidesPerView: 'auto',
+                    pagination: {
+                        el: ".app-intro-guide-pagination",
+                    }
+                })
+                reviewForthSwiper.init()
+
+                // window resize fire swiper init
+                window.addEventListener('resize', function () {
+                    reviewForthSwiper.init()
+                })
+
+                // mobile portrait, landscape change fire swiper init
+                window.addEventListener('orientationchange', function() {
+                    reviewForthSwiper.init()
+                })
+            },
+            onClose: function () {
+                console.log('팝업이 닫히면 실행합니다.')
+            }
+        })
+    }
+}
+
+var appIntroGuideContent = `
+<button type="button" class="btn-item btn-neutral round min-w btn-popup-close" onClick="$.Tstation.popup().close()">
+    <span class="line-icons close size-32"></span>
+</button>
+<div class="swiper-container app-intro-guide-swiper">
+    <div class="swiper-wrapper">
+        <!-- 20211124 // -->
+        <div class="swiper-slide app-guide-1">
+            <div class="thumb">
+                <img src="mc-static-root/images/app/img_introguide_app_1.jpg" alt="" />
+            </div>
+        </div>
+        <div class="swiper-slide app-guide-2">
+            <div class="thumb">
+                <img src="mc-static-root/images/app/img_introguide_app_2.jpg" alt="" />
+            </div>
+        </div>
+        <div class="swiper-slide app-guide-3">
+            <div class="thumb">
+                <img src="mc-static-root/images/app/img_introguide_app_3.jpg" alt="" />
+            </div>
+            
+        </div>
+        <div class="swiper-slide app-guide-4">
+            <div class="thumb">
+                <img src="mc-static-root/images/app/img_introguide_app_4.jpg" alt="" />
+            </div>
+            
+        </div>
+        <div class="swiper-slide app-guide-5">
+            <div class="thumb">
+                <img src="mc-static-root/images/app/img_introguide_app_5.jpg" alt="" />
+                <div class="intro-allmyt-wrap">
+                    <button type="button" class="btn-item btn-white btn-ol round">
+                        <span class="label-txt">all my T 시작하기</span>
+                        <span class="line-icons chev-right size-24"></span>
+                    </button>
+                </div>
+                <div class="intro-close-wrap">
+                    <button type="button" class="btn-item btn-white btn-ol filet">
+                        <span class="label-txt">다시 보지 않기</span>
+                    </button>
+                    <span class="dash-line"></span>
+                    <button type="button" class="btn-item btn-white btn-ol filet" onClick="$.Tstation.popup().close()">
+                        <span class="label-txt">닫기</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- // 20211124 -->
+    </div>
+    <div class="app-intro-guide-pagination"></div>
+</div>
+`
+
+$(window).load(function() {
+    appIntroGuideFunction.appIntroGuide();
+})
+
+
+
+</script>

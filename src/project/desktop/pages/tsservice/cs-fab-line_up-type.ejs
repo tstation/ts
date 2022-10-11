@@ -1,0 +1,105 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/components/cs-aside.ejs') %>
+        <div id="contents2">
+            <div class="page_tit" style="display:none;">
+                <h4>무상보증서비스</h4>
+            </div>
+            <div class="guarantee_01" style="display:none;">
+                <dl>
+                    <dt>한국타이어 구매고객
+                        <span>승용차 타이어 무상 보증 인증번호 등록</span>
+                    </dt>
+                    <dd>고객이 무상 보증 상품 사용 중 외부충격에 의해 코드 절상이 발생한 경우,<br>
+                        아래 보상기준에 의거 한국타이어에서 보상 조치 해드립니다.
+                        <p class="btn"><button id="btnWarranty" class="btnM2 btnS02">무상보증 등록하기</button></p>
+                        <button id="btnWarrantyPopup" class="popup-scarce" style="display:none;" data-width="w870" data-rel="https://www.tstation.com/mypage/tstation/warranty/popup/warranty-reg"></button>
+                    </dd>
+                    <dd class="line">
+                        T’Station 이외 매장 (TBX. THE TIRE SHOP, 일반 대리점 등)을 이용하신
+                        <br>고객님께서는 한국타이어 웹사이트를 이용해주시기 바랍니다.
+                        <p class="btn"><a href="https://www.hankooktire.com/kr/service/guarantee-service/guarantee/passenger-cars.html" target="_blank" class="btnM2 btnS02">한국타이어 바로가기</a></p>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="mydetail_02">
+                <h6>한국 타이어 상품 안내</h6>
+                <div class="tab-item size-l on-layer no-sticky mg-t-4u">
+                    <a href="#" class="line-50 txt-neutral1 on">차종별 타이어 안내</a>
+                    <a href="#" class="line-50 txt-neutral1">브랜드별 타이어 안내</a>
+                </div>
+                <div class="brand-carinfo-wrap">
+                    <ul class="brand-carinfo-tabs">
+                        <li><a href="#sedan" class="active" data-hash="sedan">승용차용 타이어</a></li>
+                        <li><a href="#suv" data-hash="suv">SUV용 타이어</a></li>
+                    </ul>
+                    <div class="brand-carinfo-container" data-hash="sedan">
+                        <div class="position-map sedan mg-v-8u">
+                            <div class="map-header">
+                                <div class="headcopy">상품 포지셔닝 맵<em class="sub-headcopy txt-primary">타이어를 선택하시면 해당 상세페이지로 이동합니다.</em></div>
+                            </div>
+                            <ul class="map_tire_list">
+                                <li class="sedan_tire info_h462"><a href="https://www.tstation.com/tire/product/ventus_s1_evo3?ptrnCd=K127&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">벤투스 프리미엄 컴포트</span></a></li>
+                                <li class="sedan_tire info_h123"><a href="https://www.tstation.com/tire/product/ventus_v2_as?ptrnCd=H123&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">벤투스 컴포트</span></a></li>
+                                <li class="sedan_tire info_k127"><a href="https://www.tstation.com/tire/product/ventus_s2_as?ptrnCd=H462&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">벤투스 프리미엄 스포츠</span></a></li>
+                                <li class="sedan_tire info_k120"><a href="https://www.tstation.com/tire/product/ventus_v12_evo2?ptrnCd=K120&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">벤투스 스포츠</span></a></li>
+                                <li class="sedan_tire info_h750"><a href="https://www.tstation.com/tire/product/kinergy_4s2_x?ptrnCd=H750A&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">키너지 올 웨더</span></a></li>
+                                <li class="sedan_tire info_h308"><a href="https://www.tstation.com/tire/product/kinergy_ex?ptrnCd=H308&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">키너지 컴포트 EX</span></a></li>
+                                <li class="sedan_tire info_h436"><a href="https://www.tstation.com/tire/product/kinergy_gt?ptrnCd=H436&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">키너지 컴포트 GT</span></a></li>
+                                <li class="sedan_tire info_h449"><a href="https://www.tstation.com/tire/product/smart_plus_2?ptrnCd=H449&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">스마트 이코노미</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="brand-carinfo-container" style="display: none;" data-hash="suv">
+                        <div class="position-map suv mg-v-8u">
+                            <div class="map-header">
+                                <div class="headcopy">상품 포지셔닝 맵<em class="sub-headcopy txt-primary">타이어를 선택하시면 해당 상세페이지로 이동합니다.</em></div>
+                            </div>
+                            <ul class="map_tire_list">
+                                <li class="suv_tire info_rt05"><a href="https://www.tstation.com/tire/product/dynapro_mt2?ptrnCd=RT05&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">다이나프로 MT2</span></a></li>
+                                <li class="suv_tire info_rf11"><a href="https://www.tstation.com/tire/product/dynapro_at2?ptrnCd=RF11&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">다이타프로 AT2</span></a></li>
+                                <li class="suv_tire info_ra45"><a href="https://www.tstation.com/tire/product/dynapro_hl3?ptrnCd=RA45&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">다이타프로 HL3</span></a></li>
+                                <li class="suv_tire info_ra33"><a href="https://www.tstation.com/tire/product/dynapro_hp2?ptrnCd=RA33&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">다이타프로 HP2</span></a></li>
+                                <li class="suv_tire info_rh17"><a href="https://www.tstation.com/tire/product/ventus_s2_as_x?ptrnCd=RH17&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">벤투스 프리미엄 컴포트 S2 AS X </span></a></li>
+                                <li class="suv_tire info_k127a"><a href="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">벤투스 프리미엄 스포츠 S1 evo3</span></a></li>
+                                <li class="suv_tire info_rh15"><a href="https://www.tstation.com/tire/product/smart_st_x?ptrnCd=RH15&goodsMdclCd=01&movePath=pattern" class="link_more"><span class="blind">스마트 이코노미 ST X</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <script>
+                        var tireinfoTabWrap = $('.brand-carinfo-wrap');
+                        var tireinfoTab = tireinfoTabWrap.find('.brand-carinfo-tabs');
+
+                        tireinfoTab.find('li > a').each(function(i) {
+                            tireinfoTab.find('li > a').eq(i).click(function () {
+                                tireinfoTabWrap.find('.brand-carinfo-container').hide();
+                                tireinfoTabWrap.find('.brand-carinfo-container').eq(i).show();
+                                tireinfoTab.find('li > a').removeClass();
+                                tireinfoTab.find('li > a').eq(i).addClass('active');
+                            })
+                        });
+
+                        // hash check - is fire once on document ready
+                        var hash = window.location.hash.replace('#', '');
+                        var hashList = ['sedan', 'suv']
+                        var checkHash = function () {
+                            if (!hash || hashList.indexOf(hash) === -1) return
+                            $.each(tireinfoTab.find('li > a'), function (index, item) {
+                                $(item).data().hash === hash ? $(item).addClass('active') : $(item).removeClass('active');
+                            });
+                            $.each($('.brand-carinfo-container'), function (index, item) {
+                                $(item).css({ 'display': $(item).data().hash === hash ? 'block' : 'none' });
+                            });
+                        };
+                        checkHash();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

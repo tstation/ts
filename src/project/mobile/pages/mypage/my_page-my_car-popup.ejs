@@ -1,0 +1,1219 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div class="container pd-h-5u mg-t-2u">
+    <script>
+        // TODO: 아래의 스크립트는 로컬에서 비동기 테스트를 할 수 없어 임의로 선언함. 개발 하실때는 각 팝업 호출 버튼 위에 주석처리된 소스를 jsp로 만들고 requestUrl로 호출하세요.
+        var modalContents1 = '<p class=\'txt-center\'>로그인 후, 차량번호 조회가 가능합니다.</p>'
+        var modalContents2 = `
+            <p class="txt-center pd-t-4u txt-16">
+                <span class="line-icons error-circle size-48 txt-neutral3 mg-b-2u"></span><br>
+                차량번호 또는 소유주명이 일치하지 않습니다.
+            </p>
+              
+            <div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-4u mg-t-6u txt-13">
+                <p class="txt-neutral2"><em class="txt-primary">*</em> 공동명의 차량의 경우: 대표 소유주명을 입력하거나, 차량등록증에 기입된 값을 정확히 입력해 주세요.<br>										
+                &nbsp;&nbsp;&nbsp;- ex) 홍길동외1인(이순신)&ZeroWidthSpace;<br>
+                &nbsp;&nbsp;&nbsp;- ex) 홍길동 외1(이순신)&ZeroWidthSpace;<br> 
+                </p>                                    
+                <p class="txt-neutral2"><em class="txt-primary">*</em> 렌트/리스 차량의 경우: 해당 업체의 정확한 회사명(캐피탈명)을 소유주명에 입력해 주세요.<br>
+                &nbsp;&nbsp;&nbsp;- ex) 메르세데츠벤츠파이낸셜서비스코리아(주)&ZeroWidthSpace;<br>
+                &nbsp;&nbsp;&nbsp;- ex) 비엠더블유파이낸셜서비스코리아(주)<br>
+                &nbsp;&nbsp;&nbsp;- ex) 폭스바겐파이낸셜서비스코리아(주)<br>
+                &nbsp;&nbsp;&nbsp;- ex) 캐이비캐피탈(주)</p><p>
+                </p>
+            </div>
+        `
+        var modalContents3 = '<div class="txt-center pd-h-4u mg-b-4u">\n' +
+          '                                <h3 class="txt-w500 mg-b-2u">타이어 옆면의 숫자조합을 확인해 주세요.</h3>\n' +
+          '                                <p>예시 타이어의 사이즈는 <em class="txt-primary">195/65/R15</em> 입니다.</p>\n' +
+          '                            </div>\n' +
+          '                            <div class="image-container">\n' +
+          '                                <img src="mc-static-root/images/common/how_to_check_tire_size.png" alt="타이어 사이즈 확인법" />\n' +
+          '                            </div>'
+        var modalContents4 = '<div class="searching-car-view">\n' +
+          '    <div class="txt-info">\n' +
+          '        <p class="txt-primary"><b>차량번호 07더3307</b>은<br>이미 다른 회원님께 등록되어 있습니다.</p><br>\n' +
+          '        <p>내 차량으로 등록하시려면 기등록 회원님께<br>차량 공유 요청에 대한 동의를 받아야 합니다.<em class="txt-primary">차량 공유 요청을 보내시겠습니까?</em><br>내 차량으로 등록하지 않더라도 상품 조회는 가능합니다.</p>\n'+
+          '           </div>\n' +
+          '        </div>'
+        /* 202012 pub  // */
+        var modalContents5 = '<form>\n' +
+          '                                <ul class="list-size-full">\n' +
+          '                                    <li>\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">자동차 브랜드</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <select class="input-box">\n' +
+          '                                                    <option value="" selected="" disabled="">선택</option>\n' +
+          '                                                    <option value="">options1</option>\n' +
+          '                                                    <option value="">options2</option>\n' +
+          '                                                    <option value="">options...</option>\n' +
+          '                                                </select>\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button><span class="line-icons chev-down"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '\n' +
+          '                                    <li class="mg-t-2u">\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">차종</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <select class="input-box">\n' +
+          '                                                    <option value="" selected="" disabled="">선택</option>\n' +
+          '                                                    <option value="">options1</option>\n' +
+          '                                                    <option value="">options2</option>\n' +
+          '                                                    <option value="">options...</option>\n' +
+          '                                                </select>\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button><span class="line-icons chev-down"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '\n' +
+          '                                    <li class="mg-t-2u">\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">세부 차종</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <select class="input-box">\n' +
+          '                                                    <option value="" selected="" disabled="">선택</option>\n' +
+          '                                                    <option value="">options1</option>\n' +
+          '                                                    <option value="">options2</option>\n' +
+          '                                                    <option value="">options...</option>\n' +
+          '                                                </select>\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button><span class="line-icons chev-down"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '\n' +
+          '                                    <li class="mg-t-2u">\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">연료</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <select class="input-box">\n' +
+          '                                                    <option value="" selected="" disabled="">선택</option>\n' +
+          '                                                    <option value="">options1</option>\n' +
+          '                                                    <option value="">options2</option>\n' +
+          '                                                    <option value="">options...</option>\n' +
+          '                                                </select>\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button><span class="line-icons chev-down"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '\n' +
+          '                                    <li class="mg-t-2u">\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">모델 연도</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <select class="input-box">\n' +
+          '                                                    <option value="" selected="" disabled="">선택</option>\n' +
+          '                                                    <option value="">options1</option>\n' +
+          '                                                    <option value="">options2</option>\n' +
+          '                                                    <option value="">options...</option>\n' +
+          '                                                </select>\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button><span class="line-icons chev-down"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '\n' +
+          '                                    <li class="mg-t-2u">\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">세부 모델</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <select class="input-box">\n' +
+          '                                                    <option value="" selected="" disabled="">선택</option>\n' +
+          '                                                    <option value="">options1</option>\n' +
+          '                                                    <option value="">options2</option>\n' +
+          '                                                    <option value="">options...</option>\n' +
+          '                                                </select>\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button><span class="line-icons chev-down"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '\n' +
+          '                                    <li class="mg-t-2u">\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">타이어 사이즈</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <select class="input-box">\n' +
+          '                                                    <option value="" selected="" disabled="">선택</option>\n' +
+          '                                                    <option value="">options1</option>\n' +
+          '                                                    <option value="">options2</option>\n' +
+          '                                                    <option value="">options...</option>\n' +
+          '                                                </select>\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button><span class="line-icons chev-down"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '\n' +
+          '                                    <li class="mg-t-2u">\n' +
+          '                                        <div class="form-control form-control-inline inline-xl">\n' +
+          '                                            <label class="txt-16">차량번호</label>\n' +
+          '                                            <div class="input-group">\n' +
+          '                                                <input type="text" class="input-box" placeholder="차량번호를 입력해주세요. Ex)12가3456">\n' +
+          '                                                <div class="tools">\n' +
+          '                                                    <button class="clear"><span class="line-icons close-circle"></span></button>\n' +
+          '                                                </div>\n' +
+          '                                            </div>\n' +
+          '                                        </div>\n' +
+          '                                    </li>\n' +
+          '                                </ul>\n' +
+          '                            </form>'
+        /* // 202012 pub */
+        var modalContents6 = '<p class="txt-16"><em class="txt-w500">07더3307</em> 차량에 대한 <em class="txt-w500">‘고객명’</em>님의<br>차량 공유 요청에 동의하시겠습니까?</p>\n' +
+          '\n' +
+          '                                <div class="container border-all bg-filet-4 pd-h-4u pd-v-2u mg-t-4u">\n' +
+          '                                    <table class="pd-medium">\n' +
+          '                                        <colgroup>\n' +
+          '                                            <col style="width:60px;"/>\n' +
+          '                                            <col/>\n' +
+          '                                        </colgroup>\n' +
+          '                                        <tbody>\n' +
+          '                                            <tr>\n' +
+          '                                                <th class="txt-left txt-neutral2">요청일시</th>\n' +
+          '                                                <td class="txt-right">2020년 8월 31일 12시 00분</td>\n' +
+          '                                            </tr>\n' +
+          '\n' +
+          '                                            <tr class="border-t border-light">\n' +
+          '                                                <th class="txt-left txt-neutral2">유효시간</th>\n' +
+          '                                                <td class="txt-right txt-primary">2020년 9월 1일 11:59분 까지</td>\n' +
+          '                                            </tr>\n' +
+          '                                        </tbody>\n' +
+          '                                    </table>\n' +
+          '                                </div>\n' +
+          '\n' +
+          '                                <p class="txt-center mg-t-6u">차량 공유 요청에 동의 하시면 <em class="txt-w500">07더3307</em> 차량의<br>기존/신규 서비스이력을 공유할 수 있습니다.</p>'
+        var modalContents7 = '<p class="txt-center txt-16">\n' +
+          '                                    <span class="line-icons error-circle size-48 txt-primary mg-b-2u"></span><br>\n' +
+          '                                    <em class="txt-w500">07더3307</em> 차량에 대한<br>차량 공유 요청 유효 시간이 만료되었습니다.\n' +
+          '                                </p>\n' +
+          '\n' +
+          '                                <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t">등록을 원하신다면<br>다시한번 차량 공유 요청을 해주세요.</p>'
+        var modalContents8 = '<p class="txt-16"><em class="txt-w500">07더3307</em> 차량에 대한 <em class="txt-w500">‘고객명’</em>님의<br>차량 공유 요청을 이미 확인하셨습니다.</p>\n' +
+          '\n' +
+          '                                <div class="container border-all bg-filet-4 pd-h-4u pd-v-2u mg-t-4u">\n' +
+          '                                    <table class="pd-medium">\n' +
+          '                                        <colgroup>\n' +
+          '                                            <col style="width:60px;"/>\n' +
+          '                                            <col/>\n' +
+          '                                        </colgroup>\n' +
+          '                                        <tbody>\n' +
+          '                                            <tr>\n' +
+          '                                                <th class="txt-left txt-neutral2">요청일시</th>\n' +
+          '                                                <td class="txt-right">2020년 8월 31일 12시 00분</td>\n' +
+          '                                            </tr>\n' +
+          '\n' +
+          '                                            <tr class="border-t border-light">\n' +
+          '                                                <th class="txt-left txt-neutral2">유효시간</th>\n' +
+          '                                                <td class="txt-right txt-primary"><span class="txt-throughline">2020년 9월 1일 11:59분 까지</span>(만료)</td>\n' +
+          '                                            </tr>\n' +
+          '                                        </tbody>\n' +
+          '                                    </table>\n' +
+          '                                </div>'
+        var modalContents9 = '<p class="txt-center txt-16">\n' +
+          '                                    <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>\n' +
+          '                                    홍 * * 회원님이 <em class="txt-w500">07더3307</em> 차량에 대한<br>차량 공유 요청에 동의하셨습니다.\n' +
+          '                                </p>\n' +
+          '\n' +
+          '                                <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t"><em class="txt-w500 txt-neutral1">07더3307</em> 차량의 기존 서비스 이력을 공유받고,<br>신규 서비스 이력 또한 서로 공유하게 됩니다.</p>'
+        var modalContents10 = '<p class="txt-center txt-16">\n' +
+          '                                    <span class="line-icons error-circle size-48 txt-primary mg-b-2u"></span><br>\n' +
+          '                                    홍 * * 회원님이 차량 공유 요청을 거절하셨습니다.\n' +
+          '                                </p>\n' +
+          '\n' +
+          '                                <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t"><em class="txt-w500 txt-neutral1">07더3307</em> 차량 등록을 원하신다면<br>다시한번 차량 공유 요청을 해주세요.</p>'
+        var modalContents11 = '<div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-6u txt-center">\n' +
+          '                                    <p class="txt-18">차량번호 인증이란?</p>\n' +
+          '                                    <hr class="short dp-block center mg-v-4u">\n' +
+          '                                    <p class="txt-neutral2"><span class="txt-neutral1">차번조회로 내 차량을 등록하신 경우</span><br>\n' +
+          '                                        차량번호가 자동 인증되며, 기존 정비이력을 포함하여<br>\n' +
+          '                                        신규 정비이력·디지털이력 관리 등<br>다양한 서비스를 받으실 수 있습니다.\n' +
+          '                                    </p>\n' +
+          '                                    <p class="txt-neutral2 mg-t-2u"><span class="txt-neutral1">직접선택을 통해 내 차량을 등록하신 경우</span><br>\n' +
+          '                                        [인증하기] 버튼을 선택해주세요.\n' +
+          '                                    </p>\n' +
+          '                                </div>'
+        var modalContents12 = '<div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-6u txt-center">\n' +
+          '                                    <p class="txt-18">차량 공유 회원이란?</p>\n' +
+          '                                    <hr class="short dp-block center mg-v-4u">\n' +
+          '                                    <p class="txt-neutral2">\n' +
+          '                                        차량 공유 요청 동의 후 차량의 서비스이력을<br>\n' +
+          '                                        공유하고 계신 회원을 말합니다.\n' +
+          '                                    </p>\n' +
+          '                                    <p class="txt-neutral2 mg-t-2u">\n' +
+          '                                        차량 공유 회원이 되기 위해서는<br>\n' +
+          '                                        먼저 차량을 등록하신 회원님의 동의가 필요합니다.\n' +
+          '                                    </p>\n' +
+          '                                </div>'
+        var modalContents13 = '<p class="txt-center mg-t-4u txt-16 txt-primary">\n' +
+          '                                    <span class="line-icons caution size-48 txt-primary mg-b-2u"></span><br>\n' +
+          '                                    등록된 내 차량을 삭제 하시겠습니까?\n' +
+          '                                </p>\n' +
+          '\n' +
+          '                                <p class="txt-center txt-neutral2 txt-13 mg-t-8u pd-t-4u border-t">\n' +
+          '                                    <span class="txt-primary">*</span> 정비/점검 이력과 함께 디지털이력관리 등<br>내차 관리를 받으실 수 없습니다.\n' +
+          '                                </p>\n' +
+          '                                <p class="txt-center txt-neutral2 txt-13 mg-t-2u">\n' +
+          '                                    <span class="txt-primary">*</span> 삭제 후 내 차량으로 다시 등록하시면<br>이전과 동일한 혜택을 받으실 수 있습니다.\n' +
+          '                                </p>'
+
+        var modalContents14 = '<p class="txt-center txt-primary">\n' + '차량번호 또는 소유주명이 일치하지 않습니다</p>\n' +
+          '    <p class="mg-t-4u">\n' +'공동명의 차량인 경우:<br><b>대표 소유주 명을 입력해 주세요</b>\n' +
+          '</p>\n' +
+          '    <p class="mg-t-4u">\n'+'렌트/리스 차량의 경우:<br>해당 업체의 정확한 회사명을 소유주명에 입력해주세요.<br>예 ) 주식회사 ABC렌터카<br>예 ) 주식회사 123캐피탈<br>\n' +
+          '</p>'
+          
+        /* 0722 // */
+        var modalContents15 = '<p>\n' + '일부 차종 (2000년 이전 국산차, 2006 이전 수입차)의 경우 차량번호 조회 서비스가 제한될 수 있습니다. </p>\n' +
+        '    <p>\n' +'(상용차/특수차/병행수입차 등은 서비스 이용 불가)\n' +
+        '</p>\n' +
+        '    <p class="mg-t-2u">\n'+'<strong>‘사이즈로 찾기’</strong>를 이용해 주세요.<br>\n' +
+        '</p>'
+        /* // 0722 */
+
+        // 내 차량 등록 불가 안내 사전 기능 추가
+        // 상품조회 action
+        function callGoods () {
+            // do..
+            alert('상품조회')
+            $.Tstation.popup().close();
+        }
+
+        // 차량 공유 요청 action
+        function callFamily () {
+            // do..
+            alert('차량 공유 요청')
+            $.Tstation.popup().close();
+        }
+    </script>
+    <h3 class="txt-w500 mg-v-6u">차번조회 화면설계 기준 모든 팝업 호출 리스트업</h3>
+    <ul>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">1. 로그인 후 차량번호 조회가 가능합니다.</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-center">로그인 후, 차량번호 조회가 가능합니다.</p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents1, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                        {
+                                            label: '로그인',
+                                            negative: false,
+                                            action: 'alert(\'사전에 등록한 액션을 스트링으로 추가하세요.\')' // 따옴표 주의
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">2. 차량번호 또는 소유주명이 일치하지 않습니다.</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-center pd-t-4u txt-16">
+                    <span class="line-icons error-circle size-48 txt-neutral3 mg-b-2u"></span><br>
+                    차량번호 또는 소유주명이 일치하지 않습니다.
+                </p>
+
+                <div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-4u mg-t-6u txt-13">
+                    <p class="txt-neutral2"><em class="txt-primary">*</em> 공동명의 차량의 경우: 대표 소유주명을 입력해 주세요.</p>
+                    <p class="txt-neutral2"><em class="txt-primary">*</em> 렌트/리스 차량의 경우: 해당 업체의 정확한 회사명을 소유주명에 입력해 주세요.<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 주식회사 ABC렌터카<br>
+                    &nbsp;&nbsp;&nbsp;- ex) 주식회사 123캐피탈<p>
+                </div>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents2, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 4,
+                                    vertical: 4,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">3. 내 차 타이어 사이즈 확인법.</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<div class="txt-center pd-h-4u mg-b-4u">
+                <h3 class="txt-w500 mg-b-2u">타이어 옆면의 숫자조합을 확인해 주세요.</h3>
+               <p>예시 타이어의 사이즈는 <em class="txt-primary">195/65/R15</em> 입니다.</p>
+            </div>
+            <div class="image-container">
+                <img src="mc-static-root/images/common/how_to_check_tire_size.png" alt="타이어 사이즈 확인법" />
+            </div>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '내 차 타이어 사이즈 확인법',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents3, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 0,
+                                    vertical: 0,
+                                    top: 6,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">4. 차량 등록 불가 안내</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<div class="searching-car-view">
+                <div class="txt-info">
+                    <p class="txt-primary"><b>차량번호 07더3307</b>은<br>이미 다른 회원님께 등록되어 있습니다.</p><br>
+                    <p>내 차량으로 등록하시려면 기등록 회원님께<br>차량 공유 요청에 대한 동의를 받아야 합니다.<em class="txt-primary">차량 공유 요청을 보내시겠습니까?</em><br>내 차량으로 등록하지 않더라도 상품 조회는 가능합니다.</p>
+                </div>
+           </div>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 등록 불가 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents4, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 4,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '차량 공유 요청',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">5. 차량 직접등록하기</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<form>
+                <ul class="list-size-full">
+                    <li>
+                        <div class="form-control form-control-inline inline-xl">
+                            <label class="txt-16">자동차 브랜드</label>
+                            <div class="input-group">
+                                <select class="input-box">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                    <option value="">options...</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mg-t-2u">
+                        <div class="form-control form-control-inline inline-xl">
+                            <label class="txt-16">모델</label>
+                            <div class="input-group">
+                                <select class="input-box">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                    <option value="">options...</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mg-t-2u">
+                        <div class="form-control form-control-inline inline-xl">
+                            <label class="txt-16">엔진</label>
+                            <div class="input-group">
+                                <select class="input-box">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                    <option value="">options...</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mg-t-2u">
+                        <div class="form-control form-control-inline inline-xl">
+                            <label class="txt-16">모델 연도</label>
+                            <div class="input-group">
+                                <select class="input-box">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                    <option value="">options...</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mg-t-2u">
+                        <div class="form-control form-control-inline inline-xl">
+                            <label class="txt-16">세부 모델</label>
+                            <div class="input-group">
+                                <select class="input-box">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                    <option value="">options...</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mg-t-2u">
+                        <div class="form-control form-control-inline inline-xl">
+                            <label class="txt-16">타이어 사이즈</label>
+                            <div class="input-group">
+                                <select class="input-box">
+                                    <option value="" selected="" disabled="">선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                    <option value="">options...</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mg-t-2u">
+                        <div class="form-control form-control-inline inline-xl">
+                            <label class="txt-16">차량번호</label>
+                            <div class="input-group">
+                                <input type="text" class="input-box" placeholder="차량번호를 입력해주세요. Ex)12가3456">
+                                <div class="tools">
+                                    <button class="clear"><span class="line-icons close-circle"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </form>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 등록하기',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents5, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: true, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                        {
+                                            label: '등록하기',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">6.차량 공유 요청 안내 - 차량 공유 요청 동의</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-16"><em class="txt-w500">07더3307</em> 차량에 대한 <em class="txt-w500">‘고객명’</em>님의<br>차량 공유 요청에 동의하시겠습니까?</p>
+
+                <div class="container border-all bg-filet-4 pd-h-4u pd-v-2u mg-t-4u">
+                    <table class="pd-medium">
+                        <colgroup>
+                            <col style="width:80px;"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="txt-left txt-neutral2">요청일시</th>
+                                <td class="txt-right">2020년 8월 31일 12시 00분</td>
+                            </tr>
+
+                            <tr class="border-t border-light">
+                                <th class="txt-left txt-neutral2">유효시간</th>
+                                <td class="txt-right txt-primary">2020년 9월 1일 11:59분 까지</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="txt-center mg-t-6u">차량 공유 요청에 동의 하시면 <em class="txt-w500">07더3307</em> 차량의<br>기존/신규 서비스이력을 공유할 수 있습니다.</p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 공유 요청 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents6, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '거절',
+                                            negative: true,
+                                            action: 'alert(\'고객명님의 차량 공유 요청을 거절하시겠습니까?(confirm으로)\')'
+                                        },
+                                        {
+                                            label: '동의하기',
+                                            negative: false,
+                                            action: 'alert(\'고객님의 차량 공유 요청을 동의하셨습니다.\')'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">6.차량 공유 요청 안내 - 차량 공유 요청 동의</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-16"><em class="txt-w500">07더3307</em> 차량에 대한 <em class="txt-w500">‘고객명’</em>님의<br>차량 공유 요청에 동의하시겠습니까?</p>
+
+                <div class="container border-all bg-filet-4 pd-h-4u pd-v-2u mg-t-4u">
+                    <table class="pd-medium">
+                        <colgroup>
+                            <col style="width:80px;"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="txt-left txt-neutral2">요청일시</th>
+                                <td class="txt-right">2020년 8월 31일 12시 00분</td>
+                            </tr>
+
+                            <tr class="border-t border-light">
+                                <th class="txt-left txt-neutral2">유효시간</th>
+                                <td class="txt-right txt-primary">2020년 9월 1일 11:59분 까지</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="txt-center mg-t-6u">차량 공유 요청에 동의 하시면 <em class="txt-w500">07더3307</em> 차량의<br>기존/신규 서비스이력을 공유할 수 있습니다.</p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 공유 요청 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents6, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '거절',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                        {
+                                            label: '내 차 관리',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">7.차량 공유 요청 안내 - 차량 공유 요청 유효 시간 만료</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-center txt-16">
+                    <span class="line-icons error-circle size-48 txt-primary mg-b-2u"></span><br>
+                    <em class="txt-w500">07더3307</em> 차량에 대한<br>차량 공유 요청 유효 시간이 만료되었습니다.
+                </p>
+
+                <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t">등록을 원하신다면<br>다시한번 차량 공유 요청을 해주세요.</p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 공유 요청 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents7, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">8.차량 공유 요청 안내 - 차량 공유 요청을 이미 확인하셨습니다.</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-16"><em class="txt-w500">07더3307</em> 차량에 대한 <em class="txt-w500">‘고객명’</em>님의<br>차량 공유 요청을 이미 확인하셨습니다.</p>
+
+                <div class="container border-all bg-filet-4 pd-h-4u pd-v-2u mg-t-4u">
+                    <table class="pd-medium">
+                        <colgroup>
+                            <col style="width:60px;"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="txt-left txt-neutral2">요청일시</th>
+                                <td class="txt-right">2020년 8월 31일 12시 00분</td>
+                            </tr>
+
+                            <tr class="border-t border-light">
+                                <th class="txt-left txt-neutral2">유효시간</th>
+                                <td class="txt-right txt-primary"><span class="txt-throughline">2020년 9월 1일 11:59분 까지</span>(만료)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 공유 요청 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents8, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">9.차량 공유 요청 안내 - 홍**회원님이 07더3307 차량에 대한 차량 공유 요청에 동의하셨습니다.</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-center txt-16">
+                    <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br>
+                    홍 * * 회원님이 <em class="txt-w500">07더3307</em> 차량에 대한<br>차량 공유 요청에 동의하셨습니다.
+                </p>
+
+                <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t"><em class="txt-w500 txt-neutral1">07더3307</em> 차량의 기존 서비스 이력을 공유받고,<br>신규 서비스 이력 또한 서로 공유하게 됩니다.</p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 공유 요청 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents9, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">10.차량 공유 요청 안내 - 홍**회원님이 차량 공유 요청을 거절하셨습니다.</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-center txt-16">
+                    <span class="line-icons error-circle size-48 txt-primary mg-b-2u"></span><br>
+                    홍 * * 회원님이 차량 공유 요청을 거절하셨습니다.
+                </p>
+
+                <p class="txt-center txt-neutral2 mg-t-8u pd-t-4u border-t"><em class="txt-w500 txt-neutral1">07더3307</em> 차량 등록을 원하신다면<br>다시한번 차량 공유 요청을 해주세요.</p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 공유 요청 안내',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents10, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">11.차량번호 인증 안내 - 차량번호 인증이란?</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-6u txt-center">
+                    <p class="txt-18">차량번호 인증이란?</p>
+                    <hr class="short dp-block center mg-v-4u">
+                    <p class="txt-neutral2"><span class="txt-neutral1">차번조회로 내 차량을 등록하신 경우</span><br>
+                        차량번호가 자동 인증되며, 기존 정비이력을 포함하여<br>
+                        신규 정비이력·디지털이력 관리 등<br>다양한 서비스를 받으실 수 있습니다.
+                    </p>
+                    <p class="txt-neutral2 mg-t-2u"><span class="txt-neutral1">직접선택을 통해 내 차량을 등록하신 경우</span><br>
+                        [인증하기] 버튼을 선택해주세요.
+                    </p>
+                </div>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents11, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">12.차량 공유 회원이란?</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-6u txt-center">
+                    <p class="txt-18">차량 공유 회원이란?</p>
+                    <hr class="short dp-block center mg-v-4u">
+                    <p class="txt-neutral2">
+                        차량 공유 요청 동의 후 차량의 서비스이력을<br>
+                        공유하고 계신 회원을 말합니다.
+                    </p>
+                    <p class="txt-neutral2 mg-t-2u">
+                        차량 공유 회원이 되기 위해서는<br>
+                        먼저 차량을 등록하신 회원님의 동의가 필요합니다.
+                    </p>
+                </div>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents12, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">13.등록된 내 차량을 삭제 하시겠습니까?</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-center mg-t-4u txt-16 txt-primary">
+                    <span class="line-icons caution size-48 txt-primary mg-b-2u"></span><br>
+                    등록된 내 차량을 삭제 하시겠습니까?
+                </p>
+
+                <p class="txt-center txt-neutral2 txt-13 mg-t-8u pd-t-4u border-t">
+                    <span class="txt-primary">*</span> 정비/점검 이력과 함께 디지털이력관리 등<br>내차 관리를 받으실 수 없습니다.
+                </p>
+                <p class="txt-center txt-neutral2 txt-13 mg-t-2u">
+                    <span class="txt-primary">*</span> 삭제 후 내 차량으로 다시 등록하시면<br>이전과 동일한 혜택을 받으실 수 있습니다.
+                </p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents13, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">14. 차량 수정하기</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!-- 5. 차량 직접 등록하기와 같은 폼을 사용함 -->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                title: '차량 수정하기',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents5, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: true, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: '$.Tstation.popup().close()'
+                                        },
+                                        {
+                                            label: '수정완료',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">15. 차량번호 또는 소유주명이 일치하지 않습니다.</p>
+            <!-- TODO: 아래의 주석 처리된 html을 호출 할 수 있게 jsp로 만들고 requestUrl에 해당 주소를 삽입하세요. -->
+            <!--<p class="txt-cente txt-primary">
+                    차량번호 또는 소유주명이 일치하지 않습니다
+                </p>
+                <p class="mg-t-4u">
+                    공동명의 차량인 경우:<br>
+                    <b>대표 소유주 명을 입력해 주세요</b>
+                </p>
+                <p class="mg-t-4u">
+                    렌트/리스 차량의 경우:<br>
+                    해당 업체의 정확한 회사명을 소유주명에 입력해주세요.<br>
+                    예 ) 주식회사 ABC렌터카<br>
+                    예 ) 주식회사 123캐피탈<br>
+                </p>-->
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents14, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+        <!-- 0722 // -->
+        <li class="border-b pd-v-2u">
+            <p class="mg-b-2u">16. 차번, 소유주명 입력 후 [차번조회] 실행 시 에러코드 5003 또는 5005 발생할 경우</p>
+            <button
+                    type="button"
+                    class="btn-item btn-s full-w btn-neutral"
+                    onclick="$.Tstation.popup().open({
+                                ref: '',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: modalContents15, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 4,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: '$.Tstation.popup().close()'
+                                        }
+                                    ]
+                                }
+                            })"
+            >
+                <span class="label-txt">Open</span>
+            </button>
+        </li>
+        <!-- // 0722 -->
+    </ul>
+</div>

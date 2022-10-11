@@ -1,0 +1,73 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '안심서비스 가입' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/safe-service.css" />
+<div id="container" class="safeservice-group">
+    
+    <div class="subscription-page">
+        <div class="subscription-section">
+            <h2 class="section-headline underline txt-14 mg-h-5u pd-b-2u pd-t-5u">안심서비스 가입신청</h2>
+            <div class="rowgroup pd-t-1u">
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="name" class="necessary-label">이름</label>
+                        <div class="input-group">
+                            <input type="text" id="name" class="input-box" placeholder="이름" value="김한국">
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber" class="necessary-label">연락처</label>
+                        <div class="input-group">
+                            <input type="text" id="phoneNumber" class="input-box" placeholder="연락처" value="010 5578 9987">
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="carNumber" class="necessary-label">차량번호</label>
+                        <div class="input-group">
+                            <input type="text" id="carNumber" class="input-box half-w" placeholder="차량번호" value="01가 1234">
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrap pd-h-5u mg-t-15u mg-b-8u">
+                <button type="button" class="btn-item btn-neutral round full-w round">
+                    <span class="label-txt">안심서비스 가입신청 하기</span>
+                </button>
+            </div>
+
+        </div>
+        <div class="noti-section weight-divider">
+            <h3 class="section-headline txt-16 pd-h-5u">가입 전 꼭 알아두세요!</h3>
+            <ul class="explan-list pd-v-3u pd-h-5u bg-light1">
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 가입은 티스테이션닷컴을 통해 대상상품 2개 이상 구매 및 장착완료일 기준 14일 까지만 가능합니다. (정비/장착일 기준 익일부터 가입 내역 조회가 가능합니다.)</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">가입 대상은 실장착 고객 (이름, 연락처, 차량번호 기준 동일인)이며, 신규가입 시 기존 가입 건은 자동 만료 처리되고, 신규가입일로 안심서비스 기간이 갱신됩니다.</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">안심서비스 가입 제한 : 렌트 차량 (허,하,호 차량번호 표기), 영업용 차량, 11인승 초과 승합차량, 경트럭 등 일부 차량의 경우 안심서비스 가입이 제한될 수 있습니다.</p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="bul-icon txt-11 txt-neutral2">가입관련 문의 : 티스테이션 고객센터 (1577-0009)</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,396 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="event">
+    <div id="contents">
+        <!-- 01. page title -->
+        <div class="page_tit">
+            <h4>이벤트</h4>
+        </div>
+        <!-- //01. page title -->
+        <!-- 02. 제목 -->
+        <div class="event_tit">
+            힘내라 대한민국
+            <span class="date">이벤트 기간 : 99.99.99  ~ 99.99.99</span>
+        </div>
+        <input type="hidden" id="evtUrlAddr" value="">
+        <input type="hidden" id="endEvtDisp" value="">
+        <input type="hidden" id="isEvtDispBf" value="">
+
+        <!-- //02. 제목  -->
+        <!-- 03. 이벤트 상세  -->
+        <div class="event_list">
+            <div id="inner">
+
+                <div class="event-detail-wrap">
+                    <div class="center-inner">
+                        <link rel="stylesheet" type="text/css" href="pc-static-root/css/event.css" />
+                    
+                        <div class="event-draw-cheerup">
+                            <div class="hero-section ak-wrap-draw">
+                                <img src="pc-static-root/images/event/20220321/img_hero.png" alt="" />
+                                
+                                <div class="hero-play-area">
+                                    <div class="play-wrap">
+                                        <div id="player"></div>
+                                    </div>
+                                </div>
+                
+                                <a href="#none" class="event-case img-map-link link-1" data-analytics-click="월요일과 금요일엔 all my T 드로우 응모 기회"><span class="blind">월요일과 금요일엔 all my T 드로우 응모 기회</span></a>
+                                <a href="#none" class="event-case img-map-link link-2" data-analytics-click="all my T 드로우 빠짐없이 출석하면 주유권 추첨증정"><span class="blind">all my T 드로우 빠짐없이 출석하면 주유권 추첨증정</span></a>
+                            </div>
+                        
+                            <div class="event-content-section">
+                                <h2 class="headcopy txt-14 txt-center pd-b-6u" s="">
+                                    <span class="icon amt-logo dp-block pd-b-2u"><img src="pc-static-root/images/event/20220321/img_tit_event1.png" alt="EVENT1"></span>
+                                    <!-- 20220325 // -->
+                                    <p class="txt-28">all my T 드로우</p>
+                                    <p class="txt-20 pd-h-6u mg-t-4u txt-narrow">월요일과 금요일 오전 10시부터 오후 1시까지!<br />응모하고 행운의 주인공이 되세요.</p>
+                                    <!-- //20220325 -->
+                                </h2>
+
+                                <div class="draw-content">
+                                    <div class="content-hero-wrap txt-center">
+                                        <!-- 20220324 // -->
+                                        <span class="mg-t-2u pill-primary txt-16 txt-w500">응모시간 : 10:00 ~13:00</span>
+                                        <!-- // 20220324 -->
+                                    </div> 
+                                    <div class="swiper-container draw-info-swiper">
+                                        <div class="swiper-wrapper" >
+                                            <!-- 이벤트 종료 .drawend-active  -->
+                                            <div class="swiper-slide drawend-active">
+                                                <img src="pc-static-root/images/event/20220321/0411_nike.png" alt="" />
+                                            </div>
+                                            <!-- 이벤트 진행중 .drawstart-active  -->
+                                            <div class="swiper-slide drawstart-active">
+                                                <img src="pc-static-root/images/event/20220321/0415_PS5.png" alt="" />
+                                            </div>
+                                            <!-- 이벤트 전 .prepare-active  -->
+                                            <div class="swiper-slide prepare-active">
+                                                <img src="pc-static-root/images/event/20220321/0418_dyson.png" alt="" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="pc-static-root/images/event/20220321/0422_tent.png" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-wrap mg-h-5u txt-center">
+                                        <!-- 버튼 활성화 -->
+                                        <button class="btn-item btn-neutral btn-xl round pd-h-20u"><span class="label-txt">all my T 드로우 응모하기</span></button>
+                                        <!-- 버튼 비 활성화 20220325 
+                                        <button class="btn-item btn-neutral btn-xl round pd-h-20u" disabled><span class="label-txt">4월 11일 10:00 오픈</span></button>
+                                        -->
+                                    </div>
+                                    <div class="lagal-check-group mg-h-8u mg-t-5u mg-b-15u">
+                                        <label class="check-item" for="eventPrivacyPolicy">
+                                            <input type="checkbox" id="eventPrivacyPolicy">
+                                            <div class="icon-holder">
+                                                <span class="line-icons square size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u txt-16">마케팅 활용을 위한 수집 및 이용동의</span>
+                                            </div>
+                                        </label>
+                                        <a href="#" class="legal-button popup-full txt-primary txt-16 txt-w500 line-32" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">내용보기</a>
+                                    </div>
+                                    <script>
+                                        var viewCard = 1, /* 조건에 따라 노출될 카드 순서 0, 1, 2, 3 */
+                                            amtinfoswiper = new Swiper('.draw-info-swiper', {
+                                                effect: "coverflow",
+                                                grabCursor: true,
+                                                initialSlide: viewCard,
+                                                centeredSlides: true,
+                                                slidesPerView: 3,
+                                                coverflowEffect: {
+                                                rotate: 50,
+                                                stretch: 0,
+                                                depth: 100,
+                                                modifier: 1,
+                                                slideShadows: true,
+                                            },
+                                            pagination: {
+                                                el: ".swiper-pagination",
+                                            },
+                                        });
+                    
+                                        amtinfoswiper.init();
+                                        $(window).on('resize', function() {
+                                            amtinfoswiper.init();
+                                        });
+                                    </script>
+                                </div>         
+
+                                <div class="event-wid-wrap bg-light2">
+                                    <!-- 20220324 // -->
+                                    <p class="txt-24 txt-center txt-w500">아직 all my T 회원이 아니시라면<br />지금 바로 가입해 주세요!</p>
+                
+                                    <div class="button-wrap-half txt-center mg-t-8u">
+                                        <button type="button" class="btn-item btn-neutral btn-xl btn-ol round mg-r-1u">
+                                            <span class="label-txt">all my T 회원가입</span>
+                                        </button>
+                                        <button type="button" class="btn-item btn-neutral btn-xl btn-ol round mg-l-1u">
+                                            <span class="label-txt">차량등록 바로가기</span>
+                                        </button>
+                                    </div>
+                                    <!-- // 20220324 -->
+                                    <ul class="event-gate-info grid-line"><!-- 20220324 -->
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">참여대상</span></strong>
+                                            <ul class="event-join-info">
+                                                <li><strong class="txt-primary">티스테이션 all my T 회원 (차량등록 필수)</strong></li>
+                                            </ul>
+                                        </li>
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">진행일정</span></strong>
+                                            <ul class="event-join-info">
+                                                <li>4/11(월), 4/15(금), 4/18(월), 4/22(금)</li>
+                                            </ul>
+                                        </li>
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">진행방식</span></strong>
+                                            <ul class="event-join-info">
+                                                <!-- 20220325 // -->
+                                                <li>오전 10시 ~ 오후 1시까지 3시간 동안 응모</li>
+                                                <li>응모 당일 오후 4시 당첨자 발표 (알림톡&공지사항)</li>
+                                                <!-- // 20220325 -->
+                                            </ul>
+                                        </li>
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">참여방법</span></strong>
+                                            <ul class="event-join-info">
+                                                <li>all my T 드로우 당 1회 응모 가능</li>
+                                                <li class="dotted">회차 당 아이디(계정) 기준 1회씩 총 4회 참여 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">경품안내</span></strong>
+                                            <ul class="event-join-info">
+                                                <li>4/11(월) – 나이키 에어조던1 루키 (1명)</li>
+                                                <li>4/15(금) – 플레이스테이션 5 (1명)</li>
+                                                <li>4/18(월) – 다이슨 에어랩 스타일러 컴플리트 (1명)</li>
+                                                <li>4/22(금) – 노르디스크 비무르 텐트 (1명)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <!-- 20220324 삭제 <p class="txt-24 txt-center grid-line txt-w500">아직 all my T 회원이 아니시라면<br />지금 바로 가입해 주세요!</p>
+                
+                                    <div class="button-wrap-half txt-center mg-t-8u">
+                                        <button type="button" class="btn-item btn-neutral btn-xl btn-ol round mg-r-1u">
+                                            <span class="label-txt">all my T 회원가입</span>
+                                        </button>
+                                        <button type="button" class="btn-item btn-neutral btn-xl btn-ol round mg-l-1u">
+                                            <span class="label-txt">차량등록 바로가기</span>
+                                        </button>
+                                    </div> -->
+                                </div>
+                   
+                            </div>
+                
+                            <div class="event-content-section">
+                                <h2 class="headcopy txt-14 txt-center pd-b-5u" s="">
+                                    <span class="icon amt-logo dp-block pd-b-2u"><img src="pc-static-root/images/event/20220321/img_tit_event2.png" alt="EVENT2"></span>
+                                    <p class="txt-28">출석체크 우수회원 주유권 추첨 증정</p>
+                                    <p class="txt-20 pd-h-6u mg-t-4u txt-narrow">총 4번의 all my T 드로우에 모두 응모한 고객님을 위해 준비했어요!</p>
+                                </h2>
+                
+                                <div class="attendance">
+                                    <ul class="attendance-list">
+                                        <!-- 이벤트 참여 apply -->
+                                        <!-- 20220324 // -->
+                                        <li class="item apply">
+                                            <span class="date txt-14 txt-w700">4/11<span class="txt-primary">(월)</span></span>
+                                            <span class="visual"><img src="pc-static-root/images/event/20220321/img_item_nike.png" alt=""></span>
+                                        </li>
+                                        <!-- 이벤트 미 참여 pass -->
+                                        <li class="item pass">
+                                            <span class="date txt-14 txt-w700">4/15<span class="txt-primary">(금)</span></span>
+                                            <span class="visual"><img src="pc-static-root/images/event/20220321/img_item_ps.png" alt=""></span>
+                                        </li>
+                                        <li class="item">
+                                            <span class="date txt-14 txt-w700">4/18<span class="txt-primary">(월)</span></span>
+                                            <span class="visual"><img src="pc-static-root/images/event/20220321/img_item_dy.png" alt=""></span>
+                                        </li>
+                                        <li class="item">
+                                            <span class="date txt-14 txt-w700">4/22<span class="txt-primary">(금)</span></span>
+                                            <span class="visual"><img src="pc-static-root/images/event/20220321/img_item_tt.png" alt=""></span>
+                                        </li>
+                                        <!-- // 20220324 -->
+                                    </ul>
+                                    <div class="attendance-coupon">
+                                        <span class="visual"><img src="pc-static-root/images/event/20220321/img_mobile_coupon.png" alt=""></span>
+                                    </div>
+                                </div>
+                
+                                <div class="event-wid-wrap">
+                                    <ul class="event-gate-info">
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">참여대상</span></strong>
+                                            <ul class="event-join-info">
+                                                <li><strong class="txt-primary">all my T 드로우 모든회차 응모고객 (총 4회차) </strong></li>
+                                            </ul>
+                                        </li>
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">참여방법</span></strong>
+                                            <ul class="event-join-info">
+                                                <li>all my T 드로우에 응모 시 자동응모</li>
+                                                <li class="dotted">응모여부는 상단의 스탬프로 확인 가능</li>
+                                            </ul>
+                                        </li>
+                                        <li class="gate-half">
+                                            <strong class="gate-header"><span class="txt-label">경품안내</span></strong>
+                                            <ul class="event-join-info">
+                                                <li>이마트_GS칼텍스 모바일 쿠폰 1만원 (100명 추첨)</li>
+                                            </ul>
+                                        </li>
+                                        <li class="gate-half">
+                                            <!-- 20220325 // -->
+                                            <strong class="gate-header"><span class="txt-label">당첨자발표</span></strong>
+                                            <ul class="event-join-info">
+                                                <li>2022.04.28 (목) 티스테이션닷컴 공지사항 <br />
+                                                    당첨자 발표 및 개인정보에 등록된 연락처로<br />
+                                                    모바일 기프티콘 발송
+                                                </li>
+                                            </ul>
+                                            <!-- // 20220325 -->
+                                        </li>
+                                    </ul>
+                
+                                </div>
+                            </div>
+                
+                            <div class="bg-light1 pd-h-5u pd-v-6u mg-t-20u">
+                                <h4 class="txt-18 txt-w500">꼭, 확인하세요!</h4>
+                                <!-- 20220325 // -->
+                                <ul class="mg-t-6u">
+                                    <li class="txt-14 txt-neutral2">· 본 행사는 티스테이션 all my T 회원으로 차량등록과 마케팅정보 수집 및 활용에 동의한 고객 대상으로 진행되는 온라인 전용 이벤트입니다.</li>
+                                </ul>
+                                <h5 class="txt-14 txt-w500 mg-t-4u">[all my T 드로우 응모이벤트 유의사항] </h5>
+                                <ul class="mg-t-2u">
+                                    <li class="txt-14 txt-neutral2">· all my T 드로우 이벤트는 4/11, 4/15, 4/18, 4/22 총 4회차 진행되며, 경품은 회차별로 상이합니다. </li>
+                                    <li class="txt-14 txt-neutral2">· 응모일 오전 10시부터 오후 1시까지 3시간 동안 응모를 완료한 고객을 대상으로 당일 오후 중 랜덤추첨을 통해 당첨자를 선정합니다. (회차별 응모는 ID 기준 1회이며, 총 4회차의 all my T 드로우에 중복당첨은 가능) </li>
+                                    <li class="txt-14 txt-neutral2">· 당첨여부는 응모일 당일 오후 4시에 알림톡으로 개별 안내되며, 당첨자의 경우에는 당첨일로부터 일주일 내 개별 연락을 통해 당첨사실 고지 및 경품수령방법을 안내해 드립니다. (경품발송대행업체에 개인정보를 위탁할 수 있으며, 경품발송을 위한 목적 달성 후 활용한 개인정보는 즉시 안전하게 파기됩니다.) </li>
+                                    <li class="txt-14 txt-neutral2">· 경품 지급시점에 회원탈퇴하거나 경품발송을 위한 마케팅정보활용수집 및 동의 철회 시 최종 지급 대상에서 제외될 수 있습니다. </li>
+                                    <li class="txt-14 txt-neutral2">· 일부 경품 지급 시 약 22%의 제세공과금이 발생할 수 있습니다. </li>
+                                </ul>
+                
+                                <h5 class="txt-14 txt-w500 mg-t-4u">[all my T 드로우 출석체크 이벤트 유의사항]</h5>
+                                <ul class="mg-t-2u">
+                                    <li class="txt-14 txt-neutral2">· 총 4회차의 all my T 드로우에 모두 참여한 고객 (ID 기준)을 대상으로 자동 응모되는 이벤트입니다.</li>
+                                    <li class="txt-14 txt-neutral2">· 당첨자 발표는 이벤트 종료 후 2022.04.28 (목) 티스테이션닷컴 공지사항을 통해 안내되며, 개인정보에 등록된 연락처로 모바일 기프티콘이 발송됩니다.</li>
+                                </ul>
+                
+                                <h5 class="txt-14 txt-w500 mg-t-4u">[기타 유의사항]</h5>
+                                <ul class="mg-t-2u">
+                                    <li class="txt-14 txt-neutral2">· 이벤트 진행 일정 및 지급 혜택은 내부 사정에 따라 변경되거나, 예고없이 조기종료 될 수 있습니다. </li>
+                                    <li class="txt-14 txt-neutral2">· 연락처 오류로 인한 경품 미수취 발생 시 재발송이 불가하니, 반드시 등록된 개인정보가 맞는지 확인해 주세요.</li>
+                                    <li class="txt-14 txt-neutral2">· 경품 및 기프티콘의 경우 외부업체에 위탁발송으로 진행됩니다. (실물경품의 경우 수령 이후 불량품에 대해서만 교환 가능) </li>
+                                    <li class="txt-14 txt-neutral2">· 경품발송을 위한 수집정보 : 이름, 연락처, 주소지 (실물경품 발송 시)</li>
+                                    <li class="txt-14 txt-neutral2">- 실물경품 : ㈜인터파크비즈마켓 / 1661-8859 </li>
+                                    <li class="txt-14 txt-neutral2">- 기프티콘 : ㈜케이티알파 / 1588-6474</li>
+                                    <li class="txt-14 txt-neutral2">· 이벤트 관련 자세한 내용은 티스테이션 고객센터로 문의해 주세요. (080-022-8272)</li>
+                                </ul>
+                                <!-- // 20220325 -->
+                            </div>
+                        </div>
+
+
+                        <!-- // korea event -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn01">
+                <a href="https://www.tstation.com/promotion/event-list" class="btnM2 btnS02">목록으로</a>
+            </div>
+        </div>
+        <!-- //03. 이벤트 상세  -->
+
+        <!-- #contents -->
+    </div>
+</div>
+
+<script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+    
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'k23TGDo1_ls',
+            playerVars: {
+                'autoplay': 1,
+                'rel': 0,
+                'showinfo': 0,
+                'modestbranding': 1,
+                'playsinline': 1,
+                'showinfo': 0,
+                'rel': 0,
+                'controls': 0,
+                'color': 'white',
+                'loop': 1,
+                'mute': 1,
+                'playlist': 'k23TGDo1_ls'
+            },
+            events: {
+                'onReady': onPlayerReady,
+                // 'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+    
+    function onPlayerReady(event) {
+        player.playVideo();
+        player.mute();
+    }
+    var done = false;
+    
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+        }
+    }
+    
+    function stopVideo() {
+        player.stopVideo();
+    }
+    
+    
+    var bookmarkButton = document.querySelectorAll('.ak-wrap-draw .event-case')
+    Array.prototype.forEach.call(bookmarkButton, function(button, i) {
+        bookmarkButton[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            var scrollpickupPostion = document.querySelectorAll('.event-draw-cheerup .event-content-section');
+            Array.prototype.forEach.call(scrollpickupPostion, function() {
+                var scrollpick = window.pageYOffset + scrollpickupPostion[i].getBoundingClientRect().top;
+                animateScroll(scrollpick);
+            })
+        })
+    })
+        
+    function animateScroll(to) {
+        function animation() {
+            var now = (performance.now() - startTime) / time,
+                progress = transition(now);
+            1 > now
+            ? (
+                window.requestAnimationFrame(animation),
+                window.scrollTo(0, from + (to - from) * progress)
+            )
+            : (
+                window.scrollTo(0, to)
+            )
+        }
+        var from = window.scrollY;
+        var time = 500,
+            startTime = performance.now();
+        function transition(number) {
+            return -.5 * (Math.cos(Math.PI * number) - 1)
+        }
+        animation();
+    }
+    
+    </script>

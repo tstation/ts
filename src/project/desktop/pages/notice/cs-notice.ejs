@@ -1,0 +1,88 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <div class="page_tit">
+                <h4>공지사항 <span>이벤트 및 각종 소식들을 제일 먼저 만나 보실 수 있습니다.</span></h4>
+            </div>
+
+            <div class="bbs_search">
+                <ul>
+                    <li>
+
+                        <select title="공지사항 구분 선택" name="ntcClssCd" id="ntcClssCd" class="select01">
+                            <option value="">전체</option>
+
+                            <option value="02">매장</option>
+
+                            <option value="03">프로모션</option>
+
+                            <option value="04">안내</option>
+
+                        </select>
+                    </li>
+                    <li><input title="검색어 입력" type="text" id="searchText" name="searchText" class="ip_txt01" placeholder="검색어를 입력해주세요."></li>
+                    <li><button type="button" id="btn_search" class="btnM2 btnS07">검색</button></li>
+                </ul>
+            </div>
+            <div id="noticeList">
+
+
+
+
+                <div class="tbl_04">
+                    <table>
+                        <colgroup>
+                            <col style="width:90px">
+                            <col style="width:110px">
+                            <col style="">
+                            <col style="width:120px">
+                        </colgroup>
+                        <tbody><tr>
+                            <th>번호</th>
+                            <th>구분</th>
+                            <th>제목</th>
+                            <th>게시일</th>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td><span class="cate S04">안내</span></td>
+                            <td class="left"><a href="https://www.tstation.com/customer-service/announcement/notice-detail.do?ntcSeq=60134">티스테이션, 두산베어스와 스포츠 마케팅 스폰서십 계약 연장</a></td>
+                            <td>2020-04-29</td><!-- 게시일자 -->
+                            <!-- 등록일자 -->
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td><span class="cate S04">안내</span></td>
+                            <td class="left"><a href="https://www.tstation.com/customer-service/announcement/notice-detail.do?ntcSeq=60124">한국타이어, 17년 연속 ‘한국산업의 브랜드파워’ 1위 선정</a></td>
+                            <td>2019-03-26</td><!-- 게시일자 -->
+                            <!-- 등록일자 -->
+                        </tr>
+
+                        </tbody></table>
+                </div>
+
+
+
+
+
+                <div class="paging">
+                    <button type="button" class="first" onclick="goPage('1');">처음</button>
+
+
+                    <button type="button" class="on" onclick="goPage('1');">1</button>
+
+
+                    <button type="button" class="end" onclick="goPage('1');">맨끝</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

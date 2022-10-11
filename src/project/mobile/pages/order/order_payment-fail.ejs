@@ -1,0 +1,15 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '주문실패' }) %>
+<div id="container" class="ptspace orderPage">
+    <!-- 주문실패 -->
+    <div class="order_fail">
+        <p class="txt01">주문(결제)가 <em>실패</em>하였습니다.</p>
+        <p class="txt02">주문 생성 중 오류가 발생하였습니다.</p>
+
+        <a href="#" class="btnB btnS02">장바구니</a>
+    </div>
+    <!-- //주문실패 -->
+</div>

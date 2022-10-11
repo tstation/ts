@@ -1,0 +1,172 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+
+<!-- Contents -->
+<div id="container" class="">
+    <div id="contents">
+        <div class="page-header">
+            <h1>사은품 신청하기</h1>
+        </div>
+
+        <div class="gift-apply-page mg-t-10u">
+            <div class="noti pd-b-10u">
+                <p class="txt-16 txt-neutral2 txt-center">한국타이어 감사제 프리미엄 타이어 구매고객<br />사은품 신청 페이지</p>
+                <p class="txt-14 txt-neutral2 txt-center mg-t-1u">신청기한 : 2022.09.01~2022.10.09 까지</p>        
+            </div>
+            <form action="" method="post">
+                <label for="confirmNumber" class="txt-20 pd-v-5u dp-block">응모번호 입력</label>
+                <ul class="list-size-flex">
+                    <li class="flex-3 pd-r-2u">
+                    <div class="form-control form-control-md">
+                        <div class="input-group">
+                            <input id="confirmNumber" name="confirmNumber" type="text" class="input-box" placeholder="문자로 받으신 인증번호를 입력해 주세요" value="">
+                            <div class="tools">
+                                <button class="clear" type="button" onclick="$('#confirmNumber').val('')"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="flex-1">
+                        <button type="button" class="btn-item btn-neutral full-w filet pd-h-1u">
+                            <span class="label-txt txt-14">인증번호 확인</span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="txt-20 mg-t-15u">사은품 신청하기</div>
+                <ul class="pd-b-5u">
+                    <li class="mg-t-4u">
+                        <div class="form-control form-control-inline inline-md">
+                            <label class="">지급혜택</label>
+                            <div class="input-group">
+                                <p class="pd-v-2u">이마트&middot;GS칼텍스 겸용 모바일 상품권 3만원</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mg-t-4u">
+                        <div class="form-control form-control-inline inline-md">
+                            <label for="ownername">이름</label>
+                            <div class="input-group">
+                                <input id="ownername" name="ownername" type="text" class="input-box" placeholder="홍길동" value="">
+                                <div class="tools">
+                                    <button class="clear" type="button" onclick="$('#ownername').val('')"><span class="line-icons close-circle"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mg-t-4u">
+                        <div class="form-control form-control-inline inline-md">
+                            <label for="phone-nm">전화번호</label>
+                            <ul class="list-size-flex">
+                                <li class="flex-3 pd-r-2u division-line">
+                                    <div class="form-control form-control-md">
+                                        <div class="input-group">
+                                            <select class="input-box" id="phone-nm" name="phone-nm">
+                                                <option value="options1" selected="" disabled="">010</option>
+                                                <option value="options2">000</option>
+                                                <option value="options3">000</option>
+                                            </select>
+                                            <div class="tools">
+                                                <button><span class="line-icons chev-down"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="flex-3 pd-r-2u division-line">
+                                    <div class="form-control form-control-md">
+                                        <div class="input-group">
+                                            <input id="phone-md-nm" name="phone-md-nm" type="text" class="input-box" placeholder="" value="">
+                                            <div class="tools">
+                                                <button class="clear" type="button" onclick="$('#phone-md-nm').val('')"><span class="line-icons close-circle"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="flex-3">
+                                    <div class="input-group">
+                                        <input id="phone-last-nm" name="phone-last-nm" type="text" class="input-box" placeholder="" value="">
+                                        <div class="tools">
+                                            <button class="clear" type="button" onclick="$('#phone-last-nm').val('')"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+            <div class="gift-terms-section">
+                <div class="mg-t-15u">
+                    <input type="checkbox" class="ip_c checkAll" name="allagreeChk" id="agree_all" />
+                    <label for="agree_all" class="txt-14">전체동의</label>
+                </div>
+                <div class="list mg-t-8u">
+                    <input type="checkbox" class="ip_c checkSingle" id="agree_1" name="agreeChk" title="(필수) 개인정보 수집 및 이용동의">
+                    <label for="agree_1" class="txt-14">(필수) 개인정보 수집 및 이용동의</label>
+                    <div class="table-wrap tbl table-responsive">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>항목</th>
+                                    <th>수집목적</th>
+                                    <th>보유기간</th>
+                                </tr>
+                                <tr>
+                                    <td>이름, 전화번호, 주소</td>
+                                    <td>사은품 발송</td>
+                                    <td>사은품 발송 완료 시까지 (~2022.09.14)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="list mg-t-8u">
+                    <input type="checkbox" class="ip_c checkSingle" id="agree_2" name="agreeChk" title="(필수) 개인정보 제3자 제공에 관한 동의">
+                    <label for="agree_2" class="txt-14">(필수) 개인정보 제3자 제공에 관한 동의</label>
+                    <div class="table-wrap tbl table-responsive">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>제공 받는자</th>
+                                    <th>제공 항목</th>
+                                    <th>제공 목적</th>
+                                    <th>보유기간</th>
+                                </tr>
+                                <tr>
+                                    <td>업체명 : ㈜인터파크비즈마켓<br />
+                                        주소 : 서울특별시 강남구 도산대로 235<br />
+                                        연락처 : 02-6354-9028</td>
+                                    <td>이름, 전화번호, 주소</td>
+                                    <td>사은품 발송</td>
+                                    <td>사은품 발송 완료 시까지 (~2022.09.14)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="list mg-t-8u">
+                    <input type="checkbox" class="ip_c checkSingle" id="agree_3" name="agreeChk" title="(필수) 개인정보의 마케팅 활용에 대한 동의">
+                    <label for="agree_3" class="txt-14">(필수) 개인정보의 마케팅 활용에 대한 동의</label>
+                    <p class="txt-14 txt-neutral2 mg-t-1u pd-l-6u">- SMS를 통해 사은품 발송 및 배송정보 안내에 동의합니다.</p>
+                </div>
+                <div class="terms-section mg-t-15u">
+                    <div class="txt-primary txt-w500 txt-16 mg-v-2u">·유의사항·</div>
+                    <p class="txt-14 txt-neutral3 mg-t-1u"># 선착순 증정으로 사은품은 조기 소진될 수 있습니다. (대상고객인 경우에도 준비수량 재고소진인 경우 사은품 신청이 불가할 수 있음)</p>
+                    <p class="txt-14 txt-neutral3 mg-t-1u"># 사은품은 구매/장착완료를 완료한 고객 대상으로 지급됩니다.</p>
+                    <p class="txt-14 txt-neutral3 mg-t-1u"># 신청 시 입력된 개인정보 오류로 인한 경품 미수취 시 재발송이 불가할 수 있으며, 사은품 수령 이후 주문을 취소하였을 경우 기지급된 사은품은 회수하거나 이미 사용하였을 경우 해당 금액만큼 차감 후 환불처리 됩니다.(상품 하자 등의 사유에 한해서만 교환 가능)</p>
+                    <p class="txt-14 txt-neutral3 mg-t-1u"># 사은품 지급 관련 문의 : 티스테이션 고객센터 (080-022-8272)</p>
+                    <p class="txt-14 txt-neutral3 mg-t-1u"># 사은품(크레모아 선풍기) 관련 문의 : 인터파크 비즈마켓 고객센터 (1600-6763)</p>
+                </div>
+            </div>
+            <div class="mg-t-15u txt-center">
+                <button type="button" class="btn-item btn-neutral btn-l round pd-h-15u" data-analytics-click="사은품 신청 하기">
+                    <span class="label-txt">사은품 신청 하기</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+    
+

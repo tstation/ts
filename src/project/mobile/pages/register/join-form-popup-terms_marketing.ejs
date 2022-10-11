@@ -1,0 +1,55 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div style="height: 300px; text-align: center; padding: 0 20px;">
+    <button type="button" class="btn-item btn-neutral full-w mg-t-2u" onclick="callPopup()">
+        <span class="label-txt">개인정보 수집 및 이용 팝업 호출</span>
+    </button>
+</div>
+<script>
+    var template = '<div class="agree_container">\n' +
+      '<div class="tbl">\n' +
+      '<table>\n' +
+      '<tbody>\n' +
+      '<tr>\n' +
+      '<th>구분</th>\n' +
+      '<th>목적</th>\n' +
+      '<th>수집 항목</th>\n' +
+      '<th>보유기간</th>\n' +
+      '</tr>\n' +
+      '<tr>\n' +
+      '<td>회원 정보 수정 시</td>\n' +
+      '<td>신상품 홍보 및 마케팅 목적 활용</td>\n' +
+      '<td>차량 정보 (차종, 차량번호)</td>\n' +
+      '<td>동의 철회 시까지</td>\n' +
+      '</tr>\n' +
+      '</tbody>\n' +
+      '</table>\n' +
+      '</div>\n' +
+      '</div>'
+    function callPopup () {
+        $.Tstation.popup().open({
+            ref: 'personal-info',
+            title: '개인정보 수집 및 이용',
+            requestUrl: '',
+            contents: template,
+            dimWhite: false,
+            modalContentsPd: {
+                horizon: 8,
+                vertical: 8,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: true,
+            onOpen: function () {
+                console.log('팝업이 열리면 파이어 합니다.');
+            },
+            onClose: function () {
+                console.log('팝업이 닫히면 파이어 합니다.');
+            }
+        });
+    };
+</script>

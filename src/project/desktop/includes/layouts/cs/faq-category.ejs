@@ -1,0 +1,36 @@
+<% let { activeIndex = 0 } = locals.entry; %>
+<!-- 02.menu -->
+<div class="faq_cate">
+    <ul>
+        <li class="r1<%- activeIndex === 0 ? ' on': '' %>">
+            <input type="hidden" id="faqCd" value="10">
+            <a href="https://www.tstation.com/customer-service/faq.do?faqCd=10">상품 선택</a>
+        </li>
+        <li class="r2<%- activeIndex === 1 ? ' on': '' %>">
+            <input type="hidden" id="faqCd" value="10">
+            <a href="https://www.tstation.com/customer-service/faq.do?faqCd=20">장착서비스</a>
+        </li>
+        <li class="r3<%- activeIndex === 2 ? ' on': '' %>">
+            <input type="hidden" id="faqCd" value="10">
+            <a href="https://www.tstation.com/customer-service/faq.do?faqCd=30">주문/결제</a>
+        </li>
+        <li class="r4<%- activeIndex === 3 ? ' on': '' %>">
+            <input type="hidden" id="faqCd" value="10">
+            <a href="https://www.tstation.com/customer-service/faq.do?faqCd=40">취소/환불/교환</a>
+        </li>
+        <li class="r5<%- activeIndex === 4 ? ' on': '' %>">
+            <input type="hidden" id="faqCd" value="10">
+            <a href="https://www.tstation.com/customer-service/faq.do?faqCd=60">회원</a>
+        </li>
+
+        <li class="r6<%- activeIndex === 5 ? ' on': '' %>">
+            <input type="hidden" id="faqCd" value="10">
+            <a href="https://www.tstation.com/customer-service/faq.do?faqCd=90">기타</a>
+        </li>
+        <!-- TODO: 멤버십 페이지 FAQ 링크 생성되면 달아주세요. -->
+        <!--<li class="r7">
+            <a href="#">멤버십</a>
+        </li>-->
+    </ul>
+</div>
+<!-- /02.menu -->

@@ -1,0 +1,170 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '기획전' }) %>
+<main id="main">
+    <div class="tab-item">
+        <a href="#" class="" data-analytics-click="특별기획전">특별기획전</a><!-- 20220713 -->
+        <a href="" class="on" data-analytics-click="상시기획전">상시기획전</a><!-- 20220713 -->
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <script>
+            $(document).ready(function () { $('body').addClass('bg-light1') });
+        </script>
+
+        <section class="ts-deal-header-section">
+            <div class="ts-deal-key-visual">
+                <img src="mc-static-root/images/common/ts_deal-key_visual-local.png" alt="우리동네딜" />
+            </div>
+            <div class="ts-deal-filter">
+                <div class="filter-bar-wrapper no-sticky">
+                    <div class="filter-local-wrap">
+                        <p class="description">우리동네를 선택하고 진행중인 딜 상품을 구경하세요.</p>
+                        <ul class="filter-local">
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" checked />
+                                    <span class="label">전체</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">서울</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">대전</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">광주</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">대구</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">부산</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">울산</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" disabled />
+                                    <span class="label">인천</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">세종</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">경기</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">강원</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">충북</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">충남</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">경북</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">경남</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" />
+                                    <span class="label">전북</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" disabled />
+                                    <span class="label">전남</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-local-item">
+                                    <input type="radio" name="filter-local" disabled />
+                                    <span class="label">제주</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contents-status-bar">
+                    <span class="title"><span class="txt-primary">전체</span>지역 <span class="txt-primary">0</span>개의 딜상품</span>
+                    <div class="form-control form-control-md extra">
+                        <div class="input-group">
+                            <select class="input-box" dir="rtl">
+                                <option selected>최신순</option>
+                                <option>인기순</option>
+                                <option>마감임박순</option>
+                            </select>
+
+                            <div class="tools">
+                                <button><span class="line-icons chev-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="ts-deal-card-list">
+            <!-- TODO: 딜 진행 상품이 없을때 -->
+            <div class="empty-box txt-center pd-v-15u">
+                <div class="middler">
+                    <span class="line-icons error-circle size-48"></span>
+                    <p class="empty-msg">진행중인 우리동네딜이 없습니다.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

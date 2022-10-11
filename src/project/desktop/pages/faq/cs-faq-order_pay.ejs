@@ -1,0 +1,173 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- #pageTitle -->
+            <div class="page_tit">
+                <h4>FAQ <span>원하시는 답변이 없으시면, <em>1:1 고객상담 이나 고객센터</em>를  이용해 주시기 바랍니다.</span></h4>
+                <div class="btn_right"><a href="https://www.tstation.com/customer-service/qna.do" class="btnM2 btnS01">1:1 고객상담</a></div>
+            </div>
+            <!-- #pageTitle -->
+            <%- locals.widget('src/project/desktop/includes/layouts/cs/faq-search-form.ejs') %>
+            <%- locals.widget('src/project/desktop/includes/layouts/cs/faq-category.ejs', { activeIndex: 2 }) %>
+            <!-- 03.list -->
+
+
+            <div class="faq_list">
+                <p class="head">
+                    <span class="no">번호</span>
+                    <span class="part">분류</span>
+                    <span class="tit">제목</span>
+                    <span class="date">등록일</span>
+                </p>
+                <dl id="accordion">
+
+                    <dt class="on">
+                        <span class="no">10</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">신용카드 결제 안전한가요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer on" style="display: block;">
+                        티스테이션은 128Bit SSL 글로벌 서버 인증서가 설치된 보안 인증 사이트로 고객님의 정보와 구매 결제 정보는 SSL(Secure Socket Layer) Protocol로 암호화되어 티스테이션에 전송됩니다.<br>
+                        <br>
+                        이는 미국 Verisign社를 통해 인증받고 있는 안전한 프로그램이니 믿고 사용하셔도 됩니다.<br>
+                        <br>
+                        [SSL 암호화가 적용되는 부분]<br>
+                        ① 회원가입, 회원정보 수정 시 관련 데이터 전송 부분<br>
+                        ② 로그인 후 주문/결제 시 관련 데이터 전송 부분<br>
+                        ③ 카드결제 시 관련 데이터 전송 부분<br>
+                        <br>
+                        [SSL 암호화 적용 여부 확인 방법]<br>
+                        SSL은 고객님의 개인정보가 입력되면 웹브라우저 주소 표시줄 오른쪽에 자물쇠 모양의 아이콘이 나타나며,<br>
+                        해당 아이콘이 확인되면 고객님의 정보가 안전하게 전달되고 있다는 것을 말합니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">9</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">법인 카드 구매는 할부가 안되나요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        법인카드로 상품을 구매하는 경우 할부 결제가 되지 않으니, 일시불로 결제해 주시기 바랍니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">8</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">장착 일자를 변경하고 싶습니다.</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        마이페이지의 주문내역에서 장착 일자 및 시간을 변경하실 수 있습니다.<br>
+                        단, 변경은 원활한 매장의 서비스 대응을 위해 지정한 일자와 시간에서 뒤로 변경할 수는 있으나 앞으로 당길 수는 없습니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">7</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">온라인 주문 상품을 변경하고 싶습니다.</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        주문하신 상품은 변경하실 수 없습니다.<br>
+                        번거로우시겠지만 주문을 취소하신 후 다시 주문해 주시기 바랍니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">6</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">장바구니에 얼마 동안 보관되나요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        로그인 후 장바구니에 담은 상품은 30일 동안 보관 하실 수 있습니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">5</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">30만원 이상 결제 시, 공인인증서 인증이 필수인가요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        공인인증서 의무 사용이 면제되었으며, 패스워드 입력/전화 ARS 승인 등의 대체 수단으로 인증이 진행됩니다.<br>
+                        각 결제 수단 및 대행사에 따라 방법이 상이하므로, 개별 안내에 따라 인증 받으시기 바랍니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">4</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">전화 주문이 가능한가요? 비회원 주문은요?</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        전화 주문은 불가능하니 온라인에서 직접 주문해 주시기 바랍니다.<br>
+                        비회원도 온라인 주문 가능합니다.
+                    </dd>
+
+                    <dt>
+                        <span class="no">3</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">쿠폰 사용 방법에 대해 알려주세요.</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        쿠폰 받기는 상품 상세 페이지 및 이벤트 페이지에서 가능하고, 쿠폰의 사용은 주문 단계에서 개별 쿠폰의 사용 기준에 따라 적용 가능합니다. 쿠폰의 사용 기준은 마이페이지의 쿠폰 메뉴에서 개별 쿠폰을 클릭하면 상세 내용을 확인하실 수 있습니다.<br>
+                        <br>
+                        ※ 거래 취소 시, 유효기간 내 재사용 가능<br>
+                        ※ 쿠폰의 유효기간 연장 및 환불 불가
+                    </dd>
+
+                    <dt>
+                        <span class="no">2</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">온라인 구매 시 유의사항에 대해 알려주세요.</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        1. 사이즈를 확인 후에 주문해 주세요.<br>
+                        잘못 주문하실 경우 지정일 장착이 어렵거나, 비용이 발생할 수 있습니다.<br>
+                        <br>
+                        2. 장착점에서 추가 비용이 발행하는 경우, 현장에서 결제하시면 됩니다.<br>
+                        - TPMS(타이어 공기압 센서) 타입, 런플랫 타이어 등<br>
+                        - 위치교환, 휠 얼라인먼트 작업 등
+                    </dd>
+
+                    <dt>
+                        <span class="no">1</span>
+                        <span class="part">주문/결제</span>
+                        <span class="tit">지금까지 주문한 상품 내역을 확인하고 싶습니다.</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        마이페이지에서 주문 이력을 확인하실 수 있습니다.
+                    </dd>
+
+                </dl>
+            </div>
+
+
+
+
+            <div class="paging">
+                <button type="button" class="first" onclick="goPage('1');">처음</button>
+
+
+                <button type="button" class="on" onclick="goPage('1');">1</button>
+
+
+                <button type="button" class="end" onclick="goPage('1');">맨끝</button>
+            </div>
+            <input type="hidden" id="rowsPerPage" name="rowsPerPage" value="10">
+
+
+            <!-- 03.list -->
+        </div>
+    </div>
+</div>

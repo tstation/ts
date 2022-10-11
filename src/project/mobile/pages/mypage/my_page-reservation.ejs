@@ -1,0 +1,64 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '방문예약내역' }) %>
+<div id="container" class="mypage">
+    <!-- 방문예약내역 -->
+    <div class="reserve_list">
+        <div class="sort">
+            <select class="select01 w100p">
+                <!-- 20210720 // -->
+                <option>전체</option>
+                <option>예약대기</option>
+                <option>예약완료</option>
+                <option>서비스 완료</option>
+                <option>예약취소</option>
+                <!-- // 20210720 -->
+            </select>
+        </div>
+        <!-- 20220513 // -->
+        <p class="txt-center txt-12 mg-v-4u mg-h-4u">
+            <span class="line-icons info-circle size-16 mg-t-1u"></span>한국타이어 패밀리세일 방문예약 내역은<br /> 이벤트 페이지에서 확인해 주세요. <a href="#none" class="txt-primary">[바로가기]</a>
+        </p>
+        <span class="dp-inblock pd-l-3u">슈퍼위크 방문예약 내역은 이벤트 페이지에서 확인해 주세요.</span><a href="/promotion/superWeekEvent/eventVisitReserveList" class="txt-primary dp-inblock pd-h-2u">바로가기</a></span>
+        <!-- // 20220513 -->
+        <div class="nodata"><em>방문예약</em>한 내역이 없습니다.</div>
+        <ol class="list">
+            <li>
+                <!-- 예약 -->
+                <dl class="reserve_info">
+                    <dt>
+                        <span class="status">예약대기</span>
+                        <a href="#" class="detail">상세보기</a>
+                    </dt>
+                    <!-- 20210720 // -->
+                    <dd><span class="tit">방문방법</span>직접방문</dd>
+                    <!-- // 20210720 -->
+                    <dd><span class="tit">매장명</span>티스테이션 성북점</dd>
+                    <dd><span class="tit">매장방문일</span>2018-10-13(토) 13시</dd>
+                </dl>
+                <!-- 예약 -->
+            </li>
+            <li>
+                <!-- 예약 -->
+                <dl class="reserve_info">
+                    <dt>
+                        <span class="status">예약완료</span>
+                        <a href="#" class="detail">상세보기</a>
+                    </dt>
+                    <!-- 20210720 // -->
+                    <dd><span class="tit">방문방법</span>픽업 / 딜리버리</dd>
+                    <!-- // 20210720 -->
+                    <dd><span class="tit">매장명</span>티스테이션 성북점</dd>
+                    <dd><span class="tit">매장방문일</span>2018-10-13(토) 13시</dd>
+                </dl>
+                <!-- 예약 -->
+            </li>
+        </ol>
+        <div class="txt-center">
+            <a href="#" class="btnM2 btnS02">방문예약하기</a>
+        </div>
+    </div>
+    <!-- //방문예약내역 -->
+</div>

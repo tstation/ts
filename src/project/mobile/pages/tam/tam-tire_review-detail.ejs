@@ -1,0 +1,396 @@
+<!-- 모달에 들어가는 컨텐츠로 비동기 방식으로 호출하여 사용하세요 -->
+
+<div class="review-detail">
+    <section class="thumb-area">
+        <!-- 20220726 // -->
+        <!-- 차단 -->
+        <div class="review-break">
+            <img
+                src="mc-static-root/images/common/review/icon_eye_white.png"
+                alt="empty review thumb"
+                class="icon"
+                style="width: 43px;"
+                onerror="$.Tstation.imageError({ el: this })"
+            />
+            <span class="blind">리뷰 차단하기(이미지 차단)</span>
+        </div>
+        <!-- // 20220726 -->
+
+        <!-- 리뷰 썸네일이 없고, 리뷰 타입이 윈터타이어 일때 -->
+        <!--<div class="empty">
+            <img
+                src="mc-static-root/images/common/review_img_default_winter.svg"
+                alt="empty review thumb"
+                class="icon"
+                onerror="$.Tstation.imageError({ el: this })"
+            />
+            <p class="label">윈터타이어 사용기</p>
+        </div>-->
+
+        <!-- 리뷰 썸네일이 없고, 리뷰 타입이 베스트 일때 -->
+        <!--<div class="empty">
+            <img
+                src="mc-static-root/images/common/review_img_default_best.svg"
+                alt="empty review thumb"
+                class="icon"
+                onerror="$.Tstation.imageError({ el: this })"
+            />
+            <p class="label">베스트 리뷰</p>
+        </div>-->
+
+        <!-- 리뷰 썸네일이 없고, 리뷰 타입이 한달 사용기 일때 -->
+        <!--<div class="empty">
+            <img
+                src="mc-static-root/images/common/review_img_default_one_month.svg"
+                alt="empty review thumb"
+                class="icon"
+                onerror="$.Tstation.imageError({ el: this })"
+            />
+            <p class="label">타이어 한달 사용기</p>
+        </div>-->
+
+        <!-- 리뷰 썸네일이 없고, 리뷰 타입이 베스트 셀링 타이어 사용기 일때 -->
+        <!--<div class="empty">
+            <img
+                src="mc-static-root/images/common/review_img_default_best_selling.svg"
+                alt="empty review thumb"
+                class="icon"
+                onerror="$.Tstation.imageError({ el: this })"
+            />
+            <p class="label">베스트 셀링 타이어 사용기</p>
+        </div>-->
+
+        <!-- 리뷰 썸네일이 있을때 -->
+        <div class="swiper-container review-thumb-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="thumb" style="background-image: url('https://via.placeholder.com/750x500')"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="thumb" style="background-image: url('https://via.placeholder.com/750x500')"></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <script>
+            var reviewThumbSwiper = new Swiper('.review-thumb-swiper', {
+                pagination: {
+                    el: '.swiper-pagination'
+                }
+            })
+
+            if($('.swiper-container').hasClass('review-thumb-swiper')) {
+                reviewThumbSwiper.init()
+
+                // window resize fire swiper init
+                window.addEventListener('resize', function () {
+                    reviewThumbSwiper.init()
+                })
+            }
+
+            // mobile portrait, landscape change fire swiper init
+            window.addEventListener('orientationchange', function() {
+                reviewThumbSwiper.init()
+            })
+        </script>
+    </section>
+
+    <section class="review-contents">
+        <div class="tire-meta">
+            <!-- 직관적 네이밍 규칙일때 -->
+            <!--<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" />-->
+            <h4 class="tire-name">VENTUS S2 AS X</h4>
+            <div class="meta">
+                <p>장착차량 : 쌍용 디젤 1.6 TX 2WD A/T, 티볼리</p>
+                <p>타이어 사이즈 : 235/55R19</p>
+            </div>
+            <div class="more">
+                <p class="rating-area">
+                    <span class="rating"><span style="width: 90%"></span></span>
+                    <span class="rating-count">4.5</span>
+                </p>
+                <div class="keywords">
+                    <span class="keyword">한달사용</span>
+                    <span class="keyword">SUV</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-text">
+            <!-- 20220726 // -->
+            <div class="review-break">
+                <img
+                    src="mc-static-root/images/common/review/icon_eye_gray.png"
+                    alt="empty review thumb"
+                    class="icon"
+                    style="width: 42px;"
+                    onerror="$.Tstation.imageError({ el: this })"
+                />
+                <p class="txt-16">해당 리뷰는 고객님께서 차단한 리뷰입니다</p>
+                <div class="txt-center">
+                    <img
+                        src="mc-static-root/images/common/review/icon_lock_primary.png"
+                        alt="empty review thumb"
+                        class="icon"
+                        style="width: 32px;"
+                        onerror="$.Tstation.imageError({ el: this })"
+                    />
+                    <div class="mg-t-1u">
+                        <button type="button" class="btn-item btn-xs btn-primary round review-block-cancle" data-analytics-click="리뷰 차단 해제">
+                            <span class="label-txt">차단 해제</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- // 20220726 -->
+
+            <!-- 20220721 // -->
+            <div class="reviewer-meta">
+                <span>김**</span>
+                <sapn class="divider-inline"></sapn>
+                <span>2021-06-10</span>
+            </div>
+            <!-- // 20220721 -->
+
+            <div class="contents">
+                친절한 설명과 함께 휠얼라인먼트와 고속밸런스 두개
+                모두 진행했습니다. 소음도 줄은 것 같고, 코너링도
+                많이 부드러워진 것 같네요. 휠얼라인먼트와
+                고속밸런스 모두 했는데 고속주행하면 좋아 졌는지
+                알 수 있을까요? 암튼, 연비가 개선되었는지는 좀 더
+                타보고 올려야겠네요~
+                타이어 생산연도도 2달 이내여서 만족하고요.
+                직원분들도 친절히 설명해주시고 만족합니다.
+            </div>
+
+            <div class="ratings">
+                <div class="inner">
+                    <div class="rating-group">
+                        <p class="label">승차감</p>
+                        <p class="rating-area">
+                            <span class="rating"><span style="width: 60%"></span></span>
+                            <span class="rating-count">3</span>
+                        </p>
+                    </div>
+                    <div class="rating-group">
+                        <p class="label">연비</p>
+                        <p class="rating-area">
+                            <span class="rating"><span style="width: 90%"></span></span>
+                            <span class="rating-count">4.5</span>
+                        </p>
+                    </div>
+                    <div class="rating-group">
+                        <p class="label">마일리지</p>
+                        <p class="rating-area">
+                            <span class="rating"><span style="width: 100%"></span></span>
+                            <span class="rating-count">5</span>
+                        </p>
+                    </div>
+                    <div class="rating-group">
+                        <p class="label">고속주행</p>
+                        <p class="rating-area">
+                            <span class="rating"><span style="width: 100%"></span></span>
+                            <span class="rating-count">5</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20220721 // -->
+            <div class="reviewer-control pd-t-2u pd-b-4u pd-h-5u panel-hidden">
+                <div class="good-checkbox-wrap">
+                    <label class="good-checkbox" id="goodCheckbox" data-analytics-click="리뷰가 도움이 돼요">
+                        <input type="checkbox" class="blind" />
+                        <div class="icon-holder mg-r-1u">
+                            <span class="icon-good good-count txt-12">17</span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">이 리뷰가 도움이 돼요</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="controlbox-list-wrap">
+                    <button type="button" class="controlbox-toggle" id="controlboxToggle" data-analytics-click="차단하기/신고하기 열기">
+                        <span class="label-txt blind">차단하기/신고하기 열기</span>
+                    </button>
+                    <ul class="controlbox-list" style="display: none;">
+                        <li><button type="button" class="controlbox-button review-declare" id="reviewDeclare" data-analytics-click="신고하기"><span class="label-txt txt-12">신고하기</span></button></li>
+                        <li><button type="button" class="controlbox-button review-block" id="reviewBlock" data-analytics-click="차단하기"><span class="label-txt txt-12">차단하기</span></button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="controlbox-panel" style="display: none;">
+                <h4 class="controlbox-headcopy pd-b-2u border-b">
+                    <p class="headcopy txt-14">신고사유를 알려주세요</p>
+                    <p class="subcopy txt-12 txt-neutral3">신고하신 내용은 관리자 검토 후 조치됩니다.</p>
+                    <button type="button" class="btn-item round btn-inv min-w controlbox-close" id="controlboxClose" data-analytics-click="신고사유 닫기">
+                        <span class="line-icons close size-24"></span>
+                    </button>
+                </h4>
+                <ul class="pd-v-3u">
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">저작권 침해, 명예훼손</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio" disabled="">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">개인정보 유출</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">욕설/비방/선정성 등 미풍양속을 해치는 내용</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">광고 및 홍보성 내용</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">해당 상품/매장과 무관한 내용</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">상품/매장과 무관한 사진 첨부</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">잘못된 정보가 포함된 리뷰</span>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="">
+                        <label class="radio-item">
+                            <input type="radio" name="test_radio">
+                            <div class="icon-holder">
+                                <span class="line-icons circle size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt mg-h-1u txt-12 txt-neutral2">기타</span>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+
+                <div class="form-control">
+                    <label>신고 상세사유를 입력해 주세요 (선택)</label>
+                    <div class="input-group">
+                        <textarea class="input-box" rows="4" placeholder="신고하시는 상세이유를 입력해주세요 (최대글자는 1,000자 입니다)"></textarea>
+                    </div>
+                </div>
+                <div class="txt-center mg-t-4u">
+                    <button type="button" class="btn-item btn-neutral btn-ol round pd-h-10u" data-analytics-click="리뷰 신고하기">
+                        <span class="label-txt txt-14">신고하기</span>
+                    </button>
+                </div>
+            </div>
+            <!-- // 20220721 -->
+        </div>
+    </section>
+</div>
+
+
+<!-- 20220721 // -->
+<script>
+$('.controlbox-toggle').each(function(e, i) {
+    $(i).click(function() {
+        $(this).next().toggle();
+    })
+})
+
+$('.review-declare').each(function(e, i) {
+    $(i).click(function() {
+        $(this).parents('.controlbox-list').hide();
+        $(this).parents('.reviewer-control').removeClass('panel-hidden').next().show();  
+        $(".modal-scroller").stop().animate({scrollTop:$(window).outerHeight()}, {duration:300, easing:"linear"});
+    })  
+})
+
+$('.controlbox-close').each(function(e, i) {
+    $(i).click(function() {
+        $(this).parents('.controlbox-panel').hide();
+        $(this).parents('.controlbox-panel').prev().addClass('panel-hidden');
+    })  
+})  
+
+$('.review-block').each(function(e, i) {
+    var reviewBlock = false
+    $(i).click(function() {
+        reviewBlock = true
+        if(reviewBlock) {
+            $(this)
+                .parents('.reviewer-control')
+                .addClass('panel-hidden')
+                .next()
+                .hide();  
+            $(this)
+                .parents('.reviewer-control')
+                .prevAll('.review-break')
+                .addClass('active')
+                .parent()
+                .addClass("block-height-fix");
+            alert("리뷰어 차단이 완료되었습니다.");
+        }
+
+        $(this).parents('.controlbox-list').hide();
+    })  
+})  
+
+$('.review-block-cancle').each(function(e, i) {
+    $(i).click(function() {
+        $(this)
+            .parents('.review-break')
+            .removeClass('active')
+            .parent()
+            .removeClass("block-height-fix");
+        alert("리뷰어 차단이 해제되었습니다.");
+    })
+})
+</script>
+<!-- // 20220721 -->

@@ -1,0 +1,122 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'T\'Station 서비스 안내' }) %>
+<div id="container" class="cscenter">
+    <!-- 서비스 안내 tab -->
+    <div class="order_01">
+        <ul>
+            <li class="on"><a href="https://m.tstation.com/customer-service/tsservice/servicetire.do">주요서비스 안내</a></li>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/knowhowtire.do">관리 노하우</a></li>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/wagestime.do">표준 정비시간</a></li>
+        </ul>
+    </div>
+    <!-- //서비스 안내 tab -->
+    <!-- 서비스 안내 tab2 -->
+    <div class="cs_top">
+        <ul>
+            <li class="on"><a href="https://m.tstation.com/customer-service/tsservice/servicetire.do">타이어 서비스</a></li>
+            <li><a href="https://m.tstation.com/customer-service/tsservice/serviceitem.do">경정비 서비스</a></li>
+        </ul>
+    </div>
+    <!-- //서비스 안내 tab2 -->
+    <!-- 03. tab 타이어 -->
+    <div class="cs_tab tabScript2">
+        <div class="tab">
+            <ul class="tire">
+                <li class="on"><button class="icnT1" data-rel="service_cont" title="serviceT1">점검</button></li>
+                <li><button class="icnT2" data-rel="service_cont" title="serviceT2">구매</button></li>
+                <li><button class="icnT3" data-rel="service_cont" title="serviceT3">장착</button></li>
+                <li><button class="icnT4" data-rel="service_cont" title="serviceT4">관리</button></li>
+            </ul>
+        </div>
+
+        <div id="serviceT1" class="service_cont">
+            <dl class="ds01">
+                <dt class="step1">마모상태 체크하기</dt>
+                <dd>
+                    <span class="txt_01">마모한계 표시가 1.6mm 이하라면 교체를!</span>
+                </dd>
+                <dd class="img_01">
+                    <img src="https://m.tstation.com/mc-static-root/images/cscenter/service_tire_01a.jpg" alt="" class="brd" />
+                    <img src="https://m.tstation.com/mc-static-root/images/cscenter/service_tire_01b.jpg" alt="" class="brd" />
+                </dd>
+                <dd>
+                    마모한계선을 초과한 타이어는 펑크의 위험이 높아지며, 젖은 노면에서 제동거리가 길어지게 되므로 매우 위험합니다.
+                    <br />트레드 홈 속에 돌출된 마모한계 표시가 있어, 타이어의 마모가 이 곳과 가깝게 닳았는지 확인하면서 마모의 정도를 판단할 수 있습니다.
+                    <br />안전운전을 위해서는 마모한계선인 1.6mm를 기다리기보단 2.8mm정도인 상태에서 여유를 두고 교체를 고려하는 것이 보다 안전합니다.
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceT2" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt class="step2">타이어 구매하기</dt>
+                <dd>
+                    <span class="txt_01">나에게 맞는 타이어 선택, T’Station과 함께</span>
+                </dd>
+                <dd class="img_01"><img src="https://m.tstation.com/mc-static-root/images/cscenter/service_tire_02.jpg" alt="" class="brd" /></dd>
+                <dd>
+                    타이어 선택에 있어 가장 중요한 것은 운전자의 라이프 스타일입니다. "나에게 맞는 타이어 선택" 한국타이어가 찾아 드립니다.
+                </dd>
+                <dd class="btn_01">
+                    <a href="https://m.tstation.com/search/searchTire" class="btnM2 btnS02">내차에 맞는 타이어 검색하기</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceT3" class="service_cont" style="display:none;">
+            <dl class="ds01">
+                <dt class="step3">타이어 장착하기</dt>
+                <dd class="sp01">
+                    <span class="txt_01">타이어 장착 4단계!<br />탈착 > 밸런스 > 장착 > 휠 얼라인먼트 <em>(유료서비스)</em></span>
+                </dd>
+                <dd class="img_02">
+                    <ol>
+                        <li><span><em>Step 01. </em>타이어 탈착</span><img src="https://m.tstation.com/mc-static-root/images/cscenter/service_tire_03.jpg" alt="" class="img" /></li>
+                        <li><span><em>Step 02. </em>휠 밸런스</span><img src="https://m.tstation.com/mc-static-root/images/cscenter/service_tire_04.jpg" alt="" class="img" /></li>
+                        <li><span><em>Step 03. </em>타이어 장착</span><img src="https://m.tstation.com/mc-static-root/images/cscenter/service_tire_05.jpg" alt="" class="img" /></li>
+                        <li><span><em>Step 04. </em>휠 얼라인먼트</span><img src="https://m.tstation.com/mc-static-root/images/cscenter/service_tire_06.jpg" alt="" class="img" /></li>
+                    </ol>
+                </dd>
+            </dl>
+        </div>
+        <div id="serviceT4" class="service_cont none" style="display:none;">
+            <dl class="ds01">
+                <dt class="step4">타이어 관리하기</dt>
+                <dd class="sp01">
+                    <span class="txt_01">타이어 관리, 이것만은 기억해 두세요!<br />1등 T’Station이 제안하는 타이어 사용관리 체크 포인트 5</span>
+                </dd>
+            </dl>
+            <dl class="ds02">
+                <dt><em>Point 1. </em>공기압 체크</dt>
+                <dd>
+                    <span>계절이 바뀔 때, 장거리 운행 전/후엔 반드시 점검을!</span>
+                    적정 공기압이 유지되지 못하면 수명이 단축되고 연비가 떨어지며, 사고 발생률이 높아집니다. 매월 점검 잊지 마세요.
+                </dd>
+                <dt><em>Point 2. </em>마모상태 체크</dt>
+                <dd>
+                    <span>타이어 마모 한계선 1.6mm. 교체 시기 3만~4만 km.</span>
+                    단, 충격에 의해 손상되었거나 운전 습관에 따라 교체 시기가 달라질 수 있으므로 마모 상태를 수시로 체크해 주세요.
+                </dd>
+                <dt><em>Point 3. </em>위치교환 점검</dt>
+                <dd>
+                    <span>주행 거리 약 1만 Km 기준으로 위치 교환을!</span>
+                    앞뒤 타이어를 서로 바꿔가며 사용하면, 모든 타이어의 수명이 다할 때까지 제대로 사용할 수 있어 경제적입니다.
+                </dd>
+                <dt><em>Point 4. </em>휠 밸런스</dt>
+                <dd>
+                    <span>핸들이 떨리고 승차감이 떨어진다면 휠 밸런스 점검을!</span>
+                    납으로 만든 추를 휠 부분에 붙여 균형을 맞추는 작업입니다. 타이어 교체나 위치교환시에도 휠 밸런스 점검을 권장합니다.
+                </dd>
+                <dt><em>Point 5. </em>휠 얼라인먼트</dt>
+                <dd>
+                    <span>주행 거리 1만~2만 Km 기준으로 휠 얼라인먼트 점검을!</span>
+                    방지턱을 넘는 등 자동차에 가해지는 충격으로 바퀴의 설치 각도 및 방향이 틀어지게 되는데, 최고의 주행 환경을 위해 주기적으로 휠 얼라인먼트를 점검하세요.
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- //03. service 타이어 -->
+
+
+</div>

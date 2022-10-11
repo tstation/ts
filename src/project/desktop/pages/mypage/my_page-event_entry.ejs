@@ -1,0 +1,47 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page_tit">
+                        <h4>이벤트응모내역</h4>
+                        <div class="btn_right"><a href="/promotion/event-list" class="btnM2 btnS07">이벤트 응모하기</a></div>
+                    </div>
+
+                    <div class="container">
+
+                        <div id="evtList" class="event_list">
+                            <ol>
+                                <li>
+                                    <span class="img"><img src="https://via.placeholder.com/750x300" alt=""></span>
+                                    <span class="tit">오늘 여행 가야 하는데 타이어가 말썽이다! 이럴때 오늘서비스!</span>
+                                    <span class="date">2018-10-01~2018-10-31</span>
+                                </li>
+                                <li>
+
+                                    <span class="img"><img src="https://via.placeholder.com/750x300" alt=""></span>
+                                    <span class="tit"><em class="win">당첨</em>티스테이션 온라인몰 단독! 아트라스 BX  런칭 기념 이벤트</span>
+                                    <span class="date">2018-10-01~2018-10-31</span>
+                                </li>
+                                <li>
+                                    <span class="img"><img src="https://via.placeholder.com/750x300" alt=""></span>
+                                    <span class="tit">오늘 여행 가야 하는데 타이어가 말썽이다! 이럴때 오늘서비스!</span>
+                                    <span class="date">2018-10-01~2018-10-31</span>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

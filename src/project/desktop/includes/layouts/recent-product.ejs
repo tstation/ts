@@ -1,0 +1,46 @@
+<div id="skyScraper">
+    <h6>최근 본 상품</h6>
+    <div class="box"></div>
+    <div class="top"><button id="btnTop">TOP</button></div>
+</div>
+<script>
+    $(document).ready(function(){
+        var selector = {
+            skyScraper: '#skyScraper', // 최근 본 상품 컨테이너
+            skyPen: '#sky_pen', // 컨텐츠 영역
+            skyMain: '.sky_main', // 컨텐츠 영역 컨테이너가 메인일때 클래스
+            searchCondition: '.search_condition', // 검색 결과 조건 바
+            roofTopBanner: '.rooftop-banner' // 최상단 배너
+        }
+        var setTop = 0
+        var roofTopBannerHeight = $(selector.roofTopBanner).outerHeight()
+        var setSkyScraperTop = function (top) {
+            $(selector.skyScraper).css({ top: top + 'px' })
+        }
+
+        if ($(selector.skyPen + selector.skyMain).length > 0) {
+            setTop = 730 + roofTopBannerHeight
+        } else if ($(selector.searchCondition).length > 0) {
+            setTop = 355 + roofTopBannerHeight
+        } else {
+            setTop = 230 + roofTopBannerHeight
+        }
+
+        setSkyScraperTop(setTop);
+
+        if($(selector.skyScraper).length > 0) {
+            $(window).scroll(function() {
+                var winS = $(window).scrollTop();
+                if( winS >= setTop ) {
+                    setSkyScraperTop(0);
+                } else if( winS < setTop ) {
+                    setSkyScraperTop(setTop - winS);
+                }
+            });
+        }
+
+        $('#btnTop').on( "click", function() {
+            $('html, body').animate({ scrollTop: '0' }, 400);
+        });
+    });
+</script>

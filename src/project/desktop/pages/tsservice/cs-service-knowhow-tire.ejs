@@ -1,0 +1,102 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- 01. page title -->
+            <div class="page_tit">
+                <h4>T'Station 관리 노하우</h4>
+            </div>
+            <!-- //01. page title -->
+            <!-- 02. 안내 TAB -->
+            <div class="cscenter_top">
+                <ul class="tab_01">
+                    <li class="on"><a href="https://www.tstation.com/customer-service/tsservice/knowhowtire.do">타이어 관리 노하우</a></li>
+                    <li><a href="https://www.tstation.com/customer-service/tsservice/knowhowitem.do">경정비 관리 노하우</a></li>
+                </ul>
+            </div>
+            <!-- //02. 안내 TAB -->
+            <!-- 03. tab 타이어 -->
+            <div class="cs_tab tabScript">
+                <ul class="item knowhow">
+                    <li class="on"><button class="icnK1" data-rel="service_cont" title="knowT1">공기압</button></li>
+                    <li><button class="icnK2" data-rel="service_cont" title="knowT2">마모상태</button></li>
+                    <li><button class="icnK3" data-rel="service_cont" title="knowT3">위치교환</button></li>
+                    <li><button class="icnK4" data-rel="service_cont" title="knowT4">휠 얼라인먼트</button></li>
+                    <li><button class="icnK5" data-rel="service_cont" title="knowT5">휠 밸런스</button></li>
+                </ul>
+                <div id="knowT1" class="service_cont">
+                    <dl class="ds01">
+                        <dt><em>Service 1.</em> 적정 공기압 유지, 안전한 주행의 필수 전제조건 입니다.</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/knowhow_tire_01.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            타이어 공기압 체크는 주기적으로 해야 합니다. 특히 계절이 바뀌거나 휴가철 장거리 운형 전/후엔 반드시 점검해야 합니다.
+                            <br>적정 공기압을 유지하지 못하면 타이어 수명이 단축되는 것은 물론 연비도 떨어지며 사고 발생률이 높아집니다.
+                            <br>적정 타이어 공기압은 차량 문 안쪽 스티커, 연료 뚜껑 안쪽 또는 차량 매뉴얼 등에서 확인 가능합니다.
+                            <br>최근에는 타이어의 공기압을 주기적으로 자동 감지하여, 일정 수치 이하로 감소되었을 때 운전자에게 경고등을 보여주는 TPMS(Tire Pressure Monitoring System, 타이어 공기압 경고장치)를 통해 공기압을 확인할 수 있습니다.
+                            <br>타이어 공기압은 자연적으로 매월 1psi 씩 빠져나가므로 매월 점검해야 한다는 사실! 잊지마세요.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="knowT2" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 2.</em> 마모된 타이어, 미끄럼 사고로 이어질 수 있습니다.</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/knowhow_tire_02.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            일반적으로 타이어 마모도 체크하면, 100원 짜리 동전을 떠올리곤 합니다.
+                            <br>그보다 더 정확한 방법으로 마모상태를 육안으로 확인할 수 있는 방법이 있습니다.
+                            <br>타이어 트레드 홈 속에 돌출된 마모한계 표시를 기준으로 이 곳과 가깝게 트레드가 닳았는지 확인하면서 마모의 정도를 판단하는 것인데요.
+                            <br>안전운전을 위해서는 마모한계선인 1.6mm를 기다리기보단 2.8mm 정도인 상태에서 여유를 두고 교체하는 것이 좋습니다.
+                            <br>마모된 타이어는 제동 거리에 직접적인 영향을 주기 때문에 미끄럼 사고를 유발할 수 있습니다.
+                            <br>손쉽게 확인할 수 있지만 미처 신경쓰지 못했던 내 타이어 마모도! 지금 바로 체크해보는 건 어떨까요?
+                        </dd>
+                    </dl>
+                </div>
+                <div id="knowT3" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 3.</em> 타이어 위치교환, 타이어의 수명을 늘립니다.</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/knowhow_tire_03.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            타이어는 앞과 뒷바퀴의 역할이 각각 다르며, 사용하는 힘이 다르기 때문에 마모 상태에도 차이가 납니다.
+                            <br>특히, FF(Front Engine Front Wheel Drive) 자동차의 경우, 앞바퀴가 구동과 조타를 함께하기 때문에 마모가 심한 데 비해 뒷바퀴는 회전만 할 뿐이므로 마모가 적습니다.
+                            <br>균일하지 못한 타이어 마모의 편차를 수정하기 위한 방법이 타이어 위치교환이며, 주행거리 약 8,000~10,000km를 기준으로 앞뒤 타이어 위치를 바꾸면 타이어 4개 마모 정도가 비슷해집니다.
+                            <br>이렇게 주기적으로 위치교환하면 타이어를 경제적으로 사용할 수 있습니다.
+                            <br>참고로 방향성 타이어는 좌우 교체가 불가능하기 때문에 같은 방향의 앞뒤 타이어만 바꿔 끼울 수 있습니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="knowT4" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 4.</em> 직진 주행 시 쓸리거나 편마모가 있다면 ‘휠 얼라인먼트’ 점검을!</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/knowhow_tire_04.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            휠 얼라인먼트는 자동차 휠의 각도 및 방향과 위치를 바르게 조정하는 것을 말합니다.
+                            <br>올바른 얼라인먼트는 최적의 조종안정성을 유지하고 타이어의 성능을 최고로 발휘시켜 줍니다.
+                            <br>보통 10,000km 또는 6개월 주기로 점검하는 것이 좋으며, 운전자의 주행 습관이나 차의 상태에 따라 주기는 달라질 수 있습니다.
+                            <br>휠 얼라인먼트가 틀어지는 경우는 주로 차량 사고 또는 방지턱을 넘는 등 서스펜션과 휠에 충격이 가해지면서 발생합니다.
+                            <br>일정 속도에서 주기적으로 핸들이 떨리는 경우, 직진 주행 시 한 방향으로 쏠리는 경우, 편마모가 발생하는 경우에는 반드시 얼라인먼트를 조정해야 합니다.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="knowT5" class="service_cont" style="display:none;">
+                    <dl class="ds01">
+                        <dt><em>Service 5.</em> 핸들의 떨림이 느껴진다면 ‘휠 밸런스’ 점검을!</dt>
+                        <dd class="img_01"><img src="https://www.tstation.com/pc-static-root/images/cscenter/knowhow_tire_05.jpg" alt="" class="brd"></dd>
+                        <dd>
+                            휠 밸런스는 납으로 만든 추를 휠에 붙여 균형을 맞추는 작업으로 휠의 무게를 같게 해주어 밸런스를 조정해 주는 것입니다.
+                            <br>휠 밸런스가 맞지 않으면 고속 주행 시 타이어가 좌우로 흔들리는 현상이 일어나 차량에 진동이 옵니다.
+                            <br>밸런스 조정을 통해 주행 시 타이어 진동을 예방하고 타이어의 불규칙한 마모를 예방합니다.
+                            <br>고속 주행 시 안정성을 위해 휠 얼라인먼트와 함께 반드시 점검하시기 바랍니다.
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- //03. knowhow 타이어 -->
+
+
+        </div>
+    </div>
+</div>

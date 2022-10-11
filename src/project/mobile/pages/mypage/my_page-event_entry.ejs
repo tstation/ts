@@ -1,0 +1,36 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트 응모내역' }) %>
+<div id="container" class="mypage">
+    <!-- 이벤트 응모내역 -->
+    <div class="event_list">
+        <div id="evtList" class="event_list">
+            <p class="nodata">이벤트 응모내역이 없습니다.</p>
+            <ol>
+                <k id="addEventList" style="display: none;">
+                </k>
+            </ol>
+        </div>
+        <ol>
+            <li>
+                <span class="img"><img src="mc-static-root/images/@thumb/event_01.jpg" alt=""></span>
+                <span class="tit">오늘 여행 가야 하는데 타이어가 말썽이다!<br>이럴때 오늘서비스!</span>
+                <span class="date">2018-10-01~2018-10-31</span>
+            </li>
+            <li>
+                <span class="win">당첨</span>
+                <span class="img"><img src="mc-static-root/images/@thumb/event_02.jpg" alt=""></span>
+                <span class="tit">티스테이션 온라인몰 단독! 아트라스 BX  런칭 기념 이벤트</span>
+                <span class="date">2018-10-01~2018-10-31</span>
+            </li>
+            <li>
+                <span class="img"><img src="mc-static-root/images/@thumb/event_03.jpg" alt=""></span>
+                <span class="tit">오늘 여행 가야 하는데 타이어가 말썽이다!<br>이럴때 오늘서비스!</span>
+                <span class="date">2018-10-01~2018-10-31</span>
+            </li>
+        </ol>
+    </div>
+    <!-- //이벤트 응모내역 -->
+</div>

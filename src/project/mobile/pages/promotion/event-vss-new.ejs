@@ -1,0 +1,105 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        힘내라 대한민국
+        <span class="date">이벤트 기간 : 22.03.01  ~ 22.03.31</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <!-- .event_detail // -->
+    <div class="event_detail">
+
+        <!-- .event-vvs-new // -->
+        <div class="event-vvs-new">
+            <div class="event-vvs-hero ak-wrap-vvs">
+                <img src="mc-static-root/images/event/20220506/bg_vvs_hero.png" alt="" />
+                <div class="hero-play-area">
+                    <!-- 20220512 // 708946766 -->
+                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/708946766?h=1e39d2331c&background=1=0&autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                    <!-- // 20220512  -->
+                </div>
+                <a href="#none" class="event-case img-map-link link-1" data-analytics-click="슈퍼스포츠의 혜택은 달라야 하니까"><span class="blind">슈퍼스포츠의 혜택은 달라야 하니까</span></a>
+                <a href="#none" class="event-case img-map-link link-2" data-analytics-click="누구보다 자신 있으니까!"><span class="blind">누구보다 자신 있으니까!</span></a>
+            </div>
+            <div class="event-vvs-content button-offset-point">
+                <img src="mc-static-root/images/event/20220506/bg_vvs_content1.png" alt="" />
+                <!-- 해당상품 상세 링크 -->
+                <a href="#none" class="img-map-link link-3" data-analytics-click="벤투스 슈퍼 스포츠 상세보기"><span class="blind">벤투스 슈퍼 스포츠</span></a>
+                <!-- 해당상품 상세 링크 -->
+                <a href="#none" class="img-map-link link-4" data-analytics-click="벤투스 슈퍼 스포츠 올시즌 상세보기"><span class="blind">벤투스 슈퍼 스포츠 올시즌</span></a>
+            </div>
+            <div class="fixed-button-area">
+                <div class="fixed-button-wrap">
+                    <!-- 상품검색 팝업 -->
+                    <button type="button" class="btn-item btn-neutral full-w pd-h-1u">
+                        <span class="label-txt">온라인에서 바로구매</span>
+                    </button>
+                    <!-- 매장예약 링크 -->
+                    <!-- 20220512 // -->
+                    <a href="/store/locals" class="btn-item btn-neutral full-w pd-h-1u">
+                        <span class="label-txt">매장예약/현장결제</span>
+                    </a>
+                    <!-- // 20220512 -->
+                </div>
+            </div>
+            <div class="event-vvs-content amt-anchor">
+                <img src="mc-static-root/images/event/20220506/bg_vvs_content2.png" alt="" />
+            </div>
+            <div class="event-vvs-content amt-anchor">
+                <img src="mc-static-root/images/event/20220506/bg_vvs_content3.png" alt="" />
+            </div>
+        </div>
+        <!-- .event-vvs-new // -->
+        
+    </div>
+    <!-- // .event_detail -->
+
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+</div>
+
+<script>
+// Anchor funciton
+function amtAnchorScroll() {
+    var shoppingTippickup = $('.ak-wrap-vvs');
+    var shoppingTippickupButton = shoppingTippickup.find('.event-case');
+    var shoppingTippickupHeight = $('.navbar').outerHeight();
+    shoppingTippickupButton.each(function(i) {
+        shoppingTippickupButton.eq(i).click(function(e) {
+            e.preventDefault();
+            var scrollpickupPostion = $('.event-vvs-new').find('.amt-anchor').eq(i).offset().top - shoppingTippickupHeight;
+            console.log(scrollpickupPostion);
+            $('html, body').animate({
+                scrollTop: scrollpickupPostion
+            }, 300)
+        })
+    })
+}
+amtAnchorScroll()
+
+// Clone button function
+var fixedButton = $('.fixed-button-wrap');
+var vssHeight = 0;
+var vssFixed = $('.button-offset-point').offset().top;
+$(window).scroll(function() {
+    vssHeight = $(document).scrollTop();
+
+    if(vssHeight > vssFixed) {
+        $('.fixed-button-wrap').addClass('footer-fixed');
+    } else {
+        $('.fixed-button-wrap').removeClass('footer-fixed');
+    }
+})
+</script>

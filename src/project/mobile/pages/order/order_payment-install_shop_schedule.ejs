@@ -1,0 +1,642 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '장착 방법 선택' }) %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <div class="order-list-wrap">
+        <!-- 장착매장 및 일정 -->
+        <div class="order-section store-require no-mg clearfix">
+            <div class="container">
+                <div class="container pd-h-5u">
+                    <h3 class="headline">1. 장착매장 및 일정</h3>
+                </div>
+                <div class="info">
+                    <!------------->
+                    <!-- 장착매장 -->
+                    <!------------->
+                    <div class="container pd-h-5u">
+
+                        <!-- 최초 장착매장 선택 전 노출 -->
+                        <div class="rowgroup">
+                            <div class="rowheader">
+                                장착매장:
+                            </div>
+                            <div class="cell button-wrap">
+                                <em>장착매장을 선택해 주세요.</em>
+                            </div>
+                        </div>
+
+                        <!-- 최초 장착매장 선택 전 노출 / 선택후 노출 안함 -->
+                        <div class="rowgroup full">
+                            <button type="button" class="dday-button btn-item btn-neutral full-w round">
+                                <span class="label-txt">장착매장 선택</span>
+                            </button>
+                        </div>
+
+                        <!-- 최초 장착매장 선택 후 노출 -->
+                        <div class="rowgroup">
+                            <div class="rowheader">
+                                장착매장:
+                            </div>
+                            <div class="cell button-wrap">
+                                <p class="txt-w500">판교점</p>
+                                <button type="button" class="btn-item cell-button btn-light-gray btn-xs round">
+                                    <span class="label-txt">다시선택</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!------------->
+                    <!-- 장착일정 -->
+                    <!------------->
+                    <div class="container pd-h-5u">
+                        <!-- 최초 장착일 선택 전 노출 -->
+                        <div class="rowgroup">
+                            <div class="rowheader">
+                                장착일정:
+                            </div>
+                            <div class="cell button-wrap">
+                                <em>장착일을 선택해 주세요.</em>
+                            </div>
+                        </div>
+
+                        <!-- 최초 장착일 선택 전 노출 / 선택후 노출 안함 -->
+                        <div class="rowgroup full">
+                            <button type="button" class="dday-button btn-item btn-neutral full-w round">
+                                <span class="label-txt">장착일 선택</span>
+                            </button>
+                        </div>
+
+                        <!-- 최초 장착일 선택 전 & 달력 ui 오픈시 노출 -->
+                        <div class="rowgroup">
+                            <div class="rowheader">
+                                장착일정:
+                            </div>
+                            <div class="cell button-wrap">
+                                <em>장착일을 선택해 주세요.</em>
+                                <button type="button" class="btn-item cell-button btn-neutral btn-xs btn-ol round">
+                                    <span class="label-txt">취소</span>
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <!-- 장착일 선택 후 노출 -->
+                        <div class="rowgroup">
+                            <div class="rowheader">
+                                장착일정:
+                            </div>
+                            <div class="cell button-wrap">
+                                <em>2020년 10월 15일 11:00</em>
+                                <button type="button" class="btn-item cell-button btn-light-gray btn-xs round">
+                                    <span class="label-txt">다시선택</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 최초 장착일 선택 후 & 달력 ui 오픈시 노출 -->
+                        <div class="rowgroup">
+                            <div class="rowheader">
+                                장착일정:
+                            </div>
+                            <div class="cell button-wrap">
+                                <em>2020년 10월 15일 11:00</em>
+                                <button type="button" class="btn-item cell-button btn-neutral btn-xs btn-ol round">
+                                    <span class="label-txt">취소</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 달력 ui -->
+                    <div class="container store-calendar clearfix">
+                        <!-- 날짜 선택시 해당 월로 변경 -->
+                        <div class="month">10월</div>
+                        <div class="swiper-container date-inner">
+                            <ul class="date-list swiper-wrapper">
+                                <!-- 옵션 클래스 - 오늘:'today' / 비활성:'date-disable' / 선택:'on' -->
+                                <li class="swiper-slide today date-disable">
+                                    <span class="date-week">수</span>
+                                    <span class="date-num">25</span>
+                                </li>
+                                <li class="swiper-slide date-disable">
+                                    <span class="date-week">목</span>
+                                    <span class="date-num">26</span>
+                                </li>
+                                <li class="swiper-slide date-disable">
+                                    <span class="date-week">금</span>
+                                    <span class="date-num">27</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">토</span>
+                                    <span class="date-num">28</span>
+                                </li>
+                                <li class="swiper-slide on">
+                                    <span class="date-week">일</span>
+                                    <span class="date-num">29</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">월</span>
+                                    <span class="date-num">30</span>
+                                </li>
+
+                                <li class="swiper-slide">
+                                    <span class="date-week">화</span>
+                                    <span class="date-num">1</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">수</span>
+                                    <span class="date-num">2</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">목</span>
+                                    <span class="date-num">3</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">금</span>
+                                    <span class="date-num">4</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">토</span>
+                                    <span class="date-num">5</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">일</span>
+                                    <span class="date-num">6</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">월</span>
+                                    <span class="date-num">7</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">화</span>
+                                    <span class="date-num">8</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">수</span>
+                                    <span class="date-num">9</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">목</span>
+                                    <span class="date-num">10</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">금</span>
+                                    <span class="date-num">11</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">토</span>
+                                    <span class="date-num">12</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">일</span>
+                                    <span class="date-num">13</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">월</span>
+                                    <span class="date-num">14</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">화</span>
+                                    <span class="date-num">15</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">수</span>
+                                    <span class="date-num">16</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">목</span>
+                                    <span class="date-num">17</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">금</span>
+                                    <span class="date-num">18</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">토</span>
+                                    <span class="date-num">19</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">일</span>
+                                    <span class="date-num">20</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">월</span>
+                                    <span class="date-num">21</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">화</span>
+                                    <span class="date-num">22</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">수</span>
+                                    <span class="date-num">23</span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="date-week">목</span>
+                                    <span class="date-num">24</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 날짜 스와이퍼 js -->
+                        <script>
+                            var dateSwiper = new Swiper('.date-inner', {
+                                init: false,
+                                initialSlide: 0,
+                                spaceBetween: 4,
+                                slidesPerView: 'auto',
+                            });
+
+                            dateSwiper.init();
+
+                            $(window).on('resize', function () {
+                                dateSwiper.init();
+                            });
+                        </script>
+
+                        <div class="timecheck-wrap">
+                            <label class="time-item">
+                                <!-- 예약 가능 시간 input disabled 해제 -->
+                                <input type="radio" name="timeradio" disabled />
+                                <span class="label-txt">09:00</span>
+                            </label>
+                            <label class="time-item">
+                                <input type="radio" name="timeradio" />
+                                <span class="label-txt">10:00</span>
+                            </label>
+                            <label class="time-item">
+                                <input type="radio" name="timeradio" disabled />
+                                <span class="label-txt">11:00</span>
+                            </label>
+                            <label class="time-item">
+                                <input type="radio" name="timeradio" />
+                                <span class="label-txt">13:00</span>
+                            </label>
+                            <label class="time-item">
+                                <input type="radio" name="timeradio" disabled />
+                                <span class="label-txt">14:00</span>
+                            </label>
+                            <label class="time-item">
+                                <input type="radio" name="timeradio" />
+                                <span class="label-txt">15:00</span>
+                            </label>
+                            <label class="time-item">
+                                <input type="radio" name="timeradio" />
+                                <span class="label-txt">16:00</span>
+                            </label>
+                            <label class="time-item">
+                                <input type="radio" name="timeradio" disabled />
+                                <span class="label-txt">17:00</span>
+                            </label>
+                        </div>
+                        <div class="reserve-wrap">
+                            <span class="active-reserve">예약가능</span>
+                            <span class="disabled-reserve">예약불가</span>
+                        </div>
+                        <div class="store-calendar-button">
+                            <!-- 선택값 변경이 있을 경우 diabled 해제 -->
+                            <button type="button" class="btn-item btn-neutral round" disabled>
+                                <span class="label-txt">선택완료</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 방문 방법 -->
+        <div class="order-section store-visit mg-t-3u">
+            <div class="container">
+                <h3 class="headline">2. 방문 방법</h3>
+                <div class="info">
+                    <div class="rowgroup full">
+                        <div class="container pd-b-1u clearfix">
+                            <button type="button" class="btn-item btn-primary btn-xs btn-inv filet bg-transparent no-pd float-r" onclick="alert('스마트 픽업 안내 팝업 오픈');">
+                                <span class="label-txt txt-12">스마트 픽업이 뭐죠?</span>
+                                <span class="line-icons info-circle size-16 txt-neutral1"></span>
+                            </button>
+                        </div>
+
+                        <ul class="list-size-equal">
+                            <li class="pd-r-1u">
+                                <label class="radio-item btn-type btn-ol size-l full-w">
+                                    <!-- 선택 값은 radio버튼 checked로 추출 -->
+                                    <input type="radio" name="store_visit_radio" checked/>
+                                    <div class="labelling full-w">
+                                        <span class="label-txt">직접방문하기</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="pd-l-1u">
+                                <label class="radio-item btn-type btn-ol size-l full-w">
+                                    <!-- 비회원일경우 disabled -->
+                                    <input type="radio" name="store_visit_radio"/>
+                                    <div class="labelling full-w">
+                                        <span class="label-txt">스마트 픽업</span>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+
+                        <!-- 스마트 픽업 선택시 노출 -->
+                        <!-- case: 입력모드-0개 선택시 -->
+                        <div class="rowgroup mg-t-4u">
+                            <div class="rowheader">
+                                선택서비스:
+                            </div>
+                            <div class="cell button-wrap">
+                                <p class="txt-w500">
+                                    <!-- 주소 선택이 완료된 항목의 span은 'txt-neutral1'클래스로 변경 -->
+                                    <span class="txt-neutral3">픽업</span>
+                                    <span class="mg-h-1u">/</span>
+                                    <span class="txt-neutral3">딜리버리</span>
+                                </p>
+
+                                <!-- 최초 노출 안함 / 선택완료 후 노출 -->
+                                <!-- <button type="button" class="btn-item cell-button btn-light-gray btn-xs round">
+                                    <span class="label-txt">다시선택</span>
+                                </button> -->
+
+                                <!-- 최초 노출 안함 / 다시선택 버튼을 눌러 재수정 모드로 돌입시 노출 -->
+                                <!-- <button type="button" class="btn-item cell-button btn-neutral btn-xs btn-ol round">
+                                    <span class="label-txt">취소</span>
+                                </button> -->
+                            </div>
+                        </div>
+
+                        <div class="container border-t border-light">
+                            <!-- 입력모드는 smart-pickup-place에 'edit-mode'클래스 추가 -->
+                            <dl class="list-size-full smart-pickup-place edit-mode">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">픽업</h4>
+                                    <button type="button" class="btn-item btn-primary btn-xs btn-inv filet bg-transparent no-pd float-r" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-12">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </button>
+                                </dt>
+                                <dd onclick="alert('주소 검색 팝업 오픈');">
+                                    <p class="line-20 txt-14 txt-center">픽업 위치 선택</p>
+                                </dd>
+                            </dl>
+
+                            <!-- 최초 노출 안함 / 픽업 or 딜리버리 둘중 한개가 선택된 상태에만 노출 / 화살표 방향 분기 'arrow-down','arrow-up' -->
+                            <!-- <div class="container txt-center mg-t-5u smart-pickup-same-place">
+                                <hr class="dp-block full-w"/>
+                                <button type="button" class="btn-item btn-gray btn-ol btn-s round">
+                                    <span class="label-txt txt-12">픽업 & 딜리버리 장소 동일</span>
+                                    <span class="line-icons arrow-down size-16"></span>
+                                </button>
+                            </div> -->
+
+                            <!-- 입력모드는 smart-pickup-place에 'edit-mode'클래스 추가 -->
+                            <dl class="list-size-full smart-pickup-place edit-mode">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">딜리버리</h4>
+                                    <button type="button" class="btn-item btn-primary btn-xs btn-inv filet bg-transparent no-pd float-r" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-12">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </button>
+                                </dt>
+                                <dd onclick="alert('주소 검색 팝업 오픈');">
+                                    <p class="line-20 txt-14 txt-center">딜리버리 위치 선택</p>
+                                </dd>
+                            </dl>
+
+                            <!-- 선택값 변경이 있을 경우 diabled 해제 -->
+                            <button type="button" class="btn-item btn-neutral half-w round dp-block mg-t-4u mg-h-auto" disabled>
+                                <span class="label-txt txt-14">선택완료</span>
+                            </button>
+                        </div>
+
+                        <!-- case: 입력모드-1개 선택시 -->
+                        <div class="rowgroup mg-t-4u">
+                            <div class="rowheader">
+                                선택서비스:
+                            </div>
+                            <div class="cell button-wrap">
+                                <p class="txt-w500">
+                                    <!-- 주소 선택이 완료된 항목의 span은 'txt-neutral1'클래스로 변경 -->
+                                    <span class="txt-neutral3">픽업</span>
+                                    <span class="mg-h-1u">/</span>
+                                    <span class="txt-neutral3">딜리버리</span>
+                                </p>
+
+                                <!-- 최초 노출 안함 / 선택완료 후 노출 -->
+                                <!-- <button type="button" class="btn-item cell-button btn-light-gray btn-xs round">
+                                    <span class="label-txt">다시선택</span>
+                                </button> -->
+
+                                <!-- 최초 노출 안함 / 다시선택 버튼을 눌러 재수정 모드로 돌입시 노출 -->
+                                <!-- <button type="button" class="btn-item cell-button btn-neutral btn-xs btn-ol round">
+                                    <span class="label-txt">취소</span>
+                                </button> -->
+                            </div>
+                        </div>
+
+                        <div class="container border-t border-light">
+                            <!-- 입력모드는 smart-pickup-place에 'edit-mode'클래스 추가 -->
+                            <dl class="list-size-full smart-pickup-place edit-mode">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">픽업</h4>
+                                    <button type="button" class="btn-item btn-primary btn-xs btn-inv filet bg-transparent no-pd float-r" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-12">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </button>
+                                </dt>
+                                <dd onclick="alert('주소 검색 팝업 오픈');">
+                                    <p class="line-20 txt-14 txt-center">픽업 위치 선택</p>
+                                </dd>
+                            </dl>
+
+                            <!-- 픽업/딜리버리 모두 주소 입력이 되면 노출 안함 -->
+                            <div class="container txt-center mg-t-5u smart-pickup-same-place">
+                                <hr class="dp-block full-w"/>
+                                <button type="button" class="btn-item btn-gray btn-ol btn-s round">
+                                    <span class="label-txt txt-12">픽업 & 딜리버리 장소 동일</span>
+                                    <!-- 화살표 방향 분기: 'arrow-up'/'arrow-down' -->
+                                    <span class="line-icons arrow-up size-16"></span>
+                                </button>
+                            </div>
+
+                            <!-- 입력모드는 smart-pickup-place에 'edit-mode'클래스 추가 -->
+                            <dl class="list-size-full smart-pickup-place edit-mode">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">딜리버리</h4>
+                                    <button type="button" class="btn-item btn-primary btn-xs btn-inv filet bg-transparent no-pd float-r" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-12">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </button>
+                                </dt>
+                                <dd onclick="alert('주소 검색 팝업 오픈');">
+                                    <p class="line-20 txt-12">경기도 성남시 중원구 성남대로 1148번길</p>
+                                </dd>
+                            </dl>
+
+                            <!-- 선택값 변경이 있을 경우 diabled 해제 -->
+                            <button type="button" class="btn-item btn-neutral half-w round dp-block mg-t-4u mg-h-auto">
+                                <span class="label-txt txt-14">선택완료</span>
+                            </button>
+                        </div>
+
+                        <!-- case: 입력완료 -->
+                        <div class="rowgroup mg-t-4u">
+                            <div class="rowheader">
+                                선택서비스:
+                            </div>
+                            <div class="cell button-wrap">
+                                <p class="txt-w500">
+                                    <!-- 주소 선택이 완료된 항목의 span은 'txt-neutral1'클래스로 변경 -->
+                                    <span class="txt-neutral1">픽업</span>
+                                    <span class="mg-h-1u">/</span>
+                                    <span class="txt-neutral3">딜리버리</span>
+                                </p>
+
+                                <!-- 선택 완료된 후 노출 -->
+                                <button type="button" class="btn-item cell-button btn-light-gray btn-xs round">
+                                    <span class="label-txt">다시선택</span>
+                                </button>
+
+                                <!-- 다시선택 버튼을 눌러 재수정 모드로 돌입시 노출 -->
+                                <!-- <button type="button" class="btn-item cell-button btn-neutral btn-xs btn-ol round">
+                                    <span class="label-txt">취소</span>
+                                </button> -->
+                            </div>
+                        </div>
+                        <div class="container border-t border-light">
+                            <!-- 입력완료시 smart-pickup-place에 'edit-mode'클래스 제거 -->
+                            <dl class="list-size-full smart-pickup-place">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">픽업</h4>
+                                </dt>
+                                <dd>
+                                    <p class="line-20 txt-12">경기도 성남시 중원구 성남대로 1148번길</p>
+                                </dd>
+                            </dl>
+                            <!-- 입력완료시 smart-pickup-place에 'edit-mode'클래스 제거 -->
+                            <dl class="list-size-full smart-pickup-place">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">딜리버리</h4>
+                                </dt>
+                                <dd>
+                                    <p class="line-20 txt-12 txt-center txt-neutral3">딜리버리 서비스를 선택하지 않았습니다.</p>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <!-- case: 재입력모드 -->
+                        <div class="rowgroup mg-t-4u">
+                            <div class="rowheader">
+                                선택서비스:
+                            </div>
+                            <div class="cell button-wrap">
+                                <p class="txt-w500">
+                                    <!-- 주소 선택이 완료된 항목의 span은 'txt-neutral1'클래스로 변경 -->
+                                    <span class="txt-neutral1">픽업</span>
+                                    <span class="mg-h-1u">/</span>
+                                    <span class="txt-neutral3">딜리버리</span>
+                                </p>
+
+                                <!-- 최초 노출 안함 / 선택완료 후 노출 -->
+                                <!-- <button type="button" class="btn-item cell-button btn-light-gray btn-xs round">
+                                    <span class="label-txt">다시선택</span>
+                                </button> -->
+
+                                <!-- 최초 노출 안함 / 다시선택 버튼을 눌러 재수정 모드로 돌입시 노출 -->
+                                <button type="button" class="btn-item cell-button btn-neutral btn-xs btn-ol round">
+                                    <span class="label-txt">취소</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="container border-t border-light">
+                            <!-- 입력모드는 smart-pickup-place에 'edit-mode'클래스 추가 -->
+                            <dl class="list-size-full smart-pickup-place edit-mode">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">픽업</h4>
+                                    <button type="button" class="btn-item btn-primary btn-xs btn-inv filet bg-transparent no-pd float-r" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-12">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </button>
+                                </dt>
+                                <dd onclick="alert('주소 검색 팝업 오픈');">
+                                    <p class="line-20 txt-12">경기도 성남시 중원구 성남대로 1148번길</p>
+                                </dd>
+                            </dl>
+
+                            <!-- 픽업/딜리버리 모두 주소 입력이 되면 노출 안함 -->
+                            <div class="container txt-center mg-t-5u smart-pickup-same-place">
+                                <hr class="dp-block full-w"/>
+                                <button type="button" class="btn-item btn-gray btn-ol btn-s round">
+                                    <span class="label-txt txt-12">픽업 & 딜리버리 장소 동일</span>
+                                    <!-- 화살표 방향 분기: 'arrow-up'/'arrow-down' -->
+                                    <span class="line-icons arrow-down size-16"></span>
+                                </button>
+                            </div>
+
+                            <!-- 입력모드는 smart-pickup-place에 'edit-mode'클래스 추가 -->
+                            <dl class="list-size-full smart-pickup-place edit-mode">
+                                <dt class="clearfix">
+                                    <h4 class="float-l mg-r-2u">딜리버리</h4>
+                                    <button type="button" class="btn-item btn-primary btn-xs btn-inv filet bg-transparent no-pd float-r" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-12">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </button>
+                                </dt>
+                                <dd onclick="alert('주소 검색 팝업 오픈');">
+                                    <p class="line-20 txt-14 txt-center">딜리버리 위치 선택</p>
+                                </dd>
+                            </dl>
+
+                            <!-- 선택값 변경이 있을 경우 diabled 해제 -->
+                            <button type="button" class="btn-item btn-neutral half-w round dp-block mg-t-4u mg-h-auto">
+                                <span class="label-txt txt-14">선택완료</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- summary -->
+        <div class="order-section pd-h-4u pd-v-5u mg-t-3u">
+            <div class="container bg-light1 bg-filet-4 pd-h-4u pd-v-3u">
+                <table class="pd-medium">
+                    <colgroup>
+                        <col style="width:80px;"/>
+                        <col/>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th class="txt-left">장착매장</th>
+                        <td class="txt-right txt-w500">장착매장을 선택해 주세요</td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-left">장착일정</th>
+                        <td class="txt-right txt-w500">장착일정을을 선택해 주세요</td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-left">픽업</th>
+                        <td class="txt-right txt-w500">선택 안함</td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-left">딜리버리</th>
+                        <td class="txt-right txt-w500">선택 안함</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 장착매장, 일정, 방문방법 모두 선택 완료시 disabled 해제 -->
+            <button type="button" class="btn-item btn-neutral full-w round mg-t-4u" disabled>
+                <span class="label-txt txt-14">상품 검색하러 가기</span>
+            </button>
+        </div>
+    </div>
+</main>

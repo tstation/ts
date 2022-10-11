@@ -1,0 +1,251 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '검색 프로세스 팝업 모음' }) %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+
+    <div class="container pd-h-5u">
+        <section>
+            <script>
+                var popupTemplate = {
+                    confirmRequireLogin: '<p class="txt-center">로그인 후, 차량번호 조회가 가능합니다.</p>',
+                    confirmTireSize: '<div class="txt-center pd-h-4u mg-b-4u">\n' +
+                      '    <h3 class="txt-w500 mg-b-2u">타이어 옆면의 숫자조합을 확인해 주세요.</h3>\n' +
+                      '    <p>같은 차종이라도 등급에 따라 타이어 사이즈가 다른 경우가 있으니 장착할 차량의 타이어를 직접 보고 사이즈를 확인해주세요.</p>\n' +
+                      '</div>\n' +
+                      '<div class="image-container">\n' +
+                      '    <img src="mc-static-root/images/common/how_to_check_tire_size.png" alt="타이어 사이즈 확인법">\n' +
+                      '</div>',
+                    alertNotMatchCarNumberOwner: 
+                    `<!-- 20220504 // -->
+                        <p class="txt-center pd-t-4u txt-16">
+                            <span class="line-icons error-circle size-48 txt-neutral3 mg-b-2u"></span><br>
+                            차량번호 또는 소유주명이 일치하지 않습니다.
+                        </p>
+                        
+                        <div class="container bg-light1 border-all bg-filet-4 pd-h-4u pd-v-3u mg-t-6u txt-13">
+                            <p class="txt-neutral2 txt-narrow"><em class="txt-primary txt-narrow">*</em> 공동명의 차량의 경우: 대표 소유주명을 입력하거나, 차량등록증에 기입된 값을 정확히 입력해 주세요.<br>
+                            &nbsp;&nbsp;&nbsp;- ex) 홍길동외1인(이순신)<br>
+                            &nbsp;&nbsp;&nbsp;- ex) 홍길동 외1(이순신)<br> 
+                            &nbsp;&nbsp;&nbsp;- ex) 홍길동, 이순신<br> 
+                            </p>                                    
+                            <p class="txt-neutral2 mg-t-4u txt-narrow"><em class="txt-primary">*</em> 렌트/리스 차량의 경우: 해당 업체의 정확한 회사명(캐피탈명)을 소유주명에 입력해 주세요.<br>
+                            &nbsp;&nbsp;&nbsp;- ex) 메르세데츠벤츠파이낸셜서비스코리아(주)<br>
+                            &nbsp;&nbsp;&nbsp;- ex) 비엠더블유파이낸셜서비스코리아(주)<br>
+                            &nbsp;&nbsp;&nbsp;- ex) 폭스바겐파이낸셜서비스코리아(주)<br>
+                            &nbsp;&nbsp;&nbsp;- ex) 캐이비캐피탈(주)<br>
+                            &nbsp;&nbsp;&nbsp;- ex) 롯데렌탈 (주), 롯데렌탈(주), 롯데렌탈주식회사,<br> 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;롯데렌탈 주식회사
+                            </p>
+                            <p class="txt-primary mg-t-3u txt-narrower icon-word-copy"><span class="line-icons arrow-right bg-bullet size-16"></span> 업체 또는 소유주명의 정확한 띄어쓰기(또는 붙여쓰기)를 지켜 입력해주세요.</p>
+                        </div>
+                        <!-- // 20220504 -->
+                    `,
+                    confirmFamilyRequest: '<div class="searching-car-view not-register-bx">\n' +
+                      '    <div class="image-area">\n' +
+                      '        <div class="img-holder" style="background-image:url(\'mc-static-root/images/common/mycar_sample01.png\');"></div>\n' +
+                      '        <span class="line-icons error-circle size-48"></span>\n' +
+                      '    </div>\n' +
+                      '    <div class="txt-info">\n' +
+                      '        <p class="number-alt">차량번호 <strong>\'07더3307\'</strong>은<br>이미 다른 회원님께 등록되어 있습니다.</p>\n' +
+                      '        <p>\n' +
+                      '            내 차량으로 등록하시려면 기등록 회원님께<br>차량 공유 요청에 대한 동의를 받아야 합니다.\n' +
+                      '            <em>차량 공유 요청을 보내시겠습니까?</em>\n' +
+                      '        </p>\n' +
+                      '    </div>\n' +
+                      '</div>',
+                    tireGuide: '<div class="image-container">\n' +
+                      '    <img src="mc-static-root/images/common/tire-guide-on-card.png" alt="타이어 속성 성능 안내">\n' +
+                      '</div>\n' +
+                      '<table class="tire-guide-table mg-t-4u">\n' +
+                      '    <colgroup>\n' +
+                      '        <col style="width: 20%;" />\n' +
+                      '        <col style="width: 80%;" />\n' +
+                      '    </colgroup>\n' +
+                      '    <tr>\n' +
+                      '        <th class="txt-neutral1 txt-14 txt-w500">차종</th>\n' +
+                      '        <td class="txt-neutral2 txt-12">타이어를 장착할 수 있는 차량의 종류를 말하며 <span class="txt-neutral1 txt-w500">승용차, SUV, VAN/소형트럭, 전기차</span> 전용으로 구분합니다.</td>\n' +
+                      '    </tr>\n' +
+                      '    <tr>\n' +
+                      '        <th class="txt-neutral1 txt-14 txt-w500">계절<br />속성</th>\n' +
+                      '        <td class="txt-neutral2 txt-12">\n' +
+                      '            <ul>\n' +
+                      '                <li class="mg-b-3u">\n' +
+                      '                    <span class="txt-neutral1 txt-w500">여름</span> | 눈이 오지 않는 시기(봄, 여름, 가을)에 사용하는 타이어로서 고속주행에 따른 소음 및 승차감, 조종 안정성에 초점을 맞춘 타이어\n' +
+                      '                </li>\n' +
+                      '                <li class="mg-b-3u">\n' +
+                      '                    <span class="txt-neutral1 txt-w500">겨울</span> | 겨울철 눈길에서의 주행성능을 최대한 발휘할 수 있도록, 구동력과 옆미끄럼 방지의 장점을 가진 특정 패턴이 적용된 타이어\n' +
+                      '                </li>\n' +
+                      '                <li>\n' +
+                      '                    <span class="txt-neutral1 txt-w500">사계절</span> | 여름용과 겨울용 타이어를 교체하는 어려움을 해소하기 위하여 가로형 얇은선을 여름용 타이어 보다 더 많이 설계한 타이어\n' +
+                      '                </li>\n' +
+                      '            </ul>\n' +
+                      '        </td>\n' +
+                      '    </tr>\n' +
+                      '    <tr>\n' +
+                      '        <th class="txt-neutral1 txt-14 txt-w500">특수<br />성능</th>\n' +
+                      '        <td class="txt-neutral2 txt-12">\n' +
+                      '            <ul>\n' +
+                      '                <li class="mg-b-3u">\n' +
+                      '                    <span class="txt-neutral1 txt-w500">런플랫</span> | 주행 중 손상에 의해 타이어 내의 공기압이 제로가 되어도 80KM/H의 속도로 일정거리 이상 주행이 가능한 타이어\n' +
+                      '                </li>\n' +
+                      '                <li class="mg-b-3u">\n' +
+                      '                    <span class="txt-neutral1 txt-w500">흡음재</span> | 일반 타이어 대비 주행 성능을 유지하며 흡음 패드를 타이어 내부에 부착, 공명음을 흡수함으로써 주행 소음을 감소시킨 타이어\n' +
+                      '                </li>\n' +
+                      '                <li class="mg-b-3u">\n' +
+                      '                    <span class="txt-neutral1 txt-w500">실란트</span> | 날카로운 이물질이 타이어의 트레드(접지면)를 관통했을 때 타이어 자체적으로 손상 부위를 봉합하여 공기 누출 없이 정상주행 가능한 타이어\n' +
+                      '                </li>\n' +
+                      '                <li class="mg-b-3u">\n' +
+                      '                    <span class="txt-neutral1 txt-w500">오프로드</span> | 거친 비포장 도로에 최적화된 타이어\n' +
+                      '                </li>\n' +
+                      '                <li>\n' +
+                      '                    <span class="txt-neutral1 txt-w500">온/오프로드</span> | 오프로드 타이어의 특성을 유지하면서 도심주행에도 만족할 수 있도록 설계된 타이어\n' +
+                      '                </li>\n' +
+                      '            </ul>\n' +
+                      '        </td>\n' +
+                      '    </tr>\n' +
+                      '</table>'
+                }
+            </script>
+            <script>
+                var callPopup = {
+                    confirmRequireLogin: function () {
+                        $.Tstation.popup().open({
+                            ref: 'confirm-tire-size',
+                            title: '',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: popupTemplate.confirmRequireLogin, // 팝업을 바로 띄우고 싶을때
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 8,
+                                vertical: 8,
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            modalAction: {
+                                isNoBoundary: false,
+                                buttons: [
+                                    {
+                                        label: '취소',
+                                        negative: true,
+                                        action: '$.Tstation.popup().close(\'\')'
+                                    },
+                                    {
+                                        label: '로그인',
+                                        negative: false,
+                                        action: 'window.location.href=\'\'' // 따옴표 주의
+                                    }
+                                ]
+                            }
+                        })
+                    },
+                    confirmTireSize: function () {
+                        $.Tstation.popup().open({
+                            ref: 'confirm-tire-size',
+                            title: '내 차 타이어 사이즈 확인방법',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: popupTemplate.confirmTireSize, // 팝업을 바로 띄우고 싶을때
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 0,
+                                vertical: 0,
+                                top: 6,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            full: false, // Full Popup
+                        })
+                    },
+                    alertNotMatchCarNumberOwner: function () {
+                        $.Tstation.popup().open({
+                            ref: 'alert-not-match-car-number-owner',
+                            title: '',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: popupTemplate.alertNotMatchCarNumberOwner, // 팝업을 바로 띄우고 싶을때
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 4,
+                                vertical: 8,
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            modalSize: 'SMALL',
+                            full: false, // Full Popup,
+                            modalAction: {
+                                isNoBoundary: true,
+                                buttons: [
+                                    {
+                                        label: '확인',
+                                        negative: false,
+                                        action: '$.Tstation.popup().close()'
+                                    }
+                                ]
+                            }
+                        })
+                    },
+                    confirmFamilyRequest: function () {
+                        $.Tstation.popup().open({
+                            ref: 'confirm-family-request',
+                            title: '내 차량 등록 불가 안내',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: popupTemplate.confirmFamilyRequest, // 팝업을 바로 띄우고 싶을때
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 8,
+                                vertical: 8,
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            modalAction: {
+                                isNoBoundary: false,
+                                buttons: [
+                                    {
+                                        label: '상품조회',
+                                        negative: true,
+                                        action: 'alert(\'상품조회 메서드 호출\')'
+                                    },
+                                    {
+                                        label: '차량 공유 요청',
+                                        negative: false,
+                                        action: 'alert(\'차량 공유 요청 메서드 호출\')' // 따옴표 주의
+                                    }
+                                ]
+                            }
+                        })
+                    }
+                }
+            </script>
+            <ul>
+                <li class="mg-b-4u">
+                    <button type="button" class="btn-item btn-s full-w btn-neutral" onclick="callPopup.confirmRequireLogin();">
+                        <span class="label-txt">로그인 후, 차량번호 조회가 가능합니다.</span>
+                    </button>
+                </li>
+                <li class="mg-b-4u">
+                    <button type="button" class="btn-item btn-s full-w btn-neutral" onclick="callPopup.alertNotMatchCarNumberOwner();">
+                        <span class="label-txt">차량번호 또는 소유주명이 일치하지 않습니다.</span>
+                    </button>
+                </li>
+                <li class="mg-b-4u">
+                    <button type="button" class="btn-item btn-s full-w btn-neutral" onclick="callPopup.confirmTireSize();">
+                        <span class="label-txt">내 차 타이어 사이즈 확인방법</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn-item btn-s full-w btn-neutral" onclick="callPopup.confirmFamilyRequest();">
+                        <span class="label-txt">차량번호 07더3307은 이미 다른 회원님께 등록되어 있습니다.</span>
+                    </button>
+                </li>
+            </ul>
+        </section>
+    </div>
+</main>

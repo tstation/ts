@@ -1,0 +1,41 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '차량 공유 요청' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section><!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container">
+                <div class="process-step-bx">
+                    <ul>
+                        <li class="check-end">
+                            <i></i>
+                            <span>요청하기</span>
+                        </li>
+                        <li class="on">
+                            <i></i>
+                            <span>요청완료</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="request-member-send-bx">
+                    <div class="member-send-masage">홍**님께 차량 공유 요청을 보냈습니다.</div>
+                    <i></i>
+                    <p class="member-send-info">
+                        <em>차량 공유 요청은 24시간동안 유효</em>하며, 유효시간 경과 후 다시<br>
+                        요청해야 합니다. <em>홍＊*님</em>께서 차량 공유 요청에 동의하시면<br>
+                        해당차량은 회원님의 <em>내 차량으로 자동 등록</em>되며 기존·신규<br>
+                        서비스이력을 확인하실 수 있습니다.<br>
+                        다만, <strong>거절 시 내 차량으로 등록되지 않습니다.</strong>
+                    </p>
+                    <button type="button" class="btn-item btn-neutral full-w round mg-t-2u">
+                        <span class="label-txt">확인</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

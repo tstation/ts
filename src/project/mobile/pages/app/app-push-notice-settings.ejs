@@ -1,0 +1,277 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '설정' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+<main id="main">
+    <div class="tab-item">
+        <a href="" class="">계정관리</a>
+        <a href="" class="on">알림설정</a>
+        <a href="" class="">버전정보</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container app-settings-page">        
+
+        <section class="notice-setting-section">
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <!-- 20211109 // -->
+                        <p class="row-header-copy txt-14">푸시 알림</p>
+                        <p class="row-subheader-copy txt-11 txt-neutral2 pd-r-3u mg-t-1u">티스테이션으로부터 정보성 푸시 알림을 받습니다. 
+                            동의하지 않으시는 경우 서비스 이용은 가능하나, 주문/결제 등
+                            서비스 이용에 필요한 알림 수신을 받지 못하실 수 있습니다.​</p>
+                        <!-- // 20211109 -->
+                    </div>
+                    <div class="cell">
+                        <!-- 20211109 // -->
+                        <button 
+                            type="button" 
+                            class="btn-item btn-primary btn-xxs btn-ol txt-w700 round"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: `
+                                <div>
+                                    <p class='txt-12 txt-neutral2 txt-center'>\푸시알림 설정 변경은 기기 설정 > 알림 > 티스테이션 > 에서 알림을 설정해 주세요.</p>
+                                </div>
+                                `, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '닫기',
+                                            negative: true,
+                                            action: function () {
+                                                window.location.href = ''
+                                            }
+                                        },
+                                        {
+                                            label: '설정',
+                                            negative: false,
+                                            action: function () {
+                                                $.Tstation.popup().close()
+                                            }
+                                        }
+                                    ]
+                                }
+                            })"
+                        >
+                            <span class="label-txt txt-11">ON</span>
+                        </button>
+                        <!-- // 20211109 -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rowheader">
+                        <!-- 20211109 // -->
+                        <p class="row-header-copy txt-14">푸시 알림</p>
+                        <p class="row-subheader-copy txt-11 txt-neutral2 pd-r-3u  mg-t-1u">티스테이션으로부터 정보성 푸시 알림을 받습니다. 
+                            동의하지 않으시는 경우 서비스 이용은 가능하나, 주문/결제 등
+                            서비스 이용에 필요한 알림 수신을 받지 못하실 수 있습니다.​</p>
+                        <!-- // 20211109 -->
+                    </div>
+                    <div class="cell">
+                        <!-- 20211109 // -->
+                        <button 
+                            type="button" 
+                            class="btn-item btn-gray btn-xxs btn-ol txt-w700 round"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: `
+                                <div>
+                                    <p class='txt-12 txt-neutral2 txt-center'>\푸시알림 설정 변경은 기기 설정 > 알림 > 티스테이션 > 에서 알림을 설정해 주세요.</p>
+                                </div>
+                                `, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '닫기',
+                                            negative: true,
+                                            action: function () {
+                                                window.location.href = ''
+                                            }
+                                        },
+                                        {
+                                            label: '설정',
+                                            negative: false,
+                                            action: function () {
+                                                $.Tstation.popup().close()
+                                            }
+                                        }
+                                    ]
+                                }
+                            })"
+                        >
+                            <span class="label-txt txt-11 txt-neutral4 txt-w500">OFF</span>
+                        </button>
+                        <!-- // 20211109 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice-module-setting-section">
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <!-- 20211109 // -->
+                        <p class="row-header-copy txt-14">혜택정보 푸시 수신동의</p>
+                        <p class="row-subheader-copy txt-11 txt-neutral2 mg-t-2u">이벤트/프로모션/점검&교체 알림 등 <br />
+                            다양한 혜택정보 알림을 받습니다. (선택)</p>
+                        <!-- // 20211109 -->
+                    </div>
+                    <div class="cell">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="benefitPushChecked" />
+                            <div class="switch-track">
+                                <div class="switch">
+                                    <div class="switch-handle"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- 20211109 // -->
+            <div class="legal-copy-wrap pd-v-2u pd-h-2u bg-light2 mg-h-5u mg-t-5u">
+                <span class="line-icons txt-primary error-circle size-16"></span>
+                <p class="txt-11 pd-l-6u">푸시알림을 받으려면 기기의 설정 > 알림에서 ‘티스테이션’앱 알림을 허용해 주세요.</p>
+            </div>
+            <!-- // 20211109 -->
+        </section>
+    </div>
+</main>
+
+<!-- 20211109 // -->
+<script>
+var benefitInput = $('#benefitPushChecked');
+
+benefitInput.on('click', function(){
+    if ( $(this).prop('checked') ) { 
+        benefitPushFunction.benefitPushAgree();
+    } else { 
+        benefitPushFunction.benefitPushDenial();
+    }; 
+});
+
+var benefitPushFunction = {
+    benefitPushAgree: function () {
+        $.Tstation.popup().open({
+            ref: 'modal-ref-1',
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: `
+            <div>
+                <p class='txt-14 txt-center'>혜택정보 푸시 수신여부가<br /> 수신거부 상태로 변경되었습니다.</p>
+                <p class='txt-12 mg-t-4u txt-neutral2 txt-center'>(2011년 01월 01일)</p>
+            </div>
+            `, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 8,
+                vertical: 8,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: false, // Full Popup
+            onOpen: function () {
+                console.log('팝업이 열리면 파이어 합니다.')
+            },
+            onClose: function () {
+                console.log('팝업이 닫히면 파이어 합니다.')
+            },
+            modalAction: {
+                isNoBoundary: false,
+                buttons: [
+                    {
+                        label: '확인',
+                        negative: false,
+                        action: function () {
+                            $.Tstation.popup().close()
+                        }
+                    }
+                ]
+            }
+        })
+    },
+    benefitPushDenial: function () {
+        $.Tstation.popup().open({
+            ref: 'modal-ref-2',
+            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+            contents: `
+            <div>
+                <p class='txt-14 txt-center'>혜택정보 푸시 수신여부가<br /> 수신거부 상태로 변경되었습니다.</p>
+                <p class='txt-12 mg-t-4u txt-neutral2 txt-center'>(2011년 01월 01일)</p>
+            </div>
+            `, // 팝업을 바로 띄우고 싶을때
+            dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                horizon: 8,
+                vertical: 8,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            full: false, // Full Popup
+            onOpen: function () {
+                console.log('팝업이 열리면 파이어 합니다.')
+            },
+            onClose: function () {
+                console.log('팝업이 닫히면 파이어 합니다.')
+            },
+            modalAction: {
+                isNoBoundary: false,
+                buttons: [
+                    {
+                        label: '확인',
+                        negative: false,
+                        action: function () {
+                            $.Tstation.popup().close()
+                        }
+                    }
+                ]
+            }
+        })
+    }
+}
+</script>
+<!-- // 20211109 -->

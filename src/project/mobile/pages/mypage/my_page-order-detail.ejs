@@ -1,0 +1,282 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '주문내역상세' }) %>
+
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/mypage.css" />
+<div id="container" class="mypage">
+    <div class="order_detail">
+        <input type="hidden" id="sysPopUp" name="sysPopUp" value="false">
+        <input type="hidden" id="sysPopUpAlert" name="sysPopUpAlert" value="">
+        <div class="order_info">
+            <span class="date">2020-09-14</span>
+            <span class="order_no">
+                    주문번호 <i>O202009140077700</i>
+                <span class="smart-pay-badge">
+                    <img src="mc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이">
+                </span>
+            </span>
+
+            <!-- 배송서비스 정보 -->
+            <ol class="info">
+                <!-- 20210720 // -->
+                <li><span class="tit">방문방법</span>
+                    픽업 / 딜리버리
+                    <button type="button" class="btn-item btn-neutral btn-transparent btn-xs round mg-l-2u">
+                        <span class="label-txt txt-13 txt-primary">이력 보기</span>
+                        <span class="line-icons chev-right size-20 txt-primary"></span>
+                    </button>
+                </li>
+                <li><span class="tit">매장명</span>방배점</li>
+                <li><span class="tit">매장방문일</span> 2020-09-15(화) / 16시</li>
+                <!-- // 20210720 -->
+            </ol>
+            <!-- // 배송서비스 정보 -->
+            <ol class="pickup">
+                <li class=""><span class="tit">픽업 위치</span> 경기도 성남시 분당구 판교동 637</li>
+                <li class="point"><span class="tit">(주문완료)</span> 이동거리 : 0.97km</li>
+                <!-- 취소시 .cancel 추가 -->
+                <li class="cancel"><span class="tit">딜리버리 위치</span> 경기도 성남시 분당구 판교동 637</li>
+                <li class="cancel point"><span class="tit">(주문완료)</span> 이동거리 : 0.97km</li>
+            </ol>
+
+            <div id="changeDete" class="time_find off">
+				<div class="btn">
+					<button class="btnM3 btnS01" id="btn_svc_cancel">서비스 취소</button>
+					<button class="btnM3 btnS02 changeDate">일정변경</button>
+				</div>
+				<div class="day" style="display: block">
+					<input title="일 입력" type="text" id="vstRsvDt" class="ip_txt01 w100p" data-id="datepickBox3"
+						data-rel="datepickBox" data-toggle="datepicker" readonly
+						placeholder="장착일 선택" />
+				</div>
+				<div class="datepickBox" id="datepickBox3" style="display: block">
+                    <!-- Example picker -->
+                    <div class="datepickBox3"><div class="datepicker-container datepicker-inline"><div class="datepicker-panel datepicker-hide" data-view="years picker"><ul><li data-view="years prev">‹</li><li data-view="years current"></li><li data-view="years next">›</li></ul><ul data-view="years"></ul></div><div class="datepicker-panel datepicker-hide" data-view="months picker"><ul><li data-view="year prev">‹</li><li data-view="year current"></li><li data-view="year next">›</li></ul><ul data-view="months"></ul></div><div class="datepicker-panel" data-view="days picker"><ul><li data-view="month prev" class="disabled">‹</li><li data-view="month current" class="disabled">2021년 9월</li><li data-view="month next" class="disabled">›</li></ul><ul data-view="week"><li class="" data-view="">일</li><li class="" data-view="">월</li><li class="" data-view="">화</li><li class="" data-view="">수</li><li class="" data-view="">목</li><li class="" data-view="">금</li><li class="" data-view="">토</li></ul><ul class="dayslist" data-view="days"><li class="muted disabled" data-view="day prev">29</li><li class="muted disabled" data-view="day prev">30</li><li class="muted highlighted disabled" data-view="day prev">31</li><li class="disabled" data-view="day disabled">1</li><li class="disabled" data-view="day disabled">2</li><li class="picked" data-view="day picked">3</li><li class="" data-view="day">4</li><li class="disabled" data-view="day disabled">5</li><li class="" data-view="day">6</li><li class="" data-view="day">7</li><li class="" data-view="day">8</li><li class="" data-view="day">9</li><li class="" data-view="day">10</li><li class="" data-view="day">11</li><li class="disabled" data-view="day disabled">12</li><li class="" data-view="day">13</li><li class="" data-view="day">14</li><li class="" data-view="day">15</li><li class="" data-view="day">16</li><li class="" data-view="day">17</li><li class="" data-view="day">18</li><li class="disabled" data-view="day disabled">19</li><li class="" data-view="day">20</li><li class="" data-view="day">21</li><li class="" data-view="day">22</li><li class="" data-view="day">23</li><li class="" data-view="day">24</li><li class="" data-view="day">25</li><li class="disabled" data-view="day disabled">26</li><li class="" data-view="day">27</li><li class="" data-view="day">28</li><li class="" data-view="day">29</li><li class="" data-view="day">30</li><li class="muted disabled" data-view="day next">1</li><li class="muted disabled" data-view="day next">2</li><li class="muted disabled" data-view="day next">3</li><li class="muted disabled" data-view="day next">4</li><li class="muted disabled" data-view="day next">5</li><li class="muted disabled" data-view="day next">6</li><li class="muted disabled" data-view="day next">7</li><li class="muted disabled" data-view="day next">8</li><li class="muted disabled" data-view="day next">9</li></ul></div></div></div>
+					<div id="areaVstRsvTime" class="time">
+						<ol>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS09" value="09" /><label class="btnS2" for="TimeS09">09시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS10" value="10" /><label class="btnS2" for="TimeS10">10시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS11" value="11" /><label class="btnS2" for="TimeS11">11시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS12" value="12" /><label class="btnS2" for="TimeS12">12시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS13" value="13" /><label class="btnS2" for="TimeS13">13시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS14" value="14" /><label class="btnS2" for="TimeS14">14시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS15" value="15" /><label class="btnS2" for="TimeS15">15시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS06" value="16" /><label class="btnS2" for="TimeS06">16시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS17" value="17" /><label class="btnS2" for="TimeS17">17시</label></li>
+							<li ><input type="radio" class="btnS2" name="TimeS" id="TimeS18" value="18" /><label class="btnS2" for="TimeS18">18시</label></li>
+						</ol>
+					</div>
+                    <script>
+                        // common : datePick 
+		$('[data-toggle="datepicker"]').click(function () {
+			$(this).dateToggleClick();
+		});
+		
+		        </script>
+					<div class="btn">
+						<button class="btnM3 btnS02 selectDate">선택 완료</button>
+					</div>
+					<div class="time" id="sf_areaVstRsvTime">
+						<p class="txt">장착일은 구매 후 최대 2회까지 변경 가능합니다.</p>
+					</div>
+				</div> 
+			</div> 
+        </div>           
+        <!-- // 배송서비스 정보 -->
+
+        <!-- 주문 상품 정보 -->
+        <div class="order_info2">
+            <h6>상품정보</h6>
+            <ol class="unit">
+
+                <li><span class="status"> <em>주문접수</em>
+
+						</span>
+                    <dl class="unit02">
+                        <dt>
+                            <a href="https://mlocal.tstation.com/auto-service/product/null?ptrnCd=E0018&amp;goodsMdclCd=06&amp;movePath=pattern" data-ap-product="{'name':'모빌 1 ESP FORMULA - 5W30','id':'G000000323808','price':158000,'brand':'HK','category':'엔진오일','variant':'','product_rating_customer':'0.0'}">
+                                <img src="https://m.tstation.com/upload/goods/250/10/0000/0031/G00000031841701ko.jpg" id="goodsImg" class="unitImg" alt="모빌 1 ESP FORMULA - 5W30">
+                            </a>
+                            <span class="flag_02 item">
+                                    <em class="brandLogo logoHK">HANKOOK</em>
+                                </span>
+                        </dt>
+                        <dd class="info"><a href="https://mlocal.tstation.com/auto-service/product/null?ptrnCd=E0018&amp;goodsMdclCd=06&amp;movePath=pattern" data-ap-product="{'name':'모빌 1 ESP FORMULA - 5W30','id':'G000000323808','price':158000,'brand':'HK','category':'엔진오일','variant':'','product_rating_customer':'0.0'}"><span class="unitT1">모빌 1 ESP FORMULA - 5W30</span><span class="unitT3"></span><span class="flag_05"><em></em></span></a>
+
+                            <span class="unitP2"> <em>126,400</em>원 <em class="no"><i>1</i>개</em>
+								</span>
+                        </dd>
+                    </dl>
+                    <!-- 상품 쿠폰 정보 -->
+
+                    <div class="coupon">엔진오일 20% 할인쿠폰 할인 쿠폰적용</div>
+
+                    <input type="hidden" name="ordPrgsStatCd" value="10">
+                </li>
+
+            </ol>
+        </div>
+        <!-- // 주문 상품 정보 -->
+
+        <!-- 사은품 정보 -->
+
+        <!-- // 사은품 정보 -->
+
+        <!-- 결제 정보 -->
+        <div class="order_info2">
+            <h6>결제정보</h6>
+            <ol class="form">
+                <li><span class="tit">총 상품금액</span>+ <em>158,000</em>원</li>
+
+                <li><span class="tit">총 할인금액</span>- <em>31,600</em>원</li>
+
+                <!-- 할인내역 세부사항 -->
+                <li class="sub"><span class="tit">상품쿠폰 할인</span> <em>31,600</em>원</li>
+
+                <li class="sub"><span class="tit">결제쿠폰 할인</span> <em>0</em>원</li>
+
+                <!-- // 할인내역 세부사항 -->
+                <!-- TODO: 총 공임비 > 공임비 -->
+                <li><span class="tit">공임비</span>+ <em>0</em>원</li>
+                <li class="dot"><span class="tit">딜리버리 배송비</span>+ <em>10,000</em>원</li>
+                <li class="sub"><span class="tit">상품쿠폰 할인</span> <em>31,600</em>원</li>
+
+
+
+
+                <!-- 배송 서비스 -->
+
+
+
+                <!-- // 배송 서비스 -->
+
+                <!-- 결제수단 -->
+                <li class="dot"><span class="tit">결제수단</span>
+
+
+
+
+
+                    무통장입금 / 신한은행
+
+
+                    <!-- 결제완료일 -->
+
+                    <!-- // 결제완료일 -->
+                    <!-- // 결제수단 -->
+
+                    <!-- 무통장입금인 경우 -->
+
+                </li><li class="dot store">입금 계좌 정보</li>
+                <li><span class="tit">입금은행</span>신한은행</li>
+                <li><span class="tit">입금계좌</span>08800000007182</li>
+                <li><span class="tit">입금기한</span>
+
+
+
+                    2020-09-15 24:00까지
+
+
+
+                </li>
+
+                <!-- // 무통장입금인 경우 -->
+
+                <li class="dot total">
+                    <span class="tit">결제금액</span>
+                    <em>126,400<small>원</small></em>
+                </li>
+                <li class="order-sheet-smart-pay mg-t-1u">
+                    <div class="tit txt-left">
+                        <p class="txt-0">
+                            <span class="txt-16 txt-w500 v-middle mg-r-1u">월 납입금액</span>
+                            <!--<span class="smart-pay-badge v-middle">
+                                &lt;!&ndash;<img src="mc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이">&ndash;&gt;
+                                <img src="mc-static-root/images/common/smart_pay_logo_symbol.svg" title="스마트페이">
+                            </span>-->
+                            <img class="dp-inblock v-middle" src="mc-static-root/images/common/smart_pay_logo_symbol.svg" title="스마트페이" style="width: 24px; height: 24px;">
+                        </p>
+                    </div>
+                    <span class="txt-primary txt-20">10,534<small>원</small></span>
+                    <span>/ 12개월</span>
+                </li>
+            </ol>
+            <!-- 매장 결제인 경우 -->
+
+            <!-- //매장 결제인 경우 -->
+        </div>
+        <!-- // 결제 정보 -->
+
+        <!-- 주문 고객 정보 -->
+        <div class="order_info2">
+            <h6>주문고객정보</h6>
+            <ol class="form">
+
+                <li><span class="tit">이름</span>이광휘</li>
+
+
+                <li><span class="tit">연락처</span>010-6336-6250</li>
+
+
+                <li><span class="tit">이메일</span>lkhno2@naver.com</li>
+
+            </ol>
+        </div>
+        <!-- // 주문 고객 정보 -->
+
+        <!-- 방문 고객 정보 -->
+
+        <!-- // 방문 고객 정보 -->
+
+        <!-- 차량 정보 -->
+        <div class="order_info2">
+            <h6>장착차량정보</h6>
+            <ol class="form">
+                <!-- 202012 pub fixed // -->
+                <li><span class="tit">자동차 브랜드</span>기아</li>
+                <li><span class="tit">차종</span>쏘렌토</li>
+                <li><span class="tit">세부 차종</span>올 뉴 쏘렌토</li>
+                <li><span class="tit">연료</span>디젤</li>
+                <li><span class="tit">모델 연도</span>2017</li>
+                <li><span class="tit">세부 모델</span>노블레스 스페셜</li>
+                <li><span class="tit">타이어 사이즈</span>235/55R19</li>
+                <li><span class="tit">차량번호</span>12가1234</li>
+                <!-- // 202012 pub fixed -->
+            </ol>
+        </div>
+        <!-- // 차량 정보 -->
+
+        <!-- 고객 메모 -->
+        <div class="order_info2">
+            <h6>추가 요청 메시지</h6>
+            <p class="txt01">휠얼라인먼트를 받으려고 합니다. 주행 시 떨림 현상이 있습니다.</p>
+        </div>
+        <!-- // 고객 메모 -->
+
+        <!-- 환불 정보 -->
+
+        <!-- // 환불 정보 -->
+
+        <!-- button -->
+        <div class="btn02">
+
+
+
+            <ul id="btn_cancel_area">
+                <li><a href="#" id="btn_ord_cancel" class="btnB btnS01">주문 취소</a></li>
+                <li><a href="#" id="btn_list" class="btnB btnS02">목록으로</a></li>
+
+
+                <form id="inputForm" method="post" action="https://mlocal.tstation.com/mypage/tstation/order-history/cancel/O202009140077700">
+                    <input type="hidden" name="ordGoodsSctCd">
+                </form>
+            </ul>
+
+
+
+        </div>
+        <!-- //button -->
+    </div>
+</div>

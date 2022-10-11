@@ -1,0 +1,58 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '차량 공유 요청' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section><!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container">
+                <div class="process-step-bx">
+                    <ul>
+                        <li class="on">
+                            <i></i>
+                            <span>요청하기</span>
+                        </li>
+                        <li>
+                            <i></i>
+                            <span>요청완료</span>
+                        </li>
+                    </ul>
+                </div>
+                <dl class="tstation-member-managing">
+                    <dt><strong>[07더 3307]</strong> 차량을 관리중인 티스테이션 회원</dt>
+                    <dd>
+                        <div class="member-info">
+                            <span class="txt-12">회원명</span>
+                            <strong>홍 * *</strong>
+                        </div>
+                        <div class="member-info">
+                            <span class="txt-12">전화번호</span>
+                            <strong>010 - 1 1* * - * * 27</strong>
+                        </div>
+                    </dd>
+                </dl>
+                <div class="member-share-info">
+                    <p>관리를 공유하기 위해서는 <strong>대상 회원님의 동의가<br>필요하며</strong>, 차량 공유 요청 시 홍**님의 휴대폰으로<br>문자메시지가 발송됩니다.</p>
+                    <div class="btn">
+                        <button type="button" class="btn-item btn-neutral btn-ol round">
+                            <span class="label-txt">취소</span>
+                        </button>
+                        <button type="button" class="btn-item btn-neutral round">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="car-share-info-bx">
+                    <i></i>
+                    <p>
+                        <strong>가족·동료와 함께 차량을 관리하고 있다면</strong>
+                        <span>차량 공유 요청을 통해 이미 차량을 등록하고 계신 회원님과<br>차량의 서비스이력을 공유하여 보다 정확한 디지털 이력관리를<br>받으실 수 있습니다.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

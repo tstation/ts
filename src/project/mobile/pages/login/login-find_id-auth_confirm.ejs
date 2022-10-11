@@ -1,0 +1,27 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="pageTitle2">
+    <h3>인증번호 입력</h3>
+</div>
+<div id="container" class="member">
+    <form id="authForm" method="POST">
+        <div class="login_01">
+            <ol class="login_form">
+                <li>
+                    <input type="tel" class="ip_txt01 w100p numeric" id="authVal" name="authVal" maxlength="6" placeholder="인증번호" />
+                </li>
+            </ol>
+            <div class="btn">
+                <button type="button" id="btnAuthConfirm" class="btnB btnS02">인증번호 확인</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="customer_01">
+        <span class="txt01">티스테이션 고객센터</span>
+        <span class="txt02">080-022-8272</span>
+        <span class="txt03">월~금 09:00 ~ 16:00 / 주말 및 공휴일 휴무</span>
+    </div>
+</div>

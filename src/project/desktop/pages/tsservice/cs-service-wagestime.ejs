@@ -1,0 +1,222 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- 01. page title -->
+            <div class="page_tit mg-b-8u">
+                <h4>T'Station 표준 정비시간</h4> 
+            </div>
+
+            <!-- 03. 공임비 : 정비시간 -->
+            <div class="tbl_cs2r">(단위 : 시간 / 1.0 = 1시간)</div>
+            <div class="tbl_cs2">
+                <table summary="표준 정비시간 내용">
+                    <colgroup>
+                        <col style="width:140px;">
+                        <col style="width:160px;">
+                        <col style="width:100px;"><col style="width:100px;"><col style="width:100px;">
+                        <col style="width:*;"><col style="width:*;"><col style="width:*;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th colspan="2" rowspan="2">항목</th>
+                        <th colspan="3">승용차</th>
+                        <th>승합차</th>
+                        <th colspan="2">화물차</th>
+                    </tr>
+                    <tr>
+                        <td>1,000CC 이하</td>
+                        <td>2,000CC 미만</td>
+                        <td>2,000CC 이상</td>
+                        <td>15인승 이하</td>
+                        <td>1톤 이하</td>
+                        <td>1톤 이상</td>
+                    </tr>
+                    </thead>
+                    <tbody class="th_left">
+                    <tr>
+                        <th rowspan="6" class="gray">타이어</th>
+                        <th>장착(1개)</th>
+                        <td>0.6</td>
+                        <td>0.7</td>
+                        <td>0.7</td>
+                        <td>0.7</td>
+                        <td>0.7</td>
+                        <td>1.1</td>
+                    </tr>
+                    <tr>
+                        <th>휠 밸런스(1개)</th>
+                        <td>0.5</td>
+                        <td>0.5</td>
+                        <td>0.6</td>
+                        <td>0.6</td>
+                        <td>0.6</td>
+                        <td>0.7</td>
+                    </tr>
+                    <tr>
+                        <th>펑크(간이식)</th>
+                        <td>0.3</td>
+                        <td>0.3</td>
+                        <td>0.3</td>
+                        <td>0.3</td>
+                        <td>0.3</td>
+                        <td>0.3</td>
+                    </tr>
+                    <tr>
+                        <th>펑크(착탈식)</th>
+                        <td>0.5</td>
+                        <td>0.5</td>
+                        <td>0.5</td>
+                        <td>0.5</td>
+                        <td>0.5</td>
+                        <td>0.5</td>
+                    </tr>
+                    <tr>
+                        <th>위치 교환(타이어 전체)</th>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                        <td>0.3</td>
+                    </tr>
+                    <tr>
+                        <th>휠 얼라인먼트</th>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">브레이크 앞패드</th>
+                        <th>교환</th>
+                        <td>1.3</td>
+                        <td>1.3</td>
+                        <td>1.3</td>
+                        <td>1.3</td>
+                        <td>1.3</td>
+                        <td>1.3</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">배터리</th>
+                        <th>교환</th>
+                        <td>0.4</td>
+                        <td>0.3</td>
+                        <td>0.4</td>
+                        <td>0.5</td>
+                        <td>0.5</td>
+                        <td>0.6</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2" class="gray">엔진 오일</th>
+                        <th>교환</th>
+                        <td>0.7</td>
+                        <td>0.9</td>
+                        <td>0.9</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <th>교환(디젤)</th>
+                        <td>0.6</td>
+                        <td>0.7</td>
+                        <td>0.7</td>
+                        <td>0.7</td>
+                        <td>0.7</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">브레이크 오일</th>
+                        <th>교환</th>
+                        <td>1.2</td>
+                        <td>1.2</td>
+                        <td>1.2</td>
+                        <td>1.3</td>
+                        <td>1.3</td>
+                        <td>1.3</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">오토미션 오일</th>
+                        <th>교환</th>
+                        <td>2.2</td>
+                        <td>2.2</td>
+                        <td>2.2</td>
+                        <td>2.2</td>
+                        <td>2.2</td>
+                        <td>2.2</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">부동액</th>
+                        <th>교환</th>
+                        <td>1.9</td>
+                        <td>1.9</td>
+                        <td>1.9</td>
+                        <td>1.9</td>
+                        <td>1.9</td>
+                        <td>1.9</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">팬벨트</th>
+                        <th>교환</th>
+                        <td>0.4</td>
+                        <td>0.4</td>
+                        <td>0.6</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">실내 필터</th>
+                        <th>교환</th>
+                        <td>0.4</td>
+                        <td>0.4</td>
+                        <td>0.5</td>
+                        <td>0.6</td>
+                        <td>0.5</td>
+                        <td>0.4</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">에어컨 가스</th>
+                        <th>완충</th>
+                        <td>1.3</td>
+                        <td>1.5</td>
+                        <td>1.5</td>
+                        <td>1.6</td>
+                        <td>1.3</td>
+                        <td>1.4</td>
+                    </tr>
+                    <tr>
+                        <th class="gray">와이퍼</th>
+                        <th>교환</th>
+                        <td>0.1</td>
+                        <td>0.1</td>
+                        <td>0.1</td>
+                        <td>0.2</td>
+                        <td>0.2</td>
+                        <td>0.2</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="notice_03">
+                <ol>
+                    <li>위 표의 표준 정비 시간은 작업별 평균 정비 시간으로 제작사 모델별로 상이할 수 있습니다.</li>
+                    <li>표준 정비 시간은 수입 자동차 및 차종의 형식, 구조, 차량의 노후 상태에 따라 가감될 수 있습니다.</li>
+                    <li>표준 정비 시간은 장비의 사용 여부와 작업의 난이도에 따라 가감될 수 있습니다.</li>
+                    <li>표준 정비 시간은 자동차 정비사업체 단체인 ‘한국자동차전문정비사업조합연합회’에 따른 것입니다.</li>
+                </ol>
+            </div>
+            <!-- //03. 공임비 : 정비시간 -->
+
+
+
+        </div>
+    </div>
+</div>

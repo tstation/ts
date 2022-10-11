@@ -1,0 +1,43 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="event">
+    <div id="contents">
+        <!-- 01. page title -->
+        <div class="page_tit">
+            <h4>이벤트</h4>
+        </div>
+        <!-- //01. page title -->
+        <!-- 02. 제목 -->
+        <div class="event_tit">
+            내 차에 맞는 행사 상품선택
+            <span class="date">이벤트 기간 : 20.09.18  ~ 20.10.17</span>
+        </div>
+        <input type="hidden" id="evtUrlAddr" value="">
+        <input type="hidden" id="endEvtDisp" value="">
+        <input type="hidden" id="isEvtDispBf" value="">
+
+        <!-- //02. 제목  -->
+        <!-- 03. 이벤트 상세  -->
+        <div class="event_list">
+            <div id="inner">
+                <div class="event-detail-wrap">
+                    <div class="center-inner">
+                        
+                        <link type="text/css" rel="stylesheet" href="pc-static-root/css/event.css" /><!-- NEW CSS ADD -->
+                        <%- locals.widget ('src/project/desktop/pages/promotion/includes/popup-tire-check.ejs') %> 
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="btn01">
+                <a href="https://www.tstation.com/promotion/event-list" class="btnM2 btnS02">목록으로</a>
+            </div>
+        </div>
+        <!-- //03. 이벤트 상세  -->
+
+        <!-- #contents -->
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<%
+let { list = [] } = locals.entry;
+if (!list.length) { return 'No icons yet :(('; }
+-%>
+<ul class="grid-wrapper grid-5 gap-quart icons-list">
+    <% list.forEach(item => { -%>
+    <li onclick="$proto.iconCopyToClipboard(event)">
+        <div class="icon-box">
+            <span class="line-icons <%- item.icon %> size-24"></span>
+        </div>
+        <p class="icon-label"><span><%- item.icon %></span></p>
+    </li>
+    <% }); -%>
+</ul>

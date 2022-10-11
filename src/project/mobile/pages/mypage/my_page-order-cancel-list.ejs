@@ -1,0 +1,298 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '주문취소내역' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/mypage.css" />
+<div id="container" class="mypage">
+    <!-- 02. 주문 리스트 -->
+    <div class="order_list">
+        <p class="nodata"><em>주문취소</em> 내역이 없습니다.</p>
+        <ol class="list">
+            <li>
+                <!-- detail -->
+                <div class="order_info">
+                    <span class="date">2018-10-19</span>
+                    <a href="#" class="status">상세보기</a><!-- 상세보기 링크 -->
+                    <a href="#" class="detail">
+                        <span class="order_no">
+                            주문번호 <i>12345689123</i>
+                        </span>
+                        <ol class="info">
+                            <!-- 20210720 // -->
+                            <li><span class="tit">방문방법</span>픽업 / 딜리버리</li>
+                            <li><span class="tit">매장명</span>방배점</li>
+                            <li><span class="tit">매장방문일</span> 2020-09-15(화) / 16시</li>
+                            <!-- // 20210720 -->
+                        </ol>
+                    </a>
+                </div>
+                <ol class="unit">
+                    <li>
+                        <span class="status"><em>주문취소</em></span>
+                        <!-- unit02 -->
+                        <dl class="unit02">
+                            <dt>
+                                <a href="#"><img src="http://download.tstation.com/DMS/prod/main/image/P100000051/2017/0324/main_194025977.jpg" class="unitImg" alt="상품명 이미지"></a>
+                                <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                            </dt>
+                            <dd class="info">
+                                <a href="#">
+										<span class="flag_04">
+										    <em class="c01">Comfort</em>
+										    <em class="c02 off">SPORT</em>
+										    <em class="c03 off">Runflat</em>
+										</span>
+                                    <span class="unitT1">
+										    <span>Ventus S Sport</span>
+                                        <!--  <small class="sub">Ventus S2 AS</small> -->
+										</span>
+                                    <span class="unitT3">245/45R18</span>
+                                    <span class="flag_05">
+										    <em>승용차</em>
+										    <em>사계절 </em>
+										    <em>BMW 공식 인증</em>
+										    <em>프리미엄</em>
+										</span>
+                                </a>
+                                <span class="unitP2">
+										<em>1,208,100</em>원
+										<em class="no"><i>10</i>개</em>
+									</span>
+                            </dd>
+                        </dl>
+                        <!-- // unit02 -->
+                    </li>
+                    <li>
+                        <span class="status"><em>주문취소</em></span>
+                        <!-- unit02 -->
+                        <dl class="unit02">
+                            <dt>
+                                <a href="#"><img src="http://download.tstation.com/DMS/prod/main/image/P100000059/2017/0324/main_193317930.jpg" class="unitImg" alt="상품명 이미지"></a>
+                                <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                            </dt>
+                            <dd class="info">
+                                <a href="#">
+										<span class="flag_04">
+										    <em class="c01">Comfort</em>
+										    <em class="c02 off">SPORT</em>
+										    <em class="c03 off">Runflat</em>
+										</span>
+                                    <span class="unitT1">
+										    <span>Ventus S Sport</span>
+										    <small class="sub">Ventus S2 AS</small>
+										</span>
+                                    <span class="unitT3">245/45R18</span>
+                                    <span class="flag_05">
+										    <em>승용차</em>
+										    <em>사계절 </em>
+										    <em>BMW 공식 인증</em>
+										    <em>프리미엄</em>
+										</span>
+                                </a>
+                                <span class="unitP2">
+										<em>1,208,100</em>원
+										<em class="no"><i>10</i>개</em>
+									</span>
+                            </dd>
+                        </dl>
+                        <!-- // unit02 -->
+                    </li>
+                </ol>
+                <!-- detail -->
+            </li>
+            <li>
+                <!-- detail -->
+                <div class="order_info">
+                    <span class="date">2018-10-19</span>
+                    <a href="#" class="status">상세보기</a><!-- 상세보기 링크 -->
+                    <a href="#" class="detail">
+							<span class="order_no">
+								<em>주문취소</em>
+								주문번호 <i>12345689123</i>
+							</span>
+                        <ol class="info">
+                            <li>찾아가는 장착</li><!-- 20210720 -->
+                            <li><span class="tit">장착위치</span>
+                                서울시 마포구
+                            </li>
+                            <li><span class="tit">장착일/시간</span>
+                                2018-10-19 / 10시 방문
+                            </li>
+                        </ol>
+                    </a>
+                </div>
+                <ol class="unit">
+                    <li>
+                        <!-- unit02 -->
+                        <dl class="unit02">
+                            <dt>
+                                <a href="#"><img src="http://download.tstation.com/DMS/prod/main/image/P100000057/2017/0327/main_210811124.jpg" class="unitImg" alt="상품명 이미지"></a>
+                                <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                            </dt>
+                            <dd class="info">
+                                <a href="#">
+										<span class="flag_04">
+										    <em class="c01">Comfort</em>
+										    <em class="c02 off">SPORT</em>
+										    <em class="c03 off">Runflat</em>
+										</span>
+                                    <span class="unitT1">
+										    <span>Ventus S Sport</span>
+										    <small class="sub">Ventus S2 AS</small>
+										</span>
+                                    <span class="unitT3">245/45R18</span>
+                                    <span class="flag_05">
+										    <em>승용차</em>
+										    <em>사계절 </em>
+										    <em>BMW 공식 인증</em>
+										    <em>프리미엄</em>
+										</span>
+                                </a>
+                                <span class="unitP2">
+										<em>1,208,100</em>원
+										<em class="no"><i>10</i>개</em>
+									</span>
+                            </dd>
+                        </dl>
+                        <!-- // unit02 -->
+                    </li>
+                    <li>
+                        <!-- unit02 -->
+                        <dl class="unit02">
+                            <dt>
+                                <a href="#"><img src="http://download.tstation.com/DMS/prod/main/image/P100000086/2017/0327/main_203721207.jpg" class="unitImg" alt="상품명 이미지"></a>
+                                <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                            </dt>
+                            <dd class="info">
+                                <a href="#">
+										<span class="flag_04">
+										    <em class="c01">Comfort</em>
+										    <em class="c02 off">SPORT</em>
+										    <em class="c03 off">Runflat</em>
+										</span>
+                                    <span class="unitT1">
+										    <span>Ventus S Sport</span>
+										    <small class="sub">Ventus S2 AS</small>
+										</span>
+                                    <span class="unitT3">245/45R18</span>
+                                    <span class="flag_05">
+										    <em>승용차</em>
+										    <em>사계절 </em>
+										    <em>BMW 공식 인증</em>
+										    <em>프리미엄</em>
+										</span>
+                                    <span class="unitP2">
+										<em>1,208,100</em>원
+										<em class="no"><i>10</i>개</em>
+									</span>
+                                </a></dd><a href="#">
+                            </a></dl><a href="#">
+                            <!-- // unit02 -->
+                        </a></li><a href="#">
+                    </a></ol><a href="#">
+                    <!-- detail -->
+                </a></li><a href="#">
+            </a><li><a href="#">
+                    <!-- detail -->
+                </a><div class="order_info"><a href="#">
+                        <span class="date">2018-10-19</span>
+                    </a><a href="#" class="status">상세보기</a><!-- 상세보기 링크 -->
+                    <a href="#" class="detail">
+							<span class="order_no">
+								<em>주문취소</em>
+								주문번호 <i>12345689123</i>
+							</span>
+                        <ol class="info">
+                            <li>매장직접방문</li><!-- 20210720 -->
+                            <li><span class="tit">장착매장</span>
+                                강남 논현점
+                            </li>
+                            <li><span class="tit">장착일/시간</span>
+                                2018-10-19 / 10시 방문
+                            </li>
+                        </ol>
+                    </a>
+                </div>
+                <ol class="unit">
+                    <li>
+                        <!-- unit02 -->
+                        <dl class="unit02">
+                            <dt>
+                                <a href="#"><img src="http://download.tstation.com/DMS/prod/main/image/P100000084/2017/0327/main_190814463.jpg" class="unitImg" alt="상품명 이미지"></a>
+                                <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                            </dt>
+                            <dd class="info">
+                                <a href="#">
+										<span class="flag_04">
+										    <em class="c01">Comfort</em>
+										    <em class="c02 off">SPORT</em>
+										    <em class="c03 off">Runflat</em>
+										</span>
+                                    <span class="unitT1">
+										    <span>Ventus S Sport</span>
+										    <small class="sub">Ventus S2 AS</small>
+										</span>
+                                    <span class="unitT3">245/45R18</span>
+                                    <span class="flag_05">
+										    <em>승용차</em>
+										    <em>사계절 </em>
+										    <em>BMW 공식 인증</em>
+										    <em>프리미엄</em>
+										</span>
+                                </a>
+                                <span class="unitP2">
+										<em>1,208,100</em>원
+										<em class="no"><i>10</i>개</em>
+									</span>
+                            </dd>
+                        </dl>
+                        <!-- // unit02 -->
+                    </li>
+                    <li>
+                        <!-- unit02 -->
+                        <dl class="unit02">
+                            <dt>
+                                <a href="#"><img src="http://download.t-station.co.kr/DMS/prod/main/image/P100000089/2017/0324/main_153747278.jpg" class="unitImg" alt="상품명 이미지"></a>
+                                <span class="flag_02"><em class="brandLogo logoHK">한국타이어</em></span>
+                                <!-- <span class="flag_03"><em>일시품절</em></span> -->
+                            </dt>
+                            <dd class="info">
+                                <a href="#">
+										<span class="flag_04">
+										    <em class="c01">Comfort</em>
+										    <em class="c02 off">SPORT</em>
+										    <em class="c03 off">Runflat</em>
+										</span>
+                                    <span class="unitT1">
+										    <span>Ventus S Sport</span>
+										    <small class="sub">Ventus S2 AS</small>
+										</span>
+                                    <span class="unitT3">245/45R18</span>
+                                    <span class="flag_05">
+										    <em>승용차</em>
+										    <em>사계절 </em>
+										    <em>BMW 공식 인증</em>
+										    <em>프리미엄</em>
+										</span>
+                                </a>
+                                <span class="unitP2">
+										<em>1,208,100</em>원
+										<em class="no"><i>10</i>개</em>
+									</span>
+                            </dd>
+                        </dl>
+                        <!-- // unit02 -->
+                    </li>
+                </ol>
+                <!-- detail -->
+            </li>
+        </ol>
+    </div>
+    <!-- //02. 주문 리스트 -->
+</div>

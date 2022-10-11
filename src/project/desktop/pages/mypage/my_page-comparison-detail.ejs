@@ -1,0 +1,229 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page_tit">
+                        <h4>상품비교내역</h4>
+                    </div>
+                    <div class="container mypage">
+                        <ol class="mylist_01">
+                            <!-- Empty -->
+                            <!--<li>
+                                <div class="nodata"><em>상품비교</em>내역이 없습니다.</div>
+                            </li>-->
+                            <li>
+                                <div class="date">2020.10.16(2건)
+                                    <button data-width="w870" data-rel="https://www.tstation.com/mypage/activity/popup/compare-goods-list?sysDispDt=2020.10.16&amp;cprGrpSeq=1741" class="more popup-scarce">비교보기</button>
+                                </div>
+                                <button type="button" class="btnM btnS03" onclick="delHistInfo('2020.10.16','1741');" name="btnClose">삭제</button>
+                                <div class="display_compare">
+                                    <ol class="mine">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="Ventus V2 AS" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                                </dt>
+                                                <dd class="info">
+							                        <span class="unitT1"><span>벤투스 컴포트</span><small class="sub">Ventus V2 AS</small></span>
+                                                    <div class="compare_wrap">
+                                                        <span class="price_compare"><em> 97,800</em>원</span>
+                                                        <span class="price_pre"><em> 114,400</em>원</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="Optimo H426" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                                </dt>
+                                                <dd class="info">
+                                                    <span class="unitT1">Optimo H426</span>
+                                                    <div class="compare_wrap">
+                                                        <span class="price_compare"><em> 84,500</em>원</span>
+                                                        <span class="price_pre"><em> 101,000</em>원</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="date">2020.10.16(2건)
+                                    <button data-width="w870" data-rel="https://www.tstation.com/mypage/activity/popup/compare-goods-list?sysDispDt=2020.10.16&amp;cprGrpSeq=1740" class="more popup-scarce">비교보기</button>
+                                </div>
+                                <button type="button" class="btnM btnS03" onclick="delHistInfo('2020.10.16','1740');" name="btnClose">삭제</button>
+                                <div class="display_compare">
+                                    <ol class="mine">
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="Optimo H426" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                                </dt>
+                                                <dd class="info">
+							                        <span class="unitT1">Optimo H426</span>
+                                                    <div class="compare_wrap">
+                                                        <span class="price_compare"><em> 84,500</em>원</span>
+                                                        <span class="price_pre"><em> 101,000</em>원</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="MICHELIN ENERGY XM2+" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoMC">Michelin Tire</em></span>
+                                                </dt>
+                                                <dd class="info">
+							                        <span class="unitT1">MICHELIN ENERGY XM2+</span>
+                                                    <div class="compare_wrap">
+                                                        <span class="price_compare"><em> 125,400</em>원</span>
+                                                        <span class="price_pre"><em> 132,000</em>원</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="layerScarcePopup" style="height: 1535px; display: block;" tabindex="0">
+    <div class="layer_box w870" data-width="w870" style="top: 102.5px;">
+        <div id="scarce_content">
+            <!-- 상품 비교  + url - full -->
+            <input type="hidden" id="goodsNoPopupStr" value="">
+            <div class="full_compare">
+                <div class="layerT"><h3>상품 비교</h3></div>
+                <div class="layerC">
+                    <!-- 비교하기 -->
+                    <div class="compare_box">
+                        <div class="tit">2개의 상품을 비교합니다.</div>
+                        <ol class="list">
+
+                            <li class="line01">
+                                <!-- unit -->
+                                <dl>
+                                    <!-- unit -->
+                                    <dt>
+                                        <a
+                                            href="https://www.tstation.com/tire/product/hk_p_a_ventus_v2_as?goodsNo=G000000325422"
+                                            data-ap-product="{'name':'Ventus V2 AS','id':'G000000325422','price':114400,'brand':'HK','category':'사계절/승용차/COMFORT/프리미엄','variant':'195/50R16','product_rating_customer':'4.6','product_rating_comfort':'92','product_rating_mileage':'86','product_rating_fast_driving':'92','product_rating_efficiency':'78'}"
+                                        >
+                                            <img src="pc-static-root/images/common/sample/tire.jpg" id="goodsImg" class="unitImg" alt="Ventus V2 AS">
+                                        </a>
+                                        <span class="flag_01"><em class="icn_rating"><i>프리<br>미엄</i></em></span>
+                                        <span class="flag_02"><em class="brandLogo logoHK">logoHANKOOK</em></span>
+                                    </dt>
+                                    <dd class="info">
+                                        <span class="unitT1"><span>벤투스 컴포트</span><small class="sub">Ventus V2 AS</small></span>
+                                        <span class="unitR1"><em class="star01 point9"><i>4.6</i></em><em class="review">(93)</em></span>
+                                        <span class="price"><em>97,800</em>원</span>
+                                        <span class="pre_price"><em>114,400</em>원</span>
+                                    </dd>
+                                </dl>
+                                <!--  타이어 비교 -->
+                                <div class="graph_box">
+							        <span>승차감<em class="r1"><i style="width:92%">92</i></em></span>
+                                    <span>연비<em class="r2"><i style="width:78%">78</i></em></span>
+                                    <span>마일리지<em class="r3"><i style="width:86%">86</i></em></span>
+                                    <span>고속주행<em class="r4"><i style="width:92%">92</i></em></span>
+                                    <span class="no-graph">속도지수<span class="float-r">200km</span></span>
+                                    <span class="no-graph">하중지수<span class="float-r">875kg</span></span>
+                                </div>
+                                <!--  배터리 -->
+                                <!--  패드 -->
+                                <!--  실내필터 -->
+                                <!--  와이퍼 -->
+                                <!--  엔진오일 -->
+                            </li>
+                            <li class="line01">
+                                <!-- unit -->
+                                <dl>
+                                    <!-- unit -->
+                                    <dt>
+                                        <a
+                                            href="https://www.tstation.com/tire/product/hk_p_a_optimo_h426?goodsNo=G000000318600"
+                                            data-ap-product="{'name':'Optimo H426','id':'G000000318600','price':101000,'brand':'HK','category':'사계절/승용차/COMFORT/스탠다드','variant':'195/50R16','product_rating_customer':'4.5','product_rating_comfort':'50','product_rating_mileage':'50','product_rating_fast_driving':'50','product_rating_efficiency':'40'}"
+                                        >
+                                            <img src="pc-static-root/images/common/sample/tire.jpg" id="goodsImg" class="unitImg" alt="Optimo H426">
+                                        </a>
+                                        <span class="flag_01"><em class="icn_rating"><i>스탠<br>다드</i></em></span>
+                                        <span class="flag_02"><em class="brandLogo logoHK">logoHANKOOK</em></span>
+                                    </dt>
+                                    <dd class="info">
+                                        <span class="unitT1">Optimo H426</span>
+                                        <span class="unitR1"><em class="star01 point9"><i>4.5</i></em><em class="review">(38)</em></span>
+                                        <span class="price"><em>84,500</em>원</span>
+                                        <span class="pre_price"><em>101,000</em>원</span>
+                                    </dd>
+                                </dl>
+                                <!--  타이어 비교 -->
+                                <div class="graph_box">
+                                    <span>승차감<em class="r1"><i style="width:50%">50</i></em></span>
+                                    <span>연비<em class="r2"><i style="width:40%">40</i></em></span>
+                                    <span>마일리지<em class="r3"><i style="width:50%">50</i></em></span>
+                                    <span>고속주행<em class="r4"><i style="width:50%">50</i></em></span>
+                                    <span class="no-graph">속도지수<span class="float-r">200km</span></span>
+                                    <span class="no-graph">하중지수<span class="float-r">875kg</span></span>
+                                </div>
+                                <!--  배터리 -->
+                                <!--  패드 -->
+                                <!--  실내필터 -->
+                                <!--  와이퍼 -->
+                                <!--  엔진오일 -->
+                            </li>
+                        </ol>
+                        <p class="info">상품의 성능은 각 제조사의 주관적인 평가로 구매 시 참고용으로 제공해 드립니다.</p>
+                    </div>
+                    <div class="btn01">
+                        <button class="btnM2 btnS02" onclick="savePrCprHist()">저장하기</button>
+                    </div>
+                    <!-- //비교하기 -->
+                </div>
+            </div>
+            <!-- //상품 비교 -->
+            <script>
+                function savePrCprHist(){
+                    if(_isLogin){
+                        var checkGoodsNo = $("#goodsNoPopupStr").val();
+                        var result = mgoods.compare.submit(checkGoodsNo);
+                        if(result){
+                            alert("상품 비교 항목을 저장하였습니다.");
+                            $('#layerScarcePopup').hide();
+                            var boxWidth = $('.layer_box').attr('data-width');
+                            $('.layer_box').attr('data-width','');
+                            $('#layerScarcePopup > div').removeClass(boxWidth);
+                            $('.layer_box').removeAttr("style");
+                            $this.focus();
+                        } else if(!result){
+                            alert("상품 비교 항목 저장에 실패했습니다.");
+                        }
+                    } else if(!_isLogin){
+                        alert("로그인이 필요합니다. 로그인 후 이용해 주시길 바랍니다.");
+                        return false;
+                    }
+                }
+            </script>
+        </div>
+        <button type="button" class="layer-scarce-close">팝업닫기</button>
+    </div>
+</div>

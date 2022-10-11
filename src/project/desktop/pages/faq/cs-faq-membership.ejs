@@ -1,0 +1,64 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- #pageTitle -->
+            <div class="page_tit">
+                <h4>FAQ <span>원하시는 답변이 없으시면, <em>1:1 고객상담 이나 고객센터</em>를  이용해 주시기 바랍니다.</span></h4>
+                <div class="btn_right"><a href="https://www.tstation.com/customer-service/qna.do" class="btnM2 btnS01">1:1 고객상담</a></div>
+            </div>
+            <!-- #pageTitle -->
+            <%- locals.widget('src/project/desktop/includes/layouts/cs/faq-search-form.ejs') %>
+            <%- locals.widget('src/project/desktop/includes/layouts/cs/faq-category.ejs', { activeIndex: 5 }) %>
+            <!-- 03.list -->
+            <div class="faq_list">
+                <p class="head">
+                    <span class="no">번호</span>
+                    <span class="part">분류</span>
+                    <span class="tit">제목</span>
+                    <span class="date">등록일</span>
+                </p>
+                <dl id="accordion">
+                    <dt class="on">
+                        <span class="no">3</span>
+                        <span class="part">멤버십</span>
+                        <span class="tit">Questions</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer on" style="display: block;">
+                        Answers
+                    </dd>
+                    <dt>
+                        <span class="no">2</span>
+                        <span class="part">멤버십</span>
+                        <span class="tit">Questions</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        Answers
+                    </dd>
+                    <dt>
+                        <span class="no">1</span>
+                        <span class="part">멤버십</span>
+                        <span class="tit">Questions</span>
+                        <span class="date">2019-03-21</span>
+                    </dt>
+                    <dd class="answer" style="display: none;">
+                        Answers
+                    </dd>
+                </dl>
+            </div>
+            <div class="paging">
+                <button type="button" class="first" onclick="goPage('1');">처음</button>
+                <button type="button" class="on" onclick="goPage('1');">1</button>
+                <button type="button" class="end" onclick="goPage('1');">맨끝</button>
+            </div>
+            <input type="hidden" id="rowsPerPage" name="rowsPerPage" value="10">
+            <!-- 03.list -->
+        </div>
+    </div>
+</div>

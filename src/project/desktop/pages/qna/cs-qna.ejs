@@ -1,0 +1,136 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <!-- #pageTitle -->
+            <div class="page_tit">
+                <h4>1:1 고객상담 <span>문의하신 내용에 대한 답변은 <em>이메일 또는 [마이페이지 &gt; 1:1 상담내역]</em>에서 확인하실 수 있습니다.</span></h4>
+            </div>
+            <!-- 1:1 고객 상담 -->
+            <div class="tbl_01 none">
+                <table>
+                    <colgroup>
+                        <col style="width:140px">
+                        <col style="">
+                    </colgroup>
+                    <form id="qnaForm" action="/customer-service/qna.do" method="post"></form>
+                    <tbody><tr class="fm">
+                        <th><em class="col03">*</em> 상담유형</th>
+                        <td>
+                            <select id="cnslSmclSeq" name="cnslSmclSeq" class="select01">
+                                <option value="">선택</option>
+
+
+                                <option value="10002">상품문의</option><option value="10006">주문/결제/배송</option><option value="10010">반품/교환/환불</option><option value="10013">제공서비스/이벤트/혜택</option><option value="10017">회원</option><option value="10019">기타</option><option value="10025">가맹점 제휴문의</option>
+
+
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="fm">
+                        <th><em class="col03">*</em> 제목</th>
+                        <td>
+                            <input id="inqTitNm" name="inqTitNm" class="ip_txt01 w100p" placeholder="제목을 입력해 주세요 (최대 100자)" type="text" value="">
+                        </td>
+                    </tr>
+                    <tr class="fm">
+                        <th><em class="col03">*</em> 이메일</th>
+                        <td><input id="emailAddr" name="emailAddr" placeholder="이메일을 입력해 주세요." class="ip_txt01 w100p" value="demonicdior@gmail.com" type="text"></td>
+                    </tr>
+                    <tr class="fm">
+                        <th><em class="col03">*</em> 상담 내용</th>
+                        <td>
+                            <textarea id="inqCont" name="inqCont" class="ip_txt01 w100p" style="height:250px;" placeholder="상담 내용을 입력해 주세요.(최대 1,000자)"></textarea>
+                        </td>
+
+
+
+
+
+
+
+                        <input type="hidden" id="fileName1" name="fileNms" value="counsel/2020/w330_product_detail-2.jpg">
+                        <input type="hidden" id="orgFileNms1" name="orgFileNms" value="w330_product_detail-2.jpg">
+                        <input type="hidden" id="fileName2" name="fileNms" value="">
+                        <input type="hidden" id="orgFileNms2" name="orgFileNms" value="">
+                        <input type="hidden" id="fileName3" name="fileNms" value="">
+                        <input type="hidden" id="orgFileNms3" name="orgFileNms" value="">
+                        <input id="cnslSeq" name="cnslSeq" type="hidden" value="">
+                    </tr>
+
+                    <tr>
+                        <th>첨부 파일</th>
+                        <td>
+                            <ol class="notice_01">
+                                <li>파일 크기는 3MB이하, JPG, PNG 또는 GIF형식의 파일만 가능합니다.</li>
+                            </ol>
+                            <!-- file -->
+                            <ul class="file">
+                                <li>
+                                    <!-- file upload -->
+                                    <form id="file-upload1" enctype="multipart/form-data" action="https://www.tstation.com/customer-service/qnaImgUploadJson.do" method="POST" encoding="multipart/form-data">
+                                        <div class="filebox preview-image">
+                                            <input value="" disabled="disabled" placeholder="파일선택" class="upload-name">
+                                            <input id="input-file1" name="uploadFile" data-href="divClassName1" class="upload-hidden" type="file" data-form-id="file-upload1" data-file-name="fileName1" data-file-org-name="orgFileNms1" data-file-order="1">
+                                            <label for="input-file1">파일 업로드</label>
+                                            <button class="fileClear fileClear1" data-url="fileUrl1" data-file-name="fileName1" data-file-org-name="fileOrgName1" type="button" style="display: inline-block;">파일 삭제</button>
+                                            <div class="fileimg divClassName1">
+                                                <div class="upload-display">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- //file upload -->
+                                </li>
+                                <li>
+                                    <!-- file upload -->
+                                    <form id="file-upload2" enctype="multipart/form-data">
+                                        <div class="filebox preview-image">
+                                            <input value="" disabled="disabled" placeholder="파일선택" class="upload-name">
+                                            <input id="input-file2" name="uploadFile" data-href="divClassName2" class="upload-hidden" type="file" data-form-id="file-upload2" data-file-name="fileName2" data-file-org-name="orgFileNms2" data-file-order="2">
+                                            <label for="input-file2">파일 업로드</label>
+                                            <button class="fileClear fileClear2" data-url="fileUrl2" data-file-name="fileName2" data-file-org-name="fileOrgName2" type="button" style="display:none">파일 삭제</button>
+                                            <div class="fileimg divClassName2">
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- //file upload -->
+                                </li>
+                                <li>
+                                    <!-- file upload -->
+                                    <form id="file-upload3" enctype="multipart/form-data">
+                                        <div class="filebox preview-image">
+                                            <input value="" disabled="disabled" placeholder="파일선택" class="upload-name">
+                                            <input id="input-file3" name="uploadFile" data-href="divClassName3" class="upload-hidden" type="file" data-form-id="file-upload3" data-file-name="fileName3" data-file-org-name="orgFileNms3" data-file-order="3">
+                                            <label for="input-file3">파일 업로드</label>
+                                            <button class="fileClear fileClear3" data-url="fileUrl3" data-file-name="fileName3" data-file-org-name="fileOrgName3" type="button" style="display:none">파일 삭제</button>
+                                            <div class="fileimg divClassName3">
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- //file upload -->
+                                </li>
+                            </ul>
+                            <!-- //file -->
+                        </td>
+                    </tr>
+                    </tbody></table>
+            </div>
+            <div class="btn01">
+                <a href="javascript:;" id="cancelCnsl" class="btnM2 btnS07">취소하기</a>
+
+                <a href="javascript:;" id="saveCnsl" class="btnM2 btnS02">문의하기</a>
+
+
+            </div>
+            <!-- //1:1 고객 상담 -->
+        </div>
+    </div>
+</div>

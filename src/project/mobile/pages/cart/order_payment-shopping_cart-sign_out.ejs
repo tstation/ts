@@ -1,0 +1,40 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '장바구니(0)' }) %>
+<main id="main">
+    <!-- 콘텐츠 영역 -->
+    <script>
+        $(document).ready(function () { $('body').addClass('bg-light1') });
+    </script>
+
+    <div class="container">
+        <section>
+            <!-- 장바구니 empty msg -->
+            <div class="empty-box txt-center pd-v-15u">
+                <div class="middler">
+                    <span class="line-icons error-circle size-48"></span>
+                    <p class="empty-msg">장바구니에 담긴 상품이 없습니다.</p>
+                </div>
+            </div>
+
+            <div class="container pd-h-5u mg-t-4u">
+                <div class="container bg-fff border-all bg-filet-4 border-light pd-h-6u pd-v-6u">
+                    <div class="container txt-center">
+                        <p class="txt-neutral1 txt-14">로그인 후, 장바구니에 보관된 상품을<br>확인하실 수 있습니다.</p>
+
+                        <button type="button" class="btn-item btn-neutral w-150 round mg-t-3u">
+                            <span class="label-txt">로그인</span>
+                        </button>
+                    </div>
+
+                    <div class="container txt-11 txt-neutral2 txt-left mg-t-5u">
+                        <p><span class="txt-primary">*</span> 비회원으로 주문하실 경우 쿠폰 및 할인 혜택을 이용하실 수 없습니다.</p>
+                        <p><span class="txt-primary">*</span> 로그인 후 장바구니를 이용하시면 상품을 장기 보관하실 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

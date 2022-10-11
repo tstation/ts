@@ -1,0 +1,793 @@
+@charset "UTF-8";
+
+/* tts-header, tts-footer 실제 운영시 삭제 // */
+#footer:not(.tts-footer),
+#header:not(.tts-header) {
+    display: none;
+}
+
+
+/*the tire shop 최근 본 상품 삭제 숨김 */  
+#skyScraper {
+    display: none;
+}
+/* // tts-header, tts-footer 실제 운영시 삭제 */
+
+#header.tts-header {
+    position: relative;
+    width: 260px;
+    height: auto;
+}
+
+#header.tts-header .tts-logo {
+    width: 208px;
+    height: 45px;
+    background-image: url(../images/thetireshop/safe-service/logo_thetireshop.png);
+    background-size: 208px auto;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+#footer.tts-footer .footer-header .logo-area img {
+    width: 134px;
+    height: 29px;
+    font-size: 0;
+}
+
+#footer.tts-footer .footer-header {
+    width: 1170px;
+    margin: auto;
+    padding: 18px 0 16px;
+    border-bottom: 1px solid rgb(160, 166, 175);
+}
+
+#footer.tts-footer .f_address {
+    padding: 16px 0 32px;
+}
+
+#footer.tts-footer .f_address .util li {
+    font-size: 12px;
+}
+
+.tts-aside-layout {
+    display: flex;
+    justify-content: space-between;
+    padding: 92px 0 0 0;
+}
+
+.tts-aside-layout > .aside-area {
+    width: 260px;
+    height: auto;
+    position: relative;
+}
+
+.tts-aside-layout > .cont-area {
+    width: 870px;
+    height: auto;
+    position: relative;
+    overflow: visible;
+}
+
+.tts-aside-layout > .cont-area .page_tit {
+    display: inline-block;
+    width: auto;
+    height: 40px;
+    color: #2a3138;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+.tts-safeservice-group .safeservice-landing-page .herocopy-section {
+    float: left; 
+    width: 438px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .herocopy-section .headcopp {
+    position: relative;
+    padding-left: 32px;
+    font-size: 20px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .herocopy-section .headcopp.icon-safeservice::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 25px;
+    height: 24px;
+    margin-top: -12px;
+    background-image: url(../images/thetireshop/safe-service/icon_safeservice.png);
+    background-size: 23px 18px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.tts-safeservice-group .safeservice-landing-page .herocopy-section .explan-list {
+    margin-top: 16px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .herocopy-section .explan-list li {
+    margin-bottom: 8px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .herocopy-section .explan-list .bul-icon {
+    position: relative;
+    padding-left: 10px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .herocopy-section .explan-list .bul-icon::before {
+    content: '\b7\a0';
+    position: absolute;
+    left: 0px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section {
+    float: left;
+    width: 420px;
+    height: 175px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .cta-list {
+    display: flex;
+    justify-content: center;
+    padding: 28px 0;
+    border-radius: 8px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .cta-list > li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .cta-list > li > a {
+     display: block;
+     padding: 12px 0 8px;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .cta-list > li::after {
+    content: "";
+    width: 1px;
+    background-color: rgb(217, 219, 220);
+    position: absolute;
+    right: .5px;
+    top: 0;
+    bottom: 0;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .cta-list > li:last-child::after {
+    display: none;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .cta-list > li .icon-link {
+    overflow: hidden;
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    border-radius: 32px;
+    background-repeat: no-repeat;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .cta-list > li .text-label {
+    display: block;
+    padding: 0 8px;
+}
+
+
+.tts-safeservice-group .weight-divider::before  {
+    content: "";
+    display: block;
+    height: 8px;
+    background-color: rgb(236, 238, 239);
+}
+
+.tts-safeservice-group .weight-divider-block  {
+    display: block;
+    height: 8px;
+    background-color: rgb(236, 238, 239);
+}
+
+.tts-safeservice-group .subscription-section .section-headline.underline {
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .subscription-list-section .rowgroup {
+    margin-top: 16px;
+    padding: 16px 20px 24px 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgb(217, 219, 220);
+}
+
+ .tts-safeservice-group .rowgroup.safe-confrim-rowgroup {
+    width: 580px;
+    margin: auto;
+}
+
+ .tts-safeservice-group .rowgroup.safe-confrim-rowgroup .button-wrap {
+    padding-left: 100px;
+}
+
+.tts-safeservice-group .form-control label {
+    font-size: 14px;
+}
+
+.tts-safeservice-group .subscription-list-section .rowgroup .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.tts-safeservice-group .subscription-list-section .row .label-txt {
+    font-size: 14px;
+}
+
+.tts-safeservice-group .subscription-list-section .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tts-safeservice-group .subscription-result-empty .icon-subscription-empty {
+    overflow: hidden;
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url(../images/thetireshop/safe-service/icon-safeservice-empyt.png);
+    background-size: 48px auto;
+}
+
+.tts-safeservice-group .noti-section .section-headline {
+    line-height: 49px;
+}
+
+.tts-safeservice-group .noti-section .explan-list .bul-icon {
+    position: relative;
+    padding-left: 8px;
+}
+
+.tts-safeservice-group .noti-section .explan-list .bul-icon::before {
+    content: '\b7\a0';
+    position: absolute;
+    left: 0px;
+}
+
+.tts-safeservice-group .noti-rowgroup .explan-list .bul-icon {
+    position: relative;
+    padding-left: 8px;
+}
+
+.tts-safeservice-group .noti-rowgroup .explan-list .bul-icon::before {
+    content: '\b7\a0';
+    position: absolute;
+    left: 0px;
+}
+
+/* global css */
+.tts-safeservice-group .flex-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.tts-safeservice-group .flex-list .flex-1 {
+    flex: 1;
+}
+
+.tts-safeservice-group .flex-list .auto-flex {
+    flex: auto;
+}
+
+.tts-safeservice-group .join-result-page .join-result-empty .icon-subscription-empty {
+    color: rgb(192, 198, 206);
+}
+
+.tts-safeservice-group .join-result-page .join-number-section .section-headline {
+    line-height: 49px;
+}
+
+.tts-safeservice-group .join-result-page .label-wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.tts-safeservice-group .join-result-page .label-wrap .label-txt {
+    line-height: 30px;
+}
+
+.tts-safeservice-group .join-result-page .label-wrap .label-info {
+    position: relative;
+    line-height: 30px;
+}
+
+.tts-safeservice-group .join-result-page .label-wrap .label-info::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    background-color: rgb(217, 219, 220);
+    transform: translateY(-50%);
+}
+
+.tts-safeservice-group .join-result-page .badge-mounting {
+    display: inline-block;
+    background-color: rgb(91, 96, 104);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 20px;
+    padding: 0 12px;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.tts-safeservice-group .join-result-page .confirm-button {
+    width: 150px;
+}
+
+.tts-safeservice-group .history-list-section .rowgroup {
+    border-top: 1px solid rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .history-list-section .rowgroup .row {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .history-list-section .rowgroup .rowheader {
+    width: 188px;
+    flex: none;
+    padding: 20px 16px;
+    background-color: rgb(249, 249, 250);
+}
+
+.tts-safeservice-group .history-list-section .rowgroup .cell {
+    padding: 20px 32px;
+}
+
+.tts-safeservice-group .history-list-section .rowgroup .row .label-txt {
+    font-size: 14px;
+}
+
+.tts-safeservice-group .history-list-section .rowgroup .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tts-safeservice-group .history-list-section .rowgroup .cell .align-right {
+    position: relative;
+    left: 8px;
+    padding: 0 2px 0 8px;
+}
+
+.tts-safeservice-group .history-list-section .more-button {
+    width: 150px;
+}
+
+.tts-safeservice-group .history-detail-list-section .rowgroup {
+    border-top: 1px solid rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .history-detail-list-section .rowgroup .row {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .history-detail-list-section .rowgroup .rowheader {
+    width: 188px;
+    flex: none;
+    padding: 20px 16px;
+    background-color: rgb(249, 249, 250);
+}
+
+.tts-safeservice-group .history-detail-list-section .rowgroup .cell {
+    padding: 20px 32px;
+    flex: 1;
+}
+
+.tts-safeservice-group .history-detail-list-section .rowgroup .row .label-txt {
+    font-size: 14px;
+}
+
+.tts-safeservice-group .history-detail-list-section .rowgroup .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tts-safeservice-group .history-detail-list-section .rowgroup .cell .align-right {
+    position: relative;
+    padding: 0 12px 0 24px;
+}
+
+.tts-safeservice-group .history-detail-list-section .more-button {
+    width: 150px;
+}
+
+.tts-safeservice-group .history-detail-page .badge-mounting {
+    display: inline-block;
+    background-color: rgb(91, 96, 104);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 24px;
+    padding: 0 12px;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.tts-safeservice-group .rowgroup-state-info {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-pack: justify; 
+    -ms-flex-pack: justify; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tts-safeservice-group .rowgroup-state-info .join-number {
+    padding-left: 4px ;
+}
+
+.tts-safeservice-group .rowgroup-state-info .join-number .label-txt {
+    position: relative;
+    padding-right: 8px ;
+}
+
+.tts-safeservice-group .rowgroup-state-info .join-number .label-txt::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    width: 1px;
+    height: 12px;
+    margin-top: -6px;
+    background-color: rgb(42, 49, 56);
+}
+
+.tts-safeservice-group .rowgroup-state-info .badge-state {
+    display: inline-block;
+    padding: 0 8px;
+    background-color: rgb(254, 106, 43);
+    border: 1px solid rgb(254, 106, 43);
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 18px;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.tts-safeservice-group .rowgroup-state-info .badge-state.disabled {
+    border-color: rgb(217, 219, 220);
+    color: rgb(192, 198, 206);
+    background-color: #fff;
+}
+
+.tts-safeservice-group .progressive-section .state-wrap {
+    position: relative;
+    float: left;
+    padding-left: 74px;
+}
+
+.tts-safeservice-group .progressive-section .state-wrap .thumnail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgb(254, 106, 43);
+    border-radius: 100%;
+    background-image: url(../images/thetireshop/safe-service/icon_safeservice_on.png);
+    background-size: 38px auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.tts-safeservice-group .progressive-section .state-wrap .info .state-badge-wrap .badge-state {
+    display: inline-block;
+    padding: 0 8px;
+    background-color: rgb(254, 106, 43);
+    border: 1px solid rgb(254, 106, 43);
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 22px;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.tts-safeservice-group .progressive-section .state-wrap .info .join-number strong {
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.tts-safeservice-group .progressive-section .state-wrap .info .join-number strong::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    width: 1px;
+    height: 20px;
+    transform: translateY(-50%);
+    background-color: rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .progressive-bar-wrap {
+    float: right;
+    width: 482px;
+}
+
+.tts-safeservice-group .progressive-bar-wrap .date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tts-safeservice-group .progressive-bar {
+    padding: 8px 8px;
+}
+
+.tts-safeservice-group .progressive-bar .bar {
+    position: relative;
+    background-color: rgb(217, 219, 220);
+    border-radius: 2px;
+}
+
+.tts-safeservice-group .progressive-bar .bar .gauge {
+    position: relative;
+    display: block;
+    height: 4px;
+    background-color: rgb(255, 162, 0);
+    border-radius: 2px;
+}
+
+.tts-safeservice-group .progressive-bar-wrap .date .end-date strong {
+    color: rgb(254, 106, 43);
+}
+
+.tts-safeservice-group .progressive-section.expiry .progressive-bar {
+    padding-bottom: 40px;
+}
+
+.tts-safeservice-group .progressive-section.expiry .state-wrap .thumnail {
+    border-color: rgb(217, 219, 220);
+    background-image: url(../images/thetireshop/safe-service/icon_safeservice_off.png);
+}
+
+.tts-safeservice-group .progressive-section.expiry .state-wrap .info .state-badge-wrap .badge-state {
+    background-color: rgb(192, 198, 206);
+    border-color: rgb(192, 198, 206);
+}
+
+.tts-safeservice-group .progressive-section.expiry .progressive-bar .bar .gauge {
+    background-color: rgb(160, 166, 175);
+}
+
+.tts-safeservice-group .progressive-section.expiry .progressive-bar .bar .gauge::after {
+    content: "\e93a";
+    position: absolute;
+    top: 8px;
+    right: -12px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 26px;
+    vertical-align: middle;
+    font-family: 'LineIcons' !important;
+    color: rgb(254, 106, 43);
+}
+
+.tts-safeservice-group .progressive-section.expiry .progressive-bar .bar .gauge::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    right: -6px;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-top: none;
+    border-bottom: 12px solid rgb(242, 242, 247);
+    border-right: 6px solid transparent;
+    border-left: 6px solid  transparent;
+}
+
+.tts-safeservice-group .progressive-section.expiry .progressive-bar-wrap .date .end-date {
+    color: rgb(192, 198, 206);
+}
+
+.tts-safeservice-group .progressive-section.expiry .progressive-bar-wrap .date .end-date strong {
+    color: rgb(192, 198, 206);
+}
+
+.tts-safeservice-group .progressive-section.expiry .expiry-copy {
+    background-color: rgb(242, 242, 247);
+    border-radius: 4px;
+}
+
+.tts-safeservice-group .badge-coverage {
+    display: inline-block;
+    padding: 0 12px;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.tts-safeservice-group .badge-coverage.coverage-before {
+    background-color: rgb(192, 198, 206);
+}
+
+.tts-safeservice-group .badge-coverage.coverage-after {
+    background-color: rgb(254, 106, 43);
+}
+
+.tts-safeservice-group .coverage-rowgroup {
+    border-top: 1px solid rgb(242, 242, 247);
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .icon-link.safeservice-join-link {
+    background-image: url(../images/thetireshop/safe-service/icon-safeservice-join.png);
+    background-size: 64px auto;
+}
+
+.tts-safeservice-group .safeservice-landing-page .cta-section .icon-link.safeservice-history-link  {
+    background-image: url(../images/thetireshop/safe-service/icon-safeservice-history.png);
+    background-size: 64px auto;
+    background-position: 50% 50%;
+}
+
+.tts-safeservice-group .form-control .necessary-label::before  {
+    content: "*"; 
+    display: inline-block; 
+    margin-right: 2px;
+    color: #fe6a2b ;
+}
+
+.tts-safeservice-group .photo-attach-wrap {
+    height: 104px;
+}
+
+.tts-safeservice-group .photo-attach-wrap .photo-attach-list .item {
+    float: left;
+    width: auto;
+    margin-right: 8px;
+}
+
+.tts-safeservice-group .photo-attach-wrap .photo-addition {
+    width: 120px;
+    height: 80px;
+    border: 1px solid rgb(217, 219, 220);
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tts-safeservice-group .photo-attach-wrap .img-photo {
+    overflow: hidden;
+    border-radius: 4px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.tts-safeservice-group .photo-attach-wrap .photo-addition .icon-photo {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 12px auto 0;
+    background-image: url(../images/thetireshop/safe-service/icon-camera.png);
+    background-size: 32px 32px;
+    background-position: 50% 50%;
+}
+
+.tts-safeservice-group .membership-subscription {
+    width: 585px;
+    margin: auto;
+}
+
+.tts-safeservice-group .join-number-section .icon-safe-headline {
+    position: relative;
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: auto;
+    background-image: url(../images/thetireshop/safe-service/icon_safeservice_on.png);
+    background-size: 46px auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.tts-safeservice-group .join-number-section .icon-safe-headline .check-circle-inv {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    color: rgb(94, 176, 181);
+}
+
+.tts-safeservice-group .join-result-section .rowgroup {
+    border-top: 1px solid rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .join-result-section .rowgroup .row {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.tts-safeservice-group .join-result-section .rowgroup .rowheader {
+    width: 188px;
+    flex: none;
+    padding: 20px 16px;
+    background-color: rgb(249, 249, 250);
+}
+
+.tts-safeservice-group .join-result-section .rowgroup .cell {
+    flex: 1;
+    padding: 20px 32px;
+}
+
+.tts-safeservice-group .join-result-section .rowgroup .row .label-txt {
+    font-size: 14px;
+}
+
+.tts-safeservice-group .join-result-section .rowgroup .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tts-safeservice-group .join-result-section .rowgroup .cell .align-right {
+    position: relative;
+    left: 8px;
+    padding: 0 2px 0 8px;
+}
+
+.tts-safeservice-group .join-result-section .more-button {
+    width: 150px;
+}
+
+.tts-safeservice-group .tts-safejoin-noti { 
+    position: relative; 
+}
+
+.tts-safeservice-group .tts-safejoin-noti::before {
+    content: "\e91f";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-family: 'LineIcons' !important;
+    font-size: 18px;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fe6a2b;
+}
+
+/* 20220221 // */
+.join-mileage-photo img {
+    display: block;
+    width: 100%;
+    font-size: 0;
+}
+/* // 20220221 */

@@ -1,0 +1,78 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '안심서비스내역' }) %>
+
+<style>
+.safejoin-wrap {}
+.safejoin-wrap .safejoin-mycar-section {padding: 16px 0 24px;}
+.safejoin-wrap .safejoin-mycar-section .thumb-img {width: 240px; margin: auto;}
+.safejoin-wrap .safejoin-mycar-section .thumb-img img {width: 100%;}
+.safejoin-wrap .safejoin-mycar-section .info-typo {text-align: center;}
+.safejoin-info-section::before {
+    content: "";
+    display: block;
+    height: 8px;
+    background-color: #eceeef;
+}
+.safejoin-info-section .headcopy {line-height: 44px;}
+.safejoin-list-wrap {margin-top: 12px;}
+.safejoin-list-wrap .list {display: flex; justify-content: space-between; align-items: baseline; margin: 0 20px; }
+.safejoin-list-wrap .list .item {position: relative; text-align: center; }
+.safejoin-list-wrap .list .item .state {width: 60px;}
+.safejoin-list-wrap .list .item .bg-icon {position: relative; width: 50px; height: 50px; margin: auto; border-radius: 50px; background-color: #f2f2f2; color: #5b6068;}
+.safejoin-list-wrap .list .item.active .bg-icon {background-color: #fe6a2b; color: #fff;}
+.safejoin-list-wrap .list .item .bg-icon .line-icons {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.safejoin-list-wrap .list .item .info-typo {font-size: 12px;}
+</style>
+
+<div id="co`ntainer" class="safe-page">
+    <div class="safejoin-wrap">
+        <div class="safejoin-mycar-section">
+            <div class="thumb-img">
+                <img src="https://file.carisyou.com/upload/2018/09/19/FILE_201809191058065770.png" alt="model" id="mainCar">
+            </div>
+            <div class="info-typo txt-16">
+                <strong class="txt-primary">11가1111</strong> 차량을<br /> MY차량으로 등록하셨습니다.
+            </div>
+        </div>
+        <div class="safejoin-info-section">
+            <h3 class="headcopy txt-14 mg-h-5u mg-t-1u">안심서비스 가입안내<span class="line-icons info-circle size-20 mg-l-1u"></span></h3>
+            <div class="safejoin-list-wrap">
+                <ol class="list">
+                    <li class="item active">
+                        <div class="state">
+                            <div class="bg-icon"><span class="line-icons tire-check size-24"></span></div>
+                            <p class="info-typo txt-neutral2 mg-t-2u">타이어구매</p>
+                        </div>
+                    </li>
+                    <li class="item active">
+                        <div class="state">
+                            <div class="bg-icon"><span class="line-icons tire-check size-24"></span></div>
+                            <p class="info-typo txt-neutral2 mg-t-2u">MY차량 등록</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="state">
+                            <div class="bg-icon"><span class="line-icons tire-check size-24"></span></div>
+                            <p class="info-typo txt-neutral2 mg-t-2u">타이어장착</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="state">
+                            <div class="bg-icon"><span class="line-icons check-circle-inv size-24"></span></div>
+                            <p class="info-typo txt-neutral2 mg-t-2u">안심서비스 신청</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="state">
+                            <div class="bg-icon"><span class="line-icons check-circle-inv size-24"></span></div>
+                            <p class="info-typo txt-neutral2 mg-t-2u">가입완료</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/* 회원가입&개인정보변경 */
+.join_form .nowrap {white-space: nowrap;}
+.check-item .icon-holder.icon-push-default::before {border-color: rgb(217, 219, 220); background-color: rgb(217, 219, 220);}
+.check-item .icon-holder.icon-push-default.active .check {color: #fff;}
+.join-noit-list .join-noit {position: relative; padding-left:12px;}
+.join-noit-list .join-noit .icon {position: absolute; left:4px; top: 0; }
+.bg-divider {height: 8px; background-color: rgb(236, 238, 239);}
+
+/* PC 정비&혜택 알림 메시지 Page 배포후 mypage.css로 옮길 예정// */
+.maintenance-alarm-section {}
+.maintenance-alarm-section .maintenance-alarm-list {}
+.maintenance-alarm-section .maintenance-alarm-list > li {}
+.maintenance-alarm-section .maintenance-alarm-list > li > a {overflow: hidden; display: block; position: relative; padding-left: 98px; border: 1px solid rgb(217, 219, 220); border-radius: 4px; transition: all 0.2s;}
+.maintenance-alarm-section .maintenance-alarm-list > li > a:hover {box-shadow: 0 4px 8px rgba(0, 0, 0, .2);}
+.maintenance-alarm-section .maintenance-alarm-list > li > a::after {content: "\e917";font-family: 'LineIcons', sans-serif;display: block;width: 24px;height: 24px;line-height: 24px;font-size: 24px;position: absolute;top: 50%;right: 16px;transform: translateY(-50%);}
+.maintenance-alarm-section .maintenance-alarm-list .icon-holder {position: absolute; left:0; top:0; bottom:0; width: 98px; display: flex; align-items: center; justify-content: center;}
+.maintenance-alarm-section .maintenance-alarm-list .icon-holder.repair {background-color: #ffa200;}
+.maintenance-alarm-section .maintenance-alarm-list .icon-holder.benefit {background-color: #5eb0b5;}
+.maintenance-alarm-section .maintenance-alarm-list .icon-holder .line-icons {color: #fff;}
+.maintenance-alarm-section .maintenance-alarm-list .icon-holder .coupon-sale {margin-left: -12px;}
+.maintenance-alarm-section .maintenance-alarm-list .container {}
+.maintenance-alarm-section .maintenance-alarm-list .container .car-number {display: inline-block; padding: 0 8px; line-height: 24px; background-color: rgb(91, 96, 104); border-radius: 2px;}
+.maintenance-alarm-section .txt-empty {color:rgb(192, 198, 206);}
+.maintenance-alarm-section .sort-notice-empty .icon-notice-empty {display: inline-block;width: 60px;height: 60px;margin: auto;text-align: center;background: url(../images/mypage/icon_notice_empty.png) center top no-repeat;background-size: 60px 60px;}
+.maintenance-alarm-section .sort-result-empty .icon-message-empty {display: inline-block;width: 60px;height: 60px;margin: auto;text-align: center;background: url(../images/mypage/icon_mesaage_empty.png) center top no-repeat;background-size: 60px 60px;}
+/* PC 정비&혜택 알림 메시지 Page 끝 */

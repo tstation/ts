@@ -1,0 +1,202 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page-header border-none">
+                        <h1>이 상품에 적용 가능한 쿠폰 팝업</h1>
+                    </div>
+
+                    <div class="container pd-v-5u">
+                        <section>
+                            <script>
+                                var coupon = '<button id="coupon-changer-btn" type="button" class="btn-item btn-neutral btn-ol full-w round">\n' +
+                                  '    <span class="label-txt">쿠폰 전체 다운받기 (2장)</span>\n' +
+                                  '</button>\n' +
+                                  '<p class="txt-12 mg-b-7u txt-neutral2 mg-t-2u txt-center">\n' +
+                                  '    <span class="txt-primary">*</span>다운로드 받은 쿠폰을 <span class="txt-w500">마이페이지 > 쿠폰함</span>에서 확인가능합니다.\n' +
+                                  '</p>\n' +
+                                  '\n' +
+                                  '<ul class="coupon-card-list mg-t-8u">\n' +
+                                  '    <li>\n' +
+                                  '        <article class="coupon-card download-before" onclick="couponApply(this)">\n' +
+                                  '            <div class="coupon-card-info">\n' +
+                                  '                <div class="coupon-card-type-bar mg-b-2u clearfix">\n' +
+                                  '                    <span class="float-l">패밀리</span>\n' +
+                                  '                    <span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>\n' +
+                                  '                    <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>\n' +
+                                  '                    <span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>-->\n' +
+                                  '                </div>\n' +
+                                  '                <p class="txt-30 line-100per">5<small class="txt-18">%</small></p>\n' +
+                                  '                <p class="txt-18 line-100per mg-b-2u">타이어 할인</p>\n' +
+                                  '                <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>\n' +
+                                  '                <p class="txt-11 txt-neutral3">쿠폰 대상 타이어 상품 구매 시 적용</p>\n' +
+                                  '            </div>\n' +
+                                  '            <div class="coupon-card-action">\n' +
+                                  '                <div class="coupon-card-action-inner download-before">\n' +
+                                  '                    <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>\n' +
+                                  '                    <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt">쿠폰다운</span></span></p>\n' +
+                                  '                    <p><span class="txt-12">2021.01.20<br />까지</span></p>\n' +
+                                  '                </div>\n' +
+                                  '\n' +
+                                  '                <div class="coupon-card-action-inner download-after">\n' +
+                                  '                    <p class="mg-b-1u"><span class="line-icons download size-24 coupon-download-icon"></span></p>\n' +
+                                  '                    <p class="mg-b-3u"><span class="txt-w500">다운완료</span></p>\n' +
+                                  '                </div>\n' +
+                                  '            </div>\n' +
+                                  '        </article>\n' +
+                                  '    </li>\n' +
+                                  '    <li>\n' +
+                                  '        <article class="coupon-card download-before" onclick="couponApply(this)">\n' +
+                                  '            <div class="coupon-card-info">\n' +
+                                  '                <div class="coupon-card-type-bar mg-b-2u clearfix">\n' +
+                                  '                    <span class="float-l">패밀리</span>\n' +
+                                  '                    <!--<span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>-->\n' +
+                                  '                    <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>-->\n' +
+                                  '                    <span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>\n' +
+                                  '                </div>\n' +
+                                  '                <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>\n' +
+                                  '                <p class="txt-18 line-100per mg-b-2u">타이어 결제할인</p>\n' +
+                                  '                <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>\n' +
+                                  '                <p class="txt-11 txt-neutral3">타이어 상품 구매 시 적용</p>\n' +
+                                  '            </div>\n' +
+                                  '            <div class="coupon-card-action">\n' +
+                                  '                <div class="coupon-card-action-inner download-before">\n' +
+                                  '                    <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>\n' +
+                                  '                    <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt">쿠폰다운</span></span></p>\n' +
+                                  '                    <p><span class="txt-12">2021.01.20<br />까지</span></p>\n' +
+                                  '                </div>\n' +
+                                  '                <div class="coupon-card-action-inner download-after">\n' +
+                                  '                    <p class="mg-b-1u"><span class="line-icons download size-24 coupon-download-icon"></span></p>\n' +
+                                  '                    <p class="mg-b-3u"><span class="txt-w500">다운완료</span></p>\n' +
+                                  '                </div>\n' +
+                                  '            </div>\n' +
+                                  '        </article>\n' +
+                                  '    </li>\n' +
+                                  '    <li>\n' +
+                                  '        <article class="coupon-card download-after" onclick="couponApply(this)">\n' +
+                                  '            <div class="coupon-card-info">\n' +
+                                  '                <div class="coupon-card-type-bar mg-b-2u clearfix">\n' +
+                                  '                    <span class="float-l">패밀리</span>\n' +
+                                  '                    <span class="float-r"><span class="dot on-line"></span><span>온라인전용</span></span>\n' +
+                                  '                    <!--<span class="float-r"><span class="dot off-line"></span><span>매장전용</span></span>-->\n' +
+                                  '                    <!--<span class="float-r"><span class="dot on-off-line"></span><span>온라인/매장 겸용</span></span>-->\n' +
+                                  '                </div>\n' +
+                                  '                <p class="txt-30 line-100per">30<small class="txt-18">%</small></p>\n' +
+                                  '                <p class="txt-18 line-100per mg-b-2u">타이어 결제할인</p>\n' +
+                                  '                <p><span class="divider divider-inline divider-bold dark mg-b-2u"></span></p>\n' +
+                                  '                <p class="txt-11 txt-neutral3">타이어 상품 구매 시 적용</p>\n' +
+                                  '            </div>\n' +
+                                  '            <div class="coupon-card-action">\n' +
+                                  '                <div class="coupon-card-action-inner download-before">\n' +
+                                  '                    <p class="mg-b-1u"><span class="line-icons download size-24"></span></p>\n' +
+                                  '                    <p class="mg-b-1u"><span class="btn-item btn-neutral btn-xs round"><span class="label-txt">쿠폰다운</span></span></p>\n' +
+                                  '                    <p><span class="txt-12">2021.01.20<br />까지</span></p>\n' +
+                                  '                </div>\n' +
+                                  '                <div class="coupon-card-action-inner download-after">\n' +
+                                  '                    <p class="mg-b-1u"><span class="line-icons download size-24 coupon-download-icon"></span></p>\n' +
+                                  '                    <p class="mg-b-3u"><span class="txt-w500">다운완료</span></p>\n' +
+                                  '                </div>\n' +
+                                  '            </div>\n' +
+                                  '        </article>\n' +
+                                  '    </li>\n' +
+                                  '</ul>'
+
+                                var requiredTerms = '<div class="container pd-h-8u pd-v-8u">\n' +
+                                  '    <p class="txt-center txt-14">\n' +
+                                  '        <em class="txt-primary">스마트케어  할인 쿠폰</em>은 마케팅 수신 동의가 필요합니다. 동의하고 다운받으시겠습니까?\n' +
+                                  '    </p>\n' +
+                                  '    <a href="#" class="btn-item btn-neutral round full-w mg-t-4u">\n' +
+                                  '        <span class="label-txt">동의하고 쿠폰다운받기</span>\n' +
+                                  '    </a>\n' +
+                                  '</div>\n' +
+                                  '<div class="container bg-light1 border-t txt-center pd-h-4u pd-v-2u accordion-item">\n' +
+                                  '    <button type="button" class="btn-item btn-s btn-gray btn-inv filet float-r bg-transparent accordion-btn" onclick="$(this).closest(\'.accordion-item\').toggleClass(\'on\');">\n' +
+                                  '        <span class="label-txt">마케팅 수신동의 내용보기</span>\n' +
+                                  '        <span class="line-icons chev-down size-20"></span>\n' +
+                                  '    </button>\n' +
+                                  '\n' +
+                                  '    <div class="box bg-fff txt-12 txt-neutral2 box-overflow-y mg-b-3u txt-left border-all accordion-cont">\n' +
+                                  '        마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>마케팅 수신동의 본문 내용.<br>\n' +
+                                  '    </div>\n' +
+                                  '</div>'
+
+                                // 쿠폰 다운로드 예시
+                                var couponApply = function (el) {
+                                    var className = {
+                                        downloadBefore: 'download-before',
+                                        downloadAfter: 'download-after'
+                                    }
+                                    var _this = $(el)
+                                    var isRequireDownload = _this.hasClass(className.downloadBefore)
+                                    var callRequiredTerms = function () {
+                                        $.Tstation.popup().open({
+                                            ref: 'required-terms-popup',
+                                            title: '쿠폰다운받기 안내',
+                                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                            contents: requiredTerms, // 팝업을 바로 띄우고 싶을때
+                                            dimWhite: false,
+                                            modalSize: 'SMALL',
+                                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                                horizon: 0,
+                                                vertical: 0,
+                                                top: 0,
+                                                right: 0,
+                                                bottom: 0,
+                                                left: 0
+                                            }
+                                        })
+                                    }
+                                    var couponDownloadProcess = function () {
+                                        var couponDownload = function () {
+                                            _this.removeClass(className.downloadBefore)
+                                            _this.addClass(className.downloadAfter)
+                                        }
+                                        // 비동기 예시
+                                        setTimeout(function () {
+                                            Math.random() >= 0.5 ? couponDownload() : callRequiredTerms();
+                                        }, 400);
+                                    }
+                                    var couponApplyProcess = function () {
+                                        alert('주문 프로세스에 쿠폰 적용 메서드 삽입')
+                                        $.Tstation.popup().close('coupon-apply-modal')
+                                    }
+
+                                    isRequireDownload ? couponDownloadProcess() : couponApplyProcess()
+                                }
+                            </script>
+                            <button
+                                    type="button"
+                                    class="btn-item btn-s full-w btn-neutral"
+                                    onclick="$.Tstation.popup().open({
+                                        ref: 'coupon-apply-modal',
+                                        title: '이 상품에 적용 가능한 쿠폰',
+                                        requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                        contents: coupon, // 팝업을 바로 띄우고 싶을때
+                                        dimWhite: false,
+                                        modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                            horizon: 4,
+                                            vertical: 6,
+                                            top: 0,
+                                            right: 0,
+                                            bottom: 0,
+                                            left: 0
+                                        },
+                                        full: true, // Full Popup
+                                    })"
+                            >
+                                <span class="label-txt">이 상품에 적용 가능한 쿠폰 호출</span>
+                            </button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

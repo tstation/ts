@@ -1,0 +1,65 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<div id="container" class="mypage">
+    <!-- 이벤트  top -->
+    <div class="review_top">
+        <ul class="mypage_tab01">
+            <li><a href="https://m.tstation.com/promotion/event-list">진행중인 이벤트</a></li>
+            <li class="on"><a href="https://m.tstation.com/promotion/past-event-list">지난 이벤트</a></li>
+        </ul>
+    </div>
+    <!-- //이벤트  top -->
+    <!-- event list -->
+    <div class="event_list ing">
+        <ol id="evtList">
+            <li>
+                <a href="https://m.tstation.com/promotion/event/detail/00000000010225" class="more">
+                    <span class="img"><img src="https://m.tstation.com/upload/marketing/2020/20200709081301/200713_list_banner.png" alt="벤투스 썸머 페스티벌"></span>
+                    <span class="tit">벤투스 썸머 페스티벌</span>
+                    <span class="date">2020.07.13~2020.08.31</span>
+                </a>
+            </li>
+        </ol>
+    </div>
+    <!-- //event list -->
+</div>
+
+<script>
+    var carinfoPoup = carinfoPoup || {};
+        carinfoPoup.tronButton = document.querySelectorAll('.tron-trigger');
+        carinfoPoup.ionicButton = document.querySelectorAll('.ionic-trigger');
+        carinfoPoup.teslaSButton = document.querySelectorAll('.teslaS-trigger');
+        carinfoPoup.g80Button = document.querySelectorAll('.g80-trigger');
+        
+        carinfoPoup.tronTrigger = function(){
+            Array.prototype.forEach.call(carinfoPoup.tronButton, function(button, i){
+                button.addEventListener('click', function() {
+                    $.Tstation.popup().open({
+                        ref: 'ion-gallery',
+                        title: 'e-트론',
+                        requestUrl: '', 
+                        contents: carinfoPoup.tronContent, 
+                        dimWhite: false,
+                        modalContentsPd: { 
+                            horizon: 0,
+                            vertical: 0,
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            left: 0
+                        },
+                        full: false, 
+                        onOpen: function () {
+                            console.log('팝업이 열리면 실행합니다.')
+                        },
+                        onClose: function () {
+                            console.log('팝업이 닫히면 실행합니다.')
+                        }
+                    })
+                })
+            })
+        }();
+</script>

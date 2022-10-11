@@ -1,0 +1,294 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<link rel="stylesheet" type="text/css" href="pc-static-root/css/thetireshop.css" />
+
+<div id="container" class="">
+    <div class="container">
+        <div class="guardrail">
+            <div class="tts-aside-layout">
+                <%- locals.widget ('src/project/desktop/pages/tts/includes/tts-header.ejs') %> 
+                <div class="cont-area">
+                    <!-- .tts-safeservice-group // -->
+                    <div class="container tts-safeservice-group">
+                    
+                        <h2 class="section-headline underline txt-30 pd-b-4u border-b">안심서비스 조회</h2>
+                        <div class="rowgroup safe-confrim-rowgroup pd-t-1u">
+                            <div class="row mg-t-10u ">
+                                <div class="form-control form-control-inline inline-md">
+                                    <label for="name" class="necessary-label txt-14">이름</label>
+                                    <div class="input-group">
+                                        <input type="text" id="name" class="input-box" placeholder="이름" value="김한국">
+                                        <div class="tools">
+                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mg-t-2u ">
+                                <div class="form-control form-control-inline inline-md">
+                                    <label for="phoneNumber" class="necessary-label txt-14">연락처</label>
+                                    <div class="input-group">
+                                        <input type="text" id="phoneNumber" class="input-box" placeholder="연락처" value="010 5578 9987">
+                                        <div class="tools">
+                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mg-t-2u">
+                                <div class="form-control form-control-inline inline-md">
+                                    <label for="carNumber" class="necessary-label txt-14">차량번호</label>
+                                    <div class="input-group">
+                                        <input type="text" id="carNumber" class="input-box half-w" placeholder="차량번호" value="01가 1234">
+                                        <div class="tools">
+                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 20220218 삭제  <div class="legal-cheked-wrap pd-l-25u">
+                                <div class="list-size-flex flex-between mg-t-8u">
+                                    <label class="check-item" for="eventPrivacyPolicy">
+                                        <input type="checkbox" id="eventPrivacyPolicy" name="agrTpArr" value="60">
+                                        <div class="icon-holder">
+                                            <span class="line-icons square size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u txt-12">고객정보 수집 및 활용동의</span>
+                                        </div>
+                                    </label>
+                                    <button type="button" class="txt-12 pd-v-2u txt-primary" style="background-color: transparent;" onclick="$.Tstation.popup().open({
+                                    ref: 'modal-ref-1',
+                                    title: '고객정보 수집 및 활용동의',
+                                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                    contents: termsContent,
+                                    dimWhite: false,
+                                    modalContentsPd: {
+                                        horizon: 0,
+                                        vertical: 0,
+                                        top: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                        left: 0
+                                    },
+                                    modalSize: 'MEDIUM',
+                                    onOpen: function () {
+                                        console.log('팝업이 열리면 파이어 합니다.')
+                                    },
+                                    onClose: function () {
+                                        console.log('팝업이 닫히면 파이어 합니다.')
+                                    }
+                                })">
+                                        <span class="label-txt">내용보기<span class="line-icons chev-right size-16"></span></span>
+                                    </button>
+                                </div>
+                                <div class="legal-copy txt-12 txt-neutral2">
+                                    <p>안심서비스 조회를 위한 고객정보 수집에 동의해 주세요. 미동의 시 안심서비스 조회가 불가합니다.</p>
+                                </div>
+                            </div> -->
+
+                            <div class="button-wrap mg-t-15u">
+                                <!-- 20220118 // -->
+                                <button type="button" class="btn-item btn-neutral btn-l round full-w round" onclick="$.Tstation.popup().open({
+                                    ref: 'modal-ref-1',
+                                    title: '안심서비스 가입',
+                                    requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                    contents: termsContent,
+                                    dimWhite: false,
+                                    modalContentsPd: {
+                                        horizon: 0,
+                                        vertical: 0,
+                                        top: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                        left: 0
+                                    },
+                                    modalSize: 'MEDIUM',
+                                    onOpen: function () {
+                                        console.log('팝업이 열리면 파이어 합니다.')
+                                    },
+                                    onClose: function () {
+                                        console.log('팝업이 닫히면 파이어 합니다.')
+                                    }
+                                })">
+                                    <span class="label-txt">휴대폰 본인인증</span>
+                                </button>
+                                <p class="txt-center txt-13 mg-t-2u">*본인인증 후 안심서비스 내역조회가 가능합니다.</p>
+                                <!-- // 20220118 -->
+                            </div>
+                        </div>
+                    
+                        <div class="noti-section weight-divider mg-t-20u">
+                            <h3 class="section-headline txt-18 pd-h-5u mg-t-2u">꼭 알아두세요!</h3>
+                            <ul class="explan-list pd-v-5u pd-h-5u bg-light1">
+                                <li>
+                                    <p class="bul-icon txt-14 txt-neutral2">안심서비스 보상기간은 장착완료일로부터 1년입니다.</p>
+                                </li>
+                                <li>
+                                    <p class="bul-icon txt-14 txt-neutral2">가입 대상은 실장착 고객 (이름, 연락처, 차량번호 기준 동일인)이며, 신규가입 시 기존 가입 건은 자동 만료 처리되고, 신규가입일로 안심서비스 기간이 갱신됩니다.</p>
+                                </li>
+                                <li>
+                                    <p class="bul-icon txt-14 txt-neutral2">안심서비스 보상은 안심서비스 내역에 기재된 장착매장에서만 가능합니다.</p>
+                                </li>
+                                <li>
+                                    <p class="bul-icon txt-14 txt-neutral2">보상관련 문의 : 더타이어샵 고객센터 (031-5178-7000)</p>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                    
+                    </div>
+                    <!-- // .tts-safeservice-group -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var termsContent =
+        '                        <form id="termsForm" name="termsForm">\n' +
+        '                        <div id="agreeSelect" style="padding:20px;">\n' +
+        '                            <div class="agree_container">\n' +
+        '                                <div class="tbl table-responsive">\n' +
+        '                                <table cellpadding="0" cellspacing="0" class="con-table" width="100%">\n' +
+        '                                    <tbody>\n' +
+        '                                        <tr>\n' +
+        '                                            <th>수집채널</th>\n' +
+        '                                            <th>구분</th>\n' +
+        '                                            <th>수집목적</th>\n' +
+        '                                            <th>유형</th>\n' +
+        '                                            <th>수집항목</th>\n' +
+        '                                            <th>보유기간</th>\n' +
+        '                                        </tr>\n' +
+        '                                        <tr>\n' +
+        '                                            <td>T’Station.com</td>\n' +
+        '                                            <td>마케팅 활용 동의</td>\n' +
+        '                                            <td>알림톡/SNS, 이메일 등을 통한 마케팅/홍보 경품행사, 이벤트 등 광고성 정보전달, 신규 상품 또는 서비스 안내, 회원의 서비스 이용에 대한 통계 설문조사</td>\n' +
+        '                                            <td>선택</td>\n' +
+        '                                            <td>이름, 휴대폰번호, 이메일</td>\n' +
+        '                                            <td>동의 철회 및 회원탈퇴 시까지</td>\n' +
+        '                                        </tr>\n' +
+        '                                    </tbody>\n' +
+        '                                </table>\n' +
+        '                               </div>\n' +
+        '                                <p class="txt01 mg-t-2u">*동의를 거부하시는 경우에도 T’Station 온라인 서비스를 이용하실 수 있습니다.</p>\n' +
+        '                                <p class="txt01">보다 자세한 내용은 홈페이지 하단 “개인정보처리방침”을 확인하여 주시기 바랍니다.</p>\n' +
+        '                            </div>\n' +
+        '                        </div>\n' +
+        '                    </form>'
+</script>
+
+<script>
+    var termsContent =
+        `
+        <div class="tts-safeservice-group">
+                <div class="subscription-list-count pd-t-5u pd-b-2u pd-h-5u border-b">
+                    <p class="txt-14">가입 가능한 안심서비스가 <strong class="txt-primary">2</strong>건 있습니다.</p>
+                </div>
+                <div class="subscription-list-section bg-light1 pd-t-2u pd-b-4u pd-h-5u">
+                    <div class="subscription-result-empty txt-center pd-v-15u">
+                        <span class="icon-subscription-empty search size-48"></span>
+                        <p class="txt-18 txt-neutral2 mg-t-1u">가입 가능한 안심서비스 <br>내역이 없습니다.</p>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">고객이름</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info">김한국</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">연락처</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info">010-1122-3355</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">차량번호</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info">12가3456</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">가입신청기간</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info txt-primary">2022.01.14</span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-item btn-neutral btn-ol full-w round mg-t-4u">
+                            <span class="label-txt txt-16">가입하기</span>
+                        </button>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">고객이름</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info">김한국</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">연락처</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info">010-1122-3355</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">차량번호</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info">12가3456</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rowheader">
+                                <span class="label-txt">가입신청기간</span>
+                            </div>
+                            <div class="cell">
+                                <span class="label-info txt-primary">2022.01.14</span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-item btn-neutral btn-ol full-w round mg-t-4u">
+                            <span class="label-txt txt-16">가입하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="noti-section weight-divider">
+                    <h3 class="section-headline txt-16 pd-h-5u">가입 전 꼭 알아두세요!</h3>
+                    <ul class="explan-list pd-b-10u pd-h-5u">
+                        <li>
+                            <p class="bul-icon txt-12 txt-neutral2">안심서비스 가입은 티스테이션닷컴을 통해 대상상품 2개 이상 구매 및 장착완료일 기준 14일 까지만 가능합니다. (정비/장착일 기준 익일부터 가입 내역 조회가 가능합니다.)</p>
+                        </li>
+                        <li>
+                            <p class="bul-icon txt-12 txt-neutral2">가입 대상은 실장착 고객 (이름, 연락처, 차량번호 기준 동일인)이며, 신규가입 시 기존 가입 건은 자동 만료 처리되고, 신규가입일로 안심서비스 기간이 갱신됩니다.</p>
+                        </li>
+                        <li>
+                            <p class="bul-icon txt-12 txt-neutral2">안심서비스 가입 제한 : 렌트 차량 (허,하,호 차량번호 표기), 영업용 차량, 11인승 초과 승합차량, 경트럭 등 일부 차량의 경우 안심서비스 가입이 제한될 수 있습니다.  </p>
+                        </li>
+                        <li>
+                            <p class="bul-icon txt-12 txt-neutral2">가입관련 문의 : 티스테이션 고객센터 (1577-0009)</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        `
+</script>
+
+<%- locals.widget ('src/project/desktop/pages/tts/includes/tts-footer.ejs') %> 

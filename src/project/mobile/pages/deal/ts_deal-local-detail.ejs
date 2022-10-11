@@ -1,0 +1,357 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '우리동네딜 상세정보' }) %>
+<main id="main">
+    <script>
+        $(document).ready(function () { $('body').addClass('bg-light1') });
+    </script>
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            <div class="bg-light2 pd-t-10u pd-h-10u">
+                <div class="coupon-card-wrap">
+                    <!-- TODO: download-before / 쿠폰 다운로드 전 -->
+                    <!-- TODO: download-after / 쿠폰 다운로드 후 -->
+                    <article class="coupon-card coupon-card-detail download-before">
+                        <div class="coupon-card-flag">
+                            <div class="coupon-card-flag-inner">
+                                <span>우리동네딜</span>
+                            </div>
+                        </div>
+                        <div class="coupon-card-info">
+                            <div class="bi-img"><img src="mc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img"></div>
+                            <p class="txt-30 line-100per mg-b-2u">50<small class="txt-18">%</small></p>
+                            <p class="txt-18 line-100per">엔진오일 할인 이벤트</p>
+                        </div>
+                        <button type="button" class="coupon-card-action" onclick="couponDownload(this, '엔진오일 할인 이벤트')">
+                            <span><span class="v-middle">쿠폰다운</span> <span class="line-icons download size-24 v-middle"></span></span>
+                            <span><span class="v-middle">다운완료</span> <span class="line-icons check-circle size-24 v-middle"></span></span>
+                        </button>
+                    </article>
+                </div>
+
+                <div id="coupon-download-after-barcode" style="display: none;">
+                    <div class="coupon-barcode-wrap mg-t-5u">
+                        <div class="coupon-barcode">
+                            <img src="mc-static-root/images/common/barcode-sample.png" alt="barcode" />
+                        </div>
+                        <div class="coupon-barcode-number">
+                            <span class="label">쿠폰번호</span>
+                            <p class="number">1234 5678 2468</p>
+                        </div>
+                    </div>
+                    <p class="txt-center txt-12 txt-neutral2 mg-t-2u">매장에서 상품 구매시 바코드를 제시해 주세요.</p>
+                </div>
+
+                <script>
+                    var isDownload = false;
+                    var callPopup = {
+                        goMyPage: function (couponName) {
+                            var template = function (str) {
+                                return '<p class="txt-center mg-t-4u txt-16 txt-primary">\n' +
+                                  '    <span class="line-icons check-circle size-48 txt-primary mg-b-2u"></span><br />\n' +
+                                  '    <span>우리동네 ' + str + '</span>\n' +
+                                  '</p>\n' +
+                                  '<p class="txt-center txt-neutral2 txt-14 mg-t-8u pd-t-4u border-t">쿠폰이 다운로드 되었습니다.<br />마이페이지 > 내쿠폰에서 확인하시겠습니까?</p>'
+                            };
+
+                            $.Tstation.popup().open({
+                                ref: 'go-my-page',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: template(couponName), // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '취소',
+                                            negative: true,
+                                            action: function () {
+                                                $.Tstation.popup().close('go-my-page')
+                                            }
+                                        },
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: function () {
+                                                window.location.href = ''
+                                            }
+                                        }
+                                    ]
+                                }
+                            });
+                        },
+                        deniedVisit: function () {
+                            var template = '<p class="txt-center">우리동네딜 쿠폰을 다운받으신 후에<br />우리동네딜 참여매장 방문예약이 가능합니다.</p>';
+
+                            $.Tstation.popup().open({
+                                ref: 'denied-visit',
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: template, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false,
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: function () {
+                                                $.Tstation.popup().close('denied-visit')
+                                            }
+                                        }
+                                    ]
+                                }
+                            });
+
+                        }
+                    };
+                    var couponDownloadDone = function (el, couponName) {
+                        isDownload = true
+                        callPopup.goMyPage(couponName)
+                    };
+                    var couponDownload = function (el, couponName) {
+                        // 1. 비동기로 쿠폰 다운로드
+                        // 2. 성공시 인터렉션
+                        couponDownloadDone(el, couponName)
+                    };
+                    var goVisitReserve = function (url) {
+                        // 1. 쿠폰을 다운받았다면 방문예약하러 가기
+                        if (isDownload) {
+                            if (typeof url === 'undefined' || !(url.length > 0)) {
+                                throw new Error('url not defined')
+                            }
+                            window.location.href = url
+                        }
+
+                        // 2. 쿠폰을 다운받지 않았다면 알림팝업 호출
+                        else {
+                            callPopup.deniedVisit();
+                        }
+                    };
+                </script>
+
+                <p class="txt-12 txt-primary txt-center pd-v-3u">쿠폰다운 2021.01.31 까지</p>
+            </div>
+
+            <div class="pd-t-6u pd-h-6u more-view-container">
+                <p class="txt-20 txt-w300 mg-b-2u">엔진오일 교환 50% 할인 이벤트</p>
+                <div class="mg-b-7u txt-0">
+                    <span class="badge badge-neutral2">서울권</span>
+                    <span class="badge badge-neutral2 mg-l-1u">매장전용</span>
+                </div>
+                <ul>
+                    <li class="mg-b-6u">
+                        <p class="mg-b-1u">사용기한</p>
+                        <!-- TODO: 마감임박 기준일 보다 여유가 있을때 -->
+                        <p><span class="txt-11 v-middle">2020.10.01 부터 ~ 2021.01.05 까지</span></p>
+                        <!-- TODO: 마감임박이 다가올때, 정확한 기준은 정해지지 않음 -->
+                        <!--<p>
+                            <span class="txt-11 txt-primary v-middle">2020.10.01 부터 ~ 2021.01.05 까지</span>
+                            <span class="badge">마감임박</span>
+                        </p>-->
+                    </li>
+                    <li class="mg-b-6u">
+                        <p class="mg-b-1u">혜택상세</p>
+                        <p class="txt-11 txt-neutral2">딜 참여 매장을 방문하신 후 <span class="txt-primary">엔진오일</span> 상품을 구매 할 때 쿠폰가로 이용 하실 수 있는 매장전용 딜 쿠폰 입니다.</p>
+                    </li>
+                    <li class="mg-b-6u">
+                        <p class="mg-b-1u">쿠폰 사용처</p>
+                        <p class="txt-11 txt-neutral2"><span class="txt-primary">서울권 한정</span> 티스테이션 멤버십 매장</p>
+                    </li>
+                    <li class="mg-b-6u">
+                        <p class="mg-b-1u">할인금액</p>
+                        <p class="txt-11 txt-primary">경차 3만원, 중형차 4만원, 대형차 5만원</p>
+                    </li>
+                    <li>
+                        <p class="mg-b-1u">이용방법</p>
+                        <ul class="list-style-number">
+                            <li class="txt-11 txt-neutral2 mg-b-3u">’딜 쿠폰 다운받기’ 버튼을 누르시고 쿠폰을 다운받아주세요.</li>
+                            <li class="txt-11 txt-neutral2 mg-b-3u">아래 우리동네 참여매장을 확인하고, 매장방문예약 또는 오프라인 매장방문을 해주세요.</li>
+                            <li class="txt-11 txt-neutral2">결제 하실 때 마이페이지 > 내 쿠폰 화면에서 다운받으신 쿠폰을 제시하시면 딜 혜택을 받으실수있습니다.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="btn-more-view-container">
+                    <button type="button" class="btn-item btn-neutral btn-s btn-ol round btn-more-view" onclick="$(this).closest('.more-view-container').toggleClass('on')">
+                        <span class="label-txt">상세정보 더보기</span>
+                        <span class="line-icons chev-down size-20"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-divider">
+            <div class="contents-status-bar">
+                <span class="title">총<span class="txt-primary">3</span>개의 참여매장</span>
+                <div class="form-control form-control-md extra">
+                    <div class="input-group">
+                        <select class="input-box" dir="rtl">
+                            <option selected>가까운순</option>
+                            <option>리뷰순</option>
+                        </select>
+
+                        <div class="tools">
+                            <button><span class="line-icons chev-down"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="card-store-list">
+                <ul>
+                    <li>
+                        <article class="card-store">
+                            <div class="store-info">
+                                <p><span class="badge badge-s">멤버십 스토어</span></p>
+                                <p class="mg-t-2u">
+                                    <span class="txt-16 v-middle mg-r-1u">분당정자점</span>
+                                    <span class="v-middle">
+                                                <span class="line-icons star size-12 txt-yellow"></span>
+                                                <span class="txt-12 v-middle">4.7점(118)</span>
+                                            </span>
+                                </p>
+                                <p class="txt-12 mg-t-2u"><span>08:00~20:00</span></p>
+                                <p class="txt-12 mg-t-1u">경기도 성남시 분당구 운중로267번길 3-7(판교동)</p>
+                                <div class="store-meta mg-t-2u">
+                                    <span class="txt-11">오늘서비스</span>
+                                    <span class="txt-11">다녀온 매장</span>
+                                    <span class="txt-11">수입차 정비</span>
+                                    <span class="txt-11">휴일지킴이</span>
+                                </div>
+                                <p class="mg-t-2u">
+                                    <a href="#" class="dp-inblock txt-0 txt-primary">
+                                        <span class="txt-12 v-middle">매장 상세보기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </a>
+                                </p>
+                                <ul class="flags third-benefit"><!-- 202012 pub fixed -->
+                                    <li><span class="flag flag-superior-store">우수<br />매장</span></li>
+                                    <li><span class="flag flag-smart-pickup">스마트<br />픽업</span></li>
+                                    <li><span class="flag flag-local-deal">우리<br />동네딜</span></li>
+                                </ul>
+                            </div>
+                            <div class="action">
+                                <div class="more">
+                                    <button type="button" class="btn-item btn-neutral btn-ms round btn-inv min-w">
+                                        <span class="line-icons location size-28"></span>
+                                    </button>
+                                    <button type="button" class="btn-item btn-neutral btn-ms round btn-inv min-w" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')">
+                                        <span class="line-icons call size-28"></span>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn-item btn-neutral btn-ms btn-ol round w-150" onclick="goVisitReserve()">
+                                    <span class="label-txt">방문 예약하기</span>
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="card-store">
+                            <div class="store-info">
+                                <p><span class="badge badge-s">멤버십 스토어</span></p>
+                                <p class="mg-t-2u">
+                                    <span class="txt-16 v-middle mg-r-1u">판교점</span>
+                                    <span class="v-middle">
+                                                <span class="line-icons star size-12 txt-yellow"></span>
+                                                <span class="txt-12 v-middle">4.7점(118)</span>
+                                            </span>
+                                </p>
+                                <p class="txt-12 mg-t-2u"><span>12km</span><span>08:00~20:00</span></p>
+                                <p class="txt-12 mg-t-1u">경기도 성남시 분당구 운중로267번길 3-7(판교동)</p>
+                                <div class="store-meta mg-t-2u">
+                                    <span class="txt-11">오늘서비스</span>
+                                    <span class="txt-11">다녀온 매장</span>
+                                    <span class="txt-11">수입차 정비</span>
+                                    <span class="txt-11">휴일지킴이</span>
+                                </div>
+                                <p class="mg-t-2u">
+                                    <a href="#" class="dp-inblock txt-0 txt-primary">
+                                        <span class="txt-12 v-middle">매장 상세보기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </a>
+                                </p>
+                                <ul class="flags third-benefit"><!-- 202012 pub fixed -->
+                                    <li><span class="flag flag-superior-store">우수<br />매장</span></li>
+                                </ul>
+                            </div>
+                            <div class="action">
+                                <div class="more">
+                                    <button type="button" class="btn-item btn-neutral btn-ms round btn-inv min-w">
+                                        <span class="line-icons location size-28"></span>
+                                    </button>
+                                    <button type="button" class="btn-item btn-neutral btn-ms round btn-inv min-w" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')">
+                                        <span class="line-icons call size-28"></span>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn-item btn-neutral btn-ms btn-ol round w-150" onclick="goVisitReserve()">
+                                    <span class="label-txt">방문 예약하기</span>
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="card-store">
+                            <div class="store-info">
+                                <p><span class="badge badge-s">멤버십 스토어</span></p>
+                                <p class="mg-t-2u">
+                                    <span class="txt-16 v-middle mg-r-1u">모란점</span>
+                                    <span class="v-middle">
+                                                <span class="line-icons star size-12 txt-yellow"></span>
+                                                <span class="txt-12 v-middle">4.7점(118)</span>
+                                            </span>
+                                </p>
+                                <p class="txt-12 mg-t-2u"><span>12km</span><span>08:00~20:00</span></p>
+                                <p class="txt-12 mg-t-1u">경기도 성남시 분당구 운중로267번길 3-7(판교동)</p>
+                                <div class="store-meta mg-t-2u">
+                                    <span class="txt-11">오늘서비스</span>
+                                    <span class="txt-11">다녀온 매장</span>
+                                    <span class="txt-11">수입차 정비</span>
+                                    <span class="txt-11">휴일지킴이</span>
+                                </div>
+                                <p class="mg-t-2u">
+                                    <a href="#" class="dp-inblock txt-0 txt-primary">
+                                        <span class="txt-12 v-middle">매장 상세보기</span>
+                                        <span class="line-icons chev-right size-16"></span>
+                                    </a>
+                                </p>
+                                <ul class="flags third-benefit"><!-- 202012 pub fixed -->
+                                    <li><span class="flag flag-smart-pickup">스마트<br>픽업</span></li>
+                                </ul>
+                            </div>
+                            <div class="action">
+                                <div class="more">
+                                    <button type="button" class="btn-item btn-neutral btn-ms round btn-inv min-w">
+                                        <span class="line-icons location size-28"></span>
+                                    </button>
+                                    <button type="button" class="btn-item btn-neutral btn-ms round btn-inv min-w" onclick="$.Tstation.callAndroidCheck(event, '031-1234-5678')">
+                                        <span class="line-icons call size-28"></span>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn-item btn-neutral btn-ms btn-ol round w-150" onclick="goVisitReserve()">
+                                    <span class="label-txt">방문 예약하기</span>
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </div>
+</main>

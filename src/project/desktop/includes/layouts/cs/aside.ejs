@@ -1,0 +1,65 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (typeof _baseUrl === 'undefined') return;
+        $(".left_menu li").filter(function(element, index, array) {
+            var ref = location.href;
+            var sub = false;
+            if(ref == _baseUrl+'customer-service/tsservice/wagestime.do'
+              || ref == _baseUrl+'customer-service/tsservice/knowhowtire.do'
+              || ref == _baseUrl+'customer-service/tsservice/servicetire.do') {
+                sub = true;
+            }
+            if(ref == _baseUrl+'customer-service/tsservice/wagesprice.do') {
+                ref = _baseUrl+'customer-service/tsservice/wagestime.do';
+                sub = true;
+            }
+            if(ref == _baseUrl+'customer-service/tsservice/knowhowitem.do') {
+                ref = _baseUrl+'customer-service/tsservice/knowhowtire.do';
+                sub = true;
+            }
+            if(ref == _baseUrl+'customer-service/tsservice/serviceitem.do') {
+                ref = _baseUrl+'customer-service/tsservice/servicetire.do';
+                sub = true;
+            }
+            if(ref.indexOf(_baseUrl+'customer-service/faq.do') != -1){
+                ref = _baseUrl+'customer-service/faq.do';
+            }
+            if($(this).find("a").attr("href") == ref) {
+                $(this).addClass("on");
+                if(sub) {
+                    $('.left_menu .toggle_box').addClass("on");
+                }
+            }
+        });
+    });
+</script>
+<div class="left_menu">
+    <h3 class="cate_tit">고객센터</h3>
+    <ul>
+        <li class="on"><a href="https://www.tstation.com/customer-service/main">고객센터</a></li>
+        <li><a href="https://www.tstation.com/customer-service/announcement/notice.do">공지사항</a></li>
+        <li><a href="https://www.tstation.com/customer-service/qna.do">1:1 고객상담</a></li>
+        <li><a href="https://www.tstation.com/customer-service/faq.do">FAQ</a></li>
+        <li><a href="https://www.tstation.com/customer-service/warranty/warranty-info">무상보증서비스</a></li>
+        <li class="sub toggle_box on">
+            <span class="tit on">T’Station 서비스 안내 </span>
+            <ul class="sub_box">
+                <li><a href="https://www.tstation.com/customer-service/tsservice/servicetire.do">주요 서비스 안내</a></li>
+                <li><a href="https://www.tstation.com/customer-service/tsservice/knowhowtire.do">관리 노하우</a></li>
+                <li><a href="https://www.tstation.com/customer-service/tsservice/wagestime.do">표준 정비시간</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="cs_info01">
+        <span class="txt">고객센터 운영 안내</span>
+        <span class="tit">080-022-8272</span>
+        <span><em class="r1">월~금</em> 09:00 ~ 16:00</span>
+        <span><em>토/일요일·공휴일 휴무</em></span>
+    </div>
+    <div class="cs_info02">
+        <span class="tit">T’Station 오픈시간</span>
+        <span><em>월~금 </em>   09:00 ~ 19:00</span>
+        <span><em>토요일</em>   09:00 ~ 17:00</span>
+        <span><em>일요일</em>  매장에 확인해주세요</span>
+    </div>
+</div>

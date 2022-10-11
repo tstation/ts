@@ -1,0 +1,194 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+<%# Include %>
+<!-- 20211109 // -->
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '간단한 회원가입' }) %>
+<!-- // 20211109 -->
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/join.css" />
+<div id="container" class="member">
+    <form id="joinForm" method="POST">
+        <!-- 01. 필수정보입력 -->
+        <div class="join_form">
+            <p class="mg-t-6u pd-h-5u txt-16">필수 정보입력</p>
+            <div class="divider mg-h-5u mg-t-2u"></div>
+            <!--<h6 class="tit">필수정보입력</h6>-->
+            <div class="inner">
+                <ol class="user_info">
+                    <li class="phone">
+                        <span class="tit">아이디(이메일)</span>
+                        <span class="r4"><input title="아이디(이메일) 입력" type="text" class="ip_txt01 w100p" name="mbrEmailId" id="mbrEmailId" maxlength="280"/></span>
+                        <span class="r3"><button type="button" class="btnM2 btnS01" id="dupEmailIdChk">중복확인</button></span>
+                        <p class="point" id="idError" style="display:none;">이메일을 입력해 주세요.</p>
+                    </li>
+                    <li>
+                        <span class="tit">비밀번호</span>
+                        <input title="비밀번호 입력" type="password" name="passwd" id="passwd" maxlength="15" class="ip_txt01 w100p password01" />
+                        <input type="checkbox" class="pwView" id="passwordView01" data-rel="password01"><label for="passwordView01">보이기</label>
+                        <p class="point" id="pwError" style="display:none;">영문/숫자/특수문자 2개 이상 조합 6~15자</p>
+                    </li>
+                    <li>
+                        <span class="tit">비밀번호 확인</span>
+                        <input type="password" id="passwdConfirm" name="passwdConfirm" maxlength="15" class="ip_txt01 w100p password01" />
+                        <input type="checkbox" class="pwView" id="passwordView02" data-rel="password01"><label for="passwordView02">보이기</label>
+                        <p class="point" id="pwCnfError" style="display:none;">비밀번호가 일치하지 않습니다.</p>
+                    </li>
+
+                    <li class="mail">
+                        <span class="tit">이름</span>
+                        <input title="이름 입력" type="text" class="ip_txt01 w100p" name="mbrNm" id="mbrNm" maxlength="50" />
+                        <p class="point" id="nmError" style="display:none;">실명을 입력해 주세요.</p>
+                    </li>
+                    <li class="phone2">
+                        <span class="tit">휴대폰</span>
+                        <span class="r1"><input type="tel" class="ip_txt01 w100p numeric" name="cellSctNo" id ="cellSctNo" maxlength="3"/></span>
+                        <span class="r2">-</span>
+                        <span class="r3"><input type="tel" class="ip_txt01 w100p numeric" name="cellTxnoNo" id ="cellTxnoNo" maxlength="4"/></span>
+                        <span class="r2">-</span>
+                        <span class="r3"><input type="tel" class="ip_txt01 w100p numeric" name="cellEndNo" id ="cellEndNo" maxlength="4"/></span>
+                        <!--<button type="button" class="btnM2 btnS01 changePhone2 certifyPhone" id="btnSendAuth" disabled>인증</button>-->
+                        <p class="point" id="clError" style="display:none;">휴대전화번호를 입력해 주세요.</p>
+                    </li>
+                    <!--<li id="PhoneL03" class="phone phonesign" style="display:block;">
+                      <input type="tel" class="ip_txt01 w100p" id="authVal" placeholder="인증번호를 입력해 주세요." maxlength="6">
+                      <div class="time_limit" style="fonts-size:12px" id ="timeLimit"><span id="timer" class="timer"></span></div>
+                    </li>-->
+                    <!--<li id="PhoneL03a" class="btn phonesign" style="display:block;">
+                      <div class="btn02">
+                        <ul>
+                          <li><button type="button" class="btnM2 btnS01 changePhone3 certifyPhone" id="btnReTry">재전송</button></li>
+                          <li><button type="button" class="btnM2 btnS02" id="btnCert">확인</button></li>
+                        </ul>
+                      </div>
+                    </li>-->
+
+                </ol>
+            </div>
+        </div>
+        <!-- //01. 필수정보입력 -->
+        <!-- 02. 선택사항 -->
+
+        <div class="join_form">
+            <p class="mg-t-2u pd-h-5u txt-16">서비스 약관동의</p>
+            <div class="divider mg-h-5u mg-t-2u"></div>
+
+            <!-- 20211109 // -->
+            <div class="flex-between pd-h-5u pd-v-3u">
+                <label class="check-item">
+                    <input type="checkbox" />
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u txt-12">전체선택</span>
+                    </div>
+                </label>
+            </div>
+
+            <ul class="bg-light1 pd-h-5u pd-v-3u">
+                <li class="flex-between">
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">티스테이션 all my T 이용 약관 동의(필수)</span>
+                        </div>
+                    </label>
+                    <a href="#" class="txt-12 line-32 popup-full nowrap" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=10">
+                        <span class="label-txt txt-w700">내용보기</span>
+                        <span class="line-icons chev-right size-16"></span>
+                    </a>
+                </li>
+                <li class="flex-between">
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">개인정보처리방침(필수)</span>
+                        </div>
+                    </label>
+                    <!-- 20211117 // -->
+                    <a href="#" class="txt-12 line-32 popup-full nowrap" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=10">
+                        <span class="label-txt txt-w700">내용보기</span>
+                        <span class="line-icons chev-right size-16"></span>
+                    </a>
+                    <!-- // 20211117 -->
+                </li>
+                <li class="flex-between">
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">마케팅 활용을 위한 개인정보 수집 및 이용동의 (선택) </span>
+                        </div>
+                    </label>
+                    <a href="#" class="txt-12 line-32 popup-full nowrap" data-rel="https://m.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">
+                        <span class="label-txt txt-w700">내용보기</span>
+                        <span class="line-icons chev-right size-16"></span>
+                    </a>
+                </li>
+                <li class="flex-between mg-t-2u">
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">광고성 정보 수신동의(선택)</span>
+                        </div>
+                    </label>
+                </li>
+                <li class="flex-between mg-l-2u">
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">SMS, MMS</span>
+                        </div>
+                    </label>
+                </li>
+                <li class="flex-between mg-l-2u">
+                    <label class="check-item">
+                        <input type="checkbox" />
+                        <div class="icon-holder">
+                            <span class="line-icons square size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">카카오 알림톡</span>
+                        </div>
+                    </label>
+                </li>
+                <li class="flex-between mg-l-2u">
+                    <label class="check-item">
+                        <div class="icon-holder icon-push-default active"><!-- 비활성화시 active 제거 -->
+                            <span class="line-icons check size-20"></span>
+                        </div>
+                        <div class="labelling">
+                            <span class="label-txt mg-h-1u txt-12">앱푸시 알림</span>
+                        </div>
+                    </label>
+                </li>
+            </ul>
+            <div class="bg-light1 mg-h-5u border-t"></div>
+            <div class="bg-light1 pd-h-5u pd-v-3u join-noit-list">
+                <p class="txt-11 txt-neutral3 join-noit"><span class="icon">&middot;</span>선택사항에 동의하지 않으셔도 T’Station 의 서비스는 이용하실 수 있습니다. </p>
+                <p class="txt-11 txt-primary join-noit"><span class="icon">&middot;</span>마케팅 활용을 위한 수집 및 이용동의 시 추가 할인쿠폰과 더 많은 혜택이 제공됩니다.</p>
+                <p class="txt-11 txt-neutral3 join-noit"><span class="icon">&middot;</span>앱 푸시 알림 설정은 티스테이션앱 > 설정 메뉴를 확인해 주세요.</p>
+            </div>
+            <div class="pd-h-5u pd-v-5u join-noit-list">
+                <button type="button" class="btn-item btn-neutral round full-w btnRegist"> <!-- 20211117 -->
+                    <span class="label-txt">휴대폰 본인인증</span>
+                </button>
+                <p class="mg-t-2u txt-12 txt-center txt-neutral2">휴대폰 본인인증 후 회원가입이 완료됩니다.</p>
+            </div>
+            <!-- // 20211109 -->
+        </div>
+    </form>
+</div>

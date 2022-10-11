@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="theme-color" content="#fff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>타이어 쇼핑은 T'Station.com</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="mc-static-root/images/common/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="mc-static-root/images/common/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/font/NotoSansKR/NotoSansKR.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/font/LineIcons/LineIcons.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/reset_mc_override.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/layout_mc_override.css" />
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/style_mc.css">
+    <link rel="stylesheet" type="text/css" href="mc-static-root/css/u_mc.css">
+    <link type="text/css" rel="stylesheet" href="mc-static-root/css/tam.css"><!-- 타알못 PAGE CSS include -->
+
+    <script type="text/javascript" src="mc-static-root/js/common/publish/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/publish/swiper.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/publish/datepicker.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/common.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/ajax.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/number.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/page_util.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.form.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.form.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/rsvDate.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/footer.js"></script>
+
+    <script type="text/javascript" src="mc-static-root/js/common/prefixfree.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/rangeslider.min.js"></script>
+    <script type="text/javascript" src="mc-static-root/js/common/components.js"></script>
+</head>
+<style>
+    .uiset::-webkit-scrollbar {
+        width: 0px;
+    }
+</style>
+
+<body ontouchstart class="uiset">
+    <div id="wrap">
+        <header id="header">
+            <!-- 메뉴버튼 스크립트 컨트롤은 '.btn-open-sidebar' -->
+            <!-- btn-open-sidebar에 'has-new'클래스 추가/제거 -->
+            <button type="button" class="btn-item btn-ml btn-neutral round btn-inv min-w btn-open-sidebar has-new" title="메뉴열기">
+                <span class="line-icons menu size-24"></span>
+            </button>
+
+            <h1><a href="https://m.tstation.com/"><img src="mc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img"></a></h1>
+
+            <button type="button" onclick="searchPathname(); return false;" class="btn-item btn-ml btn-neutral round btn-inv min-w btn-search" title="통합검색">
+                <span class="line-icons search"></span>
+            </button>
+
+            <a href="https://m.tstation.com/cart" class="btn-item btn-ml btn-neutral round btn-inv min-w btn-cart" title="장바구니">
+                <span class="line-icons cart"></span>
+                <em class="badge">9</em>
+            </a>
+        </header>
+        <aside id="sidebar" class="">
+            <div class="dim"></div>
+            <div class="swiper-container sidebar-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide sidebar-pannel-layer">
+                        <div class="btn-close-sidebar"></div>
+                        <div class="sidebar-pannel">
+                            <div class="fixed-area">
+                                <header class="sidebar-header">
+                                    <a href="#" class="logo-home-link">
+                                        <img src="mc-static-root/images/common/bi_full.svg" alt="T'Station">
+                                    </a>
+                                    <!-- TODO: 로그인 상태 -->
+                                    <div class="tools">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="btn-item btn-ms min-w btn-neutral round btn-inv" title="내 차 관리">
+                                                    <span class="line-icons car-circle size-30"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn-item btn-ms min-w btn-neutral round btn-inv mg-l-1u" title="마이페이지">
+                                                    <span class="line-icons user size-30"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <!-- btn-alarm에 'has-new'클래스 추가/제거 -->
+                                                <a href="#" class="btn-item btn-ms min-w btn-neutral round btn-inv btn-alarm has-new mg-l-1u" title="알림">
+                                                    <span class="line-icons alarm size-30"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- TODO: 로그아웃 상태 -->
+                                    <!--<div class="tools">
+                                <ul>
+                                    <li>
+                                        <button type="button" class="btn-item btn-gray btn-ol btn-s round "><span class="label-txt">로그인</span></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn-item btn-gray btn-ol btn-s round mg-l-1u"><span class="label-txt">회원가입</span></button>
+                                    </li>
+                                </ul>
+                            </div>-->
+                                </header>
+                                <!--로그인후 : default ,로그인전 : logout클래스 설정 -->
+                                <nav class="personal-menu">
+                                    <div class="greeting-wrap">
+                                        <span class="label-txt">
+                                            <span class="dp-inblock v-middle txt-10">[임직원]</span>
+                                        <em class="txt-ellipsis user-name  v-middle">홍길동</em><span class="dp-inblock v-middle greeting-txt">님, 안녕하세요</span>
+                                        </span>
+                                    </div>
+                                    <ul class="list-size-equal">
+                                        <ul class="list-size-equal">
+                                            <li>
+                                                <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                                    <span class="line-icons t-membership size-30 badge-container"><span class="badge badge-dot"></span></span>
+                                                    <span class="label-txt">MY 멤버십</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                                    <span class="line-icons coupon size-30 badge-container"><span class="badge badge-dot"></span></span>
+                                                    <span class="label-txt">쿠폰함</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                                    <span class="line-icons receipt size-30"></span>
+                                                    <span class="label-txt">주문내역</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                                    <span class="line-icons calendar-check size-30"></span>
+                                                    <span class="label-txt">방문예약</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                    <div class="btn-membership-card-wrapper">
+                                        <!-- TODO: 로그인 후 'disabled' 삭제 -->
+                                        <button type="button" class="btn-item btn-neutral btn-inv filet full-w btn-membership-card">
+                                            <p class="label-txt">티스테이션 회원 카드</p>
+                                            <img src="mc-static-root/images/common/bi_full.svg" alt="T'Station" class="bi-img full">
+
+                                            <span class="line-icons barcode size-36"></span>
+                                            <div class="barcode-area">
+                                                <div class="barcode-wrap">
+                                                    <div class="barcode-holder" style="background-image:url('mc-static-root/images/common/barcode-sample.png');"></div>
+                                                </div>
+                                                <p class="barcode-info"><span>회원번호:</span><span class="barcode-number">M200082579</span></p>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </nav>
+                            </div>
+                            <hr class="divider mg-t-2u">
+                            <div class="scroll-area">
+                                <div class="mycar-tire-search-wrap pd-h-4u">
+                                    <p class="tit">내 차에 꼭 맞는 타이어 찾기</p>
+                                    <ul class="cs_menu01">
+                                        <li>
+                                            <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                                <div class="img-car-num">
+                                                    <img src="mc-static-root/images/common/graphics_tire_search_car_number.svg" alt="T'Station" class="bi-img">
+                                                </div>
+                                                <span class="label-txt">차량번호로 찾기</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                                <div class="img-car-model">
+                                                    <img src="mc-static-root/images/common/graphics_tire_search_car_kinds.svg" alt="T'Station" class="bi-img">
+                                                </div>
+                                                <span class="label-txt">차종으로 찾기</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="btn-item btn-free btn-neutral btn-inv filet full-w">
+                                                <div class="img-car-tire">
+                                                    <img src="mc-static-root/images/common/graphics_tire_search_size.svg" alt="T'Station" class="bi-img">
+                                                </div>
+                                                <span class="label-txt">사이즈로 찾기</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <nav class="global-menu">
+                                    <!--쇼핑메뉴 항상노출-->
+                                    <div class="open-menu">
+                                        <p class="tit">쇼핑</p>
+                                        <div class="open-menu-lst-warp">
+                                            <ul class="open-menu-lst">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">승용차</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">SUV</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="m-txt">전기차</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">VAN</br>소형트럭</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="open-menu-lst">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">한국타이어</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">미쉐린타이어</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="m-txt">피렐리타이어</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">멕시스타이어</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="open-menu-lst">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">엔진오일</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">배터리</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="m-txt">실내필터</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="m-txt">와이퍼</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--//쇼핑메뉴 항상노출-->
+                                    <!--dl>
+                                <dt class="">
+                                    <p class="label-txt">경정비 쇼핑</p>
+                                </dt>
+
+                                <dd>
+                                    <a href="" class="">
+                                        <p class="label-txt">엔진오일</p>
+                                    </a>
+
+                                    <a href="" class="">
+                                        <p class="label-txt">배터리</p>
+                                    </a>
+
+                                    <a href="" class="">
+                                        <p class="label-txt">실내필터</p>
+                                    </a>
+
+                                    <a href="" class="">
+                                        <p class="label-txt">와이퍼</p>
+                                    </a>
+                                </dd>
+                            </dl-->
+
+                                    <dl>
+                                        <dt class="" onclick="window.location.href=''">
+                                            <p class="label-txt">all my <strong>T</strong> 서비스</p>
+                                        </dt>
+                                    </dl>
+
+                                    <dl>
+                                        <dt class="" onclick="window.location.href=''">
+                                            <p class="label-txt">한정특가딜</p>
+                                        </dt>
+                                    </dl>
+
+                                    <dl>
+                                        <dt class="" onclick="window.location.href=''">
+                                            <p class="label-txt">매장예약</p>
+                                        </dt>
+                                    </dl>
+
+                                    <dl>
+                                        <dt class="" onclick="window.location.href=''">
+                                            <p class="label-txt">이벤트</p>
+                                        </dt>
+                                    </dl>
+
+                                    <!-- TAM 0817 // -->
+                                    <dl>
+                                        <dt class="" onclick="window.location.href=''">
+                                            <p class="label-txt">알쓸타잡</p>
+                                        </dt>
+                                    </dl>
+                                    <!-- // TAM 0817 -->
+
+                                    <dl>
+                                        <dt class="" onclick="window.location.href=''">
+                                            <p class="label-txt">고객센터</p>
+                                        </dt>
+                                    </dl>
+                                </nav>
+                                <hr class="divider">
+                                <div class="logout-btn-wrap">
+                                    <a href="#" class="btn-logout">로그아웃<span class="line-icons logout size-20"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide dummy swiper-no-swiping"></div>
+                </div>
+            </div>
+        </aside>
+
+
+
+        <div class="navbar">
+            <!-- 백버튼 스크립트 컨트롤은 '.btn-back' -->
+            <button type="button" class="btn-item btn-ml btn-neutral round btn-inv min-w btn-back" title="뒤로가기">
+                <span class="line-icons chev-left size-24"></span>
+            </button>
+
+            <h2>설정</h2>
+        </div>
+        <link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+        <main id="main">
+            <div class="tab-item">
+                <a href="" class="on">계정관리</a>
+                <a href="" class="">알림설정</a>
+                <a href="" class="">버젼 정보</a>
+            </div>
+
+            <!-- 콘텐츠 영역 -->
+            <div class="container app-settings-page">
+                <section class="login-setting-section">
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                user id name
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="btn-item round btn-logout btn-reset pd-h-5u">
+                                    <span class="label-txt txt-12">로그아웃</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                자동로그인
+                            </div>
+                            <div class="cell">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="switch-track">
+                                        <div class="switch">
+                                            <div class="switch-handle"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                생체인증 로그인 사용
+                            </div>
+                            <div class="cell">
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <div class="switch-track">
+                                        <div class="switch">
+                                            <div class="switch-handle"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sns-connect-section">
+                    <h2 class="rowgroup-header txt-14 mg-h-5u pd-b-1u">
+                        SNS 간편로그인
+                        <p class="rowgroup-subheader txt-11 txt-neutral2 mg-t-1u">
+                            자주 쓰는 SNS 계정을 연동해 로그인합니다.
+                        </p>
+                    </h2>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                카카오 계정
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="btn-item round btn-reset">
+                                    <span class="label-txt">연결안됨</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                네이버 계정
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="btn-item btn-reset round" disabled>
+                                    <span class="label-txt">연결됨</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                페이스북 계정
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="btn-item round btn-reset">
+                                    <span class="label-txt">연결안됨</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                구글 계정
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="btn-item round btn-reset">
+                                    <span class="label-txt">연결안됨</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                애플 계정
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="btn-item btn-reset round" disabled>
+                                    <span class="label-txt">연결됨</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                T 계정
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="btn-item round btn-reset">
+                                    <span class="label-txt">연결안됨</span>
+                                    <span class="line-icons chev-right size-20"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="native-setting-section">
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                <p class="row-header-copy txt-14">위치정보 이용 수집동의</p>
+                                <p class="row-subheader-copy txt-11 txt-neutral2">현재위치 주변 스토어검색을 위해 접근이 필요합니다. </p>
+                            </div>
+                            <div class="cell">
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <div class="switch-track">
+                                        <div class="switch">
+                                            <div class="switch-handle"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                <p class="row-header-copy txt-14">사진/카메라 이용동의</p>
+                                <p class="row-subheader-copy txt-11 txt-neutral2">포토리뷰 작성을 위한 사진첩/카메라 접근이 필요합니다..</p>
+                            </div>
+                            <div class="cell">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="switch-track">
+                                        <div class="switch">
+                                            <div class="switch-handle"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowgroup">
+                        <div class="row">
+                            <div class="rowheader">
+                                <p class="row-header-copy txt-14">생체 인증 정보(지문)수집 동의</p>
+                                <p class="row-subheader-copy txt-11 txt-neutral2">로그인, 간편인증 서비스 이용을 위한 접근이 필요합니다</p>
+                            </div>
+                            <div class="cell">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <div class="switch-track">
+                                        <div class="switch">
+                                            <div class="switch-handle"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+            </div>
+        </main>
+        <div id="footer">
+            <div class="footer-header">
+                <div class="logo-area"><img src="mc-static-root/images/common/bi_full_on_dark.svg" alt="티스테이션" /></div>
+                <div class="social-area">
+                    <ul>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCydkm3xXUbFzpHGoeGmJiNA" target="_blank">
+                                <img src="mc-static-root/images/common/social-youtube.svg" alt="티스테이션 유튜브" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.facebook.com/티스테이션-TStation-361732270985745/?ref=py_c" target="_blank">
+                                <img src="mc-static-root/images/common/social-facebook.svg" alt="티스테이션 페이스북" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.blog.naver.com/PostList.nhn?permalink=permalink&amp;blogId=tstation-online&amp;proxyReferer=" target="_blank">
+                                <img src="mc-static-root/images/common/social-naver_blog.svg" alt="티스테이션 네이버 블로그" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://pf.kakao.com/_xgVAWC" target="_blank">
+                                <img src="mc-static-root/images/common/social-kakao_channel.svg" alt="티스테이션 카카오 채널" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-body">
+                <div class="terms-area mg-b-4u">
+                    <ul>
+                        <li><a href="https://m.tstation.com/terms/termsmain.do?agrmSctCd=10">이용약관</a></li>
+                        <li><a href="https://m.tstation.com/terms/termsmain.do?agrmSctCd=30">개인정보 처리방침</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://m.tstation.com/terms/termsmain.do?agrmSctCd=150">개인정보 열람/정정 신청</a></li>
+                        <li><a href="https://m.tstation.com/customer-service/qna.do?cnslClssSeq=10025">가맹점 제휴문의</a></li>
+                    </ul>
+                </div>
+                <div class="company-area mg-b-4u">
+                    <ul>
+                        <li>한국타이어앤테크놀로지(주)<span class="inline-vertical-divider"></span>대표이사 이수일</li>
+                        <li>경기도 성남시 분당구 판교로 286 (삼평동)</li>
+                        <li>사업자등록번호 220-88-43431</li>
+                        <li>통신판매업 신고번호 2020-성남분당B-0575 <a href="http://ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2020378021930202285&pageUnit=10&searchCnd=wrkr_no&searchKrwd=2208843431&pageIndex=1" target="_blank">[ 사업자 정보확인 ]</a></li>
+                        <li><a href="#" onclick="$.Tstation.callAndroidCheck(event, '080-022-8272')">고객센터 080-022-8272</a><span class="inline-vertical-divider"></span><a href="mailto: as@hankooktire.com">이메일 as@hankooktire.com</a></li>
+                        <!-- 0823 // -->
+                        <li class="none"><a href="/tam/tstation-tv" style="color: #2a3138 !important;">알쓸타잡</a></li>
+                        <!-- // 0823 -->
+                    </ul>
+                </div>
+                <div class="family-site-area">
+                    <div class="form-control form-control-sm">
+                        <div class="input-group">
+                            <select id="family-site" class="input-box input-box-sm">
+                                <option selected disabled>FAMILY SITE</option>
+                                <option value="https://m.hankooktire.com/kr/">한국타이어 테크놀로지</option>
+                            </select>
+
+                            <div class="tools">
+                                <button><span class="line-icons chev-down"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-footer">
+                <div class="award-area">
+                    <ul class="list-size-equal award-list mg-b-4u">
+                        <li>
+                            <img src="mc-static-root/images/common/award-brand_power_car.png" alt="한국산업의 브랜드 파워 스용차전문점 부문 18년 연속 1위" />
+                            <p>한국산업의 브랜드 파워<br />승용차전문점 부문<br />18년 연속 1위</p>
+                        </li>
+                        <li>
+                            <img src="mc-static-root/images/common/award-brand_power_tire.png" alt="한국산업의 브랜드 파워 타이어전문점 부문 12년 연속 1위" />
+                            <p>한국산업의 브랜드 파워<br />타이어전문점 부문<br />12년 연속 1위</p>
+                        </li>
+                        <li>
+                            <img src="mc-static-root/images/common/award-quality_required.png" alt="한국품질만족지수 자동차용타이어 부문 11년 연속 1위" />
+                            <p>한국품질만족지수<br />자동차용타이어 부문<br />11년 연속 1위</p>
+                        </li>
+                    </ul>
+                    <ul class="list-size-equal award-list">
+                        <li>
+                            <img src="mc-static-root/images/common/award-empathic_content.png" alt="대한민국 공감컨텐츠대상 캠페인부문" />
+                            <p>대한민국<br />공감컨텐츠대상<br />캠페인부문</p>
+                        </li>
+                        <li>
+                            <img src="mc-static-root/images/common/award-web_award_korea.png" alt="웹어워드 코리아 2019 모바일웹 고객 서비스분야 최우수상" />
+                            <p>웹어워드 코리아 2019<br />모바일웹 고객<br />서비스분야 최우수상</p>
+                        </li>
+                        <li>
+                            <img src="mc-static-root/images/common/award-escro.png" alt="Bluewalnut 구매안전(에스크로)서비스" />
+                            <p>Bluewalnut<br />구매안전(에스크로)서비스</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="layerFullPopup">
+            <div class="layer_box">
+                <div id="full_content"></div>
+                <button type="button" class="layer-full-close">팝업닫기</button>
+            </div>
+        </div>
+        <div id="layerInnerPopup">
+            <div class="layer_box2">
+                <div id="full_inner"></div>
+                <button type="button" class="layer-inner-close">팝업닫기</button>
+            </div>
+        </div>
+
+        <div id="layerScarcePopup">
+            <div class="layer_box">
+                <div id="scarce_content">
+
+                </div>
+                <button type="button" class="layer-scarce-close">팝업닫기</button>
+            </div>
+        </div>
+        <div id="loadingDim">
+            <div class="lds-ring">
+                <div style="position:relative;height:110px">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <strong style="display:block;text-align:center;color:#fff;font-size:24px;white-space:nowrap;margin-left:-50px;">조금만 기다려주세요.</strong>
+            </div>
+        </div>
+        <div class="guide-item">
+            <button type="button" class="btn-item btn-primary btn-xl min-w round btn-guide-item-on">
+                <span class="line-icons txt-neutral1 cs-fab size-32"></span>
+            </button>
+
+            <div class="dim"></div>
+
+            <button type="button" class="btn-item btn-white btn-ol btn-xl min-w round btn-guide-item-off">
+                <span class="line-icons close size-30"></span>
+            </button>
+
+            <div class="guide-menus">
+                <a href="https://m.tstation.com/customer-service/shopping-guide" class="btn-item btn-white btn-inv btn-free full-w">
+                    <p class="label-txt">
+                        <span class="txt-14 txt-w500">쉬운 타이어 쇼핑</span><br>
+                        <span class="txt-13 txt-w300">온라인 타이어 쇼핑이 어렵나요?</span>
+                    </p>
+                    <span class="line-icons mouse size-36"></span>
+                </a>
+
+                <a href="https://m.tstation.com/customer-service/line-up/default" class="btn-item btn-white btn-inv btn-free full-w">
+                    <p class="label-txt">
+                        <span class="txt-14 txt-w500">한국타이어 라인업</span><br>
+                        <span class="txt-13 txt-w300">한국타이어 상품군을 한눈에</span>
+                    </p>
+                    <span class="line-icons search size-36"></span>
+                </a>
+
+                <a class="btn-item btn-white btn-inv btn-free full-w" onclick="$.Tstation.callCs();">
+                    <p class="label-txt">
+                        <span class="txt-14 txt-w500">1:1 상담</span><br>
+                        <span class="txt-13 txt-w300">무엇을 도와드릴까요?</span>
+                    </p>
+                    <span class="line-icons headset size-36"></span>
+                </a>
+            </div>
+        </div>
+
+        <!--//guide-item-->
+        <script type="text/javascript">
+            $(window).scroll(function() {
+                $(".guide-item").removeClass("on");
+                $(".guide-item").addClass("hide");
+                clearTimeout($.data(this, 'scrollTimer'));
+                $.data(this, 'scrollTimer', setTimeout(function() {
+                    $(".guide-item").removeClass("hide");
+                }, 300));
+            });
+        </script>
+        <script type="text/javascript" src="mc-static-root/js/common/ui_frontMC.js"></script>
+    </div>
+</body>
+
+</html>

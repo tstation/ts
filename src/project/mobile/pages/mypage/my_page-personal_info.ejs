@@ -1,0 +1,18 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '개인정보' }) %>
+<div id="container" class="mypage">
+    <!-- 회원 - 비밀번호 확인 -->
+    <div class="member_info">
+        <p class="txt01">회원님의 개인정보 안전을 위해<br><em>비밀번호</em>를 한번 더 입력해주세요.</p>
+        <ol class="form">
+            <li><input type="password" class="ip_txt01 w100p" placeholder="비밀번호를 입력하세요"></li>
+        </ol>
+    </div>
+    <div class="btn02">
+        <a href="#" class="btnB btnS02">확인</a>
+    </div>
+    <!-- //회원 - 비밀번호 확인 -->
+</div>

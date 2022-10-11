@@ -1,0 +1,1503 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <div class="container border-b">
+        <div class="guardrail pd-t-15u">
+            <div class="page-header border-none">
+                <h1>방문 예약하기</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-light2">
+        <div class="guardrail pd-v-5u">
+            <div class="container">
+                <ol>
+                    <li class="txt-16 mg-t-1u">T'Station은 고객님의 편의를 위해 온라인에서 방문예약 서비스를 진행하고 있습니다.</li>
+                    <li class="txt-16 txt-neutral2 mg-t-1u">방문 예약 신청 시, 매장 사정에 따라서 예약일이 변동되는 경우, 혹은 선택한 날짜에 예약이 불가능할 경우 매장에서 해피콜 해드립니다.</li>
+                    <li class="txt-16 txt-neutral2 mg-t-1u">또한, 예약 완료 후에는 고객님 휴대폰으로 예약 확정 SMS가 전송되며, 예약 내용을 수정할 경우 기존 예약 내역을 취소한 후 다시 진행 바랍니다.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="contents">
+        <link rel="stylesheet" type="text/css" href="pc-static-root/css/mypage.css" /><!-- 20210720 css 추가 -->
+        <div class="order-upper-area visit-order-upper mg-t-10u"><!-- 20210720 -->
+            <section class="">
+                <div class="section-header">
+                    <h3>고객 정보</h3><!-- 20210720 -->
+
+                    <div class="extra">
+                        <button type="button" class="btn-item btn-neutral btn-ol w-130 round btn-edit-user-info">
+                            <span class="label-txt txt-16">정보 수정</span>
+                        </button>
+
+                        <!-- 입력모드일 경우 교체 노출 -->
+                        <button type="button" class="btn-item btn-neutral w-130 round btn-edit-user-info-done" style="display:none;">
+                            <span class="label-txt txt-16">입력완료</span>
+                        </button>
+
+                        <!-- 시연용 임시스크립트 -->
+                        <script>
+                            $('.btn-edit-user-info').on('click', function(){
+                                $(this).closest('section').find('.order-setting-table .input-box').prop('readonly', false);
+
+                                $(this).css('display', 'none');
+                                $('.btn-edit-user-info-done').css('display', 'inline-block');
+                            });
+
+                            $('.btn-edit-user-info-done').on('click', function(){
+                                $(this).closest('section').find('.order-setting-table .input-box').prop('readonly', true);
+
+                                $(this).css('display', 'none');
+                                $('.btn-edit-user-info').css('display', 'inline-block');
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <table class="order-setting-table visit-order-setting-table"><!-- 20210720 -->
+                        <colspan>
+                            <col style="width:120px;"/>
+                            <col style="width:calc(50% - 120px);"/>
+                        </colspan>
+                        <tbody>
+                        <tr>
+                            <th>주문자명 :</th>
+                            <td>
+                                <div class="form-control form-control-md">
+                                    <div class="input-group">
+                                        <!-- 정보수정 클릭시 readonly어트리뷰트 제거 -->
+                                        <input type="text" class="input-box txt-w500" placeholder="주문자명을 입력해 주세요" value="홍길동" readonly>
+                                        <div class="tools">
+                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>휴대폰 번호 :</th>
+                            <td>
+                                <div class="form-control form-control-md">
+                                    <div class="input-group">
+                                        <!-- 정보수정 클릭시 readonly어트리뷰트 제거 -->
+                                        <input type="tel" class="input-box" placeholder="휴대폰 번호를 입력해 주세요" value="01012343322" readonly>
+                                        <div class="tools">
+                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="mg-t-15u">
+                <div class="section-header">
+                    <h3>방문매장 및 일정</h3><!-- 20210720 -->
+                </div>
+
+                <div class="container">
+                    <table class="order-setting-table visit-order-setting-table"><!-- 20210720 -->
+                        <colspan>
+                            <col style="width:120px;"/>
+                            <col style="width:calc(50% - 120px);"/>
+                            <col style="width:120px;"/>
+                            <col style="width:calc(50% - 120px);"/>
+                        </colspan>
+                        <tbody>
+                        <tr>
+                            <th><span class="line-40">방문 매장 :</span></th><!-- 20210720 -->
+                            <td>
+                                <span class="line-40 txt-primary">판교점</span>
+                            </td>
+                            <td colspan="2" class="txt-right">
+                                <button type="button" class="btn-item btn-neutral btn-ol w-130 round">
+                                    <span class="label-txt txt-16">다시 선택</span>
+                                    <span class="line-icons refresh size-24"></span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 입력모드 돌입시 'edit-mode'클래스 추가(보더 컬러 바꾸는 용도) -->
+                        <tr class="edit-mode">
+                            <th><span class="line-40">방문 일정 :</span></th><!-- 20210720 -->
+                            <td>
+                                <!-- 날짜/시간 선택 전 -->
+                                <button type="button" class="btn-item btn-neutral full-w round">
+                                    <span class="label-txt txt-16">방문일 및 시간을 선택해 주세요</span><!-- 20210720 -->
+                                </button>
+
+                                <!-- 날짜/시간 선택 완료 후 -->
+                                <!-- <span class="line-40 txt-primary">2020. 11. 24(화) /  오전 10시</span> -->
+                            </td>
+                            <td colspan="2" class="txt-right">
+                                <!-- 입력모드 돌입시 숨김 -->
+                                <button type="button" class="btn-item btn-neutral btn-ol w-130 round">
+                                    <span class="label-txt txt-16">다시 선택</span>
+                                    <span class="line-icons refresh size-24"></span>
+                                </button>
+
+                                <!-- 입력모드 돌입시 x버튼 노출 -->
+                                <button type="button" class="btn-item btn-neutral btn-inv min-w round">
+                                    <span class="line-icons close size-24"></span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- 입력모드 돌입시 노출 -->
+                        <tr>
+                            <td colspan="4" class="pd-l-0 pd-v-10u">
+                                <div class="schedule-picker">
+                                    <!-- 방문날짜 선택 -->
+                                    <div class="date-pick-item">
+                                        <div class="month-controller">
+                                            <!-- 이전달 버튼 -->
+                                            <button type="button" class="btn-item btn-neutral btn-inv btn-s min-w round" disabled>
+                                                <span class="line-icons chev-left size-24"></span>
+                                            </button>
+
+                                            <span class="">2020년 11월</span>
+
+                                            <!-- 다음달 버튼 -->
+                                            <button type="button" class="btn-item btn-neutral btn-inv btn-s min-w round">
+                                                <span class="line-icons chev-right size-24"></span>
+                                            </button>
+                                        </div>
+
+                                        <div class="day-controller">
+                                            <ul class="d-o-w">
+                                                <li>일</li>
+                                                <li>월</li>
+                                                <li>화</li>
+                                                <li>수</li>
+                                                <li>목</li>
+                                                <li>금</li>
+                                                <li>토</li>
+                                            </ul>
+
+                                            <ul class="days">
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">1</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">2</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">3</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">4</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">5</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">6</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">7</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">8</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">9</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">10</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">11</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">12</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">13</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">14</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">15</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">16</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">17</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <!-- 오늘: 'today'클래스 추가 -->
+                                                    <label class="day-radio-item today">
+                                                        <input type="radio" name="day_pick_radio"/>
+                                                        <span class="labelling">18</span>
+                                                    </label>
+
+                                                    <!-- 오늘서비스 가능할 경우 노출 / 'on'클래스 제거시 숨김 -->
+                                                    <div class="today-service-tooltip on" onclick="$(this).removeClass('on');">오늘 장착이 가능합니다.</div>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">19</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">20</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">21</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio"/>
+                                                        <span class="labelling">22</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">23</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">24</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">25</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">26</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">27</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">28</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">29</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item">
+                                                        <input type="radio" name="day_pick_radio" />
+                                                        <span class="labelling">30</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <!-- 다음달이나 이전달이 포함될 경우 'another-month'클래스 추가 / 선택시 해당 달로 이동 -->
+                                                    <label class="day-radio-item another-month">
+                                                        <input type="radio" name="day_pick_radio"/>
+                                                        <span class="labelling">1</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item another-month">
+                                                        <input type="radio" name="day_pick_radio" disabled/>
+                                                        <span class="labelling">2</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item another-month">
+                                                        <input type="radio" name="day_pick_radio"/>
+                                                        <span class="labelling">3</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item another-month">
+                                                        <input type="radio" name="day_pick_radio"/>
+                                                        <span class="labelling">4</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="day-radio-item another-month">
+                                                        <input type="radio" name="day_pick_radio"/>
+                                                        <span class="labelling">5</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- 방문시간 선택 -->
+                                    <div class="time-pick-item">
+                                        <p class="txt-16 txt-w500 line-32">방문 시간을 선택해 주세요.</p>
+                                        <p class="txt-neutral2 mg-t-2u">매장에 따라 선택 가능 시간이 다를 수 있습니다.</p>
+
+                                        <ul class="times mg-t-15u">
+                                            <li>
+                                                <label class="time-item">
+                                                    <!-- 예약 가능 시간 input disabled 해제 -->
+                                                    <input type="radio" name="timeradio" disabled>
+                                                    <span class="label-txt">09시</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="time-item">
+                                                    <input type="radio" name="timeradio">
+                                                    <span class="label-txt">10시</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="time-item">
+                                                    <input type="radio" name="timeradio" disabled>
+                                                    <span class="label-txt">11시</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="time-item">
+                                                    <input type="radio" name="timeradio">
+                                                    <span class="label-txt">13시</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="time-item">
+                                                    <input type="radio" name="timeradio" disabled>
+                                                    <span class="label-txt">14시</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="time-item">
+                                                    <input type="radio" name="timeradio">
+                                                    <span class="label-txt">15시</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="time-item">
+                                                    <input type="radio" name="timeradio">
+                                                    <span class="label-txt">16시</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="time-item">
+                                                    <input type="radio" name="timeradio" disabled>
+                                                    <span class="label-txt">17시</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <!-- 날짜/시간 선택 전 숨김 -->
+                                        <button type="button" class="btn-item btn-neutral w-240 round dp-block mg-h-auto mg-t-15u">
+                                            <span class="label-txt txt-16">선택완료</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 20210720 // -->
+            <section class="mg-t-15u">
+                <div class="section-header">
+                    <h3>방문방법</h3>
+
+                    <div class="extra">
+                        <button type="button" class="btn-item btn-primary btn-s btn-inv filet bg-transparent no-pd" onclick="alert('픽업 서비스 안내 팝업 오픈');">
+                            <span class="label-txt txt-14">픽업 서비스가 뭐죠?</span>
+                            <span class="line-icons info-circle size-20 txt-neutral1"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container mg-t-5u">
+                    <ul class="list-size-equal order-visit-type">
+                        <li class="pd-r-2u">
+                            <label class="radio-item visit-type-radio-item">
+                                <input type="radio" name="visit_type_radio" checked>
+                                <div class="icon-holder">
+                                    <span class="line-icons circle size-20"></span>
+                                </div>
+                                <div class="labelling">
+                                    <p class="label-txt txt-20">직접방문</p>
+                                    <p class="label-txt txt-14 txt-neutral2 mg-t-2u">장착점에 직접 방문합니다</p>
+                                </div>
+                                <div class="pictogram-holder"></div>
+                            </label>
+                        </li>
+
+                        <li class="pd-l-2u">
+                            <label class="radio-item visit-type-radio-item">
+                                <input type="radio" name="visit_type_radio">
+                                <div class="icon-holder">
+                                    <span class="line-icons circle size-20"></span>
+                                </div>
+                                <div class="labelling">
+                                    <!-- 20210720 // -->
+                                    <p class="label-txt txt-20">픽업서비스</p>
+                                    <p class="label-txt txt-14 txt-neutral2 mg-t-2u">픽업 서비스 신청 시 요금이 발생할 수 있습니다</p>
+                                    <!-- // 20210720 -->
+                                </div>
+                                <div class="pictogram-holder"></div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <!-- 픽업 서비스 선택시 노출 -->
+                    <div class="container mg-t-4u">
+                        <div class="section-header border-light">
+                            <h4>선택서비스 :</h4>
+                            <div class="dp-inblock line-24 txt-0 v-middle mg-l-5u">
+                                <span class="dp-inblock line-20 txt-18 v-middle">픽업</span>
+                                <span class="dp-inblock line-20 txt-18 v-middle mg-h-2u">/</span>
+                                <!-- 비활성: 'txt-neutral4'클래스 추가 -->
+                                <span class="dp-inblock line-20 txt-18 v-middle txt-neutral3">딜리버리</span>
+                            </div>
+
+                            <!-- 최초 노출 안함 / 선택완료 후 노출 -->
+                            <div class="extra">
+                                <button type="button" class="btn-item btn-neutral btn-ol w-130 round">
+                                    <span class="label-txt txt-16">다시 선택</span>
+                                    <span class="line-icons refresh size-24"></span>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- 입력모드 -->
+                        <ul class="list-size-flex mg-t-5u">
+                            <li class="pd-r-5u">
+                                <dl class="list-size-full smart-pickup-place">
+                                    <dt class="clearfix">
+                                        <h5>픽업</h5>
+                                    </dt>
+                                    <dd onclick="alert('주소 검색 팝업 오픈');">
+                                        <!-- 디폴트: 'txt-neutral3'클래스 추가(흐린색) / 선택후: 'txt-neutral3'클래스 제거(진한색) -->
+                                        <!-- <p class="line-20 txt-16 txt-neutral3">픽업 위치를 선택해 주세요</p> -->
+                                        <p class="line-20 txt-16">경기도 성남시 중원구 성남대로 1148번길 2층 중원구 성남대로 1148번길 2층</p>
+                                    </dd>
+                                </dl>
+                                <div class="container clearfix mg-t-1u">
+                                    <button type="button" class="btn-item btn-primary btn-s btn-inv filet bg-transparent no-pd float-l" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-14">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-20"></span>
+                                    </button>
+
+                                    <label class="check-item txt-right float-r">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons square size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">딜리버리 주소와 동일</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="pd-l-5u border-l">
+                                <dl class="list-size-full smart-pickup-place">
+                                    <dt class="clearfix">
+                                        <h5>딜리버리</h5>
+                                    </dt>
+                                    <dd onclick="alert('주소 검색 팝업 오픈');">
+                                        <!-- 디폴트: 'txt-neutral3'클래스 추가(흐린색) / 선택후: 'txt-neutral3'클래스 제거(진한색) -->
+                                        <p class="line-20 txt-16 txt-neutral3">딜리버리 위치를 선택해 주세요</p>
+                                        <!-- <p class="line-20 txt-16">경기도 성남시 중원구 성남대로 1148번길 2층</p> -->
+                                    </dd>
+                                </dl>
+                                <div class="container clearfix mg-t-1u">
+                                    <button type="button" class="btn-item btn-primary btn-s btn-inv filet bg-transparent no-pd float-l" onclick="alert('이전 주소 팝업 오픈');">
+                                        <span class="label-txt txt-14">이전 주소 불러오기</span>
+                                        <span class="line-icons chev-right size-20"></span>
+                                    </button>
+
+                                    <label class="check-item txt-right float-r">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons square size-20"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt mg-h-1u">픽업 주소와 동일</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="container txt-0 txt-center mg-t-10u">
+                            <button type="button" class="btn-item btn-neutral w-240 round">
+                                <span class="label-txt txt-16">선택완료</span>
+                            </button>
+                        </div>
+
+                        <!-- 입력완료 후 -->
+                        <ul class="list-size-flex mg-t-5u">
+                            <li class="pd-r-5u">
+                                <span class="line-40 txt-18">픽업 :</span>
+                                <span class="line-40 txt-16 mg-l-5u">경기도 성남시 중원구 성남대로 1148번길 2층</span>
+                            </li>
+                            <li class="pd-l-5u border-l">
+                                <span class="line-40 txt-18">딜리버리 :</span>
+                                <span class="line-40 txt-16 mg-l-5u">선택 안함</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </section>
+            <!-- // 20210720 -->
+
+            <section class="mg-t-15u">
+                <div class="section-header">
+                    <h3>방문 목적</h3><!-- 20210720 -->
+                    <div class="extra"><p class="txt-16 txt-neutral2">원하시는 서비스를 선택해주시기 바랍니다. (복수 선택 가능)</p></div>
+                </div>
+
+                <div class="visit-purpose">
+                    <div class="rowgroup border-b">
+                        <div class="rowheader">
+                            <span class="dp-inblock txt-16 pd-h-5u pd-v-5u">타이어</span>
+                        </div>
+                        <div class="cell">
+                            <ul class="store-benefit-list clearfix">
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox" checked disabled>
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-tire-change size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">타이어 교체</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox" disabled>
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-tire-hotel size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">타이어 보관</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-tire-pressure-check size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">공기압 체크</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-tire-position-change size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">위치교환</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-wheel-balance size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">휠밸런스</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-wheel-alignment size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">휠얼라인먼트</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-tire-etc size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">기타</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rowgroup border-b">
+                        <div class="rowheader">
+                            <span class="dp-inblock txt-16 pd-h-5u pd-v-5u">경정비</span>
+                        </div>
+                        <div class="cell">
+                            <ul class="store-benefit-list clearfix">
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox" checked>
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-brake-pad size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">브레이크 패드</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox" checked>
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-battery size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">배터리</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox" checked>
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-engine-oil size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">엔진오일</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-filters size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">필터류</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-wiper size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">와이퍼</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-air-conditioning-gas size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">에어컨가스</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-maintenance-etc size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">기타</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-car-inspection size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">자동차 진단&검사</span>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="benefit">
+                                    <label class="benefit-item">
+                                        <input type="checkbox">
+                                        <div class="icon-holder">
+                                            <span class="line-icons service-car-lift size-40"></span>
+                                        </div>
+                                        <div class="labelling">
+                                            <span class="label-txt">자동차 수리&정비</span>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="">
+                <!-- 20210720 // -->
+                <div class="section-header border-none mg-t-15u">
+                    
+                    <h3>방문 차량정보
+                        <button type="button" class="btn-item btn-primary btn-xs btn-inv filet no-pd mg-l-5u" onclick="alert('등록차량선택 팝업 오픈');">
+                            <span class="label-txt txt-14">등록차량 선택</span>
+                            <span class="line-icons chev-right size-20"></span>
+                        </button>
+                    </h3>
+                    <div class="extra">
+                        <label class="check-item txt-right float-r">
+                            <input type="checkbox" id="directEnterChk">
+                            <div class="icon-holder">
+                                <span class="line-icons square size-20"></span>
+                            </div>
+                            <div class="labelling">
+                                <span class="label-txt txt-12">직접입력하기</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <!-- // 20210720 -->
+
+                <div class="container">
+                    <!-- 20210720 div class="container pd-v-3u clearfix">
+                        <button type="button" class="btn-item btn-primary btn-s btn-inv filet no-pd float-l" onclick="alert('등록차량선택 팝업 오픈');">
+                            <span class="label-txt txt-14">등록차량 선택</span>
+                            <span class="line-icons chev-right size-20"></span>
+                        </button>
+                    </div -->
+
+                    <!-- 20210720 // -->
+                    <div class="container order-car-info visit-order-list">
+                        <div class="form-control form-control-inline">
+                            <label class="label-txt">자동차 브랜드</label>
+                            <div class="input-group">
+                                <!-- 직접입력하기 선택시 disabled 해제 / option은 default('선택')으로 변경 -->
+                                <select class="input-box bg-light1" disabled>
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control form-control-inline">
+                            <label class="label-txt">차종</label>
+                            <div class="input-group">
+                                <select class="input-box bg-light1" disabled>
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control form-control-inline">
+                            <label class="label-txt">세부 차종</label>
+                            <div class="input-group">
+                                <select class="input-box bg-light1" disabled>
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control form-control-inline">
+                            <label class="label-txt">연료</label>
+                            <div class="input-group">
+                                <select class="input-box bg-light1" disabled>
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control form-control-inline">
+                            <label class="label-txt">모델 연도</label>
+                            <div class="input-group">
+                                <select class="input-box bg-light1" disabled>
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control form-control-inline">
+                            <label class="label-txt">세부 모델</label>
+                            <div class="input-group">
+                                <select class="input-box bg-light1" disabled>
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control form-control-inline">
+                            <label class="txt-14 txt-narrower">타이어 사이즈</label>
+                            <div class="input-group">
+                                <select class="input-box bg-light1" disabled>
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="">options1</option>
+                                    <option value="">options2</option>
+                                </select>
+                                <div class="tools">
+                                    <button><span class="line-icons chev-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control form-control-inline">
+                            <label class="label-txt">차량번호</label>
+                            <div class="input-group">
+                                <!-- 직접입력하기 선택시 readonly 해제 / value는 빈값으로 변경 -->
+                                <input type="text" class="input-box bg-light1" placeholder="차량번호를 입력해 주세요 예)12가1234" value="12가1234" readonly>
+                                <div class="tools">
+                                    <button class="clear"><span class="line-icons close-circle"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 20210720 -->
+                    <!-- 시연 스크립트 -->
+                    <script>
+                        $('#directEnterChk').on('change', function(){
+                            var flag = $(this).prop('checked');
+
+                            if(flag){
+                                $('.order-car-info select').prop('disabled', false);
+                                $('.order-car-info input').prop('readonly', false);
+                            }else{
+                                $('.order-car-info select').prop('disabled', true);
+                                $('.order-car-info input').prop('readonly', true);
+                            }
+                        });
+                    </script>
+                </div>
+            </section>
+            <!-- //20210720 -->
+            <section class="mg-t-15u">
+                <div class="section-header">
+                    <h3>추가 요청 메세지</h3><!-- 20210720 -->
+                </div>
+                <div class="container pd-t-4u">
+                    <select id="iscmCd" name="iscmCd" class="select01 w100p" title="추가 요청사항을 선택해 주세요">
+                        <option value="">추가 요청사항을 선택해 주세요.</option>
+                        <option value="">추가 요청사항을 선택해 주세요.</option>
+                    </select>
+                </div>
+            </section>
+            <section class="mg-t-15u">
+                <div class="section-header">
+                    <h3>사용가능한 쿠폰안내</h3>
+                    <div class="extra">
+                        <!-- 20210720 // -->
+                        <p class="txt-16 txt-neutral2 txt-right">
+                            고객님이 <span class="txt-primary">현재 보유하신 쿠폰 중</span>, 방문매장에서 결제시 <span class="txt-primary">적용가능한 쿠폰</span>을 알려드립니다.
+                            <span class="txt-14 dp-block">(사전에 쿠폰사용여부를 말씀해 주세요.)</span>
+                        <!-- // 20210720 -->
+                    </div>
+                </div>
+
+                <div class="visit-purpose">
+                    <div class="rowgroup border-b">
+                        <div class="rowheader">
+                            <span class="dp-inblock txt-16 pd-h-5u pd-v-5u">서비스 쿠폰</span>
+                        </div>
+                        <div class="cell">
+                            <ul class="service-coupon-list">
+                                <li>
+                                    <div class="service-coupon able">
+                                        <div class="noti-able-block">
+                                            <span class="noti-able">보유중</span>
+                                        </div>
+                                        <div class="icon-block">
+                                            <span class="line-icons service-free-inspection size-40"></span>
+                                        </div>
+                                        <div class="label-block">
+                                            <span class="label">무상점검 쿠폰</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="service-coupon">
+                                        <div class="noti-able-block">
+                                            <span class="noti-able">보유중</span>
+                                        </div>
+                                        <div class="icon-block">
+                                            <span class="line-icons service-tire-punk size-40"></span>
+                                        </div>
+                                        <div class="label-block">
+                                            <span class="label">펑크 무상수리 쿠폰</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="service-coupon">
+                                        <div class="noti-able-block">
+                                            <span class="noti-able">보유중</span>
+                                        </div>
+                                        <div class="icon-block">
+                                            <span class="line-icons service-tire-position-change size-40"></span>
+                                        </div>
+                                        <div class="label-block">
+                                            <span class="label">위치교환 서비스 쿠폰</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="service-coupon">
+                                        <div class="noti-able-block">
+                                            <span class="noti-able">보유중</span>
+                                        </div>
+                                        <div class="icon-block">
+                                            <span class="line-icons service-tire-hotel size-40"></span>
+                                        </div>
+                                        <div class="label-block">
+                                            <span class="label">호텔서비스 쿠폰</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--<li>
+                                    <div class="service-coupon">
+                                        <div class="noti-able-block">
+                                            <span class="noti-able">보유중</span>
+                                        </div>
+                                        <div class="icon-block">
+                                            <span class="line-icons service-wheel-alignment size-40"></span>
+                                        </div>
+                                        <div class="label-block">
+                                            <span class="label">얼라인먼트 쿠폰</span>
+                                        </div>
+                                    </div>
+                                </li>-->
+                                <li>
+                                    <div class="service-coupon">
+                                        <div class="noti-able-block">
+                                            <span class="noti-able">보유중</span>
+                                        </div>
+                                        <div class="icon-block">
+                                            <span class="line-icons service-hometown-deal size-40"></span>
+                                        </div>
+                                        <div class="label-block">
+                                            <span class="label">우리동네딜 쿠폰</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 20210720 // -->
+            <div class="section-header mg-t-15u">
+                <h3>서비스 결제</h3>
+            </div>
+            <!-- // 20210720 -->
+
+            <div class="order-lower-area visit-order-lower mg-t-3u"><!-- 20210720 .order-lower-area -->
+                <div class="order-static-area visit-order-static"><!-- 20210720 .order-static-area -->    
+
+                    <section class="visit-order-coupon">
+                        <!-- 20210720 결제쿠폰 추가 -->
+                        <div class="section-subheader">
+                            <h4 class="txt-16 mg-v-2u">쿠폰 적용</h4>
+                        </div>
+                        <div class="order-coupon-wrap">
+                            <ul class="list-size-full product-list">
+                                <li>
+                                    <div class="apply-coupon">
+                                        <span class="title">적용쿠폰</span>
+                                        <em>스마트 픽업</em>
+                                    </div>
+                                    <div class="foot-wrap">
+                                        <button type="button" class="btn-item btn-s btn-primary btn-ol filet" onclick="alert('쿠폰변경 팝업 오픈');">
+                                            <span class="label-txt txt-14">쿠폰변경/등록</span>
+                                        </button>
+                                        <div class="price">
+                                            <span class="discount">
+                                                <span class="blind">쿠폰 적용 가격</span>
+                                                <em>500원</em>원
+                                            </span>
+                                            <del>
+                                                <span class="blind">할인 전 가격</span>
+                                                <span>20,000</span>원
+                                            </del>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="apply-coupon">
+                                        <span class="title">적용쿠폰</span>
+                                        <em>스마트 딜리버리</em>
+                                    </div>
+                                    <div class="foot-wrap">
+                                        <button type="button" class="btn-item btn-s btn-primary btn-ol filet" onclick="alert('쿠폰변경 팝업 오픈');">
+                                            <span class="label-txt txt-14">쿠폰변경/등록</span>
+                                        </button>
+                                        <div class="price">
+                                            <span class="discount">
+                                                <span class="blind">쿠폰 적용 가격</span>
+                                                <em>500원</em>원
+                                            </span>
+                                            <del>
+                                                <span class="blind">할인 전 가격</span>
+                                                <span>20,000</span>원
+                                            </del>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- // 20210720 결제쿠폰 추가 -->    
+                    <!-- 20210720 결제수단 추가 // -->    
+                    <section class="mg-v-15u">
+                        <!-- 20210720 // -->
+                        <div class="section-subheader">
+                            <h4 class="txt-16 mg-v-3u">결제수단 선택</h4>
+                            <button type="button" class="btn-item btn-gray btn-s btn-ol round mg-l-5u" onclick="alert('무이자할부 안내 팝업 오픈');">
+                                <!-- 20220419 // -->
+                                <span class="label-txt txt-14">무이자 할부 안내</span>
+                                <!-- //20220419 -->
+                            </button>
+                        </div>
+                        <!-- // 20210720 -->
+                        <div class="container pay_left">
+                            <!-- 기존 유지 -->
+                            <div class="order_step visit-order-step pay" id="areaPayMethod">
+                                <div class="cont_box" id="payMethod_div">
+                                    <ol class="payment_box" id="payMethodList">
+                                        <li class="icon1" paymeancd="11"><input type="radio" class="pay_radio" name="payMethod" id="paymentMethod01" value="11" checked /><label id="paymentInfo01" for="paymentMethod01" data-rel="paymentInfo01">신용카드</label></li>
+                                        <li class="icon2" paymeancd="21"><input type="radio" class="pay_radio" name="payMethod" id="paymentMethod02" value="21" /><label id="paymentInfo02" for="paymentMethod02" data-rel="paymentInfo02">계좌이체</label></li>
+                                        <li class="icon3" paymeancd="61"><input type="radio" class="pay_radio" name="payMethod" id="paymentMethod03" value="61" /><label id="paymentInfo03" for="paymentMethod03" data-rel="paymentInfo03">무통장입금</label></li>
+                                        <li class="icon4" paymeancd="25"><input type="radio" class="pay_radio" name="payMethod" id="paymentMethod04" value="25" /><label id="paymentInfo04" for="paymentMethod04" data-rel="paymentInfo04">페이코</label></li>
+                                        <li class="icon5" paymeancd="26"><input type="radio" class="pay_radio" name="payMethod" id="paymentMethod05" value="26" /><label id="paymentInfo05" for="paymentMethod05" data-rel="paymentInfo05">카카오페이</label></li>
+                                        <li class="icon8" paymeancd="26"><input type="radio" class="pay_radio" name="payMethod" id="paymentMethod08" value="28" /><label id="paymentInfo08" for="paymentMethod08" data-rel="paymentInfo08">네이버페이</label></li>
+                                        <!-- 20220419 // -->
+                                        <li class="icon9" paymeancd=""><input type="radio" class="pay_radio" name="payMethod" id="paymentMethod09" value="" /><label id="paymentInfo09" for="paymentMethod09" data-rel="paymentInfo09">카카오페이</label></li>
+                                        <!-- // 20220419 -->
+                                    </ol>
+    
+                                    <!-- a. 신용카드 -->
+                                    <div class="payment_info" id="paymentInfo01" paymeancd="11">
+                                        <ol class="form01">
+                                            <li>
+                                                <input type="hidden" id="cardCouponIndex" value="" iscmCd="" orgiscmCd="">
+                                                <span class="tit">카드</span>
+                                                <select id="iscmCd" name="iscmCd" class="select01 w100p" title="카드를 선택해주세요">
+                                                    <option value="">카드를 선택해주세요.</option>
+    
+                                                    <option value="07">현대</option>
+    
+                                                    <option value="08">롯데</option>
+    
+                                                    <option value="04">삼성</option>
+    
+                                                    <option value="02">KB 국민</option>
+    
+                                                    <option value="01">비씨</option>
+    
+                                                    <option value="12">NH 농협</option>
+    
+                                                    <option value="03">하나(외환)</option>
+    
+                                                    <option value="06">신한</option>
+    
+                                                    <option value="11">시티</option>
+    
+                                                    <option value="104">삼성 웰페어</option>
+    
+                                                    <option value="107">현대 웰페어</option>
+    
+                                                </select>
+                                            </li>
+                                            <li><span class="tit">할부</span>
+                                                <select id="instMmCnt" name="instMmCnt" class="select01 w100p" title="할부종류를 선택해주세요">
+                                                    <option value="00">일시불</option>
+                                                </select>
+                                            </li>
+                                        </ol>
+    
+                                        <ol class="notice01" style="display:block">
+                                            <li>체크/법인(기업)/선불카드는 스마트페이 결제가 불가합니다.</li>
+                                            <li>BC카드 3종(KB국민, 기업, 신한)은 스마트페이 24개월 결제가 불가합니다.</li>
+                                            <li>무이자할부는 카드사 사정에 따라 중단 또는 변경 될 수 있습니다.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //ㅈ. 결제수단 선택 -->
+    
+                            <!-- 11. 동의 및 button-->
+                            <div class="order_button border-b-none" id="areaSavePayMethod">
+                                <input type="checkbox" class="ip_c" name="savePayMethodYn" id="savePayMethodYn" value="Y" paymeancd="61" iscmCd="" instmmcnt="" pntuseyn="N" bnkcd="088" morcmannm=""/><label for="savePayMethodYn">선택한 결제 수단 저장하기</label>
+                            </div>
+                            <!-- //11. 동의 및 button -->
+                        </div>
+                    </section>
+                    <!-- // 20210720 결제수단 추가 -->    
+                </div><!-- 20210720 .order-static-area -->
+                <!-- 20210720 .order-lower-area -->
+                <div class="order-sticky-area visit-order-static">
+                    <!-- 20210720 결제정보 // -->
+                    <section class="pay_side bill_wrap" id="paySide">
+                        <h4 class="txt-16 mg-v-2u">결제금액 안내</h4>
+                        <div class="container bg-light2 bg-filet-4 pd-h-4u pd-v-2u">
+                            <table class="cart-price-table">
+                                <!-- .cart-price-table/ 100.order2.html 참고 -->
+                                <colgroup>
+                                    <col style="width:50%;">
+                                    <col style="width:50%;">
+                                </colgroup>
+                                <!-- tbody 1개가 디바이더로 구분된 영역 1개 -->
+                                <tbody>
+                                <tr>
+                                    <th>총서비스 이용금액</th>
+                                    <td class="txt-16">40,000원</td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <th>총 할인금액</th>
+                                    <td class="txt-16">39,000원</td>
+                                </tr>
+                                <tr class="price-detail">
+                                    <th>픽업 쿠폰할인</th>
+                                    <td>19,500원</td>
+                                </tr>
+                                <tr class="price-detail">
+                                    <th>딜리버리 쿠폰할인</th>
+                                    <td>19,500원</td>
+                                </tr>
+                                </tbody>
+                                <!-- 최종결제금액은 payment-total클래스 추가 -->
+                                <tbody class="payment-total">
+                                <tr>
+                                    <th>최종 결제금액</th>
+                                    <td><em>1,000</em><small>원</small></td>
+                                </tr>
+                                </tbody>
+                                <!-- 결제수단 필요시 노출 -->
+                                <tbody>
+                                <tr>
+                                    <th>결제수단</th>
+                                    <td>
+                                        삼성카드 / 12개월 할부
+                                        <p class="txt-11">(2020.08.25 11:13)</p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <!-- // 20210720 결제정보 // -->
+                </div><!-- 20210720 .order-sticky-area -->
+            </div>
+            <!-- 20210720 // -->
+            <div class="section-header">
+                <h3>예약 전 확인 사항</h3>
+            </div>
+            <div class="order-footer-area clearfix">
+                <div class="order-left-area pd-t-4u">
+                    <ul class="list-style-disc txt-12">
+                        <li>매장 사정에 따라 예약일이 변동되는 경우, 매장에서 해피콜 드립니다.</li>
+                        <li>선택한 날자에 예약이 불가능할 경우 매장에서 해피콜 드립니다.</li>
+                        <li>예약 완료 후 고객님 휴대폰으로 예약 확정 SMS가 전송됩니다.</li>
+                        <li>예약 내용을 수정할 경우 기존 예약 내역을 취소한 후 다시 진행 바랍니다.</li>
+                    </ul>
+                </div>
+                <div class="order-right-area pay_side">
+                    <div class="agree">
+                        <!-- 정회원 -->
+                        <dl class="toggle_box">
+                            <!-- 211025 // -->
+                            <dt>
+                                <input type="checkbox" class="ip_c checkAll" name="allagreeChk" id="agree_all" />
+                                <label for="agree_all">
+                                    <p class="txt-neutral1 txt-14">이용서비스 및 결제대행 서비스</p>
+                                    <p class="txt-neutral1 txt-12 mg-t-1u">이용약관에 모두 동의하십니까?</p>
+                                </label>
+                                <button class="more" type="button"><span class="line-icons chev-right txt-neutral1 size-20 txt-w700"></span></button>
+                            </dt>
+                            <dd>
+                                <p class="label-txt mg-b-2u">이용서비스에 대한 동의 (필수)</p>
+                                <input type="checkbox" class="ip_c checkSingle" id="agree_1" name="agreeChk" title="주문 상품정보 및 결제대행 서비스 이용약관에 동의해주세요.">
+                                <label for="agree_1">
+                                    <p class="txt-neutral1 txt-12 mg-t-1u">이용하실 서비스, 정보, 가격, 할인내역 등을 최종 확인하였으며, 결제에 동의합니다. <br />(전자상거래법 제8조 제2항)</p>
+                                </label>
+                            </dd>
+                            <dd class="list mg-b-10u">
+                                <p class="label-txt mg-b-2u">결제 대행 서비스 이용약관 동의 (필수)</p>
+                                <input type="checkbox" class="ip_c checkSingle" id="agree_2_1" name="agreeChk" agrmsctcd="160" title="개인정보 처리방침 동의해주세요.">
+                                <label for="agree_2_1">
+                                    <p class="txt-neutral1 txt-12">개인정보 처리방침 동의</p>
+                                </label>
+                                <button class="btn btnT01 popup-scarce" data-rel="https://www.tstation.com/terms/termsmain.do?agrmSctCd=160" type="button">
+                                    <span class="txt-label txt-neutral1 txt-14">자세히보기</span>
+                                    <span class="line-icons chev-right txt-neutral1 size-16 txt-w700"></span>
+                                </button>
+
+                                <br /><input type="checkbox" class="ip_c checkSingle" id="agree_2_2" name="agreeChk" agrmsctcd="50" title="전자금융 거래 기본 약관에 동의해주세요.">
+                                <label for="agree_2_2">
+                                    <p class="txt-neutral1 txt-12">전자금융 거래 기본약관</p>
+                                </label>
+                                <button class="btn btnT01 popup-scarce" data-rel="https://www.tstation.com/terms/popup/singleterms.do?agrmSctCd=50" type="button">
+                                    <span class="txt-label txt-neutral1 txt-14">자세히보기</span>
+                                    <span class="line-icons chev-right txt-neutral1 size-16 txt-w700"></span>
+                                </button>
+                            </dd>
+                            <!-- // 211025 -->
+                        </dl>
+                        <script>
+                            // 약관 동의 &
+                            $('.toggle_box .more').on("click", function () {
+                                var viewcont = $(this).parent().parent();
+                                if ($(viewcont).hasClass('on')) {
+                                    $(viewcont).removeClass('on');
+                                    $(this).removeClass('on');
+                                } else {
+                                    $(viewcont).addClass('on');
+                                    $(this).addClass('on');
+                                }
+                            });
+                        </script>
+                        <!-- //정회원 -->
+                    </div>
+                </div>
+                <script>
+                    // 20210720 결제정보 sticky
+                    var orderStickyContainerTop;
+                    var orderStickyContainerH;
+                    var orderStickyAreaH;
+                    var orderStickyGap;
+                    var scrollPos;
+        
+                    $(window).on('scroll', function(){
+                        orderStickyContainerTop = $('.order-lower-area').offset().top;
+                        orderStickyContainerH = $('.order-lower-area').outerHeight();
+                        orderStickyAreaH = $('.order-sticky-area').outerHeight();
+                        orderStickyGap = orderStickyContainerH - orderStickyAreaH;
+                        scrollPos = $(window).scrollTop();
+        
+                        if( scrollPos < orderStickyContainerTop ){
+                            $('.order-sticky-area').removeClass('sticky absolute');
+                        }else{
+                            if( scrollPos > orderStickyContainerTop + orderStickyGap ){
+                                $('.order-sticky-area').removeClass('sticky');
+                                $('.order-sticky-area').addClass('absolute');
+                            }else{
+                                $('.order-sticky-area').removeClass('absolute');
+                                $('.order-sticky-area').addClass('sticky');
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div class="reserve-btn-wrap">
+                <button type="button" class="btn-item btn-neutral round w-320 mg-t-10u btnRegist">
+                    <span class="label-txt">결제 / 방문예약하기</span>
+                </button>
+            </div>
+        <!-- // 20210720 -->
+        </div>
+    </div>
+</div>
+<div class="modal-item instance"><!-- on 추가가 팝업 오픈 -->
+    <div class="dim whitex"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-m">
+            <!-- modal-header -->
+            <div class="modal-header">
+                <h3>등록차량 선택</h3>
+                <button type="button" class="btn-item btn-l btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-30"></span>
+                </button>
+            </div>
+
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <!-- 버튼 갯수만큼 li통째로 삽입 -->
+                    <li>
+                        <button type="button" class="btn-item btn-neutral round full-w">
+                            <span class="label-txt">닫기</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- modal-body -->
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-8u pd-v-8u">
+                        <!-- jsp파일로 구성할 부분(모달호출시 'modalContentsPd' 옵션 hor../ver.. 8로 설정) -->
+                        <!-- TODO: 등록된 차량이 없을 경우 -->
+                        <p class="pd-v-4u txt-center">등록된 차량이 없습니다.</p>
+
+                        <!-- TODO: 등록된 차량이 있을 경우 -->
+                        <table class="pd-medium txt-center txt-14">
+                            <colgroup>
+                                <col style="width:100px;"/>
+                                <col/>
+                                <col style="width:80px;"/>
+                            </colgroup>
+                            <thead>
+                            <tr class="border-t border-b bg-light1 txt-14">
+                                <th>차량번호</th>
+                                <th>등록차량</th>
+                                <th>선택</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="border-b">
+                                <th class="txt-center">07더3307</th>
+                                <td>2017 기아 쏘렌토</td>
+                                <td class="txt-center">
+                                    <button type="button" class="btn-item btn-s btn-neutral btn-ol round full-w" onclick="">
+                                        <span class="label-txt txt-14">선택</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-b">
+                                <th class="txt-center">12가1234</th>
+                                <td>2018 현대 쏘나타</td>
+                                <td class="txt-center">
+                                    <button type="button" class="btn-item btn-s btn-neutral btn-ol round full-w" onclick="">
+                                        <span class="label-txt txt-14">선택</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-b">
+                                <th class="txt-center">130나0795</th>
+                                <td>2017 폭스바겐 아테온</td>
+                                <td class="txt-center">
+                                    <button type="button" class="btn-item btn-s btn-neutral btn-ol round full-w" onclick="">
+                                        <span class="label-txt txt-14">선택</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- //jsp파일로 구성할 부분 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

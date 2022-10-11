@@ -1,0 +1,628 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '알아두면 쓸모있는 타이어 잡학지식' }) %>
+<div id="container">
+    <div class="tab-link">
+        <a class="" href="/tam/tstation-tv">티스테이션 TV</a>
+        <a class="" href="/tam/tire-info">타이어 정보</a>
+        <a class="on" href="/tam/tire-review">타이어 리뷰</a>
+    </div>  
+
+    <div class="tam-tire-review">
+        <section class="key-visual">
+             <!-- 211118 // -->
+            <img src="mc-static-root/images/common/tire-review-key-visual.png" alt="타이어 리뷰" />
+            <!-- // 211118  -->
+            <div class="bottom-area">
+                <p class="description">타이어 구매 경험이 있다면?<br />소중한 경험을 공유해 주세요.</p>
+
+                <a href="" class="btn-item btn-s btn-neutral round">
+                    <span class="label-txt">리뷰 이벤트</span>
+                    <span class="line-icons chev-right size-16"></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="suggest-keyword">
+            <p class="label">추천 키워드</p>
+            <div class="swiper-container suggest-keyword-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <span class="keyword active">전체</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">현타꿀팁시즌2</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">SUV</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">승용차</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">윈터타이어</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">윈터타이어3</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">현타꿀팁시즌1</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">SUV</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">승용차</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword">윈터타이어</span>
+                    </div>
+                </div>
+            </div>
+            <script>
+
+            var urlpath = location.pathname
+
+            if(urlpath == "/tam/tstation-tv") {
+                console.log("asd");
+            } else {
+                console.log("bbb");
+            }
+
+            var suggestKeywordSwiper = new Swiper('.suggest-keyword-swiper', {
+                slidesPerView: 'auto',
+                preventClicks: true,
+                preventClicksPropagation: false,
+                observer: true,
+                observeParents: true
+            })
+            suggestKeywordSwiper.init()
+
+            //var $snbSwiperItem = $('.suggest-keyword-swiper .swiper-wrapper .swiper-slide .keyword');
+            var $snbSwiperItem = $('.suggest-keyword-swiper .swiper-wrapper').find('.swiper-slide .keyword');
+            $snbSwiperItem.each(function(){
+                    $(this).click(function(e,i){
+                    var target = $(this).parent();
+                    var targetIndex = i;
+                    console.log(i);
+                    $snbSwiperItem.removeClass('active');
+                    target.find(".keyword").addClass('active');
+
+                    //muCenter(target); //Click Center Pos function 
+                })
+            })
+
+            function muCenter(target){
+                var snbwrap = $('.suggest-keyword-swiper .swiper-wrapper');
+                var targetPos = target.position();
+                var box = $('.suggest-keyword-swiper');
+                var boxHarf = box.outerWidth()/2;
+                var pos;
+                var listWidth=0;
+                var storagePos = 0;
+                
+                snbwrap.find('.swiper-slide').each(function(){ listWidth += $(this).outerWidth(); })
+                
+                var selectTargetPos = targetPos.left + target.outerWidth()/2;
+                if (selectTargetPos <= boxHarf) { // left
+                    pos = 0;
+                }else if ((listWidth - selectTargetPos) <= boxHarf) { //right
+                    pos = listWidth-box.outerWidth();
+                }else {
+                    //pos = selectTargetPos - boxHarf; //중앙정렬
+                    pos = targetPos.left; //왼쪽 정렬
+                }
+
+                //localStorage 사용
+                localStorage.setItem('snbPos', JSON.stringify(pos))
+                var storagePos = localStorage.getItem('snbPos');
+                console.log(storagePos)
+                
+
+                setTimeout(function(){snbwrap.css({
+                    "transform": "translate3d("+ (storagePos*-1) +"px, 0, 0)",
+                    "transition-duration": "400ms"
+                })}, 200);
+            }
+
+            </script>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">베스트 리뷰 <span class="count">(16)</span></h4>
+                <p class="description">월별 선정된 베스트 리뷰 모아보기</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-first">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1000"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://blarbalrblar.com')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        <img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">
+                                        <!--<h4 class="tire-name">Ventus S2 AS</h4>-->
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>한국타이어 80주년 축하 드립니다 ^^ 타이어 4짝 교체후 소음도 많이 줄어들었고 , 승차감도 확실히 좋아졌네요. (교체전 주행시 딱딱한 느낌이 있었다면</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1001"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://via.placeholder.com/90x60')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        <!--<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">-->
+                                        <h4 class="tire-name">Ventus S2 AS</h4>
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>한국타이어 80주년 축하 드립니다 ^^ 타이어 4짝 교체후 소음도 많이 줄어들었고 , 승차감도 확실히 좋아졌네요. (교체전 주행시 딱딱한 느낌이 있었다면</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    /**
+                     *  베스트 리뷰 스와이퍼
+                     */
+
+                        // swiper init
+                    var reviewFirstSwiper = new Swiper('.type-first', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 8
+                        })
+                    reviewFirstSwiper.init()
+
+                    // window resize fire swiper init
+                    window.addEventListener('resize', function () {
+                        reviewFirstSwiper.init()
+                    })
+
+                    // mobile portrait, landscape change fire swiper init
+                    window.addEventListener('orientationchange', function() {
+                        reviewFirstSwiper.init()
+                    })
+
+                    // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                    // reviewFirstSwiper.update()
+                    // reviewFirstSwiper.slideTo(0)
+                </script>
+            </div>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">타이어 한달 사용기 <span class="count">(9)</span></h4>
+                <p class="description">한달 정도는 타 봐야 찐 리뷰 등극</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-second">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1002"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://via.placeholder.com/90x60')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        <!--<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">-->
+                                        <h4 class="tire-name">Ventus S2 AS</h4>
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>국산타이어도 종류가 많아서 정말 많은 고민을 하다가 선택한게 ‘한국타이어 벤투스 프리미엄 컴포트 모델’ 이었습니다.  가격도 만만치 않아서</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1003"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://via.placeholder.com/90x60')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        <!--<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">-->
+                                        <h4 class="tire-name">Ventus S2 AS</h4>
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>국산타이어도 종류가 많아서 정말 많은 고민을 하다가 선택한게 ‘한국타이어 벤투스 프리미엄 컴포트 모델’ 이었습니다.  가격도 만만치 않아서</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    /**
+                     * 타이어 한달 사용기 스와이퍼
+                     */
+
+                    // swiper init
+                    var reviewSecondSwiper = new Swiper('.type-second', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 8
+                    })
+                    reviewSecondSwiper.init()
+
+                    // window resize fire swiper init
+                    window.addEventListener('resize', function () {
+                        reviewSecondSwiper.init()
+                    })
+
+                    // mobile portrait, landscape change fire swiper init
+                    window.addEventListener('orientationchange', function() {
+                        reviewSecondSwiper.init()
+                    })
+
+                    // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                    // reviewSecondSwiper.update()
+                    // reviewSecondSwiper.slideTo(0)
+                </script>
+            </div>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">베스트 셀링 타이어 사용기 <span class="count">(9)</span></h4>
+                <p class="description">‘그’ 타이어, 잘 팔리는 이유가 있다</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-third">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1004"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://via.placeholder.com/90x60')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        <!--<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">-->
+                                        <h4 class="tire-name">Ventus S2 AS</h4>
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>차 구매 후 처음으로 타이어 교체하기에 엄청 검색을 많이하고 주변 지인들과 동호회 추천 의견들도 받았습니다. 기존 타이어는 피렐리 런플렛</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1005"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://via.placeholder.com/90x60')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        <!--<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">-->
+                                        <h4 class="tire-name">Ventus S2 AS</h4>
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>차 구매 후 처음으로 타이어 교체하기에 엄청 검색을 많이하고 주변 지인들과 동호회 추천 의견들도 받았습니다. 기존 타이어는 피렐리 런플렛</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <script>
+                        /**
+                         * 베스트 셀링 타이어 사용기 스와이퍼
+                         */
+
+                        // swiper init
+                        var reviewThirdSwiper = new Swiper('.type-third', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 8
+                        })
+                        reviewThirdSwiper.init()
+
+                        // window resize fire swiper init
+                        window.addEventListener('resize', function () {
+                            reviewThirdSwiper.init()
+                        })
+
+                        // mobile portrait, landscape change fire swiper init
+                        window.addEventListener('orientationchange', function() {
+                            reviewThirdSwiper.init()
+                        })
+
+                        // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                        // reviewThirdSwiper.update()
+                        // reviewThirdSwiper.slideTo(0)
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">윈터 타이어 사용기 <span class="count">(0)</span></h4>
+                <p class="description">털신은 안 사도 윈터타이어는 산다</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-forth">
+                    <!-- 컨텐츠가 존재 할때 -->
+                    <!--<div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1006"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://via.placeholder.com/90x60')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        &lt;!&ndash;<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">&ndash;&gt;
+                                        <h4 class="tire-name">Ventus S2 AS</h4>&ndash;&gt;
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>기존 뒷타이어에 장착된 한국 타이어 노블 S1이 너무 닳아서 주행할때마다 편마모 웅웅거리는 소음으로 짜증나서 큰맘먹고 한급 위인 한타</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="tam-review-card"
+                                data-review-id="1007"
+                                data-link-url="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&goodsMdclCd=01&movePath=pattern"
+                            >
+                                <div class="review-meta">
+                                    <div class="left">
+                                        <div class="thumb-area">
+                                            <div class="thumb" style="background-image: url('https://via.placeholder.com/90x60')"></div>
+                                        </div>
+                                        <p class="rating-area">
+                                            <span class="rating"><span style="width: 90%"></span></span>
+                                            <span class="rating-count">4.5점</span>
+                                        </p>
+                                    </div>
+                                    <div class="right">
+                                        &lt;!&ndash;<img class="tire-name" src="mc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="">&ndash;&gt;
+                                        <h4 class="tire-name">Ventus S2 AS</h4>
+                                        <div class="tire-meta">
+                                            <p class="meta-item">장착차량: <span class="txt-w500">혼다 크로스투어</span></p>
+                                            <p class="meta-item">타이어 사이즈: <span class="txt-w500">225/60R18</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="inner">
+                                        <p>기존 뒷타이어에 장착된 한국 타이어 노블 S1이 너무 닳아서 주행할때마다 편마모 웅웅거리는 소음으로 짜증나서 큰맘먹고 한급 위인 한타</p>
+                                    </div>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">1주사용</span>
+                                    <span class="keyword">승용차</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>-->
+                    <!-- 컨텐츠가 없을때: .swiper-wrapper 내부의 빈칸이 없게 만드세요. -->
+                    <div class="swiper-wrapper"></div>
+                    <script>
+                        /**
+                         * 윈터 타이어 사용기 스와이퍼
+                         */
+
+                        // swiper init
+                        var reviewForthSwiper = new Swiper('.type-forth', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 8
+                        })
+                        reviewForthSwiper.init()
+
+                        // window resize fire swiper init
+                        window.addEventListener('resize', function () {
+                            reviewForthSwiper.init()
+                        })
+
+                        // mobile portrait, landscape change fire swiper init
+                        window.addEventListener('orientationchange', function() {
+                            reviewForthSwiper.init()
+                        })
+
+                        // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                        // reviewForthSwiper.update()
+                        // reviewForthSwiper.slideTo(0)
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            /**
+             * tam-tire-review common
+             */
+
+            // tam-review-card onclick
+            $('.tam-review-card').click(function (event) {
+                var reviewId = $(this).data().reviewId
+                var goUrl = $(this).data().linkUrl
+
+                $.Tstation.popup().open({
+                    ref: 'review-detail',
+                    title: '고객 작성 리뷰',
+                    requestUrl: './tam-tire_review-detail.html?id=' + reviewId, // 비동기 방식으로 컨텐츠 영역을 받아올때
+                    // contents: '<p class=\'pd-v-5u txt-center\'>Full Popup, full popup을 사용할 때는 팝업을 닫을 수 있는 타이틀 혹은 엑션바가 하나 이상 존재해야 합니다.</p>', // 팝업을 바로 띄우고 싶을때
+                    dimWhite: false,
+                    modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                        horizon: 0,
+                        vertical: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                    full: true, // Full Popup,
+                    modalAction: {
+                        isNoBoundary: false,
+                        buttons: [
+                            {
+                                label: '해당 상품 보러가기',
+                                negative: false,
+                                action: function () {
+                                    $.Tstation.popup().close('review-detail')
+                                    window.location.href = goUrl
+                                }
+                            }
+                        ]
+                    },
+                    onOpen: function () {
+                        console.log('팝업이 열리면 파이어 합니다.')
+                    },
+                    onClose: function () {
+                        console.log('팝업이 닫히면 파이어 합니다.')
+                    }
+                })
+            })
+        </script>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '매장서비스내역' }) %>
+<div id="container" class="mypage">
+    <!-- 매장서비스내역 -->
+    <ul class="mypage_tab01">
+        <li><a href="store_list.jsp">정비서비스 이력</a></li>
+        <li class="on"><a href="store_save.jsp">보관서비스 이력</a></li>
+    </ul>
+    <div class="shop_list">
+        <div class="nodata">
+            보관서비스 이력이 없습니다.
+        </div>
+        <ol class="list">
+            <li>
+                <!-- detail -->
+                <dl class="dl_style01">
+                    <dt>Ventus V2 Concept2</dt>
+                    <dd><span class="tit">패턴</span>WW310</dd>
+                    <dd><span class="tit">수량</span>1개</dd>
+                    <dd><span class="tit">매장명</span>분당정자점</dd>
+                    <dd><span class="tit">보관일</span>2018-11-05</dd>
+                    <dd><span class="tit">회수일</span>2018-11-05</dd>
+                </dl>
+                <!-- //detail -->
+            </li>
+            <li>
+                <!-- detail -->
+                <dl class="dl_style01">
+                    <dt>Ventus V2 Concept2</dt>
+                    <dd><span class="tit">패턴</span>WW310</dd>
+                    <dd><span class="tit">수량</span>1개</dd>
+                    <dd><span class="tit">매장명</span>분당정자점</dd>
+                    <dd><span class="tit">보관일</span>2018-11-05</dd>
+                    <dd><span class="tit">회수일</span>2018-11-05</dd>
+                </dl>
+                <!-- //detail -->
+            </li>
+        </ol>
+    </div>
+    <!-- //매장서비스내역 -->
+</div>

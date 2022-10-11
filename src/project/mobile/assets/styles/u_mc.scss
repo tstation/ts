@@ -1,0 +1,2019 @@
+@charset "UTF-8";
+
+html, body, div, textarea, input, button, select {font-family: 'NotoSansKR','Malgun Gothic',sans-serif;}
+
+.coupons-area {
+	position:relative;
+  width: 100%;
+  padding-bottom:38px;
+  border-bottom:1px solid #f2f2f7;
+}
+.coupons-area .coupon-box {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+.coupons-area .coupon-box .coupon-info {
+  position: relative;
+  background: #fff;
+  border:1px solid #d9dbdc;
+  border-radius: 7px;
+  width:80%;
+  padding:10px 10px 10px 20px;
+}
+.coupon-box .coupon-info .coupon-tit {
+	padding-bottom:10px;
+	color:#2a3138;
+	font-size:13px;
+	border-bottom:1px solid #f2f2f7;
+}
+.coupon-box .coupon-info .coupon-tit span {
+	display:inline-block;
+	font-size:30px;
+	vertical-align:middle;
+}
+.coupon-box .coupon-info .coupon-tit span strong {
+	font-size:58px;
+	font-weight:500;
+	line-height:1;
+	letter-spacing: -0.08em;
+	padding-right: 3px;
+}
+.coupon-box .coupon-info .coupon-tit .coupon-sale-txt {
+	display:inline-block;
+	padding-left:5px;
+	vertical-align:bottom;
+}
+.coupon-box .coupon-info .coupon-tit .coupon-sale-txt em {
+	display:block;
+}
+.coupon-box .coupon-info .coupon-date {
+	padding:10px 0;
+	color:#5b6068;
+	font-size:12px;
+}
+.coupon-box .coupon-place {}
+.coupon-box .coupon-place span {
+	display:inline-block;
+	padding:0 8px 2px 8px;
+	margin-left:2px;
+	background-color:#ddd;
+	border-radius:3px;
+	color:#fff;
+	font-size:12px;
+	font-weight:500;
+}
+.coupon-box .coupon-place span:first-child {
+	margin-left:0;
+}
+.coupon-box .coupon-place span.online {
+	background-color:#fe6a2b;
+}
+.coupon-box .coupon-place span.offline {
+	background-color:#5b6068;
+}
+.coupon-box .coupon-value {
+  display: flex;
+  width:20%;
+  min-width:90px;
+  position: relative;
+  margin-left:-1px;
+  background: #2a3138;
+  color: #fff;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  border:1px solid #d9dbdc;
+}
+.coupon-box .coupon-value button {
+	width:100%;
+	height:100%;
+	background: transparent;
+  color: #fff;
+  text-align:center;
+  line-height:1.2;
+  outline:none;
+}
+.coupon-box .coupon-value button span {
+	margin:0 0 10px 2px;
+}
+.coupon-box .coupon-value:before,
+.coupon-box .coupon-value:after {
+  content: ' ';
+  width: 18px;
+  height: 9px;
+  position: absolute;
+  left: -9px;
+  border-radius:9px 9px 0 0;
+  background: #fff;
+  border:1px solid #d9dbdc;
+  border-bottom:0;
+}
+.coupon-box .coupon-value:after {
+  top: -1px;
+  transform: rotate(180deg);
+}
+.coupon-box .coupon-value:before {
+	bottom:-1px;
+}
+.coupon-box .coupon-value button {
+	display:block;
+}
+.coupon-box .coupon-value .coupon-count-date {
+	display:none;
+}
+.coupons-area .coupon-get-txt {
+	display:none;
+}
+/* coupon 받았을때 .coupons-area 에 .coupons-get 추가 */
+.coupons-get .coupon-box .coupon-value {
+	background:#fe6a2b;
+}
+.coupons-get .coupon-box .coupon-value button {
+	display:none;
+}
+.coupons-get .coupon-box .coupon-value .coupon-count-date {
+	display:block;
+	color:#fff;
+	font-weight:500;
+	text-align:center;
+}
+.coupons-get .coupon-box .coupon-value .coupon-count-date strong {
+	display:block;
+	padding-top:10px;
+	font-size:21px;
+	font-weight:400;
+}
+.coupons-get .coupon-get-txt {
+	position:absolute;
+	left:0;
+	bottom:12px;
+	display:block;
+	font-size:12px;
+	color:#333;
+}
+
+.product-info-txt-box {
+	padding-top:15px;
+}
+.product-info-txt-box dt {
+	color:#333;
+}
+.product-info-txt-box dd {
+	padding:5px 0 30px 0;
+	font-size:11px;
+	color:#5b6068;
+}
+.product-info-txt-box dd .point {
+	color:#fe6a2b;
+	font-weight:400;
+}
+.product-info-txt-box .scrolling {
+	margin-top:10px;
+	max-height:230px;
+	padding:5px;
+	background-color:#f9f9fa;
+	overflow:hidden;
+	overflow-y:auto;
+}
+.product-info-txt-box .scrolling li {
+	position:relative;
+	padding:0 0 0 5px;
+}
+.product-info-txt-box .scrolling li:before {
+	content:'';
+	position:absolute;
+	left:0;
+	top:9px;
+	width:2px;
+	height:2px;
+	border-radius:1px;
+	background-color:#5b6068;
+}
+
+.detail-category-box {
+    position:relative;
+    padding-left:52px;
+}
+.detail-category-box.require-reset {
+    padding-right: 120px;
+}
+.detail-category-box i {
+    position:absolute;
+    left:0;
+    top: 50%;
+    width:40px;
+    height:40px;
+    border-radius:20px;
+    color:#fff;
+    text-align:center;
+    line-height:35px;
+    transform: translateY(-50%);
+}
+.detail-category-box .btn-reset {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.detail-category-box .product-state strong {
+	display:block;
+	padding-bottom:7px;
+	line-height:16px;
+	font-size:18px;
+	font-weight:400;
+}
+.detail-category-box .product-state strong em {
+	font-size:20px;
+}
+
+.change-date-area {
+	position:relative;
+	padding:35px 0;
+	border-bottom:1px solid #f2f2f7;
+}
+.change-date-area .day {
+	float:left;
+	padding-bottom:7px;
+	font-size:12px;
+	color:#5b6068;
+}
+.change-date-area .recommend-day {
+    float: right;
+    padding-bottom:7px;
+    font-size:12px;
+    color:#5b6068;
+}
+.change-date-area .reset {
+	float:right;
+	font-size:12px;
+	background-color:transparent;
+	outline:none;
+}
+.change-date-area .reset span {
+	vertical-align:middle;
+	margin-bottom:4px;
+}
+.change-date-bar {
+	position:relative;
+	clear:both;
+	height:4px;
+	background-color:#d9dbdc;
+	border-radius:3px;
+}
+.change-date-bar .change-dating {
+	position:relative;
+	float:left;
+	padding-left:0;
+	border-radius:3px;
+}
+.change-date-bar .change-dating .icon_bar {
+	position:absolute;
+	right:0;
+	top:0;
+	width:100%;
+	height:4px;
+	border-radius:3px;
+}
+.change-date-area .change-message {
+	position:absolute;
+	right:0;
+	bottom:10px;
+	font-size:11px;
+	font-weight:500;
+}
+
+.change-product-num01 .detail-category-box i {
+	background-color:#fe6a2b;
+}
+.change-product-num01 .detail-category-box .product-state strong em {
+    color: #fe6a2b;
+}
+.change-product-num01 .change-date-bar .change-dating .icon_bar {
+    background-color: #fe6a2b;
+}
+.change-product-num01 .change-date-area .change-message {
+    color: #fe6a2b;
+}
+.change-product-num01 .change-date-area .recommend-day em { color: #fe6a2b; }
+
+.change-product-num02 .detail-category-box i {
+	background-color:#5eb0b5;
+}
+.change-product-num02 .detail-category-box .product-state strong em {
+    color: #5eb0b5;
+}
+.change-product-num02 .change-date-bar .change-dating .icon_bar {
+    background-color: #5eb0b5;
+}
+.change-product-num02 .change-date-area .change-message {
+    color: #5eb0b5;
+}
+.change-product-num02 .change-date-area .recommend-day em { color: #5eb0b5; }
+
+
+.membership-coupons-tit {
+	padding:25px 0 15px 0;
+	line-height:1;
+}
+
+.mycar-goods-recommend-swiper {
+	padding: 0;
+	overflow: visible;
+}
+.mycar-goods-recommend-swiper .swiper-slide {
+	width: 125px;
+	margin-right:8px;
+}
+.mycar-goods-recommend {
+	position:relative;
+	display:block;
+	width:100%;
+}
+.mycar-goods-recommend h5 {
+	padding:7px 0;
+	font-size:12px;
+}
+.mycar-goods-recommend p {
+	padding-bottom:1px;
+	font-size:12px;
+}
+.mycar-goods-recommend .original-price {
+	position:relative;
+	display:inline-block;
+	color:#5b6068;
+}
+.mycar-goods-recommend .original-price:before {
+	content:'';
+	position:absolute;
+	left:0;
+	top:56%;
+	width:100%;
+	border-bottom:1px solid #5b6068;
+}
+.mycar-goods-recommend .sale-price {
+	color:#fe6a2b;
+}
+.mycar-goods-recommend .sale-price strong {
+	font-size:16px;
+	font-weight:400;
+}
+.mycar-goods-recommend .goods-img {
+	width:125px;
+	height:100px;
+	border:1px solid #d9dbdc;
+	border-radius:4px;
+	overflow:hidden;
+}
+.mycar-goods-recommend .goods-img img {
+	width:100%;
+}
+.mycar-goods-recommend .flag_state {
+	position:absolute;
+	right:5px;
+	top:5px;
+	width:30px;
+	height:30px;
+	padding:4.5px 5px;
+	border-radius:16px;
+	font-size:10px;
+	color:#fff;
+	line-height:1;
+	text-align:center;
+	background-color:#b5945b;
+    word-break: break-all;
+}
+.change-date-info-txt {
+	padding-top:5px;
+	margin-top:30px;
+	font-size:12px;
+	color:#5b6068;
+	border-top:1px solid #f2f2f7;
+}
+
+
+
+.link-all-view {
+	position:absolute;
+	right:0;
+	bottom:10px;
+	font-size:14px;
+}
+.link-all-view span {
+	margin-bottom:3px;
+}
+.btn-item > .label-txt em {
+	font-weight:500;
+}
+
+.menu-slide-sty-swiper {
+	padding: 0 16px;
+	overflow: hidden;
+	border-bottom:1px solid #f2f2f7;
+    background-color: #ffffff;
+}
+
+/* 20221007 // */
+.menu-slide-sty-swiper.menu-slide-sty-swiper-tab .swiper-slide .menu-slide-child {
+    padding: 17px 10px 12px;
+}
+/* // 20221007 */
+
+.menu-slide-sty-swiper.menu-slide-sty-swiper-tab .swiper-slide .menu-slide-child { color: #2a3138; }
+.menu-slide-sty-swiper.menu-slide-sty-swiper-tab .swiper-slide.on .menu-slide-child { color: #fe6a2b; }
+.menu-slide-sty-swiper.menu-slide-sty-swiper-tab .swiper-slide.on .menu-slide-child:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fe6a2b;
+    z-index: 1;
+}
+.menu-slide-sty-swiper.on-smart-care {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 50px;
+    z-index: 90;
+}
+.menu-slide-sty-swiper .swiper-slide {
+    position: relative;
+	display:inline-block;
+	width:auto;
+}
+.menu-slide-sty-swiper .swiper-slide:last-of-type { margin-right: 0;}
+.menu-slide-child {
+	position:relative;
+	display:inline-block;
+	padding:16px 0 14px;
+	/* margin-top:-1px; */
+	vertical-align:middle;
+}
+.swiper-slide-active .menu-slide-child {
+	padding:17px 0 12px;
+	/* border-top:1px solid #fe6a2b; */
+	color: #fe6a2b;
+	font-weight: 500;
+}
+.menu-slide-child .menu-flag {
+    position:absolute;
+    left:0;
+    top:3px;
+    font-weight: 800;
+    font-size: 10px;
+    color: #5eb0b5;
+}
+
+
+
+.banner-slide-sty-swiper {
+	overflow: visible;
+}
+.banner-slide-sty-swiper .swiper-slide {
+	width:100%;
+}
+.banner-slide-sty-swiper .swiper-slide a {
+    display: block;
+    color: transparent;
+    font-size: 0;
+}
+.banner-slide-sty-swiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+.banner-slide-child {
+	position:relative;
+	display:block;
+}
+.banner-slide-child img {
+	width:100%;
+}
+.banner-slide-sty-swiper .swiper-pagination-bullets {
+	/*bottom: -30px;*/
+    font-size: 0;
+}
+.swiper-pagination-bullet {
+	width: 6px;
+	height: 6px;
+	background: #ffffff;
+	opacity: 1;
+}
+.swiper-pagination-bullet-active {
+	background: #2a3138;
+}
+
+
+.tire-self-sreach-wrp {
+
+}
+.tire-self-sreach-wrp h3 {
+    font-size: 20px;
+    text-align: left;
+}
+
+
+
+.go-my-membership {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 12px 46px 12px 48px;
+    text-align: left;
+    border-radius: 4px;
+    background: rgb(255,162,0);
+    background: linear-gradient(310deg, rgba(255, 162, 0, 1) 0%, rgba(254, 106, 43, 1) 100%);
+    box-shadow: 0 2px 2px rgba(71, 71, 71, .2);
+}
+.go-my-membership > * {
+    color: #ffffff;
+}
+.go-my-membership .text-area .description {
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    line-height: 19px;
+}
+.go-my-membership .text-area .label {
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 19px;
+    font-weight: 500;
+}
+.go-my-membership > .chev-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.go-my-membership > .t-membership {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+}
+
+.tire-self-sreach-tab {
+	padding:25px 15px 0 15px;
+	border-bottom:1px solid #d9dbdc;
+}
+.tire-self-sreach-tab:after {
+	content: '';
+	clear:both;
+}
+.tire-self-sreach-tab li {
+	position:relative;
+	width: 33.33%;
+	float:left;
+}
+.tire-self-sreach-tab li button {
+	width:100%;
+	height:100%;
+	padding:0 0 12px;
+	margin-bottom:-1px;
+	text-align:center;
+	border-bottom:1px solid #d9dbdc;
+	background:transparent;
+	line-height: 120%;
+}
+.tire-self-sreach-tab li button i {
+	display:block;
+	width:48px;
+	height:32px;
+	margin:0 auto 10px auto;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+.tire-self-sreach-tab li button .car-number {
+	background-image:url('../images/common/graphics_tire_search_car_number.svg')
+}
+.tire-self-sreach-tab li button .car-model {
+	background-image:url('../images/common/graphics_tire_search_car_kinds.svg')
+}
+.tire-self-sreach-tab li button .car-size {
+	background-image:url('../images/common/graphics_tire_search_size.svg')
+}
+.tire-self-sreach-tab li button.on {
+	color:#fe6a2b;
+	border-bottom:1px solid #fe6a2b;
+}
+.tire-self-sreach-input {
+	padding:15px 10px 15px 20px;
+	background-color:#f9f9fa;
+}
+.tire-self-sreach-input .form-control {
+	display:inline-block;
+	width:42%;
+	margin-right:5px;
+}
+.tire-self-sreach-input .search-btn {
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin:0 0 5px 5px;
+	border-radius:30px;
+	background-color:#293037;
+	color:#fff;
+	text-align:left;
+	vertical-align:middle;
+	outline:none;
+	overflow: hidden;
+}
+.tire-self-sreach-input .search-btn span {
+  width: 18px;
+  height: 18px;
+  line-height: 17px;
+  font-size: 24px;
+  margin: 0;
+  margin-left: -2px;
+  vertical-align: middle;
+}
+.tire-self-sreach-wrp .btn {
+	padding:0 20px;
+}
+
+
+
+.main .select_sub {
+    position: absolute;
+    z-index: auto;
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    left: 0;
+    top: 20px;
+    display: none;
+
+}
+
+.main .select_sub ul {
+    border: 1px solid #d9dbdc;
+    border-top: none;
+    padding-top: 20px;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+}
+
+.main .select_sub ul li {
+    border-bottom: 1px solid #f2f2f7;
+}
+
+.main .select_sub ul li:last-of-type { border-bottom: none;}
+
+.main .select_sub ul li label {
+    font-size: 12px;
+}
+
+.tire-mycar-select-bx {
+	padding:0 20px;
+}
+
+.tire-mycar-select-bx .tire-mycar-select-item {
+	z-index: 100;
+}
+
+.tire-mycar-select-bx .tire-mycar-select-item .select_btn {
+	z-index: 1;
+}
+
+
+.tire-mycar-select-bx .tire-mycar-select-item .select_btn.on { box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.tire-mycar-select-bx .tire-mycar-select-item .select_btn.on .line-icons { transform: translateY(-50%) translateZ(0) rotate(180deg); }
+
+.tire-mycar-select-bx .tire-mycar-select-item .select_btn .line-icons {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%) translateZ(0) rotate(0);
+	transition: all 0.2s;
+}
+
+.searching-car-view {
+	padding-bottom:15px;
+	border-bottom:1px solid #f2f2f7;
+}
+.searching-car-view .img-holder {
+	height:140px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% -14px;
+}
+.searching-car-view .txt-info {
+	color:#5b6068;
+	font-size:16px;
+	text-align:center;
+}
+.searching-car-view .txt-info strong {
+	font-weight:500;
+	color:#2a3138;
+}
+.searching-car-view.default {
+	border-bottom:0;
+}
+.searching-car-view.default:before {
+    content: '';
+    display: block;
+    width: 84%;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #e7e7e7;
+    position: absolute;
+    top: 73px;
+    left: 30px;
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(236,237,237,0.2));
+}
+.searching-car-view.default .img-holder {
+	position:relative;
+}
+.searching-car-view.default .txt-info {
+	color:#2a3138;
+	padding:15px 0 30px;
+}
+
+.searching-car-view.not-register-bx { border-bottom:0; }
+.searching-car-view.not-register-bx .image-area {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.searching-car-view.not-register-bx .image-area > .line-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+}
+.searching-car-view.not-register-bx .img-holder {
+	opacity:0.2;
+}
+.searching-car-view.not-register-bx .error-circle {
+	position:absolute;
+	left:50%;top:40px;
+	margin-left:-18px;
+	color:#fe6a2b;
+}
+.searching-car-view.not-register-bx .txt-info p {
+	color:#5b6068;
+	font-size:14px;
+}
+.searching-car-view.not-register-bx .txt-info .number-alt {
+	padding-bottom:15px;
+	font-size:16px;
+}
+.searching-car-view.not-register-bx .txt-info .number-alt strong {
+	color:#fe6a2b;
+}
+.searching-car-view.not-register-bx .txt-info p em {
+	display:block;
+	color:#2a3138;
+}
+.searching-car-view.not-register-bx .btn {
+	display:flex;
+	justify-content: space-between;
+	padding-top:40px;
+}
+.searching-car-view.not-register-bx .btn button {
+	width:49%;
+}
+
+.searching-result-select-bx {
+	padding:15px 20px 0 20px;
+}
+/*.searching-result-select{
+	display:flex;
+	justify-content: space-between;
+}*/
+.searching-result-select .form-control {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.searching-result-select .form-control:last-of-type { margin-bottom: 0; }
+
+.searching-result-select-bx .help-txt {
+	padding:20px 0 12px 0;
+	font-size:12px;
+	text-align:center;
+	vertical-align:middle;
+}
+.searching-result-select-bx .help-txt strong {
+	color:#fe6a2b;
+	font-weight:500;
+}
+.searching-result-select-bx .help-txt button {
+	background-color:transparent;
+	vertical-align:bottom;
+}
+
+.tire-select-list-bx li {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  margin-bottom:10px;
+}
+.tire-select-list-bx li label {
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height:33px;
+  text-align:center;
+  border:1px solid #d9dbdc;
+  border-radius:3px;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+  word-wrap: break-word;
+}
+.tire-select-list-bx li label strong {
+	display:inline-block;
+	font-weight:400;
+}
+.tire-select-list-bx li label strong em {
+	position:relative;
+	padding:0 9px 0 12px;
+}
+.tire-select-list-bx li label strong em:first-child:after {
+	display:none;
+}
+.tire-select-list-bx li label strong em:after {
+	content:'';
+	position:absolute;
+	left:0;
+	top:3px;
+	height:17px;
+	width:1px;
+	background-color:#d9dbdc;
+
+}
+.tire-select-list-bx li label strong em i {
+	padding-right:5px;
+	font-size:12px;
+}
+.tire-select-list-bx .tire-select-design {
+  position: absolute;
+  visibility: hidden;
+}
+.tire-select-list-bx .tire-select-design + label span {
+  display: none;
+}
+.tire-select-list-bx .tire-select-design:checked + label {
+  border:1px solid #fe6a2b;
+}
+.tire-select-list-bx .tire-select-design:checked + label span {
+	display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  color:#fe6a2b;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.tire-select-list-bx .tire-select-design + label span + i {
+	display: inline-block;
+  position: absolute;
+  cursor: pointer;
+	width:36px;
+	height:16px;
+	padding-top:3px;
+	text-align:center;
+	color:#fff;
+	font-size:10px;
+	background-color:#fe6a2b;
+	border-radius:8px;
+  left: 4px;
+  top: 8px;
+  line-height:1;
+}
+.searching-result-select-bx .message-bx {
+	margin-bottom:23px;
+	font-size:12px;
+	color:#fe6a2b;
+	text-align:center;
+}
+.searching-result-select-bx .message-bx .txt {
+	display:block;
+	padding-top:10px;
+	color:#2a3138;
+}
+.searching-result-select-bx .agree-message-bx {
+	padding:3px 5px;
+	margin:0 0 25px;
+	background-color:#f9f9fa;
+	border:1px solid #d9dbdc;
+	border-radius:7px;
+}
+.searching-result-select-bx .agree-message-bx .radio-item {
+	line-height:1;
+}
+.searching-result-select-bx .agree-message-bx .radio-item .label-txt {
+	font-size:12px;
+}
+.searching-result-select-bx .agree-message-bx .radio-item .label-txt em {
+	font-weight:500;
+}
+.searching-result-select-bx .btn {
+	display:flex;
+	justify-content: space-between;
+}
+.searching-result-select-bx .btn button {
+	width:49%;
+}
+
+.mycar-register-search-bx {
+	padding-bottom:30px;
+	margin-bottom:35px;
+	border-bottom:1px solid #d9dbdc;
+}
+.mycar-register-search-bx .txt-info {
+	padding-top:27px;
+	font-size:16px;
+	text-align:center;
+	color:#000;
+}
+.mycar-register-search-bx .txt-info strong {
+	font-weight:500;
+}
+
+.question-txt {
+	padding-bottom:10px;
+	font-size:12px;
+	text-align:center;
+}
+.registered-result-txt {
+	padding:40px 20px 0 20px;
+}
+.registered-result-txt p {
+	line-height:26px;
+	text-align:center;
+}
+.registered-result-txt .btn {
+	display:flex;
+	justify-content: space-between;
+	padding-top:35px;
+}
+.registered-result-txt .btn button {
+	width:49%;
+}
+
+.registered-result-end {
+	padding:35px 0 20px;
+	background-color:#f9f9fa;
+	border-bottom:1px solid #f2f2f7;
+}
+.registered-result-end .car-view-bx {
+	position:relative;
+	width:80px;
+	height:80px;
+	margin:0 auto;
+	border:1px solid #dadcdd;
+	border-radius:100%;
+	background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+.registered-result-end .car-view-bx:after {
+    content: "\e90f";
+    font-family: 'LineIcons' !important;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 13px;
+    text-align: center;
+    background: #58c1c7;
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    pointer-events: none;
+}
+.registered-result-end p {
+	padding-top:15px;
+	font-size:16px;
+	color:#5b6068;
+	text-align:center;
+}
+.registered-result-end p strong {
+	font-weight:500;
+	color:#2a3138;
+}
+
+.process-step-bx {
+	background-color:#f9f9fa;
+	border-bottom:1px solid #f2f2f7;
+}
+.process-step-bx ul {
+	position:relative;
+	padding:30px 0 20px;
+	display:flex;
+	justify-content: center;
+}
+
+.process-step-bx li {
+	position:relative;
+	display:inline-block;
+	padding-right:60px;
+	text-align:center;
+}
+.process-step-bx li:before {
+	content:'';
+	position:absolute;
+	left:20px;top:10px;
+	width:100%;
+	border-top:1px solid #5eb0b5;
+}
+.process-step-bx li:last-child {
+	padding-right:0;
+}
+.process-step-bx li:last-child:before {
+	display:none;
+}
+.process-step-bx li span {
+	display:block;
+	font-size:12px;
+	color:#a0a6af;
+}
+.process-step-bx li i {
+	position:relative;
+	display:inline-block;
+	width:20px;
+	height:20px;
+	border:2px solid #c0c6ce;
+	border-radius:100%;
+	background-color:#fff;
+}
+.process-step-bx li i:after {
+	content:'';
+	display:inline-block;
+	position:absolute;
+	left:50%;top:50%;
+	width:8px;
+	height:8px;
+	margin:-4px 0 0 -4px;
+	border-radius:100%;
+	background-color:#c0c6ce;
+}
+.process-step-bx li.on i {
+	border:2px solid #5eb0b5;
+}
+.process-step-bx li.on i:after {
+	background-color:#5eb0b5;
+}
+.process-step-bx li.on span {
+	color:#2a3138;
+}
+.process-step-bx li.check-end i {
+	border:2px solid #c0c6ce;
+}
+.process-step-bx li.check-end i:after {
+	content: "\e90f";
+  font-family: 'LineIcons' !important;
+	width:10px;
+	height:10px;
+  font-size: 11px;
+  left: 2px;
+  top: -1px;
+  margin: 0 0 0 0;
+  color:#fe6a2b;
+  font-weight:bold;
+	background-color:transparent;
+}
+
+.tstation-member-managing {
+	padding:12px 20px;
+	margin:40px 20px 25px 20px;
+	border-radius:4px;
+	border:1px solid #d9dbdc;
+}
+.tstation-member-managing dt {
+	position:relative;
+	padding:0 5px 12px 5px;
+	border-bottom:1px solid #f2f2f7;
+}
+.tstation-member-managing dt:before {
+	content:'';
+	position:absolute;
+	left:-8px;top:8px;
+	width:5px;
+	height:5px;
+	background-color:#fe6a2b;
+	border-radius:100%;
+}
+.tstation-member-managing dt strong {
+	font-weight:500;
+}
+.tstation-member-managing dd {
+	position:relative;
+	padding:10px 5px 0 5px;
+}
+.tstation-member-managing .member-info {
+	display:flex;
+	justify-content: space-between;
+	padding-top:15px;
+}
+.tstation-member-managing .member-info:first-child {
+	padding-top:0;
+}
+.tstation-member-managing .member-info span{
+	width:27%;
+}
+.tstation-member-managing .member-info strong {
+	width:73%;
+	font-weight:400;
+}
+.member-share-info {
+	padding:0 20px;
+	text-align:center;
+}
+.member-share-info strong {
+	color:#fe6a2b;
+	font-weight:400;
+}
+.member-share-info .btn {
+	display:flex;
+	justify-content: space-between;
+	padding-top:35px;
+}
+.member-share-info .btn button {
+	width:49%;
+}
+.car-share-info-bx {
+	margin:32px 20px 0 20px;
+	padding:22px 0;
+	text-align:center;
+	background-color:#f9f9fa;
+	border-radius:4px;
+}
+.car-share-info-bx i {
+	display:block;
+	width:48px;
+	height:48px;
+	margin:0 auto;
+	background-image:url('../images/common/graphics_car_care_gold.svg');
+	background-repeat:no-repeat;
+}
+.car-share-info-bx p {
+	font-size:12px;
+	line-height:20px;
+}
+.car-share-info-bx p strong {
+	padding:15px 0 10px;
+	display:block;
+	font-size:16px;
+	font-weight:500;
+}
+.request-member-send-bx {
+	padding:70px 20px 0 20px;
+	text-align:center;
+}
+.request-member-send-bx .member-send-masage {
+	font-size:16px;
+	font-weight:400;
+}
+.request-member-send-bx i {
+	display:block;
+	width:184px;
+	height:54px;
+	margin:30px auto 40px auto;
+	background-image:url('../images/common/graphics_request_family.svg');
+	background-repeat:no-repeat;
+}
+.request-member-send-bx .member-send-info {
+	padding-bottom:85px;
+	font-size:12px;
+	color:#5b6068;
+	line-height:20px;
+}
+.request-member-send-bx .member-send-info em {
+	font-weight:500;
+	color:#2a3138;
+}
+.request-member-send-bx .member-send-info strong {
+	font-weight:500;
+	color:#fe6a2b;
+}
+
+.mycar-management-wrp {
+	margin-top:32px;
+}
+.mycar-management-wrp .mycar-overview .mycar-info-area .mycar-info-img {
+    height: 140px;
+}
+.mycar-management-wrp .modify-btn {
+	font-size:12px;
+}
+.mycar-management-wrp .modify-btn a {
+	display:inline-block;
+	position:relative;
+	padding:0 8px 0 10px;
+}
+.mycar-management-wrp .modify-btn a:before {
+	content:'';
+	display:inline-block;
+	position:absolute;
+	left:0;top:4px;
+	width:1px;
+	height:12px;
+	background-color:#d9dbdc;
+}
+.mycar-management-wrp .modify-btn a:first-child {
+	padding-left:0;
+}
+.mycar-management-wrp .modify-btn a:first-child:before {
+	display:none;
+}
+
+.tstation-mycar-managing {
+	margin:0 20px;
+	padding:15px 20px;
+	background-color:#f9f9fa;
+	border-radius:4px;
+}
+.tstation-mycar-managing .mycar-info-bx {
+	position:relative;
+	padding-bottom:17px;
+}
+.tstation-mycar-managing .mycar-info {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top:10px;
+}
+.tstation-mycar-managing .mycar-info:first-child {
+	padding-top:0;
+}
+.tstation-mycar-managing .mycar-info span {
+	font-size:12px;
+}
+.tstation-mycar-managing .mycar-info strong {
+	font-weight:500;
+}
+.tstation-mycar-managing .mycar-info-bx:after {
+	content:'';
+	display:inline-block;
+	position:absolute;
+	left:0;bottom:0;
+	width:100%;
+	height:1px;
+	background-color:#d9dbdc;
+}
+.tstation-mycar-managing .mycar-info-etc {
+	padding-top:10px;
+}
+.tstation-mycar-managing .mycar-info-etc .mycar-info span button {
+	background-color:transparent;
+}
+.tstation-mycar-managing .mycar-info-etc .mycar-info span span {
+	vertical-align:middle;
+	font-size:14px;
+	margin:0 0 3px 0;
+}
+.tstation-mycar-managing .mycar-info-etc .confirm {
+	width: 80px;
+	height: 24px;
+	line-height: 22px;
+	padding: 0;
+	font-size:12px;
+	font-weight:400;
+	background-color:#2a3138;
+	color:#fff;
+	border:1px solid #2a3138;
+	border-radius:4px;
+}
+.tstation-mycar-managing .mycar-info-etc .confirm.end {
+	background-color:#fff;
+	color:#fe6a2b;
+	border:1px solid #fe6a2b;
+	pointer-events: none;
+}
+.tstation-mycar-managing .mycar-info-etc .family-number {
+	width: 80px;
+	height: 24px;
+	line-height: 22px;
+	padding: 0;
+	font-size:12px;
+	font-weight:400;
+	background-color:#fff;
+	color:#2a3138;
+	border:1px solid #2a3138;
+	border-radius:4px;
+}
+
+.tstation-mycar-managing .mycar-info-etc .family-number:disabled {
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+.tstation-mycar-managing .mycar-info-etc .family-number span {
+	vertical-align:middle;
+	font-size:16px !important;
+	/* margin:0 0 3px 5px; */
+	position: relative;
+	right: -4px;
+}
+.tstation-mycar-managing + .btn,
+.wait-car-register-bx + .btn {
+	display:flex;
+	justify-content: space-between;
+	padding:15px 20px 0 20px;
+}
+.tstation-mycar-managing + .btn button,
+.wait-car-register-bx + .btn button {
+	width:49%;
+}
+.more-history-txt {
+	display:block;
+	margin-top:10px;
+	padding-top:12px;
+	text-align:center;
+	border-top:1px solid #d9dbdc;
+}
+.more-history-txt strong {
+	color:#fe6a2b;
+	font-weight:500;
+}
+
+.join-end-area {
+	padding:28px 0 35px;
+	background-color:#f9f9fa;
+	border-bottom:1px solid #d9dbdc;
+}
+.join-end-area i {
+	display:block;
+	width:32px;
+	height:32px;
+	margin:0 auto 12px auto;
+	background-image:url('../images/common/bi.svg');
+	background-repeat:no-repeat;
+	background-size:contain;
+}
+.join-end-area p {
+	text-align:center;
+	font-size:17px;
+}
+.join-end-area .sns strong {
+	color:#01c73c;
+	font-weight:500;
+}
+.service-benefit-guide {
+	padding:50px 0 55px 0;
+	margin:0 20px;
+	border-bottom:1px solid #d9dbdc;
+}
+.service-benefit-guide p {
+	padding-bottom:20px;
+	text-align:center;
+}
+.service-benefit-guide ul {
+	display:flex;
+	justify-content: center;
+}
+.service-benefit-guide li {
+	padding:0 10px;
+	font-size:12px;
+	line-height:1.5;
+	text-align:center;
+}
+.service-benefit-guide i {
+	display:block;
+	width:48px;
+	height:32px;
+	margin:0 auto 10px auto;
+	background-repeat:no-repeat;
+	background-size:contain;
+}
+.service-benefit-guide li:nth-child(1) i {
+	background-image:url('../images/common/graphics_smart_care_step1.svg');
+}
+.service-benefit-guide li:nth-child(2) i {
+	background-image:url('../images/common/graphics_smart_care_step2.svg');
+}
+.service-benefit-guide li:nth-child(3) i {
+	background-image:url('../images/common/graphics_smart_care_step3.svg');
+}
+.service-benefit-guide li strong {
+	display:block;
+	font-size:13px;
+	color:#fe6a2b;
+	font-weight:400;
+}
+.wait-car-register-bx {
+	position:relative;
+	padding:40px 20px 35px 20px;
+}
+.wait-car-register-bx i {
+	display:inline-block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: 80% auto;
+  background-position: 0 30%;
+	background-image:url('../images/common/mycar_dummy.png');
+}
+.wait-car-register-bx .wait {
+	display:inline-block;
+	padding:3px 6px;
+	font-size:10px;
+	line-height:1;
+	color:#fff;
+	font-weight:500;
+	border-radius:10px;
+	background-color:#ff4800;
+}
+.wait-car-register-bx .txt {
+	padding:8px 0 12px;
+	font-size:16px;
+}
+.wait-car-register-bx .info {
+	font-size:12px;
+}
+.wait-car-register-bx .info strong {
+	font-weight:500;
+	color:#5eb0b5;
+}
+.sns-register-end-icon {
+	display:flex;
+	justify-content: center;
+	padding-bottom:15px;
+}
+.join-end-area .sns-register-end-icon i {
+	margin:0;
+}
+.join-end-area .arrow-right {
+	margin:4px 8px 0 8px;
+}
+.join-end-area .sns-register-end-icon .social-naver {
+	width:32px;
+	height:32px;
+	color:#fff;
+	line-height: 32px;
+  font-size: 24px;
+	text-align:center;
+	background-color:#01c73c;
+}
+
+.sns-member-register-area {
+	padding:30px 20px 0 20px;
+}
+.sns-member-register-area h3 {
+	padding-bottom:8px;
+	font-size:16px;
+	border-bottom:1px solid #d9dbdc;
+}
+.member-info-bx {
+	padding-bottom:45px;
+}
+.member-info-bx dl {
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding:0 8px;
+}
+.member-info-bx dt {
+	width:34%;
+	padding:9px 0 4px 0;
+	font-size:12px;
+}
+.member-info-bx dd {
+	width:65%;
+	padding:9px 0 4px 0;
+	font-size:14px;
+}
+.sns-member-register-area .txt {
+	padding-top:10px;
+	color:#fe6a2b;
+	font-size:12px;
+}
+
+.label-txt .icon-phone {
+	display:inline-block;
+	width:14px;
+	height:19px;
+	margin:0 9px 3px 0;
+	vertical-align:middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+	background-image:url('../images/common/icon-img-phone.png');
+}
+.marketing-agree .radio-item .icon-holder {
+	left:0;
+}
+.marketing-agree .radio-item .labelling {
+	padding-left:20px;
+}
+.marketing-agree .radio-item .label-txt {
+	font-size:12px;
+}
+.service-agree-bx {
+	padding-bottom:40px;
+}
+.service-agree-bx .link-agree-bx {
+	margin-top:-9px;
+	font-size:12px;
+	color:#5b6068;
+}
+.service-agree-bx .link-agree-bx a {
+	font-size:12px;
+	margin:0;
+	vertical-align:top;
+}
+.register-end-guide-txt {
+	padding-top:10px;
+	font-size:12px;
+	color:#5b6068;
+	text-align:center;
+}
+
+.myname-viwer {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:0 20px;
+	margin:12px 0;
+}
+.myname-viwer span {
+	display:block;
+	font-size:18px;
+}
+.myname-viwer strong {
+	font-weight:400;
+	color:#fe6a2b;
+}
+.myname-viwer button {
+	white-space: nowrap;word-break:break-all;word-wrap:break-word;
+}
+
+/* 20211213 내 단골매장 // */
+.myservice-viwer {
+	display:flex;
+	align-items: flex-start;
+	justify-content: space-around;
+	margin: 0 16px;
+	padding: 24px 0 28px;
+	background-color:rgb(242, 242, 247);
+	border-radius: 4px;
+}
+
+.myservice-viwer li {
+	position:relative;
+	width:33.3%;
+	padding:5px 0 12px;
+	text-align:center;
+}
+
+.myservice-viwer li:before {
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	width:1px;
+	height:100%;
+	border-left:1px solid #d9dbdc;
+}
+
+.myservice-viwer li:first-child:before {
+	border-left:0;
+}
+
+.myservice-viwer .num {
+	padding-bottom: 8px;
+}
+
+.myservice-viwer .num strong {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.myservice-viwer .service-name {
+	font-size:12px;
+}
+
+.myservice-viwer li .family {
+	position:absolute;
+	left:50%;
+	bottom:-14px;
+	margin-left:-45px;
+	padding:0 10px 0 10px;
+	font-size:11px;
+	border:1px solid #fe6a2b;
+	border-radius:4px;
+	background-color: #ffffff;
+}
+
+.myservice-viwer li .family strong {
+	font-weight:700;
+	color:#fe6a2b;
+}
+
+.tooltip-color-bx {
+	display: none;
+	position:absolute;
+	left:54%;
+	bottom:-68px;
+	margin-left:-95px;
+}
+
+.tooltip-color-bx.on {
+	display: block;
+}
+
+.tooltip-color {
+	position:relative;
+	display:inline-block;
+	white-space: nowrap;word-break:break-all;word-wrap:break-word;
+	border:1px solid #2ed0ff;
+	border-radius: 4px;
+	background-color: #fff;
+	padding: 10px 30px 10px 10px;
+	box-shadow: 0px 3px 4px -2px rgba(50, 50, 50, .3);
+	color: #2a3138;
+	font-size:11px;
+	text-align:left;
+	height: auto;
+	line-height:1.5;
+	z-index: 700;
+}
+
+.tooltip-color .arrow-top {
+	position:relative;
+}
+
+.tooltip-color .arrow-top:before {
+	content:"";
+	position:absolute;
+	top:-15px;
+	left:50%;
+	display:block;
+	width:6px;
+	height:6px;
+	background-color:#fff;
+	border:1px solid #2ed0ff;
+	border-left: 0;
+	border-bottom: 0;
+	transform: rotate(-45deg);
+}
+/* // 20211213 내 단골매장 */
+
+.tooltip-color button {
+	position:absolute;
+	right:5px;
+	top:5px;
+	background-color:transparent;
+}
+.tooltip-color:after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    margin-left: -5px;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: transparent transparent #ddd transparent;
+}
+.mypage-menu-list-bx {
+	position:relative;
+}
+.mypage-menu-list-bx.on li.option {
+    display: block;
+}
+
+.mypage-menu-list-bx .menu-viwer .label-txt:nth-of-type(1) { display: inline-block;}
+.mypage-menu-list-bx .menu-viwer .label-txt:nth-of-type(2) { display: none;}
+
+.mypage-menu-list-bx.on .menu-viwer .label-txt:nth-of-type(1) { display: none;}
+.mypage-menu-list-bx.on .menu-viwer .label-txt:nth-of-type(2) { display: inline-block;}
+
+.mypage-menu-list-bx.on .menu-viwer .line-icons {
+    transform: rotate(180deg);
+}
+.mypage-menu-list-bx .menu-viwer {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.mypage-menu-list-bx hr {
+	display:block;
+	width:100%;
+  height: 10px;
+  margin:0;
+	border: 0;
+	background: #f9f9fa;
+	z-index:3;
+}
+.mypage-menu-list-bx ul {
+	display:flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+.mypage-menu-list-bx li {
+	width:25%;
+	text-align:center;
+}
+.mypage-menu-list-bx li.option { display: none; }
+.mypage-menu-list-bx li a {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+}
+.mypage-menu-list-bx li strong {
+	display:block;
+	padding:12px 0 0 0;
+	font-size:12px;
+	line-height:1.2;
+	font-weight:400;
+}
+
+/* 20211213 내 단골매장 , 마이페이지 아이콘 변경// */
+.mypage-menu-list-bx .img-icons {
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: 50% 50%;
+}
+
+.mypage-menu-list-bx .icon-safeservice {
+	background-image: url(../images/mypage/icon_safeservice.png);
+	background-size: 30px auto;
+}
+
+.mypage-menu-list-bx .icon-tstore {
+	background-image: url(../images/mypage/icon_tstore.png);
+	background-size: 25px auto;
+}
+/* //20211213 내 단골매장 , 마이페이지 아이콘 변경 */
+
+.breakdown-viewr-bx {
+	padding:18px 20px 65px 20px;
+}
+.breakdown-viewr-bx .tab-item {
+	padding:0;
+}
+.breakdown-info {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size:12px;
+	padding:12px 0 25px;
+}
+.breakdown-info p {
+	color:#5b6068;
+}
+.breakdown-info a {
+	color:#fe6a2b;
+	white-space: nowrap;word-break:break-all;word-wrap:break-word;
+}
+.breakdown-info a span {
+	color:#a0a6af;
+}
+.breakdown-info a strong {
+	font-weight:400;
+}
+.breakdown-process {
+    display: block;
+    width: auto !important;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+.breakdown-process li {
+    position:relative;
+    padding: 0 2px;
+}
+.breakdown-process li a.breakdown-process-item {
+    display: block;
+    padding: 5px 0;
+    text-align:center;
+    font-size:12px;
+    background-color:#f2f2f7;
+    border-radius:4px;
+    pointer-events: none;
+}
+.breakdown-process li.on a.breakdown-process-item {
+    background-color:#fe6a2b;
+    color:#fff;
+    pointer-events: all;
+}
+.breakdown-process li strong {
+	display:block;
+	font-size:18px;
+	font-weight:400;
+}
+.breakdown-process li.on .tooltip-color-bx {
+  left:initial;
+  right:0;
+  bottom: -64px;
+  margin-left: 0;
+}
+.breakdown-process li.on .tooltip-color {
+	border: 1px solid #fe6a2b;
+  padding: 3px 10px;
+  box-shadow:none;
+}
+.breakdown-process li.on .tooltip-color .arrow-top:before {
+  top: -8px;
+  left: inherit;
+  right:15px;
+	border: 1px solid #fe6a2b;
+	border-left: 0;
+  border-bottom: 0;
+}
+
+.review-write-count-bx {
+	padding:20px 20px 30px 20px;
+	background-color:#f9f9fa;
+}
+.review-write-count-bx h3 {
+	padding:0 0 7px 0;
+	font-size:14px;
+	border-bottom:1px solid #fff;
+}
+.review-write-count-bx h3 strong {
+	font-size:18px;
+	font-weight:400;
+	color:#fe6a2b;
+}
+.review-write-count-bx h3 span {
+	vertical-align:top;
+	color:#a0a6af;
+}
+.review-write-count-bx .info {
+	padding:14px 0 11px 0;
+	font-size:12px;
+	color:#5b6068;
+}
+
+.review-goods-recommend-swiper {
+	padding: 0;
+	overflow: visible;
+}
+.review-goods-recommend-swiper .swiper-slide {
+	width: 125px;
+	margin-right:8px;
+}
+.review-goods-recommend {
+	position:relative;
+	display:block;
+	width:100%;
+	min-height:185px;
+	padding:0 8px;
+	border:1px solid #d9dbdc;
+	border-radius:4px;
+	background-color:#fff;
+}
+.review-goods-recommend .goods-img {
+	position:relative;
+	width:100%;
+	height:80px;
+	margin:0 auto;
+	text-align:center;
+}
+.review-goods-recommend .goods-img .goods {
+	height:100%;
+}
+.review-goods-recommend .goods-img .mark {
+	width:70%;
+	position:absolute;
+	left:50%;bottom:5px;
+	margin-left:-35%;
+}
+.review-goods-recommend .goods-img .opacity-bx {
+	position:absolute;
+	left:0;bottom:0;
+	width:100%;
+	height:25px;
+	background-color:#fff;
+	opacity:.5;
+}
+.review-goods-recommend h5 {
+	padding:4px 0 7px;
+	font-size:11px;
+}
+.review-goods-recommend .tire-size {
+	font-size:12px;
+}
+.review-goods-recommend .review-go {
+	position:absolute;
+	right:9px;bottom:9px;
+	width:30px;
+	height:30px;
+	padding-top:3px;
+	text-align:center;
+	border-radius:100%;
+	background-color:#2a3138;
+	z-index:2;
+}
+.review-goods-recommend .review-go span {
+	color:#fff;
+}
+.custom-center-viewr {
+	position:relative;
+	padding:10px 0 30px 0;
+}
+.custom-center-viewr h3 {
+	font-size:12px;
+	color:#333;
+	padding:20px;
+}
+.custom-center-viewr .info-bx {
+	display:flex;
+	align-items: flex-start;
+	padding:0 20px;
+}
+.custom-center-viewr .info-bx .icon {
+	width:35px;
+	height:35px;
+	padding-top:5px;
+	text-align:center;
+	color:#fff;
+	border-radius:100%;
+	background-color:#fe6a2b;
+}
+.custom-center-viewr .info-bx .info {
+	padding-left:10px;
+	font-size:12px;
+	color:#000;
+}
+.custom-center-viewr .info-bx .info strong {
+	display:block;
+	padding-bottom:4px;
+	font-size:21px;
+	font-weight:400;
+}
+.custom-center-viewr hr {
+	position:absolute;
+	left:0;
+	bottom:0;
+	display:block;
+	width:100%;
+  height: 10px;
+  margin:0;
+	border: 0;
+	background: #f9f9fa;
+	z-index:3;
+}
+
+#layerFullPopup.opacity-layer {
+	background:none;
+}
+.opacity-back {
+  position: fixed;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  left: 0;
+  top: 0;
+  opacity:0.9;
+}
+#layerFullPopup.opacity-layer .layer_box {
+	position:relative;
+	z-index:901;
+}
+.conts-vertical-align {
+  position: fixed;
+  top:50%;
+  margin:-140px 20px 0 20px;
+}
+.conts-vertical-align .name {
+	display:block;
+	padding:7px 0 0 0;
+	font-size:16px;
+	font-weight:400;
+}
+.conts-vertical-align h2 {
+	padding-bottom:15px;
+	font-size:21px;
+}
+.conts-vertical-align .info {
+	padding-top:20px;
+	color:#5b6068;
+	font-weight:300;
+}
+.conts-vertical-align .membership-card-wrap {
+	background:#fff;
+	border-radius:4px;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
+	border-bottom: none;
+}
+.conts-vertical-align .membership-card-wrap .membership-card {
+  padding: 32px 0 12px 0;
+	border: none;
+}
+.conts-vertical-align .membership-card-wrap .membership-card .bi-img {
+	right:0;
+}

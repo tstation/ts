@@ -1,0 +1,332 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'Popup' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/app.css" />
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">푸시알림허용</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                            ref: 'modal-ref-1',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: appAccessContent,
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 0,
+                                vertical: 0,
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            full: false, // Full Popup
+                            onOpen: function () {
+                                console.log('팝업이 열리면 실행합니다.')
+                            },
+                            onClose: function () {
+                                console.log('팝업이 닫히면 실행합니다.')
+                            },
+                            // modalAction: {
+                            //     isNoBoundary: false,
+                            //     buttons: [
+                            //         {
+                            //             label: '확인',
+                            //             negative: false,
+                            //             action: '$.Tstation.popup().close()'
+                            //         }
+                            //     ]
+                            // }
+                        })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 20211109 // -->
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">최신 버전 업데이트 ALERT</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: `
+                                <div>
+                                    <p class='txt-14 txt-center'>최신 버전 업데이트</p>
+                                    <p class='txt-12 mg-t-4u txt-neutral2 txt-center'>업데이트를 위해 스토어로 이동합니다.</p>
+                                </div>
+                                `, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '나중에',
+                                            negative: true,
+                                            action: function () {
+                                                window.location.href = ''
+                                            }
+                                        },
+                                        {
+                                            label: '업데이트',
+                                            negative: false,
+                                            action: function () {
+                                                $.Tstation.popup().close()
+                                            }
+                                        }
+                                    ]
+                                }
+                            })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">수신동의 확인</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: `
+                                <div>
+                                    <p class='txt-14 txt-center'>#PUSH항목명 수신여부가수신동의 상태로 변경되었습니다.</p>
+                                    <p class='txt-12 mg-t-4u txt-neutral2 txt-center'>(2011년 01월 01일)</p>
+                                </div>
+                                `, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: function () {
+                                                $.Tstation.popup().close()
+                                            }
+                                        }
+                                    ]
+                                }
+                            })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">수신거부 확인</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: `
+                                <div>
+                                    <p class='txt-14 txt-center'>#PUSH항목명 수신거부 상태로 변경되었습니다.</p>
+                                    <p class='txt-12 mg-t-4u txt-neutral2 txt-center'>(2011년 01월 01일)</p>
+                                </div>
+                                `, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '확인',
+                                            negative: false,
+                                            action: function () {
+                                                $.Tstation.popup().close()
+                                            }
+                                        }
+                                    ]
+                                }
+                            })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="container pd-h-5u mg-t-2u">
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">혜택정보 알림 </p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                                ref: 'modal-ref-1', // 팝업 여러개를 컨트롤 하고 싶을때 타겟팅 아이디
+                                requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                                contents: `
+                                <div>
+                                    <p class='txt-14 txt-center'>티스테이션에서 보내는 혜택정보 알림을 받아보시겠습니까?</p>
+                                    <p class='txt-12 mg-t-4u txt-neutral2 txt-center'>수신동의 시 이벤트/프로모션/점검&amp;교체 알림 등다양한 혜택정보를 받아보실 수 있습니다.</p>
+                                </div>
+                                `, // 팝업을 바로 띄우고 싶을때
+                                dimWhite: false, // dim 영역의 색이 검은색 이면 false 밝은색이면 white
+                                modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                    horizon: 8,
+                                    vertical: 8,
+                                    top: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0
+                                },
+                                full: false, // Full Popup
+                                onOpen: function () {
+                                    console.log('팝업이 열리면 파이어 합니다.')
+                                },
+                                onClose: function () {
+                                    console.log('팝업이 닫히면 파이어 합니다.')
+                                },
+                                modalAction: {
+                                    isNoBoundary: false,
+                                    buttons: [
+                                        {
+                                            label: '허용 안함',
+                                            negative: true,
+                                            action: function () {
+                                                window.location.href = ''
+                                            }
+                                        },
+                                        {
+                                            label: '알림받기',
+                                            negative: false,
+                                            action: function () {
+                                                $.Tstation.popup().close()
+                                            }
+                                        }
+                                    ]
+                                }
+                            })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+
+            </div>
+            <!-- // 20211109 -->
+        </section>
+    </div>
+</main>
+<script>
+    var appAccessContent = `
+    <div class="app-push-info-popup">
+        <section class="app-push-hero-section">
+            <div class="rowgroup border-bottom">
+                <div class="row">
+                    <div class="rowheader">
+                        <p class="txt-18">혜택 정보 놓치고 싶지 않다면?</p>
+                        <p class="txt-14 txt-neutral2 mg-t-3u">지금 푸시 알림을 설정하면 쇼핑<br />혜택과 서비스 정보를 받을 수 있어요! </p>
+                    </div>
+                    <div class="cell">
+                        <span class="icon-rock-wrap"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="app-push-info-section">
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="icon-push-wrap mg-r-2u"><span class="line-icons txt-primary coupon-sale size-14"></span></span>
+                    </div>
+                    <div class="cell">
+                        <p class="txt-14">타이어/경정비 이벤트 할인혜택</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="icon-push-wrap mg-r-2u"><span class="line-icons icon-pickup size-24"></span></span>
+                    </div>
+                    <div class="cell">
+                        <p class="txt-14">내 차를 위한 점검/교환알림</p>
+                    </div>
+                </div>
+            </div>          
+            <div class="app-push-noti txt-primary txt-12 mg-h-5u mg-v-3u">
+                앱 푸시알림 변경은 메뉴 > 설정에서 변경 가능합니다. 
+            </div>
+
+            <div class="app-push-button mg-h-5u mg-v-8u">
+                <button type="button" class="btn-item btn-neutral btn-ol full-w round">
+                    <span class="label-txt">허용 안 함</span>
+                </button>
+                <button type="button" class="btn-item btn-neutral full-w round" onClick="$.Tstation.popup().close()">
+                    <span class="label-txt">알림받기</span><!-- 20211109 -->
+                </button>
+            </div>
+        </section>
+    </div>
+    `
+    </script>

@@ -1,0 +1,149 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'Popup' }) %>
+<main id="main">
+
+    <!-- 콘텐츠 영역 -->
+    <div class="container">
+        <section>
+            
+
+            <!-- 패딩/마진은 pd- / mg- 로 조정 -->
+            <div class="container pd-h-5u mg-t-2u">
+                
+                <div class="mg-b-4u">
+                    <p class="mg-b-2u">접근권한 안내</p>
+                    <button
+                            type="button"
+                            class="btn-item btn-neutral full-w mg-b-4u"
+                            onclick="$.Tstation.popup().open({
+                            ref: 'modal-ref-1',
+                            requestUrl: '', // 비동기 방식으로 컨텐츠 영역을 받아올때
+                            contents: appAccessContent,
+                            dimWhite: false,
+                            modalContentsPd: { // contents 영역의 padding 값 조절 해당 숫자의 * 4px 예: top 8 > top 32px
+                                horizon: 0,
+                                vertical: 0,
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                left: 0
+                            },
+                            full: false, // Full Popup
+                            onOpen: function () {
+                                console.log('팝업이 열리면 실행합니다.')
+                            },
+                            onClose: function () {
+                                console.log('팝업이 닫히면 실행합니다.')
+                            },
+                            // modalAction: {
+                            //     isNoBoundary: false,
+                            //     buttons: [
+                            //         {
+                            //             label: '확인',
+                            //             negative: false,
+                            //             action: '$.Tstation.popup().close()'
+                            //         }
+                            //     ]
+                            // }
+                        })"
+                    >
+                        <span class="label-txt">Open</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    var appAccessContent = `
+    <div class="app-connect-info-popup">
+        <section class="app-connect-hero-section">
+            <div class="rowgroup border-bottom">
+                <div class="row">
+                    <div class="rowheader">
+                        <p class="txt-18">앱 접근권한 안내</p>
+                        <p class="txt-14 txt-neutral2 mg-t-3u">티스테이션 앱 사용을 위해<br />다음 접근권한을 사용합니다</p>
+                    </div>
+                    <div class="cell">
+                        <span class="icon-rock-wrap"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="app-connect-info-section">
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="icon-connect-wrap mg-r-2u"><span class="line-icons txt-primary disk size-24"></span></span>
+                    </div>
+                    <div class="cell">
+                        <!-- 20211209 // -->
+                        <p class="txt-14">기기 및 앱 기록 / 전화 (필수)</p>
+                        <p class="txt-12 txt-neutral2 mg-t-1u icon-bullet">앱 오류확인 및 사용성 개선을 위한 기기정보, 본인인증 용도</p><!-- 20220704 icon class 추가 -->
+                        <!-- // 20211209 -->
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="icon-connect-wrap mg-r-2u"><span class="line-icons txt-primary location size-24"></span></span>
+                    </div>
+                    <div class="cell">
+                        <p class="txt-14">위치(선택)</p>
+                        <p class="txt-12 txt-neutral2 mg-t-1u icon-bullet">내 주변 티스테이션 스토어 위치정보 확인</p><!-- 20220704 icon class 추가 -->
+                    </div>
+                </div>
+            </div>
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="icon-connect-wrap mg-r-2u"><span class="line-icons txt-primary camera size-24"></span></span>
+                    </div>
+                    <div class="cell">
+                        <p class="txt-14">사진/카메라(선택)</p>
+                        <p class="txt-12 txt-neutral2 mg-t-1u icon-bullet">포토리뷰 작성을 위한 사진 등록</p><!-- 20220704 icon class 추가 -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rowgroup">
+                <div class="row">
+                    <div class="rowheader">
+                        <span class="icon-connect-wrap mg-r-2u"><span class="line-icons txt-primary phonebook size-24"></span></span>
+                    </div>
+                    <!-- 20220704 // -->
+                    <div class="cell">
+                        <p class="txt-14">연락처 (선택)</p>
+                        <p class="txt-12 txt-neutral2 mg-t-1u icon-bullet">쿠폰 선물을 위한 연락처 검색 및 발송</p><!-- 20220704 icon class 추가 -->
+                        <p class="txt-12 txt-neutral2 mg-t-1u icon-bullet">쿠폰 수신자 연락처 정보의 서버 전송/등록</p><!-- 20220704 icon class 추가 -->
+                    </div>
+                    <!-- // 20220704 -->
+                </div>
+            </div>
+            
+            <p class="app-connect-noti txt-primary txt-12 mg-h-5u mg-t-3u">
+            안드로이드의 경우 [휴대폰 설정 > 티스테이션 > 전화] 허용으로 권한 설정을 해주셔야 티스테이션 앱 이용이 가능합니다.
+            </p>
+            <p class="app-connect-noti txt-primary txt-12 mg-h-5u mg-t-1u">
+            선택적 접근권한 비허용 시 일부 서비스 이용이 제한될 수 있으나, 기본적인 서비스 이용은 가능합니다.
+            </p>
+            <!-- 20220704 // -->
+            <p class="txt-center"><a href="https://www.tstation.com/terms/termsmain.do?agrmSctCd=30" class="dp-inblock txt-aqua txt-12 mg-t-3u mg-b-3u" data-analytics-click="개인정보 처리방침 확인하기">개인정보 처리방침 확인하기</a></p>
+            <!-- // 20220704 -->
+
+            <div class="app-connect-button mg-h-5u mg-v-8u">
+                <button type="button" class="btn-item btn-neutral full-w round" onClick="$.Tstation.popup().close()">
+                    <span class="label-txt">확인</span>
+                </button>
+            </div>
+        </section>
+    </div>
+    `
+    </script>
+
+    

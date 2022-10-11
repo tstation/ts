@@ -1,0 +1,321 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'T\'Station 이용약관' }) %>
+<div id="container" class="company">
+
+    <form id="termsForm" name="termsForm">
+        <!-- 이용약관 구분 -->
+        <div class="agree_sort">
+            <select title="약관 구분 선택" class="select01 w100p" id="agrmSctCd">
+
+
+
+                <option value="10" selected="selected">T&#039;Station 이용약관</option>
+
+
+
+
+
+
+
+                <option value="20">개인정보 수집 및 이용약관</option>
+
+
+
+
+
+
+                <option value="30">개인정보 처리방침</option>
+
+
+
+
+
+
+                <option value="40">개인정보 수집 및 이용</option>
+
+
+
+
+
+
+                <option value="50">전자금융서비스 이용약관</option>
+
+
+
+
+
+
+                <option value="60">광고성 정보 제공 수신 동의약관</option>
+
+
+
+
+
+
+                <option value="70">임직원 정보 수집 및 이용 동의약관</option>
+
+
+
+
+
+
+                <option value="80">청탁금지법 준수 동의약관</option>
+
+
+
+
+
+
+                <option value="90">이메일 무단수집거부</option>
+
+
+
+
+
+
+                <option value="100">위치정보 이용약관</option>
+
+
+
+
+
+
+                <option value="110">결제 시 개인정보 수집 및 이용약관</option>
+
+
+
+
+
+
+                <option value="120">개인정보 제공 및 위탁안내</option>
+
+
+
+
+
+
+                <option value="130">전자지급 결제 대행 약관</option>
+
+
+
+
+
+
+                <option value="140">비회원 주문을 위한 개인정보 수집 및 이용동의</option>
+
+
+
+
+
+
+                <option value="150">개인정보 열람/정정 신청약관</option>
+
+
+
+            </select>
+            <button class="btnM2 btnS02" type="button" id="btnOtherTermsByAgrmSctCD">바로가기</button>
+        </div>
+        <!-- #이용약관 구분 -->
+
+        <!-- 이전약관 시행일자 -->
+        <div class="agree_sort2">
+
+
+            <select title="약관 버전 선택" class="select01 w100p" id="agrmNo">
+
+
+
+
+
+                <option value="2000000117" selected="selected">2019.11.01 실행</option>
+
+
+
+
+
+
+
+
+                <option value="2000000109"> 2019.03.25 실행</option>
+
+
+
+
+
+
+
+                <option value="2000000063"> 2018.12.06 실행</option>
+
+
+
+
+
+
+
+                <option value="2000000062"> 2017.04.03 실행</option>
+
+
+
+
+
+
+
+                <option value="2000000061"> 2013.02.14 실행</option>
+
+
+
+            </select>
+            <button class="btnM2 btnS01" type="button" id="btnOtherTermsBySameAgrmSctCd">바로가기</button>
+
+
+
+        </div>
+        <!-- #이전약관 시행일자 -->
+
+        <!-- 이용약관 내용 -->
+        <div id="agreeSelect" style="padding:20px;">
+            <!-- 20. 개인정보 수집 및 이용약관   -->
+            <div class="agree_container">
+
+
+                
+                    <h2>한국타이어 TBR 마일리지 보증 프로그램 가입 약관</h2>
+                    
+                    <h3>TBR 마일리지 보증 프로그램 안내</h3>
+                    <p class="txt01">한국타이어의 상용차용 타이어 전문 매장인 TBX멤버십 매장에서 TBX멤버십 가입 고객을 대상으로 보증 적용 상품 구매 시 차종별 차별화된 마일리지 성능을 보증해 주는 고객 우대 프로그램입니다. (TBX멤버십 APP을 통해 TBX멤버십 및 마일리지 보증 프로그램 가입 필요)<br />TBR마일리지 프로그램을 제공 받기 위해서는 개인정보 활용 및 마케팅 활용 동의를 해주셔야 하며, 동의 거부 시에는 서비스 제공이 불가합니다.</p>
+                    
+                    <h3>TBR 마일리지 보증 프로그램 세부 내용</h3>
+                    <ol class="no01">
+                        <li>1. 대상고객 : TBX멤버십 매장에서 보증 적용 상품을 2개이상 구매한 TBX멤버십 회원</li>
+                        <li>2. 보증 프로그램 가입 운영 기간 : 2022년 8월 1일 ~ 2022년 12월 31일</li>
+                        <li>3. 적용 상품 및 적용 조건
+                            <div class="tbl table-responsive">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th>적용상품명</th>
+                                            <th>적용규격</th>
+                                            <th>적용차종</th>
+                                            <th>보증마일리지</th>
+                                            <th>보증기간</th>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="5">SmartFlex AH51</td>
+                                            <td rowspan="2">385/65R22.5</td>
+                                            <td>덤프</td>
+                                            <td>100,000 Km</td>
+                                            <td>1년 이내</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="4">카고 및 트랙터</td>
+                                            <td rowspan="4">200,000 Km</td>
+                                            <td rowspan="4">2년 이내</td>
+                                        </tr>
+                                        <tr>
+                                            <td>295/80R22.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>315/70R22.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>315/80R22.5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="tail-txt">※ 신상품 출시 및 단종에 따라 가입 가능 상품은 추가/변동될 수 있습니다.</p>
+                            </div>
+                        </li>
+                        <li>4. 보상 방법
+                            <ol class="no01">
+                                <li>(1) 보증기간 내 보증 마일리지 대비 실 사용 마일리지 부족시 1Km당 1원 보상 (최대 5만원 한정)</li>
+                                <li>(2) 전국 TBX멤버십 매장에서 사용 가능한 TBX멤버십 포인트로 보상 (1,000원 단위 지급)</li>
+                            </ol>
+                        </li>
+                        <li>5. 유의사항
+                            <ol class="no01">
+                                <li>(1) TBX멤버십 회원 및 TBX멤버십 매장에서만 적용 가능합니다<br />
+                                <p class="tail-txt">- 전국 TBX멤버십 매장은 TBX멤버십 APP을 통해 확인 가능합니다.</p></li>
+                                <li>(2) 가입은 타이어 실 구매 일자 기준 적용됩니다.</li>
+                                <li>(3) TBR 마일리지 보증 프로그램 가입은 가입 운영 기간 내에 이루어져야 유효하며, 구매일로부터 보증기간을 산정합니다.</li>
+                                <li>(4) 보증 적용 상품 구매 후 회사가 정한 기한 내 TBX멤버십 APP을 통해 TBR 마일리지 보증 프로그램을 별도 가입해야 합니다.</li>
+                                <li>(5) TBR 마일리지 보증 프로그램 가입을 위해서는 TBX멤버십 가입이 필요합니다. </li>
+                                <li>(6) TBR 마일리지 보증 프로그램의 가입 및 보상은 회사의 최종 가입 승인 이후 유효합니다. 증빙이 사실과 다르거나 요건이 충족되지 않는 경우 회사는 가입 및 보상 신청을 반려할 수 있습니다.</li>
+                                <li>(7) 보증 마일리지 및 보증기간 기준을 모두 충족한 경우에 한하여 보상이 가능합니다.</li>
+                                <li>(8) 보상에 대한 지급은 회사가 정한 기준 내에 지급됩니다.</li>
+                                <li>(9) TBR 마일리지 보증 프로그램 관련한 자세한 사항은 전국 TBX멤버십 매장을 통해 안내 받으시기 바랍니다. </li>
+                            </ol>
+                        </li>
+                        <li>6. 주요 면책사항
+                            <ol class="no01">
+                                <li>(1) 휠얼라인먼트 오류 등 차량의 이유로 인한 이상마모의 경우는 보상 대상이 아닙니다.</li>
+                                <li>(2) 보상을 목적으로 한 고의 손상은 보상 대상이 아닙니다.</li>
+                                <li>(3) TBX멤버십 매장 이외의 장소에서 구매, 교체, 수리한 경우는 보상 대상이 아닙니다.</li>
+                                <li>TBR 마일리지 보상 문의 : 031-5178-7827</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    
+                
+                    
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h2>개인정보 수집 및 이용 (선택)</h2>
+                <div class="tbl">
+                    <table cellpadding="0" cellspacing="0" class="con-table" summary="개인정보 수집 및 이용 (선택)" width="100%">
+                        <tbody>
+                        <tr>
+                            <th>구분</th>
+                            <th>목적</th>
+                            <th>수집 항목</th>
+                            <th>보유기간</th>
+                        </tr>
+                        <tr>
+                            <td>회원 정보 수정 시</td>
+                            <td>신상품 홍보 및 마케팅 목적 활용</td>
+                            <td>차량 정보 (차종, 차량번호)</td>
+                            <td>동의 철회 시까지</td>
+                        </tr>
+                        <tr>
+                            <td>특정 이벤트 통한 회원 가입 시</td>
+                            <td>제휴사 확인</td>
+                            <td>직장명</td>
+                            <td>이벤트 종료 시까지</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 20. 개인정보 수집 및 이용약관   -->
+        </div>
+        <!-- #이용약관 내용 -->
+
+    </form>
+</div>

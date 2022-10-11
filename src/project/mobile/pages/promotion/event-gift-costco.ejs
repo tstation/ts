@@ -1,0 +1,125 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '모바일 주유권 4만원 신청 페이지' }) %>
+<div id="container" class="">
+    <!-- 사은품 신청 -->
+    <link type="text/css" rel="stylesheet" href="mc-static-root/css/event.css" /><!-- NEW CSS ADD -->
+    <div class="gift-prospecs-page">
+        
+
+        <div class="subscription-section">
+            <div class="noti-rowgroup">
+                <div class="form-control form-control-md bg-light2 pd-v-4u pd-h-5u ">
+                    <label class="txt-14">인증번호 입력</label>
+                    <div class="input-group">
+                        <input type="text" class="input-box" placeholder="문자로 받은 인증번호를 입력해 주세요">
+                        <div class="tools">
+                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="txt-center mg-t-4u">
+                    <button type="button" class="btn-item btn-neutral btn-ol round pd-h-10u">
+                        <span class="label-txt">인증번호 확인</span>
+                    </button>
+                </div>
+            </div>
+
+            <h5 class="section-headline underline txt-16 mg-h-5u pd-b-2u pd-t-15u">신청자 정보 확인</h5>
+            <div class="rowgroup">
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="name">이름</label>
+                        <div class="input-group">
+                            <input type="text" id="name" class="input-box" placeholder="이름" value="김한국" disabled />
+                            <div class="tools">
+                                <button class="clear"><span class="line-icons close-circle"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber">휴대폰</label>
+                        <div class="input-group phone-number">
+                            <ul class="flex-list ">
+                                <li class="flex-2">
+                                    <input type="text" id="phoneNumber" class="input-box" placeholder="휴대폰 앞번호" value="010" disabled />
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </li>
+                                <li class="flex-3">
+                                    <input type="text" id="phoneNumber" class="input-box" placeholder="휴대폰 중간번호" value="9999" disabled />
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </li>
+                                <li class="flex-3">
+                                    <input type="text" id="phoneNumber" class="input-box" placeholder="휴대폰 뒷번호" value="9999" disabled />
+                                    <div class="tools">
+                                        <button class="clear"><span class="line-icons close-circle"></span></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mg-t-2u pd-h-5u">
+                    <div class="form-control form-control-inline inline-md">
+                        <label for="phoneNumber">상품</label>
+                        <div class="input-group pd-v-3u">
+                            GS칼텍스 모바일 주유권 4만원
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="noti-section mg-t-5u">
+            <h3 class="section-headline txt-16 pd-h-5u">유의해 주세요</h3>
+            <ul class="explan-list pd-t-4u pd-b-8u pd-h-5u bg-light2">
+                <li class="mg-b-1u">
+                    <p class="txt-11 txt-neutral2"># 신청 기한 : 2022.04.05.(월) 23:59시 까지 </p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="txt-11 txt-neutral2"># 이벤트 기간 내 티스테이션 행사매장에서 대상 타이어 4개 구매&장착 완료 및 본 사은품 신청을 완료한 고객 대상으로 1계정(연락처) 1인 기준으로 발송됩니다. </p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="txt-11 txt-neutral2"># 경품신청 후 영업일 기준 1일 내 기재된 연락처로 모바일 기프티콘 형태로 사은품이 발송됩니다. (늦은저녁~새벽시간 사이 신청 건에 대해서는 다음 날 오전에 발송될 수 있습니다.) </p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="txt-11 txt-neutral2"># 신청 시 입력된 개인정보 오류로 인한 경품 미수취 시 재발송이 불가할 수 있으며, 사은품 수신 이후 주문을 취소하였을 경우 기지급된 사은품은 회수하거나 이미 사용하였을 경우 해당 금액만큼 차감 후 환불처리 됩니다. </p>
+                </li>
+                <li class="mg-b-1u">
+                    <p class="txt-11 txt-neutral2"># 사은품 지급 관련 문의 : 티스테이션 고객센터 080-022-8272</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="legal-cheked-wrap weight-divider">
+            <div class="list-size-flex flex-between mg-t-2u pd-h-5u">
+                <label class="check-item" for="eventPrivacyPolicy">
+                    <input type="checkbox" id="eventPrivacyPolicy" name="agrTpArr" value="60">
+                    <div class="icon-holder">
+                        <span class="line-icons square size-20"></span>
+                    </div>
+                    <div class="labelling">
+                        <span class="label-txt mg-h-1u txt-12">마케팅 활용을 위한 수집 및 이용동의</span>
+                    </div>
+                </label>
+                <button type="button" class="txt-12 pd-v-2u txt-primary" style="background-color: transparent;">
+                    <span class="label-txt">내용보기<span class="line-icons chev-right size-16"></span></span>
+                </button>
+            </div>
+        </div>
+        <div class="button-wrap pd-h-5u mg-t-1u mg-b-8u">
+            <button type="button" class="btn-item btn-neutral round full-w round"> 
+                <span class="label-txt">사은품 신청하기</span>
+            </button>
+        </div>
+
+    </div>
+    <!-- //사은품 신청 -->
+</div>

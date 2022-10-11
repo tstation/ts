@@ -1,0 +1,353 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="cscenter" style="min-height: 499px;">
+    <div class="inner">
+        <%- locals.widget('src/project/desktop/includes/layouts/cs/aside.ejs') %>
+        <div id="contents2">
+            <div class="page_tit" style="display:none;">
+                <h4>무상보증서비스</h4>
+            </div>
+            <div class="guarantee_01" style="display:none;">
+                <dl>
+                    <dt>한국타이어 구매고객
+                        <span>승용차 타이어 무상 보증 인증번호 등록</span>
+                    </dt>
+                    <dd>고객이 무상 보증 상품 사용 중 외부충격에 의해 코드 절상이 발생한 경우,<br>
+                        아래 보상기준에 의거 한국타이어에서 보상 조치 해드립니다.
+                        <p class="btn"><button id="btnWarranty" class="btnM2 btnS02">무상보증 등록하기</button></p>
+                        <button id="btnWarrantyPopup" class="popup-scarce" style="display:none;" data-width="w870" data-rel="https://www.tstation.com/mypage/tstation/warranty/popup/warranty-reg"></button>
+                    </dd>
+                    <dd class="line">
+                        T’Station 이외 매장 (TBX. THE TIRE SHOP, 일반 대리점 등)을 이용하신
+                        <br>고객님께서는 한국타이어 웹사이트를 이용해주시기 바랍니다.
+                        <p class="btn"><a href="https://www.hankooktire.com/kr/service/guarantee-service/guarantee/passenger-cars.html" target="_blank" class="btnM2 btnS02">한국타이어 바로가기</a></p>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="mydetail_02">
+                <!-- 				<h6>무상보증 안내</h6> -->
+                <h6>코드절상 무상교환보증 서비스</h6>
+                <p class="txt01">고객이 무상 보증 상품 사용 중 외부 충격에 의해 코드 절상이 발생한 경우, 정해진 기준에 의거하여 보상 서비스를 제공합니다.
+                    <br>
+                    무상보증서비스 신청 방법은 고객센터 [080-022-8272]로 문의 주시면 안내받으실 수 있습니다.
+                </p>
+                <div class="tbl_01">
+                    <table>
+                        <colgroup>
+                            <col style="width:140px;">
+                            <col style="width:*;">
+                        </colgroup>
+                        <tbody><tr>
+                            <th>보증 대상</th>
+                            <td>구매일 기준 2년 (구매일자를 증명하지 못할 시 제조일자 기준으로 시행)이내로 마모율이 50% 이내인 제품</td>
+                        </tr>
+                        <tr>
+                            <th>보증 범위</th>
+                            <td>
+                                <ol class="notice_01">
+                                    <li>사용자 과실 또는 사용자 과실이 아닌 경우로 인한 '코드 절상'인 경우</li>
+                                    <li>코드 절상이 발생한 상품만 보상을 실시하며, 코드 절상 발생 時 최초 1회에 한하여 보증
+                                        <br>(타이어 장착비, 밸런스, 기타 서비스 비용은 사용자가 부담합니다)</li>
+                                </ol>
+                                <p class="notice_02">
+                                    <span class="col01">코드 절상이란?</span>
+                                    차량운행 중 외부의 돌출물이나 기타 충격에 의해 타이어 옆면이 부풀어 오르는 현상
+                                    <button class="btnM btnS02 popup-scarce" data-rel="https://www.tstation.com/customer-service/popup/layercode">코드 절상 자세히 보기</button>
+                                </p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>보증 제외</th>
+                            <td>
+                                <ol class="notice_01">
+                                    <li>고의로 흠집이나 변형, 손상을 발생시킨 경우(타인에 의한 경우도 포함)</li>
+                                    <li>외부의 화학물질(약품)과의 접촉에 의한 경우</li>
+                                    <li>경주용으로 사용한 경우</li>
+                                    <li>차량에 적합하지 않은 규격의 타이어를 사용한 경우</li>
+                                    <li>잘못된 장착, 부적절한 차륜 정렬 등 차량의 이상에 의한 경우</li>
+                                    <li>신차 출고 시 장착된 타이어는 제외</li>
+                                    <li>구입일로부터 2년을 초과한 경우</li>
+                                    <li>마모율이 50%를 초과한 경우</li>
+                                    <li>수리한 흔적이 있는 경우</li>
+                                    <li>트레드(노면과 접지되는 면) 부위의 손상 혹은 관통으로 사용이 불가능한 경우</li>
+                                </ol>
+                                <p class="notice_02">
+                                    <em class="col01">Run Flat(타이어 내부 끌음)현상에 의해 타이어 옆면이 부풀은 현상은 제외</em>
+                                    <button class="btnM btnS02 popup-scarce" data-rel="https://www.tstation.com/customer-service/popup/layerrunplat">Run Flat 현상 자세히 보기</button>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+            </div>
+
+
+            <div class="mydetail_02">
+                <!-- 				<h6>무상교환보증 상품</h6> -->
+                <h6>무상보증 대상 상품</h6>
+
+                <!-- 0704 swiper -->
+                <div class="swiper-container swiper-container-horizontal">
+                    <ol class="swiper-wrapper goods" style="transform: translate3d(0px, 0px, 0px);">
+
+                        <li class="swiper-slide swiper-slide-active" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_v2_as?ptrnCd=H123&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus V2 AS" data-ap-product="{'name':'Ventus V2 AS','id':'G000000325251','price':147200,'brand':'HK','category':'사계절/승용차/COMFORT/프리미엄','variant':'205/60R16','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 4.6 ','product_rating_mileage':' 4.3 ','product_rating_fast_driving':' 4.6 ','product_rating_efficiency':' 3.9 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+                                        <span class="unitT1"><span>벤투스 컴포트</span><small class="sub">Ventus V2 AS</small></span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide swiper-slide-next" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_s1_noble2?ptrnCd=H452&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus S1 noble2" data-ap-product="{'name':'Ventus S1 noble2','id':'G000000317598','price':171200,'brand':'HK','category':'사계절/승용차/COMFORT/프리미엄','variant':'235/45R18','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 4.5 ','product_rating_mileage':' 3.9 ','product_rating_fast_driving':' 4.6 ','product_rating_efficiency':' 3.6 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+                                                <span class="unitT1">
+
+                                                  <span>벤투스 컴포트</span>
+                                                  <small class="sub">Ventus S1 noble2</small>
+
+                                                </span>
+                                        <span class="star04 point10"><em>10</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_s2_as?ptrnCd=H462&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus S2 AS" data-ap-product="{'name':'Ventus S2 AS','id':'G000000317584','price':212500,'brand':'HK','category':'사계절/승용차/COMFORT/프리미엄+','variant':'235/40R18','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 5.0 ','product_rating_mileage':' 4.6 ','product_rating_fast_driving':' 4.6 ','product_rating_efficiency':' 3.9 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+											<span>벤투스 프리미엄 컴포트</span>
+											<small class="sub">Ventus S2 AS</small>
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_s1_evo2?ptrnCd=K117&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus S1 evo2" data-ap-product="{'name':'Ventus S1 evo2','id':'G000000317647','price':209900,'brand':'HK','category':'여름/승용차/SPORT/프리미엄+','variant':'225/40R18','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 3.6 ','product_rating_mileage':' 2.1 ','product_rating_fast_driving':' 4.6 ','product_rating_efficiency':' 2.9 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+											<span>벤투스 프리미엄 스포츠</span>
+											<small class="sub">Ventus S1 evo2</small>
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_s1_evo2_suv?ptrnCd=K117A&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus S1 evo2 SUV" data-ap-product="{'name':'Ventus S1 evo2 SUV','id':'G000000317716','price':269300,'brand':'HK','category':'여름/SUV/SPORT/프리미엄+','variant':'235/60R18','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 3.6 ','product_rating_mileage':' 2.1 ','product_rating_fast_driving':' 5.0 ','product_rating_efficiency':' 2.5 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+										Ventus S1 evo2 SUV
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_v12_evo2?ptrnCd=K120&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus V12 evo2" data-ap-product="{'name':'Ventus V12 evo2','id':'G000000317709','price':168500,'brand':'HK','category':'여름/승용차/SPORT/프리미엄','variant':'235/40R18','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 3.4 ','product_rating_mileage':' 2.5 ','product_rating_fast_driving':' 4.6 ','product_rating_efficiency':' 2.9 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+											<span>벤투스 스포츠</span>
+											<small class="sub">Ventus V12 evo2</small>
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_s1_evo3?ptrnCd=K127&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus S1 evo3" data-ap-product="{'name':'Ventus S1 evo3','id':'G000000323119','price':243300,'brand':'HK','category':'여름/승용차/SPORT/프리미엄+','variant':'235/40R19','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 3.6 ','product_rating_mileage':' 2.9 ','product_rating_fast_driving':' 5.0 ','product_rating_efficiency':' 3.2 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+											<span>벤투스 프리미엄 스포츠</span>
+											<small class="sub">Ventus S1 evo3</small>
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus S1 evo3 SUV" data-ap-product="{'name':'Ventus S1 evo3 SUV','id':'G000000327093','price':211400,'brand':'HK','category':'여름/SUV/SPORT/프리미엄+','variant':'255/55R18','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':'3.6','product_rating_mileage':'2.6','product_rating_fast_driving':'5','product_rating_efficiency':'2.6'}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+											<span>벤투스 프리미엄 스포츠</span>
+											<small class="sub">Ventus S1 evo3 SUV</small>
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/ventus_s1_evo3_suv?ptrnCd=K127A&amp;goodsMdclCd=01&amp;movePath=pattern" title="Ventus S1 evo3 SUV" data-ap-product="{'name':'Ventus S1 evo3 SUV','id':'G000000327093','price':211400,'brand':'HK','category':'여름/SUV/SPORT/프리미엄+','variant':'255/55R18','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':'3.6','product_rating_mileage':'2.6','product_rating_fast_driving':'5','product_rating_efficiency':'2.6'}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+											<span>벤투스 프리미엄 스포츠</span>
+											<small class="sub">Ventus S1 evo3 SUV</small>
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" style="width: 206.25px; margin-right: 15px;">
+                            <a href="https://www.tstation.com/tire/product/dynapro_hp2?ptrnCd=RA33&amp;goodsMdclCd=01&amp;movePath=pattern" title="Dynapro HP2" data-ap-product="{'name':'Dynapro HP2','id':'G000000317600','price':136400,'brand':'HK','category':'사계절/SUV/COMFORT/스탠다드','variant':'235/65R17','is_product_package':'N','product_rating_customer':'0.0','product_rating_comfort':' 4.3 ','product_rating_mileage':' 3.9 ','product_rating_fast_driving':' 3.6 ','product_rating_efficiency':' 3.6 '}">
+                                <!--  unit -->
+                                <dl>
+                                    <dt>
+                                        <img src="https://via.placeholder.com/150" alt="" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif';">
+                                        <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                    </dt>
+                                    <dd>
+										<span class="unitT1">
+
+											<span>다이나프로 컴포트</span>
+											<small class="sub">Dynapro HP2</small>
+
+										</span>
+                                        <span class="star04 point9"><em>9</em></span>
+                                    </dd>
+                                </dl>
+                                <!--  //unit -->
+                            </a>
+                        </li>
+
+                    </ol>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                <script>
+                    var swiper = new Swiper('.swiper-container', {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                        slidesPerGroup: 2,
+                        loop: false,
+                        loopFillGroupWithBlank: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                    });
+                </script>
+                <!-- //0704  swiper-->
+            </div>
+            <!-- //무상교환보증 상품 -->
+
+        </div>
+    </div>
+</div>
+
+<div id="layerScarcePopup" tabindex="0" style="height: 1612px; display: block;">
+    <div class="layer_box" data-width="" data-height="" style="top: 352px;">
+        <div id="scarce_content">
+            <div class="layer_guarantee">
+                <div class="layerT"><h3>RUN FLAT 현상</h3></div>
+                <div class="layerC">
+                    <!-- 내용 -->
+                    <dl class="info">
+                        <dt><img src="https://www.tstation.com/pc-static-root/images/cscenter/guarantee_02.jpg" alt="런플랫 후 공기압 주입 시"></dt>
+                        <dd>런플랫 후 공기압 주입 시</dd>
+                        <dt><img src="https://www.tstation.com/pc-static-root/images/cscenter/guarantee_03.jpg" alt="런플랫에 의한 내부 끌음"></dt>
+                        <dd>런플랫에 의한 내부 끌음</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="layer-scarce-close">팝업닫기</button>
+    </div>
+</div>

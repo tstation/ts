@@ -1,0 +1,45 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+                    <div class="page_tit">
+                        <h4>상품비교내역</h4>
+                        <div class="btn_right"><a href="https://www.tstation.com/customer-service/qna.do" class="btnM2 btnS07">1:1문의하기</a></div>
+                    </div>
+                    <div class="qna_list" id="qnaList">
+                        <dl class="detail toggle_box on">
+                            <dt class="q tit on">
+                                <span class="cate">기타</span>
+                                테스트 입니다.
+                                <span class="status ">답변대기</span>
+                                <span class="date">2020-10-12</span>
+                            </dt>
+                            <dd class="question">
+                                <p class="cont">테스트 입니다.</p>
+                                <ol class="photo">
+                                    <li class="popup-scarce" name="PHOTO" data-rel="/mypage/imgList.do?cnslSeq=2000003864">
+                                        <img src="/upload/counsel/2020/w330A_product_detail-1.jpg" alt="null">
+                                    </li>
+                                </ol>
+                                <div class="btn01">
+                                    <button class="btnM2 btnS07 delete" type="button" data-id="2000003864">삭제</button>
+                                    <button class="btnM2 btnS02 edit" type="button" data-id="2000003864">수정</button>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="btn01">
+                        <button id="moreDiv" class="btnB btnS06" style="display: none;">더보기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

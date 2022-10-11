@@ -1,0 +1,544 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '방문예약 하기' }) %>
+
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+
+<div class="container">
+    <div class="offline-reservation">
+        <div class="contents-section reservation-noti">
+            <div class="noti-wrap">
+                <p>예약하신 매장을 타 매장으로 변경하시려면, <strong class="txt-primary">[매장 다시선택]</strong> 버튼을  클릭하여 취소 후 다시 방문예약을 하여 주시기 바랍니다.</p>
+                <p>방문예약일 변경을 원하시면, <strong class="txt-primary">[장착일 변경]</strong>을 클릭하여 다시 장착일시를 지정하여 주시기 바랍니다.</p>
+            </div>
+        </div>
+
+        <div class="contents-section basic-reservation">
+            <div class="headcopy">기본예약정보</div>
+            <!-- 18인치이상 4륜동일 4개구입 케이스 -->
+            <div class="info-wrap tire-info">
+                <div class="subcopy">타이어 정보</div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            패턴
+                        </div>
+                        <div class="cell">
+                            <img src="mc-static-root/images/event/20210316/product/name_H462.png" alt="벤투스 프리미엄 컴포트" />
+                            <!-- <img src="mc-static-root/images/event/20210316/product/name_H123.png" alt="벤투스 컴포트" />
+                            <img src="mc-static-root/images/event/20210316/product/name_K120.png" alt="벤투스 스포츠" />
+                            <img src="mc-static-root/images/event/20210316/product/name_K127.png" alt="벤투스 프리미엄 스포츠" />
+                            <img src="mc-static-root/images/event/20210316/product/name_K127A.png" alt="벤투스 프리미엄 스포츠 SUV" />
+                            <img src="mc-static-root/images/event/20210316/product/name_RA33.png" alt="다이나프로 컴포트" />
+                            <img src="mc-static-root/images/event/20210316/product/name_RA45.png" alt="다이나프로 컴포트" />
+                            <img src="mc-static-root/images/event/20210316/product/name_RF11.png" alt="다이나프로 올 터레인" />
+                            <img src="mc-static-root/images/event/20210316/product/name_RH17.png" alt="벤투스 프리미엄 컴포트 SUV" /> -->
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            사이즈
+                        </div>
+                        <div class="cell">
+                            245 / 45R18
+                            <span class="txt-primary"><span class="line-icons close size-16"></span> 4개</span><!-- 0930 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="tile-wrap">
+                    <div class="tile-group">
+                        <div class="rowheader">
+                            현장결제시 가격정보
+                        </div>
+                        <div class="cell half-cell">
+                            <div class="txt-12">25%쿠폰혜택가 <span class="txt-primary">123,456원</span></div>
+                            <div class="txt-12">20%쿠폰혜택가 <span class="txt-primary">123,456원</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18인치이상 전후륜상이 4개구입 케이스 -->
+            <div class="info-wrap tire-info">
+                <div class="subcopy">타이어 정보</div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            패턴 (전륜)
+                        </div>
+                        <div class="cell">
+                        <img src="mc-static-root/images/event/20210316/product/name_H123.png" alt="벤투스 컴포트" />
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            사이즈 (전륜)
+                        </div>
+                        <div class="cell">
+                            245 / 45R18
+                        </div>
+                    </div>
+                </div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            패턴 (후륜)
+                        </div>
+                        <div class="cell">
+                            <img src="mc-static-root/images/event/20210316/product/name_K120.png" alt="벤투스 스포츠" />
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            사이즈 (후륜)
+                        </div>
+                        <div class="cell">
+                            255 / 50R19
+                        </div>
+                    </div>
+                </div>
+                <div class="tile-wrap">
+                    <div class="tile-group">
+                        <div class="rowheader">
+                            현장결제시 가격정보
+                        </div>
+                        <div class="cell half-cell">
+                            <div class="txt-12">25%쿠폰혜택가 <span class="txt-primary">123,456원</span></div>
+                            <div class="txt-12">20%쿠폰혜택가 <span class="txt-primary">123,456원</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18인치이하 4개구입 -->
+            <div class="info-wrap tire-info">
+                <div class="subcopy">타이어 정보</div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            패턴
+                        </div>
+                        <div class="cell">
+                            <img src="mc-static-root/images/event/20210316/product/name_K127A.png" alt="벤투스 프리미엄 스포츠 SUV" />
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            사이즈
+                        </div>
+                        <div class="cell">
+                            215 / 50R17
+                        </div>
+                    </div>
+                </div>
+                <div class="tile-wrap">
+                    <div class="tile-group">
+                        <div class="rowheader">
+                            현장결제시 가격정보
+                        </div>
+                        <div class="cell">
+                            <div class="txt-12">20%쿠폰 적용시<span class="txt-primary">123,456원</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18인치이하 전후륜상이 4개구입 케이스 -->
+            <div class="info-wrap tire-info">
+                <div class="subcopy">타이어 정보</div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            패턴 (전륜)
+                        </div>
+                        <div class="cell">
+                        <img src="mc-static-root/images/event/20210316/product/name_H123.png" alt="벤투스 컴포트" />
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            사이즈 (전륜)
+                        </div>
+                        <div class="cell">
+                            245 / 45R17
+                        </div>
+                    </div>
+                </div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            패턴 (후륜)
+                        </div>
+                        <div class="cell">
+                            <img src="mc-static-root/images/event/20210316/product/name_K120.png" alt="벤투스 스포츠" />
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            사이즈 (후륜)
+                        </div>
+                        <div class="cell">
+                            255 / 50R17
+                        </div>
+                    </div>
+                </div>
+                <div class="tile-wrap">
+                    <div class="tile-group">
+                        <div class="rowheader">
+                            현장결제시 가격정보
+                        </div>
+                        <div class="cell">
+                            <div class="txt-12">20%쿠폰혜택가 <span class="txt-primary">123,456원</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 모든 케이스 2개구입 -->
+            <div class="info-wrap tire-info">
+                <div class="subcopy">타이어 정보</div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            패턴
+                        </div>
+                        <div class="cell">
+                            <img src="mc-static-root/images/event/20210316/product/name_K127A.png" alt="벤투스 프리미엄 스포츠 SUV" />
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            사이즈
+                        </div>
+                        <div class="cell">
+                            245 / 45R18
+                        </div>
+                    </div>
+                </div>
+                <div class="tile-wrap">
+                    <div class="tile-group">
+                        <div class="rowheader">
+                            현장결제시 가격정보
+                        </div>
+                        <div class="cell">
+                            <div class="txt-12">20%쿠폰 적용시 <span class="txt-primary">123,456원</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-wrap car-info">
+                <div class="subcopy">차량정보</div>
+                <div class="tile-wrap">
+                    <div class="tile-group">
+                        
+                        <div class="cell">
+                            제네시스 G80(RG3) (2020 ~ 2021)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-wrap store-info">
+                <div class="subcopy">매장정보</div>
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            매장명
+                        </div>
+                        <div class="cell">
+                            한국타이어분당판매(주)
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            매장 전화번호
+                        </div>
+                        <div class="cell">
+                            031-706-6263
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-item btn-neutral btn-ol filet full-w mg-t-2u">
+                    <span class="label-txt">매장 다시선택</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="contents-section customer-info">
+            <div class="headcopy">방문고객정보</div><!-- 2021-04-07 -->
+            <div class="info-wrap">
+                <div class="form-control form-control-md">
+                    <label class="label-txt">이름</label>
+                    <div class="input-group">
+                        <input type="text" class="input-box" placeholder="이름" value="김한국">
+                        <div class="tools">
+                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control form-control-md">
+                    <label class="label-txt">휴대폰 번호</label>
+                    <div class="input-group">
+                        <input type="text" class="input-box" placeholder="- 없이 입력 해주세요 예)01012345678" value="01000000000">
+                        <div class="tools">
+                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+        <!-- 달력 ui -->
+        <div class="contents-section offline-calendar clearfix">
+            <div class="headcopy">장착일 지정</div>
+            <!-- 날짜 선택시 해당 월로 변경 -->
+            <div class="calendar-wrap hide"><!-- 장착일 확정시 .hide removed -->
+                <div class="month">10월</div>
+                <div class="swiper-container date-inner">
+                    <ul class="date-list swiper-wrapper">
+                        <!-- 옵션 클래스 - 오늘:'today' / 비활성:'date-disable' / 선택:'on' -->
+                        <li class="swiper-slide today date-disable">
+                            <span class="date-week">수</span>
+                            <span class="date-num">25</span>
+                        </li>
+                        <li class="swiper-slide date-disable">
+                            <span class="date-week">목</span>
+                            <span class="date-num">26</span>
+                        </li>
+                        <li class="swiper-slide date-disable">
+                            <span class="date-week">금</span>
+                            <span class="date-num">27</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">토</span>
+                            <span class="date-num">28</span>
+                        </li>
+                        <li class="swiper-slide on">
+                            <span class="date-week">일</span>
+                            <span class="date-num">29</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">월</span>
+                            <span class="date-num">30</span>
+                        </li>
+
+                        <li class="swiper-slide">
+                            <span class="date-week">화</span>
+                            <span class="date-num">1</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">수</span>
+                            <span class="date-num">2</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">목</span>
+                            <span class="date-num">3</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">금</span>
+                            <span class="date-num">4</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">토</span>
+                            <span class="date-num">5</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">일</span>
+                            <span class="date-num">6</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">월</span>
+                            <span class="date-num">7</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">화</span>
+                            <span class="date-num">8</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">수</span>
+                            <span class="date-num">9</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">목</span>
+                            <span class="date-num">10</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">금</span>
+                            <span class="date-num">11</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">토</span>
+                            <span class="date-num">12</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">일</span>
+                            <span class="date-num">13</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">월</span>
+                            <span class="date-num">14</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">화</span>
+                            <span class="date-num">15</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">수</span>
+                            <span class="date-num">16</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">목</span>
+                            <span class="date-num">17</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">금</span>
+                            <span class="date-num">18</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">토</span>
+                            <span class="date-num">19</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">일</span>
+                            <span class="date-num">20</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">월</span>
+                            <span class="date-num">21</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">화</span>
+                            <span class="date-num">22</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">수</span>
+                            <span class="date-num">23</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span class="date-week">목</span>
+                            <span class="date-num">24</span>
+                        </li>
+                    </ul>
+                </div>
+                
+
+                <!-- 날짜 스와이퍼 js -->
+                <script>
+                    var dateSwiper = new Swiper('.date-inner', {
+                        init: false,
+                        initialSlide: 0,
+                        spaceBetween: 4,
+                        slidesPerView: 'auto',
+                    });
+
+                    dateSwiper.init();
+
+                    $(window).on('resize', function () {
+                        dateSwiper.init();
+                    });
+                </script>
+
+                <div class="timecheck-wrap">
+                    <label class="time-item">
+                        <!-- 예약 가능 시간 input disabled 해제 -->
+                        <input type="radio" name="timeradio" disabled />
+                        <span class="label-txt">09:00</span>
+                    </label>
+                    <label class="time-item">
+                        <input type="radio" name="timeradio" />
+                        <span class="label-txt">10:00</span>
+                    </label>
+                    <label class="time-item">
+                        <input type="radio" name="timeradio" disabled />
+                        <span class="label-txt">11:00</span>
+                    </label>
+                    <label class="time-item">
+                        <input type="radio" name="timeradio" />
+                        <span class="label-txt">13:00</span>
+                    </label>
+                    <label class="time-item">
+                        <input type="radio" name="timeradio" disabled />
+                        <span class="label-txt">14:00</span>
+                    </label>
+                    <label class="time-item">
+                        <input type="radio" name="timeradio" />
+                        <span class="label-txt">15:00</span>
+                    </label>
+                    <label class="time-item">
+                        <input type="radio" name="timeradio" />
+                        <span class="label-txt">16:00</span>
+                    </label>
+                    <label class="time-item">
+                        <input type="radio" name="timeradio" disabled />
+                        <span class="label-txt">17:00</span>
+                    </label>
+                </div>
+                <div class="reserve-foot">
+                    <span class="active-reserve">예약가능</span>
+                    <span class="disabled-reserve">예약불가</span>
+                </div>
+            </div>
+            <div class="info-wrap schedule-confirm">
+                <div class="tile-wrap">
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            장착일
+                        </div>
+                        <div class="cell">
+                            2021-04-15
+                        </div>
+                    </div>
+                    <div class="tile-group half-tile">
+                        <div class="rowheader">
+                            장착시간
+                        </div>
+                        <div class="cell">
+                            13:00
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-item btn-neutral btn-ol filet full-w mg-t-2u">
+                    <span class="label-txt">장착일 확정</span>
+                    <span class="label-txt">장착일 변경</span>
+                </button>
+            
+                
+            </div>
+            <script>
+                var calendarWrap = $('.calendar-wrap');
+                $('.schedule-confirm ').on('click', calendarHide)
+                
+                function calendarHide() {
+                    if (calendarWrap.hasClass('hide')) {
+                        $('.calendar-wrap').removeClass('hide')
+                    } else {
+                        $('.calendar-wrap').addClass('hide')
+                    }
+                }
+
+            </script>
+        </div>
+
+        <div class="contents-section customer-request">
+            <div class="headcopy">기타 요청사항</div>
+            <div class="info-wrap">
+                <div class="form-control">
+                    <label>작성하신 사항은 매장에 전달되며 요청 사항에 따라 매장에서 추가결제 하실 수 있습니다.</label>
+                    <div class="input-group">
+                        <textarea class="input-box" rows="4"  placeholder="기타 요청사항을 80자 이내로 입력해 주세요."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="offline-reserv-confirm mg-b-10u">
+            <button type="button" class="btn-item btn-neutral full-w filet">
+                <span class="label-txt">방문예약 하기</span>
+            </button>
+        </div>
+    </div>
+    
+    
+</div>

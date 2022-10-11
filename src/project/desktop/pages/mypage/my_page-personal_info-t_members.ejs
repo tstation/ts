@@ -1,0 +1,300 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page-header">
+                        <h1>개인정보</h1>
+                    </div>
+
+                    <div class="container">
+
+                        <form id="memberDetailForm">
+
+                            <input type="hidden" id="myPgSelfAuthYn" name="myPgSelfAuthYn" value="Y">
+                            <input type="hidden" id="orgNm" name="orgNm" value="박현빈">
+                            <input type="hidden" id="myPgJoinChnlFg" name="myPgJoinChnlFg" value="10">
+
+                            <div class="mydetail_01">
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+
+                                        <tr>
+                                            <th>아이디(이메일) <em class="col02">*</em></th>
+                                            <td class="myinfo editArea">
+                                                <input title="아이디(이메일) 입력" type="text" class="ip_txt01 w100p editArea" value="user@company.com" disabled="">
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <th>이름 <em class="col02">*</em></th>
+                                            <td class="myinfo editArea">
+									                                      <span onclick="nameClick()" style="display: block;">
+                                                            <input title="이름 입력" type="text" id="mbrNm" class="ip_txt01 w100p editArea" value="홍길동" disabled="">
+                                                        </span>
+                                            </td>
+                                        </tr>
+
+                                        <!-- TODO: 성별과 생년월일 붙일것 -->
+                                        <tr>
+                                            <th>성별</th>
+                                            <td>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="gender-radio">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="labelling">
+                                                        <span class="label-txt mg-h-1u">남성</span>
+                                                    </div>
+                                                </label>
+
+                                                <label class="radio-item">
+                                                    <input type="radio" name="gender-radio">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="labelling">
+                                                        <span class="label-txt mg-h-1u">여성</span>
+                                                    </div>
+                                                </label>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>생년월일</th>
+                                            <td class="myinfo editArea">
+                                                <div class="form-control form-control-md">
+                                                    <div class="input-group">
+                                                        <input type="text" class="input-box" placeholder="1990.05.05">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <th>휴대폰 번호 <em class="col02">*</em></th>
+                                            <!-- 상세정보화면 -->
+
+
+                                            <td class="myinfo2 editArea">
+                                                <select title="휴대폰 번호 첫자리 선택" class="select01 w80 oriPhoneNum" disabled="">
+                                                    <option value="010" selected="">010</option>
+                                                    <option value="011">011</option>
+                                                    <option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="018">018</option>
+                                                    <option value="019">019</option>
+                                                </select>
+                                                <span class="phonebar">-</span>
+                                                <span onclick="click_fn()" style="
+    display: inline-block;
+"><input title="휴대폰 번호 둘째자리  입력" type="text" class="ip_txt01 w120" value="1234" disabled=""> </span>
+                                                <span class="phonebar">-</span>
+                                                <span onclick="click_fn()"><input title="휴대폰 번호 셋째자리  입력" type="text" class="ip_txt01 w120" value="5678" disabled=""> </span>
+
+
+
+                                                <button class="btnM2 btnS03 changePh" type="button" id="btnChgPhoneNumber">변경하기</button>
+
+
+
+
+
+
+                                                <span class="certification_stat">(인증 완료)</span>
+
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="fm changePhone" style="display:none;">
+
+
+                                            <th>변경할 휴대폰</th>
+
+
+
+
+                                            <td class="myinfo2">
+                                                <select title="휴대폰 번호 첫자리 선택" class="select01 w80" id="cellSctNo">
+                                                    <option value="010">010</option>
+                                                    <option value="011">011</option>
+                                                    <option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="018">018</option>
+                                                    <option value="019">019</option>
+                                                </select><span class="phonebar">-</span>
+                                                <input title="휴대폰 번호 둘째자리  입력" type="text" class="ip_txt01 w120 numeric" id="cellTxnoNo" maxlength="4"><span class="phonebar">-</span>
+                                                <input title="휴대폰 번호 셋째자리  입력" type="text" class="ip_txt01 w120 numeric" id="cellEndNo" maxlength="4">
+                                                <!-- 인증번호 전송 버튼 -->
+                                                <button class="btnM2 btnS01 editArea changePhone2" type="button" id="btnSendAuth">인증번호 전송</button>
+                                                <!-- //인증번호 전송 버튼 -->
+                                                <div class="phonesign" style="display:none">
+                                                    <input title="인증번호  입력" type="text" class="ip_txt01 w366" id="authVal" maxlength="6" placeholder="인증번호를 입력해 주세요.">
+                                                    <button class="btnM2 btnS01 changePhone2">재전송</button>
+                                                    <button class="btnM2 btnS02" type="button" id="btnCert">인증하기</button>
+                                                    <div class="time_limit" id="timeLimit"><span id="timer" class="timer"></span></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <input type="hidden" id="emailAddr" name="emailAddr">
+                                        <input type="hidden" id="emailUpdAvail" name="emailUpdAvail" value="N">
+
+
+
+
+
+                                        <tr class="pwdEditArea">
+                                            <th>새 비밀번호</th>
+                                            <td class="myinfo">
+                                                <input type="password" id="passwd" class="ip_txt01 w100p editArea" placeholder="영문/숫자/특수문자 2개 이상 조합 6~15">
+                                            </td>
+                                        </tr>
+                                        <tr class="pwdEditArea">
+                                            <th>새 비밀번호 확인</th>
+                                            <td class="myinfo">
+                                                <input type="password" id="passwdConfirm" class="ip_txt01 w100p editArea" placeholder="영문/숫자/특수문자 2개 이상 조합 6~15">
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>마케팅 정보<br />활용동의</th>
+                                            <td class="myinfo">
+                                                <ul>
+                                                    <li class="float-l">
+                                                        <label class="check-item">
+                                                            <input type="checkbox">
+                                                            <div class="icon-holder">
+                                                                <span class="line-icons square size-20"></span>
+                                                            </div>
+                                                            <div class="labelling">
+                                                                <span class="label-txt mg-h-1u txt-12">마케팅 활용을 위한 수집 및 이용동의(선택)</span>
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li class="float-r">
+                                                        <a href="#" class="txt-12 txt-underline line-32 popup-scarce" data-rel="https://www.tstation.com/terms/popup/singleterms.do?agrmSctCd=60">내용보기</a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="btn03"><button class="btnM2 btnS03 popup-scarce" data-width="w570" data-rel="/mypage/info/gostaffapproval.do">임직원 승인요청</button></div>
+                        <div class="btn03">회원 탈퇴를 원하시나요?
+                            <a href="https://wwwlocal.tstation.com/mypage/info/memberout" class="btnM2 btnS03">회원탈퇴</a>
+                        </div>
+
+                        <div class="btn01">
+                            <button type="button" id="btnCancel" class="btnB btnS07">취소</button>
+                            <button type="button" id="memberEdit" class="btnB btnS02">개인정보 수정</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="layerScarcePopup" style="height: 1611px; display: block;" tabindex="0">
+    <div class="layer_box w570" data-width="w570" style="top: 233px;">
+        <div id="scarce_content">
+
+            <script type="text/javascript" src="https://wwwlocal.tstation.com/pc-static-root/js/mypage/staffApp.js"></script>
+            <!-- T-MEMBERS 임직원 승인요청  + url - full -->
+            <div class="full_tmembers">
+                <div class="layerT"><h3>임직원 승인요청</h3></div>
+                <div class="layerC">
+                    <!-- 안내 -->
+                    <div class="box">
+                        <span>한국타이어 임직원 회원 페이지입니다.</span>
+                        임직원 확인을 위해 정확한 정보를 입력해 주세요.
+                    </div>
+                    <!-- //안내 -->
+                    <!-- 01. 필수정보입력 -->
+                    <div class="tbl_01">
+                        <form id="tmbrempnoform" name="tmbrempnoform">
+                            <table>
+                                <colgroup>
+                                    <col style="width:120px;">
+                                    <col style="width:*">
+                                </colgroup>
+                                <tbody>
+                                    <tr class="fm">
+                                        <th>사원번호 <em class="col02">*</em></th>
+                                        <td><input title="사원번호 입력" type="text" class="ip_txt01 w100p" id="tmbrEmpNo" maxlength="20"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <!-- //01. 필수정보입력 -->
+                    <!-- 약관동의  -->
+                    <!-- <form id="termForm" name="termForm"> -->
+                    <div class="mydetail_02">
+                        <h6>약관동의</h6>
+                        <ol class="member">
+                            <li>
+                                <input type="checkbox" class="ip_c" id="agree70" name="staffAgrTpArr" value="70"><label for="agree70">임직원 정보 수집 및 이용동의</label>
+                                <div class="btn03">
+                                    <!-- <button class="btnS btnS03 popup-scarce" data-width="w900" data-rel="/terms/popup/singleterms.do?agrmSctCd=70">내용보기</button> -->
+                                    <button class="btnS btnS03 popup-inner" type="button" data-width="w900" data-rel="/terms/popup/singleterms.do?agrmSctCd=70">내용보기</button>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="ip_c" id="agree80" name="staffAgrTpArr" value="80"><label for="agree80">청탁금지법 준수동의</label>
+                                <div class="btn03">
+                                    <!-- <button class="btnS btnS03 popup-scarce" data-width="w900" data-rel="/terms/popup/singleterms.do?agrmSctCd=80">내용보기</button> -->
+                                    <button class="btnS btnS03 popup-inner" data-width="w900" data-rel="/terms/popup/singleterms.do?agrmSctCd=80">내용보기</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- </form> -->
+                    <!-- //약관동의  -->
+                    <!--  -->
+                    <div class="btn01">
+                        <button class="btnM2 btnS07 layer-scarce-close" type="button">취소</button>
+                        <button class="btnM2 btnS02" type="button" id="btn_approval_req">요청하기</button>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+            <!-- //T-MEMBERS 임직원 승인요청 -->
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    mypage.staffApproval.init();
+
+                });
+            </script>
+
+        </div>
+        <button type="button" class="layer-scarce-close">팝업닫기</button>
+    </div>
+</div>

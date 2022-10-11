@@ -1,0 +1,346 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '알아두면 쓸모있는 타이어 잡학지식' }) %>
+<div id="container">
+    <div class="tab-link">
+        <a class="on" href="/tam/tstation-tv">티스테이션 TV</a>
+        <a class="" href="/tam/tire-info">타이어 정보</a>
+        <a class="" href="/tam/tire-review">타이어 리뷰</a>
+    </div>  
+
+    <div class="tam-tstation-tv">
+        <section class="key-visual">
+            <!-- 211118 // -->
+            <img src="mc-static-root/images/common/tstation-tv-key-visual.png" alt="티스테이션 TV" />
+            <!-- // 211118 -->
+        </section>
+
+        <section class="suggest-keyword">
+            <p class="label">추천 키워드</p>
+            <div class="swiper-container suggest-keyword-swiper">
+                <div class="swiper-wrapper">
+                    <!-- 20210824 // -->
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">전체</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword active" onclick="onHandleKeyword(this)">현타꿀팁시즌2</span>
+                    </div>
+                    <!-- // 20210824-->
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">현타꿀팁시즌1</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">타이어펑크</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">타이어휠</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="keyword" onclick="onHandleKeyword(this)">타이어공기압</span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                /**
+                 * 추천 키워드
+                 */
+
+                // swiper init
+                var suggestKeywordSwiper = new Swiper('.suggest-keyword-swiper', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 4
+                })
+                suggestKeywordSwiper.init()
+
+                // window resize fire swiper init
+                $(window).on('resize', function() {
+                    suggestKeywordSwiper.init()
+                })
+
+                // mobile portrait, landscape change fire swiper init
+                window.addEventListener('orientationchange', function() {
+                    suggestKeywordSwiper.init()
+                })
+
+
+                // list filtering fire
+                function listFiltering (keyword) {
+                    alert('리스트 내부의 아이템들을 ' + keyword + '(으)로 필터링 하세요.')
+                }
+
+
+                // keyword click handling
+                function onHandleKeyword (el) {
+                    // inactive keywords
+                    $('.keyword').removeClass('on')
+
+                    // active keyword by click
+                    $(el).addClass('on')
+
+                    // slide to clicked keyword
+                    suggestKeywordSwiper.slideTo($(el).closest('.swiper-slide').index())
+
+                    // call list filtering
+                    listFiltering(el.innerText)
+                }
+            </script>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">TS'pick<span class="count">(13)</span></h4>
+                <p class="description">영상으로 만나는 티스테이션</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-first">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="ts-tv-card"
+                                data-link-type="OUT"
+                                data-link-url="https://www.youtube.com/user/hankooktirekorea1"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://blahblahblah.co.kr')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">현타꿀팁시즌1</span>
+                                    <span class="keyword">타이어펑크</span>
+                                    <span class="keyword">현타꿀팁시즌2</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="ts-tv-card"
+                                data-link-type="IN"
+                                data-link-url="./tam-tstation_tv-detail.html?id=10000"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>[현타꿀팁 S2] 타이어 관리는 내가 할게 교체는 누가할래? | 캠핑장에서 타이어 점검 해드리고 왔습니다.</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword keyword-sm">가나다라마바사가나다라마바사가나다라마바사</span>
+                                    <span class="keyword keyword-sm">가나다라마바사가나다라마바사가나다라마바사</span>
+                                    <span class="keyword keyword-sm">가나다라마바사가나다라마바사가나다라마바사</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    /**
+                     * 현·타·꿀·팁
+                     */
+
+                    // swiper init
+                    var tsTvTypeFirstSwiper = new Swiper('.type-first', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 8
+                    })
+                    tsTvTypeFirstSwiper.init()
+
+                    // window resize fire swiper init
+                    window.addEventListener('resize', function () {
+                        tsTvTypeFirstSwiper.init()
+                    })
+
+                    // mobile portrait, landscape change fire swiper init
+                    window.addEventListener('orientationchange', function() {
+                        tsTvTypeFirstSwiper.init()
+                    })
+
+                    // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                    // tsTvTypeFirstSwiper.update()
+                    // tsTvTypeFirstSwiper.slideTo(0)
+                </script>
+            </div>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">궁금해 타이어 <span class="count">(4)</span></h4>
+                <p class="description">티스테이션 전문가들이 알려주는 타이어 정보</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-second">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="ts-tv-card"
+                                data-link-type="OUT"
+                                data-link-url="https://www.youtube.com/user/hankooktirekorea1"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>벤투스 프리미엄 스포츠(Ventus S1 evo3 SUV) 비교 테스트</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">현타꿀팁시즌1</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="ts-tv-card"
+                                data-link-type="IN"
+                                data-link-url="./tam-tstation_tv-detail.html?id=10001"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>벤투스 프리미엄 스포츠(Ventus S1 evo3 SUV) 비교 테스트</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">현타꿀팁시즌1</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <script>
+                        /**
+                         * 명장을 만나다
+                         */
+
+                        // swiper init
+                        var tsTvTypeSecondSwiper = new Swiper('.type-second', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 8
+                        })
+                        tsTvTypeSecondSwiper.init()
+
+                        // window resize fire swiper init
+                        window.addEventListener('resize', function () {
+                            tsTvTypeSecondSwiper.init()
+                        })
+
+                        // mobile portrait, landscape change fire swiper init
+                        window.addEventListener('orientationchange', function() {
+                            tsTvTypeSecondSwiper.init()
+                        })
+
+                        // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                        // tsTvTypeSecondSwiper.update()
+                        // tsTvTypeSecondSwiper.slideTo(0)
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-swiper-card">
+            <div class="title-wrap">
+                <h4 class="title">현·타·꿀·팁 <span class="count">(13)</span></h4>
+                <p class="description">현명하게 타이어를 구매하는 꿀 Tip</p>
+            </div>
+            <div class="swiper-wrap">
+                <div class="swiper-container tam-swiper type-third">
+                    <!-- 컨텐츠가 존재 할때 -->
+                    <!--<div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article
+                                class="ts-tv-card"
+                                data-link-type="OUT"
+                                data-link-url="https://www.youtube.com/user/hankooktirekorea1"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>벤투스 프리미엄 스포츠(Ventus S1 evo3 SUV) 비교 테스트</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">현타꿀팁시즌1</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article
+                                class="ts-tv-card"
+                                data-link-type="IN"
+                                data-link-url="./tam-tstation_tv-detail.html?id=10002"
+                            >
+                                <div class="thumb-area">
+                                    <div class="thumb" style="background-image: url('https://via.placeholder.com/320x180')"></div>
+                                </div>
+                                <div class="description">
+                                    <p>벤투스 프리미엄 스포츠(Ventus S1 evo3 SUV) 비교 테스트</p>
+                                </div>
+                                <div class="keywords">
+                                    <span class="keyword">현타꿀팁시즌1</span>
+                                    <span class="keyword">타이어펑크</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>-->
+                    <!-- 컨텐츠가 없을때: .swiper-wrapper 내부의 빈칸이 없게 만드세요. -->
+                    <div class="swiper-wrapper"></div>
+                    <script>
+                        /**
+                         * TVC & ETC Swiper
+                         */
+
+                        // swiper init
+                        var tsTvTypeThirdSwiper = new Swiper('.type-third', {
+                            slidesPerView: 'auto',
+                            spaceBetween: 8
+                        })
+                        tsTvTypeThirdSwiper.init()
+
+                        // window resize fire swiper init
+                        window.addEventListener('resize', function () {
+                            tsTvTypeThirdSwiper.init()
+                        })
+
+                        // mobile portrait, landscape change fire swiper init
+                        window.addEventListener('orientationchange', function() {
+                            tsTvTypeThirdSwiper.init()
+                        })
+
+                        // 비동기로 .swiper-slide 를 갱신한다면 비동기 완료시점에서 스와이퍼 초기화 필요
+                        // tsTvTypeThirdSwiper.update()
+                        // tsTvTypeThirdSwiper.slideTo(0)
+                    </script>
+                </div>
+            </div>
+        </section>
+        <script>
+            /**
+             * tstation-tv common
+             */
+
+            // ts-tv-card onclick
+            $('.ts-tv-card').click(function () {
+                // get custom attr & use data
+                // sample data { linkType: 'IN' | 'OUT', linkUrl: './tam-tstation_tv-detail.html' }
+                var data = $(this).data()
+
+                // go link type
+                switch (data.linkType) {
+                    case 'IN':
+                        location.href = data.linkUrl
+                        break
+                    case 'OUT':
+                        window.open(data.linkUrl, '_blank')
+                        break
+                    default:
+                        break
+                }
+            })
+        </script>
+    </div>
+</div>

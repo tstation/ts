@@ -1,0 +1,155 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page_tit">
+                        <h4>상품비교내역</h4>
+                    </div>
+
+                    <div class="container mypage">
+
+                        <ol class="mylist_01">
+                            <!-- Empty -->
+                            <!--<li>
+                                <div class="nodata"><em>상품비교</em>내역이 없습니다.</div>
+                            </li>-->
+                            <li>
+                                <div class="date">2020.10.16(2건)
+                                    <button data-width="w870" data-rel="https://www.tstation.com/mypage/activity/popup/compare-goods-list?sysDispDt=2020.10.16&amp;cprGrpSeq=1741" class="more popup-scarce">비교보기</button>
+                                </div>
+                                <button type="button" class="btnM btnS03" onclick="delHistInfo('2020.10.16','1741');" name="btnClose">삭제</button>
+                                <div class="display_compare">
+                                    <ol class="mine">
+
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="Ventus V2 AS" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                                </dt>
+                                                <dd class="info">
+							<span class="unitT1">
+
+										<span>벤투스 컴포트</span>
+										<small class="sub">Ventus V2 AS</small>
+
+							</span>
+                                                    <div class="compare_wrap">
+
+                                                        <span class="price_compare"><em> 97,800</em>원</span>
+                                                        <span class="price_pre"><em> 114,400</em>원</span>
+
+
+
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="Optimo H426" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                                </dt>
+                                                <dd class="info">
+							<span class="unitT1">
+
+									Optimo H426
+
+							</span>
+                                                    <div class="compare_wrap">
+
+                                                        <span class="price_compare"><em> 84,500</em>원</span>
+                                                        <span class="price_pre"><em> 101,000</em>원</span>
+
+
+
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+
+                                    </ol>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="date">2020.10.16(2건)
+                                    <button data-width="w870" data-rel="https://www.tstation.com/mypage/activity/popup/compare-goods-list?sysDispDt=2020.10.16&amp;cprGrpSeq=1740" class="more popup-scarce">비교보기</button>
+                                </div>
+                                <button type="button" class="btnM btnS03" onclick="delHistInfo('2020.10.16','1740');" name="btnClose">삭제</button>
+                                <div class="display_compare">
+                                    <ol class="mine">
+
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="Optimo H426" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoHK">HANKOOK</em></span>
+                                                </dt>
+                                                <dd class="info">
+							<span class="unitT1">
+
+									Optimo H426
+
+							</span>
+                                                    <div class="compare_wrap">
+
+                                                        <span class="price_compare"><em> 84,500</em>원</span>
+                                                        <span class="price_pre"><em> 101,000</em>원</span>
+
+
+
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+
+                                        <li>
+                                            <dl>
+                                                <dt>
+                                                    <img src="pc-static-root/images/common/sample/tire.jpg" alt="MICHELIN ENERGY XM2+" class="unitImg" onerror="this.src='/pc-static-root/images/common/noimg.gif'">
+                                                    <span class="flag_02"><em class="brandLogo logoMC">Michelin Tire</em></span>
+                                                </dt>
+                                                <dd class="info">
+							<span class="unitT1">
+
+									MICHELIN ENERGY XM2+
+
+							</span>
+                                                    <div class="compare_wrap">
+
+                                                        <span class="price_compare"><em> 125,400</em>원</span>
+                                                        <span class="price_pre"><em> 132,000</em>원</span>
+
+
+
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+
+                                    </ol>
+                                </div>
+                            </li>
+
+
+
+                        </ol>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

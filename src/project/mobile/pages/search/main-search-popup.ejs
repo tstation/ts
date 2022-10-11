@@ -1,0 +1,1067 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '사이즈로 찾기' }) %>
+<div id="container" class="display">
+    <div style="width: 100%; height: 2000px; background-color: wheat;"></div>
+</div>
+
+<!-- TODO: 차량 정보가 없을 경우 -->
+<div class="modal-item instance full on">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>타이어 사이즈 선택</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+            <div class="modal-action ">
+                <ul class="list-size-equal"><li><button class="btn-item btn-neutral round full-w btn-ol"><span class="label-txt">재검색</span></button></li><li><button class="btn-item btn-neutral round full-w"><span class="label-txt">확인</span></button></li></ul>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container ">
+                        <div class="car-confirm">
+                            <p class="description-copy">선택하신 차종으로 상품을 검색합니다</p>
+                            <div class="searching-car-view">
+                                <div class="txt-info">
+                                    <p><span>12가 1234</span> - <span>제네시스 ‘G80’</span></p>
+                                </div>
+                                <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                            </div>
+                            <div class="searching-result-select-bx">
+                                <ul class="tire-select-list-bx">
+                                    <li>
+                                        <input type="radio" id="tire_select_01" class="tire-select-design" name="tire_select">
+                                        <label for="tire_select_01">
+                                            <span class="line-icons check size-20"></span>
+                                            <i>기본</i>
+                                            <strong>245/45R18</strong>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="tire_select_02" class="tire-select-design" name="tire_select" checked="checked">
+                                        <label for="tire_select_02">
+                                            <span class="line-icons check size-20"></span>
+                                            <strong>
+                                                <em><i>전륜</i> 245/40R19</em>
+                                                <em><i>후륜</i> 275/35R19</em>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TODO: 차량 정보가 있을 경우 -->
+<div class="modal-item instance full on">
+    <div class="dim"></div>
+    <div class="middler">
+        <div class="modal-pannel">
+            <div class="modal-header">
+                <h3>상품 검색</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container">
+                        <div class="tab-item list-size-equal on-layer on-modal-with-header on-search-modal">
+                            <a href="#" class="no-pd on" data-tab-event="car-number">차량번호로 찾기</a>
+                            <a href="#" class="no-pd" data-tab-event="car-type">차종으로 찾기</a>
+                            <a href="#" class="no-pd" data-tab-event="size">사이즈로 찾기</a>
+                        </div>
+
+                        <!-- 1. 차량 번호로 찾기 -->
+                        <div class="tab-contents on-modal-with-header" data-tab-contents="car-number">
+                            <div class="search-car-by-number">
+                                <!-- TODO: 차량 번호로 찾기 전 -->
+                                <div class="search-car-before">
+                                    <div class="number-search-wrap">
+                                        <div class="searching-car-view default pos-rel">
+                                            <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_dummy.png');"></div>
+                                        </div>
+                                        <ul>
+                                            <li class="mg-b-3u">
+                                                <div class="form-control form-control-medium-sm form-control-inline inline-xs">
+                                                    <label>차량번호</label>
+                                                    <!-- 202012 pub fixed // -->
+                                                    <div class="input-group">
+                                                        <input type="text" class="input-box" placeholder="차량번호를 입력해 주세요.  예) 12고 3456" style="padding-right: 6px;">
+                                                        <div class="tools">
+                                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- // 202012 pub fixed -->
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-control form-control-medium-sm form-control-inline inline-xs">
+                                                    <label>소유주명</label>
+                                                    <!-- 202012 pub fixed // -->
+                                                    <div class="input-group">
+                                                        <input type="text" class="input-box" value="홍길동" style="padding-right: 6px;">
+                                                        <div class="tools">
+                                                            <button class="clear"><span class="line-icons close-circle"></span></button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- // 202012 pub fixed -->
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="button-wrap">
+                                            <button type="button" class="btn-item btn-neutral full-w round" onclick="findCar(this)">
+                                                <span class="label-txt">조회하기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="my-car-search-wrap">
+                                        <!-- TODO: 내차 찾기 전 -->
+                                        <div class="my-car-search-before">
+                                            <h3>MY 차량으로 찾기</h3>
+                                            <div class="button-wrap">
+                                                <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="findMyCar(this)">
+                                                    <span class="label-txt">내 차 등록하고 검색결과 보기</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- TODO: 내차 찾은 후 -->
+                                        <div class="my-car-search-after">
+                                            <div class="my-car-changer">
+                                                <div class="my-car-selected">
+                                                    <div class="info v-middle">
+                                                        <p class="model">제네시스 G80</p>
+                                                        <p class="car-number">|   12가 1234</p>
+                                                    </div>
+                                                    <div class="img-holder">
+                                                        <img src="mc-static-root/images/common/mycar_sample.png" alt="model">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mycar-select-item">
+                                                <div class="swiper-container mycar-select-swiper" dir="ltr">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide">
+                                                            <!-- 활성화 체크는 btn-select-car에 'on'클래스 추가 -->
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car on" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+
+                                                        <div class="swiper-slide">
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+
+                                                        <div class="swiper-slide">
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+
+                                                        <div class="swiper-slide">
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+
+                                                        <div class="swiper-slide">
+                                                            <button type="button" class="btn-item btn-gray btn-ol round min-w btn-select-car" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="button-wrap">
+                                                <button type="button" class="btn-item btn-neutral btn-ol round full-w">
+                                                    <span class="label-txt">선택된 내 차 정보로 상품 검색하기</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TODO: 차량 번호로 찾기 후 -->
+                                <div class="search-car-after">
+                                    <div class="number-search-wrap">
+                                        <div class="searching-car-view">
+                                            <div class="txt-info pd-t-2u">
+                                                <p>12가 1234 - ‘제네시스 G80’</p>
+                                                <p class="details">G80 (A/T) (18’~19’) 가솔린 하이브리드</p>
+                                            </div>
+                                            <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');">
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="mg-b-3u">
+                                                <div class="form-control form-control-medium-sm form-control-inline inline-xs">
+                                                    <label>모델 연도</label>
+                                                    <div class="input-group">
+                                                        <select class="input-box" >
+                                                            <option value="2014" selected>2014</option>
+                                                            <option value="options2">options2</option>
+                                                            <option value="options3">options3</option>
+                                                            <option value="options4">options4</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-control form-control-medium-sm form-control-inline inline-xs">
+                                                    <label>세부 모델</label>
+                                                    <div class="input-group">
+                                                        <select class="input-box" >
+                                                            <option value="CVVL 어트랙션" selected>CVVL 어트랙션</option>
+                                                            <option value="options1">options1</option>
+                                                            <option value="options2">options2</option>
+                                                            <option value="options3">options3</option>
+                                                            <option value="options4">options4</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!--//select-opt-list-->
+                                    </div>
+
+                                    <div class="divider mg-t-4u"></div>
+
+                                    <div class="number-select-wrap">
+                                        <!--searching-result-select-bx-->
+                                        <div class="searching-result-select-bx">
+                                            <p class="help-txt">
+                                                <strong>잠깐!</strong>
+                                                타이어 사이즈 어떻게 보는지 모르신다면?
+                                                <button type="button"><span class="line-icons error-circle size-16"></span></button>
+                                            </p>
+                                            <ul class="tire-select-list-bx">
+                                                <li>
+                                                    <input type="radio" id="tire-select-by-number-01" class="tire-select-design" name="tire-select-by-number" checked>
+                                                    <label for="tire-select-by-number-01">
+                                                        <span class="line-icons check size-20"></span>
+                                                        <i>기본</i>
+                                                        <strong>245/45R18</strong>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="tire-select-by-number-02" class="tire-select-design" name="tire-select-by-number" checked="checked">
+                                                    <label for="tire-select-by-number-02">
+                                                        <span class="line-icons check size-20"></span>
+                                                        <strong>
+                                                            <em><i>전륜</i> 245/40R19</em>
+                                                            <em><i>후륜</i> 275/35R19</em>
+                                                        </strong>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                            <p class="message-bx">
+                                                <span class="txt">검색결과가 실제 타이어의 사이즈와 다를 수 있습니다.</span>
+                                                애프터마켓에서 인치업을 하신 경우 사이즈 검색을 통해<br>적합한 상품을 확인하실 수 있습니다.
+                                            </p>
+                                            <ul class="agree-message-bx">
+                                                <li>
+                                                    <label class="check-item">
+                                                        <input type="checkbox" checked="checked">
+                                                        <div class="icon-holder">
+                                                            <span class="line-icons square size-20"></span>
+                                                        </div>
+                                                        <div class="labelling">
+                                                            <span class="label-txt mg-h-1u">차종 검색 결과를 마이페이지에 등록하시면 더 편하게 상품을 찾으실 수 있습니다.</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                            <div class="btn pd-t-2u">
+                                                <button type="button" class="btn-item btn-neutral round">
+                                                    <span class="label-txt">타이어 쇼핑</span>
+                                                </button>
+                                                <button type="button" class="btn-item btn-neutral round">
+                                                    <span class="label-txt">경정비 쇼핑</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                /**
+                                 * 차량 번호로 찾기
+                                 */
+                                $(document).on('click', '.mycar-select-item .btn-select-car', function () {
+                                    $('.mycar-select-item .btn-select-car').removeClass('on');
+                                    $(this).addClass('on');
+                                })
+
+                                // 팝업 로드 후 '내 차 등록하고 검색결과 보기' 버튼 클릭시 초기화
+                                var findMyCar = function (el) {
+                                    $(el).closest('.my-car-search-wrap').addClass('done')
+                                    var myCarSelectSwiper = new Swiper('.mycar-select-swiper', {
+                                        spaceBetween: 4,
+                                        slidesPerView: 'auto',
+                                        updateOnWindowResize: true
+                                    });
+
+                                    myCarSelectSwiper.init();
+
+                                    $(window).on('resize', function () {
+                                        myCarSelectSwiper.init();
+                                    });
+                                }
+
+                                // 팝업 로드 후 차량번호, 소유자명으로 조회 하기
+                                var findCar = function (el) {
+                                    $(el).closest('.search-car-by-number').addClass('done')
+                                }
+                            </script>
+                        </div>
+
+                        <!-- 2. 차종으로 찾기 -->
+                        <div class="tab-contents on-modal-with-header" data-tab-contents="car-type">
+                            <!-- TODO: 차종으로 찾기 단계별 클래스 설정 / 제조사: brands, 차종: models, 세부차종: detailed-models, 연료타입: fuel, 연식/모델: years -->
+                            <div class="search-car-by-model years">
+                                <div class="swiper-container model-search-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <!-- TODO: 사용자가 단계를 넘어가기전 값 선택이 이루어 졌을때 'check' -->
+                                            <button class="step-button brands check" data-step="brands">제조사</button>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <!-- TODO: 현재 진행 중인 단계일때 'step' -->
+                                            <button class="step-button models step" data-step="models">차종</button>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <button class="step-button detailed-models" data-step="detailed-models">세부차종</button>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <button class="step-button fuel" data-step="fuel">연료타입</button>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <button class="step-button years" data-step="years">연식/모델</button>
+                                        </div>
+                                        <div class="swiper-slide refresh-btn">
+                                            <!-- TODO: 사용자가 선택한 값이 없을때 'disabled' -->
+                                            <button type="button" class="btn-item btn-gray btn-ol round">
+                                                <span class="label-txt">다시찾기</span>
+                                                <span class="line-icons refresh size-16"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="model-select-wrap">
+                                    <div class="step-contents brands">
+                                        <p class="txt-noti">
+                                            <span class="line-icons error-circle-inv size-12"></span><span class="v-middle">일부 수입 브랜드/모델의 경우 적합한 경정비 상품 확인이 어려울 수 있습니다</span>
+                                        </p>
+                                        <ul class="company-sel">
+                                            <li><a href="#" class="on">현대</a></li>
+                                            <li><a href="#" class="">기아</a></li>
+                                            <li><a href="#" class="">제네시스</a></li>
+                                            <li><a href="#" class="">쉐보레(GM대우)</a></li>
+                                            <li><a href="#" class="">르노삼성</a></li>
+                                            <li class="divide-line"><a href="#" class="">쌍용</a></li>
+                                            <li><a href="#" class="">벤츠</a></li>
+                                            <li><a href="#" class="">BMW</a></li>
+                                            <li><a href="#" class="">아우디</a></li>
+                                            <li><a href="#" class="">닛산</a></li>
+                                            <li><a href="#" class="">랜드로버</a></li>
+                                            <li><a href="#" class="">렉서스</a></li>
+                                            <li><a href="#" class="">폭스바겐</a></li>
+                                            <li><a href="#" class="">혼다</a></li>
+                                            <li><a href="#" class="">닛산</a></li>
+                                            <li><a href="#" class="">랜드로버</a></li>
+                                            <li><a href="#" class="">렉서스</a></li>
+                                            <li><a href="#" class="">폭스바겐</a></li>
+                                            <li><a href="#" class="">혼다</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="step-contents models">
+                                        <ul class="model-select grid-list grid-list-column-3 pd-h-5u pd-v-5u">
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item on"><span class="label-txt">쏘나타</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">i40</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">갤로퍼2</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">그랜드 스타렉스</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">그랜저</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">그레이스</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">넥쏘</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">라비타</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">리베로</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">맥스크루즈</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">베뉴</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">베라크루즈</span></button></li>
+                                            <li><button type="button" class="btn-item btn-gray btn-ol btn-sm full-w filet model-select-item"><span class="label-txt">베르나</span></button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="step-contents detailed-models">
+                                        <ul class="sel-car-lst grid-list grid-list-column-2 pd-h-5u pd-v-5u">
+                                            <li>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="detailed-models">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                                                </label>
+                                                <div class="labelling">
+                                                    <span class="label-txt">아반떼 XD (2003 ~ 2006)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="detailed-models">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                                                </label>
+                                                <div class="labelling">
+                                                    <span class="label-txt">아반떼 HD (2006 ~ 2010)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="detailed-models">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                                                </label>
+                                                <div class="labelling">
+                                                    <span class="label-txt">아반떼 XD (2003 ~ 2006)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="detailed-models">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                                                </label>
+                                                <div class="labelling">
+                                                    <span class="label-txt">아반떼 HD (2006 ~ 2010)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="detailed-models">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                                                </label>
+                                                <div class="labelling">
+                                                    <span class="label-txt">아반떼 XD (2003 ~ 2006)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="detailed-models">
+                                                    <div class="icon-holder">
+                                                        <span class="line-icons circle size-20"></span>
+                                                    </div>
+                                                    <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                                                </label>
+                                                <div class="labelling">
+                                                    <span class="label-txt">아반떼 HD (2006 ~ 2010)</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="step-contents fuel">
+                                        <div class="searching-car-view bg-fff pd-t-10u">
+                                            <div class="txt-info">
+                                                <p>현대 아반떼</p>
+                                            </div>
+                                            <div class="img-holder" style="background-image:url('mc-static-root/images/common/mycar_sample.png');"></div>
+                                        </div>
+                                        <div class="model-select-wrap">
+                                            <ul class="full-bt-lst">
+                                                <li>
+                                                    <button type="button" class="btn-item btn-gray btn-ol filet fuel-select-item on">
+                                                        <span class="label-txt">LPG</span>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="btn-item btn-gray btn-ol filet fuel-select-item">
+                                                        <span class="label-txt">가솔린</span>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="btn-item btn-gray btn-ol filet fuel-select-item">
+                                                        <span class="label-txt">가솔린 하이브리드</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="step-contents years">
+                                        <div class="searching-car-view">
+                                            <div class="txt-info pd-t-2u">
+                                                <p>현대아반떼</p>
+                                                <p class="details">쏘나타 더 브릴리언트 (A/T) (00~00Y) 가솔린 하이브리드</p>
+                                            </div>
+                                            <div class="img-holder"
+                                                 style="background-image:url('mc-static-root/images/common/mycar_sample.png');">
+                                            </div>
+                                        </div>
+                                        <ul class="select-opt-list">
+                                            <li>
+                                                <div class="form-control form-control-medium-sm">
+                                                    <label class="primary-star">연식</label>
+                                                    <div class="input-group">
+                                                        <select class="input-box" >
+                                                            <option  value="" disabled selected>연식을 선택해 주세요</option>
+                                                            <option value="options1">options1</option>
+                                                            <option value="options2">options2</option>
+                                                            <option value="options3">options3</option>
+                                                            <option value="options4">options4</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-control form-control-medium-sm">
+                                                    <label>세부모델</label>
+                                                    <div class="input-group">
+                                                        <select class="input-box" onchange="yearsDone(this);">
+                                                            <option  value="" disabled selected>버젼을 선택해 주세요</option>
+                                                            <option value="options1">options1</option>
+                                                            <option value="options2">options2</option>
+                                                            <option value="options3">options3</option>
+                                                            <option value="options4">options4</option>
+                                                        </select>
+                                                        <div class="tools">
+                                                            <button><span class="line-icons chev-down"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="model-select-wrap">
+                                            <div class="guide-tip-bx top done-hidden">
+                                                <div class="tooltip-bx">
+                                                    <p class="msg">검색결과 확인을 위해 연식과 세부모델을 선택해 주세요.</p>
+                                                </div>
+                                            </div>
+                                            <!--<div class="searching-result-select-bx prev">
+                                                <div class="btn">
+                                                    <button type="button" class="btn-item btn-neutral btn-ol round" disabled>
+                                                        <span class="label-txt">타이어 쇼핑</span>
+                                                    </button>
+                                                    <button type="button" class="btn-item btn-neutral btn-ol round" disabled>
+                                                        <span class="label-txt">경정비 쇼핑</span>
+                                                    </button>
+                                                </div>
+                                            </div>-->
+
+                                            <div class="searching-result-select-bx">
+                                                <p class="help-txt done-view">
+                                                    <strong>잠깐!</strong>
+                                                    타이어 사이즈 어떻게 보는지 모르신다면?
+                                                    <button type="button"><span class="line-icons error-circle size-16"></span></button>
+                                                </p>
+                                                <ul class="tire-select-list-bx done-view">
+                                                    <li>
+                                                        <input type="radio" id="tire-select-by-model-01" class="tire-select-design" name="tire-select-by-model" checked>
+                                                        <label for="tire-select-by-model-01">
+                                                            <span class="line-icons check size-20"></span>
+                                                            <i>기본</i>
+                                                            <strong>245/45R18</strong>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <p class="message-bx done-view">
+                                                    <span class="txt">검색결과가 실제 타이어의 사이즈와 다를 수 있습니다.</span>
+                                                    애프터마켓에서 인치업을 하신 경우 사이즈 검색을 통해<br>적합한 상품을 확인하실 수 있습니다.
+                                                </p>
+                                                <div class="dummy-box done-hidden"></div>
+                                                <div class="btn pd-t-2u done-hidden">
+                                                    <button type="button" class="btn-item btn-neutral round" disabled>
+                                                        <span class="label-txt">타이어 쇼핑</span>
+                                                    </button>
+                                                    <button type="button" class="btn-item btn-neutral round" disabled>
+                                                        <span class="label-txt">경정비 쇼핑</span>
+                                                    </button>
+                                                </div>
+                                                <div class="btn pd-t-2u done-view">
+                                                    <button type="button" class="btn-item btn-neutral round">
+                                                        <span class="label-txt">타이어 쇼핑</span>
+                                                    </button>
+                                                    <button type="button" class="btn-item btn-neutral round">
+                                                        <span class="label-txt">경정비 쇼핑</span>
+                                                    </button>
+                                                </div>
+                                                <p class="txt-noti done-view">
+                                                    <span class="line-icons error-circle-inv size-12"></span><span class="v-middle">일부 수입 브랜드/모델의 경우 적합한 경정비 상품 확인이 어려울 수 있습니다</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                /**
+                                 * 차종으로 찾기
+                                 */
+                                  // TODO: 결과 모델을 보기 위한 메소드
+                                var yearsDone = function (el) {
+                                      $(el).closest('.step-contents.years').addClass('done')
+                                  }
+                            </script>
+                        </div>
+
+                        <!-- 3. 사이즈로 찾기 -->
+                        <div class="tab-contents on-modal-with-header" data-tab-contents="size">
+                            <div class="size-search-result">
+                                <div class="size-search-visual">
+                                    <div class="tire-visual">
+                                        <div class="info-wrap">
+                                            <span class="visual thick"></span>
+                                            <span class="visual flat"></span>
+                                            <span class="visual inch"></span>
+                                        </div>
+                                        <div class="explan-wrap">
+                                            <p class="explan"><!-- BINDING: 단면폭, 평평비, 인치 설명 --></p>
+                                        </div>
+                                        <div class="pick-size"><!-- BINDING: 선택 값 --></div>
+                                    </div>
+                                </div>
+
+                                <div class="size-search-step done">
+                                    <ul class="step-list">
+                                        <li class="thick step-button" data-step="thick">단면폭</li>
+                                        <li class="flat step-button" data-step="flat">편평비</li>
+                                        <li class="inch step-button" data-step="inch">인치</li>
+                                    </ul>
+                                    <!-- 후륜 타이어 추가 -->
+                                    <div class="another-check">
+                                        <label class="check-item near-tire">
+                                            <input type="checkbox">
+                                            <div class="icon-holder">
+                                                <span class="line-icons square size-20"></span>
+                                            </div>
+                                            <div class="labelling">
+                                                <span class="label-txt mg-h-1u">후륜타이어 사이즈가 다를경우 체크해주세요.</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!-- 사이즈별 리스트 컨테이너 -->
+                                    <div class="size-result">
+                                        <ul class="size-list">
+                                            <!-- BINDING: 사이즈 정보 -->
+                                        </ul>
+                                    </div>
+                                    <!-- 사이즈 검색 -->
+                                    <div class="button-wrap">
+                                        <button type="button" class="btn-item btn-neutral round">
+                                            <span class="label-txt">타이어 쇼핑</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                /**
+                                 * 사이즈로 찾기
+                                 */
+
+                                var constants = {
+                                    selector: {
+                                        sizeSearchResult: '.size-search-result',
+                                        sizeSearchVisual: '.size-search-visual',
+                                        tireVisual: '.tire-visual',
+                                        infoWrap: '.info-wrap',
+                                        visual: '.visual',
+                                        explainWrap: '.explan-wrap',
+                                        pickSize: '.pick-size',
+                                        anotherResult: '.another-result',
+                                        researchButton: '.research-button',
+                                        sizeSearchStep: '.size-search-step',
+                                        stepList: '.step-list',
+                                        stepButton: '.step-button',
+                                        sizeResult: '.size-result',
+                                        sizeList: '.size-list',
+                                        sizeButton: '.size-button',
+                                        nearTire: '.near-tire'
+                                    },
+                                    className: {
+                                        on: 'on',
+                                        step: 'step',
+                                        check: 'check',
+                                        done: 'done'
+                                    },
+                                    customAttr: {
+                                        step: 'step',
+                                        size: 'size'
+                                    },
+                                    data: {
+                                        steps: {
+                                            thick: {
+                                                explainText: '단면폭: 타이어 두께를 뜻함',
+                                                visualImage: 'mc-static-root/images/common/tire_size_search_01.png'
+                                            },
+                                            flat: {
+                                                explainText: '편평비: 타이어 높이/단면폭 비율',
+                                                visualImage: 'mc-static-root/images/common/tire_size_search_02.png'
+                                            },
+                                            inch: {
+                                                explainText: '인치: 휠의 바깥 지름',
+                                                visualImage: 'mc-static-root/images/common/tire_size_search_03.png'
+                                            },
+                                            done: {
+                                                explainText: '',
+                                                visualImage: 'mc-static-root/images/common/tire_size_search_04.png'
+                                            }
+                                        },
+                                        size: {
+                                            thick: [
+                                                145, 155, 165, 175, 185, 195, 205, 215, 225, 235, 245, 255, 265, 275, 285, 295,
+                                                305, 315, 325, 500, 560, 670, 27, 28, 30, 31, 32, 33, 35
+                                            ],
+                                            flat: [50, 60, 65, 70],
+                                            inch: [15, 20]
+                                        }
+                                    },
+                                    template: {
+                                        visualExplain: function (explain) {
+                                            return '<p class="explan">' + explain + '</p>'
+                                        },
+                                        pickSize: function (condition) {
+                                            return '<div class="another-result' + (condition.researching ? ' researching' : '') + '" data-index="' + condition.dataIndex + '">\n' +
+                                              '    <span class="label-txt">' + condition.title + '</span>\n' +
+                                              '    <span class="size">' + condition.size + '</span>\n' +
+                                              '    <button class="research-button">재검색<span class="line-icons refresh size-20"></span></button>\n' +
+                                              '</div>'
+                                        },
+                                        resultUnit: function (condition) {
+                                            return '<li class="size">' +
+                                              '    <button type="button" class="btn-item btn-ol size-button' + (condition.on ? ' ' + constants.className.on : '') + '" data-step="' + condition.step + '" data-size="' + condition.size + '">' +
+                                              '        <span class="label-txt">' + condition.size + '</span>' +
+                                              '    </button>' +
+                                              '</li>'
+                                        }
+                                    }
+                                }
+
+                                // 후륜 타이어 찾기 모드
+                                var isNearTire = false
+
+                                // 확정된 타이어 사이즈
+                                var picks = []
+
+                                // 진행중인 타이어 사이즈
+                                var pick = {
+                                    step: 'thick',
+                                    size: {
+                                        thick: 0,
+                                        flat: 0,
+                                        inch: 0
+                                    }
+                                }
+
+                                var methods = {
+                                    clearPick: function () {
+                                        var clone = $.extend(true, {}, pick)
+                                        clone.step = 'thick';
+                                        $.each(Object.keys(clone.size), function (index, item) {
+                                            clone.size[item] = 0
+                                        })
+                                        pick = clone
+                                    },
+                                    // 타이어 이미지 변환
+                                    setVisualImage: function (step) {
+                                        var tireVisual = $(constants.selector.sizeSearchVisual + ' ' + constants.selector.tireVisual)
+                                        if (picks.filter(function (item) { return item.step === 'done' }).length === 2) {
+                                            tireVisual.css({ 'background-image': 'url("mc-static-root/images/common/tire_size_search_05.png")' })
+                                        } else {
+                                            tireVisual.css({ 'background-image': 'url(\'' + constants.data.steps[step].visualImage + '\')' })
+                                        }
+                                    },
+                                    // 단면폭, 편평비, 인치 사이즈 설명 변환
+                                    setExplain: function (step) {
+                                        var explain = $(constants.selector.sizeSearchVisual + ' ' + constants.selector.explainWrap)
+                                        explain.empty();
+                                        if (constants.data.steps[step].explainText.length > 0) {
+                                            explain.append(constants.template.visualExplain(constants.data.steps[step].explainText))
+                                        }
+                                    },
+                                    // 사용자가 선택된 사이즈 변환
+                                    setVisualPick: function (size) {
+                                        var infoWrap = $(constants.selector.sizeSearchVisual + ' ' + constants.selector.tireVisual + ' ' + constants.selector.infoWrap)
+                                        var isNearTireComplete = picks.filter(function (item) { return item.step === 'done' }).length === 2
+                                        $.each(Object.keys(size), function (index, item) {
+                                            infoWrap.find(constants.selector.visual + '.' + item ).text(size[item] === 0 ? '' : (isNearTireComplete ? '' : size[item]))
+                                        })
+                                    },
+                                    // 사용자가 선택 완료한 정보
+                                    setPickSize: function (picks) {
+                                        var pickSize = $(constants.selector.sizeSearchVisual + ' ' + constants.selector.tireVisual + ' ' + constants.selector.pickSize)
+                                        var sizeSearchStep = $(constants.selector.sizeSearchStep)
+
+                                        pickSize.empty();
+                                        $.each(picks, function (index, item) {
+                                            if (item.step === 'done') {
+                                                pickSize.append(constants.template.pickSize({
+                                                    // title: (picks.length === 1)
+                                                    //   ? '선택 사이즈'
+                                                    //   : index === 0 ? '전륜' : '후륜',
+                                                    title: isNearTire ? (index === 0 ? '전륜' : '후륜') : '선택 사이즈',
+                                                    size: item.size.thick + '/' + item.size.flat + 'R' + item.size.inch,
+                                                    researching: item.researching,
+                                                    dataIndex: index
+                                                }));
+                                            }
+                                        });
+
+                                        // TODO: AS-IS
+                                        // if (picks.length === 2 || (!isNearTire && picks.length === 1)) {
+                                        //     sizeSearchStep.addClass(constants.className.done)
+                                        // } else {
+                                        //     sizeSearchStep.removeClass(constants.className.done)
+                                        // }
+
+                                        // TODO: TO-BE
+                                        if (picks.length === 2 || picks.length === 1 && picks[0].step === 'done') {
+                                            sizeSearchStep.addClass(constants.className.done)
+                                        } else {
+                                            sizeSearchStep.removeClass(constants.className.done)
+                                        }
+                                    },
+
+                                    // 1. visual binding
+                                    bindingVisual: function (pick, picks) {
+                                        methods.setVisualImage(pick.step);
+                                        methods.setExplain(pick.step);
+                                        methods.setVisualPick(pick.size);
+                                        methods.setPickSize(picks);
+                                    },
+                                    // 2. step binding
+                                    bindingStep: function (pick) {
+                                        var stepList = $(constants.selector.sizeSearchResult + ' ' + constants.selector.sizeSearchStep + ' ' + constants.selector.stepList)
+                                        $.each(Object.keys(pick.size), function (index, item) {
+                                            var el = stepList.find('.' + item)
+                                            el.removeClass(constants.className.step + ' ' + constants.className.check)
+                                            if (pick.size[item] > 0) {
+                                                el.addClass(constants.className.check)
+                                            }
+                                            if (el.hasClass(pick.step)) {
+                                                el.addClass(constants.className.step)
+                                            }
+                                        })
+                                    },
+                                    // 3. size result
+                                    bindingResult: function (pick) {
+                                        var sizeList = $(constants.selector.sizeSearchResult + ' ' + constants.selector.sizeResult + ' ' + constants.selector.sizeList)
+                                        sizeList.empty();
+                                        $.each(constants.data.size[pick.step], function (index, item) {
+                                            sizeList.append(constants.template.resultUnit({ on: pick.size[pick.step] === item, size: item, step: pick.step }))
+                                        })
+                                    },
+
+                                    // 초기화
+                                    init: function (pick, picks) {
+                                        // 1. visual binding
+                                        methods.bindingVisual(pick, picks);
+                                        // 2. step binding
+                                        methods.bindingStep(pick);
+                                        // 3. size result
+                                        methods.bindingResult(pick);
+                                    },
+
+                                    // 업데이트
+                                    update: function (condition) {
+                                        var newSize = function (step) {
+                                            var pickSizeArr = Object.keys(pick.size)
+                                            $.each(pickSizeArr.slice(pickSizeArr.indexOf(step), pickSizeArr.length), function (index, item) {
+                                                pick.size[item] = 0
+                                            })
+                                        }
+                                        var nextStep = function (step) {
+                                            var next;
+                                            $.each(Object.keys(constants.data.steps), function (index, item) {
+                                                if (item === step) {
+                                                    next = Object.keys(constants.data.steps)[index + 1 === Object.keys(constants.data.steps).length ? 0 : index + 1]
+                                                }
+                                            })
+                                            return next
+                                        }
+                                        switch (condition.direction) {
+                                            case 'PREV':
+                                                if (pick.size[condition.step] !== 0) {
+                                                    pick.step = condition.step;
+                                                    newSize(condition.step);
+                                                }
+
+                                                if (isNearTire === true && picks.length === 2) {
+                                                    picks.pop()
+                                                } else if (isNearTire !== true && picks.length === 1) {
+                                                    picks.pop()
+                                                }
+                                                break
+                                            case 'NEXT':
+                                                pick.step = nextStep(condition.step);
+                                                pick.size[condition.step] = condition.size;
+
+                                                // 사용자가 하나의 선택 프로세스를 완료 했을때 picks에 추가, 2개 이상일경우 마지막 덮어쓰기
+                                                if (pick.step === 'done') {
+                                                    picks.length === 2 ? picks.splice(1, 1, pick) : picks.push(pick)
+                                                }
+                                                break
+                                            default:
+                                                throw new Error('update required direction')
+                                        }
+
+                                        // 초기화 진행
+                                        console.log('isNearTire:', isNearTire)
+                                        console.log(pick, picks)
+                                        methods.init(pick, picks)
+                                    }
+                                }
+
+                                // 1. 초기화 진행
+                                methods.init(pick, picks);
+
+                                // 2. 스텝 클릭 리스너 등록
+                                $(document).on('click', constants.selector.stepList + ' ' + constants.selector.stepButton, function () {
+                                    methods.update({
+                                        step: $(this).data()[constants.customAttr.step],
+                                        direction: 'PREV'
+                                    });
+                                });
+
+                                // 3. 사이즈 리스트 클릭 리스너 등록
+                                $(document).on('click', constants.selector.sizeList + ' ' + constants.selector.sizeButton, function () {
+                                    methods.update({
+                                        step: $(this).data()[constants.customAttr.step],
+                                        size: $(this).data()[constants.customAttr.size],
+                                        direction: 'NEXT'
+                                    });
+                                });
+
+                                // 4. 후륜 타이어 사이즈 추가 리스너 등록
+                                $(document).on('change', constants.selector.nearTire + ' ' + 'input[type="checkbox"]', function () {
+                                    isNearTire = $(this).prop('checked')
+                                    if (isNearTire && picks.length === 1) {
+                                        methods.clearPick();
+                                    }
+                                    if (!isNearTire && picks.length === 2) {
+                                        picks.pop();
+                                    }
+
+                                    methods.init(pick, picks)
+                                })
+
+                                // 5. 재검색 클릭 리스너 등록
+                                $(document).on('click', constants.selector.pickSize + ' ' + constants.selector.researchButton, function () {
+                                    var index = $(this).closest(constants.selector.anotherResult).data().index
+
+                                    // 후륜 타이어 선택 모드 끄기
+                                    isNearTire = false;
+                                    $(constants.selector.nearTire + ' ' + 'input[type="checkbox"]').prop('checked', false);
+
+                                    // 1개일 경우 재 설정
+                                    if (picks.length === 1) {
+                                        methods.clearPick();
+                                    }
+
+                                    // 2개일 경우 재 설정 하지 않고 후륜 타이어 선택을 다시 할 수 있도록 함
+                                    picks.splice(index, 1);
+
+                                    // init
+                                    methods.init(pick, picks);
+                                });
+                            </script>
+                        </div>
+
+                        <!-- 4. 상품 검색 팝업 인터렉션 -->
+                        <script>
+                            /**
+                             * 상품 검색 팝업 인터렉션
+                             */
+                            var modalConstants = {
+                                selector: {
+                                    modalItem: '.modal-item',
+                                    onSearchModal: '.on-search-modal',
+                                    modalHeader: '.modal-header',
+                                    modalBody: '.modal-body',
+                                    tabItem: '.tab-item'
+                                },
+                                className: { on: 'on' },
+                                customAttr: {
+                                    tabEvent: 'data-tab-event'
+                                },
+                                tabs: {
+                                    carNumber: { backgroundColor: '#FFFFFF' },
+                                    carType: { backgroundColor: '#FFFFFF' },
+                                    size: { backgroundColor: '#F9F9FB' }
+                                },
+                                methods: {
+                                    toCamelCase: function (str) {
+                                        return str.toLowerCase()
+                                          .replace(/-+(\w|$)/g, function ($$, $1) {
+                                              return $1.toUpperCase();
+                                          });
+                                    },
+                                    changeBgColor: function (el, target) {
+                                        $(el).closest(modalConstants.selector.modalBody).css({ 'background-color': modalConstants.tabs[target].backgroundColor })
+                                    },
+                                    tabChangeTrigger: function (el, target) {
+                                        switch (target) {
+                                            case 'carNumber':
+                                                break
+                                            case 'carType':
+                                                // 차종찾기
+                                                setTimeout(function () {
+                                                    var modelSearchSwiper = new Swiper('.model-search-swiper', {
+                                                        spaceBetween: 4,
+                                                        slidesPerView: 'auto',
+                                                        observer: true,
+                                                        observeParents: true,
+                                                        freeMode: true
+                                                    });
+
+                                                    modelSearchSwiper.init();
+
+                                                    $(window).on('resize', function () {
+                                                        modelSearchSwiper.init();
+                                                    });
+                                                }, 10)
+                                                break
+                                            case 'size':
+                                                break
+                                        }
+                                    }
+                                }
+                            }
+
+                            // 탭 변경하면 모달 바디 배경색 지정
+                            $(document).on('click', modalConstants.selector.onSearchModal + modalConstants.selector.tabItem + ' a', function () {
+                                var tabEvent = $(this).data().tabEvent
+                                if (typeof tabEvent === 'undefined') {
+                                    return
+                                }
+                                // 1. background color changer
+                                modalConstants.methods.changeBgColor(this, modalConstants.methods.toCamelCase(tabEvent))
+                                // 2. trigger
+                                modalConstants.methods.tabChangeTrigger(this, modalConstants.methods.toCamelCase(tabEvent))
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,180 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<link rel="stylesheet" type="text/css" href="pc-static-root/css/mypage.css" />
+<div id="container" class="">
+    <div class="container border-b">
+        <div class="guardrail pd-t-15u">
+            <div class="page-header border-none">
+                <h1>방문 예약하기</h1>
+
+                <ul class="list-size-free float-r breadcrumb">
+                    <!-- 상품선택에서 바로 주문/결제로 넘어 온 경우 '상품선택' / 장바구니에서 넘어 온 경우 '장바구니' -->
+                    <li class="">상품선택</li>
+                    <li class="">주문/결제</li>
+                    <li class="on">주문완료</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-light2">
+        <div class="guardrail pd-t-10u pd-b-15u">
+            <div class="container txt-center">
+                <div class="order-complete-icon">
+                    <span class="line-icons calendar-check txt-primary size-60"></span>
+                    <span class="line-icons check size-20"></span>
+                </div>
+
+                <p class="txt-20 pd-t-3u">
+                    <strong>김한국</strong> 고객님,<br />
+                    <strong class="txt-primary">판교점</strong> 예약방문 신청이 완료되었습니다
+                </p>
+
+                <div class="container mg-t-2u">
+                    <p class="txt-14 txt-neutral1"><span class="txt-primary">*</span> 매장에서 예약중복 여부를 확인 후, 고객님께 확인 카카오 알림톡이 발송됩니다</p>
+                    <p class="txt-14 txt-neutral1"><span class="txt-primary">*</span> 매장사정에 따라, 일부 대기시간이 발생할 수 있으니, 이 점 유의해 주시기 바랍니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contents">
+        <section class="">
+            <div class="section-header">
+                <h3>방문 서비스 및 일정</h3>
+
+                <div class="extra">
+                    <span class="txt-16">픽업 & 딜리버리</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <table class="txt-left">
+                    <colspan>
+                        <col style="width:150px;"/>
+                        <col style="width:calc(50% - 150px);"/>
+                        <col style="width:150px;"/>
+                        <col style="width:calc(50% - 150px);"/>
+                    </colspan>
+                    <tbody>
+                    <tr class="border-b">
+                        <th class="bg-light1 pd-h-4u pd-v-5u txt-14 txt-neutral2">픽업 위치</th>
+                        <td colspan="3" class="pd-h-5u pd-v-5u txt-16">경기도 성남시 중원구 성남대로 1148번길 25 1b</td>
+                    </tr>
+
+                    <tr class="border-b">
+                        <th class="bg-light1 pd-h-4u pd-v-5u txt-14 txt-neutral2">딜리버리 위치</th>
+                        <td colspan="3" class="pd-h-5u pd-v-5u txt-16">경기도 성남시 중원구 성남대로 1148번길 25 1b</td>
+                    </tr>
+
+                    <tr class="border-b">
+                        <th class="bg-light1 pd-h-4u pd-v-5u txt-14 txt-neutral2">방문 매장명</th>
+                        <td class="pd-h-5u pd-v-5u txt-16">판교점</td>
+
+                        <th class="bg-light1 pd-h-4u pd-v-5u txt-14 txt-neutral2">방문일/시간</th>
+                        <td class="pd-h-5u pd-v-5u txt-16">2021-07-14(수)11시</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mg-t-15u">
+            <div class="section-header">
+                <h3>서비스 결제금액</h3>
+            </div>
+
+            <ul class="list-size-flex order-paid-total">
+                <li class="pd-l-none pd-t-4u">
+                    <table class="cart-price-table">
+                        <!-- .cart-price-table/ 100.order2.html 참고 -->
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col style="width:50%;">
+                        </colgroup>
+                        <!-- tbody 1개가 디바이더로 구분된 영역 1개 -->
+                        <tbody>
+                        <tr>
+                            <th>총서비스 이용금액</th>
+                            <td class="txt-16">40,000원</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <th class="txt-primary">총 할인금액</th>
+                            <td class="txt-primary txt-16">-39,000원</td>
+                        </tr>
+                        <tr class="price-detail">
+                            <th>픽업 쿠폰할인</th>
+                            <td>19,500원</td>
+                        </tr>
+                        <tr class="price-detail">
+                            <th>딜리버리 쿠폰할인</th>
+                            <td>19,500원</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </li>
+
+                <li class="bg-light2">
+                    <i class="equal"></i>
+
+                    <div class="middler">
+                        <p class="txt-20 txt-500">최종결제금액</p>
+                        <p class="txt-16 mg-t-3u"><em class="txt-20 txt-primary">1,000</em>원</p>
+
+                        <!-- 결제수단 -->
+                        <div class="payment-method mg-t-2u">
+                            <p>삼성카드 / 12개월 할부</p>
+                            <p class="txt-12">(2020.08.25 11:13)</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 필요시 노출 -->
+        <section class="mg-t-8u">
+            <div class="section-header">
+                <h3>입금계좌정보</h3>
+            </div>
+
+            <table class="txt-left">
+                <colspan>
+                    <col style="width:150px;"/>
+                    <col style="width:calc(50% - 150px);"/>
+                    <col style="width:150px;"/>
+                    <col style="width:calc(50% - 150px);"/>
+                </colspan>
+                <tbody>
+                <tr class="border-b">
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금하실 금액</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">142,000원</td>
+
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금은행</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">국민은행</td>
+                </tr>
+
+                <tr class="border-b">
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금기한</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">2020-09-04 23:59 까지</td>
+
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금계좌</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">67109014035442</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="container txt-0 txt-center mg-t-20u">
+            <button type="button" class="btn-item btn-neutral btn-ol w-240 round mg-r-2u">
+                <span class="label-txt">예약내역 확인하기</span>
+            </button>
+
+            <button type="button" class="btn-item btn-neutral btn-ol w-240 round mg-r-2u">
+                <span class="label-txt">홈으로 가기</span>
+            </button>
+        </div>
+    </div>
+</div>

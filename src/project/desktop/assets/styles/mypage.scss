@@ -1,0 +1,1332 @@
+@charset "UTF-8";
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*픽업서비스--------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+
+.pickup-info-wrap {
+  position: relative;
+  padding: 30px 0 16px 60px;
+  border-bottom: 1px solid rgb(217, 219, 220)
+}
+
+.pickup-info-wrap .thumb-img .mycar {
+  overflow: hidden;
+  display: block;
+  width: 58px;
+  height: 58px;
+  border: 1px solid #d9dbdc;
+  border-radius: 58px;
+  background-size: cover;
+  background-position: left;
+}
+
+.pickup-info-wrap .thumb-img {
+  position: absolute;
+  left: 0;
+  top: 28px;
+}
+
+.pickup-info-wrap .info {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.pickup-info-wrap .info::after {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.pickup-info-wrap .info .car-name {
+  overflow: hidden;
+  padding-right: 120px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.pickup-info-wrap .info .car-number {
+  position: relative;
+  display: inline-block;
+  padding-left: 6px;
+  font-size: 16px;
+  margin-top:6px;
+}
+
+.pickup-info-wrap .info .car-number::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -8px;
+  width: 1px;
+  height: 20px;
+  background-color: #2a3138;
+}
+
+.pickup-info-wrap .service-type-wrap {
+  display: flex;
+}
+
+.pickup-info-wrap .service-type-wrap .label-txt {
+  font-size: 14px;
+}
+
+.pickup-info-wrap .info .service-type-list li {
+  float: left;
+  margin-left: 8px;
+  padding: 0 8px;
+  background-color: rgb(91, 96, 104);
+  border-radius: 2px;
+}
+
+.pickup-info-wrap .info .service-type-list .service-type {
+  line-height: 24px;
+  color: #fff;
+  font-size: 11px;
+}
+
+.pickup-info-wrap .more-link {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.pickup-info-wrap .more-link .btn-item {
+  position: relative;
+  padding: 0 26px 0 16px;
+}
+
+.pickup-info-wrap .more-link .btn-item .chev-right {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  margin-top: -10px;
+}
+
+.pickup-car-gallery img,
+.pickup-car-gallery .swiper-zoom-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pickup-car-gallery .pickup-car-indicator {
+  height: 90px;
+  margin: 12px 0 0 20px;
+  padding-right: 20px;
+}
+
+.pickup-car-gallery .pickup-car-indicator .swiper-slide {
+  overflow: hidden;
+  width: auto;
+  border-radius: 4px;
+}
+
+.pickup-car-gallery .pickup-car-photo {
+  background-color: #000;
+}
+
+.pickup-car-gallery .swiper-zoom-container {
+  height: 320px;
+}
+
+.pickup-car-gallery .noti-copy {
+  text-align: center;
+}
+
+.pickup-car-gallery .swiper-slide {
+  position: relative;
+}
+
+.pickup-car-gallery .swiper-slide .btn-download {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  background-color: rgba(42, 49, 56, .8);
+  color: #fff;
+}
+
+.pickup-receipt-details  {
+  background-color: #f9f9fa;
+}
+
+.pickup-receipt-details h3 {
+  padding: 5px 22px 0;
+  line-height: 40px;
+  border-bottom: 1px solid #2a3138;
+}
+
+.pickup-receipt-details .receipt-info-wrap {
+  position: relative;
+  margin: 12px 0 0;
+  padding: 0 24px 12px;
+}
+
+.pickup-receipt-details .bg-receipt {
+  position: absolute;
+  top: 0;
+  width: 23px;
+  height: 100%;
+  background: url('../images/mypage/bg_receipt.png') repeat-y 50% top;
+  background-size: 12px auto;
+}
+
+.pickup-receipt-details .bg-receipt.bg-l {
+  left: 0;
+}
+
+.pickup-receipt-details .bg-receipt.bg-r {
+  right: 0;
+}
+
+.pickup-receipt-list {
+  border: 1px solid #d9dbdc;
+  padding-top: 8px;
+  margin-bottom: 8px;
+}
+
+.pickup-receipt-list .rows {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  align-items: center;
+  min-height: 40px;
+}
+
+.pickup-receipt-list .sub-header {
+  font-weight: normal;
+  font-size: 14px;
+  min-width: 100px;
+}
+
+.pickup-receipt-list.receipt-info {
+  padding-bottom: 8px;
+}
+
+.pickup-receipt-list.receipt-info .receipt-copy {
+  font-size: 14px;
+  text-align: right;
+}
+
+.pickup-receipt-list.receipt-payment .receipt-copy {
+  font-size: 16px;
+  text-align: right;
+}
+
+.pickup-receipt-list.receipt-payment .receipt-copy .unit {
+  font-size: 14px;
+}
+
+.pickup-receipt-list .payment-rows {
+  border-top: 1px solid #d9dbdc;
+}
+
+.mypage .order_info ol.pickup > li {
+  padding-left: 125px;
+
+  .check-tit {
+    top: 0;
+  }
+}
+
+.primary-more-button {
+  display: inline-block;
+  padding: 0 8px;
+  background-color: #fe6a2b;
+  color: #fff;
+  border-radius: 18px;
+  word-break: keep-all;
+  line-height: 18px;
+  font-size: 12px;
+  white-space: nowrap;
+  letter-spacing: -.5px;
+}
+
+dl.reserve_info dd.reserve-info-pickup {
+  padding: 0;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup {
+  padding: 10px 0 0;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup > li {
+  position: relative;
+  z-index: 1;
+  padding: 5px 0 5px 112px;
+  font-size: 14px;
+  text-align: left;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup > li .txt-primary {
+  color: #fe6a2b;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup > li .tit {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  font-weight: 500;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup > li.point {
+  color: #ff6c00;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup > li.dot {
+  border-bottom: 1px dashed #ebedef;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup > li.cancel {
+  opacity: 0.8;
+  text-decoration: line-through;
+}
+
+dl.reserve_info dd.reserve-info-pickup .pickup > li.cancel .tit,
+dl.reserve_info dd.reserve-info-pickup .pickup > li.cancel .tit label {
+  text-decoration: line-through;
+}
+
+.cont-area .btnMore {
+  background-color: transparent;
+}
+
+
+/* 픽업서비스 내역상세 */
+.pickup-detai-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pickup-detai-top .pickup-info-wrap {
+  width: 380px;
+}
+
+.pickup-detai-top .pickup-info-wrap .info .car-name {
+  padding-right: 20px;
+}
+
+.pickup-detai-top .location-progress-wrap {
+  width: 480px;
+  border: 1px solid rgb(217, 219, 220);
+  border-radius: 4px;
+}
+
+.location-progress-wrap {
+  position: relative;
+  width: 480px;
+  padding: 20px 0;
+  background-color: #f9f9fa;
+}
+
+.location-progress-wrap .location-progress-list {
+  position: relative;
+  padding-right: 25%;
+  padding-bottom: 48px;
+}
+
+.location-progress-wrap .location-progress-list .pointer {
+  position: relative;
+  float: left;
+  width: 33.33333%;
+  height: 34px;
+  text-align: center;
+}
+
+.location-progress-wrap .location-progress-list .reverse-pointer {
+  float: right;
+  top: 38px;
+}
+
+.location-progress-wrap .info {
+  display: block;
+  height: 22px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  color: rgb(160, 166, 175);
+}
+
+.location-progress-wrap .active .info {
+  color: rgb(254, 106, 43);
+}
+
+.location-progress-wrap .line {
+  position: relative;
+  height: 38px;
+  z-index: 1;
+  font-size: 0;
+}
+
+.location-progress-wrap .line::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  bottom: 4px;
+  left: 0;
+  border-top: 1px dashed #d9dbdc;
+  z-index: -1;
+}
+
+.location-progress-wrap .line::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  bottom: 4px;
+  right: 0;
+  border-top: 1px dashed #d9dbdc;
+  z-index: -1;
+}
+
+.location-progress-wrap .active .line::before,
+.location-progress-wrap .active .line::after {
+  border-top: solid 1px;
+  border-color: #fe6a2b;
+}
+
+.location-progress-wrap .active.current-location .line::after {
+  border-top: 1px dashed #d9dbdc;
+}
+
+.location-progress-wrap .reverse-pointer .line::after {
+  top: 4px;
+  bottom: initial;
+}
+
+.location-progress-wrap .reverse-pointer .line::before {
+  top: 4px;
+  bottom: initial;
+}
+
+.location-progress-wrap .spot {
+  position: relative;
+  bottom: 0;
+  display: block;
+  margin: 8px auto 0;
+  z-index: 1;
+}
+
+.location-progress-wrap .spot::before {
+  content: "";
+  display: block;
+  border: 2px solid #d9dbdc;
+  width: 4px;
+  height: 4px;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.location-progress-wrap .active .spot::before {
+  border-color: #fe6a2b;
+}
+
+.location-progress-wrap .location-progress-list .pointer.store-arrval-wrap {
+  position: absolute;
+  top: 33px;
+  right: 0;
+  width: 25%;
+  height: 52px;
+}
+
+.location-progress-wrap .location-progress-list .pointer.store-arrval-wrap .line {
+  left: 0;    
+}
+
+.store-arrval-wrap .info {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 42px;
+}
+
+.store-arrval-wrap .line {
+  width: 52px;
+  height: 52px;
+}
+
+.store-arrval-wrap .spot {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  bottom: inherit;
+  margin: 0;
+  padding: 0;
+  left: 22px;
+  z-index: 10;
+}
+
+.store-arrval-wrap .line::before {
+  content:"";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px dashed #d9dbdc;
+  border-radius: 0 100% 0 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.store-arrval-wrap .line::after {
+  content:"";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px dashed #d9dbdc;
+  border-radius: 0 0 100% 0;
+  border-top: 0;
+  border-left: 0;
+}
+
+.location-progress-wrap .reverse-pointer .spot {
+  padding: 0;
+  top: 0;
+  bottom: initial;
+}
+
+.location-progress-wrap .store-arrval-wrap.active .line::before {
+  border: 1px solid #fe6a2b;
+  border-radius: 0 100% 0 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.location-progress-wrap .store-arrval-wrap.active .line::after {
+  border: 1px solid #fe6a2b;
+  border-radius: 0 0 100% 0;
+  border-top: 0;
+  border-left: 0;
+}
+
+.location-progress-wrap .reverse-pointer.current-location .line::after {
+  border-top: solid 1px;
+  border-color: #fe6a2b;
+}
+
+.location-progress-wrap .store-arrval-wrap.active.current-location .line::after {
+  border: 1px dashed #d9dbdc;
+  border-radius: 0 0 100% 0;
+  border-top: 0;
+  border-left: 0;
+}
+
+.location-progress-wrap .reverse-pointer.current-location .line::before {
+  border-top: 1px dashed #d9dbdc;
+}
+
+.location-progress-wrap .active.current-location .info {
+  display: table;
+  table-layout: fixed;
+  min-width: 60px;
+  margin: auto;
+  padding: 0 8px;
+  background-color: #fe6a2b;
+  color: #fff;
+  border-radius: 18px;
+}
+
+.location-progress-wrap .pointer.current-location .spot {
+  border: none;
+  width: 25px;
+  height: 16px;
+  background-image: url(../images/mypage/icon_direction_right.svg);
+  background-size: 25px auto;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: 50%;
+  bottom: 5px;
+}
+
+.location-progress-wrap .pointer.current-location .spot::before {
+  display: none;
+}
+
+.location-progress-wrap .store-arrval-wrap.current-location .spot {
+  background-image: url(../images/mypage/icon_direction_left.svg);
+  bottom: initial;
+  left: 12px;
+}
+
+.location-progress-wrap .reverse-pointer.current-location .spot {
+  background-image: url(../images/mypage/icon_direction_left.svg);
+  bottom: initial;
+  top: -4px;
+}
+
+.location-progress-wrap .reverse-pointer.tire-mount.active .line::before,
+.location-progress-wrap .reverse-pointer.current-location .line::after {
+  border-top: solid 1px;
+  border-color: #fe6a2b;
+}
+
+/* 20211221 // */
+.location-progress-wrap .reverse-pointer.tire-mount .spot {
+  position: relative;
+  top: -8px;
+  color: #d9dbdc;
+}
+
+.location-progress-wrap .reverse-pointer.tire-mount.active .spot {
+  color: rgb(91, 96, 104);
+}
+/* // 20211221 */
+
+.location-progress-wrap .spot.wrench::before {
+  content: "\e93a";
+  border: 0;
+  width: auto;
+  height: auto;
+  background-color: #f9f9fa;
+  padding: 4px;
+}
+
+.location-progress-wrap .reverse-pointer .line {
+  height: 36px;
+}
+
+.location-progress-wrap .reverse-pointer .info {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: initial;
+  bottom: 0;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* 20211221 // */
+.location-progress-wrap .reverse-pointer.tire-mount .info {
+  z-index: 2;
+  color: #a0a6af;
+}
+
+.location-progress-wrap .reverse-pointer.tire-mount.active .info {
+  color: #5b6068;
+}
+/* // 20211221 */
+
+.location-progress-wrap li.pointer.current-location:nth-child(1) .spot,
+.location-progress-wrap li.pointer.current-location:nth-child(2) .spot {
+  background: none;
+  bottom: 0;
+  width: auto;
+  height: auto;
+}
+
+.location-progress-wrap li.pointer.current-location:nth-child(1) .spot::before,
+.location-progress-wrap li.pointer.current-location:nth-child(2) .spot::before {
+  display: block;
+}
+
+.location-progress-list li.pointer:last-child .line::before { 
+  display: none;
+}
+
+.pickup-detai-top .location-progress-wrap.one-way-case {
+  height: 100px;
+  margin-top: 24px;
+}
+
+.pickup-detai-top .location-progress-wrap.one-way-case .location-progress-list {
+  padding: 0;
+}
+
+.pickup-detai-top .location-progress-wrap.one-way-case .location-progress-list .pointer { 
+  width: 25%;
+}
+
+.pickup-detai-top .location-progress-wrap.one-way-case .location-progress-list li.pointer:last-child .line::before {
+  display: block;
+}
+
+.pickup-detai-top .location-progress-wrap.one-way-case .location-progress-list li.pointer:last-child .line::after { 
+  display: none;
+}
+
+
+
+.pickup-history-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: rgb(236, 238, 239);
+}
+
+.pickup-driver-connect {
+  position: relative;
+}
+
+.driver-viwer-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background-color: rgb(242, 242, 247);
+}
+
+.driver-viwer-wrap .driver-name {
+  height: 44px;
+  padding-left: 48px;
+}
+
+.before-matching-case .driver-viwer-wrap .driver-name {
+  background: url('../images/mypage/icon-car-driver.svg') no-repeat left 55%;
+  background-size: 30px auto;
+}
+
+.after-matching-case .driver-viwer-wrap .driver-name {
+  background: url('../images/mypage/icon-car-driver_after.png') no-repeat left 55%;
+  background-size: 30px auto;
+}
+
+.driver-viwer-wrap .driver-name strong {
+  font-weight: bold;
+}
+
+.driver-viwer-wrap .driver-name strong::before, 
+.driver-viwer-wrap .driver-name strong::after {
+  content: "'";
+  display: inline-block;
+}
+
+.driver-viwer-wrap .driver-name span {
+  top: -1px;
+  display: inline-block;
+  color: #5b6068;
+}
+
+.driver-viwer-wrap .btn-call {
+  background-color: #f2f2f7;
+}
+
+.pickup-history-section {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.pickup-history-section .driver-wrap {
+  padding: 8px;
+  display: flex;
+  background-color: #f2f2f7;
+  border-radius: 4px;
+}
+
+.pickup-history-section .driver-wrap .thumb-img .mycar {
+  overflow: hidden;
+  display: block;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d9dbdc;
+  border-radius: 38px;
+  background-size: cover;
+  background-position: left;
+}
+
+.pickup-history-section .driver-wrap .info {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-left: 12px;
+}
+
+.pickup-history-section .driver-wrap .info::after {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.pickup-history-section .driver-wrap .info .car-name {
+  overflow: hidden;
+  padding-right: 80px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 38px;
+  letter-spacing: 0;
+}
+
+.pickup-history-section .driver-wrap .info .car-number {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+  display: inline-block;
+  padding-left: 6px;
+  font-size: 14px;
+}
+
+.driver-tracking-wrap {
+  padding-left: 32px;
+}
+
+.driver-tracking-wrap > li {
+  display: flex;
+  position: relative;
+  padding-top: 24px;
+}
+
+.driver-tracking-wrap > li:first-child {
+  padding-top: 20px;
+}
+
+.driver-tracking-wrap > li::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #d9dbdc;
+}
+
+.driver-tracking-wrap > li .driver-state {
+  position: relative;
+  flex: none;
+  width: 140px;
+  padding-left: 22px;
+}
+
+.driver-tracking-wrap > li .driver-state::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 7px;
+  border: 2px solid #fe6a2b;
+  background-color: #fff;
+}
+
+.driver-tracking-wrap > li.active .driver-state::before {
+  border-color: #fe6a2b;
+}
+
+.driver-tracking-wrap > li .driver-state .state {
+  font-size: 16px;
+  color: #a0a6af;
+  letter-spacing: -1px;
+}
+
+.driver-tracking-wrap > li .driver-state .date {
+  margin-top: 2px;
+  font-size: 12px;
+  color: #a0a6af;
+}
+
+.driver-tracking-wrap > li:last-child::before {
+  height: 50%;
+}
+
+.driver-tracking-wrap > li.active .driver-state {
+  color: #2a3138;
+}
+
+.driver-tracking-wrap > li.active .driver-state .state {
+  font-size: 16px;
+  color: #fe6a2b;
+}
+
+.driver-tracking-wrap > li.active .driver-state .date {
+  margin-top: 4px;
+  color: rgb(91, 96, 104);
+}
+
+.driver-tracking-wrap > li .driver-message {
+  flex: 1;
+  padding-left: 12px;
+}
+
+.driver-tracking-wrap > li .driver-message p {
+  margin-bottom: 4px;
+}
+
+.driver-tracking-wrap > li .driver-message .copy {
+  padding-left: 0;
+  font-size: 14px;
+  color: #a0a6af;
+}
+
+.driver-tracking-wrap > li .driver-message .copy-primary {
+  font-size: 14px;
+  color: #fe6a2b;
+}
+
+.driver-tracking-wrap > li.active .driver-message .copy {
+  font-size: 16px;
+  color: #2a3138;
+}
+
+.driver-tracking-wrap > li .driver-message .button-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.driver-tracking-wrap > li .driver-message .button-wrap button {
+  margin: 4px 8px 0 0;
+  padding: 0 12px;
+  white-space: nowrap;
+  height: 28px;
+  line-height: 26px;
+}
+
+.driver-tracking-wrap > li .driver-message .button-wrap button span { 
+  font-size: 12px;
+}
+
+.driver-tracking-wrap > li .driver-message .button-wrap button:last-child {
+  margin-right: 0;
+}
+
+.driver-tracking-wrap > li.active .driver-message {
+  color: #2a3138;
+}
+
+.pickup-confirm-section {
+  padding: 0 20px;
+}
+
+.pickup-confirm-section .info-copy {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.pickup-confirm-section .info-copy .icon-receipt {
+  display: inline-block;
+  height: 32px;
+  padding-left: 36px;
+  background: url('../images/mypage/icon_receipt.svg') no-repeat left 50%;
+  background-size: 28px 22px;
+  line-height: 32px;
+  font-size: 16px;
+}
+
+.pickup-confirm-section .button-wrap {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.pickup-confirm-section .button-wrap button {
+  width: 270px;
+  margin: 0 4px;
+}
+
+.pickup-confirm-section .noti-copy {
+  position: relative;
+  margin-top: 56px;
+  padding: 8px 20px 8px 40px;
+  border: 1px solid #fe6a2b;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.pickup-confirm-section .noti-copy .error-circle-light {
+  color: #fe6a2b;
+}
+
+.pickup-driver-connect .matching-label {
+  display: inline-block;;
+}
+
+.pickup-driver-connect.before-matching-case .matching-label {
+  color: rgb(160, 166, 175)
+}
+
+.pickup-driver-connect.after-matching-case .matching-label {
+  color: rgb(94, 176, 181);
+}
+
+.driver-viwer-wrap .driver-name .service-name {
+  font-size: 16px;
+}
+
+.pickup-driver-connect.before-matching-case .service-name {
+  color: rgb(160, 166, 175)
+}
+
+.pickup-driver-connect.after-matching-case .service-name {
+  color: rgb(42, 49, 56)
+}
+
+.pickup-driver-connect.before-matching-case .driver-viwer-wrap .driver-name span {
+  color: rgb(160, 166, 175)
+}
+
+.driver-tracking-wrap .driver-state.store-arrval .wrench {
+  position: absolute;
+  top: 50%;
+  left: 44px;
+  z-index: 11;
+  transform: translateY(-50%);
+}
+
+.driver-tracking-wrap .driver-message.store-arrval .copy {
+  font-size: 16px;
+  color: rgb(42, 49, 56);   
+  padding: 8px 0;
+}
+
+.driver-tracking-wrap .driver-state.store-arrval::after {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-color: rgb(242, 242, 247);
+  border-radius: 48px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.driver-tracking-wrap .driver-state.store-arrval::before {
+  border: none;
+  background-color: rgb(217, 219, 220); 
+  width: 50%;
+  height: 1px;
+  top: 50%;
+  left: 11px;
+}
+
+.driver-tracking-toggle-contents {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 34px;
+  height: 300px;
+}
+
+.driver-tracking-toggle-contents.on {
+  height: 100%;
+}
+
+.driver-tracking-toggle-contents.hide {
+  height: 100%;
+}
+
+.driver-tracking-toggle-contents::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to top, white, white, rgba(255, 255, 255, 0.3));
+  z-index: 11;
+}
+
+.driver-tracking-toggle-contents.on::after {
+  display: none;
+}
+
+.driver-tracking-toggle-contents.hide::after,
+.driver-tracking-toggle-button.hide {
+  display: none;
+}
+
+.driver-tracking-toggle-button .toggle-button {
+  display: flex;
+  margin: auto;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 36px;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color .15s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.driver-tracking-toggle-button .toggle-button::before {
+  content: "전체보기";
+  display: inline-block;
+  font-size: 16px;
+}
+
+.driver-tracking-toggle-button .toggle-button.on::before {
+  content: "간략히 보기";
+  font-size: 16px;
+}
+
+.driver-tracking-toggle-button .toggle-button:active {
+  background-color: #e7e7e8;
+}
+
+.driver-tracking-toggle-button .toggle-button.on .icon {
+  transform: rotate(180deg);
+}
+
+.driver-tracking-toggle-button .toggle-button .icon {
+  transition: transform .15s ease-in-out;
+}
+
+.pickup-confirm-section .button-wrap button .label-txt {
+  font-size: 16px;
+}
+
+/* 방문예약 결제모듈 추가 */
+.visit-order-coupon .order-coupon-wrap {
+  padding-top: 0;
+  border-bottom: 0;
+}
+
+.visit-order-coupon .order-coupon-wrap .foot-wrap {
+  margin-top: 8px;
+}
+
+.visit-order-coupon .order-coupon-wrap .product-list > li:first-child {
+  margin: 0;
+  padding: 0;
+}
+
+.visit-order-coupon .order-coupon-wrap .product-list > li:first-child .apply-coupon {
+  margin-top: 0;
+}
+
+.visit-order-coupon .order-coupon-wrap .product-list > li {
+  border: 0
+}
+
+/* 20220419 // */
+.order-lower-area .order-static-area.visit-order-static {
+  width: 800px;
+  padding-right: 40px;
+}
+/* // 20220419 */
+
+.order-lower-area .order-sticky-area.visit-order-static {
+  width: 370px;
+}
+
+.order-lower-area .order-sticky-area.visit-order-static .bg-light2 {
+  background-color: rgb(242, 242, 247);
+}
+
+/* 20220419 // */
+.visit-order-step .payment_box li {
+  width: 107;
+}
+/* // 20220419 */
+
+.visit-order-upper .section-subheader {
+  display: block;
+  width: 100%;
+  position: relative;
+  color: #2a3138;
+  cursor: default;
+}
+
+.visit-order-upper .section-subheader h4 {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.visit-order-list {
+  border-bottom: 1px solid #d9dbdc;
+}
+
+.visit-order-list .form-control {
+  position: relative;
+  min-height: 40px;
+  border-top: 1px solid #e1e1e1;
+  padding: 10px 0 10px 204px;
+  line-height: 40px;
+  background: linear-gradient(90deg, #f7f8fa 188px, #ffffff 0, #ffffff 425px);
+}
+
+.visit-order-list .form-control label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding-right: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.visit-order-setting-table th {
+  padding-left: 0;
+}
+
+.visit-order-upper .pay_left .payment_box {
+  margin-top: 0;
+}
+
+.border-b-none {
+  border-bottom: 0;
+}
+
+.visit-order-upper .pay_side .agree dl dt {
+  padding: 15px 25px 15px 0;
+}
+
+.visit-order-upper .reserve-btn-wrap {
+  clear: both;
+}
+
+
+.order-footer-area {
+  float: left; 
+}
+
+.order-footer-area .order-left-area {
+  float: left; 
+  width: 800px; 
+}
+
+.order-footer-area .order-right-area {
+  float: left;
+  width: 370px; 
+}
+
+.order-footer-area .reserve-btn-wrap {
+  clear: both;
+}
+
+.order-footer-area .order-right-area .toggle_box {
+    background-color: rgb(236, 238, 239);
+}
+
+.pickup-history-section .section-headcopy {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.pickup-history-section .section-headcopy .headcopy {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+/* 방문예약허기 결제 */
+.pd-l-none {
+  padding-left: 0 !important;
+}
+
+.order-complete-icon .line-icons.size-20 {
+  right: -8px;
+}
+/* 211025 // */
+.order-footer-area .order-right-area .toggle_box {
+  padding: 0 8px;
+}
+
+.order-footer-area .order-right-area .toggle_box .list label {
+  margin-bottom: 8px;
+}
+
+.order-footer-area .order-right-area .toggle_box .list .btn {
+  position: absolute;
+  right: 0;
+  padding-right: 0;
+  border: 0;
+  font-size: 14px;
+  background: none;
+}
+
+.order-footer-area .order-right-area .toggle_box .list .line-icons {
+  top: -1px;
+}
+
+.order-footer-area .order-right-area .toggle_box .more {
+  background: none;
+  color: #2a3138;
+}
+/* // 211025 */
+
+/* 방문예약 20211125*/
+.tbl_01 table .service-cancel .status {
+  border-color: #a0a6af;
+}
+
+.tbl_01 table .service-cancel * {
+  color: #a0a6af ;
+}
+
+.tbl_01 table .service-cancel > div.float-l {
+  text-decoration: line-through;
+}
+
+/* 20211223 // */
+.pick-details-more-wrap {
+  position: relative;
+}
+
+.pick-details-more-wrap .label-info{
+  display: inline-block;
+  padding: 0 20px;
+  background-color: rgb(242, 242, 247);
+  border-radius: 16px;
+  line-height: 32px;
+}
+
+.pick-details-more-wrap .more-link {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 28px;
+}
+
+.pick-details-more-wrap .more-link::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  margin-top: -3px;
+  border-top: 1px solid #fe6a2b;
+  border-right: 1px solid #fe6a2b;
+  top: 50%;
+  right: 16px;
+}
+
+.mypage-menu-list-bx li a.new strong::after {
+  content: 'NEW';
+  display: inline-block;
+  padding: 0 6px;
+  line-height: 16px;
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+  background:#fe6a2b;
+  font-size: 10px;
+  font-weight: 600;
+  vertical-align: bottom;
+  margin-left: 8px;
+}
+
+/* // 20211223 */

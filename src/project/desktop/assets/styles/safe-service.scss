@@ -1,0 +1,706 @@
+@charset "UTF-8";
+/*!
+Tstation-mobile
+Tstation Platform System Team
+2.1.3
+*/
+/*20220216 //*/
+.safeservice-landing-page {
+    width: 870px;
+    margin: auto;
+}
+/*// 20220216 */
+.safeservice-landing-page .herocopy-section {
+    float: left; 
+    width: 438px;
+}
+
+.safeservice-landing-page .herocopy-section .headcopp {
+    position: relative;
+    padding-left: 32px;
+    font-size: 20px;
+}
+
+.safeservice-landing-page .herocopy-section .headcopp.icon-safeservice::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 25px;
+    height: 24px;
+    margin-top: -12px;
+    background-image: url(../images/mypage/safe-service/icon_safeservice.png);
+    background-size: 23px 18px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.safeservice-landing-page .herocopy-section .explan-list {
+    margin-top: 16px;
+}
+
+.safeservice-landing-page .herocopy-section .explan-list li {
+    margin-bottom: 8px;
+}
+
+.safeservice-landing-page .herocopy-section .explan-list .bul-icon {
+    position: relative;
+    padding-left: 10px;
+}
+
+.safeservice-landing-page .herocopy-section .explan-list .bul-icon::before {
+    content: '\b7\a0';
+    position: absolute;
+    left: 0px;
+}
+
+.safeservice-landing-page .cta-section {
+    float: left;
+    width: 420px;
+    height: 175px;
+}
+
+.safeservice-landing-page .cta-section .cta-list {
+    display: flex;
+    justify-content: center;
+    padding: 28px 0;
+    border-radius: 8px;
+}
+
+.safeservice-landing-page .cta-section .cta-list > li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.safeservice-landing-page .cta-section .cta-list > li > a {
+     display: block;
+     padding: 12px 0 8px;
+}
+
+.safeservice-landing-page .cta-section .cta-list > li::after {
+    content: "";
+    width: 1px;
+    background-color: rgb(217, 219, 220);
+    position: absolute;
+    right: .5px;
+    top: 0;
+    bottom: 0;
+}
+
+.safeservice-landing-page .cta-section .cta-list > li:last-child::after {
+    display: none;
+}
+
+.safeservice-landing-page .cta-section .cta-list > li .icon-link {
+    overflow: hidden;
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    border-radius: 32px;
+    background-repeat: no-repeat;
+}
+
+.safeservice-landing-page .cta-section .cta-list > li .text-label {
+    display: block;
+    padding: 0 8px;
+}
+
+
+.safeservice-group .weight-divider::before  {
+    content: "";
+    display: block;
+    height: 8px;
+    background-color: rgb(236, 238, 239);
+}
+
+.safeservice-group .weight-divider-block  {
+    display: block;
+    height: 8px;
+    background-color: rgb(236, 238, 239);
+}
+
+.safeservice-group .subscription-section .section-headline.underline {
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group .subscription-list-section .rowgroup {
+    margin-top: 16px;
+    padding: 16px 20px 24px 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group  .rowgroup.safe-confrim-rowgroup {
+    width: 560px;
+    margin: auto;
+}
+
+.safeservice-group  .rowgroup.safe-confrim-rowgroup .button-wrap {
+    padding-left: 100px;
+}
+
+.safeservice-group .form-control label {
+    font-size: 14px;
+}
+
+.safeservice-group .subscription-list-section .rowgroup .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.safeservice-group .subscription-list-section .row .label-txt {
+    font-size: 14px;
+}
+
+.safeservice-group .subscription-list-section .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.subscription-result-empty .icon-subscription-empty {
+    overflow: hidden;
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url(../images/mypage/safe-service/icon-safeservice-empyt.png);
+    background-size: 48px auto;
+}
+
+.safeservice-group .noti-section .section-headline {
+    line-height: 49px;
+}
+
+.safeservice-group .noti-section .explan-list .bul-icon {
+    position: relative;
+    padding-left: 8px;
+}
+
+.safeservice-group .noti-section .explan-list .bul-icon::before {
+    content: '\b7\a0';
+    position: absolute;
+    left: 0px;
+}
+
+.safeservice-group .noti-rowgroup .explan-list .bul-icon {
+    position: relative;
+    padding-left: 8px;
+}
+
+.safeservice-group .noti-rowgroup .explan-list .bul-icon::before {
+    content: '\b7\a0';
+    position: absolute;
+    left: 0px;
+}
+
+/* global css */
+.safeservice-group .flex-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.safeservice-group .flex-list .flex-1 {
+    flex: 1;
+}
+
+.safeservice-group .flex-list .auto-flex {
+    flex: auto;
+}
+
+.safeservice-group .join-result-page .join-result-empty .icon-subscription-empty {
+    color: rgb(192, 198, 206);
+}
+
+.safeservice-group .join-result-page .join-number-section .section-headline {
+    line-height: 49px;
+}
+
+.safeservice-group .join-result-page .label-wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.safeservice-group .join-result-page .label-wrap .label-txt {
+    line-height: 30px;
+}
+
+.safeservice-group .join-result-page .label-wrap .label-info {
+    position: relative;
+    line-height: 30px;
+}
+
+.safeservice-group .join-result-page .label-wrap .label-info::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    background-color: rgb(217, 219, 220);
+    transform: translateY(-50%);
+}
+
+.safeservice-group .join-result-page .badge-mounting {
+    display: inline-block;
+    background-color: rgb(91, 96, 104);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 20px;
+    padding: 0 12px;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.safeservice-group .join-result-page .confirm-button {
+    width: 150px;
+}
+
+.safeservice-group .history-list-section .rowgroup {
+    border-top: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group .history-list-section .rowgroup .row {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group .history-list-section .rowgroup .rowheader {
+    width: 188px;
+    flex: none;
+    padding: 20px 16px;
+    background-color: rgb(249, 249, 250);
+}
+
+.safeservice-group .history-list-section .rowgroup .cell {
+    padding: 20px 32px;
+}
+
+.safeservice-group .history-list-section .rowgroup .row .label-txt {
+    font-size: 14px;
+}
+
+.safeservice-group .history-list-section .rowgroup .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.safeservice-group .history-list-section .rowgroup .cell .align-right {
+    position: relative;
+    left: 8px;
+    padding: 0 2px 0 8px;
+}
+
+.safeservice-group .history-list-section .more-button {
+    width: 150px;
+}
+
+.safeservice-group .history-detail-list-section .rowgroup {
+    border-top: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group .history-detail-list-section .rowgroup .row {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group .history-detail-list-section .rowgroup .rowheader {
+    width: 188px;
+    flex: none;
+    padding: 20px 16px;
+    background-color: rgb(249, 249, 250);
+}
+
+.safeservice-group .history-detail-list-section .rowgroup .cell {
+    padding: 20px 32px;
+    flex: 1;
+}
+
+.safeservice-group .history-detail-list-section .rowgroup .row .label-txt {
+    font-size: 14px;
+}
+
+.safeservice-group .history-detail-list-section .rowgroup .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.safeservice-group .history-detail-list-section .rowgroup .cell .align-right {
+    position: relative;
+    padding: 0 12px 0 24px;
+}
+
+.safeservice-group .history-detail-list-section .more-button {
+    width: 150px;
+}
+
+.safeservice-group .history-detail-page .badge-mounting {
+    display: inline-block;
+    background-color: rgb(91, 96, 104);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 24px;
+    padding: 0 12px;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.safeservice-group .rowgroup-state-info {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-pack: justify; 
+    -ms-flex-pack: justify; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.safeservice-group .rowgroup-state-info .join-number {
+    padding-left: 4px ;
+}
+
+.safeservice-group .rowgroup-state-info .join-number .label-txt {
+    position: relative;
+    padding-right: 8px ;
+}
+
+.safeservice-group .rowgroup-state-info .join-number .label-txt::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    width: 1px;
+    height: 12px;
+    margin-top: -6px;
+    background-color: rgb(42, 49, 56);
+}
+
+.safeservice-group .rowgroup-state-info .badge-state {
+    display: inline-block;
+    padding: 0 8px;
+    background-color: rgb(254, 106, 43);
+    border: 1px solid rgb(254, 106, 43);
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 18px;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.safeservice-group .rowgroup-state-info .badge-state.disabled {
+    border-color: rgb(217, 219, 220);
+    color: rgb(192, 198, 206);
+    background-color: #fff;
+}
+
+.safeservice-group .progressive-section .state-wrap {
+    position: relative;
+    float: left;
+    padding-left: 74px;
+}
+
+.safeservice-group .progressive-section .state-wrap .thumnail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgb(254, 106, 43);
+    border-radius: 100%;
+    background-image: url(../images/mypage/safe-service/icon_safeservice_on.png);
+    background-size: 38px auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.safeservice-group .progressive-section .state-wrap .info .state-badge-wrap .badge-state {
+    display: inline-block;
+    padding: 0 8px;
+    background-color: rgb(254, 106, 43);
+    border: 1px solid rgb(254, 106, 43);
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 22px;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.safeservice-group .progressive-section .state-wrap .info .join-number strong {
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.safeservice-group .progressive-section .state-wrap .info .join-number strong::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    width: 1px;
+    height: 20px;
+    transform: translateY(-50%);
+    background-color: rgb(217, 219, 220);
+}
+
+.safeservice-group .progressive-bar-wrap {
+    float: right;
+    width: 482px;
+}
+
+.safeservice-group .progressive-bar-wrap .date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.safeservice-group .progressive-bar {
+    padding: 8px 8px;
+}
+
+.safeservice-group .progressive-bar .bar {
+    position: relative;
+    background-color: rgb(217, 219, 220);
+    border-radius: 2px;
+}
+
+.safeservice-group .progressive-bar .bar .gauge {
+    position: relative;
+    display: block;
+    height: 4px;
+    background-color: rgb(255, 162, 0);
+    border-radius: 2px;
+}
+
+.safeservice-group .progressive-bar-wrap .date .end-date strong {
+    color: rgb(254, 106, 43);
+}
+
+.safeservice-group .progressive-section.expiry .progressive-bar {
+    padding-bottom: 40px;
+}
+
+.safeservice-group .progressive-section.expiry .state-wrap .thumnail {
+    border-color: rgb(217, 219, 220);
+    background-image: url(../images/mypage/safe-service/icon_safeservice_off.png);
+}
+
+.safeservice-group .progressive-section.expiry .state-wrap .info .state-badge-wrap .badge-state {
+    background-color: rgb(192, 198, 206);
+    border-color: rgb(192, 198, 206);
+}
+
+.safeservice-group .progressive-section.expiry .progressive-bar .bar .gauge {
+    background-color: rgb(160, 166, 175);
+}
+
+.safeservice-group .progressive-section.expiry .progressive-bar .bar .gauge::after {
+    content: "\e93a";
+    position: absolute;
+    top: 8px;
+    right: -12px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 26px;
+    vertical-align: middle;
+    font-family: 'LineIcons' !important;
+    color: rgb(254, 106, 43);
+}
+
+.safeservice-group .progressive-section.expiry .progressive-bar .bar .gauge::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    right: -6px;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-top: none;
+    border-bottom: 12px solid rgb(242, 242, 247);
+    border-right: 6px solid transparent;
+    border-left: 6px solid  transparent;
+}
+
+.safeservice-group .progressive-section.expiry .progressive-bar-wrap .date .end-date {
+    color: rgb(192, 198, 206);
+}
+
+.safeservice-group .progressive-section.expiry .progressive-bar-wrap .date .end-date strong {
+    color: rgb(192, 198, 206);
+}
+
+.safeservice-group .progressive-section.expiry .expiry-copy {
+    background-color: rgb(242, 242, 247);
+    border-radius: 4px;
+}
+
+.safeservice-group .badge-coverage {
+    display: inline-block;
+    padding: 0 12px;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.safeservice-group .badge-coverage.coverage-before {
+    background-color: rgb(192, 198, 206);
+}
+
+.safeservice-group .badge-coverage.coverage-after {
+    background-color: rgb(254, 106, 43);
+}
+
+.safeservice-group .coverage-rowgroup {
+    border-top: 1px solid rgb(242, 242, 247);
+}
+
+.safeservice-landing-page .cta-section .icon-link.safeservice-join-link {
+    background-image: url(../images/mypage/safe-service/icon-safeservice-join.png);
+    background-size: 64px auto;
+}
+
+.safeservice-landing-page .cta-section .icon-link.safeservice-history-link  {
+    background-image: url(../images/mypage/safe-service/icon-safeservice-history.png);
+    background-size: 64px auto;
+    background-position: 50% 50%;
+}
+
+.form-control .necessary-label::before  {
+    content: "*"; 
+    display: inline-block; 
+    margin-right: 2px;
+    color: #fe6a2b ;
+}
+
+.photo-attach-wrap {
+    height: 104px;
+}
+
+.photo-attach-wrap .photo-attach-list .item {
+    float: left;
+    width: auto;
+    margin-right: 8px;
+}
+
+.photo-attach-wrap .photo-addition {
+    width: 120px;
+    height: 80px;
+    border: 1px solid rgb(217, 219, 220);
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.photo-attach-wrap .img-photo {
+    overflow: hidden;
+    border-radius: 4px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.photo-attach-wrap .photo-addition .icon-photo {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 12px auto 0;
+    background-image: url(../images/mypage/safe-service/icon-camera.png);
+    background-size: 32px 32px;
+    background-position: 50% 50%;
+}
+
+.membership-subscription {
+    width: 585px;
+    margin: auto;
+}
+
+.join-number-section .icon-safe-headline {
+    position: relative;
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: auto;
+    background-image: url(../images/mypage/safe-service/icon_safeservice_on.png);
+    background-size: 46px auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.join-number-section .icon-safe-headline .check-circle-inv {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    color: rgb(94, 176, 181);
+}
+
+.safeservice-group .join-result-section .rowgroup {
+    border-top: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group .join-result-section .rowgroup .row {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    border-bottom: 1px solid rgb(217, 219, 220);
+}
+
+.safeservice-group .join-result-section .rowgroup .rowheader {
+    width: 188px;
+    flex: none;
+    padding: 20px 16px;
+    background-color: rgb(249, 249, 250);
+}
+
+.safeservice-group .join-result-section .rowgroup .cell {
+    flex: 1;
+    padding: 20px 32px;
+}
+
+.safeservice-group .join-result-section .rowgroup .row .label-txt {
+    font-size: 14px;
+}
+
+.safeservice-group .join-result-section .rowgroup .row .label-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.safeservice-group .join-result-section .rowgroup .cell .align-right {
+    position: relative;
+    left: 8px;
+    padding: 0 2px 0 8px;
+}
+
+.safeservice-group .join-result-section .more-button {
+    width: 150px;
+}
+
+/* 20220221 // */
+.join-mileage-photo img {
+    display: block;
+    width: 100%;
+    font-size: 0;
+}
+/* // 20220221 */

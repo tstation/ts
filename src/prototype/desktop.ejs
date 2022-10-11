@@ -1,0 +1,34 @@
+<% locals.setLayout('src/prototype/includes/components/layouts/base.ejs') -%>
+<% locals.block('title', 'Prototype') -%>
+<% let data = locals.require('src/prototype/includes/components/menu/menu-desktop.json') -%>
+
+<div class="wrap">
+    <div class="aside">
+        <div class="bi-wrap">
+            <img class="bi" src="assets/images/bi_full_on_dark.svg" />
+        </div>
+
+        <%- locals.widget('src/prototype/includes/components/menu/index.ejs', { list: data }) %>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <a href="<%- `project/${data[0].project}/${data[0].listItems[0].pageUrl}` %>" target="_blank" class="more-work-link">
+                새창으로 보기
+            </a>
+        </div>
+        <div class="viewer viewer-desktop">
+            <div class="viewer-inner">
+                <iframe
+                    class="viewer-iframe"
+                    width="100%"
+                    height="100%"
+                    src="<%- `project/${data[0].project}/${data[0].listItems[0].pageUrl}` %>"
+                    frameborder="0"
+                    allowfullscreen
+                >
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <%- locals.widget('src/prototype/includes/components/layouts/view-meta.ejs', { meta: data[0] }) %>
+</div>

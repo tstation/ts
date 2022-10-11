@@ -1,0 +1,54 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" style="min-height: 450px;">
+    <div id="contents" class="member">
+        <!-- title -->
+        <div id="pageTitle2">
+            <h3>아이디(이메일) 찾기</h3>
+        </div>
+        <!-- //title -->
+        <!-- 아이디(이메일) 찾기 -->
+        <form id="findidForm" method="POST">
+            <div class="login_01">
+                <ol class="login_form">
+                    <li>
+                        <input title="이름 입력" type="text" id="mbrNm" name="mbrNm" class="ip_txt01 w100p" placeholder="이름">
+                        <p class="point mbrNmError" style="display:none;">이름을 입력해 주세요.</p>
+                    </li>
+                    <li class="phone">
+                                <span class="r1">
+                                    <select title="휴대폰 번호 첫자리 선택" class="select01 w100p" name="cellSctNo" id="cellSctNo">
+                                        <option value="010">010</option>
+                                        <option value="011">011</option>
+                                        <option value="016">016</option>
+                                        <option value="017">017</option>
+                                        <option value="018">018</option>
+                                        <option value="019">019</option>
+                                    </select>
+                                </span>
+                        <span class="r2">-</span>
+                        <span class="r3"><input type="tel" class="ip_txt01 w100p numeric" name="cellTxnoNo" id="cellTxnoNo" maxlength="4"></span>
+                        <span class="r2">-</span>
+                        <span class="r3"><input type="tel" class="ip_txt01 w100p numeric" name="cellEndNo" id="cellEndNo" maxlength="4"></span>
+                        <p class="point cellTxnoNoError cellEndNoError" style="display:none;">휴대폰 번호를 다시 확인해 주세요.</p>
+                    </li>
+                </ol>
+                <div class="btn">
+                    <button type="button" id="btnFindId" class="btnB btnS02">인증번호 받기</button>
+                </div>
+            </div>
+        </form>
+        <!-- //아이디(이메일) 찾기-->
+
+        <!-- link -->
+
+        <div class="login_03">
+            <p class="txt01">간편 로그인 회원이신가요?</p>
+            <p class="txt02">SNS 회원의 경우 가입하신 SNS에서 비밀번호 찾기가 가능합니다.</p>
+        </div>
+
+        <!-- //link -->
+    </div>
+</div>

@@ -1,0 +1,845 @@
+@charset "UTF-8";
+/*  APP설정 계정관리 */
+.app-settings-page .rowgroup {
+    margin: 0 20px;
+}
+
+.app-settings-page .rowgroup .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-settings-page .rowgroup .cell {
+    line-height: 100%;
+}
+
+.app-settings-page .login-setting-section {
+    padding: 10px 0;
+}
+
+.app-settings-page .login-setting-section .row {
+    padding: 10px 0;
+}
+
+.app-settings-page .sns-connect-section {
+    padding: 12px 0 20px;
+}
+
+.app-settings-page .sns-connect-section .rowgroup-header::after {
+    content: '';
+    display: block;
+    height: 1px;
+    margin-top: 12px;
+    background-color: #eceeef;
+}
+
+.app-settings-page .sns-connect-section .row {
+    padding: 4px 0;
+}
+
+.app-settings-page .native-setting-section::before {
+    content: '';
+    display: block;
+    height: 8px;
+    margin-bottom: 12px;
+    background-color: #eceeef;
+}
+
+.app-settings-page .native-setting-section .row {
+    padding: 12px 0;
+}
+
+.app-settings-page .notice-setting-section .txt-neutral4 {
+    color: #c0c6ce;
+}
+
+.app-settings-page .notice-setting-section .btn-item.btn-xxs {
+    width: 34px;
+    height: 20px;
+    padding: 0;
+    line-height: 18px;
+    text-align: center;
+}
+
+.app-settings-page .notice-setting-section .row {
+    padding: 12px 0;
+    align-items: flex-start;
+}
+
+.app-settings-page .notice-module-setting-section::before {
+    content: '';
+    display: block;
+    height: 8px;
+    margin-bottom: 12px;
+    background-color: #eceeef;
+}
+
+.app-settings-page .notice-module-setting-section .row {
+    padding: 12px 0 12px 16px;
+    align-items: flex-start;
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.app-settings-page .notice-module-setting-section .row:last-child {
+    border-bottom: 0;
+}
+
+.app-settings-page .notice-module-setting-section .legal-copy-wrap {
+    position: relative;
+}
+
+.app-settings-page .notice-module-setting-section .legal-copy-wrap .line-icons {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+
+.app-settings-page .toggle-switch {
+    padding: 0;
+}
+
+.app-settings-page .toggle-switch .switch-track {
+    width: 42px;
+    box-shadow: inset 0px 1px 2px rgba(160, 166, 175, 0.7);
+}
+
+.app-settings-page .toggle-switch .switch-track,
+.app-settings-page .toggle-switch input:checked ~ .switch-track {
+    border: 0;
+    padding: 2px;
+}
+
+.app-settings-page .btn-item.btn-reset {
+    height: auto;
+    line-height: 100%;
+    padding: 0;
+}
+
+.app-settings-page .btn-item.btn-logout {
+    position: relative;
+    width: 86px;
+    background-color: rgba(160, 166, 175, 0.7);
+    line-height: 24px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.app-settings-page .btn-item.btn-login {
+    position: relative;
+    width: 86px;
+    background-color: #2a3138;
+    line-height: 24px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.app-settings-page .btn-item.btn-login .chev-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.app-settings-page .version-setting-section {
+    background-color: #f2f2f7;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.app-settings-page .version-setting-section .icon-app-tstation {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    border: 1px solid #d9dbdc;
+    background: url('../images/app/mark_tstation.png') 50% 50% no-repeat;
+    background-size: 45px 44px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+/* APP 접근권한 POPUP */
+.app-connect-info-popup .rowgroup {
+    margin: 0 20px;
+}
+
+.app-connect-info-popup .rowgroup .row {
+    display: flex;
+    align-items: center;
+}
+
+.app-connect-info-popup .rowgroup .cell {
+    line-height: 100%;
+}
+
+.app-connect-info-popup .app-connect-hero-section {
+    padding: 10px 0;
+}
+
+.app-connect-info-popup .app-connect-hero-section .border-bottom {
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.app-connect-info-popup .app-connect-hero-section .row {
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.app-connect-info-popup .app-connect-hero-section .icon-rock-wrap {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    background-color: rgba(255, 162, 0, 0.71);
+    background: url('../images/app/icon_lock.png') 50% 50% no-repeat;
+    background-size: 64px 64px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.app-connect-info-popup .app-connect-info-section .row {
+    padding: 6px 0;
+}
+
+.app-connect-info-popup .app-connect-info-section .icon-connect-wrap {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-color: #f2f2f7;
+}
+
+.app-connect-info-popup .app-connect-info-section .icon-connect-wrap .line-icons {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app-connect-info-popup .app-connect-noti {
+    position: relative;
+    padding-left: 12px;
+}
+
+.app-connect-info-popup .app-connect-noti::before {
+    content: ' \00B7';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.app-connect-info-popup .line-icons.disk::before {
+    background: url('../images/app/disk.svg') 50% 50% no-repeat;
+    background-size: 20px 20px;
+}
+
+.app-connect-info-popup .line-icons.camera::before {
+    background: url('../images/app/camera.svg') 50% 50% no-repeat;
+    background-size: 20px 20px;
+}
+
+.app-connect-info-popup .line-icons.biometric::before {
+    background: url('../images/app/biometric.svg') 50% 50% no-repeat;
+    background-size: 20px 20px;
+}
+
+/* 20220609 // */
+.app-connect-info-popup .line-icons.phonebook::before {
+    background: url('../images/app/icon_phonebook.png') 50% 50% no-repeat;
+    background-size: 24px 24px;
+}
+
+.line-icons.men::before {
+    background: url('../images/app/icon_men.png') 50% 50% no-repeat;
+    background-size: 22px 22px;
+}
+
+.button-phonebook {
+    background-color: transparent;
+    display: inline-block;
+    overflow: visible;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+}
+/* // 20220609 */
+
+/* APP 푸시알림허용 POPUP */
+.app-push-info-popup .rowgroup {
+    margin: 0 20px;
+}
+
+.app-push-info-popup .rowgroup .row {
+    display: flex;
+    align-items: center;
+}
+
+.app-push-info-popup .rowgroup .cell {
+    line-height: 100%;
+}
+
+.app-push-info-popup .app-push-hero-section {
+    padding: 10px 0;
+}
+
+.app-push-info-popup .app-push-hero-section .border-bottom {
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.app-push-info-popup .app-push-hero-section .row {
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.app-push-info-popup .app-push-hero-section .icon-rock-wrap {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    background-color: #5eb0b5;
+    background: url('../images/app/icon_bell.png') 50% 50% no-repeat;
+    background-size: 64px 64px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.app-push-info-popup .app-push-info-section .row {
+    padding: 6px 0;
+}
+
+.app-push-info-popup .app-push-info-section .icon-push-wrap {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-color: #f2f2f7;
+}
+
+.app-push-info-popup .app-push-info-section .icon-push-wrap .line-icons {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app-push-info-popup .app-push-noti {
+    position: relative;
+    padding-left: 12px;
+}
+
+.app-push-info-popup .app-push-noti::before {
+    content: ' \00B7';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.app-push-info-popup .app-push-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-push-info-popup .app-push-button button.btn-item {
+    width: 49%;
+}
+
+.app-push-info-popup .app-push-info-section .icon-push-wrap .line-icons.coupon-sale {
+    transform: translate(-75%, -85%);
+}
+
+/* APP 인트로 가이드 POPUP */
+div[data-ref='app-intro-guide'] .modal-pannel {
+    background-color: transparent;
+}
+
+div[data-ref='app-intro-guide'] .app-intro-guide-swiper .app-intro-guide-pagination {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    z-index: 9;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div[data-ref='app-intro-guide'] .app-intro-guide-swiper .app-intro-guide-pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+div[data-ref='app-intro-guide'] .app-intro-guide-swiper .app-intro-guide-pagination .swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+
+div[data-ref='app-intro-guide'] .swiper-slide {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: #333;
+}
+
+div[data-ref='app-intro-guide'] .swiper-slide .thumb {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div[data-ref='app-intro-guide'] .swiper-slide img {
+    height: 100%;
+}
+
+div[data-ref='app-intro-guide'] .modal-scroller,
+div[data-ref='app-intro-guide'] .modal-scroller .container,
+div[data-ref='app-intro-guide'] .modal-scroller .container .swiper-container,
+div[data-ref='app-intro-guide'] .modal-scroller .container .swiper-container .thumb {
+    height: 100% !important;
+    max-height: 100% !important;
+}
+
+div[data-ref='app-intro-guide'] .thumb {
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-color: #333;
+    background-repeat: no-repeat;
+}
+
+div[data-ref='app-intro-guide'] .btn-popup-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 10;
+    background-color: transparent;
+}
+
+div[data-ref='app-intro-guide'] .btn-popup-close .close {
+    color: #fff;
+}
+
+div[data-ref='app-intro-guide'] .guide-noti {
+    color: #fff;
+}
+
+div[data-ref='app-intro-guide'] .intro-allmyt-wrap {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 63%;
+    text-align: center;
+}
+
+div[data-ref='app-intro-guide'] .intro-allmyt-wrap button {
+    width: 200px;
+}
+
+div[data-ref='app-intro-guide'] .intro-close-wrap {
+    position: absolute;
+    bottom: 32px;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+}
+
+div[data-ref='app-intro-guide'] .intro-close-wrap button {
+    border: none;
+}
+
+div[data-ref='app-intro-guide'] .intro-close-wrap .dash-line {
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+/*PUSH 알림메세지*/
+.app-notice-message-page .sort-message-section .info-typo {
+    margin: 16px 20px;
+}
+
+.app-notice-message-page .sort-message-section .radio-list-wrap {
+    margin: 0 20px;
+}
+
+.app-notice-message-page .rowgroup {
+    margin: 0 20px;
+}
+
+.app-notice-message-page .rowgroup a {
+    position: relative;
+    display: block;
+}
+
+.app-notice-message-page .rowgroup a::after {
+    content: '\e917';
+    font-family: 'LineIcons' !important;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    color: #2a3138;
+}
+
+.app-notice-message-page .rowgroup .row {
+    display: flex;
+}
+
+.app-notice-message-page .rowgroup .rowheader {
+    padding: 16px 0;
+}
+
+.app-notice-message-page .rowgroup .cell {
+    width: 100%;
+    padding: 16px 20px 16px 0;
+    line-height: 100%;
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.app-notice-message-page .rowheader .icon-wrap {
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+}
+
+.app-notice-message-page .rowheader .icon-wrap .line-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.app-notice-message-page .rowheader .icon-wrap .line-icons.coupon-sale::before {
+    transform: translateX(-10px) translateY(-50%);
+}
+
+.app-notice-message-page .rowheader .repair {
+    background-color: #ffa200;
+}
+
+.app-notice-message-page .rowheader .benefit {
+    background-color: #5eb0b5;
+}
+
+.app-notice-message-page .cell .d-day {
+    display: block;
+}
+
+.app-notice-message-page .cell .headcopy {
+    display: block;
+    font-weight: bold;
+}
+
+.app-notice-message-page .cell .headcopy .car-number {
+    display: inline-block;
+    padding: 0 4px;
+    font-size: 11px;
+    line-height: 16px;
+    border-radius: 2px;
+    background-color: #5b6068;
+    color: #fff;
+}
+
+.app-notice-message-page .cell .message {
+    letter-spacing: -0.5px;
+}
+
+.app-notice-message-page .noti-agree-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0px 20px;
+    background-color: #f9f9fa;
+    border-bottom: 1px solid #d9dbdc;
+}
+
+.app-notice-message-page .noti-agree-wrap .sort-info strong {
+    font-weight: normal;
+}
+
+.app-notice-message-page .more-button {
+    width: 200px;
+    margin: auto;
+}
+
+.app-notice-message-page .sort-result-section .icon-notice-empty {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    background: url(../images/app/icon_notice_empty.png) center top no-repeat;
+    background-size: 40px 40px;
+}
+
+.app-notice-message-page .sort-result-section .icon-message-empty {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    background: url(../images/app/icon_mesaage_empty.png) center top no-repeat;
+    background-size: 40px 40px;
+}
+
+.app-notice-message-page .sort-result-section .empty-wrap {
+    color: #d9dbdc;
+}
+
+.app-notice-message-page .sort-result-section .sort-result-empty {
+    color: #d9dbdc;
+}
+
+/* APP 유도 POPUP */
+div[data-ref='app-induce-guide'] .modal-pannel {
+    background-color: transparent;
+    border: 0;
+}
+
+// div[data-ref='app-induce-guide'] .modal-scroller,
+// div[data-ref='app-induce-guide'] .modal-scroller .container {
+//     position: relative;
+//     height: 100% !important;
+//     max-height: 100% !important;
+// }
+
+// /* 20220406 // */
+// div[data-ref='app-induce-guide'] .modal-scroller .app-induce-wrap {
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     padding: 0 12px;
+// }
+/* 20220504 // */
+div[data-ref='app-induce-guide'] .app-induce-wrap .img-section,
+div[data-ref='app-induce-guide'] .app-induce-wrap .button-section {
+    max-width: 344px;
+    margin: auto;
+    text-align: center;
+}
+
+div[data-ref='app-induce-guide'] .app-induce-wrap .button-section {
+    padding: 0 28px
+}
+
+div[data-ref='app-induce-guide'] .app-induce-wrap .img-section img {
+    width: 100%;
+}
+
+div[data-ref='app-induce-guide'] .app-induce-coffee-wrap .button-section {
+    max-width: 335px; 
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+div[data-ref='app-induce-guide'] .app-induce-coffee-wrap .img-section {
+    max-width: 300px; 
+    margin: auto;
+    text-align: center;
+}
+
+div[data-ref='app-induce-guide'] .app-induce-coffee-wrap .img-section img {
+    width: 100%;
+}
+/* // 20220504 */
+
+div[data-ref='app-induce-guide'] .btn-popup-close {
+    background-color: transparent;
+    color: rgb(236, 238, 239);
+    z-index: 1;
+    font-size: 12px;
+}
+
+/* APP siderbar setting menu */
+#sidebar {
+    z-index: 1010;
+}
+
+#sidebar .appsetting-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 36px;
+}
+
+#sidebar .appsetting-button .label-txt {
+    font-size: 16px;
+}
+
+#sidebar .appsetting-button .line-icons.setting:before {
+    font-weight: bold;
+}
+
+/* APP Network Error PAGE */
+.app-network-error {
+    overflow: hidden;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    background: url(../images/app/img_logo_footer.png) center 96% no-repeat;
+    background-size: 120px 24px;
+}
+
+.app-network-error .thumb-img-wrap {
+    width: 92px;
+    margin: 160px auto 0;
+    font-size: 0;
+}
+
+.app-network-error .thumb-img-wrap img {
+    width: 100%;
+}
+
+.app-network-error .retry-button-wrap {
+    position: relative;
+    padding: 0 40px;
+}
+
+.app-network-error .retry-button-wrap .refresh {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* aside menu push count */
+#sidebar .sidebar-header .btn-alarm .badge {
+    left: 50%;
+    bottom: calc(50% + 2px);
+}
+
+/* APP 최신 버전 업데이트 , 최초 로그인 시 알림 동의 팝업  */
+
+.app-version-info-popup .app-version-hero-section,
+.app-first-login-popup .app-version-hero-section {
+    padding: 10px 0;
+}
+
+.app-version-info-popup .app-version-button button.btn-item,
+.app-first-login-popup .app-first-login-button button.btn-item {
+    width: 49%;
+}
+
+/* 모달창 뒷 배경 클릭시 닫히는 현상 수정 */
+div[data-ref='app-intro-appAccessAgree'] .modal-pannel,
+div[data-ref='app-intro-pushAgree'] .modal-pannel,
+div[data-ref='app-intro-version'] .modal-pannel,
+div[data-ref='app-first-login'] .modal-pannel {
+    background-color: transparent;
+}
+
+div[data-ref='app-intro-appAccessAgree'] .modal-scroller,
+div[data-ref='app-intro-pushAgree'] .modal-scroller,
+div[data-ref='app-intro-version'] .modal-scroller,
+div[data-ref='app-first-login'] .modal-scroller,
+div[data-ref='app-intro-appAccessAgree'] .modal-scroller .container,
+div[data-ref='app-intro-pushAgree'] .modal-scroller .container,
+div[data-ref='app-intro-version'] .modal-scroller .container,
+div[data-ref='app-first-login'] .modal-scroller .container {
+    position: relative;
+    height: 100% !important;
+    max-height: 100% !important;
+}
+
+div[data-ref='app-intro-appAccessAgree'] .modal-scroller .app-connect-info-popup,
+div[data-ref='app-intro-pushAgree'] .modal-scroller .app-push-info-popup,
+div[data-ref='app-intro-version'] .modal-scroller .app-version-info-popup,
+div[data-ref='app-first-login'] .modal-scroller .app-first-login-popup {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* PUSH 알림메세지 링크 없을 때 > 표시 비노출 */
+.app-notice-message-page .rowgroup .remove-after-element:after {
+    content: none;
+}
+
+/* 안드로이드 웹뷰 폰트 확대시 레이어웃 깨짐 현상 방지 */
+.tabs-simple #smartPayButton .label-txt {
+	white-space: nowrap;
+}
+
+
+
+/* 20220520 // */
+div[data-ref='promotion-full-banner'] .modal-pannel {
+    background-color: transparent;
+    border: 0;
+}
+
+div[data-ref='promotion-full-banner'] .promotion-full-banner-wrap .img-section {
+    max-width: 307px;
+    margin: auto;
+    padding-top: 28px;
+    text-align: center;
+}
+
+div[data-ref='promotion-full-banner'] .promotion-full-banner-wrap .button-section {
+    max-width: 338px;
+    margin: auto;
+    text-align: center;
+}
+
+div[data-ref='promotion-full-banner'] .promotion-full-banner-wrap .img-section img {
+    width: 100%;
+}
+
+div[data-ref='promotion-full-banner'] .btn-family {
+    margin-top: 20px;
+    background-color: rgb(15, 176, 184);
+    color: #fff;
+}
+
+div[data-ref='promotion-full-banner'] .app-install-button {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: rgb(236, 238, 239);
+    z-index: 1;
+    font-size: 14px;
+}
+
+div[data-ref='promotion-full-banner'] .btn-popup-close {
+    position: absolute;
+    right: 50%;
+    margin-right: -190px;
+    top: 0;
+    z-index: 2;
+    background-color: transparent;
+    color: #fff;
+    transform: translateX(-50%);
+}
+/* 20220520 */
+
+/* 20220704 // */
+.app-connect-info-popup .cell .icon-bullet {
+    position: relative;
+    padding-left: 12px;
+}
+
+.app-connect-info-popup .cell .icon-bullet::before {
+    content: ' \00B7';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.txt-aqua {color: rgb(0, 139, 236);}
+/* // 20220704 */

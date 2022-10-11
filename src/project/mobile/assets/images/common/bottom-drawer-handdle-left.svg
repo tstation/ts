@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="20px" viewBox="0 0 30 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bottom-drawer-handdle-left</title>
+    <g id="bottom-drawer-handdle-left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M30,0 L30,20 L0,20 L3.84338219,19.4020627 C9.56787227,18.5114705 14.6249213,15.1823892 17.7059604,10.2762564 L21.2192847,4.68176884 C23.0488872,1.76837753 26.2475931,5.9610335e-15 29.6878393,0 L30,0 L30,0 Z" id="Rectangle" fill="#FFFFFF"></path>
+    </g>
+</svg>

@@ -1,0 +1,114 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<!-- Contents -->
+<div id="container" class="">
+    <div id="contents">
+        
+        <!-- main -->
+        <link type="text/css" rel="stylesheet" href="pc-static-root/css/event.css" /><!-- NEW CSS ADD -->
+
+        <div class="offline-reservation">
+            <div class="superweek-offline-header">
+                <div class="upper">
+                    <div class="logo"><img src="pc-static-root/images/event/20210316/bi_new.png" alt=""></div>
+                </div>
+                <div class="under">
+                    <!-- 20220819// -->
+                    <h2>방문예약 내역</h2>
+                    <!-- //20220819 -->
+                </div>
+            </div>
+
+            <div class="contents-section reservation-complete">
+                <div class="complete-word bg-light2">
+                    <span class="line-icons calendar-check size-32 txt-primary txt-w600"></span>
+                    <p class="txt-21"><span>김한국님의</span><br />예약이 완료되었습니다.</p>
+                </div>
+                <div class="noti txt-primary txt-12">
+                    <span class="line-icons error-circle size-24"></span>방문예약의 경우 미리 선택하신 매장 유선문의를 통해 재고확인 후 방문해 주시기 바랍니다.
+                </div>
+
+                <div class="noti txt-primary txt-12">
+                    <span class="line-icons error-circle size-24"></span>방문예약내역(이벤트)에서는 예약 완료된 리스트만 확인 가능하며 취소된 예약 리스트는 제공되지 않습니다.
+                </div>
+            </div>
+            <div class="contents-section store-reservation">
+                <div class="headcopy">매장예약 리스트</div>
+                <div class="store-reservation-select form-control form-control-md">
+                    <label class="blind">매장예약 리스트 Select</label>
+                    <div class="input-group">
+                        <select class="input-box">
+                            <option value="options1" selected="" disabled="">전체</option>
+                            <option value="options2">예약대기</option>
+                            <option value="options3">예약완료</option>
+                            <!-- 20220819 <option value="options4">예약취소</option> -->
+                        </select>
+                        <div class="tools">
+                            <button><span class="line-icons chev-down"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="store-reservation-list">
+                    <div class="card">
+                        <div class="store-info">
+                            <div class="name">
+                                <strong>매장명</strong>
+                                <p><em class="txt-primary txt-w500">일반대리점</em>한국타이어분당판매(주)</p>
+                            </div>
+                            <div class="date">
+                                <strong>매장방문일</strong>
+                                <p>2021/03 /21(금)  10:30</p>
+                            </div>
+                        </div>
+                        <div class="store-more">
+                            <!-- 20220819 <span class="txt-primary txt-12">예약대기</span> -->
+                            <a href="#none" class="txt-primary">상세보기<span class="line-icons chev-right size-20"></span></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="store-info">
+                            <div class="name">
+                                <strong>매장명</strong>
+                                <p><em class="txt-primary txt-w500">일반대리점</em>한국타이어분당판매(주)</p>
+                            </div>
+                            <div class="date">
+                                <strong>매장방문일</strong>
+                                <p>2021/03 /21(금)  10:30</p>
+                            </div>
+                        </div>
+                        <div class="store-more">
+                            <!-- 20220819 <span class="txt-primary txt-12">예약완료</span> -->
+                            <a href="#none" class="txt-primary">상세보기<span class="line-icons chev-right size-20"></span></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="store-info">
+                            <div class="name">
+                                <strong>매장명</strong>
+                                <p><em class="txt-primary txt-w500">티스테이션</em>분당정자점</p>
+                            </div>
+                            <div class="date">
+                                <strong>매장방문일</strong>
+                                <p>2021/03 /21(금)  10:30</p>
+                            </div>
+                        </div>
+                        <div class="store-more">
+                            <!-- 20220819 <span class="txt-primary txt-12">예약취소</span> -->
+                            <a href="#none" class="txt-primary">상세보기<span class="line-icons chev-right size-20"></span></a>
+                        </div>
+                    </div>
+                    <!-- 매장 예약 내역 없음 -->
+                    <div class="empty-box txt-center pd-v-15u">
+                        <div class="middler">
+                            <span class="line-icons error-circle size-48"></span>
+                            <p class="empty-msg"><span class="txt-16">매장 예약 내역(이벤트)이 없습니다.</span></p>
+                            <p class="empty-msg">이벤트가 아닌 일반 매장방문내역은<br /> <span class="txt-primary">마이페이지 &gt; 방문예약내역</span>에서<br /> 확인하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //main -->
+    </div>
+</div>

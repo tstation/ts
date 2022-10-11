@@ -1,0 +1,480 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <div class="container border-b">
+        <div class="guardrail pd-t-15u">
+            <div class="page-header border-none">
+                <h1>주문완료</h1>
+
+                <ul class="list-size-free float-r breadcrumb">
+                    <!-- 상품선택에서 바로 주문/결제로 넘어 온 경우 '상품선택' / 장바구니에서 넘어 온 경우 '장바구니' -->
+                    <li class="">상품선택</li>
+                    <li class="">주문/결제</li>
+                    <li class="on">주문완료</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-light2">
+        <div class="guardrail pd-t-10u pd-b-15u">
+            <div class="container txt-center">
+                <div class="order-complete-icon">
+                    <span class="line-icons receipt size-60"></span>
+                    <span class="line-icons check size-20"></span>
+                </div>
+
+                <p class="txt-20 pd-v-3u">주문이 <em class="txt-primary">완료</em>되었습니다.</p>
+
+                <div class="dp-inblock auto-w bg-fff bg-filet-4 pd-v-2u pd-h-8u">
+                    <table class="pd-thin txt-16 auto-w">
+                        <colgroup>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th class="pd-r-3u border-r line-100per txt-neutral2">주문번호</th>
+                            <td class="pd-l-3u line-100per txt-primary">O202008240078607</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="container mg-t-8u">
+                    <p class="txt-16 txt-neutral1 mg-t-1u"><span class="txt-primary">*</span> 매장에서 주문 확인 후  확인 메세지가 문자로 발송됩니다.</p>
+
+                    <!-- 스마트 픽업 서비스 신청시 노출 -->
+                    <p class="txt-16 txt-neutral1 mg-t-1u"><span class="txt-primary">*</span> 주문 확인 후 스마트 픽업 서비스 콜센터에서 연락 드립니다.<br>스마트 픽업 서비스 기사 출발 후 취소 시 서비스 비용은 환불되지 않습니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 스마트 페이 구매시 노출 -->
+    <div class="container">
+        <div class="guardrail">
+            <div class="container mg-t-3u smart-pay-bonus-coupon-info">
+                <div class="container">
+                            <span class="smart-pay-badge">
+                                <img src="pc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이" />
+                                <span class="label-txt mg-l-2u">구매 알림</span>
+                            </span>
+
+                    <p class="txt-16 txt-white txt-center">
+                        마이페이지 &gt; 내 쿠폰 &gt; 사용가능한 쿠폰에서 <span class="txt-w500">스마트페이 구매 고객 전용 펑크, 위치교환 쿠폰</span>을 사용하실 수 있습니다.
+                    </p>
+                </div>
+                <div class="container pd-v-10u">
+                    <!--<p class="txt-white">펑크, 위치교환 무료쿠폰 제공</p>
+                    <button type="button" class="btn-item btn-neutral round full-w mg-t-2u btn-download-smart-pay-coupon" onclick="alert('쿠폰을 다운받았습니다.');">
+                        <span class="label-txt txt-16">쿠폰 다운받기</span>
+                        <span class="line-icons download size-24"></span>
+                    </button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contents">
+        <section class="">
+            <div class="section-header">
+                <h3>장착서비스 및 일정</h3>
+
+                <div class="extra">
+                    <span class="txt-18">픽업 & 딜리버리</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <table class="txt-left">
+                    <colspan>
+                        <col style="width:150px;"/>
+                        <col style="width:calc(50% - 150px);"/>
+                        <col style="width:150px;"/>
+                        <col style="width:calc(50% - 150px);"/>
+                    </colspan>
+                    <tbody>
+                    <tr class="border-b">
+                        <th class="bg-light1 pd-h-5u pd-v-5u txt-16">픽업 위치</th>
+                        <td colspan="3" class="pd-h-5u pd-v-5u txt-14">경기도 성남시 중원구 성남대로 1148번길 25 1b</td>
+                    </tr>
+
+                    <tr class="border-b">
+                        <th class="bg-light1 pd-h-5u pd-v-5u txt-16">딜리버리 위치</th>
+                        <td colspan="3" class="pd-h-5u pd-v-5u txt-14">경기도 성남시 중원구 성남대로 1148번길 25 1b</td>
+                    </tr>
+
+                    <tr class="border-b">
+                        <th class="bg-light1 pd-h-5u pd-v-5u txt-16">장착매장</th>
+                        <td class="pd-h-5u pd-v-5u txt-14">판교점</td>
+
+                        <th class="bg-light1 pd-h-5u pd-v-5u txt-16">장착일/시간</th>
+                        <td class="pd-h-5u pd-v-5u txt-14">2020-08-27(목) 16시</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mg-t-15u">
+            <div class="section-header border-none">
+                <h3>주문 상품</h3>
+            </div>
+
+            <div class="container">
+                <table class="cart-goods-table">
+                    <colgroup>
+                        <col style="width:520px;"/>
+                        <col style="width:200px;"/>
+                        <col style=""/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>상품정보</th>
+                        <th>금액/수량</th>
+                        <th>적용쿠폰</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- tr 1개가 상품 1개 -->
+                    <!-- 타이어 평상 -->
+                    <tr>
+                        <td class="partition-r pd-h-10u">
+                            <div class="goods-info">
+                                <div class="product-area" onclick="window.location.href=''">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder">
+                                            <img src="pc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                            <!-- 한국타이어:hk / 미쉐린:mc / 피렐리:pi / 맥시스:mx -->
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <span class="badge badge-s mg-b-1u">고속/제동성우선</span>
+                                        <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                        <div class="model"><img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div>
+                                        <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                        <!--<div class="model">Ventus S2 AS</div>-->
+                                        <p class="size">245/45R18</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="pd-h-6u txt-right">
+                            <div class="price-info">
+                                <p class="extra-cost">배송비/장착비 0원</p>
+
+                                <div class="container mg-t-3u">
+                                    <p class="cart-price discount"><small class="txt-throughline">293,400원</small></p>
+                                    <p class="cart-price line-32 v-middle">226,200<small>원</small></p>
+                                </div>
+
+                                <p class="txt-16 mg-t-1u">4개</p>
+                            </div>
+                        </td>
+                        <td class="pd-l-15u txt-left">
+                            <p class="mg-v-3u">티스테이션닷컴 타이어 상품할인 3% 쿠폰</p>
+                            <p class="mg-v-3u">멤버십 타이어/경정비 5% 결제할인 쿠폰</p>
+                        </td>
+                    </tr>
+
+                    <!-- 경정비 평상 -->
+                    <tr>
+                        <td class="partition-r pd-h-10u">
+                            <div class="goods-info">
+                                <div class="product-area" onclick="window.location.href=''">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder">
+                                            <img src="pc-static-root/images/common/sample/oil.jpg" alt="상품 이미지" class="goods-img">
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <span class="badge badge-s mg-b-1u">프리미엄</span>
+                                        <div class="model">S-OIL 7 GOLD - 5W30</div>
+                                        <p class="description">에어필터, 오일필터 포함</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="pd-h-6u txt-right">
+                            <div class="price-info">
+                                <p class="extra-cost">배송비/장착비 0원</p>
+
+                                <div class="container mg-t-3u">
+                                    <p class="cart-price discount"><small class="txt-throughline">113,400원</small></p>
+                                    <p class="cart-price line-32 v-middle">104,000<small>원</small></p>
+                                </div>
+
+                                <p class="txt-16 mg-t-1u">3개</p>
+                            </div>
+                        </td>
+                        <td class="pd-l-15u txt-left">
+                            <p class="mg-v-3u">멤버십 타이어/경정비 5% 결제할인 쿠폰</p>
+                        </td>
+                    </tr>
+
+                    <!-- 스마트페이 -->
+                    <tr>
+                        <td class="partition-r pd-h-10u">
+                            <div class="goods-info">
+                                <div class="product-area" onclick="window.location.href=''">
+                                    <div class="thumb-wrap">
+                                        <div class="thumb-holder">
+                                            <img src="pc-static-root/images/common/sample/tire.jpg" alt="상품 이미지" class="goods-img">
+                                            <!-- 한국타이어:hk / 미쉐린:mc / 피렐리:pi / 맥시스:mx -->
+                                            <div class="brands-logo hk"></div>
+                                        </div>
+                                    </div>
+                                    <div class="description-area">
+                                        <span class="badge badge-s mg-b-1u">정숙/승차감우선</span>
+                                        <!-- TODO: 직관적 네이밍 규칙일 경우 아래 -->
+                                        <!-- <div class="model"><img src="pc-static-root/images/common/sample/DPN_ventus_s2_as.png" alt="" /></div> -->
+                                        <!-- TODO: 직관적 네이밍 규칙 적용하지 않는 경우 아래 -->
+                                        <div class="model">Ventus S2 AS</div>
+                                        <p class="size">245/45R18</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="pd-h-6u txt-right">
+                            <div class="price-info">
+                                <p class="extra-cost">배송비/장착비 0원</p>
+
+                                <div class="container mg-t-3u">
+                                    <p class="cart-price discount"><small class="txt-throughline">293,400원</small></p>
+                                    <p class="cart-price line-32 v-middle">226,200<small>원</small></p>
+                                </div>
+
+                                <p class="txt-16 mg-t-1u">4개</p>
+                            </div>
+                        </td>
+                        <td class="pd-l-15u txt-left"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mg-t-15u">
+            <div class="section-header">
+                <h3>결제정보</h3>
+            </div>
+
+            <ul class="list-size-flex order-paid-total">
+                <li class="">
+                    <table class="cart-price-table">
+                        <!-- .cart-price-table/ 100.order2.html 참고 -->
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col style="width:50%;">
+                        </colgroup>
+                        <!-- tbody 1개가 디바이더로 구분된 영역 1개 -->
+                        <tbody>
+                        <tr>
+                            <th>총 주문금액</th>
+                            <td class="txt-16">985,200원</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <th>총 상품금액</th>
+                            <td class="txt-16">985,200원</td>
+                        </tr>
+                        <tr>
+                            <th>총 공임비</th>
+                            <td class="txt-16">0원</td>
+                        </tr>
+                        <tr>
+                            <th>보관비</th>
+                            <td class="txt-16">0원</td>
+                        </tr>
+                        <tr>
+                            <th>위치교환</th>
+                            <td class="txt-16">0원</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <th>픽업 배송비(7.458km)</th>
+                            <td class="txt-16">+16,000원</td>
+                        </tr>
+                        <tr>
+                            <th>딜리버리 배송비(7.458km)</th>
+                            <td class="txt-16">+16,000원</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <th class="txt-primary">총 할인금액</th>
+                            <td class="txt-16">-56,000원</td>
+                        </tr>
+                        <tr class="price-detail">
+                            <th>상품쿠폰 할인</th>
+                            <td>-16,000원</td>
+                        </tr>
+                        <tr class="price-detail">
+                            <th>결제쿠폰 할인</th>
+                            <td>-9,000원</td>
+                        </tr>
+                        <tr class="price-detail">
+                            <th>호텔서비스 쿠폰 할인</th>
+                            <td>-11,000원</td>
+                        </tr>
+                        <tr class="price-detail">
+                            <th>스마트픽업 쿠폰 할인</th>
+                            <td>-5,000원</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </li>
+
+                <li class="bg-light2">
+                    <i class="equal"></i>
+
+                    <div class="middler">
+                        <p class="txt-20 txt-500">최종결제금액</p>
+                        <p class="txt-16 mg-t-3u"><em class="txt-20 txt-w700 txt-primary">685,200</em>원</p>
+
+                        <!-- 결제수단 -->
+                        <div class="payment-method mg-t-2u">
+                            <p>삼성카드 / 12개월 할부</p>
+                            <p class="txt-12">(2020.08.25 11:13)</p>
+                        </div>
+
+                        <!-- 스마트페이일 경우 노출 -->
+                        <div class="smart-pay-installment">
+                            <img src="pc-static-root/images/common/smart_pay_logo.svg" class="smart-pay-img" alt="스마트페이">
+                            <span class="txt-14 txt-neutral1">무이자 월 납입금액</span>
+
+                            <p class="txt-16 mg-t-2u"><span class="txt-w700 txt-primary">월 <em class="txt-20">57,100</em></span>원</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 필요시 노출 -->
+        <section class="mg-t-8u">
+            <div class="section-header">
+                <h3>입금계좌정보</h3>
+            </div>
+
+            <table class="txt-left">
+                <colspan>
+                    <col style="width:150px;"/>
+                    <col style="width:calc(50% - 150px);"/>
+                    <col style="width:150px;"/>
+                    <col style="width:calc(50% - 150px);"/>
+                </colspan>
+                <tbody>
+                <tr class="border-b">
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금하실 금액</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">142,000원</td>
+
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금은행</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">국민은행</td>
+                </tr>
+
+                <tr class="border-b">
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금기한</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">2020-09-04 23:59 까지</td>
+
+                    <th class="bg-light1 pd-h-5u pd-v-5u txt-16">입금계좌</th>
+                    <td class="pd-h-5u pd-v-5u txt-14">67109014035442</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="container txt-0 txt-center mg-t-15u">
+            <button type="button" class="btn-item btn-neutral btn-ol  w-240 round mg-r-2u">
+                <span class="label-txt">상품 더보기</span>
+            </button>
+
+            <button type="button" class="btn-item btn-neutral w-240 round">
+                <span class="label-txt">주문상세보기</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 6종 쿠폰 popup // -->
+<div class="modal-item instance on">
+    <div class="dim whitex" onclick="$(this).closest('.modal-item').removeClass('on');"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <div class="modal-header">
+                <h3>쿠폰 발급 알림</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close" onclick="$(this).closest('.modal-item').removeClass('on');">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-5u pd-v-5u">
+                        <p>타이어를 구매하신 고객님께 경정비 상품 할인쿠폰과
+                            타이어 펑크/위치교환 쿠폰 <em class="txt-primary">총 6개</em>를 발급해 드렸습니다.</p>
+                        <p class="pd-h-1u pd-v-5u">
+                            <img src="pc-static-root/images/common/img_cp_6type.png" class="full-w" alt="" />
+                        </p>
+                        <p>* 발급된 쿠폰은 ( 마이페이지 > 사용가능한 쿠폰 ) 에서 확인이 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 4종 쿠폰 popup // -->
+<div class="modal-item instance on">
+    <div class="dim whitex" onclick="$(this).closest('.modal-item').removeClass('on');"></div>
+
+    <div class="middler">
+        <div class="modal-pannel size-s">
+            <div class="modal-header">
+                <h3>쿠폰 발급 알림</h3>
+                <button type="button" class="btn-item btn-neutral round btn-inv min-w btn-popup-close" onclick="$(this).closest('.modal-item').removeClass('on');">
+                    <span class="line-icons close size-24"></span>
+                </button>
+            </div>
+
+            <div class="modal-action no-boundary">
+                <ul class="list-size-equal">
+                    <li>
+                        <button type="button" class="btn-item btn-neutral btn-ol round full-w" onclick="$(this).closest('.modal-item').removeClass('on');">
+                            <span class="label-txt">확인</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-scroller">
+                    <div class="container pd-h-5u pd-v-5u">
+                        <p>타이어를 구매하신 고객님께 경정비 상품 할인쿠폰을 발급해 드렸습니다.</p>
+                        <p class="pd-h-1u pd-v-5u">
+                            <img src="pc-static-root/images/common/img_cp_4type.png" class="full-w" alt="" />
+                        </p>
+                        <p>* 발급된 쿠폰은 ( 마이페이지 > 사용가능한 쿠폰 ) 에서 확인이 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

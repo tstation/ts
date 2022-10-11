@@ -1,0 +1,427 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="mypage">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page-header">
+                        <h1>주문내역상세</h1>
+                    </div>
+
+                    <div class="container">
+                        <input type="hidden" id="sysPopUp" name="sysPopUp" value="false">
+                        <input type="hidden" id="sysPopUpAlert" name="sysPopUpAlert" value="">
+                        <!-- 주문기본정보 -->
+                        <div class="mydetail_01">
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>주문번호</th>
+                                        <!-- TODO: 배지 추가 -->
+                                        <td class="col01">
+                                            <span class="v-middle">O202010140077756</span>
+                                            <span class="smart-pay-badge mg-l-2u"><img src="pc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이"/></span>
+                                        </td>
+                                        <th>주문일자</th>
+                                        <td>2020-10-14</td>
+                                        <input type="hidden" id="ordDate" value="2020-10-14">
+                                        <input type="hidden" id="rsvOrdYn" value="N">
+                                        <input type="hidden" id="equpSctCd" value="100">
+                                        <input type="hidden" id="todayEqupDate" value="2020-10-19">
+                                        <input type="hidden" id="lastRsvDt" value="20201113">
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <div class="tbl_01 brd01">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                        <col style="width:160px;">
+                                        <col style="width: auto">
+                                    </colgroup>
+                                    <tbody>
+                                    <!-- 20210720 // -->
+                                    <tr>
+                                        <th>방문방법</th>
+                                        <td colspan="3">
+                                            픽업 / 딜리버리
+                                            <button type="button" class="btn-item btn-inv btn-transparent btn-xs round mg-l-2u">
+                                                <span class="label-txt txt-14 txt-primary">이력 보기</span>
+                                                <span class="line-icons chev-right size-20 txt-primary"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>매장명</th>
+                                        <td>                                            
+                                            강남 논현점
+                                        </td>
+                                        <th>매장방문일</th>
+                                        <td>
+                                            2018-10-19
+                                            <i class="bar2">/</i>
+                                            10시 방문
+                                        </td>
+                                    </tr>
+                                    <!-- // 20210720 -->
+                                    <!-- 2.픽업&딜리버리 개발 선택//-->
+                                    <tr class="cancel"><!-- 서비스 취소 된 경우 class = cancel -->
+                                        <th><input type="checkbox" class="ip_c" id="check01" disabled=""><label for="check01">픽업위치</label></th>
+                                        <td colspan="3">
+                                            <em class="status">서비스취소</em> <em class="col01">경기도 고양시 일산동구 중앙로 1234(장항동)</em>
+                                            <span class="bar">이동거리 : <em class="col02">10km</em></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="cancel"><!-- 서비스 취소 된 경우 class = cancel -->
+                                        <th><span class="icon_re">추가설명</span></th>
+                                        <td colspan="3">주차장으로 와서 연락주세요.</td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="checkbox" class="ip_c" id="check02"><label for="check02">딜리버리위치</label></th>
+                                        <td colspan="3">
+                                            <em class="status">드라이버 매칭</em> <em class="col01">서울시 강남구 역삼동 134번지 000빌딩</em>
+                                            <span class="bar">이동거리 : <em class="col02">10km</em></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="icon_re">추가설명</span></th>
+                                        <td colspan="3">주차장으로 와서 연락주세요.</td>
+                                    </tr>
+                                    <!-- //2.픽업&딜리버리 -->
+                                    <!-- 3. 픽업&딜리버리 // -->
+                                    <tr><!-- 서비스 취소 된 경우 class = cancel -->
+                                        <th>픽업위치</th>
+                                        <td colspan="3">
+                                            <em class="status">고객요청</em> <em class="col01">경기도 고양시 일산동구 중앙로 1234(장항동)</em>
+                                            <span class="bar">이동거리 : <em class="col02">10km</em></span>
+                                        </td>
+                                    </tr>
+                                    <tr><!-- 서비스 취소 된 경우 class = cancel -->
+                                        <th><span class="icon_re">추가설명</span></th>
+                                        <td colspan="3">주차장으로 와서 연락주세요.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>딜리버리위치</th>
+                                        <td colspan="3">
+                                            <em class="status">드라이버 매칭</em> <em class="col01">서울시 강남구 역삼동 134번지 000빌딩</em>
+                                            <span class="bar">이동거리 : <em class="col02">10km</em></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span class="icon_re">추가설명</span></th>
+                                        <td colspan="3">주차장으로 와서 연락주세요.</td>
+                                    </tr>
+                                    <!-- //3. 픽업&딜리버리 -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 일정 변경 레이어 -->
+                            <div id="changeDete" class="time_find">
+
+                                <div class="btn01">
+                                    <button id="btn_svc_cancel" class="btnM2 btnS01">서비스 취소</button>
+                                    <button class="btnM2 btnS02 changeDate">일정변경</button>
+                                </div>
+
+
+                                <div class="day">
+                                    <input title="장착일   입력" type="text" id="vstRsvDt" class="ip_txt01 w100p" data-id="datepickBox3" data-rel="datepickBox" data-toggle="datepicker" readonly="" placeholder="장착일 선택">
+                                </div>
+                                <div class="datepickBox" id="datepickBox3" style="">
+                                    <div class="datepickBox3"><div class="datepicker-container datepicker-inline"><div class="datepicker-panel datepicker-hide" data-view="years picker"><ul><li data-view="years prev">‹</li><li data-view="years current"></li><li data-view="years next">›</li></ul><ul data-view="years"></ul></div><div class="datepicker-panel datepicker-hide" data-view="months picker"><ul><li data-view="year prev">‹</li><li data-view="year current"></li><li data-view="year next">›</li></ul><ul data-view="months"></ul></div><div class="datepicker-panel" data-view="days picker"><ul><li data-view="month prev" class="disabled">‹</li><li data-view="month current">2020년 10월</li><li data-view="month next">›</li></ul><ul data-view="week"><li class="" data-view="">일</li><li class="" data-view="">월</li><li class="" data-view="">화</li><li class="" data-view="">수</li><li class="" data-view="">목</li><li class="" data-view="">금</li><li class="" data-view="">토</li></ul><ul class="dayslist" data-view="days"><li class="muted disabled" data-view="day prev">27</li><li class="muted disabled" data-view="day prev">28</li><li class="muted disabled" data-view="day prev">29</li><li class="muted disabled" data-view="day prev">30</li><li class="disabled" data-view="day disabled">1</li><li class="disabled" data-view="day disabled">2</li><li class="disabled" data-view="day disabled">3</li><li class="disabled" data-view="day disabled">4</li><li class="disabled" data-view="day disabled">5</li><li class="disabled" data-view="day disabled">6</li><li class="disabled" data-view="day disabled">7</li><li class="disabled" data-view="day disabled">8</li><li class="disabled" data-view="day disabled">9</li><li class="disabled" data-view="day disabled">10</li><li class="disabled" data-view="day disabled">11</li><li class="disabled" data-view="day disabled">12</li><li class="disabled" data-view="day disabled">13</li><li class="disabled" data-view="day disabled">14</li><li class="disabled" data-view="day disabled">15</li><li class="highlighted disabled" data-view="day disabled">16</li><li class="disabled" data-view="day disabled">17</li><li class="disabled" data-view="day disabled">18</li><li class="picked" data-view="day picked">19</li><li class="" data-view="day">20</li><li class="" data-view="day">21</li><li class="" data-view="day">22</li><li class="" data-view="day">23</li><li class="" data-view="day">24</li><li class="" data-view="day">25</li><li class="" data-view="day">26</li><li class="" data-view="day">27</li><li class="" data-view="day">28</li><li class="" data-view="day">29</li><li class="" data-view="day">30</li><li class="" data-view="day">31</li><li class="muted" data-view="day next">1</li><li class="muted" data-view="day next">2</li><li class="muted" data-view="day next">3</li><li class="muted" data-view="day next">4</li><li class="muted" data-view="day next">5</li><li class="muted" data-view="day next">6</li><li class="muted" data-view="day next">7</li></ul></div></div></div>
+                                    <div id="areaVstRsvTime" class="time">
+                                        <ol></ol>
+                                        <ol><li><input type="radio" class="btnS2" name="TimeS" id="TimeS00" value="00"><label class="btnS2" for="TimeS00">00시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS01" value="01"><label class="btnS2" for="TimeS01">01시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS02" value="02"><label class="btnS2" for="TimeS02">02시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS03" value="03"><label class="btnS2" for="TimeS03">03시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS04" value="04"><label class="btnS2" for="TimeS04">04시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS05" value="05"><label class="btnS2" for="TimeS05">05시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS06" value="06"><label class="btnS2" for="TimeS06">06시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS07" value="07" disabled="disabled"><label class="btnS2" for="TimeS07">07시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS08" value="08"><label class="btnS2" for="TimeS08">08시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS09" value="09"><label class="btnS2" for="TimeS09">09시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS10" value="10"><label class="btnS2" for="TimeS10">10시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS11" value="11" disabled="disabled"><label class="btnS2" for="TimeS11">11시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS13" value="13" disabled="disabled"><label class="btnS2" for="TimeS13">13시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS14" value="14" disabled="disabled"><label class="btnS2" for="TimeS14">14시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS15" value="15"><label class="btnS2" for="TimeS15">15시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS16" value="16"><label class="btnS2" for="TimeS16">16시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS17" value="17"><label class="btnS2" for="TimeS17">17시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS18" value="18"><label class="btnS2" for="TimeS18">18시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS19" value="19"><label class="btnS2" for="TimeS19">19시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS20" value="20"><label class="btnS2" for="TimeS20">20시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS21" value="21"><label class="btnS2" for="TimeS21">21시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS22" value="22"><label class="btnS2" for="TimeS22">22시</label></li><li><input type="radio" class="btnS2" name="TimeS" id="TimeS23" value="23" disabled="disabled"><label class="btnS2" for="TimeS23">23시</label></li></ol></div>
+
+                                    <div class="btn">
+                                        <button class="btnM3 btnS02 selectDate">선택 완료</button>
+                                    </div>
+                                    <div class="time" id="sf_areaVstRsvTime">
+                                        <p class="txt">장착일은 구매 후 최대 2회까지 변경 가능합니다.</p>
+                                    </div>
+                                    <input type="hidden" id="ordNo" value="O202010140077756">
+                                    <input type="hidden" id="ordDtlSctCd" value="10">
+                                    <input type="hidden" id="shopSeq" value="F100001277">
+                                    <input type="hidden" id="shopRsvSeq" value="20000001891035">
+                                    <input type="hidden" id="shopVstRsvStsCd" value="100">
+                                    <input type="hidden" id="dlvRsvDt" value="2020-10-19">
+                                    <input type="hidden" id="dlvRsvDtime" value="2020-10-19 07:00:00.0">
+                                    <input type="hidden" id="dlvSvcCd" value="">
+                                </div>
+                            </div>
+                            <!-- // 일정 변경 레이어 -->
+                        </div>
+                        <!-- // 주문기본정보 -->
+
+                        <!-- 주문상품정보 -->
+                        <div class="mydetail_02">
+                            <h6>상품 정보</h6>
+                            <div class="order_prod">
+                                <ol class="unit">
+
+                                    <li>
+                                        <dl class="unit02">
+                                            <dt><a href="https://wwwlocal.tstation.com/tire/product/hk_p_s_ventus_v12_evo2?goodsNo=G000000318112" data-ap-product="{'name':'Ventus V12 evo2','id':'G000000318112','price':192900,'brand':'HK','category':'여름/승용차/SPORT/프리미엄','variant':'245/40R19','product_rating_customer':'0.0'}"><img src="//wwwdev.tstation.com/upload/goods/250/10/0000/0031/G00000031855101ko.jpg" id="goodsImg" class="unitImg" alt="Ventus V12 evo2"></a><span class="flag_02"><em class="brandLogo logoHK">logoHANKOOK</em></span></dt><dd class="info"><a href="https://wwwlocal.tstation.com/tire/product/hk_p_s_ventus_v12_evo2?goodsNo=G000000318112" data-ap-product="{'name':'Ventus V12 evo2','id':'G000000318112','price':192900,'brand':'HK','category':'여름/승용차/SPORT/프리미엄','variant':'245/40R19','product_rating_customer':'0.0'}"><span class="flag_04"><em class="c01 off">Comfort</em> <em class="c02 ">SPORT</em> <em class="c03 off">Runflat</em> </span><span class="unitT1"><span>벤투스 스포츠</span><small class="sub">Ventus V12 evo2</small></span><span class="unitT3">245/40R19</span><span class="flag_05"><em>승용차</em><em>여름</em><em>프리미엄</em></span></a></dd>
+
+                                            <dd class="price">
+                                                <!-- 상품 쿠폰 정보 -->
+
+                                                <span class="unitP2"> <em>192,900</em>원 <em class="no"><i>1</i>개</em>
+							                                              </span>
+                                            </dd>
+                                            <dd class="status">
+
+
+                                                <!-- TODO: 주문상태값 표시 추가 - 주문완료 / 배송준비중 / 배송중 / 배송완료 / 장착완료 -->
+                                                <span class="status"><em>장착완료</em></span>
+                                            </dd>
+                                            <input type="hidden" name="ordPrgsStatCd" value="70">
+                                        </dl>
+                                    </li>
+
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- // 주문상품정보 -->
+
+                        <!-- 사은품정보 -->
+                        <div class="mydetail_02 order_step">
+                            <h6>사은품 정보</h6>
+                            <div class="gift01">
+                                <!-- 배송지별 사은품 -->
+                                <div class="box">네파 1005763 점퍼 (초록/95)</div>
+                                <div class="box">네파 1005763 점퍼 (초록/95)</div>
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup><col style="width:160px;"><col style="width:auto"></colgroup>
+                                        <tbody><tr>
+                                            <th>수령방법</th>
+                                            <td class="col01">장착매장 수령</td>
+                                        </tr>
+                                        </tbody></table>
+                                </div>
+                                <!-- //배송지별 사은품 -->
+
+                                <!-- 배송지별 사은품 -->
+                                <div class="box">네파 1005763 점퍼 (초록/95)</div>
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup><col style="width:160px;"><col style="width:auto"><col style="width:160px;"><col style="width:auto"></colgroup>
+                                        <tbody><tr>
+                                            <th>받는분</th>
+                                            <td>김철수</td>
+                                            <th>연락처</th>
+                                            <td>010-2356-45454</td>
+                                        </tr>
+                                        <tr>
+                                            <th>배송지</th>
+                                            <td colspan="3">서울특별시 강남구 테헤란로 133AA 아파트 103동</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- //배송지별 사은품 -->
+                            </div>
+                        </div>
+                        <!-- // 사은품정보 -->
+
+                        <!-- 무통장입금인 경우 -->
+                        <div class="mydetail_02">
+                            <h6>입금계좌 정보</h6>
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>입금하실 금액</th>
+                                        <td class="col01">000,000,000 원</td>
+                                    </tr>
+                                    <tr>
+                                        <th>입금은행</th>
+                                        <td class="col01">신한은행</td>
+                                    </tr>
+                                    <tr>
+                                        <th>입금계좌</th>
+                                        <td>08800000007205</td>
+                                    </tr>
+                                    <tr>
+                                        <th>입금기한</th>
+                                        <td class="col01">2020-10-15 24:00까지</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- // 무통장입금인 경우 -->
+
+                        <!-- 결제정보 -->
+                        <div class="mydetail_02">
+                            <h6>결제정보</h6>
+                            <div class="payment_01">
+
+                                <em class="no"><i></i></em>
+                                <ol>
+                                    <li><span class="tit">총 상품금액</span>+ 192,900원</li>
+                                    <li><span class="tit">총 할인금액</span>- 0원</li>
+                                    <li class="sale"><span class="tit">상품쿠폰 할인</span> 0원</li>
+                                    <li class="sale"><span class="tit">결제쿠폰 할인</span> 0원</li>
+                                    <li class="sale"><span class="tit">스마트페이</span>가 아닙니다.</li>
+                                    <li><span class="tit">총 공임비</span>+ 0원</li>
+                                    <!-- 배송 서비스 -->
+                                    <!-- // 배송 서비스 -->
+                                </ol>
+                                <div class="total02">
+                                    <span class="tit">결제 완료금액</span> <span class="no"><em>192,900</em>원</span>
+                                    <!-- 결제수단 -->
+                                    <span class="txt">무통장입금 / 신한은행
+                                        <!-- 결제완료일 -->
+                                        <!-- // 결제완료일 -->
+				                                    </span>
+                                    <!-- TODO: 스마트 페이 결제 항목 추가 -->
+                                    <div>
+                                        <div class="divider dark mg-v-5u mg-h-8u"></div>
+                                        <div class="smart-pay-badge">
+                                            <img src="pc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이">
+                                            <span class="label-txt mg-l-1u txt-white">월 납입금액</span>
+                                        </div>
+                                        <p class="txt-20 mg-t-2u"><span>월 5,160<small>원</small></span><small>/12개월</small></p>
+                                    </div>
+                                    <!-- // 결제수단 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 결제정보 -->
+
+                        <!-- 주문고객정보 -->
+                        <div class="mydetail_02">
+                            <h6>주문고객정보</h6>
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+
+                                        <th>이름</th>
+                                        <td>박현빈</td>
+
+
+
+                                        <th>연락처</th>
+                                        <td>010-2220-0789</td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <th>이메일</th>
+                                        <td colspan="3">parkhyun3@naver.com</td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- // 주문고객정보 -->
+
+                        <!-- 방문고객정보 -->
+                        <!-- // 방문고객정보 -->
+
+                        <!-- 차량정보 -->
+                        <div class="mydetail_02">
+                            <h6>장착차량정보</h6>
+                            <div class="tbl_01 none">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                        <col style="width: 160px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <!-- 202012 pub fixed // -->
+                                    <tbody>
+                                    <tr>
+                                        <th>제조사</th>
+                                        <td>기아</td>
+                                        <th>차종</th>
+                                        <td>쏘렌토</td>
+                                    </tr>
+                                    <tr>
+                                        <th>세부 차종</th>
+                                        <td>올 뉴 쏘렌토</td>
+                                        <th>연료</th>
+                                        <td>디젤</td>
+                                    </tr>
+                                    <tr>
+                                        <th>모델 연도</th>
+                                        <td>2017</td>
+                                        <th>세부 모델</th>
+                                        <td>노블레스 스페셜</td>
+                                    </tr>
+                                    <tr>
+                                        <th>차량 번호</th>
+                                        <td colspan="3">88호8881</td>
+                                    </tr>
+                                    </tbody>
+                                    <!-- // 202012 pub fixed -->
+                                </table>
+                            </div>
+                        </div>
+                        <!-- // 차량정보 -->
+
+                        <!-- 고객메모 -->
+                        <div class="mydetail_02 order_step">
+                            <h6>추가요청 메세지</h6>
+                            <div class="gift01">
+                                <div class="box">주행시 떨림 현상이 있습니다.</div>
+                            </div>
+                        </div>
+                        <!-- // 고객메모 -->
+
+                        <!-- 환불정보 -->
+
+                        <!-- // 환불정보 -->
+
+                        <!-- button -->
+                        <div class="btn01">
+
+
+                            <form id="inputForm" method="post" action="https://wwwlocal.tstation.com/mypage/tstation/order-history/cancel/O202010140077756">
+                                <input type="hidden" name="ordGoodsSctCd">
+                            </form>
+                            <a href="#" id="btn_ord_cancel" class="btnB btnS01" style="display: none;">취소하기</a>
+
+                            <a href="#" id="btn_list" class="btnB btnS07">목록으로</a>
+                        </div>
+                        <!-- //button -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

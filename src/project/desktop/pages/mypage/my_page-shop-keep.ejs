@@ -1,0 +1,112 @@
+<% locals.setLayout('src/project/desktop/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<div id="container" class="">
+    <%- locals.widget('src/project/desktop/includes/layouts/my-page/summery.ejs') %>
+    <div class="container">
+        <div class="guardrail">
+            <div class="aside-layout mypage-index-area">
+                <%- locals.widget('src/project/desktop/includes/layouts/my-page/aside.ejs') %>
+                <div class="cont-area">
+
+                    <div class="page_tit">
+                        <h4>매장서비스내역</h4>
+                    </div>
+
+                    <div class="container mypage">
+                        <!-- 매장서비스내역  top -->
+                        <div class="review_top">
+                            <ul class="tab_01">
+                                <li><a href="store_list.jsp">정비서비스 이력</a></li>
+                                <li class="on"><a href="store_save.jsp">보관서비스 이력</a></li>
+                            </ul>
+                        </div>
+                        <!-- //매장서비스내역  top -->
+
+                        <div class="nodata"><em>보관서비스</em>이력이 없습니다.</div>
+
+                        <!-- list -->
+                        <ol class="mylist_02">
+                            <li>
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>보관서비스명</th>
+                                            <td colspan="3" class="col01">Ventus V2 Concept2</td>
+                                        </tr>
+                                        <tr>
+                                            <th>패턴</th>
+                                            <td>ww310</td>
+                                            <th>수량</th>
+                                            <td>1개</td>
+                                        </tr>
+                                        <tr>
+                                            <th>매장명</th>
+                                            <td colspan="3" class="col01">분당정자점</td>
+                                        </tr>
+                                        <tr>
+                                            <th>보관일</th>
+                                            <td>2018-11-01(목) </td>
+                                            <th>회수일</th>
+                                            <td> 2018-11-30(금) </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tbl_01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                            <col style="width:160px;">
+                                            <col style="width: auto">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th>보관서비스명</th>
+                                            <td colspan="3" class="col01">Ventus V2 Concept2</td>
+                                        </tr>
+                                        <tr>
+                                            <th>패턴</th>
+                                            <td>ww310</td>
+                                            <th>수량</th>
+                                            <td>1개</td>
+                                        </tr>
+                                        <tr>
+                                            <th>매장명</th>
+                                            <td colspan="3" class="col01">분당정자점</td>
+                                        </tr>
+                                        <tr>
+                                            <th>보관일</th>
+                                            <td>2018-11-01(목) </td>
+                                            <th>회수일</th>
+                                            <td> 2018-11-30(금) </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ol>
+                        <!-- //list -->
+                        <!-- button -->
+                        <div class="btn01">
+                            <a href="#" class="btnB btnS07">더보기</a>
+                        </div>
+                        <!-- //button -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

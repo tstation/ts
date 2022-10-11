@@ -1,0 +1,84 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '매장서비스내역' }) %>
+<div id="container" class="mypage">
+    <!-- 매장서비스내역 -->
+    <ul class="mypage_tab01">
+        <li class="on"><a href="store_list.jsp">정비서비스 이력</a></li>
+        <li><a href="store_save.jsp">보관서비스 이력</a></li>
+    </ul>
+    <div class="shop_pay">
+        <ul>
+            <li>
+                <span class="tit">총 서비스 건수</span>
+                <span class="no"><em>1</em>건</span>
+            </li>
+            <li>
+                <span class="tit">총 서비스 금액</span>
+                <span class="no"><em>2,337,000</em>원</span>
+            </li>
+        </ul>
+    </div>
+    <div class="shop_list">
+        <div class="sort">
+            <select class="select01 w100p">
+                <option>99바 5454</option>
+            </select>
+            <span class="link"><a href="#">차량 등록 및 수정을 원하시면 이곳을 클릭해 주세요</a></span>
+        </div>
+        <div class="nodata"><em>정비서비스 이력</em>이 없습니다.</div>
+        <ol class="list">
+            <li>
+                <dl class="dl_style02">
+                    <dt>2018-11-05 <a href="#" class="view">상세보기</a></dt>
+                    <dd>
+                        <span class="tit">매장명</span>
+                        <em class="txt01">분당정자점</em>
+                    </dd>
+                    <dd>
+                        <span class="tit">정비(공임)항목</span>
+                        <em class="txt02">[VENTUS S2 AS] Ventus S2 AS Ventus S2 AS Ventus S2 AS</em>
+                        외 1건
+                    </dd>
+                    <dd>
+                        <span class="tit">정비(공임)금액</span>
+                        <em class="txt03">
+                            <span class="smart-pay-badge v-middle"><img src="mc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이"></span>
+                            <span class="v-middle"><i>653,000</i>원</span>
+                        </em>
+                    </dd>
+                    <dd class="btn">
+                        <button class="btnM btnS01">매장 리뷰 작성하기</button>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="dl_style02">
+                    <dt>2018-11-05 <a href="#" class="view">상세보기</a></dt>
+                    <dd>
+                        <span class="tit">매장명</span>
+                        <em class="txt01">분당정자점</em>
+                    </dd>
+                    <dd>
+                        <span class="tit">정비(공임)항목</span>
+                        <em class="txt02">[VENTUS S2 AS] Ventus S2 AS Ventus S2 AS Ventus S2 AS</em>
+                        외 1건
+                    </dd>
+                    <dd>
+                        <span class="tit">정비(공임)금액</span>
+                        <em class="txt03">
+                            <span class="smart-pay-badge v-middle"><img src="mc-static-root/images/common/smart_pay_logo_w.svg" title="스마트페이"></span>
+                            <span class="v-middle"><i>653,000</i>원</span>
+                        </em>
+                    </dd>
+                    <dd class="btn">
+                        <button class="btnM btnS01">매장 리뷰 작성하기</button>
+                    </dd>
+                </dl>
+            </li>
+        </ol>
+    </div>
+    <!-- //매장서비스내역 -->
+</div>

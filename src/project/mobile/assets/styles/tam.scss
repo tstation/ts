@@ -1,0 +1,1445 @@
+@charset "UTF-8";
+
+/* 0728 START */
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=tam-tstation-tv ------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+#container{
+    &.gray { background-color: #f9f9fa; }
+}
+
+.tam-tstation-tv {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 60px;
+    overflow-x: hidden;
+
+    &.gray { background-color: #f9f9fa; }
+
+    .key-visual {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 53.3333333333%;
+        }
+
+        > img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=tam-tire-info --------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.tam-tire-info {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 60px;
+    overflow-x: hidden;
+
+    &.gray { background-color: #f9f9fa; }
+
+    .key-visual {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 53.3333333333%;
+        }
+
+        > img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .link-group {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            top: 50%;
+            right: 20px;
+            width: 160px;
+            height: auto;
+            transform: translateY(-50%);
+
+            .go-link {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                border-radius: 4px;
+                background-color: rgba(255, 255, 255, .8);
+
+                .title-wrap {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    .title {
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                }
+
+                .link-label {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    font-size: 12px;
+
+                    .icon {
+                        color: #58C1C7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=tam-tire-review ------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.tam-tire-review {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 60px;
+    overflow-x: hidden;
+
+    &.gray { background-color: #f9f9fa; }
+
+    .key-visual {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 53.3333333333%;
+        }
+
+        > img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bottom-area {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: rgba(42, 49, 56, .4);
+
+            .description {
+                flex-grow: 1;
+                font-size: 12px;
+                color: #ffffff;
+            }
+            .btn-item {
+                flex-shrink: 0;
+            }
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=suggest-keyword ------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.suggest-keyword {
+    padding: 10px 20px 16px;
+    border-bottom: 1px solid #D9DBDC;
+
+    .label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #5B6068;
+    }
+
+    .suggest-keyword-swiper {
+        overflow: visible;
+        margin-top: 8px;
+
+        .swiper-slide {
+            width: auto;
+            padding-right: 4px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .keyword {
+        display: inline-block;
+        padding: 0 16px;
+        background-color: #ffffff;
+        border: 1px solid #D9DBDC;
+        border-radius: 16px;
+        line-height: 30px;
+
+        &::before {
+            content: '#';
+            color: #FE6A2B;
+        }
+
+        &.on {
+            font-weight: 500;
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=section-swiper-card --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.section-swiper-card {
+    background-color: #F9F9FA;
+    overflow: hidden;
+
+    .title-wrap {
+        padding: 18px 20px 10px;
+        border-bottom: 1px solid #F2F2F7;
+        background-color: #ffffff;
+
+        .title {
+            font-size: 20px;
+
+            .count {
+                font-size: 16px;
+                color: #5B6068;
+            }
+        }
+
+        .description {
+            font-size: 12px;
+            color: #5B6068;
+            margin-top: 4px;
+        }
+    }
+
+    .swiper-wrap {
+        padding: 20px;
+        overflow: visible;
+
+        .tam-swiper {
+            overflow: visible;
+
+            .swiper-wrapper {
+                &:empty {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 236px;
+                    color: #bdbdcb;
+
+                    &::before {
+                        display: block;
+                        content: '\e949';
+                        font-family: 'LineIcons';
+                        font-size: 36px;
+                        width: 36px;
+                        height: 36px;
+                    }
+
+                    &::after {
+                        display: block;
+                        content: '추천 키워드에 맞는 컨텐츠가 없습니다.';
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .swiper-slide { width: auto; }
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=.ts-tv-card & .ts-tv-cell --------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.ts-tv-card {
+    display: block;
+    width: 310px;
+    height: auto;
+    border: 1px solid #D9DBDC;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    background-color: #ffffff;
+    overflow: hidden;
+
+    .thumb-area {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        background-color: #F9F9FA;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../images/common/ts-tv-thumb-empty.jpg');
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 56.25%;
+        }
+
+        > img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .time {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+            color: #ffffff;
+            line-height: 24px;
+            padding: 0 16px;
+            background-color: rgba(42, 49, 56, .9);
+        }
+    }
+
+    .description {
+        padding: 12px;
+
+        > p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            width: 100%;
+            height: 38px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+        }
+    }
+
+    /* 082303 // */
+    .keywords {
+        display: flex;
+        height: auto;
+        flex-wrap: wrap;
+        padding: 8px 16px;
+        background-color: #F9F9FA;
+        overflow: hidden;
+        border-top: 1px solid #D9DBDC;
+
+        .keyword {
+            display: inline-block;
+            padding: 0 12px;
+            height: 22px;
+            font-size: 12px;
+            border: 1px solid #D9DBDC;
+            border-radius: 12px;
+            background-color: #ffffff;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            white-space: nowrap;
+
+            &:last-child { 
+                margin-right: 0;
+            }
+
+            &::before {
+                content: '#';
+                color: #FE6A2B;
+            }
+        }
+    }
+    /* // 082303 */
+}
+
+.ts-tv-cell {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    padding: 9px;
+    border: 1px solid #D9DBDC;
+    border-radius: 6px;
+    background-color: #ffffff;
+    overflow: hidden;
+
+    .thumb-area {
+        position: relative;
+        display: block;
+        flex-shrink: 0;
+        width: 160px;
+        height: auto;
+        background-color: #F9F9FA;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../images/common/ts-tv-thumb-empty.jpg');
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 56.25%;
+        }
+
+        > img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .time {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            font-size: 12px;
+            color: #ffffff;
+            line-height: 24px;
+            padding: 0 16px;
+            background-color: rgba(42, 49, 56, .9);
+        }
+    }
+
+    .description {
+        flex-grow: 1;
+
+        > p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            width: 100%;
+            height: 82px;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 5;
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=.info-card & .info-cell ----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.info-card {
+    display: block;
+    width: 240px;
+    height: auto;
+    border: 1px solid #D9DBDC;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    background-color: #ffffff;
+    overflow: hidden;
+
+    .thumb-area {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        background-color: #F9F9FA;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../images/common/ts-tv-thumb-empty.jpg');
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 100%;
+        }
+
+        > img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    .description {
+        padding: 12px;
+
+        > p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            width: 100%;
+            height: 38px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+        }
+    }
+
+    /* 082303 // */
+    .keywords {
+        display: flex;
+        height: auto;
+        flex-wrap: wrap;
+        padding: 8px 16px;
+        background-color: #F9F9FA;
+        overflow: hidden;
+        border-top: 1px solid #D9DBDC;
+
+        .keyword {
+            display: inline-block;
+            padding: 0 12px;
+            height: 22px;
+            font-size: 12px;
+            border: 1px solid #D9DBDC;
+            border-radius: 12px;
+            background-color: #ffffff;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            white-space: nowrap;
+
+            &:last-child { 
+                margin-right: 0;
+            }
+
+            &::before {
+                content: '#';
+                color: #FE6A2B;
+            }
+        }
+    }
+    /* // 082303 */
+}
+
+.info-cell {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    padding: 9px;
+    border: 1px solid #D9DBDC;
+    border-radius: 6px;
+    background-color: #ffffff;
+    overflow: hidden;
+
+    .thumb-area {
+        position: relative;
+        display: block;
+        flex-shrink: 0;
+        width: 90px;
+        height: auto;
+        border-radius: 4px;
+        background-color: #F9F9FA;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../images/common/ts-tv-thumb-empty.jpg');
+        overflow: hidden;
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 100%;
+        }
+
+        > img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .time {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            font-size: 12px;
+            color: #ffffff;
+            line-height: 24px;
+            padding: 0 16px;
+            background-color: rgba(42, 49, 56, .9);
+        }
+    }
+
+    .description {
+        flex-grow: 1;
+
+        > p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            width: 100%;
+            height: 82px;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 5;
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=review-card & review-cell --------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.tam-review-card {
+    display: block;
+    width: 310px;
+    height: auto;
+    border: 1px solid #D9DBDC;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    overflow: hidden;
+
+    .review-meta {
+        display: flex;
+        flex-direction: row;
+        gap: 18px;
+        padding: 18px 16px 12px;
+        border-bottom: 1px solid #F2F2F7;
+        -ms-flex-direction: column;
+            -webkit-flex-direction: column;
+
+        .left {
+            flex-shrink: 0;
+
+            .thumb-area {
+                position: relative;
+                display: block;
+                width: 90px; // 90px x 60px
+                height: auto;
+                border-radius: 4px;
+                background-color: #F9F9FA;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                background-image: url('../images/common/bg_review_thumb_empty.png');/* 0820 */
+                overflow: hidden;
+
+                &::before {
+                    display: block;
+                    content: '';
+                    padding-top: 66.6666666667%;
+                }
+
+                > img {
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .thumb {
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+
+            .rating-area {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .rating-count {
+                    font-size: 11px;
+                    margin-left: 4px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .right {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            img.tire-name {
+                width: 100%;
+                height: auto;
+            }
+
+            h4.tire-name {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .tire-meta {
+                font-size: 11px;
+            }
+        }
+    }
+
+    .description {
+        position: relative;
+        padding: 16px;
+        color: #5B6068;
+        line-height: 20px;
+
+        .inner {
+            position: relative;
+
+            > p {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                width: 100%;
+                height: 60px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 3;
+            }
+
+            .read-more {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                line-height: 24px;
+                font-size: 12px;
+                padding-left: 20px;
+                color: #5EB0B5;
+                background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 100%);
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+    }
+
+    .keywords {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        background-color: #F9F9FA;
+        overflow: hidden;
+        border-top: 1px solid #D9DBDC;
+
+        .keyword {
+            display: inline-block;
+            padding: 0 12px;
+            line-height: 22px;
+            font-size: 12px;
+            border: 1px solid #D9DBDC;
+            border-radius: 12px;
+            background-color: #ffffff;
+            margin-right: 4px;
+
+            &:last-child { margin-right: 0 }
+
+            &::before {
+                content: '#';
+                color: #FE6A2B;
+            }
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=section-youtube ------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.section-youtube {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #282828;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // background-image: url('../images/common/youtube-empty.jpg');
+
+    &::before {
+        display: block;
+        content: '';
+        padding-top: 56.25%; // default 16:9
+    }
+
+    &.16x9::before { padding-top: 56.25%; }
+    &.1x1::before { padding-top: 100%; }
+    &.3x2::before { padding-top: 66.6666666667%; }
+    &.4x3::before { padding-top: 75%; }
+
+    #youtube-player {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // object-fit: cover;
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=section-youtube-detail -----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.section-youtube-detail {
+    position: relative;
+    background-color: #ffffff;
+    border-bottom: 1px solid #D9DBDC;
+
+    .title-wrap {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        padding: 20px;
+
+        &::after {
+            position: absolute;
+            display: block;
+            content: '';
+            bottom: 0;
+            left: 50%;
+            width: calc(100% - 40px);
+            height: 1px;
+            background-color: #F2F2F7;
+            transform: translateX(-50%);
+        }
+
+        .title {
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .btn-contents-toggle {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 100%;
+            background-color: transparent;
+            transition: background-color .15s ease-in-out;
+            -webkit-tap-highlight-color: transparent;
+
+            &:active { background-color: #e7e7e8; }
+
+            &.on .icon { transform: rotate(180deg); }
+
+            .icon { transition: transform .15s ease-in-out; }
+        }
+    }
+
+    .contents-wrap {
+        position: relative;
+        padding: 20px 20px 34px;
+        font-size: 14px;
+        color: #5B6068;
+        height: 80px;
+        overflow: hidden;
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 34px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        }
+
+        &.on { height: auto; }
+    }
+
+    .keywords {
+        display: flex;
+        flex-wrap: wrap;/*0825*/
+        padding: 0 20px 20px;
+
+        .keyword {
+            display: inline-block;
+            line-height: 30px;
+            padding: 0 16px;
+            border: 1px solid #D9DBDC;
+            border-radius: 16px;
+            margin-right: 4px;
+            margin-bottom: 4px;/*0825*/
+
+            &:last-child { margin-right: 0 }
+
+            &::before {
+                content: '#';
+                color: #FE6A2B;
+            }
+        }
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=section-tam-more -----------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.section-tam-more {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 20px 0;
+
+    &::after { display: none; }
+
+    > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=section-tire-info-detail ---------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.section-tire-info-detail {
+    position: relative;
+    background-color: #ffffff;
+
+    .title-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-bottom: 1px solid #D9DBDC;
+
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 14px;
+        }
+    }
+
+    .contents-wrap {
+        padding: 40px 20px;
+        border-bottom: 1px solid #D9DBDC;
+
+        p { color: #5b6068; }
+    }
+
+    /* 0825 // */
+    .keywords {
+        display: flex;
+        flex-wrap: wrap;/*0825*/
+
+        .keyword {
+            display: inline-block;
+            line-height: 30px;
+            padding: 0 16px;
+            border: 1px solid #D9DBDC;
+            border-radius: 16px;
+            margin-right: 4px;
+            margin-bottom: 4px;/*0825*/
+
+            &:last-child { margin-right: 0 }
+
+            &::before {
+                content: '#';
+                color: #FE6A2B;
+            }
+        }
+    }
+    /* // 0825 */
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*=review-detail --------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+.review-detail {
+    position: relative;
+
+    .thumb-area {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        background-color: #F9F9FA;
+
+        &::before {
+            display: block;
+            content: '';
+            padding-top: 66.6666666667%; // default 16:9
+        }
+
+        .empty {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            .icon {
+                width: 100px;
+                height: 100px;
+            }
+
+            .label {
+                display: block;
+                font-size: 14px;
+                font-weight: 500;
+                color: #A0A6AF;
+            }
+        }
+
+        .review-thumb-swiper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            .swiper-slide {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                > img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .thumb {
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+
+            .swiper-pagination {
+                bottom: 8px;
+
+                .swiper-pagination-bullet {
+                    background-color: #A0A6AF;
+
+                    &.swiper-pagination-bullet-active {
+                        background-color: #FE6A2B;
+                    }
+                }
+            }
+        }
+    }
+
+    .review-contents {
+        position: relative;
+
+        .tire-meta {
+            display: block;
+            padding: 36px 20px 8px;
+            border-bottom: 1px solid #D9DBDC;
+
+            img.tire-name {
+                display: block;
+                width: 70%;
+                max-width: 280px;
+                height: auto;
+            }
+
+            h4.tire-name {
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            .meta {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                margin-top: 18px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .more {
+                display: flex;
+                margin-top: 12px;
+
+                .rating-area {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 4px;
+                    flex-grow: 1;
+
+                    .rating {
+                        width: 75px;
+                        height: auto;
+                        background-size: 75px auto;
+
+                        > span {
+                            height: 14px;
+                            background-size: 75px auto;
+                        }
+                    }
+
+                    .rating-count {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #FE6A2B;
+                    }
+                }
+
+                .keywords {
+                    display: flex;
+                    flex-shrink: 0;
+
+                    .keyword {
+                        display: inline-block;
+                        line-height: 30px;
+                        padding: 0 16px;
+                        border: 1px solid #D9DBDC;
+                        border-radius: 16px;
+                        margin-right: 4px;
+
+                        &:last-child { margin-right: 0 }
+
+                        &::before {
+                            content: '#';
+                            color: #FE6A2B;
+                        }
+                    }
+                }
+            }
+        }
+
+        .review-text {            
+            .contents { 
+                /* 20220721//  */
+                padding: 8px 20px 16px;
+                color: #5B6068;
+                /* //20220721 */
+            }
+
+            .ratings {
+                padding: 0 20px 12px;
+
+                .inner {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 12px 16px;
+                    border-radius: 4px;
+                    background-color: #F9F9FA;
+                }
+
+                .rating-group {
+                    display: flex;
+                    flex: 1 1 50%;
+                    align-items: center;
+                    font-size: 11px;
+                    font-weight: 500;
+                    margin-top: 10px;
+
+                    &:first-child { margin-top: 0; }
+                    &:nth-child(2) { margin-top: 0; }
+
+                    .label {
+                        flex-shrink: 0;
+                        width: 46px;
+                    }
+
+                    .rating-area {
+                        display: flex;
+                        align-items: center;
+
+                        .rating-count {
+                            color: #FE6A2B;
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+
+            .reviewer-meta {
+                /* 20220721// */
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                color: #5B6068;
+                padding: 0 20px;
+                margin-top: 20px;
+                /* //20220721 */
+                
+                .divider-inline {
+                    display: inline-block;
+                    content: '';
+                    width: 1px;
+                    height: 12px;
+                    margin: 0 12px;
+                    background-color: #D9DBDC;
+                }
+            }
+        }
+    }
+}
+/* 0728 END */
+
+/* 0809 //  */
+.full_review .using {
+    padding: 0 0 12px 0; 
+    border-bottom: 1px dashed #e6e6e6;
+}
+/* // 0809 */
+
+/* 0817 gnb 수정 배포시 style_pc.css 속성으로 변경 */
+.menu-slide-sty-swiper .swiper-slide {
+    letter-spacing: -.5px;
+}
+
+.section-tire-info-detail .contents-wrap img { 
+    width:100%; 
+    height: 100%;
+}
+
+.suggest-keyword .keyword.active {
+    background-color: #fe6a2b;
+    color: #fff;
+    border-color: #fe6a2b;
+}
+.suggest-keyword .keyword.active::before {
+    color: #fff;
+}
+
+.label-review {
+    display: inline-block;
+}  
+
+.tire-using-wrap .tire-term {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.tire-using-wrap .label-review {
+    float:left; 
+    width: 50%; 
+}
+
+.tire-using-wrap .label-review .line-icons {
+    color: rgb(217, 219, 220);
+}
+
+.tire-using-wrap .label-review .label-txt {
+    color: rgb(192, 198, 206);
+}
+
+.tire-using-wrap .label-review.active .line-icons {
+    color: rgb(94, 176, 181);
+}
+
+.tire-using-wrap .label-review.active .label-txt {
+    color: rgb(42, 49, 56);
+}
+
+.full_review .noti-legal-wrap {
+    position: relative;
+    background-color: rgb(249, 249, 250);
+    border-radius: 4px;
+    padding: 8px 12px 8px 32px;
+}
+
+.full_review .noti-legal-wrap .error-circle-light {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.full_review .noti-legal-wrap .label-txt {
+    display: block;
+    line-height: 120%;
+}
+
+.tab-link {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+    padding: 0 20px;
+    top: 50px;
+    left: 0;
+    overflow: hidden;
+    font-size: 0;
+    z-index: 800;
+}
+
+.tab-link:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #d9dbdc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.tab-link > a {
+    display: inline-block;
+    text-decoration: none;
+    width: auto;
+    height: inherit;
+    line-height: 44px;
+    text-align: center;
+    color: #5b6068;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 12px;
+    /*border-bottom: 1px solid transparent;*/
+    position: relative;
+    cursor: default;
+}
+
+.tab-link > a.on {
+    color: #fe6a2b;
+    font-weight: 500;
+}
+
+.tab-link > a.on::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fe6a2b;
+    min-width: 0;
+    transition: left ease-in-out .16s, width ease-in-out .16s;
+    z-index: 1;
+}

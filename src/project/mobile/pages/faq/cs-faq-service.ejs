@@ -1,0 +1,128 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: 'FAQ' }) %>
+<div id="container" class="cscenter">
+    <!-- 01.search -->
+    <form action="/customer-service/faqSearch.do" method="post" id="faqSearchForm">
+        <div class="faq_search">
+            <div class="search_box">
+                <input title="질문 입력" type="text" class="ip_txt01 w100p" id="inqTitNm" name="inqTitNm" placeholder="질문을 입력해 주세요." />
+                <button class="btn" type="button" id="faqSearch">검색</button>
+            </div>
+        </div>
+    </form>
+    <!-- 01.search -->
+    <!-- 02.menu -->
+    <div class="faq_menu">
+        <ul class="cs_menu01">
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=10">상품 선택</a></li>
+            <li class="on"><a href="https://m.tstation.com/customer-service/faq.do?faqCd=20">장착서비스</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=30">주문/결제</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=40">취소/환불/교환</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=60">회원</a></li>
+            <li class=""><a href="https://m.tstation.com/customer-service/faq.do?faqCd=90">기타</a></li>
+            <!-- TODO: 멤버십 항목 추가 -->
+            <li class=""><a href="#">멤버십</a></li>
+        </ul>
+    </div>
+    <!-- 02.menu -->
+    <!-- 03.list -->
+    <div class="faq_list">
+
+
+        <dl id="accordion" class="list">
+
+            <dt><a href="#">장착점마다 타이어 가격과 공임비가 다른가요?</a></dt>
+            <dd style="display: none;">공정거래법상 당사는 소비자 가격에 대해 관여할 수 없으며, 최종 소비자가격은 대리점주가 최종 결정합니다.<br>
+                <br>
+                웹사이트에서의 가격은 타이어 상품과 공임비가 포함된 가격이며, 본사에서 직접 결정한 가격입니다.<br>
+                그러므로 오프라인 매장과는 일부 차이가 있을 수 있습니다.</dd>
+
+            <dt><a href="#">티스테이션 매장의 운영시간은 어떻게 되나요?</a></dt>
+            <dd style="display: none;">월~금요일은 오전 9시부터 오후 7시까지 운영하고<br>
+                토요일은 오전 9시부터 오후 5시까지 매장을 오픈 운영합니다.<br>
+                <br>
+                매장마다 운영시간이 다소 차이는 있을 수 있으며<br>
+                일요일 오픈은 매장에 확인해 주세요.</dd>
+
+            <dt><a href="#">약속 일자보다 일찍 혹은 늦게 방문하고 싶습니다.</a></dt>
+            <dd style="display: none;">마이페이지에서 수정이 가능하며<br>
+                선택한 장착점에 직접 문의하여 협의하셔도 가능합니다.</dd>
+
+            <dt><a href="#">예약 방문 일자는 어디서 확인하나요?</a></dt>
+            <dd style="display: none;">마이페이지에서 확인하실 수 있습니다.</dd>
+
+            <dt><a href="#">온라인으로 구매하면 혜택이 있나요?</a></dt>
+            <dd style="display: none;">1. 타이어 추천 가이드 : 고객님 드라이빙 스타일에 맞는 타이어를 추천해 드립니다.<br>
+                2. 구매 특화된 상품 정보 제공 : 상품 특장점/기술력을 요약 제시합니다. 상품 댓글도 확인하실 수 있습니다.</dd>
+
+            <dt><a href="#">타이어 교환 후 위치교환 등의 사후 서비스 가능한가요?</a></dt>
+            <dd style="display: none;">타이어 교체 후 주기적인 사후 관리는 필수입니다.<br>
+                티스테이션은 고객님 차량 관리를 위해 점검 주기에 맞춰 'SMS 알림 서비스'를 제공합니다.<br>
+                점검 주기에 티스테이션에 방문하셔서 SMART CARE 받으시기 바랍니다.</dd>
+
+            <dt><a href="#">휠 밸런스를 잘못 봤을 경우 다시 봐주나요?</a></dt>
+            <dd style="display: none;">고객센터(080-022-8272)로 문의해 주시기 바랍니다.<br>
+                단, 휠 밸런스 A/S 기간은 1주일입니다.</dd>
+
+            <dt><a href="#">교체시 휠 밸런스와 얼라인먼트를 꼭 받아야 하나요?</a></dt>
+            <dd style="display: none;">의무사항은 아닙니다만, 타이어 마모도가 고를 때 가장 좋은 점검을 할 수 있으므로, 타이어 교체 시 함께 서비스 받으실 것을 권장드리고 있습니다.<br>
+                <br>
+                1. 휠 밸런스 : 타이어 각 개체의 균형 상태 점검 (온라인 구매 시 무료 서비스)<br>
+                2. 휠 얼라인먼트 : 차량 전체의 밸런스 점검 (온라인 구매 후 현장에서 조정 시 비용 발생)<br>
+                <br>
+                올바른 휠 얼라인먼트는 최적의 조종안정성을 유지하고, 타이어의 성능을 최고로 발휘시켜 줍니다.<br>
+                본 서비스는 차량의 하체 정비에 해당하므로, 별도의 비용이 발생되는 부분입니다.<br>
+                해당 비용을 장착점에 지불하신 후, 서비스 받으시기 바랍니다.</dd>
+
+            <dt><a href="#">배송소요기간은?</a></dt>
+            <dd style="display: none;">안녕하세요. 고객님<br>
+                <br>
+                오늘서비스는 구매 후 바로 장착이 가능하며<br>
+                일반서비스 배송은 주문 완료 후 지정하신 장착일 전까지 배송되고<br>
+                기간은 일반적으로&nbsp;3일이 소요됩니다.<br>
+                다만 도서산간의 경우에는 5일 이상 배송이 소요될 수 있음을 양해 부탁드립니다.<br>
+                <br>
+                감사합니다.</dd>
+
+            <dt><a href="#">매장에서 공임비를 따로 내야 하나요?</a></dt>
+            <dd style="display: none;">온라인 구매 대금에 타이어 장착비가 포함되어 있습니다.<br>
+                <br>
+                경정비 상품의 경우 '장착 서비스'에 해당하는 공임 비용은 온라인 선결제를 원칙으로 하나,<br>
+                차량 점검 후 별도 '수리 서비스'가 필요할 경우 추가 비용이 발생할 수 있습니다.</dd>
+
+            <dt><a href="#">매장에서 추가 비용이 발생하는 경우는 언제인가요?</a></dt>
+            <dd style="display: none;">장착점에서 추가 금액이 발생하는 경우는<br>
+                - 위치교환, 휠 얼라인먼트 작업 등<br>
+                - 자동차 점검 및 수리 등<br>
+                의 경우입니다.<br>
+                <br>
+                추가 금액은 매장에서 현장 결제하시면 됩니다.</dd>
+
+            <dt><a href="#">겨울용 타이어 보관 서비스가 가능한 곳이 있나요?</a></dt>
+            <dd style="display: none;">겨울용 타이어 보관 서비스는 매장에 따라 서비스 여부 및 보관 비용에 차이가 있을 수 있습니다.<br>
+                매장 검색을 통해 매장의 서비스 여부를 확인해 주시기 바랍니다.</dd>
+
+            <dt><a href="#">런플랫 타이어는 모든 매장에서 장착 가능한가요?</a></dt>
+            <dd style="display: none;">런플랫 타이어는 전문 매장에서만 장착 가능합니다.<br>
+                매장을 검색한 후 해당 매장에서 런플랫 타이어 장착이 가능한지 확인해 주시기 바랍니다.</dd>
+
+            <dt><a href="#">온라인 구매하면 '휠 얼라인먼트'는 무료인가요?</a></dt>
+            <dd style="display: none;">휠 얼라인먼트는 하체 정비에 해당하는 유료 서비스입니다.<br>
+                서비스 비용은 차종별로 다르므로 해당 매장에 문의하시기 바랍니다.</dd>
+
+        </dl>
+
+        <ol class="notice_01">
+            <li>FAQ에서 원하시는 답변을 찾으시지 못하였다면, 1:1 고객 상담을 이용해 주세요.</li>
+        </ol>
+    </div>
+    <!-- 03.list -->
+    <!-- 04.btn -->
+    <div class="btn02">
+        <a href="https://m.tstation.com/customer-service/qna.do" class="btnB btnS02">1:1 고객 상담 </a>
+    </div>
+    <!-- 04.btn -->
+</div>

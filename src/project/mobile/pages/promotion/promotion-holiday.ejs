@@ -1,0 +1,54 @@
+<% locals.setLayout('src/project/mobile/includes/layouts/base.ejs') -%>
+<% locals.block('title', '타이어 쇼핑은 T\'Station.com') -%>
+
+
+<%# Include %>
+<%- locals.widget('src/project/mobile/includes/layouts/nav-bar.ejs', { pageTitle: '이벤트' }) %>
+<link rel="stylesheet" type="text/css" href="mc-static-root/css/event.css" />
+<div id="container" class="mypage">
+    <!-- 02. 제목 -->
+    <div class="event_tit">
+        힘내라 대한민국
+        <span class="date">이벤트 기간 : 22.03.01  ~ 22.03.31</span>
+    </div>
+    <!-- //02. 제목  -->
+    <!-- event list -->
+    <input type="hidden" id="evtUrlAddr" value="">
+    <input type="hidden" id="endEvtDisp" value="">
+    <input type="hidden" id="isEvtDispBf" value="">
+
+    <!-- .event_detail // -->
+    <div class="event_detail">
+        <!-- .freeday-event // -->
+        <div class="freeday-event">
+            <div class="freeday-event-content">
+                <!-- 20220726 // -->
+                <img src="mc-static-root/images/event/20220725/event_detail.png" class="freeday-before" alt="" />
+                <img src="mc-static-root/images/event/20220725/event_detail_login.png" class="freeday-after" alt="" />
+                <!-- // 20220726 -->
+                <a href="#none" class="img-map-link link-1" data-analytics-click="allmyT 회원가입 하러가기"><span class="blind">allmyT 회원가입 하러가기</span></a>
+                <a href="#none" class="img-map-link link-2" data-analytics-click="휴일지킴매장 검색하고 온라인 쇼핑하기"><span class="blind">휴일지킴매장 검색하고 온라인 쇼핑하기</span></a>
+            </div>
+        </div>
+        <!-- .freeday-event // -->
+
+    </div>
+    <!-- // .event_detail -->
+
+    <div class="btn02">
+        <a href="https://m.tstation.com/promotion/event-list" class="btnB btnS02">목록으로</a>
+    </div>
+</div>
+
+<!-- 20220726 // -->
+<script>
+    var login = false;
+    if(login) {
+        $('.freeday-after').show();
+        $('.freeday-before').hide();
+    } else {
+        $('.freeday-after').hide();
+        $('.freeday-before').show();
+    }
+</script>
+<!-- // 20220726 -->

@@ -13,7 +13,7 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import prettyHtml from 'gulp-pretty-html';
 import nodemon from 'gulp-nodemon';
-import browserSync from 'browser-sync';
+// import browserSync from 'browser-sync';
 
 
 /**
@@ -297,11 +297,11 @@ export function server (cb) {
  * PROCESS : BROWSER-SYNC
  * -------------------------------------------------
  */
-function browserSyncInit(done) {
-  browserSync.init(pluginOptions.browserSync)
-  done();
-}
-gulp.task('browser-sync', browserSyncInit);
+// function browserSyncInit(done) {
+//   browserSync.init(pluginOptions.browserSync)
+//   done();
+// }
+// gulp.task('browser-sync', browserSyncInit);
 
 
 /**
@@ -325,5 +325,6 @@ gulp.task('watch', gulp.parallel(watchStyles, watchFonts, watchImages, watchScri
  * PROCESS : DEFAULT
  * -------------------------------------------------
  */
-const build = gulp.series(clean, 'dev', server, gulp.parallel('watch', 'browser-sync'));
+// const build = gulp.series(clean, 'dev', server, gulp.parallel('watch', 'browser-sync'));
+const build = gulp.series(clean, 'dev', server);
 export default build;

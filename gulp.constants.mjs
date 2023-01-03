@@ -71,14 +71,14 @@ const pluginOptions = {
          */
         sourceComments: true
     },
-    browserSync: {
-        proxy: 'localhost:3000',
-        port: 5000,
-        files: [base.distFiles],
-        browser: 'google-chrome',
-        reloadOnRestart: true,
-        notify: true
-    },
+    // browserSync: {
+    //     proxy: 'localhost:3000',
+    //     port: 5000,
+    //     files: [base.distFiles],
+    //     browser: 'google-chrome',
+    //     reloadOnRestart: true,
+    //     notify: true
+    // },
     nodemon: {
         script: 'app.js',
         ignore: [
